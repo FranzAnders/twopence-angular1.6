@@ -1,0 +1,504 @@
+
+<!--Begin About Page header--> 
+<header>
+
+  <div class="pageHeader  pageHeader--alt  section--alt">
+
+    <div class="viewMoreHeaderButton viewMoreHeaderButton--alt   grid  grid--flexDirectionColumn  grid--justifyCenter  grid--center"
+         data-ui-component="view-more-btn">
+              
+        <a href="#projects">
+
+          <img src="assets/images/icon--arrowDown--white.svg" alt="View More " width="40px">
+
+        </a>
+
+    </div> 
+    
+    
+    <picture picturefill>
+        
+      <source pf-media="(min-width: 1024px)"
+              ng-attr-srcset="{{about.pageContent.headerBackground.fields.large.fields.file.url}}">
+
+      <source pf-media="(min-width: 640px)"
+              ng-attr-srcset="{{about.pageContent.headerBackground.fields.medium.fields.file.url}}">
+
+      <img ng-attr-srcset="{{about.pageContent.headerBackground.fields.small.fields.file.url}}" 
+           alt="{{about.pageContent.headerBackground.fields.small.fields.description}}" class="pageHeader-bg">
+
+    </picture>
+
+    
+    <div class="pageHeader-contentContainer  grid  grid--center  grid--justifyCenter">
+    
+      <div class="pageHeader-content">
+    
+        <div class="row">
+            
+          <div class="small-12  medium-8 large-6  small-centered columns  grid  grid--justifyCenter">
+
+            <div class="pageHeader-content-inner">     
+
+              <!--headline for small devices--> 
+              <h1 class="pageHeader-headline  text-center  ff2  section-text">
+                  {{about.pageContent.headline}}
+              </h1>
+
+            </div>
+
+          </div>
+          
+        </div>
+    
+      </div>
+            
+    </div>
+
+  </div>
+
+</header>
+<!--End About Page Header--> 
+
+
+  <section>
+
+    <div class="section  section--primary section--tall ">
+
+      <div class="row">
+
+        <div class="small-12 columns medium-9  large-7 medium-centered">
+        
+          <div class="row">
+            
+            <div class="small-12  columns">
+
+              <h2 class="headline  headline--primary" 
+                  btf-markdown="about.pageContent.sections[0].fields.headline">
+
+              </h2>
+
+              <div btf-markdown="about.pageContent.sections[0].fields.body">
+                
+
+              </div>
+
+              <ul class="row mb0">
+                
+                <li class="small-12 medium-6  columns"
+                     ng-repeat="award in about.pageContent.sections[0].fields.list">
+
+
+                    <div class="award award--alt  grid  grid--center  grid--autoSize">
+
+                     <div  class="grid-cell  grid-cell--autoSize">
+                        
+                      <a href="{{award.fields.url}}" target="_blank">
+
+
+                         <img ng-src="{{award.fields.logo.fields.file.url}}" alt="{{award.fields.contest}}" class="award-logo">
+
+                      </a>
+
+                     </div>
+
+                     <div class="award-description grid-cell">
+
+                       <p class="award-title">
+                       {{award.fields.name}}
+                     
+                       <span class="award-project">
+                         {{award.fields.project}}
+                       </span>
+
+                       </p>
+
+                     </div>
+                     
+                   </div>
+
+
+
+                </li>
+
+              </ul>
+
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <div class="section section--alt  section--list">
+
+      <div class="section-bg"
+           style="background-image: url('assets/images/background_13_reasons.jpg');">
+        
+      </div>   
+
+      <div class="section-overlay">
+        
+      </div>
+
+      <div class="row">
+        
+        <div class="small-12 columns medium-11  large-9 medium-centered">
+
+           <div class="row ">
+
+             <div class="small-12 columns">
+
+                <h2 class="section-headline  section-text text-center">
+               
+                 {{about.pageContent.sections[1].fields.headline}}
+
+               </h2>
+
+             </div>
+                       
+             <div class="small-12 columns medium-6">
+          
+                <ul class="list section-text">
+                  
+                  <li ng-repeat="thingToKnow in about.pageContent.sections[1].fields.listItems | limitTo:6" class="list-item">
+                         
+                    <div class="media--fl">
+                         
+                      <div class="ff2  h3  txtc4">
+                        {{thingToKnow.fields.itemNumber}}.
+                      </div> 
+                         
+                      <p class="pl1">
+                        {{thingToKnow.fields.title}}
+                      </p>
+                         
+                    </div>
+                         
+                  </li>
+                         
+                </ul>
+
+              </div>
+   
+             <div class="small-12 columns medium-6">
+
+                <ul class="list section-text">
+
+                  <li ng-repeat="thingToKnow in about.pageContent.sections[1].fields.listItems | limitTo: (6 - about.pageContent.sections[1].fields.listItems.length)" class="list-item">
+                         
+                    <div class="media--fl">
+                         
+                      <div class="ff2  h3  txtc4">
+                        {{thingToKnow.fields.itemNumber}}.
+                      </div> 
+                         
+                      <p class="pl1">
+                        {{thingToKnow.fields.title}}
+                      </p>
+                         
+                    </div>
+                  </li>
+                </ul>
+         
+             </div>
+            
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="section">
+
+    <div class="row">
+      
+      <div class="small-12 columns">
+        
+        <div class="shoutout">
+          
+          <div class="shoutout-icon">
+            
+            <img src="assets/images/icon--heart.svg" alt="" width="40">
+
+          </div>
+
+          <h2 class="shoutout-text" btf-markdown="about.pageContent.sections[2].fields.headline">
+            
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+   <div class="row">
+      
+      <div class="small-12 columns medium-9  large-7 medium-centered">
+
+
+        <h2 class="headline  headline--primary">{{about.pageContent.sections[3].fields.headline}}</h2>
+        
+        <div btf-markdown="about.pageContent.sections[3].fields.body">
+          
+
+        </div>
+
+        <div class="row">
+          
+          <div class="small-12 columns medium-6 end"
+               ng-repeat="service in about.pageContent.sections[4].fields.lists">
+
+            <h3 class="headline  headline--secondary">{{service.fields.headline}}</h3>
+
+            <ul class="list  list--secondary">
+
+              <li class="list-item"
+                  ng-repeat="item in service.fields.listItem"><span class="txtc5  ff3">◦ </span>{{item}}</li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="explainingSection">
+
+    <div class="row small-collapse relative" >
+      
+      <div class="small-12 columns">
+
+        <picture >
+            
+          <source media="(min-width: 1024px)"
+                  srcset="{{about.pageContent.sections[5].fields.headerImage.fields.large.fields.file.url}}">
+
+          <source media="(min-width: 640px)"
+                  srcset="{{about.pageContent.sections[5].fields.headerImage.fields.medium.fields.file.url}}">
+
+          <img src="{{about.pageContent.sections[5].fields.headerImage.fields.small.fields.file.url}}" 
+               alt="{{about.pageContent.sections[5].fields.headerImage.fields.small.fields.description}}" 
+               class="explainingSection-image" >
+
+        </picture>
+
+      </div>
+    
+    </div>
+    
+    <div class="row">
+
+      <div class=" explainingSection-content  small-11 small-centered large-9 columns">
+      
+        <div class="explainingSection-header-container ">
+                  
+          <div class="row small-collapse explainingSection-content-header">
+      
+            <div class="small-12 columns">
+
+              <h2 class="explainingSection-content-headline display-inline">
+
+                {{about.pageContent.sections[5].fields.headline}}
+
+              </h2>
+
+            </div>
+      
+          </div>
+      
+        </div>
+            
+        <div class="explainingSection-main">
+          <div class="row ">
+                
+            <div class="small-12 columns">
+              
+              <div class="row">
+                  
+                <div class="small-12 medium-6  columns mb5"
+                     btf-markdown="about.pageContent.sections[5].fields.bodyPrimary">
+                  
+          
+                </div>
+              
+                <div class="small-12 medium-6  columns mb5"
+                btf-markdown="about.pageContent.sections[5].fields.bodySecondary">
+                
+
+                </div>
+            
+              </div>
+          
+            </div>
+          
+          </div>
+
+        </div>
+      
+
+        <div class="row ">
+    
+          <div class="founderProfile  grid grid--center small-grid--flexDirectionColumn med-grid--flexDirectionRow">
+
+            <div class="small-12 medium-6 columns text-left">
+            
+              <img src="assets/images/alex.png" alt="" width="800" class="founderProfile-image">
+                  
+            </div>
+                  
+            <div class="small-12 columns medium-5">
+            
+              <h2 class="founderProfile-name">{{about.pageContent.sections[6].fields.headline}}</h2>
+
+              <h3 class="founderProfile-title">{{about.pageContent.sections[6].fields.body}}</h3>
+              
+            </div>
+
+          </div>
+    
+        </div>
+
+      </div>
+            
+    </div>
+
+  </div>
+
+
+  <section>
+    <div class="explainingSection">
+    
+      <div class="row small-collapse relative" >
+          
+        <div class="small-12 columns explainingSection-image">
+      
+          <picture >
+              
+            <source media="(min-width: 1024px)"
+                    srcset="{{about.pageContent.sections[7].fields.headerImage.fields.large.fields.file.url}}">
+
+            <source media="(min-width: 640px)"
+                    srcset="{{about.pageContent.sections[7].fields.headerImage.fields.medium.fields.file.url}}">
+
+            <img src="{{about.pageContent.sections[7].fields.headerImage.fields.small.fields.file.url}}" 
+                 alt="{{about.pageContent.sections[7].fields.headerImage.fields.small.fields.description}}" 
+                 class="explainingSection-image" >
+
+          </picture>
+        
+        </div>
+      
+      </div>
+        
+      <div class="row">
+    
+        <div class=" explainingSection-content  small-11 small-centered large-9 columns">
+        
+          <div class="explainingSection-header-container ">
+                    
+            <div class="row small-collapse explainingSection-content-header">
+        
+              <div class="small-12 columns">
+    
+                <h2 class="explainingSection-content-headline display-inline">
+                  {{about.pageContent.sections[7].fields.headline}}
+                </h2>
+    
+              </div>
+        
+            </div>
+        
+          </div>
+              
+          <div class="explainingSection-main">
+    
+            <div class="row ">
+                  
+              <div class="small-12 columns">
+                
+                 <div class="row ">
+                    
+                    <div class="small-12 medium-6  columns mb5"
+                         btf-markdown="about.pageContent.sections[7].fields.bodyPrimary">
+                      
+              
+                    </div>
+                  
+                    <div class="small-12 medium-6  columns mb5"
+                    btf-markdown="about.pageContent.sections[7].fields.bodySecondary">
+                    
+
+                    </div>
+        
+                </div>
+            
+              </div>
+            
+            </div>
+          </div>
+    
+          </div>
+              
+      </div>
+    
+    </div>
+
+  </section>
+
+
+  <section>
+    
+    <div class="section">
+          
+      <div class="row">
+        
+        <div class="small-12 columns medium-9  large-7 medium-centered">
+
+          <h2 class="ff2  text-center h1 mb5 ">{{about.pageContent.sections[8].fields.headline}}</h2>
+
+          <div class="row">
+
+            <div class="small-12 columns medium-centered medium-5 large-4">
+
+            <a ui-sref="main.contact" class="button  button--large  button--primary  button--expanded">
+            
+              <span class="button-textState1">Let's talk</span>
+              <span class="button-textState2">Let's talk</span>
+              
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+

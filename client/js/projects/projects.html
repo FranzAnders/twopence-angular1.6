@@ -1,0 +1,136 @@
+
+<!--Projects header--> 
+<header>
+
+  <div class="pageHeader  pageHeader--primary  section--alt">
+
+    <picture picturefill>
+        
+      <source pf-media="(min-width: 1024px)"
+              ng-attr-srcset="{{projects.pageContent.headerBackground.fields.large.fields.file.url}}">
+
+      <source pf-media="(min-width: 640px)"
+              ng-attr-srcset="{{projects.pageContent.headerBackground.fields.medium.fields.file.url}}">
+
+      <img ng-attr-srcset="{{projects.pageContent.headerBackground.fields.small.fields.file.url}}" 
+           alt="{{projects.pageContent.headerBackground.fields.small.fields.description}}" 
+           class="pageHeader-bg">
+
+    </picture>
+
+    <div class="pageHeader-contentContainer  grid  grid--center">
+
+      <div class="pageHeader-content">
+      
+          <div class="row">
+              
+            <div class="small-12  medium-8 large-6 medium-push-1  columns  small-centered medium-uncentered  text-left">
+    
+                <div class="pageHeader-content-inner">
+
+                  <h1 class="pageHeader-headline  section-text"
+                      btf-markdown="projects.pageContent.headline">
+                  </h1>
+                              
+                  <p class="pageHeader-subline  section-text"
+                     btf-markdown="projects.pageContent.subline">
+                 
+                  </p>      
+
+                </div>
+    
+              </div>
+                
+          </div>
+          
+      </div>
+      
+    </div>
+
+  </div>
+
+</header>
+<!--End Projects header--> 
+
+
+<!--Projects container--> 
+<div class="section  section--primary  ptb0">
+
+  <div class="row">
+  
+    <div class="small-12 columns" 
+        data-ui-component="projects-container">
+      
+        <article class="row small-collapse  small-grid--flexDirectionColumn med-grid--flexDirectionRow    grid grid--center" ng-repeat="project in projects.allProjects.projects track by $index">
+        
+
+            <div class="small-12  medium-6 columns"
+                 ng-class="{'medium-push-6' : ((($index) % 2) === 0)}">
+
+                <img  alt="{{project.fields.images.fields.thumbnailMedium.fields.file.fileName}}" width="800" ng-src="{{project.fields.images.fields.thumbnailMedium.fields.file.url}}">
+            
+            </div>
+
+
+            <div class="small-12 medium-6 columns  ptrbl4"
+              ng-class="{'medium-pull-6' : ((($index) % 2) === 0)}">
+                
+              <div class="row  small-collapse  ptb4">
+
+                <div class="small-12  medium-11  large-8 medium-centered columns">
+                
+                   <h1 class="h2  lh4  uc  fwb   hide-for-medium-up mb3">
+                      
+                      {{project.fields.secondaryHeadline}}
+                                      
+                  </h1>
+
+
+                  <!--headline for medium up devices--> 
+                  <h1 class=" lh3  uc  fwb show-for-medium-up hide-for-large-up mb4">
+                      
+                      {{project.fields.secondaryHeadline}}
+
+                  </h1>
+                                          
+
+                  <!--headline for medium up devices--> 
+                  <h1 class="text-kilo lh3 uc  fwb  show-for-large-up  mb4">
+                      
+                      {{project.fields.secondaryHeadline}}
+
+                </h1>
+                                       
+
+                    
+                  <!--description for medium devices--> 
+                  <p class=" show-for-small-up  hide-for-large-up mb4 hide-elem">
+                     {{project.fields.description}}
+                  </p>
+                                      
+                  <div class="row small-collapse">
+
+                    <div class="small-12  columns">
+                      <a ui-sref="main.project({projectHandle: project.fields.id})"  class="button  button--medium  button--primary mb0" >   
+                          <span class="button-textState1">Check It Out</span>    
+                          <span class="button-textState2">Check It Out</span>
+                      </a>                       
+
+                     </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            
+            </div>
+
+        </article>
+        
+  
+      </div>
+  
+  </div>
+
+</div>

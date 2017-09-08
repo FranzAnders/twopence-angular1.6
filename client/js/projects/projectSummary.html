@@ -1,0 +1,85 @@
+<div class="section  projectSummary">
+  
+  <div class="row">
+
+    <div class="small-12 columns medium-11  large-9  medium-centered">
+
+      <div class="row">
+      
+        <div class="small-12  columns"
+             ng-class="{'medium-7' : projectSummary.content.fields.whatWeDid.length > 0}">
+             
+          <div class="row ">
+
+            <div class="small-12 columns"
+                 ng-class="{'medium-6' : !projectSummary.content.fields.whatWeDid.length > 0}">
+                
+              <div class="projectSummary-ask">
+                
+                <h1 class="headline  headline--primary  projectSummary-headline">
+                  The Ask
+                </h1>
+                      
+                <p class="p1 mb5">
+                      
+                  {{projectSummary.content.fields.Ask}}
+                      
+                </p>
+              
+              </div>  
+            
+            </div>
+            
+            <div class="small-12  columns"
+                 ng-class="{'medium-6' : !projectSummary.content.fields.whatWeDid.length > 0}">
+            
+              <div class="projectSummary-result">
+            
+              <h1 class="headline  headline--primary  projectSummary-headline">
+                The Result
+              </h1>
+                    
+              <p class="p1 mb5">
+                    
+                {{projectSummary.content.fields.results}}
+                    
+              </p>
+              
+              </div>
+            
+            </div>
+          </div>
+        </div>
+
+      <div class="small-12 medium-5  large-4 columns" 
+           ng-if="projectSummary.content.fields.whatWeDid.length > 0">
+          
+        <div class="projectSummary-headlineGroup ">
+
+          <h1 class="headline  headline--secondary  projectSummary-headline">
+           What we did
+          </h1>
+          
+          <hr class="hr--accent  hr--thick">
+
+        </div>
+
+        <ul class="list  list--secondary">
+            
+            <li class="list-item"
+                ng-repeat="service in projectSummary.content.fields.whatWeDid">
+                
+               <span class="ff2  txtc5">◦ </span> {{service}}
+            </li>
+
+        </ul>
+
+      </div>
+      
+    </div>
+
+  </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,454 @@
+
+
+/*------------------------------------*\
+    #Floating Sections 
+\*------------------------------------*/
+
+
+.floatingSection-bg {
+
+  @media #{$medium-up} {
+
+    background-color: $secondaryColor; 
+
+  }
+
+  @media #{$large-up} {
+
+    margin-top: rem-calc($level4); 
+
+  }
+
+}
+
+.floatingSection-bg--alt {
+
+  @media #{$medium-up} {
+
+    height: rem-calc(360px); 
+
+  }
+
+}
+
+
+
+.floatingSection {
+
+  background-color:$secondaryColor; 
+  padding-top: rem-calc($level6);
+  padding-bottom: rem-calc($level6);
+  @extend %position-relative; 
+  
+  @media #{$medium-up} {
+    background-color: transparent; 
+
+  }
+
+  @media #{$large-up} {
+
+    padding-top: rem-calc($level7);
+    padding-bottom: rem-calc($level7);
+
+  }
+
+  .floatingSection-icon {
+    
+    @extend %position-absolute; 
+
+  }
+
+  .floatingSection-copyContainer {
+    
+    position: relative; 
+    margin-top: rem-calc($level4); 
+
+    @media #{$medium-up} {
+      height: rem-calc(240px); 
+      width: 100%; 
+    }
+    
+    .floatingSection-copy {
+      
+      @media #{$medium-up} {
+        position: absolute; 
+        transform: translateY(-100px);
+      }
+
+      @media #{$large-up} {
+        transform: translateY(-112px);
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Left
+\*------------------------------------*/
+
+
+.floatingSection--left {
+
+  margin-right: rem-calc($level4); 
+
+  @media #{$medium-up} {
+
+    margin-right: 0; 
+    
+  }
+  
+
+  .floatingSection-icon {
+
+    right: rem-calc(-18px);
+    width: rem-calc(30px);
+    bottom: 0;
+    top: 45%;
+
+  }
+
+
+  .floatingSection-copyContainer {
+    
+    @media #{$medium-up} {
+      
+      left: rem-calc(-1 * $level4); 
+
+    }
+
+
+    @media #{$large-up} {
+
+      padding: 0; 
+      padding-left: rem-calc($level4);
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Left Alt (Behaves like left on small, but like right on larger)
+\*------------------------------------*/
+
+.floatingSection--leftAlt {
+  
+  margin-right: rem-calc($level4); 
+
+  @media #{$medium-up} {
+
+    margin-right: 0; 
+
+  }
+
+  .floatingSection-icon {
+
+    left: rem-calc(-18px);
+    width: rem-calc(30px);
+    bottom: 0;
+    top: 45%;
+
+  }
+
+  .floatingSection-copyContainer {
+    
+    @media #{$medium-up} {
+      
+      right: rem-calc(-1 * $level4); 
+
+    }
+
+
+    @media #{$large-up} {
+
+      padding: 0; 
+      padding-right: rem-calc($level4);
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Right
+\*------------------------------------*/
+
+
+.floatingSection--right {
+
+  margin-left: rem-calc($level4); 
+
+  @media #{$medium-up} {
+
+    margin-left: 0; 
+
+  }
+
+  .floatingSection-icon {
+
+    left: rem-calc(-18px);
+    width: rem-calc(30px);
+    bottom: 0;
+    top: 45%;
+
+  }
+
+  .floatingSection-copyContainer {
+    
+    @media #{$medium-up} {
+      
+      right: rem-calc(-1 * $level3); 
+
+    }
+
+
+    @media #{$large-up} {
+
+      padding: 0; 
+      padding-right: rem-calc($level4);
+
+    }
+
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Intro 
+\*------------------------------------*/
+
+
+.floatingSection--intro {
+  
+  .floatingSection-copyContainer {
+    
+     .floatingSection-copy {
+
+      @media #{$medium-up} {
+
+        @include transform(translateY(0)); 
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Featured Laces 
+\*------------------------------------*/
+
+
+.floatingSection--featuredLaces {
+
+  margin-left: rem-calc($level4); 
+  background-color: $secondaryColor; 
+
+  @media #{$medium-up} {
+    margin-left: 0; 
+    padding-top: rem-calc($level6);
+    padding-bottom: rem-calc($level6);
+
+  }
+
+  .floatingSection-icon {
+
+    left: rem-calc(-18px);
+    width: rem-calc(30px);
+    bottom: 0;
+    top: 45%;
+
+    @media #{$medium-up} {
+    
+      right: 0;
+      left: 0;
+      width: rem-calc(30px);
+      margin: auto; 
+      top: auto; 
+      bottom: rem-calc(-18px); 
+
+    }
+
+  }
+
+}
+
+
+
+.floatingFeaturedStyles {
+  
+  .floatingFeaturedStyles-container {
+
+    position: relative; 
+
+  }
+
+  .floatingFeaturedStyles-inner {
+    
+    @media #{$medium-up} {
+
+      width: 100%;
+      left: 0;
+      right: 0;
+      transform: scale(1.1);
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: rem-calc($level7 + $level3); 
+
+    }
+
+  }
+
+  .floatingFeaturedStyles-headline {
+
+    @media #{$medium-up} {
+
+      transform: translateY(-60px);
+      margin-bottom: -60px;
+      padding-left: rem-calc($level5); 
+
+    }
+
+  }
+  
+
+  .floatingFeaturedStyles-cta {
+  
+    position: relative; 
+    width: 100%; 
+    height: rem-calc(12px); 
+
+    .floatingFeaturedStyles-cta-link {
+      
+      color: #fff; 
+
+      @media #{$medium-up} {
+
+        position: absolute; 
+        min-width: rem-calc(110px); 
+        right: 0; 
+        bottom: 4px; 
+        @include type-setting(-1); 
+
+      }
+
+    } 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Page Container 
+\*------------------------------------*/
+
+
+.floatingSection--pageContainer  {
+
+  @media #{$large-up} {
+
+    padding-right: rem-calc($level1);
+    padding-left: rem-calc($level1);
+
+  }
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Floating Section Header
+\*------------------------------------*/
+
+.floatingSection-header {
+
+  margin-bottom: rem-calc(-48px); 
+  @include transform(translateY(-54px));  
+
+  @media #{$medium-up} {
+
+    margin-bottom: rem-calc(-72px); 
+    @include transform(translateY(-70px));  
+
+  }
+
+  @media #{$large-up} {
+
+    margin-bottom: -5.25rem; 
+    @include transform(translateY(-84px));  
+
+  } 
+
+  .floatingSection-header-headline {
+  
+
+  }
+
+  .floatingSection-header-body {
+
+    @media #{$medium-up} {
+
+      padding-right: rem-calc($level4); 
+
+    }
+
+    @media #{$large-up} {
+
+      padding-right: 0; 
+
+    }
+
+  }
+  
+}
+
+
+.floatingSection-header--alt {
+
+  margin-bottom: rem-calc(-60px); 
+
+  @media #{$large-up} {
+    margin-bottom: rem-calc(-72px); 
+    @include transform(translateY(-72px));
+
+  }
+
+}
+
+
+
+

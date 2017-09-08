@@ -1,0 +1,329 @@
+
+/*------------------------------------*\
+    #Forms 
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+    #Inputs 
+\*------------------------------------*/
+
+
+input[type="text"], 
+input[type="password"], 
+input[type="date"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="month"], 
+input[type="week"], 
+input[type="email"], 
+input[type="number"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="time"], 
+input[type="url"], 
+input[type="color"] {
+    
+    color: $primaryColor; 
+    border: 0; 
+    background-color: transparent; 
+    border-bottom: 2px solid $tertiaryColor;
+    margin-bottom: rem-calc($level2); 
+    margin-right: rem-calc($level2); 
+    width: 100%; 
+    @include border-radius(0); 
+    @extend %prl2; 
+    @extend %position-relative; 
+
+    &:focus,
+    &:active {
+        outline: 0; 
+    }
+
+}
+
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: $primaryColor !important;
+}
+
+
+
+
+/*------------------------------------*\
+    #Form Groups  
+\*------------------------------------*/
+
+ 
+ $formGroupSpeed: .4s; 
+
+
+.form-group {
+    
+    width: 100%;    
+    margin-bottom: rem-calc($level4); 
+    margin-bottom: rem-calc($level3);
+    @extend %position-relative; 
+
+    &:after {
+        content: "";
+        background-color: $primaryColor;
+        height: rem-calc(4px);
+        bottom: rem-calc(10px);
+        z-index: 3;
+        width: 0; 
+        left: 0; 
+        right: 0; 
+        opacity: 0; 
+        margin-right: auto; 
+        margin-left: auto; 
+        @include transition(all, $formGroupSpeed, ceaser($easeInOutQuint)); 
+        @extend %position-absolute;
+    }
+
+    input{
+
+        z-index: 1; 
+        width: 100%; 
+
+    }
+
+    label {
+        z-index: 0; 
+        @include single-transition(transform, $formGroupSpeed, ceaser($easeInOutQuint)); 
+        @extend %text-micro; 
+        @extend %position-absolute; 
+    }
+
+    &.is-focused,
+    &.is-filled {
+        
+        label {
+            
+            @include transform(scale(.9) translateY(-14px));
+
+            @media #{$medium-up} {
+
+                @include transform(scale(.9) translateY(-27px));
+
+            }
+
+        }
+
+    }
+
+    &.is-focused {
+
+        &:after {
+            opacity: 1; 
+            width: 100%;
+            @include transition(all, $formGroupSpeed, ceaser($easeInOutQuint)); 
+
+        }
+
+    }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Input Properties 
+\*------------------------------------*/
+
+
+input {
+
+    &.input--expanded {
+        width: 100%; 
+    }
+}
+
+
+input {
+
+    &.input--alt {
+        min-height: 3.2rem; 
+        border: 2px solid $primaryColor; 
+
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Input Sizes 
+\*------------------------------------*/
+
+
+input {
+  
+  &.input--small {
+
+    padding-top: rem-calc($level1);
+    padding-bottom: rem-calc($level1);
+
+  }
+  &.input--medium {
+
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+
+  }
+
+
+  &.input--large {
+
+    padding-top: rem-calc($level3);
+    padding-bottom: rem-calc($level3);
+
+  }
+
+
+}
+
+
+
+
+
+
+
+/*------------------------------------*\
+    #Input Types 
+\*------------------------------------*/
+
+
+input {
+    
+    &.input--primary {
+        background-color: transparent;
+        border: 1px solid $secondaryColor;
+        width: 100%;
+        color: #fff; 
+
+        &:-webkit-autofill {
+
+          background-color: $secondaryColor--translucent !important; 
+
+        }
+
+    }
+
+    &.input--secondary {
+        background-color: #fff;
+        border: 2px solid $primaryColor;
+        width: 100%;
+        color: #fff; 
+    }
+
+}
+
+
+
+
+
+
+
+/*------------------------------------*\
+    #Labels 
+\*------------------------------------*/
+
+
+label {
+    margin-bottom: rem-calc(4px); 
+    @extend %display-block; 
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Select Global Properties
+\*------------------------------------*/
+
+
+select {
+
+  width: 100%; 
+    
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Select Types
+\*------------------------------------*/
+
+
+.select--secondary {
+    background-color: transparent; 
+    outline: 0;
+    color: #fff; 
+    border: 2px solid $primaryColor; 
+    @extend %br1; 
+
+    &:hover,
+    &:active,
+    &:focus {
+
+        background-color: $primaryColor; 
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Text Areas
+\*------------------------------------*/
+
+
+textarea {
+    
+    border: 2px solid $primaryColor; 
+    width: 100%; 
+    @extend %ptrbl2; 
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Form Alerts
+\*------------------------------------*/
+
+.alert--warning {
+
+    color: #FF6F92; 
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Form Alerts
+\*------------------------------------*/
+
+
+.formAreaDivider--left {
+
+    border-left: 1px solid $grey--mid; 
+}
+

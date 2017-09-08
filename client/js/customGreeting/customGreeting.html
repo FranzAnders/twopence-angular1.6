@@ -1,0 +1,83 @@
+
+<div class="[ section  section--alt ]  [ grid  grid--center ]  greeting" 
+               data-action='trigger-greeting'>
+  
+  <!--backgrounds for greeting that change on medium up--> 
+  <div class="greeting-bg  section-bg  section-bg--sdsdsd"
+       data-ui-component="greeting-bg-container">
+      
+  
+  </div>
+  
+  
+  <!--Greeting Text--> 
+  <div class="row">
+    
+    <div class="small-12  medium-8 large-6 medium-pull-1 large-pull-2  columns  small-centered text-left  large-centered columns "
+          data-ui-component="greeting">
+              
+      <div class="greeting-inner">
+
+        <div class="row">
+          
+          <div class="small-12 columns   small-centered ">
+          
+            <!--headline for small devices--> 
+            <h1 class="greeting-headline   uc section-text  text-left" >
+                
+              Hello, <br>
+        
+              {{greeting.headline}}
+            
+            </h1>
+        
+          </div>
+          
+        </div>
+          
+        <div class="row ">
+        
+          <div class="small-12 columns  small-centered">
+            
+            <div class="greeting-body">
+              
+              <!--message for small devices --> 
+              <p class="p1 section-text"
+                data-ui-component="greeting-message">
+                {{greeting.message}}
+              </p>
+             
+            </div>
+        
+          </div>
+        
+        </div>
+        
+      </div>
+          
+
+      <!-- retry button-->
+<!--       <div class="row">
+        
+          <div class="small-12 columns">
+            <div data-ui-component="retry-btn-container">
+                
+            <button class="button--secondary  button--micro    grid   grid--center mb0" data-action="retry-customizr" >
+                    
+                  <span data-ui-component="greeting-retry-message" >customize experience</span>
+            
+                  <span class="icon--small  icon-up-open-big mb1 ml1"></span>
+            
+              </button>
+            
+            </div>
+            
+          </div>
+
+      </div> -->
+
+    </div>
+  
+  </div>
+
+</div>

@@ -1,0 +1,201 @@
+
+<div class="small-12  medium-11  large-10  medium-centered  columns">
+                  
+  <form name="customizrForm" 
+        novalidate 
+        ng-submit="customizr.customizeSite(customizr.visitorTypeText, customizr.visitorSearchText)" 
+        ng-model-options="{
+          updateOn: 'default',
+          debounce: {'default': 200}
+          }">
+
+    <div class="row">
+    
+        <div class="small-12  columns  textshadow1">
+            
+            <!--Case study customirz - small--> 
+            <div class="customizr  hide-for-medium-up   "
+                 data-ui-component="case-study-customizer">
+
+                <!--Who the person is question before answer--> 
+                <div class="customizr-question">
+
+                  <!-- Our introduction--> 
+                  <h1 class="fwb  h2  mb2  section-text  ff2 lh1 " 
+                   data-ui-component="case-study-customizer-question">
+                   Hi, we make things that humans love. What kind of human are you?
+                  </h1>
+                  <!--end our intro-->
+
+                  <div class="row">
+                   
+                      <div class="small-12 columns [  grid   small-grid--flexDirectionColumn  
+                      ]
+                      mb4  fwb">
+
+                        <div class="[ grid grid--bottom ] mb2">
+                        
+                          <span class="customizr-selectGroup">  
+                        
+                            <select name="visitor-type" 
+                            class="customizr-select" 
+                            ng-blur="customizr.scrollTop()"
+                            ng-change="customizr.dirtyFormElement('visitorType')"
+                            ng-model="customizr.visitorTypeText">
+                        
+                              <option value="" disabled >I'm a...</option>
+                              
+                              <option ng-repeat="option in customizr.visitorChoices track by $index" ng-value="option">
+                                  {{option.name}} 
+                              </option>
+                        
+                            </select>
+                        
+                          </span>
+                        
+                        </div>
+                                          
+                        <div class="[ grid grid--bottom ]  mb2">
+                        
+                          <span class="customizr-selectGroup">  
+                        
+                            <select name="visitor-search" id=""
+                             class="customizr-select"
+                             ng-blur="customizr.scrollTop()"
+                             ng-change="customizr.dirtyFormElement('visitorSearch')"
+                             ng-model="customizr.visitorSearchText">
+                        
+                                <option value="" disabled>looking for...</option>
+
+                                <option ng-repeat="option in customizr.searchChoices track by $index" ng-value="option">
+                                    {{option.name}} 
+                                </option>
+                          
+                            </select>
+                        
+                          </span>
+                        
+                        </div>
+
+                      </div>
+                                             
+                  </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!--Case study customizer for - medium-up --> 
+            <div class="customizr  show-for-medium-up"
+                 data-ui-component="case-study-customizer">
+                
+                <div class="row medium-collapse  large-uncollapse">
+
+                  <div class="medium-12  large-8  columns">
+
+                    <!--Hello from HUM- small--> 
+                    <h1 class="[ fwb ff2 ] section-text  customizr-headline mb3">
+                    
+                      <span  class="display-block" 
+                             data-ui-component="case-study-customizer-greeting">Hi, we make things that humans love.</span>
+                          <span class="display-block" data-ui-component="case-study-customizer-greeting-3">What kind of human are you?</span>
+
+                    </h1>
+
+                  </div>
+
+                </div>
+
+
+                <!--Who the person is question before answer--> 
+                <div class="customizr-question">
+                
+                 <div data-ui-component="case-study-customizer-question-2">
+
+                    <div class="row  medium-collapse  large-uncollapse grid  grid--stretch"  >
+                     
+                      <div class="medium-8  large-10 columns [  
+                      grid 
+                      grid--justifyLeft
+                      med-grid--flexDirectionColumn
+                      large-grid--flexDirectionRow
+                      ]
+                      mb4  fwb">
+
+                        <div class="[ grid-cell  grid grid--center ]  mtb2">
+
+                          <span class="[ grid-cell grid-cell--autoSize ] h2  mr2  ff2  section-text">
+                            I'm a
+                          </span>
+
+                          <span class="customizr-selectGroup  mr3">  
+
+                            <ui-select ng-model="customizr.visitorTypeText"
+                                       search-enabled="false"
+                                       on-select="customizr.dirtyFormElement('visitorType')">
+
+                               <ui-select-match>
+                                    
+                                    <span ng-bind="$select.selected.name"> </span>
+
+                               </ui-select-match>
+
+                               <ui-select-choices repeat="item in customizr.visitorChoices track by $index">
+                                    <span ng-bind="item.name"> </span>
+
+                               </ui-select-choices>
+
+                            </ui-select>
+
+                          </span>
+
+                        </div>
+                  
+                        <div class="[ grid-cell grid grid--center ]  mtb2"  data-ui-component="visitor-search-container">
+
+                          <span class="[ grid-cell grid-cell--autoSize ] h2  mr2  ff2  section-text">looking for
+                          </span>
+                          
+                          <span class="customizr-selectGroup">  
+
+                            <ui-select ng-model="customizr.visitorSearchText"
+                                       search-enabled="false"
+                                       input-id="Visitory Search"
+                                       on-select="customizr.dirtyFormElement('visitorSearch')">
+
+                               <ui-select-match>
+                                    
+                                    <span ng-bind="$select.selected.name"> </span>
+
+                               </ui-select-match>
+
+                               <ui-select-choices repeat="item in customizr.searchChoices track by $index">
+                                    <span ng-bind="item.name"> </span>
+
+                               </ui-select-choices>
+
+                            </ui-select>
+
+                          </span>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                </div>
+
+              </div> 
+
+            </div>
+
+        </div>
+    
+    </div>
+
+  </form>
+
+</div>

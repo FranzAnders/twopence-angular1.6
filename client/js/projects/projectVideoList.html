@@ -1,0 +1,25 @@
+
+<div class="section pt0">
+  
+  <div class="row">
+    
+    <div class="small-12  medium-11  medium-centered  large-10  columns">
+        
+        <ul class="row">
+  
+          <li class="small-12 columns medium-6  mb6"
+              ng-repeat="video in projectVideoList.videos track by $index">
+  
+              <div ng-bind-html="video.fields.embedCode | trust">
+                
+              </div>
+              
+          </li>
+  
+        </ul>    
+  
+    </div>
+  
+  </div>
+
+</div>

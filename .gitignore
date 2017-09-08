@@ -1,0 +1,11 @@
+.tmp
+.sass-cache
+client/bower_components
+client/images
+dist
+materials
+node_modules
+
+modules
+
+server/uploads

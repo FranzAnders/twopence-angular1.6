@@ -1,0 +1,28 @@
+
+/*------------------------------------*\
+    #Theme Styles 
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+    #Border Radius
+\*------------------------------------*/
+
+
+%br1 {
+    @include border-radius(4px); 
+}
+
+%br2 {
+    @include border-radius(6px); 
+}
+
+%br3 {
+    @include border-radius(8px); 
+}
+
+%br4 {
+    @include border-radius(36px); 
+}
+

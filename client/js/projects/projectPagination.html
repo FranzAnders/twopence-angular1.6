@@ -1,0 +1,111 @@
+<div class="row small-collapse">
+  
+    <div class="small-12 columns columns medium-centered text-center">
+
+    <h1 class="hide-elem">View More Projects</h1>
+      
+      <!-- <a ui-sref="main.projects" rel="show_index" class="display-block ptb4 uc txtc5 fwb text-micro">
+        What's Next?
+      </a> -->
+
+      <ul class="row  small-collapse  projectPagination  ">
+       
+        <li class="small-6  medium-6 columns">
+    
+          <a ui-sref="main.project({projectHandle: projectPagination.previous.fields.id})">
+            
+            <div class="projectPagination-link  projectPagination-link--previous">
+                
+             <div class="projectPagination-link-overlay  grid  grid--center  grid--justifyCenter">
+                
+                <div class="projectPagination-link-headline  textshadow1  
+                            grid  grid--center grid--flexDirectionColumn ">
+                  
+                  <h2 class="projectPagination-link-headline ltrs1">
+                    {{projectPagination.previous.fields.client}}
+                  </h2>
+            
+                </div>
+            
+                <div class="grid  grid--center  projectPagination-link-arrow  ">
+            
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                   viewBox="20 0 20 32.6" xml:space="preserve" class="projectPagination-link-arrow-icon" >
+                    <g>
+                                   
+                      <path class="st0" d="M32.6,16.3L32.6,16.3c0,0.1-0.1,0.3-0.1,0.4L20,29.2c-0.2,0.2-0.5,0.2-0.7,0s-0.2-0.5,0-0.7l12.2-12.2
+                        L19.3,4.1c-0.2-0.2-0.2-0.5,0-0.7s0.5-0.2,0.7,0l12.5,12.5C32.6,16,32.6,16.2,32.6,16.3z"/>
+                    </g>
+                                
+                  </svg>
+                   
+                  <div class="projectPagination-link-arrow-label  grid  grid--center">
+                    <div class="mr1">Previous </div> <span class="show-for-medium-up">Project</span>
+                  </div>
+            
+                </div>
+            
+              </div>
+                
+              <div class="projectPagination-link-bg"
+                    style="background-image: url({{projectPagination.previous.fields.images.fields.mainImageLarge.fields.file.url}});">
+                
+              </div>
+                
+            </div>
+
+          </a>
+        </li>
+            
+        <li class="small-6  medium-6 columns">
+
+          <a ui-sref="main.project({projectHandle: projectPagination.next.fields.id})">
+
+            <div class="projectPagination-link  projectPagination-link--next">
+      
+             <div class="projectPagination-link-overlay  grid  grid--center  grid--justifyCenter">
+                
+                <div class="projectPagination-link-headline  textshadow1  
+                            grid  grid--center grid--flexDirectionColumn ">
+                  
+                  <h2 class="projectPagination-link-headline ltrs1">
+                    {{projectPagination.next.fields.client}}
+                  </h2>
+
+                </div>
+
+                <div class="grid-cell  grid  grid--center  projectPagination-link-arrow">
+
+                  <div class="projectPagination-link-arrow-label  grid  grid--center"><div class="mr1">Next </div> <span class="show-for-medium-up">Project</span></div>
+    
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                   viewBox="20 0 20 32.6" xml:space="preserve" 
+                                   class="projectPagination-link-arrow-icon" >
+                    <g>
+                                   
+                      <path class="st0" d="M32.6,16.3L32.6,16.3c0,0.1-0.1,0.3-0.1,0.4L20,29.2c-0.2,0.2-0.5,0.2-0.7,0s-0.2-0.5,0-0.7l12.2-12.2
+                        L19.3,4.1c-0.2-0.2-0.2-0.5,0-0.7s0.5-0.2,0.7,0l12.5,12.5C32.6,16,32.6,16.2,32.6,16.3z"/>
+                    </g>
+                                
+                  </svg>
+                   
+                </div>
+
+              </div>
+      
+              <div class="projectPagination-link-bg"
+                   style="background-image: url({{projectPagination.next.fields.images.fields.mainImageLarge.fields.file.url}});">
+      
+              </div>
+      
+            </div>
+
+          </a>
+    
+        </li>
+      
+      </ul>
+  
+    </div>
+  
+  </div>

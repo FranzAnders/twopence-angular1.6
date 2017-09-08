@@ -1,0 +1,16 @@
+
+
+
+.homeBg {
+
+    background-image: url("../assets/images/bg--1--small.gif"); 
+    background-attachment: fixed; 
+    color: $body-color; 
+
+    @media #{$medium-up} {
+     
+     background-image: url("../assets/images/bg--1--medium.gif"); 
+
+    }
+
+}

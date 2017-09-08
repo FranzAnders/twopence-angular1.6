@@ -1,0 +1,145 @@
+    
+/*------------------------------------*\
+    #Footer 
+\*------------------------------------*/
+
+
+
+footer {
+
+  .footer-logo {
+
+    margin-top: rem-calc($level6); 
+    margin-bottom: rem-calc($level6 + $level3); 
+
+    @media #{$medium-up} {
+
+      margin-top: rem-calc($level7); 
+      margin-bottom: rem-calc($level7  + $level3); 
+
+    }
+
+  }
+}
+
+
+// .footer-menu {
+    
+//     @include flex-direction(column);
+//     @extend %text-center; 
+//     @extend .grid; 
+//     @extend %pb3; 
+
+//     @media #{$medium-up} {
+
+//         @include flex-direction(row); 
+//         @include justify-content(space-around);
+
+//     }
+
+//     .footer-menu-link {
+
+//         @extend %ptb2;
+//         @extend %mtb1;  
+//         @extend %display-block; 
+//     }
+
+// }
+
+// .footer-social {
+
+//     .footer-social-link {
+
+//         border: 4px solid #fff; 
+//         background-color: transparent; 
+//         width: rem-calc(60px);
+//         height: rem-calc(60px); 
+//         @include single-transition(all, .4s, ease-in-out); 
+//         @include border-radius(100%); 
+//         @extend %position-relative; 
+//         @extend .grid; 
+//         @extend .grid--center;
+//         @extend .grid--justifyCenter; 
+
+//         &:before {
+
+//             content: ""; 
+//             background-color: #fff;
+//             width: 105%; 
+//             height: 105%; 
+//             z-index: 0; 
+//             @include transition(transform .4s ceaser($easeInOutQuint)); 
+//             @include transform(scale(0)); 
+//             @include border-radius(100%); 
+//             @extend %position-absoluteCentered; 
+//         }
+
+//         &:hover,
+//         &:focus {
+
+//             a {
+
+//                 color: $primaryColor; 
+//             }
+
+
+//             &:before {
+
+//                 @include transform(scale(1)); 
+
+//             }
+//         }   
+
+//         a {
+//             color: #fff; 
+//             z-index: 1; 
+//             @include single-transition(all, .4s, ease-in-out); 
+
+//             &:before {
+
+//                 margin-right: 0; 
+//             }
+
+//         }
+
+//     }
+
+// }
+
+
+
+
+/*------------------------------------*\
+    #Sticky Footer
+\*------------------------------------*/
+
+
+// html, body {
+//     @media #{$medium-up} {
+
+//         height: 100%;
+
+//     }   
+// }
+
+// [role*='main'] {
+//     @media #{$medium-up} {
+
+//         min-height: 100%;
+//         height: auto !important; This line and the next line are not necessary unless you need IE6 support
+//         height: 100%;
+//         margin: 0 auto 0; /* the bottom margin is the negative value of the footer's height */
+
+//     }
+// }
+
+
+// footer, 
+// .push {
+//     @media #{$medium-up} {
+
+//        // height: 50px; /* .push must be the same height as .footer */
+
+//     }
+// }
+

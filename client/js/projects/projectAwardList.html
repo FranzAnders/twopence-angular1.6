@@ -1,0 +1,34 @@
+<div class="section pt0">
+
+  <div class="row">
+    
+    <div class="small-12 large-10 medium-centered columns">
+
+        <ul class="row  grid grid--center  small-grid--flexDirectionColumn   med-grid--flexDirectionRow">
+            
+            <li class="small-12  columns  medium-4  list-item"
+                ng-repeat="award in projectAwardList.awards track by $index">
+                
+              <div class="award  award--highlight">
+        
+                <div class="hide-elem"> {{award.fields.name}}</div>
+        
+                <div class="award-logo">
+        
+                   <img ng-src="{{award.fields.logo.fields.file.url}}" alt="{{award.fields.name}}">
+        
+                </div>
+                 
+                <h3 class="award-description">{{award.fields.description}}</h3>
+        
+              </div>
+        
+            </li>
+        
+        </ul>
+  
+    </div>
+  
+  </div>
+
+</div>

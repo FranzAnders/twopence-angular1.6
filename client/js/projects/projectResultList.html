@@ -1,0 +1,32 @@
+
+
+<div class="section pt0">
+
+  <div class="row">
+    
+    <div class="small-12 large-10 medium-centered columns">
+
+        <ul class="row  list--highlight  grid grid--center  small-grid--flexDirectionColumn   med-grid--flexDirectionRow">
+            
+            <li class="small-12  columns  medium-4  list-item "
+                ng-repeat="result in projectResultList.results track by $index">
+                
+              <div class="result">
+        
+                <h3 class="result-numbers"> {{result.fields.result}}</h3>
+           
+                <h4 class="result-description">{{result.fields.description}}</h4>
+        
+              </div>
+        
+            </li>
+        
+        </ul>
+  
+    </div>
+  
+  </div>
+
+</div>
+
+

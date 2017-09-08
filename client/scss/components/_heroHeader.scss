@@ -1,0 +1,165 @@
+
+
+/*------------------------------------*\
+    #Hero Section Component
+\*------------------------------------*/
+
+@include keyframes(gradFade) {
+
+    0%, 100% {
+
+        background-position: 0 50%
+
+    }
+
+    50% {
+
+        background-position: 100% 50%
+
+    }
+
+}
+
+
+.heroHeader {
+  height: 100vh;
+  overflow: hidden; 
+  @extend %position-relative; 
+
+  @media #{$medium-up} {
+      
+    height: rem-calc(660px); 
+
+  } 
+
+  @media #{$large-up} {
+
+    width: 100%; 
+    height: 100vh; 
+
+  }
+
+  .heroHeader-bg {
+    
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 30; 
+    @extend %position-absolute; 
+    
+    .heroHeader-bg-inner {
+
+      width: 100%; 
+      height: 100%;
+
+      @media #{$large-up} {
+
+        width: 60%; 
+
+      }
+
+    }
+
+    .heroHeader-bg-img {
+
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+
+    }
+
+    @media #{$large-up} {
+
+      left: auto; 
+      right: 0; 
+
+    }
+
+  }
+
+}
+
+.heroHeader-content {
+
+  margin-bottom: rem-calc($level7);
+  z-index: 31;  
+
+  @media #{$medium-up} {
+
+    margin-bottom: 0;
+    margin-top: rem-calc($level7 + $level7 + $level7);  
+
+  }
+
+  @media #{$large-up} {
+
+    margin-top: 0; 
+    background-color: $secondaryColor; 
+    height: 100%; 
+    width: 45% 
+
+  }
+    
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Hero Slideshow Component
+\*------------------------------------*/
+
+
+.heroSlideshow {
+
+  right: 0; 
+  width: 100%;
+  height: 100vh; 
+  @extend %position-relative; 
+
+  .heroSlideshow-slide {
+
+    height: 100vh; 
+    width: 100%; 
+
+    .heroSlideshow-slide-img {
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-y: 100%;
+      background-position-x: 100%;
+      height: 100%; 
+
+    }
+
+  }
+
+  .heroSlideshow-slide.ng-animate {
+    transition: 0.6s ceaser($easeInOutCubic) all;
+  }
+
+  .heroSlideshow-slide.ng-enter {
+    z-index: 29; 
+  }
+  .heroSlideshow-slide.ng-enter.ng-enter-active {
+    position: absolute; 
+    z-index: 29; 
+
+  }
+
+  .heroSlideshow-slide.ng-leave {
+    z-index: 30; 
+    position: absolute; 
+    @include transform(translateY(0));
+  }
+  .heroSlideshow-slide.ng-leave.ng-leave-active {
+    @include transform(translateY(-100%));
+  }
+
+
+}

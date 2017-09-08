@@ -1,0 +1,579 @@
+
+<!--Begin Awards Page header--> 
+<header>
+
+  <div class="pageHeader  pageHeader--primary  section--alt">
+
+    <picture picturefill ng-if="awards.pageContent.headerBackground.fields.large.fields.file.url">
+        
+      <source pf-media="(min-width: 1024px)"
+              ng-attr-srcset="{{awards.pageContent.headerBackground.fields.large.fields.file.url}}">
+
+      <source pf-media="(min-width: 640px)"
+              ng-attr-srcset="{{awards.pageContent.headerBackground.fields.medium.fields.file.url}}">
+
+      <img ng-attr-srcset="{{awards.pageContent.headerBackground.fields.small.fields.file.url}}" 
+           alt="{{awards.pageContent.headerBackground.fields.small.fields.description}}" 
+           class="pageHeader-bg" >
+
+    </picture>
+
+
+    <div class="pageHeader-contentContainer  grid  grid--center">
+
+      <div class="pageHeader-content">
+      
+          <div class="row">
+              
+            <div class="small-12  medium-8 large-6 medium-push-1  columns  small-centered medium-uncentered  text-left">
+    
+                <div class="pageHeader-content-inner">
+
+                  <h1 class="pageHeader-headline  section-text"
+                      btf-markdown="awards.pageContent.headline">
+                  </h1>
+                              
+                  <p class="pageHeader-subline  section-text"
+                     btf-markdown="awards.pageContent.subline">
+                 
+                  </p>      
+
+                </div>
+    
+              </div>
+                
+          </div>
+          
+      </div>
+      
+    </div> 
+          
+
+  </div>
+
+</header>
+<!--End Awards Page Header--> 
+
+
+  <!--Awards 2017 container--> 
+  <div class="section  section--primary  ">
+
+    <div class="row">
+      
+      <div class="small-12 medium-11  large-10  medium-centered  columns">
+
+        <div class="row  medium-collapse">
+
+          <div class="small-12 medium-8 large-9  large-push-3  columns">
+            
+            <h2 class="uc  fwb text-kilo   mb1">Awards</h2>  
+
+            <hr class="hr--accent hr--thick mb7">
+          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  
+    <!--Begin awards 2017 contain--> 
+    <div class="row">
+
+      <div class="small-12 medium-11  large-10  medium-centered  columns" >
+    
+          <div class="hide-for-medium-up  row columns text-left">
+
+            <h3 class="text-kilo  txtc3 ff2  mr3">2017</h3>
+
+          </div>
+
+          <div class="table  table--awards  mb7" style="width: 100%">
+            
+            <div class="row medium-collapse">
+                
+              <div class="small-12 columns">
+                
+                <div class="table-row  table-row--header  mb1">
+
+                  <div class="row  medium-collapse">
+                  
+                    <div class="medium-4 columns large-3 show-for-medium-up  ">
+                        
+                      <div class="table-column text-left">
+                        
+                         <span class="table-column   fwb  ff2   ">
+                          Year
+                         </span>
+                        
+                      </div>
+              
+                    </div>
+                  
+                    <div class="small-12 medium-8 large-9  columns grid  grid--center">
+                     
+                       <span class="table-column  table-column--contest  fwb  ff2">Show</span>
+                       
+                       <span class="table-column  table-column--award  fwb  ff2">Award</span>
+                                
+                       <span class="table-column  table-column--project  fwb  ff2">Campaign</span>
+                                
+                    </div>
+                  
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row medium-collapse mb7">
+                  
+                <div class="show-for-medium-up medium-4  large-3  columns text-left">
+
+                  <h3 class="text-giga  txtc3 ff2  mr3">2017</h3>
+
+                </div>
+
+
+                <div class="small-12 columns  medium-8 large-9"  data-ui-component="awards2017-container">
+                            
+                    <div class="table-row  grid  grid--center" 
+                         ng-repeat="award in awards.awards.awards2017.items track by $index">
+                          
+                      <span class="table-column  table-column--contest  ptb2  ">
+                          
+                        {{award.fields.contest}}
+                          
+                      </span>
+
+                      <span class="table-column  table-column--award  ptb2  ">
+                        
+                        {{award.fields.name}}
+                          
+                      </span>
+                          
+                      <span class="table-column  table-column--project  ptb2">
+                          
+                        {{award.fields.project}}
+                          
+                      </span>
+                          
+                    </div>
+                            
+                  </script>
+                  
+                </div>
+
+            </div>
+
+        </div>
+
+      </div>
+    
+    </div>
+    <!--End Awards 2017 container--> 
+
+
+    <!--Awards 2016 container--> 
+    <div class="row">
+        
+        <div class="small-12 medium-11  large-10  medium-centered  columns" >
+      
+            <div class="hide-for-medium-up  row columns text-left">
+
+              <h3 class="text-kilo  txtc3 ff2  mr3">2016</h3>
+
+            </div>
+
+            <div class="table  table--awards  mb7" style="width: 100%">
+              
+              <div class="row medium-collapse">
+                  
+                <div class="small-12 columns">
+                  
+                  <div class="table-row  table-row--header  mb1">
+
+                    <div class="row  medium-collapse">
+                    
+                      <div class="medium-4 columns large-3 show-for-medium-up  ">
+                          
+                        <div class="table-column text-left">
+                            
+                             <span class="table-column   fwb  ff2   ">
+                              Year
+                             </span>
+                            
+                        </div>
+                
+                      </div>
+                    
+                      <div class="small-12 medium-8 large-9  columns grid  grid--center">
+                         <span class="table-column  table-column--contest  fwb  ff2">Show</span>
+                         
+                         <span class="table-column  table-column--award  fwb  ff2">Award</span>
+                                  
+                         <span class="table-column  table-column--project  fwb  ff2"> Campaign</span>
+                                  
+                      </div>
+                    
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row medium-collapse mb7">
+                    
+                  <div class="show-for-medium-up medium-4  large-3  columns text-left">
+
+                    <h3 class="text-giga  txtc3 ff2  mr3">2016</h3>
+
+                  </div>
+
+
+                  <div class="small-12 columns  medium-8 large-9"  data-ui-component="awards2016-container">
+                              
+                    <div class="table-row  grid  grid--center" 
+                         ng-repeat="award in awards.awards.awards2016.items track by $index">
+                          
+                      <span class="table-column  table-column--contest  ptb2  ">
+                          
+                        {{award.fields.contest}}
+                          
+                      </span>
+
+                      <span class="table-column  table-column--award  ptb2  ">
+                        
+                        {{award.fields.name}}
+                          
+                      </span>
+                          
+                      <span class="table-column  table-column--project  ptb2">
+                          
+                        {{award.fields.project}}
+                          
+                      </span>
+                          
+                    </div>
+                    
+                  </div>
+
+              </div>
+
+
+          </div>
+
+        </div>
+    
+    </div>
+    <!--End Awards 2016 container-->       
+
+
+    <!--Awards 2015 container--> 
+    <div class="row mb3">
+        
+        <div class="small-12 medium-11  large-10  medium-centered  columns" >
+      
+            <div class="hide-for-medium-up  row columns text-left">
+
+              <h3 class="text-kilo  txtc3 ff2  mr3">2015</h3>
+
+            </div>
+
+            <div class="table  table--awards  mb7" style="width: 100%">
+              
+              <div class="row medium-collapse">
+                  
+                <div class="small-12 columns">
+                  
+                  <div class="table-row  table-row--header  mb1">
+
+                    <div class="row  medium-collapse">
+                    
+                      <div class="medium-4 columns large-3 show-for-medium-up  ">
+                          
+                        <div class="table-column text-left">
+                            
+                             <span class="table-column   fwb  ff2   ">
+                              Year
+                             </span>
+                            
+                        </div>
+                
+                      </div>
+                    
+                      <div class="small-12 medium-8 large-9  columns grid  grid--center">
+                                    
+                         <span class="table-column  table-column--contest  fwb  ff2">Show</span>
+                         
+                         <span class="table-column  table-column--award  fwb  ff2">Award</span>
+                                  
+                         <span class="table-column  table-column--project  fwb  ff2"> Campaign</span>
+                                  
+                      </div>
+                    
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row medium-collapse mb7">
+                    
+                  <div class="show-for-medium-up medium-4  large-3  columns text-left">
+
+                    <h3 class="text-giga  txtc3 ff2  mr3">2015</h3>
+
+                  </div>
+
+
+                  <div class="small-12 columns  medium-8 large-9"  data-ui-component="awards2015-container">
+                            
+                    <div class="table-row  grid  grid--center" 
+                         ng-repeat="award in awards.awards.awards2015.items track by $index">
+                          
+                      <span class="table-column  table-column--contest  ptb2  ">
+                          
+                        {{award.fields.contest}}
+                          
+                      </span>
+
+                      <span class="table-column  table-column--award  ptb2  ">
+                        
+                        {{award.fields.name}}
+                          
+                      </span>
+                          
+                      <span class="table-column  table-column--project  ptb2">
+                          
+                        {{award.fields.project}}
+                          
+                      </span>
+                          
+                    </div>
+                    
+                  </div>
+
+              </div>
+
+          </div>
+
+        </div>
+    
+    </div>
+    <!--End Awards 2016 container-->      
+
+
+
+    <!--Press container--> 
+    <div class="row">
+      
+      <div class="small-12 medium-11  large-10  medium-centered  columns">
+
+        <div class="row  medium-collapse">
+
+          <div class="small-12 medium-8 large-9  large-push-3  columns">
+            
+            <h2 class="uc fwb text-kilo mb1">Press</h2>  
+
+            <hr class="hr--accent hr--thick mb7">
+
+          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="small-12 medium-11  large-10  medium-centered  columns" >
+    
+          <div class="hide-for-medium-up  row columns text-left">
+
+            <h3 class="text-kilo  txtc3 ff2  mr3">2016</h3>
+
+          </div>
+
+          <div class="table  table--press  mb7" style="width: 100%">
+            
+            <div class="row medium-collapse">
+                
+              <div class="small-12 columns">
+                
+                <div class="table-row  table-row--header  mb1">
+
+                  <div class="row  medium-collapse">
+                  
+                    <div class="medium-4 columns large-3 show-for-medium-up  ">
+                        
+                      <div class="table-column text-left">
+                          
+                           <span class="table-column   fwb  ff2   ">
+                            Year
+                           </span>
+                          
+                      </div>
+              
+                    </div>
+                  
+                    <div class="small-12 medium-8 large-9  columns grid  grid--center ">
+                                  
+                       <span class="table-column  table-column--headline  fwb  ff2  text-left">Story
+                       </span>
+                                
+                       <span class="table-column  table-column--publication  fwb  ff2  text-left">
+                        Publication
+                       </span>
+                      
+                    </div>
+                  
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row medium-collapse">
+                  
+                <div class="show-for-medium-up medium-4  large-3  columns text-left">
+
+                  <h3 class="text-giga  txtc3 ff2  mr3">2017</h3>
+
+                </div>
+
+
+                <div class="small-12 columns  medium-8 large-9">
+                            
+                  <div class="table-row  grid  grid--center"
+                       ng-repeat="press in awards.press.press2017.items track by $index">
+
+                    <span class="table-column   table-column--headline  ptb2 pr3">
+                      
+                      <a href="{{press.fields.link}}" target="_blank">{{press.fields.headline}}</a>
+                        
+                    </span>
+                        
+                    <span class="table-column  table-column--publication  ptb2">
+                        
+                      {{press.fields.publication}}
+                        
+                    </span>
+                        
+                        
+                  </div>
+                        
+                </div>
+
+            </div>
+
+        </div>
+
+      </div>
+    
+    </div>
+
+    <div class="row">
+
+      <div class="small-12 medium-11  large-10  medium-centered  columns" >
+    
+          <div class="hide-for-medium-up  row columns text-left">
+
+            <h3 class="text-kilo  txtc3 ff2  mr3">2016</h3>
+
+          </div>
+
+          <div class="table  table--press  mb7" style="width: 100%">
+            
+            <div class="row medium-collapse">
+                
+              <div class="small-12 columns">
+                
+                <div class="table-row  table-row--header  mb1">
+
+                  <div class="row  medium-collapse">
+                  
+                    <div class="medium-4 columns large-3 show-for-medium-up  ">
+                        
+                      <div class="table-column text-left">
+                          
+                           <span class="table-column   fwb  ff2   ">
+                            Year
+                           </span>
+                          
+                      </div>
+              
+                    </div>
+                  
+                    <div class="small-12 medium-8 large-9  columns grid  grid--center ">
+                                  
+                       <span class="table-column  table-column--headline  fwb  ff2  text-left">Story
+                       </span>
+                                
+                       <span class="table-column  table-column--publication  fwb  ff2  text-left">
+                        Publication
+                       </span>
+                      
+                    </div>
+                  
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="row medium-collapse">
+                  
+                <div class="show-for-medium-up medium-4  large-3  columns text-left">
+
+                  <h3 class="text-giga  txtc3 ff2  mr3">2016</h3>
+
+                </div>
+
+
+                <div class="small-12 columns  medium-8 large-9">
+                            
+                  <div class="table-row  grid  grid--center"
+                       ng-repeat="press in awards.press.press2016.items track by $index">
+
+                    <span class="table-column   table-column--headline  ptb2 pr3">
+                      
+                      <a href="{{press.fields.link}}" target="_blank">{{press.fields.headline}}</a>
+                        
+                    </span>
+                        
+                    <span class="table-column  table-column--publication  ptb2">
+                        
+                      {{press.fields.publication}}
+                        
+                    </span>
+                        
+                        
+                  </div>
+                        
+                </div>
+
+            </div>
+
+        </div>
+
+      </div>
+    
+    </div>
+
+  </div>  
+  <!--End Press container--> 
+         

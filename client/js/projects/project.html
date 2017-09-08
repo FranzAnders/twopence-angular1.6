@@ -1,0 +1,91 @@
+
+
+
+<section  ng-repeat="section in project.caseStudy track by $index">
+
+  <div ng-switch="section.sys.contentType.sys.id">
+
+    <project-header-dir  ng-switch-when="projectHeader" content="section">
+        
+    </project-header-dir>
+
+
+    <project-summary-dir ng-switch-when="projectSummary" content="section">
+      
+    </project-summary-dir>
+
+
+    <project-copy-section-dir ng-switch-when="projectCopySection" content="section">
+        
+    </project-copy-section-dir>
+
+
+    <project-image-list-dir ng-switch-when="projectImageList" content="section">
+        
+    </project-image-list-dir>
+
+    
+    <project-result-list-dir ng-switch-when="projectResultList" content="section"> 
+
+    </project-result-list-dir>
+
+    
+    <project-award-list-dir ng-switch-when="projectAwardList" content="section"> 
+
+    </project-award-list-dir>
+
+
+    <project-web-dir ng-switch-when="projectWeb" content="section">
+
+    </project-web-dir>
+
+    
+    <project-video-dir ng-switch-when="projectVideo" content="section">
+        
+    </project-video-dir>
+
+    
+    <project-video-list-dir ng-switch-when="projectVideoList" content="section">
+        
+    </project-video-list-dir>
+
+
+    <project-press-list-dir ng-switch-when="projectPressList" content="section">
+        
+    </project-press-list-dir>
+
+    
+    <project-brag-dir ng-switch-when="projectBrag" content="section">
+        
+    </project-brag-dir>
+
+    
+    <project-image-break-dir ng-switch-when="projectImageBreak" content="section">
+
+    </project-image-break-dir>
+
+
+    <project-cta-dir ng-switch-when="projectCta" content="section">
+
+    </project-cta-dir>
+      
+    <div class="section pt0" ng-switch-when="projectDivider">>
+      <div class="row" >
+        <div class="small-6  large-3 columns small-centered" >
+        
+          <hr class="hr  hr--quaternary  hr--faded">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section ng-if="project.pagination.next">
+
+  <project-pagination-dir content="project.pagination">
+  
+  </project-pagination-dir>
+
+</section>
+

@@ -1,0 +1,89 @@
+
+
+/*------------------------------------*\
+    #Floating Images
+\*------------------------------------*/
+
+.floatingImages {
+
+  z-index: 106; 
+  position: relative; 
+  height: rem-calc(260px); 
+
+  .floatingImages-inner {
+    
+    position: absolute; 
+    width: 100%; 
+
+
+  }
+
+}
+
+
+.floatingImages--offset {
+  
+  @media #{$medium-up} {
+
+    top: rem-calc(-1 * ($level7)); 
+
+  }
+
+  @media #{$large-up} {
+
+   top: rem-calc(-1 * ($level7 + $level1)); 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Left
+\*------------------------------------*/
+
+
+.floatingImages--left {
+
+  .floatingImages-image {
+    
+    padding: rem-calc($level1); 
+    
+
+    @media #{$large-up} {
+
+      padding-left: rem-calc($level3); 
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Right
+\*------------------------------------*/
+
+
+.floatingImages--right {
+
+  .floatingImages-image {
+    
+    padding: rem-calc($level1); 
+
+    @media #{$large-up} {
+
+      padding-right: rem-calc($level3); 
+
+    }
+
+  }
+
+}

@@ -1,0 +1,130 @@
+
+<section class="section--main">
+  
+  <!--Page Header--> 
+  <div class="row small-collapse">
+
+    <div class="small-12 large-11 columns">
+
+      <div class="pageHeader">
+            
+          <div class="pageHeader-contentContainer  grid  grid--bottom">
+          
+            <div class="row  grid-cell">
+          
+              <div class="small-12 columns large-push-1 large-10">
+                <div class="pageHeader-content">
+
+                  <h1 class="pageHeader-headline  ff3">
+                    Shop <br> Box Sets
+                  </h1>
+
+                </div>
+
+              </div>
+
+            </div>
+      
+          </div>
+      
+          <div class="pageHeader-bg">
+            
+            <picture>
+                
+              <source media="(min-width: 1024px)"
+                      srcset="assets/images/heroSubpageHeaders--phone.png">
+            
+              <source media="(min-width: 640px)"
+                      srcset="assets/images/heroSubpageHeaders_medium_phone.png">
+            
+              <img src="assets/images/heroSubpageHeaders_medium_phone.png"
+                   class="pageHeader-bg-img"
+                   alt="{{about.pageContent.headerBackground.fields.small.fields.description}}" 
+                   >
+            
+            </picture>
+      
+          </div>
+        
+      </div>
+
+    </div>
+
+    <div class="show-for-large-up large-1 columns">
+      
+     <div class="noticeBanner"> 
+  
+        <div class="noticeBanner-headline">You Can't Not Notice Us</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!--Page header Ends--> 
+  
+
+  <!--Solids Begin--> 
+  <div class="section  mt7">
+          
+    <div class="row small-collapse">
+
+      <div class="small-12 medium-11 large-10 medium-centered columns">
+
+        <div class="row">
+        
+          <div class="small-12 columns">
+              
+            <ul class="grid  
+                       grid--flexDirectionRow
+                       grid--full
+                       grid--flexWrap
+                       med-grid--1of2
+                       med-grid--flexDirectionRow
+                       productThumbs  productThumbs--alt">
+              
+              <li class="grid-cell"
+                  ng-repeat="product in shopBoxes.products track by $index">
+                  
+                  <div class="productThumb  productThumb--alt" >
+                              
+                    <div class="productThumb-inner">
+                          
+                      <div class="productThumb-bg">
+                          
+                        <img ng-src="{{product.thumbnail}}" alt="">
+                          
+                      </div>
+                        
+                      <div class="productThumb-description text-center grid grid--center grid--justifySpaceBetween">
+                          
+                        <h3 class="productThumb-title">{{product.name}}</h3>
+                        
+                        <div>
+                          {{product.price}}
+                        </div>
+
+                      </div>
+                          
+                    </div>
+                              
+                  </div>
+                      
+              </li>
+                        
+            </ul>
+          
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!--Solids end--> 
+
+
+</section>
+  
