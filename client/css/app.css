@@ -13034,7 +13034,7 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 input[type="color"] {
-  color: #5F5E6C;
+  color: black;
   border: 0;
   background-color: transparent;
   border-bottom: 2px solid #F9F9F9;
@@ -13190,24 +13190,22 @@ input.input--primary {
   background-color: transparent;
   border: 1px solid #383642;
   width: 100%;
-  color: #fff;
 }
-/* line 213, ../scss/layout/_forms.scss */
+/* line 212, ../scss/layout/_forms.scss */
 input.input--primary:-webkit-autofill {
   background-color: rgba(136, 136, 136, 0.7) !important;
 }
-/* line 221, ../scss/layout/_forms.scss */
+/* line 220, ../scss/layout/_forms.scss */
 input.input--secondary {
   background-color: #fff;
   border: 2px solid #5F5E6C;
   width: 100%;
-  color: #fff;
 }
 
 /*------------------------------------*\
     #Labels 
 \*------------------------------------*/
-/* line 241, ../scss/layout/_forms.scss */
+/* line 239, ../scss/layout/_forms.scss */
 label {
   margin-bottom: 0.25rem;
 }
@@ -13215,7 +13213,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 256, ../scss/layout/_forms.scss */
+/* line 254, ../scss/layout/_forms.scss */
 select {
   width: 100%;
 }
@@ -13223,14 +13221,14 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 271, ../scss/layout/_forms.scss */
+/* line 269, ../scss/layout/_forms.scss */
 .select--secondary {
   background-color: transparent;
   outline: 0;
   color: #fff;
   border: 2px solid #5F5E6C;
 }
-/* line 278, ../scss/layout/_forms.scss */
+/* line 276, ../scss/layout/_forms.scss */
 .select--secondary:hover, .select--secondary:active, .select--secondary:focus {
   background-color: #5F5E6C;
 }
@@ -13238,7 +13236,7 @@ select {
 /*------------------------------------*\
     #Text Areas
 \*------------------------------------*/
-/* line 295, ../scss/layout/_forms.scss */
+/* line 293, ../scss/layout/_forms.scss */
 textarea {
   border: 2px solid #5F5E6C;
   width: 100%;
@@ -13247,7 +13245,7 @@ textarea {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 311, ../scss/layout/_forms.scss */
+/* line 309, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FF6F92;
 }
@@ -13255,7 +13253,7 @@ textarea {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 325, ../scss/layout/_forms.scss */
+/* line 323, ../scss/layout/_forms.scss */
 .formAreaDivider--left {
   border-left: 1px solid #808083;
 }
@@ -13909,9 +13907,14 @@ button,
 /* line 30, ../scss/components/_buttons.scss */
 .button--secondary {
   border: 2px solid black;
+  color: black;
+}
+/* line 34, ../scss/components/_buttons.scss */
+.button--secondary:hover, .button--secondary:focus {
+  color: white;
 }
 
-/* line 42, ../scss/components/_buttons.scss */
+/* line 44, ../scss/components/_buttons.scss */
 .button--warning {
   background-color: #FF5959;
   color: "";
@@ -13937,49 +13940,49 @@ button,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 57, ../scss/components/_buttons.scss */
+/* line 59, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 64, ../scss/components/_buttons.scss */
+/* line 66, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.375rem;
   padding-right: 1.125rem;
   padding-left: 1.125rem;
 }
 
-/* line 72, ../scss/components/_buttons.scss */
+/* line 74, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
 
-/* line 79, ../scss/components/_buttons.scss */
+/* line 81, ../scss/components/_buttons.scss */
 .button--large {
   padding: 0.75rem;
   padding-right: 1.875rem;
   padding-left: 1.875rem;
 }
 
-/* line 86, ../scss/components/_buttons.scss */
+/* line 88, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 93, ../scss/components/_buttons.scss */
+/* line 95, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 100, ../scss/components/_buttons.scss */
+/* line 102, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -13989,7 +13992,7 @@ button,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 116, ../scss/components/_buttons.scss */
+/* line 118, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }

@@ -1,0 +1,112 @@
+
+
+
+<div class="section--main">
+  
+  <div class="row">
+    
+    <div class="small-12 columns">
+      
+      <div class="section">
+        
+        <h1>Welcome,<br> 
+            John Smith</h1>
+        
+        <div class="row">
+          
+          <div class="small-12 columns">
+            
+            <button class="button--primary button--small button--expanded">
+              
+              Make a Jolt
+      
+            </button>        
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+    </div>
+
+    <div class="small-12 columns">
+      
+      <div class="section">
+      
+        <h1>
+          Sponsees
+        </h1>
+        
+        <ul>
+          
+          <li ng-repeat="sponsee in dashboard.sponsees track by $index">
+            
+            <div class="row">
+
+              <div class="small-12 columns">
+
+                {{sponsee.name}}
+                {{sponsee.plan}}
+
+                <div>
+                  
+                  LOAN DATA 
+                </div>
+
+                <div class="row">
+
+                  <div class="small-6 columns">
+
+                    <button  class="button--expanded  buttton--primary">
+                      Jolt  
+                    </button>
+
+                  </div>
+
+                  <div class="small-6 columns">
+
+                    <button  class="button--expanded  buttton--primary">
+                      View More
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="section">
+        
+        <div class="small-12 coluns">
+
+          <h1>Contributions</h1>
+
+          <ul>
+            
+            <li>Latest Contribution: </li>
+            <li>Largest Contribution:</li>
+            <li>Total Contributions:</li>
+          </ul>
+
+          <button class="button--small  button--expanded  button--primary">
+            View All Contributions
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

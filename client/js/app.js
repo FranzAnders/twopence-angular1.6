@@ -4,11 +4,12 @@
     #App Init Code
 \*------------------------------------*/
 
-whiskersSite = angular.module('twopence', [
-     'ui.router']);
+twopence = angular.module('twopence', [
+     'ui.router',
+      ]);
 
 
-whiskersSite.config(
+twopence.config(
         ['$stateProvider', 
          '$urlRouterProvider', 
          '$locationProvider', 
@@ -52,6 +53,42 @@ whiskersSite.config(
             }
 
         })
+        .state('main.login', {
+
+          url: "login", 
+          views: {
+
+            'main' : {
+              templateUrl: "js/home/login.html", 
+              controller: "loginCtrl", 
+              controllerAs: "login"
+            }
+
+          }
+
+        })
+        .state('sponsor', {
+          abstract: true, 
+          url: "/sponsor/",
+          templateUrl: "js/sponsor/sponsor.html"
+
+        })
+        .state('sponsor.dashboard', {
+
+          url: "dashboard/",
+          templateUrl: 'js/sponsor/dashboard.html',
+          views: {
+
+            'main': {
+
+              templateUrl: "js/sponsor/dashboard.html",
+              controller: "dashboardCtrl",
+              controllerAs: "dashboard"
+
+            }
+          }
+
+        })
         .state('main.sink', {
           url: "kitchen-sink/",
           views: {
@@ -86,7 +123,7 @@ whiskersSite.config(
 
 }]);
 
-whiskersSite.run(
+twopence.run(
     ['$rootScope', 
      '$document', 
      '$state', 

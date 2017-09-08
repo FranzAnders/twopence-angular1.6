@@ -1,5 +1,5 @@
 
-whiskersSite.directive('breakpoint', ['$window', '$rootScope', function($window, $rootScope){
+twopence.directive('breakpoint', ['$window', '$rootScope', function($window, $rootScope){
     return {
         restrict:"A",
         link:function(scope, element, attr){

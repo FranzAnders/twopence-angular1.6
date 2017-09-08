@@ -27,7 +27,7 @@ input[type="time"],
 input[type="url"], 
 input[type="color"] {
     
-    color: $primaryColor; 
+    color: black; 
     border: 0; 
     background-color: transparent; 
     border-bottom: 2px solid $tertiaryColor;
@@ -208,7 +208,6 @@ input {
         background-color: transparent;
         border: 1px solid $secondaryColor;
         width: 100%;
-        color: #fff; 
 
         &:-webkit-autofill {
 
@@ -222,7 +221,6 @@ input {
         background-color: #fff;
         border: 2px solid $primaryColor;
         width: 100%;
-        color: #fff; 
     }
 
 }

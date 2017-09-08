@@ -6,7 +6,7 @@
 \*------------------------------------*/
 
 
-whiskersSite.controller('homeCtrl',
+twopence.controller('homeCtrl',
     function() {
 
     var vm = this; 
