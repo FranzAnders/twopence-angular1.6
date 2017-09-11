@@ -21,10 +21,16 @@ twopence.config(
             $compileProvider
             ) {
 
-
-
+    //
     //If anything is unmatched just go to home
+    //
     $urlRouterProvider.otherwise("no-longer-here/");
+
+    //
+    // Pretty URLs 
+    //
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
 
 
     $stateProvider
@@ -62,6 +68,57 @@ twopence.config(
               templateUrl: "js/home/login.html", 
               controller: "loginCtrl", 
               controllerAs: "login"
+            }
+
+          }
+
+        })
+        .state('main.signUp', {
+
+          url: "sign-up", 
+          abstract: true, 
+          views: {
+
+            'main' : {
+              templateUrl: "js/home/signUp.html",
+              controller: "signUpCtrl",
+              controllerAs: "signUp"
+            }
+
+          }
+
+        })
+        .state('main.signUp.account', {
+
+          url: "/account", 
+          views: {
+
+            'form' : {
+              templateUrl: "js/home/signUp-account.html",
+            }
+
+          }
+
+        })
+        .state('main.signUp.identity', {
+
+          url: "/identity", 
+          views: {
+
+            'form' : {
+              templateUrl: "js/home/signUp-identity.html"
+            }
+
+          }
+
+        })
+        .state('main.signUp.confirmation', {
+
+          url: "sign-up/confirmation", 
+          views: {
+
+            'main@main' : {
+              templateUrl: "js/home/signUp-confirmation.html"
             }
 
           }
@@ -117,8 +174,7 @@ twopence.config(
 
         });
 
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+
 
 
 }]);

@@ -1,0 +1,59 @@
+
+<div class="section--main">
+
+  <div class="vh100 grid grid--top">
+      
+    <div class="row">
+      
+      <div class="small-12 columns">
+          
+          <ul class="grid  grid--center grid--justifySpaceAround">
+              
+            <li>
+              
+              <span ng-class="{'fwb' : $state.has('account')}">Account
+              </span>
+
+            </li>
+
+            <li>
+              
+              <span ng-class="{'fwb' : $state.has('identity')}">Identity
+              </span>
+
+            </li>
+
+          </ul>
+
+          <hr class="hr--primary">
+
+      </div>
+
+      <div class="small-12 columns mb5">
+        
+        <form ng-submit="signUp.processForm()">
+
+          <div ui-view="form">
+            
+
+        </div>
+
+        </form>
+    
+      </div>
+
+      <div class="small-12 columns">
+          
+          <p class="text-center">
+            Already have an account?
+            <br>
+            <a ui-sref="main.login">Login</a>
+          </p>
+
+      </div>
+    
+    </div>
+
+  </div>
+
+</div>
