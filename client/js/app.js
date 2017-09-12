@@ -114,7 +114,7 @@ twopence.config(
         })
         .state('main.signUp.confirmation', {
 
-          url: "sign-up/confirmation", 
+          url: "/confirmation", 
           views: {
 
             'main@main' : {
@@ -133,16 +133,94 @@ twopence.config(
         .state('sponsor.dashboard', {
 
           url: "dashboard/",
-          templateUrl: 'js/sponsor/dashboard.html',
           views: {
 
-            'main': {
+            'sponsor': {
 
               templateUrl: "js/sponsor/dashboard.html",
               controller: "dashboardCtrl",
               controllerAs: "dashboard"
 
             }
+          }
+
+        })
+        .state('sponsor.sponseeAdd', {
+
+        url: "dashboard/add-sponsee",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/sponsee-creation.html",
+              controller: "sponseeCreationCtrl",
+              controllerAs: "sponseeCreation"
+
+            }
+          }
+
+        })
+        .state('sponsor.sponsorshipSetup', {
+
+          url: "sponsorship/:sponseeEmail",
+          abstract: true, 
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/sponsee-sponsorship.html",
+              controller: "sponseeSponsorshipCtrl",
+              controllerAs: "sponseeSponsorship"
+            }
+
+          },
+          params: {
+
+            sponseeName: null,
+            sponeeEmail: null
+
+          }
+
+        })
+        .state('sponsor.sponsorshipSetup.options', {
+
+          url: "/options",
+          views: {
+
+            'main': {
+
+              templateUrl: "js/sponsor/sponsee-sponsorship-options.html"
+
+            }
+
+          }
+
+        })
+        .state('sponsor.sponsorshipSetup.matching', {
+
+          url: "/options/matching",
+          views: {
+
+            'main': {
+
+              templateUrl: "js/sponsor/sponsee-sponsorship-matching.html"
+
+            }
+
+          }
+
+        })
+        .state('sponsor.sponsorshipSetup.oneTime', {
+
+          url: "/options/one-time",
+          views: {
+
+            'main': {
+
+              templateUrl: "js/sponsor/sponsee-sponsorship-oneTime.html"
+
+            }
+
           }
 
         })

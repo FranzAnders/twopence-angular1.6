@@ -1,0 +1,49 @@
+
+<div class="section--main">
+  
+  <div class="row">
+      
+    <div class="small-12 columns"  
+         ng-if="sponseeCreation.unsubmittedForm">
+        
+      <h1>
+        Who do you want to sponsor today?
+      </h1>
+
+      <form ng-submit="sponseeCreation.createSponsee()">
+          
+        <label for="Full Name">
+          Full Name
+        </label>
+
+        <input type="text" placeholder="Sponsee Name" class="input--primary input--medium" ng-model="sponseeCreation.form.name">
+
+        <label for="Full Name">
+          Email
+        </label>
+
+        <input type="text" placeholder="Sponsee email" class="input--primary input--medium" ng-model="sponseeCreation.form.email">
+
+        <button type="submit" class="button--medium  button--primary   button--expanded">
+          Add Sponsee
+        </button>
+
+      </form>
+  
+    </div>
+
+    <div class="small-12  columns"
+         ng-if="!sponseeCreation.unsubmittedForm">
+
+       <div class="text-center">
+         <h1>Sponsee Added!</h1>
+
+         {{sponseeCreation.form.name}}
+
+       </div>
+      
+    </div>
+  
+  </div>
+
+</div>

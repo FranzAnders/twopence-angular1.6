@@ -1,0 +1,74 @@
+
+
+<div class="row">
+  
+  <div class="small-12 columns">
+
+    <form  ng-submit="sponseeSponsorship.finishForm()">
+
+      <div ng-if="sponseeSponsorship.formNotSubmited">
+
+        <h1>Make <br>One-Time Jolt</h1>
+      
+        <h2>Sponsee: {{sponseeSponsorship.name}}</h2>
+    
+        <label for="oneTimePayment">
+          Enter One-Time Payment
+        </label>
+
+        <input type="text" id="oneTimePayment" 
+               name="One-Time Payment" 
+               class="input--medium  input--primary"
+               ng-model="sponseeSponsorship.form.limit" >
+
+        <div clas="text-center">
+        
+          <div class="mtrbl5">BANK ACCOUNT LINKING</div>
+        
+        </div>
+        
+        <button ng-click="sponseeSponsorship.processForm()" 
+                class="button--expanded  button--primary  button--medium">
+          
+          Continue
+        
+        </button>
+
+      </div>
+
+      <div ng-if="!sponseeSponsorship.formNotSubmited">
+      
+        <p>
+          
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur vero facere dolorem sit aperiam reiciendis, hic consequatur. Expedita obcaecati id, ipsam, recusandae eum qui natus unde quaerat, neque est ducimus.
+        </p>
+
+        <input type="checkbox" 
+               label="agreement" 
+               ng-model="sponseeSponsorship.form.acceptedTerms">
+        
+        <label for="agreement">Accept Terms of Agreement </label>
+
+        <button class="button--medium  button--primary  button--expanded"
+                type="submit">
+          
+          Finish Sponsorship
+
+        </button>
+
+      </div>
+
+      <div ng-if="sponseeSponsorship.formFinished" 
+           class="text-center">
+          
+          <h1>{{sponseeSponsorship.}}</h1>
+          One-Time Payment
+          Pledged to: {{sponseeSponsorship.name}}
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

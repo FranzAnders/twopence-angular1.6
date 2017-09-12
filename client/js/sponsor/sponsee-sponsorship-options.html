@@ -1,0 +1,27 @@
+<div class="row">
+
+  <div class="small-12 columns">
+    
+    <h1>
+      How would you like to sponsor {{sponseeSponsorship.name}} today?
+    </h1>  
+  
+    <a class="button  button--primary  button--medium  button--expanded  mb1"
+       ng-click="sponseeSponsorship.setType('matching')"
+       ui-sref="sponsor.sponsorshipSetup.matching">
+      Set up Monthly Matching
+    </a>
+  
+    <p class="text-micro  text-center  mb4">Match your sponsees payments toward student loans</p>
+  
+    <a class="button  button--primary  button--medium  button--expanded  mb1"
+       ng-click="sponseeSponsorship.setType('one-time')"
+       ui-sref="sponsor.sponsorshipSetup.oneTime">
+      Make One-Time Jolt
+    </a>
+  
+    <p class="text-micro  text-center  mb4">A one-time payment of any amount</p>
+  
+  </div>
+  
+</div>

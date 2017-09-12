@@ -1,0 +1,102 @@
+
+
+<div class="row">
+  
+  <div class="small-12 columns">
+        
+    <form ng-submit="sponseeSponsorship.finishForm()">
+        
+      <div ng-if="sponseeSponsorship.formNotSubmited">
+
+        <h1>Monthly Marching Set UP</h1>
+      
+        <h2>Sponsee: {{sponseeSponsorship.name}}</h2>
+
+        <fieldset>
+        
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="100"
+                 id="oneHundredLimit"> 
+          <label for="oneHundredLimit">$100</label>
+          
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="300"
+                 id="threeHundredLimit">
+          <label for="threeHundredLimit">$300</label>
+        
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="500"
+                 id="fivehundredLimit">
+          <label for="fivehundredLimit">$500</label>
+          
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="unlimited"
+                 id="unlimitedLimit">
+          <label for="unlimitedLimit">Unlimited</label>
+        
+        
+          <input type="checkbox"
+                 ng-model="customLimit"
+                 name="limit"
+                 id="custom">
+        
+          <label for="custom">Custom</label>
+        
+          <input type="text" 
+                 id="customValue"
+                 name="custom"
+                 class="input--medium  input--primary"
+                 ng-model="sponseeSponsorship.form.limit">
+        
+        </fieldset>
+        
+        <div clas="text-center">
+        
+          <div class="mtrbl5">BANK ACCOUNT LINKING</div>
+        
+        </div>
+        
+        <button ng-click="sponseeSponsorship.processForm()" 
+                class="button--expanded  button--primary  button--medium">
+          
+          Continue
+        
+        </button>
+
+      </div>
+
+      <div ng-if="!sponseeSponsorship.formNotSubmited">
+      
+        <p>
+          
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur vero facere dolorem sit aperiam reiciendis, hic consequatur. Expedita obcaecati id, ipsam, recusandae eum qui natus unde quaerat, neque est ducimus.
+        </p>
+
+        <input type="checkbox" 
+               label="agreement" 
+               ng-model="sponseeSponsorship.form.acceptedTerms">
+        
+        <label for="agreement">Accept Terms of Agreement </label>
+
+        <button class="button--medium  button--primary  button--expanded"
+                type="submit">
+          
+          Finish Sponsorship
+
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
