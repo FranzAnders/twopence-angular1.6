@@ -8,9 +8,11 @@
 twopence.controller('sponseeCreationCtrl', [
     '$state',
     '$timeout',
+    'Sponsee',
     function(
         $state,
-        $timeout) {
+        $timeout,
+        Sponsee) {
 
       var vm = this; 
 
@@ -24,9 +26,11 @@ twopence.controller('sponseeCreationCtrl', [
 
         $timeout(function() {
 
+          Sponsee.addSponsee(vm.form);
+
           $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email}); 
 
-        }, 1400); 
+        }, 1000); 
 
       };
 

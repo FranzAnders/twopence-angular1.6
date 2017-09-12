@@ -9,19 +9,39 @@ twopence.controller('sponseeSponsorshipCtrl', [
     '$scope',
     '$state',
     '$stateParams',
+    '$timeout', 
+    'Sponsee',
     function(
       $scope,
       $state, 
-      $stateParams) {
+      $stateParams,
+      $timeout,
+      Sponsee) {
 
       var vm = this; 
 
-      vm.name = $stateParams.sponseeName; 
-
       vm.formNotSubmited = true; 
 
+      vm.formSubmittedSuccesfully = false; 
 
       vm.form = {}; 
+
+      vm.sponseeEmail = $stateParams.sponseeEmail;
+
+
+      //
+      // Gets the sponsee being managed via email
+      //
+      Sponsee.getSponsee(vm.sponseeEmail).then(function(sponsee) {
+
+        vm.name = sponsee.name;
+
+      }).catch(function(error) {
+
+        console.log('error'); 
+
+      }); 
+
 
 
       //
@@ -68,7 +88,13 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           if(vm.form.limit && vm.form.acceptedTerms) {
 
-            $state.go('sponsor.dashboard'); 
+            vm.formSubmittedSuccesfully = true; 
+
+            $timeout(function() {
+
+              $state.go('sponsor.dashboard'); 
+
+            }, 1000); 
 
           } else {
 
@@ -86,6 +112,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
               vm.form = {}; 
               vm.formNotSubmited = true; 
+              vm.formSubmittedSuccesfully = false; 
               console.log('clear form');
 
           }

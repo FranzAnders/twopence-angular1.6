@@ -163,14 +163,14 @@ twopence.config(
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:sponseeEmail",
-          abstract: true, 
           views: {
 
             'sponsor': {
 
               templateUrl: "js/sponsor/sponsee-sponsorship.html",
               controller: "sponseeSponsorshipCtrl",
-              controllerAs: "sponseeSponsorship"
+              controllerAs: "sponseeSponsorship",
+              reload: true
             }
 
           },

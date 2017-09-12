@@ -2,7 +2,8 @@
 
 <div class="row">
   
-  <div class="small-12 columns">
+  <div class="small-12 columns" 
+       ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
         
     <form ng-submit="sponseeSponsorship.finishForm()">
         
@@ -96,6 +97,20 @@
       </div>
 
     </form>
+
+  </div>
+
+
+  <div class="small-12  columns"  
+       ng-if="sponseeSponsorship.formSubmittedSuccesfully" >
+
+      <div class="text-center">
+          
+          <h1>${{sponseeSponsorship.form.limit}}</h1>
+          Matching Limit
+          Pledged to: {{sponseeSponsorship.name}}
+
+      </div>
 
   </div>
 
