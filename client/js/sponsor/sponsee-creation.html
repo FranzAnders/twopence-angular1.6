@@ -5,10 +5,19 @@
       
     <div class="small-12 columns"  
          ng-if="sponseeCreation.unsubmittedForm">
-        
-      <h1>
-        Who do you want to sponsor today?
-      </h1>
+
+      <div ng-if="sponseeCreation.cameFromEmail">
+
+        <hr class="hr--primary">
+          
+        <h1 class="h3  mb2">Thank you for confirming you email!</h1>
+        <hr class="hr--primary  mb5">
+
+      </div>
+
+      <h2 class="h1">
+        Who would you like to sponsor?
+      </h2>
 
       <form ng-submit="sponseeCreation.createSponsee()">
           

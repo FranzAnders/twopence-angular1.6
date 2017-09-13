@@ -145,6 +145,42 @@ twopence.config(
           }
 
         })
+        .state('sponsor.sponsee', {
+
+          url: "sponsee/:sponseeEmail",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/sponsee.html",
+              controller: "sponseeCtrl",
+              controllerAs: "sponsee"
+
+            }
+          },
+          params: {
+            sponseeEmail: null 
+          }
+
+        })
+        .state('sponsor.edit', {
+
+          url: "sponsee/:sponseeEmail/edit",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/sponsee-plan-edit.html",
+              controller: "sponseeCtrl",
+              controllerAs: "sponsee"
+
+            }
+          },
+          params: {
+            sponseeEmail: null 
+          }
+
+        })
         .state('sponsor.sponseeAdd', {
 
         url: "dashboard/add-sponsee",
@@ -157,6 +193,11 @@ twopence.config(
               controllerAs: "sponseeCreation"
 
             }
+          },
+          params: {
+
+            cameFromEmail: null
+
           }
 
         })
@@ -291,6 +332,13 @@ twopence.run(
         _userAgentInit();
 
     });
+
+
+    // Code to make the page load at the top when a state changes
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
+       document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+    });     
 
 
 }]);

@@ -7,10 +7,12 @@
 
 twopence.controller('sponseeCreationCtrl', [
     '$state',
+    '$stateParams',
     '$timeout',
     'Sponsee',
     function(
         $state,
+        $stateParams,
         $timeout,
         Sponsee) {
 
@@ -19,6 +21,8 @@ twopence.controller('sponseeCreationCtrl', [
       vm.unsubmittedForm = true; 
 
       vm.form = {}; 
+
+      vm.cameFromEmail = $stateParams.cameFromEmail; 
 
       vm.createSponsee = function() {
 

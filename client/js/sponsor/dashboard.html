@@ -1,6 +1,4 @@
 
-
-
 <div class="section--main">
   
   <div class="row">
@@ -46,32 +44,75 @@
 
               <div class="small-12 columns">
 
-                {{sponsee.name}}
-                {{sponsee.plan}}
-
-                <div>
+                <div class="card">
+                  <h2 class="mb0">{{sponsee.name}}</h2>
                   
-                  LOAN DATA 
-                </div>
-
-                <div class="row">
-
-                  <div class="small-6 columns">
-
-                    <button  class="button--expanded  buttton--primary">
-                      Jolt  
-                    </button>
-
+                  <div class="txtc2">Matching Plan:
+                  
+                    <span ng-switch="sponsee.plan.status">
+                  
+                      <span ng-switch-when="active" class="fwb uc">
+                           ${{sponsee.plan.limit}} {{sponsee.plan.frequency}} Limit
+                      </span>
+                  
+                      <span ng-switch-when="none">
+                          <span class="fwb  uc">none</span>
+                      </span>
+                  
+                      <span ng-switch-when="unclaimed">
+                          <span class="fwb  txtc--warning uc">Invite Pending</span>
+                      </span>
+                  
+                    </span>
+                  
                   </div>
-
-                  <div class="small-6 columns">
-
-                    <button  class="button--expanded  buttton--primary">
-                      View More
-                    </button>
-
+                  
+                  <div class="ptb4">
+                    
+                    LOAN DATA 
                   </div>
+                  
+                  <div class="row">
+                  
+                    <div class="small-6 columns">
+                  
+                    <span ng-switch="sponsee.plan.status">
+                  
+                      <span ng-switch-when="active" class="fwb uc">
+                        <button  class="button--expanded  button--primary">
+                        Jolt
+                        </button>
+                      </span>
+       
+                      <span ng-switch-when="none" class="fwb uc">
+                        <button  class="button--expanded  button--primary">
+                        Jolt
+                        </button>
+                      </span>
 
+                      <span ng-switch-when="unclaimed">
+                          
+                        <button  class="button--expanded  button--primary">
+                        <span class="text-micro">Send Reminder</span> 
+                        </button>
+
+                      </span>
+                  
+                    </span>
+                  
+
+                    </div>
+                  
+                    <div class="small-6 columns">
+                  
+                      <button  class="button--expanded  button--primary"
+                                ui-sref="sponsor.sponsee({sponseeEmail: sponsee.email})">
+                        View More
+                      </button>
+                  
+                    </div>
+                  
+                  </div>
                 </div>
 
               </div>
@@ -103,27 +144,21 @@
         
         <div class="small-12 coluns">
 
-          <h1>Contributions</h1>
-
-          <ul>
+          <div class="card">
+            <h1>Contributions</h1>
+            <hr class="hr--primary">
+            <ul>
+              
+              <li>
+                Total Contributions: $100,000,000
+                <hr>
+              </li>
+            </ul>
             
-            <li>
-              Latest Contribution:
-              <hr>
-            </li>
-            <li>
-              Largest Contribution:
-              <hr>
-            </li>
-            <li>
-              Total Contributions:
-              <hr>
-            </li>
-          </ul>
-
-          <button class="button--small  button--expanded  button--primary">
-            View All Contributions
-          </button>
+            <button class="button--small  button--expanded  button--primary">
+              View All Contributions
+            </button>
+          </div>
 
         </div>
 

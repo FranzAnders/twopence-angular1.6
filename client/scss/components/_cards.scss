@@ -1,0 +1,14 @@
+
+
+/*------------------------------------*\
+    #Cards
+\*------------------------------------*/
+
+.card {
+
+  border: 1px solid $grey--mid; 
+  padding: rem-calc(12px); 
+  margin-bottom: rem-calc(12px);
+  @include border-radius(4px); 
+
+}

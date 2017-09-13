@@ -88,13 +88,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           if(vm.form.limit && vm.form.acceptedTerms) {
 
-            vm.formSubmittedSuccesfully = true; 
-
-            $timeout(function() {
-
-              $state.go('sponsor.dashboard'); 
-
-            }, 1000); 
+            vm.submitSponsorshipForm(vm.form, vm.sponseeEmail); 
 
           } else {
 
@@ -106,6 +100,44 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       };
 
+
+      vm.submitSponsorshipForm = function(pForm, pSponseeEmail) {
+
+        var plan = {}; 
+
+        plan.limit = pForm.limit; 
+        plan.type = pForm.type; 
+
+        if(plan.type = 'matching') {
+
+          Sponsee.setPlan(plan, pSponseeEmail).then(function() {
+
+            $state.go('sponsor.dashboard'); 
+
+          }).catch(function(error){
+              
+            console.log('this failed');
+
+            return
+
+          });
+
+        } 
+
+        vm.formSubmittedSuccesfully = true; 
+
+        $timeout(function() {
+
+          $state.go('sponsor.dashboard'); 
+
+        }, 1000); 
+
+      }
+
+      //
+      // Resets the form if the user goes back to the options state
+      // of the sponsorshipSetup UX
+      //
       $scope.$on('$stateChangeSuccess', function() {
 
           if($state.is('sponsor.sponsorshipSetup.options')){

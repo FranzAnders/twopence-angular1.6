@@ -1,0 +1,100 @@
+
+<div class="section--main">
+  
+  <div class="row">
+    
+    <div class="small-12 columns mb7">
+        
+      <h1>
+        {{sponsee.information.name}}
+      </h1>
+  
+      <p>
+        Matching Plan: 
+
+        <span ng-switch="sponsee.information.plan.status">
+
+          <span ng-switch-when="active" class="fwb">
+               ${{sponsee.information.plan.limit}} Monthly Limit
+          </span>
+
+          <span ng-switch-when="none">
+              <span class="fwb  uc">None</span>
+          </span>
+
+          <span ng-switch-when="unclaimed">
+              <span class="fwb  txtc--warning uc">unclaimed</span>
+          </span>
+
+        </span>
+
+        (<a ui-sref="sponsor.edit({sponseeEmail: sponsee.information.email})" class="">
+        edit</a> )
+      </p>
+  
+    </div>
+
+    <div class="small-12 columns  mb7">
+
+      <div class="card">
+
+        <h2>Loan Status</h2>    
+
+        <hr class="hr--primary">
+        
+        <ul>
+          <li class="mb4">Percent of Loan paid off</li>
+          <li class="mb4">Interest Avoided</li>
+          <li class="mb4">Days Reclaimed</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="small-12 columns  mb7"">
+      
+      <h2>Your Contributions</h2>
+
+      <p>Total to date: $1,000,000</p>
+
+      <ul>
+        <li>
+
+          $100
+          <hr class="hr--primary">
+        </li>
+
+        <li>
+
+          $500
+          <hr class="hr--primary">
+        </li>
+
+        <li>
+
+          $700
+          <hr class="hr--primary">
+        </li>
+
+        <li>
+
+          $200
+          <hr class="hr--primary">
+        </li>
+
+        <li>
+          $20
+          <hr class="hr--primary">
+        </li>
+
+      </ul>
+
+      <a class="button  button--secondary  button--micro  button--expanded">
+        View Contribution History 
+      </a>
+
+    </div>
+  
+  </div>
+
+</div>

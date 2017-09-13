@@ -5,22 +5,17 @@
    Sponsor Dashboard Controller
 \*------------------------------------*/
 
-twopence.controller('dashboardCtrl',
-    function() {
+twopence.controller('dashboardCtrl', [
+    'Sponsee',
+    function(Sponsee) {
 
     var vm = this; 
 
-    vm.sponsees = [
+    Sponsee.getAllSponsees().then(function(allSponsees) {
 
-      {
-        "name" : "Carol Danvers",
-        "plan": "N/A"
-      }, 
-      {
-        "name": "Hank Pym",
-        "plan": "$100 Matching"
-      }
+      vm.sponsees = allSponsees
 
-    ];
+    }); 
 
-}); 
+
+}]);
