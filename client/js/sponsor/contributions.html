@@ -1,0 +1,65 @@
+
+<div class="section--main">
+  
+  <div class="row">
+    
+    <div class="small-12 columns">
+      
+      <h1>Contribution <br>History</h1>  
+      
+    </div>
+
+    <div class="small-12 columns">
+      
+      <select name="" id="" class="select--small  select--primary">
+          
+          <option value="">All</option>
+
+      </select>  
+
+      <h2 class="h4">Total to Date: $100,000.00</h2>
+
+    </div>
+
+
+    <div class="small-12 columns">
+
+      <div class="card  table--primary">
+
+        <table>
+          
+          <tr>
+            
+            <th>Amount</th>
+        
+            <th>
+              Sponsee
+            </th>
+        
+            <th>
+              Date
+            </th>
+          </tr>
+        
+          <tr ng-repeat="contribution in contributions.contributionsShowing">
+              
+            <td>${{contribution.amount}}</td>
+        
+            <td>{{contribution.sponsee.name}}</td>
+        
+            <td>{{contribution.date}}</td>
+          </tr>
+        
+        </table>
+
+        <button class="button  button--secondary  button--small  button--expanded">
+          More Contributions
+        </button>
+     
+       </div>
+
+    </div>
+
+  </div>
+
+</div>

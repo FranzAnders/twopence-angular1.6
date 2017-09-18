@@ -11,7 +11,54 @@
         <h1>Make <br>One-Time Jolt</h1>
       
         <h2>Sponsee: {{sponseeSponsorship.name}}</h2>
-    
+        
+        <fieldset>
+        
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="50"
+                 id="fiftyOneTime"> 
+          <label for="fiftyOneTime">$50</label>
+          
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="100"
+                 id="oneHundredOneTime">
+          <label for="oneHundredOneTime">$100</label>
+        
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="250"
+                 id="twoHundredAndFiftty">
+          <label for="twoHundredAndFiftty">$250</label>
+          
+          <input type="radio"
+                 ng-model="sponseeSponsorship.form.limit"
+                 name="limit"
+                 value="unlimited"
+                 id="unlimitedLimit">
+          <label for="unlimitedLimit">Unlimited</label>
+        
+        
+          <input type="checkbox"
+                 ng-model="customLimit"
+                 name="limit"
+                 id="custom">
+        
+          <label for="custom">Custom</label>
+        
+          <input type="text" 
+                 id="customValue"
+                 name="custom"
+                 class="input--medium  input--primary"
+                 ng-model="sponseeSponsorship.form.limit">
+        
+        </fieldset>
+
+
         <label for="oneTimePayment">
           Enter One-Time Payment
         </label>

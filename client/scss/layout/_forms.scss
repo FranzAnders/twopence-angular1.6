@@ -254,6 +254,9 @@ label {
 select {
 
   width: 100%; 
+  margin-bottom: rem-calc($level2); 
+  @extend %prl2; 
+  @include border-radius(0); 
     
 }
 
@@ -266,10 +269,9 @@ select {
 \*------------------------------------*/
 
 
-.select--secondary {
+.select--primary {
     background-color: transparent; 
     outline: 0;
-    color: #fff; 
     border: 2px solid $primaryColor; 
     @extend %br1; 
 
@@ -286,6 +288,41 @@ select {
 
 
 /*------------------------------------*\
+    #Select Sizes 
+\*------------------------------------*/
+
+
+select {
+  
+  &.select--small {
+
+    padding-top: rem-calc($level1);
+    padding-bottom: rem-calc($level1);
+
+  }
+  &.select--medium {
+
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+
+  }
+
+
+  &.select--large {
+
+    padding-top: rem-calc($level3);
+    padding-bottom: rem-calc($level3);
+
+  }
+
+
+}
+
+
+
+
+
+/*------------------------------------*\
     #Text Areas
 \*------------------------------------*/
 
@@ -295,33 +332,5 @@ textarea {
     border: 2px solid $primaryColor; 
     width: 100%; 
     @extend %ptrbl2; 
-}
-
-
-
-
-
-
-/*------------------------------------*\
-    #Form Alerts
-\*------------------------------------*/
-
-.alert--warning {
-
-    color: #FF6F92; 
-}
-
-
-
-
-
-/*------------------------------------*\
-    #Form Alerts
-\*------------------------------------*/
-
-
-.formAreaDivider--left {
-
-    border-left: 1px solid $grey--mid; 
 }
 

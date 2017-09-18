@@ -30,6 +30,15 @@ twopence.controller('sponseeCreationCtrl', [
 
         $timeout(function() {
 
+          vm.form.plan = {
+
+            'type': '',
+            'limit': '',
+            'frequency': 'none',
+            'status': 'unclaimed'
+
+          };
+    
           Sponsee.addSponsee(vm.form);
 
           $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email}); 

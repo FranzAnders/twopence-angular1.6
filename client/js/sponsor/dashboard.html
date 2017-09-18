@@ -20,7 +20,7 @@
       
             </button>        
       
-          </div>
+          </div>  
       
         </div>
       
@@ -28,7 +28,7 @@
 
     </div>
 
-    <div class="small-12 columns">
+    <div class="small-12  columns">
       
       <div class="section">
       
@@ -36,9 +36,9 @@
           Sponsees
         </h1>
         
-        <ul>
+        <ul class="row">
           
-          <li ng-repeat="sponsee in dashboard.sponsees track by $index">
+          <li class="small-12  medium-6  end   columns" ng-repeat="sponsee in dashboard.sponsees track by $index">
             
             <div class="row">
 
@@ -155,9 +155,9 @@
               </li>
             </ul>
             
-            <button class="button--small  button--expanded  button--primary">
+            <a ui-sref="sponsor.contributions" class="button  button--small  button--expanded  button--primary">
               View All Contributions
-            </button>
+            </a>
           </div>
 
         </div>

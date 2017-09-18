@@ -7,15 +7,23 @@
 
 twopence.controller('dashboardCtrl', [
     'Sponsee',
-    function(Sponsee) {
+    'Sponsor',
+    function(
+        Sponsee,
+        Sponsor) {
 
     var vm = this; 
 
-    Sponsee.getAllSponsees().then(function(allSponsees) {
+    Sponsor.getSponsees().then(function(allSponsees) {
 
       vm.sponsees = allSponsees
 
     }); 
 
+    vm.joltSponsee = function(pSponseeEmail) {
+
+
+
+    }; 
 
 }]);

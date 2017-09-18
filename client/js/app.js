@@ -145,6 +145,22 @@ twopence.config(
           }
 
         })
+        .state('sponsor.contributions', {
+
+          url: "contributions/",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/contributions.html",
+              controller: "contributionsCtrl",
+              controllerAs: "contributions"
+
+            }
+
+          }
+
+        })
         .state('sponsor.sponsee', {
 
           url: "sponsee/:sponseeEmail",

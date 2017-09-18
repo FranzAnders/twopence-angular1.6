@@ -110,17 +110,24 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
         if(plan.type = 'matching') {
 
-          Sponsee.setPlan(plan, pSponseeEmail).then(function() {
+          Sponsee.setPlan(plan, pSponseeEmail).then(function(pSponsee) {
 
-            $state.go('sponsor.dashboard'); 
+            console.log(pSponsee); 
+
+            $timeout(function() {
+
+              $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail}); 
+
+            }, 1000); 
 
           }).catch(function(error){
               
             console.log('this failed');
 
-            return
 
           });
+
+          return
 
         } 
 
@@ -128,7 +135,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
         $timeout(function() {
 
-          $state.go('sponsor.dashboard'); 
+            $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail}); 
 
         }, 1000); 
 
