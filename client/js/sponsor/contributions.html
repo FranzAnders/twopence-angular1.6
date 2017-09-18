@@ -11,9 +11,15 @@
 
     <div class="small-12 columns">
       
-      <select name="" id="" class="select--small  select--primary">
-          
-          <option value="">All</option>
+      <select name="contributionsFilter" id="contributionsFilter" 
+              class="select--small  select--primary"
+              ng-model="contributions.sponseeFilter"
+              ng-change="contributions.showFilter()"
+              ng-options="sponsee.email as sponsee.name for sponsee in contributions.sponsees">
+
+            <option value="" selected>
+              All
+            </option> 
 
       </select>  
 
@@ -41,7 +47,9 @@
             </th>
           </tr>
         
-          <tr ng-repeat="contribution in contributions.contributionsShowing">
+          <tr ng-repeat="contribution in contributions.contributionsShowing | filter: 
+            (!!contributions.sponseeFilter || undefined) && 
+            {sponsee : {email: contributions.sponseeFilter}}">
               
             <td>${{contribution.amount}}</td>
         

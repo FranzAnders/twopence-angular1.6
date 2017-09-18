@@ -11,12 +11,29 @@ twopence.controller('contributionsCtrl', [
 
   vm.contributionsShowing = []; 
 
-  vm.filter = null; 
+  vm.sponsees = []; 
+
+  vm.sponseeFilter = null; 
+
+  Sponsor.getSponsees().then(function(sponsees) {
+
+    vm.sponsees  = sponsees; 
+
+    console.log(vm.sponsees); 
+
+  }); 
+
+  vm.showFilter = function() {
+
+    console.log(vm.sponseeFilter); 
+
+  };
+
 
   Sponsor.getAllContributions().then(function(contributions) {
 
     console.log(contributions); 
-    
+
     vm.contributionsShowing = contributions;
 
   }); 
