@@ -56,6 +56,7 @@
     'components/accordion',
     'components/buttons',
     'components/cards',
+    'components/modals',
     'components/tables';
 
 
@@ -64,6 +65,7 @@
 
 //Vendors 
 @import
+    "vendor/fancyModal",
     "vendor/animate";
 
 //Pages

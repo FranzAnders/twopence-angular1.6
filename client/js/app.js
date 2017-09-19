@@ -6,6 +6,7 @@
 
 twopence = angular.module('twopence', [
      'ui.router',
+     'vesparny.fancyModal'
       ]);
 
 

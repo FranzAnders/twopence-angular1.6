@@ -53,7 +53,7 @@ twopence.factory('Sponsor', [
 
       {
         'date': '03/07/17',
-        'amount' : '100.00',
+        'amount' : 100.00,
         'sponsee' : {
           'name' : 'Miguel Rodriguez',
           'email': 'cap@twopence.co'    
@@ -61,7 +61,7 @@ twopence.factory('Sponsor', [
       },
       {
         'date': '02/07/17',
-        'amount' : '20.00',
+        'amount' : 20.00,
         'sponsee' : {
           'name' : 'Miguel Rodriguez',
           'email': 'cap@twopence.co'    
@@ -69,7 +69,7 @@ twopence.factory('Sponsor', [
       },
       {
         'date': '01/03/17',
-        'amount' : '50.00',
+        'amount' : 50.00,
         'sponsee' : {
           'name' : 'Miguel Rodriguez',
           'email': 'cap@twopence.co'    
@@ -77,7 +77,7 @@ twopence.factory('Sponsor', [
       },
       {
         'date': '03/07/17',
-        'amount' : '22.00',
+        'amount' : 22.00,
         'sponsee' : {
           'name' : 'Carol Danvers',
           'email': 'tiburon99@twopence.co'
@@ -85,7 +85,7 @@ twopence.factory('Sponsor', [
       },
       {
         'date': '02/07/17',
-        'amount' : '500.00',
+        'amount' : 500.00,
         'sponsee' : {
           'name' : 'Carol Danvers',
           'email': 'tiburon99@twopence.co'
@@ -93,7 +93,7 @@ twopence.factory('Sponsor', [
       },
       {
         'date': '01/03/17',
-        'amount' : '1000.00',
+        'amount' : 1000.00,
         'sponsee' : {
           'name' : 'Carol Danvers',
           'email': 'tiburon99@twopence.co'
@@ -105,10 +105,21 @@ twopence.factory('Sponsor', [
 
   var Sponsor = {}; 
 
+  Sponsor.addSponsee = function(pSponseeToAdd) {
 
-  Sponsor.getSponsor = function() {
+    sponsorSponsees.push(pSponseeToAdd); 
 
+  };
 
+  Sponsor.addContribution = function(pContribution) {
+
+    var deferred = $q.defer(); 
+
+    sponsorContributions.push(pContribution); 
+
+    deferred.resolve(pContribution);
+
+    return deferred.promise;
 
   };
 

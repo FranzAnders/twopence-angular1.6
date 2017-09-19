@@ -105,13 +105,6 @@ twopence.factory('Sponsee', [
   };
 
 
-  Sponsee.addSponsee = function(pSponseeToAdd) {
-
-    sponsorSponsees.push(pSponseeToAdd); 
-
-  };
-
-
   Sponsee.addSponseeToSystem = function(pSponsee) {
 
     sponseesInSystem.push(pSponsee); 

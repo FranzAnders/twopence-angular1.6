@@ -9,12 +9,12 @@ twopence.controller('sponseeCreationCtrl', [
     '$state',
     '$stateParams',
     '$timeout',
-    'Sponsee',
+    'Sponsor',
     function(
         $state,
         $stateParams,
         $timeout,
-        Sponsee) {
+        Sponsor) {
 
       var vm = this; 
 
@@ -39,7 +39,7 @@ twopence.controller('sponseeCreationCtrl', [
 
           };
     
-          Sponsee.addSponsee(vm.form);
+          Sponsor.addSponsee(vm.form);
 
           $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email}); 
 

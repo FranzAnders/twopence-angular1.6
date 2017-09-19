@@ -4199,7 +4199,7 @@ button,
     #Dropshadows 
 \*------------------------------------*/
 /* line 76, ../scss/abstracts/_utility.scss */
-.dropshadow1 {
+.dropshadow1, .fancymodal--secondary .fancymodal-content {
   -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -4306,18 +4306,27 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-input[type="color"], .form-group, .mainNav--small, .mainNav--small .mainNav-title, .mainNav--small .menuToggle-icon, .mainNav--offCanvas .mainNav-container, .mainNav--offCanvas .mainNav-tagline, .mainNav-message, .section, .accordion .accordion-element {
+input[type="color"], .form-group, .mainNav--small, .mainNav--small .mainNav-title, .mainNav--small .menuToggle-icon, .mainNav--offCanvas .mainNav-container, .mainNav--offCanvas .mainNav-tagline, .mainNav-message, .section, .accordion .accordion-element, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content {
   position: relative;
 }
 
 /* line 241, ../scss/abstracts/_utility.scss */
-.absoluteCentered, a.styled-link2:after, .hide-elem, .absolute, .form-group:after, .form-group label, .absolute-nav, .mainNav--small .menuToggle-icon:after, .mainNav--small .menuToggle-icon:before, .mainNav--offCanvas .mainNav-tagline .mainNav-tagline-icon, .accordion .accordion-element:after {
+.absoluteCentered, a.styled-link2:after, .hide-elem, .absolute, .form-group:after, .form-group label, .absolute-nav, .mainNav--small .menuToggle-icon:after, .mainNav--small .menuToggle-icon:before, .mainNav--offCanvas .mainNav-tagline .mainNav-tagline-icon, .accordion .accordion-element:after, .fancymodal .fancymodal-close {
   position: absolute;
 }
 
 /* line 245, ../scss/abstracts/_utility.scss */
-.fixed, .fixed-nav, .mainNav--offCanvas {
+.fancymodal, .fixed, .fixed-nav, .mainNav--offCanvas {
   position: fixed;
+}
+
+/* line 249, ../scss/abstracts/_utility.scss */
+.fancymodal {
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 /* line 258, ../scss/abstracts/_utility.scss */
@@ -4361,7 +4370,7 @@ caption, th, .text-left, .mainNav--offCanvas .mainNav-menu, .mainNav--offCanvas 
     #Paddings 
 \*------------------------------------*/
 /* line 305, ../scss/abstracts/_utility.scss */
-.ptrbl0 {
+.ptrbl0, .fancymodal--emailSubscription .fancymodal-content {
   padding: 0 !important;
 }
 
@@ -4381,7 +4390,7 @@ caption, th, .text-left, .mainNav--offCanvas .mainNav-menu, .mainNav--offCanvas 
 }
 
 /* line 321, ../scss/abstracts/_utility.scss */
-.ptrbl4 {
+.ptrbl4, .fancymodal--secondary .fancymodal-content {
   padding: 1.5rem !important;
 }
 
@@ -4436,7 +4445,7 @@ caption, th, .text-left, .mainNav--offCanvas .mainNav-menu, .mainNav--offCanvas 
 }
 
 /* line 370, ../scss/abstracts/_utility.scss */
-.pt7 {
+.pt7, .fancymodal--large, .fancymodal--medium {
   padding-top: 3rem !important;
 }
 
@@ -14056,17 +14065,591 @@ button,
 }
 
 /*------------------------------------*\
+    #Modals
+\*------------------------------------*/
+/* line 7, ../scss/components/_modals.scss */
+body.fancymodal-open {
+  overflow: hidden;
+}
+
+/* line 11, ../scss/components/_modals.scss */
+.fancymodal,
+.fancymodal *,
+.fancymodal *:before,
+.fancymodal *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 20, ../scss/components/_modals.scss */
+.fancymodal {
+  padding-top: 6rem;
+  padding-bottom: 7.125rem;
+  overflow: auto;
+  z-index: 1050;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*------------------------------------*\
+    #Modal Overlay
+\*------------------------------------*/
+/* line 44, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-overlay {
+  background: rgba(136, 136, 136, 0.7);
+  -webkit-backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 57, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-overlay-opening {
+  -moz-animation: fancymodal-fadeIn 0.6s forwards;
+  -webkit-animation: fancymodal-fadeIn 0.6s forwards;
+  animation: fancymodal-fadeIn 0.6s forwards;
+}
+
+/* line 64, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-overlay-closing {
+  -moz-animation: fancymodal-fadeOut 0.6s forwards;
+  -webkit-animation: fancymodal-fadeOut 0.6s forwards;
+  animation: fancymodal-fadeOut 0.6s forwards;
+}
+
+/*------------------------------------*\
+    #Modal Content
+\*------------------------------------*/
+/* line 81, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-content {
+  max-width: 500px;
+  background: transparent;
+  -webkit-backface-visibility: hidden;
+  padding: 2em 1em;
+  margin: 0 auto;
+}
+/* line 90, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-content.is-open {
+  -moz-animation: fancymodal-in 0.6s forwards;
+  -webkit-animation: fancymodal-in 0.6s forwards;
+  animation: fancymodal-in 0.6s forwards;
+}
+/* line 96, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-content.is-closed {
+  -moz-animation: fancymodal-out 0.6s forwards;
+  -webkit-animation: fancymodal-out 0.6s forwards;
+  animation: fancymodal-out 0.6s forwards;
+}
+
+/* line 106, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-close {
+  border-radius: 3px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/* line 116, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-close:before {
+  border-radius: 3px;
+  position: absolute;
+  content: "\00D7";
+  font-size: 26px;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  top: 3px;
+  right: 3px;
+  color: #ccc;
+}
+
+/* line 133, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-close:hover:before,
+.fancymodal .fancymodal-close:active:before {
+  color: #777;
+  background: #e0e0e0;
+}
+
+/*------------------------------------*\
+    #Modal Types
+\*------------------------------------*/
+/* line 153, ../scss/components/_modals.scss */
+.fancymodal--secondary {
+  padding-top: 0.75rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 153, ../scss/components/_modals.scss */
+  .fancymodal--secondary {
+    overflow: hidden;
+  }
+}
+/* line 163, ../scss/components/_modals.scss */
+.fancymodal--secondary .fancymodal-content {
+  max-width: 31.5rem;
+  width: 98%;
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+  border-top: 8px solid #5F5E6C;
+}
+/* line 184, ../scss/components/_modals.scss */
+.fancymodal--secondary .fancymodal-content.is-open {
+  -moz-animation: fancymodal-in 0.6s forwards;
+  -webkit-animation: fancymodal-in 0.6s forwards;
+  animation: fancymodal-in 0.6s forwards;
+}
+/* line 190, ../scss/components/_modals.scss */
+.fancymodal--secondary .fancymodal-content.is-closed {
+  -moz-animation: fancymodal-out 0.6s forwards;
+  -webkit-animation: fancymodal-out 0.6s forwards;
+  animation: fancymodal-out 0.6s forwards;
+}
+
+/* line 208, ../scss/components/_modals.scss */
+.fancymodal--emailSubscription .fancymodal-content .fancymodal-data > div {
+  background-color: #5F5E6C;
+  color: #fff;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 208, ../scss/components/_modals.scss */
+  .fancymodal--emailSubscription .fancymodal-content .fancymodal-data > div {
+    background-color: transparent;
+    background-image: url("../assets/images/emailSignUpBg.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+/* line 227, ../scss/components/_modals.scss */
+.fancymodal--emailSubscription .fancymodal-content .fancymodal-close:before {
+  top: -30px;
+  right: -10px;
+  font-size: 2.5rem;
+  color: #5F5E6C;
+  -moz-transition: -moz-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: -o-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 240, ../scss/components/_modals.scss */
+.fancymodal--emailSubscription .fancymodal-content .fancymodal-close:hover:before, .fancymodal--emailSubscription .fancymodal-content .fancymodal-close:active:before, .fancymodal--emailSubscription .fancymodal-content .fancymodal-close:focus:before {
+  color: #5F5E6C;
+  background-color: transparent;
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* line 258, ../scss/components/_modals.scss */
+.fancyModal--fullScreen {
+  padding-top: 0;
+}
+/* line 262, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content {
+  padding-top: 2.25rem;
+  background-color: transparent;
+  color: #fff;
+  max-width: 100%;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 262, ../scss/components/_modals.scss */
+  .fancyModal--fullScreen .fancymodal-content {
+    padding-top: 7.5rem;
+  }
+}
+/* line 275, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content.is-open {
+  -moz-animation: fancymodal-fadeIn 0.6s forwards;
+  -webkit-animation: fancymodal-fadeIn 0.6s forwards;
+  animation: fancymodal-fadeIn 0.6s forwards;
+}
+/* line 281, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content.is-closed {
+  -moz-animation: fancymodal-fadeOut 0.6s forwards;
+  -webkit-animation: fancymodal-fadeOut 0.6s forwards;
+  animation: fancymodal-fadeOut 0.6s forwards;
+}
+/* line 291, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content .fancymodal-close:before {
+  top: 1.125rem;
+  right: 0.75rem;
+  font-size: 2.5rem;
+  color: #fff;
+  -moz-transition: -moz-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: -o-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 303, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content .fancymodal-close:hover:before, .fancyModal--fullScreen .fancymodal-content .fancymodal-close:active:before, .fancyModal--fullScreen .fancymodal-content .fancymodal-close:focus:before {
+  color: #fff;
+  background-color: transparent;
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/*------------------------------------*\
+    #Modal Sizes
+\*------------------------------------*/
+/* line 331, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content {
+  background-color: transparent;
+}
+
+/* line 341, ../scss/components/_modals.scss */
+.fancymodal--large .fancymodal-content {
+  max-width: 68.75rem;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 348, ../scss/components/_modals.scss */
+  .fancymodal--medium {
+    padding-top: 6rem !important;
+  }
+}
+/* line 357, ../scss/components/_modals.scss */
+.fancymodal--medium .fancymodal-content {
+  max-width: 41.25rem;
+}
+
+/*------------------------------------*\
+    #Modal Animations
+\*------------------------------------*/
+@-moz-keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+}
+@-webkit-keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+}
+@keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+}
+/*------------------------------------*\
     #Tables
 \*------------------------------------*/
-/* line 9, ../scss/components/_tables.scss */
+/* line 7, ../scss/components/_tables.scss */
+table {
+  width: 100%;
+}
+/* line 11, ../scss/components/_tables.scss */
 table th {
   font-weight: bold;
 }
-/* line 15, ../scss/components/_tables.scss */
+/* line 17, ../scss/components/_tables.scss */
 table tr {
   border-bottom: 1px solid #5F5E6C;
 }
 
+/* line 1, ../scss/vendor/_fancyModal.scss */
+body.fancymodal-open {
+  overflow: hidden;
+}
+
+/* line 5, ../scss/vendor/_fancyModal.scss */
+.fancymodal,
+.fancymodal *,
+.fancymodal *:before,
+.fancymodal *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 14, ../scss/vendor/_fancyModal.scss */
+.fancymodal {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+/* line 27, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-overlay {
+  -webkit-backface-visibility: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 37, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-content {
+  max-width: 500px;
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 2em 1em;
+  border-radius: 5px;
+  background: #eee;
+  color: #000;
+  position: relative;
+  margin: 0 auto;
+}
+/* line 52, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-close {
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+/* line 60, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-close:before {
+  border-radius: 3px;
+  position: absolute;
+  content: "\00D7";
+  font-size: 26px;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  top: 3px;
+  right: 3px;
+  color: #ccc;
+}
+/* line 73, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-close:hover:before,
+.fancymodal .fancymodal-close:active:before {
+  color: #777;
+  background: #e0e0e0;
+}
+/* line 78, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-content-opening {
+  -webkit-animation: fancymodal-in 0.5s;
+  animation: fancymodal-in 0.5s;
+}
+/* line 82, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-content-closing {
+  -webkit-animation: fancymodal-out 0.5s;
+  animation: fancymodal-out 0.5s;
+}
+/* line 86, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-overlay-opening {
+  -webkit-animation: fancymodal-fadeIn 0.5s;
+  animation: fancymodal-fadeIn 0.5s;
+}
+/* line 90, ../scss/vendor/_fancyModal.scss */
+.fancymodal .fancymodal-overlay-closing {
+  -webkit-animation: fancymodal-fadeOut 0.5s;
+  animation: fancymodal-fadeOut 0.5s;
+}
+
+@-webkit-keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+@keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+@-webkit-keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1

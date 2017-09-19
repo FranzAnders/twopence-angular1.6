@@ -1,0 +1,79 @@
+
+
+<div class="row">
+    
+  <div class="small-12 columns"
+       ng-if="!sponseeJolt.joltSuccessfull">
+      
+      <div class="mb4">
+        <h1>Make a <br>Jolt Payment</h1>
+        
+        <h2 class="h5">Sponsee: <span class="fwb">{{sponseeJolt.SponseeInformation.name}}</span></h2>
+
+      </div>
+
+      <form name="sponseeJolt.joltForm" 
+            ng-submit="sponseeJolt.joltSponsee()"
+            novalidate="">
+        
+        <label for="joltAmount" class="text-micro">Jolt Amount</label>
+
+        <input type="text" 
+               id="joltAmount"
+               name="joltAmount"
+               class="input--primary  input--large"
+               placeholder="00.00"
+               ng-model="sponseeJolt.joltAmount"
+               required
+               selected>
+        
+        <button class="button--primary  button--large  button--expanded"
+                type="submit">
+            
+            Confirm Jolt
+        
+        </button>
+
+      </form>
+
+  </div>
+
+  <div class="small-12 columns"
+       ng-if="sponseeJolt.joltSuccessfull">
+      
+
+    <div class="text-center">
+
+      <h1 class="fwb">Success!</h1>
+      
+      <p class="text-left">
+        You’ve just saved {{sponseeJolt.SponseeInformation.name}} 3 days in student loan payments. 
+      <br><br>
+      Why not keep it going? You can also create a monthly matching plan of ${{sponseeJolt.joltAmount}} or more.
+      </p>
+
+      <div class="row  small-collapse">
+        
+        <div class="small-12 columns">
+          
+          <a ui-sref="sponsor.edit({sponseeEmail: sponseeJolt.SponseeInformation.email})"  
+             ng-click="sponseeJolt.closeJoltModal()"
+             class="button  button--primary  button--small  button--expanded">
+              Set Up Matching Plan
+          </a>
+
+          <a ng-click="sponseeJolt.closeJoltModal()"  class="button  button--primary  button--small  button--expanded">
+            
+            No thanks, a jolt is fine for now.  
+      
+          </a>  
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
