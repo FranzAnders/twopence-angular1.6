@@ -13274,6 +13274,25 @@ textarea {
 }
 
 /*------------------------------------*\
+    #Footer 
+\*------------------------------------*/
+/* line 10, ../scss/layout/_footer.scss */
+footer .footer-logo {
+  margin-top: 2.25rem;
+  margin-bottom: 3.375rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 10, ../scss/layout/_footer.scss */
+  footer .footer-logo {
+    margin-top: 3rem;
+    margin-bottom: 4.125rem;
+  }
+}
+
+/*------------------------------------*\
+    #Sticky Footer
+\*------------------------------------*/
+/*------------------------------------*\
     #Navigation Styles  
 \*------------------------------------*/
 /*------------------------------------*\

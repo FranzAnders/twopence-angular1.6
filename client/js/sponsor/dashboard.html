@@ -3,151 +3,151 @@
   
   <div class="row">
     
-    <div class="small-12 columns">
+    <div class="small-12 columns mb3">
       
-      <div class="section">
-        
-        <h1>Welcome,<br> 
-            John Smith</h1>
-      
-      </div>
+      <h1>Welcome,<br> 
+          John Smith</h1>
 
     </div>
 
     <div class="small-12  columns">
       
-      <div class="section">
-      
-        <h1>
-          Sponsees
-        </h1>
+      <div class="row">
+
+        <div class="small-12 columns large-8">
+            <div class="section">
         
-        <ul class="row">
+          <h1 class="h2">
+            Your Sponsees
+          </h1>
           
-          <li class="small-12  medium-6  end   columns" ng-repeat="sponsee in dashboard.sponsees track by $index">
+          <ul class="row">
             
-            <div class="row">
-
-              <div class="small-12 columns">
-
-                <div class="card">
-                  <h2 class="mb0">{{sponsee.name}}</h2>
-                  
-                  <div class="txtc2">Matching Plan:
-                  
-                    <span ng-switch="sponsee.plan.status">
-                  
-                      <span ng-switch-when="active" class="fwb uc">
-                           ${{sponsee.plan.limit}} {{sponsee.plan.frequency}} Limit
-                      </span>
-                  
-                      <span ng-switch-when="none">
-                          <span class="fwb  uc">none</span>
-                      </span>
-                  
-                      <span ng-switch-when="unclaimed">
-                          <span class="fwb  txtc--warning uc">Invite Pending</span>
-                      </span>
-                  
-                    </span>
-                  
-                  </div>
-                  
-                  <div class="ptb4">
-                    
-                    LOAN DATA 
-                  </div>
-                  
-                  <div class="row">
-                  
-                    <div class="small-6 columns">
-                  
-                    <span ng-switch="sponsee.plan.status">
-                  
-                      <span ng-switch-when="active" class="fwb uc">
-                        <button  class="button--expanded  button--primary"
-                                 ng-click="dashboard.openJoltModal(sponsee)">
-                        Jolt
-                        </button>
-                      </span>
-       
-                      <span ng-switch-when="none" class="fwb uc">
-                        <button  class="button--expanded  button--primary"
-                                 ng-click="dashboard.openJoltModal(sponsee)">
-                        Jolt
-                        </button>
-                      </span>
-
-                      <span ng-switch-when="unclaimed">
-                          
-                        <button  class="button--expanded  button--primary">
-                        <span class="text-micro">Send Reminder</span> 
-                        </button>
-
-                      </span>
-                  
-                    </span>
-                  
-
-                    </div>
-                  
-                    <div class="small-6 columns">
-                  
-                      <button  class="button--expanded  button--primary"
-                                ui-sref="sponsor.sponsee({sponseeEmail: sponsee.email})">
-                        View More
-                      </button>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </li>
-
-        </ul>
-        
-        <div class="row">
-          
-          <div class="small-12 columns">
-            
-            <button class="button--micro  button--primary"
-                    ui-sref="sponsor.sponseeAdd">
+            <li class="small-12  medium-6  end   columns" ng-repeat="sponsee in dashboard.sponsees track by $index">
               
-              Add Sponsee
-
-            </button>
-
+              <div class="row">
+        
+                <div class="small-12 columns">
+        
+                  <div class="card">
+                    <h2 class="mb0">{{sponsee.name}}</h2>
+                    
+                    <div class="txtc2">Matching Plan:
+                    
+                      <span ng-switch="sponsee.plan.status">
+                    
+                        <span ng-switch-when="active" class="fwb uc">
+                             ${{sponsee.plan.limit}} {{sponsee.plan.frequency}} Limit
+                        </span>
+                    
+                        <span ng-switch-when="none">
+                            <span class="fwb  uc">none</span>
+                        </span>
+                    
+                        <span ng-switch-when="unclaimed">
+                            <span class="fwb  txtc--warning uc">Invite Pending</span>
+                        </span>
+                    
+                      </span>
+                    
+                    </div>
+                    
+                    <div class="ptb4">
+                      
+                      LOAN DATA 
+                    </div>
+                    
+                    <div class="row">
+                    
+                      <div class="small-6 columns">
+                    
+                      <span ng-switch="sponsee.plan.status">
+                    
+                        <span ng-switch-when="active" class="fwb uc">
+                          <button  class="button--expanded  button--primary"
+                                   ng-click="dashboard.openJoltModal(sponsee)">
+                          Jolt
+                          </button>
+                        </span>
+         
+                        <span ng-switch-when="none" class="fwb uc">
+                          <button  class="button--expanded  button--primary"
+                                   ng-click="dashboard.openJoltModal(sponsee)">
+                          Jolt
+                          </button>
+                        </span>
+        
+                        <span ng-switch-when="unclaimed">
+                            
+                          <button  class="button--expanded  button--primary">
+                          <span class="text-micro">Send Reminder</span> 
+                          </button>
+        
+                        </span>
+                    
+                      </span>
+                    
+        
+                      </div>
+                    
+                      <div class="small-6 columns">
+                    
+                        <button  class="button--expanded  button--primary"
+                                  ui-sref="sponsor.sponsee({sponseeEmail: sponsee.email})">
+                          View More
+                        </button>
+                    
+                      </div>
+                    
+                    </div>
+                  </div>
+        
+                </div>
+        
+              </div>
+        
+            </li>
+        
+          </ul>
+          
+          <div class="row">
+            
+            <div class="small-12 columns">
+              
+              <button class="button--micro  button--primary"
+                      ui-sref="sponsor.sponseeAdd">
+                
+                Add Sponsee
+        
+              </button>
+        
+            </div>
+        
           </div>
+        
+        </div>  
 
         </div>
-
-      </div>
-
-      <div class="section">
         
-        <div class="small-12 coluns">
-
-          <div class="card">
-            <h1>Contributions</h1>
-            <hr class="hr--primary">
-            <ul>
+        <div class="small-12 medium-6 large-4    columns">
+          
+          <div class="section">
+        
+              <h1 class="h2">Your Contributions</h1>
+              <ul>
+                
+                <li>
+                  Total Contributions: $100,000,000
+                  <hr>
+                </li>
+              </ul>
               
-              <li>
-                Total Contributions: $100,000,000
-                <hr>
-              </li>
-            </ul>
-            
-            <a ui-sref="sponsor.contributions" class="button  button--small  button--expanded  button--primary">
-              View All Contributions
-            </a>
+              <a ui-sref="sponsor.contributions" class="button  button--small  button--expanded  button--primary">
+                View All Contributions
+              </a>
+        
           </div>
-
+        
         </div>
 
       </div>
