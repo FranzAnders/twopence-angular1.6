@@ -1,9 +1,9 @@
 {
-  "name": "Whiskers_Website",
+  "name": "Pickpocket Web App",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HumanautDev/Humanaut.git"
+    "url": "https://github.com/HumanautDev/pick-pocket.git"
   },
   "dependencies": {
     "angular-resource": "^1.4.8",
