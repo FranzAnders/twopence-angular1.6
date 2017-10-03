@@ -240,6 +240,35 @@ twopence.config(
           }
 
         })
+        .state('sponsor.settings', {
+
+          url: "sponsor/settings.html",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/settings.html", 
+              controller: "settingsCtrl",
+              controllerAs: "settings"             
+
+            }
+
+          }
+
+        }).state('sponsor.faq', {
+
+          url: "sponsor/faq.html",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/faq.html"
+
+            }
+
+          }
+
+        })
         .state('sponsor.sponsorshipSetup.options', {
 
           url: "/options",
