@@ -25,7 +25,7 @@ module.exports = function(grunt) {
                     port: '8080'
                 }
             }
-          
+
 
         },
 
@@ -81,7 +81,7 @@ module.exports = function(grunt) {
                 livereload: true,
             },
             html: {
-                files: ['<%= app %>/**/*.html'] 
+                files: ['<%= app %>/**/*.html']
             },
             images:  {
                 files: ['<%= app %>/images/**/*.{jpg,gif,svg,jpeg,png}']
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
             },
             javascripts:  {
 
-                files: ['<%= app %>/js/**/*.js'] 
+                files: ['<%= app %>/js/**/*.js']
             },
       			grunt: {
       				files: ['Gruntfile.js'],

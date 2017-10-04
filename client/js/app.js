@@ -11,13 +11,13 @@ twopence = angular.module('twopence', [
 
 
 twopence.config(
-        ['$stateProvider', 
-         '$urlRouterProvider', 
-         '$locationProvider', 
+        ['$stateProvider',
+         '$urlRouterProvider',
+         '$locationProvider',
          '$compileProvider',
          function(
-            $stateProvider, 
-            $urlRouterProvider, 
+            $stateProvider,
+            $urlRouterProvider,
             $locationProvider,
             $compileProvider
             ) {
@@ -28,7 +28,7 @@ twopence.config(
     $urlRouterProvider.otherwise("no-longer-here/");
 
     //
-    // Pretty URLs 
+    // Pretty URLs
     //
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('');
@@ -62,12 +62,12 @@ twopence.config(
         })
         .state('main.login', {
 
-          url: "login", 
+          url: "login",
           views: {
 
             'main' : {
-              templateUrl: "js/home/login.html", 
-              controller: "loginCtrl", 
+              templateUrl: "js/home/login.html",
+              controller: "loginCtrl",
               controllerAs: "login"
             }
 
@@ -76,8 +76,8 @@ twopence.config(
         })
         .state('main.signUp', {
 
-          url: "sign-up", 
-          abstract: true, 
+          url: "sign-up",
+          abstract: true,
           views: {
 
             'main' : {
@@ -91,7 +91,7 @@ twopence.config(
         })
         .state('main.signUp.account', {
 
-          url: "/account", 
+          url: "/account",
           views: {
 
             'form' : {
@@ -103,7 +103,7 @@ twopence.config(
         })
         .state('main.signUp.identity', {
 
-          url: "/identity", 
+          url: "/identity",
           views: {
 
             'form' : {
@@ -115,7 +115,7 @@ twopence.config(
         })
         .state('main.signUp.confirmation', {
 
-          url: "/confirmation", 
+          url: "/confirmation",
           views: {
 
             'main@main' : {
@@ -126,7 +126,7 @@ twopence.config(
 
         })
         .state('sponsor', {
-          abstract: true, 
+          abstract: true,
           url: "/sponsor/",
           templateUrl: "js/sponsor/sponsor.html"
 
@@ -176,7 +176,7 @@ twopence.config(
             }
           },
           params: {
-            sponseeEmail: null 
+            sponseeEmail: null
           }
 
         })
@@ -194,7 +194,7 @@ twopence.config(
             }
           },
           params: {
-            sponseeEmail: null 
+            sponseeEmail: null
           }
 
         })
@@ -313,20 +313,22 @@ twopence.config(
 
 
 
-}]);
+}]).constant("BASE_URL", "http://localhost:8000/api").constant("PROXY_URL", "https://localhost:8080/");
 
 twopence.run(
-    ['$rootScope', 
-     '$document', 
-     '$state', 
-     '$timeout', 
+    ['$rootScope',
+     '$document',
+     '$state',
+     '$timeout',
      '$log',
+     '$http',
      function(
-        $rootScope, 
-        $document, 
-        $state, 
-        $timeout, 
-        $log
+        $rootScope,
+        $document,
+        $state,
+        $timeout,
+        $log,
+        $http
         ) {
 
 
@@ -355,8 +357,12 @@ twopence.run(
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
        document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-    });     
+    });
 
+    // Headers for HTTP calls
+    // $http.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJUZXN0VXNlcjo4MDg1NjYiLCJleHAiOjE1MTQ5MTE3MjYsImlhdCI6MTUwNzEzNTcyNiwiaXNzIjoiQXV0aCIsImp0aSI6IjFlYTViYzUxLWI5YjQtNGExNC1iOWZkLTFjNDZjZWUwZWZhMSIsInBlbSI6e30sInN1YiI6IlRlc3RVc2VyOjgwODU2NiIsInR5cCI6ImFjY2VzcyJ9.T2ocxoX725UI-1ZPLcKUu5XtvHaPult3ENHzt4RvIzdap0xPHzD6MzScLCp2Skb6IFRBakAnNfPkuhjO-kOg9A';
+    $http.defaults.headers.common['Accept'] = 'application/json';
+    $http.defaults.headers.common['Content-Type'] = 'application/json';
+    $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 }]);
-

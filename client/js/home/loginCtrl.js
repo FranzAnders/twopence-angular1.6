@@ -1,5 +1,5 @@
 
-'use strict'; 
+'use strict';
 
 /*------------------------------------*\
     Login Controller
@@ -8,21 +8,24 @@
 twopence.controller('loginCtrl', [
         '$state',
         '$timeout',
+        'Auth',
     function(
         $state,
-        $timeout) {
+        $timeout,
+        Auth) {
 
-    var vm = this; 
+    var vm = this;
+
+    vm.form = {};
 
     vm.logInUser = function() {
-
-      $timeout(function() {
-
+      Auth.login(vm.form).then(function(res){
+        console.log(res);
         $state.go('sponsor.dashboard');
+      }).catch(function(err){
+        console.log(err);
+      });
 
-        console.log('log user in');  
-
-      }, 2000); 
 
     }
 
