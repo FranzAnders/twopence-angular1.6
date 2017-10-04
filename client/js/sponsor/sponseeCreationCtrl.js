@@ -16,13 +16,13 @@ twopence.controller('sponseeCreationCtrl', [
         $timeout,
         Sponsor) {
 
-      var vm = this; 
+      var vm = this;
 
-      vm.unsubmittedForm = true; 
+      vm.unsubmittedForm = true;
 
-      vm.form = {}; 
+      vm.form = {};
 
-      vm.cameFromEmail = $stateParams.cameFromEmail; 
+      vm.cameFromEmail = $stateParams.cameFromEmail;
 
       vm.createSponsee = function() {
 
@@ -38,13 +38,15 @@ twopence.controller('sponseeCreationCtrl', [
             'status': 'unclaimed'
 
           };
-    
-          Sponsor.addSponsee(vm.form);
 
-          $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email}); 
+          console.log(vm.form);
 
-        }, 1000); 
+          Sponsor.addSponsee(vm.form)
+
+          $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email});
+
+        }, 1000);
 
       };
 
-}]); 
+}]);

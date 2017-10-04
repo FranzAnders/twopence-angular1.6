@@ -8,23 +8,27 @@
 twopence.controller('signUpCtrl', [
     '$scope',
     '$state',
-    '$timeout', 
+    '$timeout',
     function(
       $scope,
       $state,
       $timeout) {
 
-      var vm = this; 
+      var vm = this;
 
-      vm.formUnsubmitted = true; 
+      vm.formUnsubmitted = true;
 
-      $scope.$state = $state; 
+      $scope.$state = $state;
+
+      $scope.user = {};
 
       vm.processForm = function() {
 
         console.log("processing form...");
 
-        vm.formUnsubmitted = false; 
+        console.log($scope.user);
+
+        vm.formUnsubmitted = false;
 
         $timeout(function() {
 

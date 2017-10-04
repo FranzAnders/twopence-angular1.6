@@ -1,39 +1,39 @@
 
 <div class="vh100 grid grid--center">
-  
-  <div class="row grid-cell">
-    
-    <div class="small-12  columns">
-      
-      <form name="loginForm">
-  
-        <label for="username">Username</label>
-        <input id="username" type="text" placeholder="Account Email" class="input--primary  input--medium">
-  
-  
-        <label for="password">Password</label>
-        <input id="password" type="password" class="input--primary  input--medium" placeholder="Password">
-    
-      </form>
 
-    
+  <div class="row grid-cell">
+
+    <div class="small-12  columns">
+
+      <form name="loginForm" ng-submit="login.logInUser()">
+
+        <label for="username">Username</label>
+        <input id="username" ng-model="login.form.email" type="text" placeholder="Account Email" class="input--primary  input--medium">
+
+
+        <label for="password">Password</label>
+        <input id="password" ng-model="login.form.password" type="password" class="input--primary  input--medium" placeholder="Password">
         <button class="button  button--primary  button--medium  button--expanded"
-                ng-click="login.logInUser()">
+                type="submit">
           Login
         </button>
+
+      </form>
+
+
 
       <p class="text-micro  text-center">
 
         Don't have a sponsor account?
-        
+
         <br>
-        
+
         <a ui-sref="main.signUp.account">Sign Up</a>
 
       </p>
 
     </div>
-  
+
   </div>
 
 </div>
