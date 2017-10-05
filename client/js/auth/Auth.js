@@ -25,6 +25,9 @@ twopence.factory('Auth', [
           });
       });
     };
+    auth.getToken = function() {
+        return token;
+    };
     return auth
   }
 ]);

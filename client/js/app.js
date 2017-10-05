@@ -413,5 +413,7 @@ twopence.run(
     //
      $http.defaults.headers.common['Content-Type'] = "application/json";
      $http.defaults.headers.post['Content-Type'] = "application/json";
+     $http.defaults.headers.get = {'Content-Type' : "application/json"};
+
 
 }]);

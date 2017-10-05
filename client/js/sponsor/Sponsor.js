@@ -2,12 +2,15 @@
 'use strict';
 
 /*------------------------------------*\
-   Sponsor Service 
+   Sponsor Service
 \*------------------------------------*/
 
 twopence.factory('Sponsor', [
-    '$q', 
-    function($q) {
+    '$q',
+    '$http',
+    'Auth',
+    'BASE_URL',
+    function($q, $http, Auth, BASE_URL) {
 
 
 
@@ -56,7 +59,7 @@ twopence.factory('Sponsor', [
         'amount' : 100.00,
         'sponsee' : {
           'name' : 'Miguel Rodriguez',
-          'email': 'cap@twopence.co'    
+          'email': 'cap@twopence.co'
         }
       },
       {
@@ -64,7 +67,7 @@ twopence.factory('Sponsor', [
         'amount' : 20.00,
         'sponsee' : {
           'name' : 'Miguel Rodriguez',
-          'email': 'cap@twopence.co'    
+          'email': 'cap@twopence.co'
         }
       },
       {
@@ -72,7 +75,7 @@ twopence.factory('Sponsor', [
         'amount' : 50.00,
         'sponsee' : {
           'name' : 'Miguel Rodriguez',
-          'email': 'cap@twopence.co'    
+          'email': 'cap@twopence.co'
         }
       },
       {
@@ -103,19 +106,19 @@ twopence.factory('Sponsor', [
     ]
 
 
-  var Sponsor = {}; 
+  var Sponsor = {};
 
   Sponsor.addSponsee = function(pSponseeToAdd) {
 
-    sponsorSponsees.push(pSponseeToAdd); 
+    sponsorSponsees.push(pSponseeToAdd);
 
   };
 
   Sponsor.addContribution = function(pContribution) {
 
-    var deferred = $q.defer(); 
+    var deferred = $q.defer();
 
-    sponsorContributions.push(pContribution); 
+    sponsorContributions.push(pContribution);
 
     deferred.resolve(pContribution);
 
@@ -123,29 +126,43 @@ twopence.factory('Sponsor', [
 
   };
 
-
   Sponsor.getSponsees = function() {
 
-    var deferred = $q.defer(); 
+
+    var deferred = $q.defer();
 
     deferred.resolve(sponsorSponsees);
 
-    return deferred.promise; 
+    return deferred.promise;
+
+  };
+
+  Sponsor.getAllContributions = function() {
+
+      // var deferred = $q.defer();
+      //
+      // deferred.resolve(sponsorContributions);
+      //
+      // return deferred.promise;
+
+      var jwtToken = Auth.getToken();
+
+      console.log("Your JWT is: " + jwtToken);
+
+
+      return $q(function(resolve, reject) {
+        $http.get(BASE_URL + '/v1/contributions ', jwtToken)
+          .then(function(res) {
+            console.log(res.data);
+            resolve(res.data);
+          }).catch(function(err) {
+            reject(err);
+          });
+      });
 
   };
 
 
-  Sponsor.getAllContributions = function() {
-
-      var deferred = $q.defer(); 
-
-      deferred.resolve(sponsorContributions);
-
-      return deferred.promise;
-
-  }; 
-
-
   return Sponsor
 
-}]); 
+}]);
