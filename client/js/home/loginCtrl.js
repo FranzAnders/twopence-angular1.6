@@ -12,7 +12,8 @@ twopence.controller('loginCtrl', [
     function(
         $state,
         $timeout,
-        Auth) {
+        Auth,
+        $localStorage) {
 
     var vm = this;
 
@@ -20,7 +21,6 @@ twopence.controller('loginCtrl', [
 
     vm.logInUser = function() {
       Auth.login(vm.form).then(function(res){
-        console.log(res);
         $state.go('sponsor.dashboard');
       }).catch(function(err){
         console.log(err);

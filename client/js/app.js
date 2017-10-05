@@ -362,7 +362,7 @@ twopence.run(
     // Headers for HTTP calls
     // $http.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJUZXN0VXNlcjo4MDg1NjYiLCJleHAiOjE1MTQ5MTE3MjYsImlhdCI6MTUwNzEzNTcyNiwiaXNzIjoiQXV0aCIsImp0aSI6IjFlYTViYzUxLWI5YjQtNGExNC1iOWZkLTFjNDZjZWUwZWZhMSIsInBlbSI6e30sInN1YiI6IlRlc3RVc2VyOjgwODU2NiIsInR5cCI6ImFjY2VzcyJ9.T2ocxoX725UI-1ZPLcKUu5XtvHaPult3ENHzt4RvIzdap0xPHzD6MzScLCp2Skb6IFRBakAnNfPkuhjO-kOg9A';
     $http.defaults.headers.common['Accept'] = 'application/json';
-    $http.defaults.headers.common['Content-Type'] = 'application/json';
+    // $http.defaults.headers.common['Content-Type'] = 'application/json';
     $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 }]);

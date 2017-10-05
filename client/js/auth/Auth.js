@@ -16,7 +16,8 @@ twopence.factory('Auth', [
           {
             // Had to apply header here cause default was adding UTF-8
             headers: {
-              'Access-Control-Allow-Origin': '*'
+              'Access-Control-Allow-Origin': '*',
+              'Content-Type': "application/json"
             }
           })
           .then(function(res) {
@@ -27,6 +28,9 @@ twopence.factory('Auth', [
             reject(err);
           });
       });
+    };
+    auth.getToken = function() {
+        return token;
     };
     return auth
   }
