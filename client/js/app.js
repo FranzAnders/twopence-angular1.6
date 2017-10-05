@@ -4,6 +4,25 @@
     #App Init Code
 \*------------------------------------*/
 
+
+(function() {
+    var cors_api_host = 'cors-anywhere.herokuapp.com';
+    var cors_api_url = 'https://' + cors_api_host + '/';
+    var slice = [].slice;
+    var origin = window.location.protocol + '//' + window.location.host;
+    var open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function() {
+        var args = slice.call(arguments);
+        var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+        if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+            targetOrigin[1] !== cors_api_host) {
+            args[1] = cors_api_url + args[1];
+        }
+        return open.apply(this, args);
+    };
+})();
+
+
 twopence = angular.module('twopence', [
      'ui.router',
      'vesparny.fancyModal'
@@ -32,6 +51,7 @@ twopence.config(
     //
     $locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('');
+
 
 
     $stateProvider
@@ -342,7 +362,7 @@ twopence.config(
 
 
 
-}]).constant("BASE_URL", "http://localhost:8000/api").constant("PROXY_URL", "https://localhost:8080/");
+}]).constant("BASE_URL", "https://api.twopence.co");
 
 twopence.run(
     ['$rootScope',
@@ -388,10 +408,11 @@ twopence.run(
 
     });
 
+    //
     // Headers for HTTP calls
-    // $http.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJUZXN0VXNlcjo4MDg1NjYiLCJleHAiOjE1MTQ5MTE3MjYsImlhdCI6MTUwNzEzNTcyNiwiaXNzIjoiQXV0aCIsImp0aSI6IjFlYTViYzUxLWI5YjQtNGExNC1iOWZkLTFjNDZjZWUwZWZhMSIsInBlbSI6e30sInN1YiI6IlRlc3RVc2VyOjgwODU2NiIsInR5cCI6ImFjY2VzcyJ9.T2ocxoX725UI-1ZPLcKUu5XtvHaPult3ENHzt4RvIzdap0xPHzD6MzScLCp2Skb6IFRBakAnNfPkuhjO-kOg9A';
-    $http.defaults.headers.common['Accept'] = 'application/json';
-    $http.defaults.headers.common['Content-Type'] = 'application/json';
-    $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+    //
+     $http.defaults.headers.common['Content-Type'] = "application/json";
+     $http.defaults.headers.post['Content-Type'] = "application/json";
+     $http.defaults.headers.get['Content-Type'] = "application/json";
 
 }]);
