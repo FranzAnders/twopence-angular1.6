@@ -9,10 +9,12 @@ twopence.controller('signUpCtrl', [
     '$scope',
     '$state',
     '$timeout',
+    'User',
     function(
       $scope,
       $state,
-      $timeout) {
+      $timeout, 
+      User) {
 
       var vm = this;
 
@@ -22,20 +24,27 @@ twopence.controller('signUpCtrl', [
 
       vm.userCreationForm = {}; 
 
-      vm.userInfo = {}; 
 
+      vm.userInfo = {
+        'phone': ''
+      }; 
 
 
       //
       // Creates the user from the information provided 
       //
-      vm.createUser = function(isValid) {
+      vm.createUser = function(form) {
 
-        console.log(isValid); 
-        
-        if(isValid) {
+        if(form.$valid) {
 
-          console.log('yep, it passes ');
+          delete vm.userInfo.confirmPassword; 
+          
+          User.create(vm.userInfo).then(function() {
+
+            console.log('yep, it passes ');
+
+          }); 
+
         } else {
 
           console.log('not yet boy'); 

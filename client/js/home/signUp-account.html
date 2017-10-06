@@ -1,7 +1,7 @@
 
 <div >
 
-  <form ng-submit="signUp.createUser(signUp.userCreationForm.$valid)" 
+  <form ng-submit="signUp.createUser(signUp.userCreationForm)" 
         name="signUp.userCreationForm"
         novalidate>
 
@@ -13,8 +13,8 @@
            placeholder="Email is your username"
            class="input--primary input--medium"
            ng-model="signUp.userInfo.email"
-           required 
-           ng-minlength = "8">
+           ng-minlength = "8"
+           required>
 
 
     <label for="password">
@@ -25,7 +25,8 @@
            class="input--primary input--medium"
            ng-model="signUp.userInfo.password" 
            required
-           ng-minlength = "8">
+           ng-minlength = "8"
+           ng-model-options="{debounce: 200}">
 
     <label for="re-enter password">
       Re-enter Password
@@ -36,6 +37,7 @@
            required
            ng-minlength="8"
            ng-model="signUp.userInfo.confirmPassword"
+           ng-model-options="{debounce: 200}"
            compare-to="signUp.userInfo.password">
 
 
