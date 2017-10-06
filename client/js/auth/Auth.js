@@ -1,3 +1,4 @@
+
 'use strict';
 
 /*------------------------------------*\
@@ -12,6 +13,11 @@ twopence.factory('Auth', [
 
     var auth = {};
     var token = null;
+
+
+    //
+    // Logs the user in if the account exists 
+    //
     auth.login = function(pLoginInfo) {
 
       return $q(function(resolve, reject) {
@@ -25,6 +31,11 @@ twopence.factory('Auth', [
           });
       });
     };
+
+
+    //
+    // Gets the token created upon loging to  make calls
+    //
     auth.getToken = function() {
         return token;
     };

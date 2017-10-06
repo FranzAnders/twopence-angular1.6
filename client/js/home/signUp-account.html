@@ -1,34 +1,49 @@
 
 <div >
-  <form ngSubmit="console.log('Hello');">
-  <label for="email">
-    Email
-  </label>
 
-  <input type="text" id="email"
-         placeholder="Email is your username"
-         class="input--primary input--medium"
-         ng-model="user.email" >
+  <form ng-submit="signUp.createUser(signUp.userCreationForm.$valid)" 
+        name="signUp.userCreationForm"
+        novalidate>
 
-  <label for="password">
-    Password
-  </label>
+    <label for="email">
+      Email
+    </label>
 
-  <input type="password" id="password"
-         class="input--primary input--medium"
-         ng-model="user.password" >
-
-  <label for="re-enter password">
-    Re-enter Password
-  </label>
-
-  <input type="password" id="re-enter password"
-         class="input--primary input--medium">
+    <input type="text" id="email"
+           placeholder="Email is your username"
+           class="input--primary input--medium"
+           ng-model="signUp.userInfo.email"
+           required 
+           ng-minlength = "8">
 
 
-  <button class="button--primary  button--medium button--expanded"
-          ui-sref="main.signUp.identity">
-    Continue
-  </button>
+    <label for="password">
+      Password
+    </label>
+
+    <input type="password" id="password"
+           class="input--primary input--medium"
+           ng-model="signUp.userInfo.password" 
+           required
+           ng-minlength = "8">
+
+    <label for="re-enter password">
+      Re-enter Password
+    </label>
+
+    <input type="password" id="re-enter password"
+           class="input--primary input--medium"
+           required
+           ng-minlength="8"
+           ng-model="signUp.userInfo.confirmPassword"
+           compare-to="signUp.userInfo.password">
+
+
+    <button class="button--primary  button--medium button--expanded"
+            type="submit">
+      Continue
+    </button>
+
   </form>
+
 </div>
