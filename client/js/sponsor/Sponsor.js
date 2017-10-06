@@ -151,7 +151,12 @@ twopence.factory('Sponsor', [
 
 
       return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/contributions ', jwtToken)
+        $http.get(BASE_URL + '/v1/contributions ', {
+          headers: {
+
+            "Authorization": jwtToken
+
+          }})
           .then(function(res) {
             console.log(res.data);
             resolve(res.data);
@@ -161,6 +166,58 @@ twopence.factory('Sponsor', [
       });
 
   };
+
+
+  //
+  // Gets the dashboard data for a sponsor
+  //
+  Sponsor.getDashboard = function() {
+
+      var jwtToken = Auth.getToken();
+
+      console.log("Your JWT is: " + jwtToken);
+
+      return $q(function(resolve, reject) {
+        $http.get(BASE_URL + '/v1/sponsors/dashboard', {
+          headers: {
+
+            "Authorization": 'bearer ' + jwtToken
+
+          }})
+          .then(function(res) {
+            console.log(res.data);
+            resolve(res.data);
+          }).catch(function(err) {
+            reject(err);
+          });
+      });
+
+  }; 
+
+
+  Sponsor.getSponsorInfo = function() {
+
+      var jwtToken = Auth.getToken();
+
+      console.log("Your JWT is: " + jwtToken);
+
+      return $q(function(resolve, reject) {
+        $http.get(BASE_URL + '/v1/sponsors', {
+          headers: {
+
+            "Authorization": 'bearer ' + jwtToken
+
+          }})
+          .then(function(res) {
+            console.log(res.data);
+            resolve(res.data);
+          }).catch(function(err) {
+            reject(err);
+          });
+      });
+
+
+  }
 
 
   return Sponsor
