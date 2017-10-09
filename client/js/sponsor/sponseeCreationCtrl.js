@@ -10,11 +10,13 @@ twopence.controller('sponseeCreationCtrl', [
     '$stateParams',
     '$timeout',
     'Sponsor',
+    'Sponsee',
     function(
         $state,
         $stateParams,
         $timeout,
-        Sponsor) {
+        Sponsor,
+        Sponsee) {
 
       var vm = this;
 
@@ -22,30 +24,53 @@ twopence.controller('sponseeCreationCtrl', [
 
       vm.form = {};
 
+      vm.searchData = {}; 
+
       vm.cameFromEmail = $stateParams.cameFromEmail;
 
-      vm.createSponsee = function() {
+      vm.createSponsee = function(pSponseeSearchForm) {
 
         vm.unsubmittedForm = false;
 
-        $timeout(function() {
+        if(pSponseeSearchForm.$valid) {
 
-          vm.form.plan = {
+          Sponsee.search(vm.searchData).then(function(res) {
 
-            'type': '',
-            'limit': '',
-            'frequency': 'none',
-            'status': 'unclaimed'
+            console.log(res)
 
-          };
+          }).catch(function(err) {
 
-          console.log(vm.form);
 
-          Sponsor.addSponsee(vm.form)
+          }); 
+          console.log('success'); 
 
-          $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email});
 
-        }, 1000);
+        } else {
+
+
+          console.log('nope'); 
+
+        }
+
+
+        // $timeout(function() {
+
+        //   vm.form.plan = {
+
+        //     'type': '',
+        //     'limit': '',
+        //     'frequency': 'none',
+        //     'status': 'unclaimed'
+
+        //   };
+
+        //   console.log(vm.form);
+
+        //   Sponsor.addSponsee(vm.form)
+
+        //   $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email});
+
+        // }, 1000);
 
       };
 
