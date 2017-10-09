@@ -139,11 +139,6 @@ twopence.factory('Sponsor', [
 
   Sponsor.getAllContributions = function() {
 
-      // var deferred = $q.defer();
-      //
-      // deferred.resolve(sponsorContributions);
-      //
-      // return deferred.promise;
 
       var jwtToken = Auth.getToken();
 
@@ -154,7 +149,7 @@ twopence.factory('Sponsor', [
         $http.get(BASE_URL + '/v1/contributions ', {
           headers: {
 
-            "Authorization": jwtToken
+            "Authorization": 'Bearer ' + jwtToken
 
           }})
           .then(function(res) {
@@ -219,6 +214,35 @@ twopence.factory('Sponsor', [
 
   }
 
+
+  //
+  // Creates the sponsor object 
+  //
+  Sponsor.create = function(pSponsorInfo) {
+
+
+    var jwtToken = Auth.getToken();
+
+    console.log(jwtToken); 
+
+    return $q(function(resolve, reject) {
+      $http.post(BASE_URL +  '/v1/sponsors', pSponsorInfo, {
+
+        headers: {
+
+          "Authorization": 'bearer ' + jwtToken
+
+        }
+
+      }).then(function(res) {
+          console.log(res);
+          resolve(res.data);
+        }).catch(function(err) {
+          reject(err);
+        });
+    });
+
+  };
 
   return Sponsor
 

@@ -39,6 +39,18 @@ twopence.factory('Auth', [
     auth.getToken = function() {
         return token;
     };
+
+
+    //
+    // Sets the token 
+    //
+    auth.setToken = function(pToken) {
+
+      token = pToken; 
+
+    }; 
+
+
     return auth
   }
 ]);
