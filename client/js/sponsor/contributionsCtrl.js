@@ -15,9 +15,15 @@ twopence.controller('contributionsCtrl', [
 
   vm.sponseeFilter = null; 
 
+
+
+  //
+  // Gets all the sponsees a sponsor is currently managing in order to filter 
+  // contributions
+  //
   Sponsor.getSponsees().then(function(sponsees) {
 
-    vm.sponsees  = sponsees; 
+    vm.sponsees  = sponsees.data; 
 
     console.log(vm.sponsees); 
 
@@ -30,11 +36,12 @@ twopence.controller('contributionsCtrl', [
   };
 
 
+  //
+  // Gets all contributions a sponsor has made 
+  //
   Sponsor.getAllContributions().then(function(contributions) {
 
-    console.log(contributions); 
-
-    vm.contributionsShowing = contributions;
+    vm.contributionsShowing = contributions.data;
 
   }); 
 

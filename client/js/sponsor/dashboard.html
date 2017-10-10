@@ -31,26 +31,37 @@
                 <div class="small-12 columns">
         
                   <div class="card">
-                    <h2 class="mb0">{{sponsee.name}}</h2>
+                    <h2 class="mb0" 
+                        ng-bind="sponsee.first_name + ' ' + sponsee.last_name">
+                    </h2>
                     
                     <div class="txtc2">Matching Plan:
                     
-                      <span ng-switch="sponsee.plan.status">
+                      <span ng-switch="sponsee.current_sponsorship.plan.active"
+                            ng-if='sponsee.status == "active"'>
                     
-                        <span ng-switch-when="active" class="fwb uc">
-                             ${{sponsee.plan.limit}} {{sponsee.plan.frequency}} Limit
+                        <span ng-switch-when="true" class="fwb uc">
+                             ${{sponsee.current_sponsorship.plan.limit}} {{sponsee.current_sponsorship.plan.frequency}} Limit
                         </span>
                     
-                        <span ng-switch-when="none">
+                        <span ng-switch-when="false">
                             <span class="fwb  uc">none</span>
                         </span>
-                    
-                        <span ng-switch-when="unclaimed">
-                            <span class="fwb  txtc--warning uc">Invite Pending</span>
-                        </span>
-                    
+
                       </span>
-                    
+                       
+                      <span ng-if='sponsee.status == "invited" || sponsee.status == "onboarding"'>
+                          <span class="fwb  txtc--warning uc">Invite Pending</span>
+                      </span>
+
+                      <span ng-if="sponsee.current_sponsorship === null">
+
+                        <span>
+                            <span class="fwb  uc">none</span>
+                        </span>
+                        
+                      </span>
+
                     </div>
                     
                     <div class="ptb4">
@@ -62,39 +73,39 @@
                     
                       <div class="small-6 columns">
                     
-                      <span ng-switch="sponsee.plan.status">
+                      <span ng-switch="sponsee.current_sponsorship.plan.active"
+                            ng-if='sponsee.status == "active"'>
                     
-                        <span ng-switch-when="active" class="fwb uc">
+                        <span ng-switch-when="true" class="fwb uc">
                           <button  class="button--expanded  button--primary"
                                    ng-click="dashboard.openJoltModal(sponsee)">
                           Jolt
                           </button>
                         </span>
          
-                        <span ng-switch-when="none" class="fwb uc">
+                        <span ng-switch-when="false" class="fwb uc">
                           <button  class="button--expanded  button--primary"
                                    ng-click="dashboard.openJoltModal(sponsee)">
                           Jolt
                           </button>
                         </span>
-        
-                        <span ng-switch-when="unclaimed">
-                            
-                          <button  class="button--expanded  button--primary">
-                          <span class="text-micro">Send Reminder</span> 
-                          </button>
-        
-                        </span>
                     
                       </span>
-                    
-        
+
+                      <span ng-if='sponsee.status == "invited" || sponsee.status == "onboarding"'>
+                          
+                        <button  class="button--expanded  button--primary">
+                        <span class="text-micro">Send Reminder</span> 
+                        </button>
+      
+                      </span>                   
+      
                       </div>
                     
                       <div class="small-6 columns">
                     
                         <button  class="button--expanded  button--primary"
-                                  ui-sref="sponsor.sponsee({sponseeEmail: sponsee.email})">
+                                  ui-sref="sponsor.sponsee({sponseeId: sponsee.id})">
                           View More
                         </button>
                     

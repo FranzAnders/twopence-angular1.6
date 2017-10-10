@@ -4,7 +4,8 @@
   
   <div class="small-12 columns" ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
-    <form  ng-submit="sponseeSponsorship.finishForm()">
+    <form  ng-submit="sponseeSponsorship.createSponsorship(     sponseeSponsorship.sponsorshipDetailsForm)"
+          name="sponseeSponsorship.sponsorshipDetailsForm">
 
       <div ng-if="sponseeSponsorship.formNotSubmited">
 
@@ -15,21 +16,21 @@
         <fieldset>
         
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                  name="limit"
                  value="50"
                  id="fiftyOneTime"> 
           <label for="fiftyOneTime">$50</label>
           
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                  name="limit"
                  value="100"
                  id="oneHundredOneTime">
           <label for="oneHundredOneTime">$100</label>
         
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                  name="limit"
                  value="250"
                  id="twoHundredAndFiftty">
@@ -46,7 +47,7 @@
                  id="customValue"
                  name="custom"
                  class="input--medium  input--primary"
-                 ng-model="sponseeSponsorship.form.limit">
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount">
         
         </fieldset>
 
@@ -65,28 +66,6 @@
 
       </div>
 
-      <div ng-if="!sponseeSponsorship.formNotSubmited">
-      
-        <p>
-          
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur vero facere dolorem sit aperiam reiciendis, hic consequatur. Expedita obcaecati id, ipsam, recusandae eum qui natus unde quaerat, neque est ducimus.
-        </p>
-
-        <input type="checkbox" 
-               label="agreement" 
-               ng-model="sponseeSponsorship.form.acceptedTerms">
-        
-        <label for="agreement">Accept Terms of Agreement </label>
-
-        <button class="button--medium  button--primary  button--expanded"
-                type="submit">
-          
-          Finish Sponsorship
-
-        </button>
-
-      </div>
-
     </form>
 
   </div>
@@ -96,7 +75,7 @@
       <div class="text-center">
           
           <h1>
-            <span class="fwb">${{sponseeSponsorship.form.limit}}</span>
+            <span class="fwb">${{sponseeSponsorship.sponsorshipInfo.plan.amount}}</span>
             <br>
             <span class="h2">One-Time Payment</span>
           </h1>

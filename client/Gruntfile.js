@@ -4,7 +4,6 @@ module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		app: '.',
@@ -25,8 +24,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
-
 
 		jshint: {
 			options: {
@@ -135,28 +132,15 @@ module.exports = function(grunt) {
       options: {
           bowerJson: require('./bower.json')
       }
-		},
-      svgstore: {
-        options: {
-          cleanup: true,
-          svg: {
-            style: "display: none;"
-          }
-        },
-        default: {
-            files: {
-                '<%= app %>/images/ingredients/ingredients.svg' : ['<%= app %>/images/icons/*.svg'],
-            }
-        }
-      },
-      'json-minify': {
-          build: {
-            files: '<%= dist %>/data/*.json'
-          }
-        }
+		}
+    
 	});
 
 
+
+    //
+    // Registering tasks 
+    //
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-json-minify');
 
@@ -166,9 +150,12 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
-    grunt.registerTask('publish-noimg', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify','json-minify:build', 'usemin']);
 
-    //grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'json-minify:build','usemin']);
+
+    //
+    // Publish tasks
+    //
+    //grunt.registerTask('publish-noimg', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify','json-minify:build', 'usemin']);
     grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'json-minify:build','usemin']);
 
 };

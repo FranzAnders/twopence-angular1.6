@@ -38,17 +38,12 @@ twopence.controller('dashboardCtrl', [
 
       console.log(dashboard); 
 
+      vm.sponsees = dashboard.sponsees; 
+
+      console.log(vm.sponsees); 
+      
     });
 
-
-    //
-    // Gets all the sponsees the sponsor is managing 
-    //
-    Sponsor.getSponsees().then(function(allSponsees) {
-
-      vm.sponsees = allSponsees
-
-    }); 
 
 
     //

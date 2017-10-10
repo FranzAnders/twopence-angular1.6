@@ -126,44 +126,50 @@ twopence.factory('Sponsor', [
 
   };
 
+
+  //
+  // Gets all the sponsees for a sponsor 
+  //
   Sponsor.getSponsees = function() {
 
+    return $q(function(resolve, reject) {
+      $http.get(BASE_URL + '/v1/sponsees ', {
+        headers: {
 
-    var deferred = $q.defer();
+          "Authorization": 'Bearer ' + Auth.getToken()
 
-    deferred.resolve(sponsorSponsees);
-
-    return deferred.promise;
+        }})
+        .then(function(res) {
+          console.log(res.data);
+          resolve(res.data);
+        }).catch(function(err) {
+          reject(err);
+        });
+    });
 
   };
 
+
+
+  //
+  // Gets all the contributions made by a sponsor to date 
+  //
   Sponsor.getAllContributions = function() {
 
-      // var deferred = $q.defer();
-      //
-      // deferred.resolve(sponsorContributions);
-      //
-      // return deferred.promise;
+    return $q(function(resolve, reject) {
+      $http.get(BASE_URL + '/v1/contributions ', {
+        headers: {
 
-      var jwtToken = Auth.getToken();
+          "Authorization": 'Bearer ' + Auth.getToken()
 
-      console.log("Your JWT is: " + jwtToken);
-
-
-      return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/contributions ', {
-          headers: {
-
-            "Authorization": jwtToken
-
-          }})
-          .then(function(res) {
-            console.log(res.data);
-            resolve(res.data);
-          }).catch(function(err) {
-            reject(err);
-          });
-      });
+        }})
+        .then(function(res) {
+          console.log(res.data);
+          resolve(res.data);
+        }).catch(function(err) {
+          reject(err);
+        });
+    });
 
   };
 
@@ -219,6 +225,35 @@ twopence.factory('Sponsor', [
 
   }
 
+
+  //
+  // Creates the sponsor object 
+  //
+  Sponsor.create = function(pSponsorInfo) {
+
+
+    var jwtToken = Auth.getToken();
+
+    console.log(jwtToken); 
+
+    return $q(function(resolve, reject) {
+      $http.post(BASE_URL +  '/v1/sponsors', pSponsorInfo, {
+
+        headers: {
+
+          "Authorization": 'bearer ' + jwtToken
+
+        }
+
+      }).then(function(res) {
+          console.log(res);
+          resolve(res.data);
+        }).catch(function(err) {
+          reject(err);
+        });
+    });
+
+  };
 
   return Sponsor
 

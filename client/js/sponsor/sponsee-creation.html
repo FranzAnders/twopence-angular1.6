@@ -19,19 +19,41 @@
         Who would you like to sponsor?
       </h2>
 
-      <form ng-submit="sponseeCreation.createSponsee()">
+      <form ng-submit="sponseeCreation.searchSponsee(sponseeCreation.sponseeSearchForm)"
+            name="sponseeCreation.sponseeSearchForm">
           
-        <label for="Full Name">
-          Full Name
+        <label for="first name">
+          First Name
         </label>
+          
+        <input type="text" id="first name" 
+               placeholder="Your first name"
+               class="input--primary input--medium"
+               ng-model="sponseeCreation.searchData.first_name"
+               required>
 
-        <input type="text" placeholder="Sponsee Name" class="input--primary input--medium" ng-model="sponseeCreation.form.name">
 
-        <label for="Full Name">
+        <label for="full name">
+          Last Name
+        </label>
+          
+        <input type="text" id="full name" 
+               placeholder="Your last name"
+               class="input--primary input--medium"
+               ng-model="sponseeCreation.searchData.last_name"
+               required>
+
+
+        <label for="email">
           Email
         </label>
 
-        <input type="text" placeholder="Sponsee email" class="input--primary input--medium" ng-model="sponseeCreation.form.email">
+        <input type="text" 
+               id="email" 
+               placeholder="Sponsee email" 
+               class="input--primary input--medium" 
+               ng-model="sponseeCreation.searchData.email"
+               required>
 
         <button type="submit" class="button--medium  button--primary   button--expanded">
           Add Sponsee

@@ -29,6 +29,7 @@ twopence.factory('User', [
         $http.post(BASE_URL +  '/v1/users',pLoginInfo)
           .then(function(res) {
             console.log(res);
+            Auth.setToken(res.data.token);
             resolve(res.data);
           }).catch(function(err) {
             reject(err);

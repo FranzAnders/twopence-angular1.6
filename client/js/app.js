@@ -166,7 +166,7 @@ twopence.config(
         })
         .state('sponsor.sponsee', {
 
-          url: "sponsee/:sponseeEmail",
+          url: "sponsee/:sponseeId",
           views: {
 
             'sponsor': {
@@ -178,7 +178,7 @@ twopence.config(
             }
           },
           params: {
-            sponseeEmail: null
+            sponseeId: null
           }
 
         })
@@ -222,7 +222,7 @@ twopence.config(
         })
         .state('sponsor.sponsorshipSetup', {
 
-          url: "sponsorship/:sponseeEmail",
+          url: "sponsorship/:sponseeId",
           views: {
 
             'sponsor': {
@@ -236,8 +236,7 @@ twopence.config(
           },
           params: {
 
-            sponseeName: null,
-            sponeeEmail: null
+            sponseeId: null,
 
           }
 
@@ -340,8 +339,6 @@ twopence.config(
             }
 
         });
-
-
 
 
 }]).constant("BASE_URL", "http://localhost:8000/api");

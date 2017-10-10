@@ -5,7 +5,8 @@
   <div class="small-12 columns" 
        ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
         
-    <form ng-submit="sponseeSponsorship.finishForm()">
+    <form ng-submit="sponseeSponsorship.createSponsorship(     sponseeSponsorship.sponsorshipDetailsForm)"
+          name="sponseeSponsorship.sponsorshipDetailsForm">
         
       <div ng-if="sponseeSponsorship.formNotSubmited">
 
@@ -13,31 +14,32 @@
       
         <h2>Sponsee: {{sponseeSponsorship.name}}</h2>
 
-        <fieldset>
+        <fieldset >
         
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="100"
-                 id="oneHundredLimit"> 
+                 id="oneHundredLimit"
+                 checked="checked"> 
           <label for="oneHundredLimit">$100</label>
           
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="300"
                  id="threeHundredLimit">
           <label for="threeHundredLimit">$300</label>
         
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="500"
                  id="fivehundredLimit">
           <label for="fivehundredLimit">$500</label>
           
           <input type="radio"
-                 ng-model="sponseeSponsorship.form.limit"
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="unlimited"
                  id="unlimitedLimit">
@@ -55,7 +57,7 @@
                  id="customValue"
                  name="custom"
                  class="input--medium  input--primary"
-                 ng-model="sponseeSponsorship.form.limit">
+                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit">
         
         </fieldset>
         
@@ -65,33 +67,11 @@
         
         </div>
         
-        <button ng-click="sponseeSponsorship.processForm()" 
+        <button type="submit"
                 class="button--expanded  button--primary  button--medium">
           
           Continue
         
-        </button>
-
-      </div>
-
-      <div ng-if="!sponseeSponsorship.formNotSubmited">
-      
-        <p>
-          
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur vero facere dolorem sit aperiam reiciendis, hic consequatur. Expedita obcaecati id, ipsam, recusandae eum qui natus unde quaerat, neque est ducimus.
-        </p>
-
-        <input type="checkbox" 
-               label="agreement" 
-               ng-model="sponseeSponsorship.form.acceptedTerms">
-        
-        <label for="agreement">Accept Terms of Agreement </label>
-
-        <button class="button--medium  button--primary  button--expanded"
-                type="submit">
-          
-          Finish Sponsorship
-
         </button>
 
       </div>
@@ -106,7 +86,7 @@
 
       <div class="text-center">
           
-          <h1>${{sponseeSponsorship.form.limit}}</h1>
+          <h1>${{sponseeSponsorship.sponsorshipInfo.plan.limit}}</h1>
           Matching Limit
           Pledged to: {{sponseeSponsorship.name}}
 

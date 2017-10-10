@@ -10,14 +10,16 @@
     </div>
 
     <div class="small-12 columns">
+
       <label for="contributionsFilter" class="text-micro">
         Showing contributions for:
       </label>
+
       <select name="contributionsFilter" id="contributionsFilter" 
               class="select--small  select--primary"
               ng-model="contributions.sponseeFilter"
               ng-change="contributions.showFilter()"
-              ng-options="sponsee.email as sponsee.name for sponsee in contributions.sponsees">
+              ng-options="sponsee.id as sponsee.first_name for sponsee in contributions.sponsees">
 
             <option value="" selected>
               All
