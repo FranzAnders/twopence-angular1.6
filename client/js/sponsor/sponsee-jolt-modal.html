@@ -8,24 +8,27 @@
       <div class="mb4">
         <h1>Make a <br>Jolt Payment</h1>
         
-        <h2 class="h5">Sponsee: <span class="fwb">{{sponseeJolt.SponseeInformation.name}}</span></h2>
+        <h2 class="h5">Sponsee: 
+          <span class="fwb">{{sponseeJolt.SponseeInformation.name}}</span>
+        </h2>
 
       </div>
 
-      <form name="sponseeJolt.joltForm" 
-            ng-submit="sponseeJolt.joltSponsee()"
-            novalidate="">
+      <form
+            ng-submit="sponseeJolt.joltSponsee(sponseeJolt.joltForm)"
+            name="sponseeJolt.joltForm" 
+            novalidate>
         
         <label for="joltAmount" class="text-micro">Jolt Amount</label>
 
-        <input type="text" 
+        <input type="number" 
                id="joltAmount"
                name="joltAmount"
                class="input--primary  input--large"
                placeholder="00.00"
-               ng-model="sponseeJolt.joltAmount"
-               required
-               selected>
+               ng-model="sponseeJolt.joltInfo.plan.amount"
+               min="1"
+               required>
         
         <button class="button--primary  button--large  button--expanded"
                 type="submit">

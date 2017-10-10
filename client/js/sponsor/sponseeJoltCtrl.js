@@ -1,4 +1,5 @@
 
+
 'use strict';
 
 /*------------------------------------*\
@@ -9,46 +10,53 @@ twopence.controller('sponseeJoltCtrl', [
     'Sponsee',
     'Sponsor',
     'SponseeInformation',
+    'Sponsorship',
     '$fancyModal',
+    '$scope',
     function(
         Sponsee,
         Sponsor,
         SponseeInformation,
-        $fancyModal) {
+        Sponsorship,
+        $fancyModal,
+        $scope) {
 
     var vm = this; 
+
+    console.log(SponseeInformation); 
 
     vm.SponseeInformation = SponseeInformation;
 
     vm.joltSuccessfull = false; 
 
 
+    vm.joltInfo = {
+      "user": {
+          "id" : vm.SponseeInformation.id
+      }, 
+      "plan": {
+        "type": 'fixed',
+        "frequency": 'one-time', 
+        "amount": 0
+      }
+    };
+
+
+
     //
     // Jolts the sponsee if the form is valid
     //
-    vm.joltSponsee = function() {
+    vm.joltSponsee = function(pJoltForm) {
 
-      if(vm.joltForm.$valid) {
+      if(pJoltForm.$valid) {
 
-        Sponsee.getSponsee(vm.SponseeInformation.email).then(function(sponsee) {
-          
-          var contribution = {}; 
+        vm.joltInfo.plan.amount  = parseInt(vm.joltInfo.plan.amount);
 
-          contribution.date = '01/03/17';
-          contribution.amount = parseInt(vm.joltAmount);
+          console.log(vm.joltInfo); 
 
-          contribution.sponsee = {}; 
+        Sponsorship.create(vm.joltInfo).then(function(jolt) {
 
-          contribution.sponsee.email = vm.SponseeInformation.email;
-          contribution.sponsee.name = vm.SponseeInformation.name; 
-
-          Sponsor.addContribution(contribution).then(function(contribution) {
-
-              vm.joltSuccessfull = true; 
-
-              console.log(vm.joltSuccessfull); 
-
-          }); 
+          console.log(jolt)
 
         }); 
 

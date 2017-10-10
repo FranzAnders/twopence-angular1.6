@@ -73,33 +73,33 @@
                     
                       <div class="small-6 columns">
                     
-                      <span ng-switch="sponsee.plan.status">
+                      <span ng-switch="sponsee.current_sponsorship.plan.active"
+                            ng-if='sponsee.status == "active"'>
                     
-                        <span ng-switch-when="active" class="fwb uc">
+                        <span ng-switch-when="true" class="fwb uc">
                           <button  class="button--expanded  button--primary"
                                    ng-click="dashboard.openJoltModal(sponsee)">
                           Jolt
                           </button>
                         </span>
          
-                        <span ng-switch-when="none" class="fwb uc">
+                        <span ng-switch-when="false" class="fwb uc">
                           <button  class="button--expanded  button--primary"
                                    ng-click="dashboard.openJoltModal(sponsee)">
                           Jolt
                           </button>
                         </span>
-        
-                        <span ng-switch-when="unclaimed">
-                            
-                          <button  class="button--expanded  button--primary">
-                          <span class="text-micro">Send Reminder</span> 
-                          </button>
-        
-                        </span>
                     
                       </span>
-                    
-        
+
+                      <span ng-if='sponsee.status == "invited" || sponsee.status == "onboarding"'>
+                          
+                        <button  class="button--expanded  button--primary">
+                        <span class="text-micro">Send Reminder</span> 
+                        </button>
+      
+                      </span>                   
+      
                       </div>
                     
                       <div class="small-6 columns">
