@@ -26,9 +26,18 @@ twopence.controller('sponseeCreationCtrl', [
 
       vm.searchData = {}; 
 
+      vm.sponseeId = null; 
+
       vm.cameFromEmail = $stateParams.cameFromEmail;
 
-      vm.createSponsee = function(pSponseeSearchForm) {
+
+      //
+      // Searches a sponsee and sets the sponsee id in the controller 
+      // so sponsor can then set a plan based on the id returned. 
+      // If succesful, we take the sponsor to the sponsorship setup state and 
+      // use parameters to give id of sponsor 
+      //
+      vm.searchSponsee = function(pSponseeSearchForm) {
 
         vm.unsubmittedForm = false;
 
@@ -36,41 +45,23 @@ twopence.controller('sponseeCreationCtrl', [
 
           Sponsee.search(vm.searchData).then(function(res) {
 
-            console.log(res)
+            vm.sponseeId = res.id; 
+
+            console.log('success');
+
+            $state.go('sponsor.sponsorshipSetup.options', {sponseeId: vm.sponseeId})
 
           }).catch(function(err) {
 
+            console.log('rejected, something went wrong')
 
           }); 
-          console.log('success'); 
-
 
         } else {
 
-
-          console.log('nope'); 
+          console.log('nope, the form is not right'); 
 
         }
-
-
-        // $timeout(function() {
-
-        //   vm.form.plan = {
-
-        //     'type': '',
-        //     'limit': '',
-        //     'frequency': 'none',
-        //     'status': 'unclaimed'
-
-        //   };
-
-        //   console.log(vm.form);
-
-        //   Sponsor.addSponsee(vm.form)
-
-        //   $state.go('sponsor.sponsorshipSetup.options', {sponseeName: vm.form.name, sponseeEmail: vm.form.email});
-
-        // }, 1000);
 
       };
 
