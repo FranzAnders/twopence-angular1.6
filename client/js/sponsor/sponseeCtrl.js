@@ -18,13 +18,13 @@ twopence.controller('sponseeCtrl', [
 
     var vm = this; 
 
-    var sponseeEmail = $stateParams.sponseeEmail; 
+    var sponseeId = $stateParams.sponseeId; 
 
     $scope.$state = $state; 
 
     console.log('reload'); 
 
-    Sponsee.getSponsee(sponseeEmail).then(function(sponsee) {
+    Sponsee.getSponsee(sponseeId).then(function(sponsee) {
 
       vm.information = sponsee; 
 

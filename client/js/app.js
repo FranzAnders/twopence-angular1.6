@@ -166,7 +166,7 @@ twopence.config(
         })
         .state('sponsor.sponsee', {
 
-          url: "sponsee/:sponseeEmail",
+          url: "sponsee/:sponseeId",
           views: {
 
             'sponsor': {
@@ -178,7 +178,7 @@ twopence.config(
             }
           },
           params: {
-            sponseeEmail: null
+            sponseeId: null
           }
 
         })

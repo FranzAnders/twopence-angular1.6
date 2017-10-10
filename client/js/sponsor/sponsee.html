@@ -5,8 +5,7 @@
     
     <div class="small-12 columns mb7">
         
-      <h1>
-        {{sponsee.information.name}}
+      <h1 ng-bind="sponsee.information.first_name + ' ' + sponsee.information.last_name ">
       </h1>
   
       <p>
@@ -58,40 +57,14 @@
       <p>Total to date: $1,000,000</p>
 
       <ul>
-        <li>
 
-          $100
-          <hr class="hr--primary">
-        </li>
+        <li ng-repeat="contribution in sponsee.information.contributions track by $index">
 
-        <li>
-
-          $500
-          <hr class="hr--primary">
-        </li>
-
-        <li>
-
-          $700
-          <hr class="hr--primary">
-        </li>
-
-        <li>
-
-          $200
-          <hr class="hr--primary">
-        </li>
-
-        <li>
-          $20
+          ${{contribution.amount}}
           <hr class="hr--primary">
         </li>
 
       </ul>
-
-      <a class="button  button--secondary  button--micro  button--expanded">
-        View Contribution History 
-      </a>
 
     </div>
   
