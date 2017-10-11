@@ -5,6 +5,5 @@ pipelines:
       master:
           - step:
               script:
-                  - cd client
-                  - grunt publish
-                  - s3_website push --site=dist
+                  - cd client && grunt publish
+                  - cd client && s3_website push --site=dist
