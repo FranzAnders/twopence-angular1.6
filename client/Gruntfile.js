@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 				options: {
 					style: 'expanded', // expanded or nested or compact or compressed
 					loadPath: '<%= app %>/bower_components/foundation/scss',
-					compass: false,
+					compass: true,
 					quiet: false,
           update: true,
           lineNumbers: true

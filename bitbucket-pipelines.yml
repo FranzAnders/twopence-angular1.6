@@ -7,5 +7,5 @@ pipelines:
               script:
                   - cd client
                   - npm install
-                  - grunt publish
+                  - grunt publish --force
                   - s3_website push --site=dist
