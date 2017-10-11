@@ -8,28 +8,39 @@
       <h1 ng-bind="sponsee.information.first_name + ' ' + sponsee.information.last_name ">
       </h1>
   
-      <p>
-        Matching Plan: 
 
-        <span ng-switch="sponsee.information.plan.status">
-
-          <span ng-switch-when="active" class="fwb">
-               ${{sponsee.information.plan.limit}} Monthly Limit
+      <p class="txtc2">Matching Plan:
+      
+        <span ng-switch="sponsee.information.current_sponsorship.plan.active"
+              ng-if='sponsee.information.status == "active"'>
+      
+          <span ng-switch-when="true" class="fwb uc">
+               ${{sponsee.information.current_sponsorship.plan.limit}} {{sponsee.information.current_sponsorship.plan.frequency}} Limit
           </span>
-
-          <span ng-switch-when="none">
-              <span class="fwb  uc">None</span>
-          </span>
-
-          <span ng-switch-when="unclaimed">
-              <span class="fwb  txtc--warning uc">INVITE PENDING</span>
+      
+          <span ng-switch-when="false">
+              <span class="fwb  uc">none</span>
           </span>
 
         </span>
+         
+        <span ng-if='sponsee.information.status == "invited" || sponsee.information.status == "onboarding"'>
+            <span class="fwb  txtc--warning uc">Invite Pending</span>
+        </span>
 
-        (<a ui-sref="sponsor.edit({sponseeEmail: sponsee.information.email})" class="">
-        edit</a> )
+        <span ng-if="sponsee.information.current_sponsorship === null">
+
+          <span>
+              <span class="fwb  uc">none</span>
+          </span>
+          
+        </span>
+
+        (<a ui-sref="sponsor.edit({sponseeId: sponsee.information.id, planId: sponsee.information.current_sponsorship.id})" class="">
+        Manage Plan</a> )
+
       </p>
+
   
     </div>
 
