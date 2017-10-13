@@ -81,6 +81,12 @@
   width: auto;
   margin-bottom: 0;
   padding: 15px 10px;
+  @media #{$medium-up} {
+    display: none;
+  }
+  @media #{$large-up} {
+    display: none;
+  }
 
 }
 
@@ -98,6 +104,17 @@
 
 .greybutton a:visited {
   color: black;
+}
+
+li.desktop-show {
+  display: none;
+  @media #{$medium-up} {
+    display: list-item;
+  }
+  @media #{$large-up} {
+    display: list-item;
+  }
+
 }
 
 /*------------------------------------*\

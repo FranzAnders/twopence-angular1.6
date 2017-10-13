@@ -13356,8 +13356,20 @@ footer .footer-logo {
   margin-bottom: 0;
   padding: 15px 10px;
 }
+@media only screen and (min-width: 40.0625em) {
+  /* line 78, ../scss/layout/_navs.scss */
+  .mobile-settings {
+    display: none;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 78, ../scss/layout/_navs.scss */
+  .mobile-settings {
+    display: none;
+  }
+}
 
-/* line 87, ../scss/layout/_navs.scss */
+/* line 93, ../scss/layout/_navs.scss */
 .greybutton li {
   background-color: #cccccc;
   width: 100%;
@@ -13366,33 +13378,50 @@ footer .footer-logo {
   border-bottom: 1px black solid;
 }
 
-/* line 95, ../scss/layout/_navs.scss */
+/* line 101, ../scss/layout/_navs.scss */
 .greybutton a {
   color: black;
 }
 
-/* line 99, ../scss/layout/_navs.scss */
+/* line 105, ../scss/layout/_navs.scss */
 .greybutton a:visited {
   color: black;
+}
+
+/* line 109, ../scss/layout/_navs.scss */
+li.desktop-show {
+  display: none;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 109, ../scss/layout/_navs.scss */
+  li.desktop-show {
+    display: list-item;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 109, ../scss/layout/_navs.scss */
+  li.desktop-show {
+    display: list-item;
+  }
 }
 
 /*------------------------------------*\
     #Main Nav Position Styles
 \*------------------------------------*/
-/* line 108, ../scss/layout/_navs.scss */
+/* line 125, ../scss/layout/_navs.scss */
 .fixed-nav {
   width: 100%;
   z-index: 100;
 }
 
-/* line 116, ../scss/layout/_navs.scss */
+/* line 133, ../scss/layout/_navs.scss */
 .absolute-nav {
   width: 100%;
   z-index: 100;
   top: 0;
 }
 
-/* line 125, ../scss/layout/_navs.scss */
+/* line 142, ../scss/layout/_navs.scss */
 .mobile-border {
   border-bottom: black 2px solid !important;
   display: block;
@@ -13401,7 +13430,7 @@ footer .footer-logo {
 /*------------------------------------*\
     #Main Navigation Small
 \*------------------------------------*/
-/* line 138, ../scss/layout/_navs.scss */
+/* line 155, ../scss/layout/_navs.scss */
 .mainNav--small {
   height: 3.75rem;
   width: 100%;
@@ -13411,36 +13440,36 @@ footer .footer-logo {
   \*------------------------------------*/
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 138, ../scss/layout/_navs.scss */
+  /* line 155, ../scss/layout/_navs.scss */
   .mainNav--small {
     height: 4.6875rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 138, ../scss/layout/_navs.scss */
+  /* line 155, ../scss/layout/_navs.scss */
   .mainNav--small {
     width: 13rem;
     height: 7rem;
     right: 0;
   }
 }
-/* line 158, ../scss/layout/_navs.scss */
+/* line 175, ../scss/layout/_navs.scss */
 .mainNav--small .mainNav-cartToggle {
   padding-right: 0.75rem;
 }
-/* line 162, ../scss/layout/_navs.scss */
+/* line 179, ../scss/layout/_navs.scss */
 .mainNav--small .mainNav-title {
   height: 100%;
   background-color: #5F5E6C;
   width: 25%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 162, ../scss/layout/_navs.scss */
+  /* line 179, ../scss/layout/_navs.scss */
   .mainNav--small .mainNav-title {
     display: none;
   }
 }
-/* line 185, ../scss/layout/_navs.scss */
+/* line 202, ../scss/layout/_navs.scss */
 .mainNav--small .mainNav-menuToggleWrapper {
   background-color: #383642;
   color: #fff;
@@ -13451,17 +13480,17 @@ footer .footer-logo {
   height: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 185, ../scss/layout/_navs.scss */
+  /* line 202, ../scss/layout/_navs.scss */
   .mainNav--small .mainNav-menuToggleWrapper {
     width: 100%;
   }
 }
-/* line 202, ../scss/layout/_navs.scss */
+/* line 219, ../scss/layout/_navs.scss */
 .mainNav--small .mainNav-menuToggle {
   background-color: transparent;
   margin-bottom: 0;
 }
-/* line 210, ../scss/layout/_navs.scss */
+/* line 227, ../scss/layout/_navs.scss */
 .mainNav--small .menuToggle-icon {
   height: 0.9rem;
   width: 2.1rem;
@@ -13470,7 +13499,7 @@ footer .footer-logo {
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 220, ../scss/layout/_navs.scss */
+/* line 237, ../scss/layout/_navs.scss */
 .mainNav--small .menuToggle-icon:after, .mainNav--small .menuToggle-icon:before {
   content: "";
   height: 4px;
@@ -13483,11 +13512,11 @@ footer .footer-logo {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 234, ../scss/layout/_navs.scss */
+/* line 251, ../scss/layout/_navs.scss */
 .mainNav--small .menuToggle-icon:after {
   top: 70%;
 }
-/* line 240, ../scss/layout/_navs.scss */
+/* line 257, ../scss/layout/_navs.scss */
 .mainNav--small .menuToggle-icon:hover, .mainNav--small .menuToggle-icon:focus {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -13498,15 +13527,15 @@ footer .footer-logo {
 /*------------------------------------*\
     #Main Nav Small Menu Toggle Open
 \*------------------------------------*/
-/* line 261, ../scss/layout/_navs.scss */
+/* line 278, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 267, ../scss/layout/_navs.scss */
+/* line 284, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 271, ../scss/layout/_navs.scss */
+/* line 288, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
   background-color: #3FD5AE;
@@ -13515,7 +13544,7 @@ footer .footer-logo {
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 279, ../scss/layout/_navs.scss */
+/* line 296, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
   top: 50%;
   background-color: #3FD5AE;
@@ -13524,7 +13553,7 @@ footer .footer-logo {
   -webkit-transform: translateY(0) rotate(45deg);
   transform: translateY(0) rotate(45deg);
 }
-/* line 286, ../scss/layout/_navs.scss */
+/* line 303, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -13535,7 +13564,7 @@ footer .footer-logo {
 /*------------------------------------*\
     #Main Nav Off Canvas
 \*------------------------------------*/
-/* line 306, ../scss/layout/_navs.scss */
+/* line 323, ../scss/layout/_navs.scss */
 .mainNav--offCanvas {
   background-color: #383642;
   height: 100vh;
@@ -13553,47 +13582,47 @@ footer .footer-logo {
   transform: translateY(-100%);
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 306, ../scss/layout/_navs.scss */
+  /* line 323, ../scss/layout/_navs.scss */
   .mainNav--offCanvas {
     width: 13rem;
     left: auto;
   }
 }
-/* line 329, ../scss/layout/_navs.scss */
+/* line 346, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-navToggle {
   width: 100%;
   padding-left: 0.1875rem;
 }
-/* line 335, ../scss/layout/_navs.scss */
+/* line 352, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-navToggle .navToggle-icon {
   color: #F9F9F9;
   z-index: 201;
 }
-/* line 340, ../scss/layout/_navs.scss */
+/* line 357, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-navToggle .navToggle-icon:active {
   color: #5F5E6C;
 }
-/* line 350, ../scss/layout/_navs.scss */
+/* line 367, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-container {
   height: 100vh;
 }
-/* line 356, ../scss/layout/_navs.scss */
+/* line 373, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-menu {
   padding-top: 3.75rem;
   margin-left: 25%;
   margin-bottom: 1.5rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 356, ../scss/layout/_navs.scss */
+  /* line 373, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-menu {
     margin-left: 1.875rem;
   }
 }
-/* line 369, ../scss/layout/_navs.scss */
+/* line 386, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-menu .mainNav-menu-item {
   margin-bottom: 1.5rem;
 }
-/* line 375, ../scss/layout/_navs.scss */
+/* line 392, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-menu .mainNav-menu-link {
   color: #fff;
   width: 100%;
@@ -13606,14 +13635,14 @@ footer .footer-logo {
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 375, ../scss/layout/_navs.scss */
+  /* line 392, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-menu .mainNav-menu-link {
     margin-bottom: 0.375rem;
     font-size: 1.5rem;
     line-height: 1;
   }
 }
-/* line 414, ../scss/layout/_navs.scss */
+/* line 431, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-animElem {
   opacity: 0;
   -moz-transform: translatey(-70px);
@@ -13625,7 +13654,7 @@ footer .footer-logo {
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 422, ../scss/layout/_navs.scss */
+/* line 439, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-social {
   margin-bottom: 2.25rem;
   margin-left: 25%;
@@ -13636,20 +13665,20 @@ footer .footer-logo {
   transition-delay: 0.3s;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 422, ../scss/layout/_navs.scss */
+  /* line 439, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-social {
     margin-left: 1.875rem;
   }
 }
-/* line 435, ../scss/layout/_navs.scss */
+/* line 452, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-social .mainNav-social-link {
   color: #fff;
 }
-/* line 440, ../scss/layout/_navs.scss */
+/* line 457, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-social .mainNav-social-link:hover, .mainNav--offCanvas .mainNav-social .mainNav-social-link:active, .mainNav--offCanvas .mainNav-social .mainNav-social-link:focus {
   color: #3FD5AE;
 }
-/* line 450, ../scss/layout/_navs.scss */
+/* line 467, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-tagline {
   color: #5F5E6C;
   margin-left: 25%;
@@ -13657,24 +13686,24 @@ footer .footer-logo {
   margin-bottom: 30%;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 450, ../scss/layout/_navs.scss */
+  /* line 467, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-tagline {
     margin-bottom: 20%;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 450, ../scss/layout/_navs.scss */
+  /* line 467, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-tagline {
     margin-bottom: 40%;
   }
 }
-/* line 469, ../scss/layout/_navs.scss */
+/* line 486, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-tagline .mainNav-tagline-icon {
   width: 1.4rem;
   left: -13px;
   top: -35px;
 }
-/* line 480, ../scss/layout/_navs.scss */
+/* line 497, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-contact {
   margin-left: 1.125rem;
   margin-bottom: 1.5rem;
@@ -13684,19 +13713,19 @@ footer .footer-logo {
   -webkit-transition-delay: 0.36s;
   transition-delay: 0.36s;
 }
-/* line 496, ../scss/layout/_navs.scss */
+/* line 513, ../scss/layout/_navs.scss */
 .mainNav--offCanvas.is-closed {
   -moz-animation: main-nav-disappear 0.6s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
   -webkit-animation: main-nav-disappear 0.6s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
   animation: main-nav-disappear 0.6s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
 }
-/* line 500, ../scss/layout/_navs.scss */
+/* line 517, ../scss/layout/_navs.scss */
 .mainNav--offCanvas.is-open {
   -moz-animation: main-nav-appear 0.8s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
   -webkit-animation: main-nav-appear 0.8s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
   animation: main-nav-appear 0.8s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
 }
-/* line 503, ../scss/layout/_navs.scss */
+/* line 520, ../scss/layout/_navs.scss */
 .mainNav--offCanvas.is-open .mainNav-animElem {
   opacity: 1;
   -moz-transform: translateX(0);
@@ -13704,43 +13733,43 @@ footer .footer-logo {
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 512, ../scss/layout/_navs.scss */
+/* line 529, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-dropDown {
   margin-bottom: 0;
 }
-/* line 516, ../scss/layout/_navs.scss */
+/* line 533, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-dropDown.is-open {
   margin-bottom: 1.875rem;
 }
-/* line 520, ../scss/layout/_navs.scss */
+/* line 537, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-dropDown.is-open .mainNav-dropDown-item {
   display: block;
   margin-bottom: 0.75rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 520, ../scss/layout/_navs.scss */
+  /* line 537, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-dropDown.is-open .mainNav-dropDown-item {
     margin-bottom: 0.375rem;
   }
 }
-/* line 536, ../scss/layout/_navs.scss */
+/* line 553, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-dropDown .mainNav-dropDown-item {
   display: none;
 }
-/* line 548, ../scss/layout/_navs.scss */
+/* line 565, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-dropDown .mainNav-dropDown-link {
   color: #ffffff;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 548, ../scss/layout/_navs.scss */
+  /* line 565, ../scss/layout/_navs.scss */
   .mainNav--offCanvas .mainNav-dropDown .mainNav-dropDown-link {
     font-size: 1rem;
     line-height: 1.5;
   }
 }
-/* line 559, ../scss/layout/_navs.scss */
+/* line 576, ../scss/layout/_navs.scss */
 .mainNav--offCanvas .mainNav-dropDown .mainNav-dropDown-link:hover, .mainNav--offCanvas .mainNav-dropDown .mainNav-dropDown-link:focus {
   border-bottom: 2px solid #3FD5AE;
 }
@@ -13847,7 +13876,7 @@ footer .footer-logo {
 /*------------------------------------*\
     #Main Nav Message
 \*------------------------------------*/
-/* line 635, ../scss/layout/_navs.scss */
+/* line 652, ../scss/layout/_navs.scss */
 .mainNav-message {
   z-index: 102;
 }
