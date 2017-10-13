@@ -133,13 +133,13 @@ module.exports = function(grunt) {
           bowerJson: require('./bower.json')
       }
 		}
-    
+
 	});
 
 
 
     //
-    // Registering tasks 
+    // Registering tasks
     //
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-json-minify');

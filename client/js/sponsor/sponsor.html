@@ -2,41 +2,47 @@
 
 
 
-<sponsor-nav-dir>
-
+<sponsor-nav-dir class="mobile-border">
+    <div class="headerLogo">
+      <h1>LOGO</h1>
+    </div>
+    <div class="mobile-settings">
+      <span>Notification</span>
+      <span><a ui-sref="sponsor.settings">Settings</a></span>
+    </div>
 </sponsor-nav-dir>
 
-<ul class="grid  grid--center grid--justifySpaceAround mtb5">
-    
-  <li>
-    <a ui-sref="sponsor.dashboard">Dashboard</a>
-  </li>
+<ul class="grid grid--center grid--justifySpaceAround topborder greybutton">
 
-  <li> 
-    <a ui-sref="sponsor.contributions">Contributions</a>
-  </li>
-
-  <li>
+  <li class="ptb5">
      <a ui-sref="sponsor.faq">FAQ</a>
   </li>
 
-  <li>
-     <a ui-sref="sponsor.settings">Settings</a>
+
+  <li class="ptb5">
+    <a ui-sref="sponsor.contributions">Contributions</a>
   </li>
+
+
+  <li class="ptb5">
+    <a ui-sref="sponsor.dashboard">Sponsees</a>
+  </li>
+
+
 
 </ul>
 
 <div class="row">
   <div class="small-12 columns large-11 medium-centered  ">
     <div ui-view="sponsor">
-      
-    
+
+
     </div>
   </div>
 </div>
 
 <footer>
-  
+
   FOOTER
-  
+
 </footer>
