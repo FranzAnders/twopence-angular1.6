@@ -31,9 +31,9 @@ twopence.directive('compareTo', function() {
     controllerAs: 'compareTo', 
     link: function(scope, element, attrs, controllers) {
 
-      let compareTo = controllers[0];
+      var compareTo = controllers[0];
 
-      let ngModel = controllers[1]; 
+      var ngModel = controllers[1]; 
 
       ngModel.$validators.compareTo = function(modelValue) {
 

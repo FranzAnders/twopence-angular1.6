@@ -46,3 +46,4 @@ Front-end of the Pickpocket webapp
 
 # Getting CORS To Work 
 - ws --rewrite '/api/* -> https://api.onepence.co/$1' --spa index.html
+

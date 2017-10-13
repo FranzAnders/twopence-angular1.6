@@ -1,0 +1,11 @@
+image: samadhi/frontend-tools
+
+pipelines:
+  branches:
+      master:
+          - step:
+              script:
+                  - cd client
+                  - npm install
+                  - grunt publish --force
+                  - s3_website push --site=dist
