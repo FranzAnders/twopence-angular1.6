@@ -1,8 +1,8 @@
 
 <div class="section--main">
-  
+
   <div class="row">
-    
+
     <div class="small-12 columns">
 
       <h1>
@@ -10,7 +10,7 @@
       </h1>
 
       <h4 class="">
-        Status:
+        Plan Status:
 
         <span ng-switch="sponsee.information.plan.status">
 
@@ -29,30 +29,30 @@
         </span>
 
       </h4>
-      
+
       <h4>Sponsee: {{sponsee.information.name}}</h4><br>
 
     </div>
 
     <div class="small-12 columns"
           ng-class="{'txtc4': sponsee.information.plan.status === 'unclaimed' }">
-      
+
       <p>Would you like to match loan payments for your sponsee?</p>
 
       <fieldset class="row mb6 ">
-        
+
         <div class="small-12 columns">
 
           <div class="grid grid--center">
 
             <input type="radio" id="loanMatchingNo" name="loanMatching" value="yes"
                    ng-model="loanMatching">
-            
+
             <label for="loanMatchingNo" class="mr2">Yes</label>
-            
+
             <input type="radio" id="loanMatchingYes" name="loanMatching" value="no"
                    ng-model="loanMatching">
-            
+
             <label for="loanMatchingYes"  class="mr2">No</label>
 
           </div>
@@ -62,66 +62,66 @@
       </fieldset>
 
       <div>
-        
+
         <h3>
           Monthly Limit
         </h3>
 
         <fieldset>
-        
+
           <input type="radio"
                  ng-model="sponseeSponsorship.form.limit"
                  name="limit"
                  value="100"
-                 id="oneHundredLimit"> 
+                 id="oneHundredLimit">
           <label for="oneHundredLimit">$100</label>
-          
+
           <input type="radio"
                  ng-model="sponseeSponsorship.form.limit"
                  name="limit"
                  value="300"
                  id="threeHundredLimit">
           <label for="threeHundredLimit">$300</label>
-        
+
           <input type="radio"
                  ng-model="sponseeSponsorship.form.limit"
                  name="limit"
                  value="500"
                  id="fivehundredLimit">
           <label for="fivehundredLimit">$500</label>
-          
+
           <input type="radio"
                  ng-model="sponseeSponsorship.form.limit"
                  name="limit"
                  value="unlimited"
                  id="unlimitedLimit">
           <label for="unlimitedLimit">Unlimited</label>
-        
-        
+
+
           <input type="checkbox"
                  ng-model="customLimit"
                  name="limit"
                  id="custom">
-        
+
           <label for="custom">Custom</label>
-        
-          <input type="text" 
+
+          <input type="text"
                  id="customValue"
                  name="custom"
                  class="input--medium  input--primary"
                  ng-model="sponseeSponsorship.form.limit">
-        
+
         </fieldset>
-        
+
       </div>
 
       <div>
-        
+
         el
       </div>
 
     </div>
-  
+
   </div>
 
 </div>

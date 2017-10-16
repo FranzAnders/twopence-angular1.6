@@ -16,7 +16,7 @@ twopence.factory('Auth', [
 
 
     //
-    // Logs the user in if the account exists 
+    // Logs the user in if the account exists
     //
     auth.login = function(pLoginInfo) {
 
@@ -42,13 +42,13 @@ twopence.factory('Auth', [
 
 
     //
-    // Sets the token 
+    // Sets the token
     //
     auth.setToken = function(pToken) {
 
-      token = pToken; 
+      token = pToken;
 
-    }; 
+    };
 
 
     return auth
