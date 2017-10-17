@@ -88,6 +88,16 @@ twopence.config(
           }
 
         })
+        .state('sponsor.logout', {
+          url: '/logout',
+          views: {
+            'sponsor' : {
+              templateUrl: "js/home/logOut.html",
+              controller: "logOutCtrl",
+              controllerAs: "logOut"
+            }
+          }
+        })
         .state('main.signUp', {
 
           url: "sign-up",

@@ -35,6 +35,11 @@ twopence.factory('Auth', [
       });
     };
 
+    auth.logout = function() {
+      console.log("Logging you out fam");
+      token = null;
+    };
+
     auth.setVisited = function() {
       $cookies.put('loggedIn', true);
     };

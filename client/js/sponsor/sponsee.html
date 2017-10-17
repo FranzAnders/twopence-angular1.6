@@ -1,29 +1,29 @@
 
 <div class="section--main">
-  
+
   <div class="row">
-    
+
     <div class="small-12 columns mb7">
-        
+
       <h1 ng-bind="sponsee.information.first_name + ' ' + sponsee.information.last_name ">
       </h1>
-  
+
 
       <p class="txtc2">Matching Plan:
-      
+
         <span ng-switch="sponsee.information.current_sponsorship.plan.active"
               ng-if='sponsee.information.status == "active"'>
-      
+
           <span ng-switch-when="true" class="fwb uc">
                ${{sponsee.information.current_sponsorship.plan.limit}} {{sponsee.information.current_sponsorship.plan.frequency}} Limit
           </span>
-      
+
           <span ng-switch-when="false">
               <span class="fwb  uc">none</span>
           </span>
 
         </span>
-         
+
         <span ng-if='sponsee.information.status == "invited" || sponsee.information.status == "onboarding"'>
             <span class="fwb  txtc--warning uc">Invite Pending</span>
         </span>
@@ -33,7 +33,7 @@
           <span>
               <span class="fwb  uc">none</span>
           </span>
-          
+
         </span>
 
         (<a ui-sref="sponsor.edit({sponseeId: sponsee.information.id, planId: sponsee.information.current_sponsorship.id})" class="">
@@ -41,17 +41,17 @@
 
       </p>
 
-  
+
     </div>
 
     <div class="small-12 columns  mb7">
 
       <div class="card">
 
-        <h2>Loan Status</h2>    
+        <h2>Loan Status</h2>
 
         <hr class="hr--primary">
-        
+
         <ul>
           <li class="mb4">Percent of Loan paid off</li>
           <li class="mb4">Interest Avoided</li>
@@ -61,8 +61,8 @@
 
     </div>
 
-    <div class="small-12 columns  mb7"">
-      
+    <div class="small-12 columns  mb7">
+
       <h2>Your Contributions</h2>
 
       <p>Total to date: $1,000,000</p>
@@ -78,7 +78,7 @@
       </ul>
 
     </div>
-  
+
   </div>
 
 </div>
