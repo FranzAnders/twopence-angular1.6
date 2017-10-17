@@ -10,6 +10,7 @@ twopence.controller('signUpCtrl', [
     '$scope',
     '$state',
     '$timeout',
+    '$fancyModal',
     'User',
     'Sponsor',
     'Auth',
@@ -18,6 +19,7 @@ twopence.controller('signUpCtrl', [
       $scope,
       $state,
       $timeout,
+      $fancyModal,
       User,
       Sponsor,
       Auth) {
@@ -78,7 +80,7 @@ twopence.controller('signUpCtrl', [
           User.create(vm.userInfo).then(function() {
 
             console.log('yep, it passes ');
-            
+
             $state.go('main.signUp.identity');
 
 
@@ -124,6 +126,28 @@ twopence.controller('signUpCtrl', [
         User.verify();
         $state.go('sponsor.dashboard');
       };
+
+      vm.openTermsModal = function(terms) {
+        console.log("Attempting opening of Modal");
+        $fancyModal.open({
+
+          templateUrl: 'js/home/signUp-terms.html',
+          controller: 'signUpCtrl as signUp',
+          resolve: {
+
+              TermsInformation: function() {
+
+                // return sponsee;
+                console.log("Does something")
+
+              }
+
+          }
+
+        });
+
+      };
+
 
 
       // vm.processForm = function() {
