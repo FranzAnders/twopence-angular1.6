@@ -1,5 +1,5 @@
 
-'use strict'; 
+'use strict';
 
 /*------------------------------------*\
     Home Page Controller
@@ -9,10 +9,10 @@
 twopence.controller('homeCtrl',
     function() {
 
-    var vm = this; 
+    var vm = this;
 
-    console.log('hello'); 
+    console.log('hello');
 
     
 
-}); 
+});
