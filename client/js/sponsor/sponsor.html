@@ -2,8 +2,14 @@
 
 
 
-<sponsor-nav-dir>
-
+<sponsor-nav-dir class="mobile-border">
+    <div class="headerLogo">
+      <h1>LOGO</h1>
+    </div>
+    <div class="mobile-settings">
+      <span>Notification</span>
+      <span><a ui-sref="sponsor.settings">Settings</a></span>
+    </div>
 </sponsor-nav-dir>
 
 <ul class="grid  grid--center grid--justifySpaceAround mtb5">
@@ -13,15 +19,20 @@
   </li>
 
   <li>
-    <a ui-sref="sponsor.contributions">Contributions</a>
-  </li>
+<ul class="grid grid--center grid--justifySpaceAround topborder greybutton">
 
-  <li>
+  <li class="ptb5">
      <a ui-sref="sponsor.faq">FAQ</a>
   </li>
 
-  <li>
-     <a ui-sref="sponsor.settings">Settings</a>
+
+  <li class="ptb5">
+    <a ui-sref="sponsor.contributions">Contributions</a>
+  </li>
+
+
+  <li class="ptb5">
+    <a ui-sref="sponsor.dashboard">Sponsees</a>
   </li>
 
   <li>

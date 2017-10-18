@@ -1,15 +1,15 @@
 
 <div>
-  
-  <form ng-submit="signUp.createSponsor(signUp.sponsorCreationForm)" 
+
+  <form ng-submit="signUp.createSponsor(signUp.sponsorCreationForm)"
         name="signUp.sponsorCreationForm"
         novalidate>
 
     <label for="first name">
       First Name
     </label>
-      
-    <input type="text" id="first name" 
+
+    <input type="text" id="first name"
            placeholder="Your first name"
            class="input--primary input--medium"
            ng-model="signUp.sponsorInfo.first_name"
@@ -19,8 +19,8 @@
     <label for="full name">
       Last Name
     </label>
-      
-    <input type="text" id="full name" 
+
+    <input type="text" id="full name"
            placeholder="Your last name"
            class="input--primary input--medium"
            ng-model="signUp.sponsorInfo.last_name"
@@ -30,17 +30,17 @@
     <label for="full name">
       Cell Phone Number
     </label>
-      
-    <input type="tel" id="full name" 
+
+    <input type="tel" id="full name"
            placeholder="First and last name"
           class="input--primary input--medium"
-          ng-model="signUp.sponsorInfo.phone">  
+          ng-model="signUp.sponsorInfo.phone">
 
     <div class="row mb2">
 
       <div class="small-12 columns  grid grid--center">
 
-        <input type="checkbox"  
+        <input type="checkbox"
                id="sms_contacting"
                ng-model="signUp.sponsorInfo.sms_preferred"
                >
@@ -52,21 +52,41 @@
       </div>
 
     </div>
+    <div class="row mb2">
+
+      <div class="small-12 columns  grid grid--center">
+
+        <br />
+        <input type="checkbox"
+               id="terms_conditions"
+               ng-model="signUp.sponsorInfo.termsagreed"
+               >
+
+        <label for="terms_conditions" class="mb0">
+          I agree to terms and conditions
+        </label>
+
+      </div>
+
+    </div>
 
     <label for="date of birth">
       Date of birth
     </label>
 
-    <input type="date" 
-           placeholder="YYYY-MM-DD" 
+    <input type="date"
+           placeholder="YYYY-MM-DD"
            class="input--medium  input--primary"
            ng-model="signUp.sponsorDob"
            required>
 
-    <button 
+    <button
         type="submit"
         class="button--medium  button--primary  button--expanded">
       Create Account
+    </button>
+    <button type="button" ng-click="main.signUp.openTermsModal(terms)">
+      Read Terms &amp; Conditions
     </button>
 
   </form>

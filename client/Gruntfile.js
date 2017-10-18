@@ -133,13 +133,13 @@ module.exports = function(grunt) {
           bowerJson: require('./bower.json')
       }
 		}
-    
+
 	});
 
 
 
     //
-    // Registering tasks 
+    // Registering tasks
     //
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-json-minify');
@@ -156,6 +156,6 @@ module.exports = function(grunt) {
     // Publish tasks
     //
     //grunt.registerTask('publish-noimg', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify','json-minify:build', 'usemin']);
-    grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'json-minify:build','usemin']);
+    grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
