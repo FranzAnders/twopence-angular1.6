@@ -95,7 +95,6 @@ twopence.factory('Auth', [
       return (authService.isAuthenticated() &&
         authorizedRoles.indexOf(Session.userRole) !== -1);
     };
-      token = pToken;
 
 
     return auth
