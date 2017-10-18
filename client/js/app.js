@@ -196,19 +196,20 @@ twopence.config(
         })
         .state('sponsor.edit', {
 
-          url: "sponsee/:sponseeEmail/edit",
+          url: "editing/{plan:int}",
           views: {
 
             'sponsor': {
 
               templateUrl: "js/sponsor/sponsee-plan-edit.html",
-              controller: "sponseeCtrl",
-              controllerAs: "sponsee"
+              controller: "sponseePlanEditCtrl",
+              controllerAs: "sponseePlanEdit"
 
             }
           },
           params: {
-            sponseeEmail: null
+            plan: null,
+            sponsee: null
           }
 
         })
@@ -248,7 +249,7 @@ twopence.config(
           },
           params: {
 
-            sponseeId: null,
+            sponseeId: null
 
           }
 
@@ -375,6 +376,15 @@ twopence.run(
     $rootScope.$on('$stateChangeError', function(event) {
 
         console.log('state change error my boy!')
+
+    });
+
+
+
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
+      console.log(toParams); 
 
     });
 

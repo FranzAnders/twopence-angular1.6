@@ -9,11 +9,13 @@ twopence.controller('sponseeCtrl', [
   '$scope',
   '$stateParams',
   '$state',
+  '$rootScope',
   'Sponsee',
   function(
     $scope,
     $stateParams, 
     $state,
+    $rootScope, 
     Sponsee) {
 
     var vm = this; 
@@ -35,5 +37,6 @@ twopence.controller('sponseeCtrl', [
       console.log('sponsee not in system');
 
     });
+
 
 }]); 
