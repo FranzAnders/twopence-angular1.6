@@ -50,6 +50,37 @@ twopence.factory('Sponsorship', [
 
   };
 
+
+  //
+  //  Looks up a sponsorship plan via an id
+  //
+  sponsorship.get = function(pPlanId) {
+
+    return $q(function(resolve, reject) {
+
+        $http.get(BASE_URL + '/v1/sponsorships/' + pPlanId, {
+
+          headers: {
+
+            'Authorization' : 'bearer ' + Auth.getToken() 
+
+          }
+
+        }).then(function(res) {
+
+          resolve(res.data); 
+
+        }).catch(function(err) {
+
+          reject(err); 
+
+        }); 
+
+
+    }); 
+
+  }; 
+
   return sponsorship; 
 
 }]); 
