@@ -40,9 +40,8 @@ twopence.controller('signUpCtrl', [
       // inject into the requests
       //
       vm.sponsorInfo = {
-
-        'sms_preferred': false
-
+        'sms_preferred': false,
+        'accepted_tc': false
       };
 
 
