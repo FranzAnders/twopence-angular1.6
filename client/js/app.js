@@ -8,7 +8,8 @@
 twopence = angular.module('twopence', [
      'ui.router',
      'vesparny.fancyModal',
-     'ngCookies'
+     'ngCookies',
+     'xeditable'
       ]);
 
 
@@ -388,6 +389,7 @@ twopence.run(
      '$cookies',
      '$location',
      'Auth',
+     'editableOptions',
      function(
         $rootScope,
         $document,
@@ -397,7 +399,8 @@ twopence.run(
         $http,
         $cookies,
         $location,
-        Auth
+        Auth,
+        editableOptions
         ) {
 
 
@@ -410,6 +413,9 @@ twopence.run(
     $rootScope.$on('stateChangeStart', function(event) {
 
     });
+
+    editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+
 
 
     // Attempting Login Check - Yay!
@@ -473,7 +479,7 @@ twopence.run(
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
-      console.log(toParams); 
+      console.log(toParams);
 
     });
 

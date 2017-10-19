@@ -6,60 +6,69 @@
     <div class="small-12 columns">
 
       <div class="section">
-      
+
         <h1>
           Manage <br> Matching Plan
         </h1>
-        
+
         <h2 class="h4">Sponsee: <span  ng-bind="sponseePlanEdit.sponsee.first_name + ' ' + sponseePlanEdit.sponsee.last_name"></span></h2>
 
       </div>
 
     </div>
-  
-    <form ng-submit="">
 
-      <div class="small-12 columns  text-center">
-        
-          <h5 class="fwb">Monthly Limit</h5>
-        
-          <span class="text-kilo">{{sponseePlanEdit.sponseePlan.plan.limit}} </span>
-      
-          <button class="button--secondary  button--micro  button--expanded">
-            
-            Change Limit
+    <div class="small-12 columns  text-center">
 
-          </button>
+        <h5 class="fwb">Monthly Limit</h5>
 
-        </div>
-        
-        
+        <span
+         class="text-kilo"
+         editable-text="sponseePlanEdit.sponseePlan.plan.limit"
+         e-form="sponseeDollars"
+         onaftersave="checkName($data)"
+         >
+         {{sponseePlanEdit.sponseePlan.plan.limit ||  "$$$"}} </span>
+
+        <button
+           class="button--secondary  sbutton--micro  button--expanded"
+           ng-click="sponseeDollars.$show()"
+           ng-hide="sponseeDollars.$visible">
+          Change Limit
+        </button>
+
+      </div>
+
+
+    <form ng-submit="" editable-form>
+
+
+
         <div class="small-12 columns  text-center">
-          
-          <h5 class="fwb">Plan Status</h5>
 
+          <h5 class="fwb">Plan Status</h5>
+            {{sponseePlanEdit.information.status}}
            <span ng-switch="sponseePlanEdit.information.plan.status"
                 class="text-kilo">
-      
+
             <span ng-switch-when="active">
                  ${{sponseePlanEdit.information.plan.limit}} Monthly Limit
             </span>
-      
+
             <span ng-switch-when="none">
                 <span>None</span>
             </span>
-      
+
             <span ng-switch-when="unclaimed">
                 <span>INVITE PENDING</span>
             </span>
-      
+
           </span>
-      
-        
+
+
           <button class="mt4  button--small  button--secondary  button--expanded">
             Pause Plan
           </button>
-        
+
         </div>
 
     </form>
