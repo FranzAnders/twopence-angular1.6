@@ -8,8 +8,8 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
-    '$fancyModal',
     'Auth',
+    '$fancyModal',
     function(
         Sponsee,
         Sponsor,
