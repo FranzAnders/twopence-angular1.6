@@ -6,6 +6,9 @@ pipelines:
           - step:
               script:
                   - cd client
+                  - apk add git
+                  - gem install compass
                   - npm install
-                  - grunt publish --force
+                  - bower install --allow-root
+                  - grunt publish
                   - s3_website push --site=dist
