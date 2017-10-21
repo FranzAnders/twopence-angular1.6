@@ -143,7 +143,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('bower-install', ['wiredep']);
 
-    grunt.registerTask('default', ['compass', 'bower-install', 'connect:app', 'watch']);
+    grunt.registerTask('default', ['bower-install', 'compass', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
 
@@ -152,6 +152,6 @@ module.exports = function(grunt) {
     // Publish tasks
     //
     //grunt.registerTask('publish-noimg', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify','json-minify:build', 'usemin']);
-    grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin']);
+  grunt.registerTask('publish', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
