@@ -9,21 +9,18 @@ module.exports = function(grunt) {
 		app: '.',
 		dist: 'dist',
 
-		sass: {
-			dist: {
-				options: {
-					style: 'expanded', // expanded or nested or compact or compressed
-					loadPath: '<%= app %>/bower_components/foundation/scss',
-					compass: true,
-					quiet: false,
-          update: true,
-          lineNumbers: true
-				},
-				files: {
-					'<%= app %>/css/app.css': '<%= app %>/scss/main.scss'
-				}
-			}
-		},
+       compass: {
+         dist: {
+           options: {
+             config: 'config.rb',
+             importPath: '<%= app %>/bower_components/foundation/scss',
+             outputStyle: 'expanded',
+             boring: true,
+             sassDir: '<%= app %>/scss/main.scss',
+             cssDir: '<%= app %>/css/app.css'
+           }
+         }
+       },
 
 		jshint: {
 			options: {
@@ -87,11 +84,11 @@ module.exports = function(grunt) {
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['sass']
+				tasks: ['compass']
 			},
 			sass: {
 				files: '<%= app %>/scss/**/*.scss',
-				tasks: ['sass']
+				tasks: ['compass']
 			},
 			livereload: {
 				files: ['<%= app %>/**/*.html', '<%= app %>/data/*.json', '!<%= app %>/bower_components/**', '<%= app %>/js/**/*.js', '<%= app %>/css/**/*.css', '<%= app %>/images/**/*.{jpg,gif,svg,jpeg,png}'],
@@ -144,10 +141,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-json-minify');
 
-    grunt.registerTask('compile-sass', ['sass']);
     grunt.registerTask('bower-install', ['wiredep']);
 
-    grunt.registerTask('default', ['compile-sass', 'bower-install', 'connect:app', 'watch']);
+    grunt.registerTask('default', ['compass', 'bower-install', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
 
