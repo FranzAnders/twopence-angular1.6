@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 /*------------------------------------*\
@@ -8,14 +6,14 @@
 
 
 twopence.controller('sponseePlanEditCtrl', [
-    '$stateParams',
-    '$state',
-    '$scope',
-    'Sponsorship',
-   function($stateParams,
-            $state,
-            $scope,
-            Sponsorship) {
+  '$stateParams',
+  '$state',
+  '$scope',
+  'Sponsorship',
+  function($stateParams,
+    $state,
+    $scope,
+    Sponsorship) {
 
     var vm = this;
 
@@ -25,7 +23,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
     console.log(vm.sponsee);
 
-    if(!$stateParams.sponsee) {
+    if (!$stateParams.sponsee) {
 
       $state.go('sponsor.dashboard');
 
@@ -36,14 +34,13 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     Sponsorship.get(planId).then(function(plan) {
 
-      vm.sponseePlan = plan;
+        vm.sponseePlan = plan;
+        console.log(vm.sponseePlan);
 
-    })
-    .catch(function(err) {
-
-      console.log('no bueno');
-
-    });
+      })
+      .catch(function(err) {
+        console.log('no bueno');
+      });
 
     //
     //    checkName Method
@@ -84,4 +81,39 @@ twopence.controller('sponseePlanEditCtrl', [
       console.log("You prob created something. Hopefully in User# : " + planId);
     };
 
-}]);
+    $scope.pausePlan = function() {
+      console.log("Activate pausePlan. This ID is: " + vm.sponseePlan.id);
+      console.log(vm.sponseePlan);
+      console.log("Is this active?: " + vm.sponseePlan.plan.active);
+      var payLoad = {
+        "id": vm.sponseePlan.id,
+        "plan": {
+          "type":"match",
+          "pause": true
+        }
+      };
+      // if (vm.sponseePlan.plan.active === true) {
+      //   console.log("Patching the truf");
+      //
+      // } else {
+      //   console.log("Patching lies");
+      // }
+      if (vm.sponseePlan.plan.active === true) {
+        console.log("Should be paused");
+        Sponsorship.patch(payLoad);
+      }
+      else {
+        console.log("Should be resumed");
+        payLoad.plan.pause = false;
+        console.log("New Payload");
+        console.log(payLoad);
+        Sponsorship.patch(payLoad);
+      }
+
+      console.log(vm.sponseePlan);
+      Sponsorship.get(payLoad.id).then(function(plan) {
+        console.log(plan);
+      })
+    };
+  }
+]);

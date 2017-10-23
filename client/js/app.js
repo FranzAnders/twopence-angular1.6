@@ -9,7 +9,8 @@ twopence = angular.module('twopence', [
      'ui.router',
      'vesparny.fancyModal',
      'ngCookies',
-     'xeditable'
+     'xeditable',
+     'angular-plaid-link'
       ]);
 
 
@@ -18,13 +19,26 @@ twopence.config(
          '$urlRouterProvider',
          '$locationProvider',
          '$compileProvider',
-         '$locationProvider',
+         'plaidLinkProvider',
          function(
             $stateProvider,
             $urlRouterProvider,
+            $locationProvider,
             $compileProvider,
-            $locationProvider
+            plaidLinkProvider
             ) {
+
+          plaidLinkProvider.init({
+            env: 'sandbox',
+            clientName: 'TwoPence',
+            key: 'ee1d216ec4313d5efb386b0a97a06d',
+            product: ['auth'],
+            webhook: 'https://api.onepence.co/v1/plaid/webhooks',
+            onSuccess: function(public_token, metadata) {
+            // POST /plaid/token
+              console.log("Hey you posted a token")
+            }
+          });
 
     //
     //If anything is unmatched just go to home
