@@ -68,9 +68,15 @@ twopence.controller('settingsCtrl', [
 
         console.log(vm.userSettings); 
 
-        User.updateSettings(vm.userSettings).then(function(pSuccess) {
+        User.updateSettings(vm.userSettings).then(function() {
 
-          console.log(pSuccess)
+          console.log('user has been updated!')
+          vm.resetForm(); 
+
+        })
+        .catch(function() {
+
+          console.log('something went wrong!!');
 
         }); 
 
@@ -82,5 +88,17 @@ twopence.controller('settingsCtrl', [
 
     }; 
 
+
+
+    //
+    // Resets the form and sets everything as $pristine 
+    //
+    vm.resetForm = function() {
+
+      vm.userSettingsForm.$setPristine(); 
+      vm.userSettings.password = ''; 
+      vm.userSettings.confirmPassword = ''; 
+
+    }; 
 
 }]); 

@@ -70,7 +70,7 @@ twopence.factory('User', [
 
           headers: {
 
-            "Authorization" : "Bearer" + Auth.getToken()
+            "Authorization" : "Bearer " + Auth.getToken()
           }
 
         })
