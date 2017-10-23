@@ -29,10 +29,10 @@ twopence.config(
             ) {
 
           plaidLinkProvider.init({
-            env: 'sandbox',
+            env: 'production',
             clientName: 'TwoPence',
-            key: 'ee1d216ec4313d5efb386b0a97a06d',
-            product: ['auth'],
+            key: '428fe5a6f81e72cef465316f83b81b',
+            product: 'auth',
             webhook: 'https://api.onepence.co/v1/plaid/webhooks',
             onSuccess: function(public_token, metadata) {
             // POST /plaid/token

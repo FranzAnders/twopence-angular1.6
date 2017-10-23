@@ -2,42 +2,53 @@
 'use strict';
 
 /*------------------------------------*\
-    Sponsee Sponsorship Creation Controller 
+    Sponsee Sponsorship Creation Controller
 \*------------------------------------*/
 
 twopence.controller('sponseeSponsorshipCtrl', [
     '$scope',
     '$state',
     '$stateParams',
-    '$timeout', 
+    '$timeout',
     'Sponsee',
-    'Sponsorship', 
+    'Sponsorship',
+    'plaidLink',
     function(
       $scope,
-      $state, 
+      $state,
       $stateParams,
       $timeout,
-      Sponsee, 
-      Sponsorship) {
+      Sponsee,
+      Sponsorship,
+      plaidLink) {
 
-      var vm = this; 
 
-      vm.formNotSubmited = true; 
+      var vm = this;
 
-      vm.formSubmittedSuccesfully = false; 
+      vm.formNotSubmited = true;
+
+      vm.formSubmittedSuccesfully = false;
 
       vm.sponseeId = $stateParams.sponseeId;
 
 
+      plaidLink.create({
+        onSuccess: function(token) {
+          console.log("You haz token: " + token)
+        },
+        onExit: function() {
+          console.log("They peaced out")
+        }
+      });
 
       //
       // Sponsorship info object, holds all the plan information
-      // as it is being built 
+      // as it is being built
       //
       vm.sponsorshipInfo = {
         "user": {
             "id" : vm.sponseeId
-        }, 
+        },
         "plan": {
           "type": null,
           "frequency": null
@@ -47,12 +58,12 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
       //
-      // Creates a sponsorship, if succesfull, shows success screen and 
-      // takes user to the sponsee's page 
+      // Creates a sponsorship, if succesfull, shows success screen and
+      // takes user to the sponsee's page
       //
       vm.createSponsorship = function(pSponsorshipDetailsForm) {
 
-        var sponseeId = vm.sponseeId; 
+        var sponseeId = vm.sponseeId;
 
         if(pSponsorshipDetailsForm.$valid) {
 
@@ -60,18 +71,18 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
             console.log(sponsorship)
 
-            vm.formNotSubmited = false; 
-            vm.formSubmittedSuccesfully = true; 
+            vm.formNotSubmited = false;
+            vm.formSubmittedSuccesfully = true;
 
             $timeout(function() {
 
-              $state.go('sponsor.sponsee', {sponseeId: sponseeId}); 
+              $state.go('sponsor.sponsee', {sponseeId: sponseeId});
 
-            }, 1000); 
+            }, 1000);
 
-          }); 
+          });
 
-          console.log('valid'); 
+          console.log('valid');
 
 
         } else {
@@ -81,7 +92,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
         }
 
-      }; 
+      };
 
 
 
@@ -95,14 +106,14 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       // }).catch(function(error) {
 
-      //   console.log('error'); 
+      //   console.log('error');
 
-      // }); 
+      // });
 
 
 
       //
-      // Sets the sponsorship type 
+      // Sets the sponsorship type
       //
       vm.setType = function(pType) {
 
@@ -121,7 +132,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
           vm.sponsorshipInfo.plan.limit = 0;
         }
 
-        console.log(vm.sponsorshipInfo); 
+        console.log(vm.sponsorshipInfo);
 
       };
 
@@ -137,32 +148,35 @@ twopence.controller('sponseeSponsorshipCtrl', [
               vm.sponsorshipInfo = {
                 "user": {
                     "id" : vm.sponseeId
-                }, 
+                },
                 "plan": {
                   "type": null,
                   "frequency": null
                 }
               };
 
-              vm.formNotSubmited = true; 
-              
-              vm.formSubmittedSuccesfully = false; 
+              vm.formNotSubmited = true;
+
+              vm.formSubmittedSuccesfully = false;
               console.log('clear form');
 
           }
 
       });
 
+      vm.link = function(bankType) {
+        plaidLink.open(bankType);
+      };
 
       //
       // Proccesses the sponsorship form, if required fields are filled
-      // we take the user to the Terms of Agreement page  
+      // we take the user to the Terms of Agreement page
       //
       // vm.processForm = function() {
 
       //   if(vm.form.limit) {
 
-      //     vm.formNotSubmited = false; 
+      //     vm.formNotSubmited = false;
 
       //   } else {
 
@@ -174,21 +188,21 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
       //
-      // Finishes the form if user has agreed to the terms of agreement 
-      // // 
+      // Finishes the form if user has agreed to the terms of agreement
+      // //
       // vm.finishForm = function() {
 
       //   console.log('finish form is running');
 
       //   if(!vm.form.limit) {
 
-      //     return false; 
+      //     return false;
 
       //   } else {
 
       //     if(vm.form.limit && vm.form.acceptedTerms) {
 
-      //       vm.submitSponsorshipForm(vm.form, vm.sponseeEmail); 
+      //       vm.submitSponsorshipForm(vm.form, vm.sponseeEmail);
 
       //     } else {
 
@@ -203,40 +217,40 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       // vm.submitSponsorshipForm = function(pForm, pSponseeEmail) {
 
-      //   var plan = {}; 
+      //   var plan = {};
 
-      //   plan.limit = pForm.limit; 
-      //   plan.type = pForm.type; 
+      //   plan.limit = pForm.limit;
+      //   plan.type = pForm.type;
 
       //   if(plan.type = 'matching') {
 
       //     Sponsee.setPlan(plan, pSponseeEmail).then(function(pSponsee) {
 
-      //       console.log(pSponsee); 
+      //       console.log(pSponsee);
 
       //       $timeout(function() {
 
-      //         $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail}); 
+      //         $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail});
 
-      //       }, 1000); 
+      //       }, 1000);
 
       //     }).catch(function(error){
-              
+
       //       console.log('this failed');
 
       //     });
 
       //     return
 
-      //   } 
+      //   }
 
-      //   vm.formSubmittedSuccesfully = true; 
+      //   vm.formSubmittedSuccesfully = true;
 
       //   $timeout(function() {
 
-      //       $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail}); 
+      //       $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail});
 
-      //   }, 1000); 
+      //   }, 1000);
 
       // }
 
