@@ -277,7 +277,7 @@ twopence.config(
         })
         .state('sponsor.settings', {
 
-          url: "sponsor/settings.html",
+          url: "sponsor/settings",
           views: {
 
             'sponsor': {

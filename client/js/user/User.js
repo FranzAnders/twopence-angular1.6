@@ -37,15 +37,17 @@ twopence.factory('User', [
       });
     };
 
+
+    //
+    // Sends out email verification to sponsor's email 
+    //
     User.verify = function() {
       return $q(function(resolve, reject) {
         console.log("Going for it: ");
         var jwtToken = Auth.getToken();
         $http.post(BASE_URL + '/v1/sponsors/verification', {
           headers: {
-            "Content-type": 'application/json',
             "Authorization": 'bearer ' + jwtToken
-
           }
         })
         .then(function(res) {
@@ -55,6 +57,37 @@ twopence.factory('User', [
         });
       });
     };
+
+
+    //
+    // Updates a user's settings 
+    //
+    User.updateSettings = function(pSettingsToChange) {
+
+      return $q(function(resolve, reject) {
+
+        $http.patch(BASE_URL + '/v1/users', pSettingsToChange, {
+
+          headers: {
+
+            "Authorization" : "Bearer" + Auth.getToken()
+          }
+
+        })
+        .then(function(res){
+
+          resolve(res.data); 
+
+        }).catch(function(err){
+
+          reject(err); 
+
+        })
+
+
+      }); 
+
+    }; 
 
     return User;
 

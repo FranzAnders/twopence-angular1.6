@@ -231,17 +231,12 @@ twopence.factory('Sponsor', [
   //
   Sponsor.create = function(pSponsorInfo) {
 
-
-    var jwtToken = Auth.getToken();
-
-    console.log(jwtToken); 
-
     return $q(function(resolve, reject) {
       $http.post(BASE_URL +  '/v1/sponsors', pSponsorInfo, {
 
         headers: {
 
-          "Authorization": 'bearer ' + jwtToken
+          "Authorization": 'bearer ' + Auth.getToken()
 
         }
 
@@ -254,6 +249,7 @@ twopence.factory('Sponsor', [
     });
 
   };
+
 
   return Sponsor
 
