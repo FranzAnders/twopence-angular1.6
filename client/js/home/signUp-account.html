@@ -10,29 +10,36 @@
     </label>
 
     <input type="text" id="email"
+           name="email"
            placeholder="Email is your username"
            class="input--primary input--medium"
            ng-model="signUp.userInfo.email"
            ng-minlength = "8"
            required>
+    
+    <div ng-messages="signUp.">
+      
 
+    </div>
 
     <label for="password">
       Password
     </label>
 
     <input type="password" id="password"
+           name="password"
            class="input--primary input--medium"
            ng-model="signUp.userInfo.password" 
            required
            ng-minlength = "8"
            ng-model-options="{debounce: 200}">
 
-    <label for="re-enter password">
+    <label for="confirm_password">
       Re-enter Password
     </label>
 
-    <input type="password" id="re-enter password"
+    <input type="password" id="confirm_password"
+           name="confirmPassword"
            class="input--primary input--medium"
            required
            ng-minlength="8"
