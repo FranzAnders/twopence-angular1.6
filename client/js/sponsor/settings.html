@@ -51,7 +51,6 @@
                class="input--primary input--medium"
                name="password"
                ng-model="settings.userSettings.password" 
-               ng-change="settings.verifyPassword(settings.userSettings.password)"
                ng-minlength = "8"
                ng-model-options="{debounce: 200}">
 
@@ -62,7 +61,6 @@
         <input type="password" id="re-enter password"
                class="input--primary input--medium"
                name="confirmPassword"
-               ng-change="settings.verifyPassword(settings.userSettings.verifyPassword)"
                ng-minlength="8"
                ng-model="settings.userSettings.confirmPassword"
                ng-model-options="{debounce: 200}"

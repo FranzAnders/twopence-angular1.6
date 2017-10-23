@@ -52,6 +52,7 @@ twopence.controller('settingsCtrl', [
     //
     // Saves the changes by passing in the form and seeing if it validates
     // if it does, we make a patch request  with the userSettings object 
+    // We also remove the confirm password prop everytime, not needed in payload
     //
     vm.saveChanges = function(pUserSettingsForm) {
 
@@ -63,18 +64,15 @@ twopence.controller('settingsCtrl', [
 
       delete vm.userSettings.confirmPassword
 
-      console.log(vm.userSettings); 
-
       if(pUserSettingsForm.$valid) {
 
         console.log(vm.userSettings); 
-        
+
         User.updateSettings(vm.userSettings).then(function(pSuccess) {
 
           console.log(pSuccess)
 
         }); 
-
 
       } else {
 
