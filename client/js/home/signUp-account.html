@@ -3,22 +3,34 @@
 
   <form ng-submit="signUp.createUser(signUp.userCreationForm)" 
         name="signUp.userCreationForm"
+        ng-model-options="{ getterSetter: true }"
         novalidate>
 
     <label for="email">
       Email
     </label>
 
-    <input type="text" id="email"
+    <input type="email" 
+           id="email"
            name="email"
            placeholder="Email is your username"
            class="input--primary input--medium"
            ng-model="signUp.userInfo.email"
            ng-minlength = "8"
+           ng-model-options="{debounce: 200}"
            required>
     
-    <div ng-messages="signUp.">
-      
+    <div ng-messages="signUp.userCreationForm.email.$error"
+         ng-show="signUp.userCreationForm.email.$touched"
+         role="alert">
+
+        <div ng-message="required">
+            Oops! We need an email from ya
+        </div>
+
+        <div ng-message="email">
+            Email must be valid 'example@email.com'
+        </div>
 
     </div>
 
@@ -34,6 +46,26 @@
            ng-minlength = "8"
            ng-model-options="{debounce: 200}">
 
+    <div ng-messages="signUp.userCreationForm.password.$error"
+         ng-show="signUp.userCreationForm.password.$touched"
+         role="alert">
+
+        <div ng-message="required">
+            Oops! A password is required
+        </div>
+
+        <div ng-message="ng-minlength">
+            Oops! Password must be atleast 8 characters in length 
+        </div>
+
+        <div ng-message="pattern">
+            Email must be valid 'example@email.com'
+        </div>
+
+    </div>
+
+
+
     <label for="confirm_password">
       Re-enter Password
     </label>
@@ -47,6 +79,23 @@
            ng-model-options="{debounce: 200}"
            compare-to="signUp.userInfo.password">
 
+    <div ng-messages="signUp.userCreationForm.password.$error"
+         ng-show="signUp.userCreationForm.password.$touched"
+         role="alert">
+
+        <div ng-message="required">
+            Oops! Password confirmation is required.
+        </div>
+
+        <div ng-message="ng-minlength">
+            Oops! Password must be atleast 8 characters in length.
+        </div>
+
+        <div ng-message="compare-to">
+            Oops! Passwords must match.
+        </div>
+
+    </div>
 
     <button class="button--primary  button--medium button--expanded"
             type="submit">
