@@ -35,9 +35,17 @@ twopence.factory('Auth', [
       });
     };
 
+
+    //
+    // Logs the User Out
+    //
+    //
     auth.logout = function() {
       console.log("Logging you out fam");
       token = null;
+      $cookies.remove('loggedIn');
+      $cookies.remove('userToken');
+
     };
 
     auth.setVisited = function() {
@@ -50,21 +58,22 @@ twopence.factory('Auth', [
             return auth.userVisitedSite;
     };
 
-    //
-    // Logs the User Out
-    //
-    //
-    auth.logout = function() {
-
-    }
-
 
     //
     // Gets the token created upon loging to  make calls
     //
     auth.getToken = function() {
-        token = $cookies.get('userToken');
-        return token;
+      
+      token = $cookies.get('userToken');
+      
+      if(token === 'null') {
+
+        token = null
+
+      }
+
+      return token;
+
     };
 
 

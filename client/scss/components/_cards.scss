@@ -6,9 +6,17 @@
 
 .card {
 
-  border: 1px solid $grey--mid; 
+  border: 1px solid $grey--light; 
   padding: rem-calc(12px); 
   margin-bottom: rem-calc(12px);
-  @include border-radius(4px); 
+  background-color: #FFF; 
+  @include box-shadow(0 0 4px rgba(0,0,0, .2)); 
+  @include border-radius(6px); 
+
+  @media #{$large-up} {
+
+    padding: rem-calc($level4); 
+    
+  }
 
 }

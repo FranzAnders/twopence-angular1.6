@@ -1,46 +1,51 @@
 
-<div class="section--main">
+<div class="section--main  section--quaternary  ">
   
   <div class="row">
     
     <div class="small-12 columns mb3">
       
-      <h1>Welcome,<br> 
+      <h1 class="ff2">Welcome,<br> 
         {{dashboard.sponsorInfo.name}}
       </h1>
 
     </div>
 
-    <div class="small-12  columns">
-      
+  </div>
+
+</div>
+
+<div class="section section--lead  ">
+    
+
       <div class="row">
 
         <div class="small-12 columns large-8">
             <div class="section">
         
-          <h1 class="h2">
+          <h1 class="ff2 h4">
             Your Sponsees
           </h1>
           
-          <ul class="row">
+          <ul class="row grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap">
             
-            <li class="small-12  medium-6  end   columns" ng-repeat="sponsee in dashboard.sponsees track by $index">
+            <li class="grid-cell small-12  medium-6  end   columns" ng-repeat="sponsee in dashboard.sponsees track by $index">
               
               <div class="row">
         
                 <div class="small-12 columns">
         
                   <div class="card">
-                    <h2 class="mb0" 
+                    <h2 class="" 
                         ng-bind="sponsee.first_name + ' ' + sponsee.last_name">
                     </h2>
                     
-                    <div class="txtc2">Matching Plan:
+                    <div class="txtc2  text-micro">Plan:
                     
                       <span ng-switch="sponsee.current_sponsorship.plan.active"
                             ng-if='sponsee.status == "active"'>
                     
-                        <span ng-switch-when="true" class="fwb uc">
+                        <span ng-switch-when="true" class="uc">
                              ${{sponsee.current_sponsorship.plan.limit}} {{sponsee.current_sponsorship.plan.frequency}} Limit
                         </span>
                     
@@ -71,7 +76,7 @@
                     
                     <div class="row">
                     
-                      <div class="small-6 columns">
+                      <div class="small-6 medium-12  large-6  columns">
                     
                       <span ng-switch="sponsee.current_sponsorship.plan.active"
                             ng-if='sponsee.status == "active"'>
@@ -102,7 +107,7 @@
       
                       </div>
                     
-                      <div class="small-6 columns">
+                      <div class="small-6 medium-12  large-6  columns">
                     
                         <button  class="button--expanded  button--primary"
                                   ui-sref="sponsor.sponsee({sponseeId: sponsee.id})">
@@ -164,8 +169,5 @@
 
       </div>
 
-    </div>
-
-  </div>
 
 </div>
