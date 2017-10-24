@@ -44,8 +44,8 @@ twopence.config(
     //
     // Pretty URLs
     //
-    //$locationProvider.html5Mode(true);
-    //$locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
 
 
 
@@ -376,7 +376,7 @@ twopence.config(
         });
 
 
-}]).constant("BASE_URL", "http://localhost:8000/api");
+}]).constant("BASE_URL", "http://api.onepence.co/api");
 
 twopence.run(
     ['$rootScope',
