@@ -13,15 +13,13 @@ button,
 
 .button--primary {
 
-  background-color: black;
-  border: 2px solid black; 
+  background-color: $primaryColor;
+  @include border-radius(6px); 
 
   &:hover, 
   &:focus {
 
-    background-color: transparent; 
     color: black; 
-    border: 2px solid black; 
 
   }
  
