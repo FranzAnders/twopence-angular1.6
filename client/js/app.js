@@ -7,7 +7,9 @@
 
 twopence = angular.module('twopence', [
      'ui.router',
-     'vesparny.fancyModal'
+     'vesparny.fancyModal',
+     'ngCookies',
+     'ngMessages'
       ]);
 
 
@@ -16,23 +18,34 @@ twopence.config(
          '$urlRouterProvider',
          '$locationProvider',
          '$compileProvider',
+         '$locationProvider',
          function(
             $stateProvider,
             $urlRouterProvider,
-            $locationProvider,
-            $compileProvider
+            $compileProvider,
+            $locationProvider
             ) {
 
     //
     //If anything is unmatched just go to home
     //
     $urlRouterProvider.otherwise("no-longer-here/");
+    //$httpProvider.interceptors.push(httpInterceptor);
+    // function httpInterceptor($q, $log, $cookieStore) {
+    //   return {
+    //     request: function(config) {
+    //       config.headers.Authorization =
+    //         $cookieStore.get('authToken');
+    //         return config;
+    //     }
+    //   };
+    // }
 
     //
     // Pretty URLs
     //
-    //$locationProvider.html5Mode(true);
-    //$locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
 
 
 
@@ -75,6 +88,16 @@ twopence.config(
 
           }
 
+        })
+        .state('sponsor.logout', {
+          url: '/logout',
+          views: {
+            'sponsor' : {
+              templateUrl: "js/home/logOut.html",
+              controller: "logOutCtrl",
+              controllerAs: "logOut"
+            }
+          }
         })
         .state('main.signUp', {
 
@@ -214,7 +237,7 @@ twopence.config(
         })
         .state('sponsor.sponseeAdd', {
 
-        url: "dashboard/add-sponsee",
+         url: "dashboard/add-sponsee",
           views: {
 
             'sponsor': {
@@ -255,7 +278,7 @@ twopence.config(
         })
         .state('sponsor.settings', {
 
-          url: "sponsor/settings.html",
+          url: "sponsor/settings",
           views: {
 
             'sponsor': {
@@ -353,7 +376,7 @@ twopence.config(
         });
 
 
-}]).constant("BASE_URL", "http://localhost:8000/api");
+}]).constant("BASE_URL", "http://api.onepence.co/api");
 
 twopence.run(
     ['$rootScope',
@@ -362,13 +385,19 @@ twopence.run(
      '$timeout',
      '$log',
      '$http',
+     '$cookies',
+     '$location',
+     'Auth',
      function(
         $rootScope,
         $document,
         $state,
         $timeout,
         $log,
-        $http
+        $http,
+        $cookies,
+        $location,
+        Auth
         ) {
 
 
@@ -377,6 +406,67 @@ twopence.run(
         console.log('state change error my boy!')
 
     });
+
+    $rootScope.$on('stateChangeStart', function(event) {
+
+    });
+
+
+    // Attempting Login Check - Yay!
+    // $rootScope.globals.currentUser.authData = $cookies.get('authToken') || {};
+    // console.log("Your cookie ID is: ")
+    $timeout(function () {
+      console.log("I hope this works.....")
+      var authChecker = Auth.checkIfVisited();
+      var tokenCheck = Auth.getToken();
+      console.log(authChecker);
+      console.log(tokenCheck);
+          if(authChecker == "true") {
+            console.log("You've already logged in. Let's redirect you");
+          //  $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck;
+            $state.go("sponsor.dashboard");
+          }
+          else {
+            console.log("Login again, my dude");
+            $state.go("main.login");
+          }
+    }, 0);
+
+    // tokenCheck = $cookies.get('authToken');
+    // console.log(tokenCheck.length);
+    console.log("Are you Authing?: " + Auth.checkIfVisited());
+
+    // Old script to save users and check auth in RootScope.
+    // May use for reference before deleting.
+
+    // $rootScope.currentUser = null;
+    // $rootScope.userRoles = USER_ROLES;
+    // $rootScope.isAuthorized = Auth.isAuthorized;
+
+    /* $rootScope.setCurrentUser = function (user) {
+      $rootScope.currentUser = user;
+    }; */
+
+
+
+    //
+    // if (tokenCheck.length > 0) {
+    //     $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck; // jshint ignore:line
+    //     $state.go('main.home');
+    // }
+
+    // if (!tokenCheck) {
+    //     $state.go('main.login');
+    // }
+
+    $rootScope.$on('$stateChangeStart', function (event, next, current) {
+      // if (toState.authRequired && !Auth.isAuthenticated()){ //Assuming the AuthService holds authentication logic
+      //   // User isn’t authenticated
+      //   $state.transitionTo("login");
+      //   event.preventDefault();
+      // }
+    });
+
 
 
     // Function to set data-useragent attribute to document
@@ -405,6 +495,7 @@ twopence.run(
      $http.defaults.headers.common['Content-Type'] = "application/json";
      $http.defaults.headers.post['Content-Type'] = "application/json";
      $http.defaults.headers.get = {'Content-Type' : "application/json"};
+     $http.defaults.headers.patch = {'Content-Type' : "application/json"};
 
 
 }]);

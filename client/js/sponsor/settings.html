@@ -1,7 +1,10 @@
-
+  
 <div class="row">
     
-  <form novalidate ng-submit="settings.saveChanges()">
+  <form novalidate 
+      ng-model-options="{ getterSetter: true }"
+      name="settings.userSettingsForm"
+      ng-submit="settings.saveChanges(settings.userSettingsForm)">
 
     <div class="small-12 columns">
       
@@ -12,30 +15,65 @@
     <div class="small-12 columns">
         
         <label for="cell phone number">Phone Number:</label>
-        <input type="tel" id="cell phone number" class="input--medium  input--primary">
-      
+
+        <input type="tel" 
+               id="cell phone number" 
+               name="phone"
+               class="input--medium  input--primary"
+               ng-change="settings.indicateUserMadeChanges()"
+               ng-model="settings.userSettings.phone">
+
+        <div class="row mb2">
+
+          <div class="small-12 columns  grid grid--center">
+
+            <input type="checkbox"
+                   id="sms_contacting"
+                   ng-model="settings.userSettings.sms_preferred"
+                   >
+
+            <label for="sms_contacting" class="mb0">
+              I wish to be contacted by text messages
+            </label>
+
+          </div>
+
+        </div>
+
+
         <h2>Account Password</h2>
     
-        <label for="current password">Current Password</label>
-        <input type="password" id="current password" class="input--medium input--primary">
-    
-        <label for="current password">Re-enter Password</label>
-        <input type="password" id="re-enter password" class="input--medium input--primary">
+        <label for="password">
+          Password
+        </label>
+
+        <input type="password" id="password"
+               class="input--primary input--medium"
+               name="password"
+               ng-model="settings.userSettings.password" 
+               ng-minlength = "8"
+               ng-model-options="{debounce: 200}">
+
+        <label for="re-enter password">
+          Re-enter Password
+        </label>
+
+        <input type="password" id="re-enter password"
+               class="input--primary input--medium"
+               name="confirmPassword"
+               ng-minlength="8"
+               ng-model="settings.userSettings.confirmPassword"
+               ng-model-options="{debounce: 200}"
+               compare-to="settings.userSettings.password">
     
     </div>    
     
     
     <div class="small-12 columns">
       
-      <h2>Linked Bank Account</h2>
-    
-      <div>BANK ACCOUNT</div>
-    
-    </div>
-    
-    <div class="small-12 columns">
-      
-      <button type="submit" class="button--medium  button--primary">
+      <button type="submit" 
+              class="button--medium  button--primary"
+              ng-show="settings.userSettingsForm.$dirty && settings.userSettingsForm.$valid">
           Save Changes
       </button>
     

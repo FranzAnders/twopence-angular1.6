@@ -40,9 +40,8 @@ twopence.controller('signUpCtrl', [
       // inject into the requests
       //
       vm.sponsorInfo = {
-
-        'sms_preferred': false
-
+        'sms_preferred': false,
+        'accepted_tc': false
       };
 
 
@@ -60,6 +59,8 @@ twopence.controller('signUpCtrl', [
 
       if(Auth.getToken()) {
 
+        console.log('theres a token'); 
+        
         $state.go('main.signUp.identity');
 
       } else {
@@ -127,22 +128,12 @@ twopence.controller('signUpCtrl', [
         $state.go('sponsor.dashboard');
       };
 
-      vm.openTermsModal = function(terms) {
+      vm.openTermsModal = function() {
         console.log("Attempting opening of Modal");
         $fancyModal.open({
 
           templateUrl: 'js/home/signUp-terms.html',
-          controller: 'signUpCtrl as signUp',
-          resolve: {
-
-              TermsInformation: function() {
-
-                // return sponsee;
-                console.log("Does something")
-
-              }
-
-          }
+          controller: 'signUpCtrl as signUp'
 
         });
 

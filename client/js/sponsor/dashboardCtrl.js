@@ -1,5 +1,5 @@
 
-'use strict'; 
+'use strict';
 
 /*------------------------------------*\
    Sponsor Dashboard Controller
@@ -8,15 +8,17 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
+    'Auth',
     '$fancyModal',
     function(
         Sponsee,
         Sponsor,
+        Auth,
         $fancyModal) {
 
-    var vm = this; 
+    var vm = this;
 
-    vm.sponsorInfo = {}; 
+    vm.sponsorInfo = {};
 
 
     //
@@ -26,7 +28,7 @@ twopence.controller('dashboardCtrl', [
 
       vm.sponsorInfo = sponsorInfo;
 
-      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name; 
+      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
 
     });
 
@@ -36,18 +38,21 @@ twopence.controller('dashboardCtrl', [
     //
     Sponsor.getDashboard().then(function(dashboard) {
 
-      console.log(dashboard); 
+      console.log(dashboard);
 
-      vm.sponsees = dashboard.sponsees; 
+      vm.sponsees = dashboard.sponsees;
 
-      console.log(vm.sponsees); 
-      
+      console.log(vm.sponsees);
+
     });
 
-
+    vm.logout = function() {
+      console.log("Logging you out fam-o");
+      Auth.logout();
+    };
 
     //
-    // Opens the jolt modal using the $fancyModal service 
+    // Opens the jolt modal using the $fancyModal service
     //
     vm.openJoltModal = function(sponsee) {
 
@@ -67,6 +72,6 @@ twopence.controller('dashboardCtrl', [
 
       });
 
-    }; 
+    };
 
 }]);
