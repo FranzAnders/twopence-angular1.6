@@ -19,5 +19,8 @@
         "jquery-placeholder": "~2.0.7"
       }
     }
+  },
+  "resolutions": {
+    "angular": "1.6.4"
   }
 }
