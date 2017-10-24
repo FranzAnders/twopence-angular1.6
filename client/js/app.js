@@ -376,7 +376,7 @@ twopence.config(
         });
 
 
-}]).constant("BASE_URL", "https://api.onepence.co/api");
+}]).constant("BASE_URL", "https://api.onepence.co");
 
 twopence.run(
     ['$rootScope',
