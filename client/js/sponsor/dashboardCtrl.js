@@ -10,11 +10,13 @@ twopence.controller('dashboardCtrl', [
     'Sponsor',
     'Auth',
     '$fancyModal',
+    '$state',
     function(
         Sponsee,
         Sponsor,
         Auth,
-        $fancyModal) {
+        $fancyModal,
+      $state) {
 
     var vm = this;
 
@@ -43,6 +45,10 @@ twopence.controller('dashboardCtrl', [
       vm.sponsees = dashboard.sponsees;
 
       console.log(vm.sponsees);
+
+    }).catch(function(){
+
+      $state.go('main.signUp.identity');
 
     });
 

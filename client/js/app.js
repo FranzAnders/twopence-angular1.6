@@ -141,18 +141,6 @@ twopence.config(
         .state('main.signUp.confirmation', {
 
           url: "/confirmation",
-          resolve: {
-            initialised: function(User, $q) {
-              var deferred = $q.defer();
-
-              User.verify().then(function(initialised) {
-                deferred.resolve(initialised);
-              }).catch(function(err) {
-                deferred.reject(err);
-              });
-              return deferred.promise;
-            }
-          },
           views: {
 
             'main@main' : {

@@ -63,9 +63,9 @@ twopence.factory('Auth', [
     // Gets the token created upon loging to  make calls
     //
     auth.getToken = function() {
-      
+
       token = $cookies.get('userToken');
-      
+
       if(token === 'null') {
 
         token = null
@@ -82,6 +82,7 @@ twopence.factory('Auth', [
     //
     auth.setToken = function(pToken) {
       token = pToken;
+      console.log(pToken);
       // var authData = Base64.encode(username + ':' + password);
 
       $rootScope.globals = {

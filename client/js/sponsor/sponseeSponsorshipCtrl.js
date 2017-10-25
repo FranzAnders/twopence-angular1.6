@@ -39,7 +39,13 @@ twopence.controller('sponseeSponsorshipCtrl', [
       onSuccess: function(public_token, metadata) {
         // send public_token to server to exchange for access_token
         console.log(public_token, metadata);
-        console.log("This is when you would want to post to /plaid/token")
+        console.log("This is when you would want to post to /plaid/token");
+        console.log(metadata);
+        $timeout(function () {
+          vm.plaidInfo.bankislinked = true;
+          vm.plaidInfo.bankToken = metadata.public_token;
+          console.log(vm.plaidInfo);
+        }, 0);
       },
       onExit: function(error, metadata) {
         if (error != null) {
@@ -65,7 +71,10 @@ twopence.controller('sponseeSponsorshipCtrl', [
     };
 
 
-
+    vm.plaidInfo = {
+      bankislinked: false,
+      bankToken: ''
+    }
     //
     // Creates a sponsorship, if succesfull, shows success screen and
     // takes user to the sponsee's page
