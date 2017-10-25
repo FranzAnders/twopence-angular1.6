@@ -82,7 +82,6 @@ twopence.factory('Auth', [
     //
     auth.setToken = function(pToken) {
       token = pToken;
-      console.log(pToken);
       // var authData = Base64.encode(username + ':' + password);
 
       $rootScope.globals = {

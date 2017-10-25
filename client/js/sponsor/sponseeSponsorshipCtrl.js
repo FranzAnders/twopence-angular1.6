@@ -11,13 +11,15 @@ twopence.controller('sponseeSponsorshipCtrl', [
   '$timeout',
   'Sponsee',
   'Sponsorship',
+  'PlaidAuth',
     function(
     $scope,
     $state,
     $stateParams,
     $timeout,
     Sponsee,
-    Sponsorship) {
+    Sponsorship,
+    PlaidAuth) {
 
     var vm = this;
 
@@ -44,7 +46,15 @@ twopence.controller('sponseeSponsorshipCtrl', [
         $timeout(function () {
           vm.plaidInfo.bankislinked = true;
           vm.plaidInfo.bankToken = metadata.public_token;
+          vm.plaidInfo.public_token = metadata.public_token;
+          vm.plaidInfo.institution.name = metadata.institution.name;
+          vm.plaidInfo.institution.institution_id = metadata.institution.institution_id;
+
+          vm.plaidInfo.accounts[0].id = metadata.accounts[0].id;
+          vm.plaidInfo.accounts[0].name = metadata.accounts[0].name;
           console.log(vm.plaidInfo);
+          PlaidAuth.login(vm.plaidInfo)
+
         }, 0);
       },
       onExit: function(error, metadata) {
@@ -60,6 +70,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
     // Sponsorship info object, holds all the plan information
     // as it is being built
     //
+
     vm.sponsorshipInfo = {
       "user": {
         "id": vm.sponseeId
@@ -72,6 +83,17 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
     vm.plaidInfo = {
+      public_token: "",
+      institution: {
+        "name": "",
+        "institution_id": ""
+      },
+      accounts: [
+        {
+          "id": "",
+          "name": ""
+        }
+      ],
       bankislinked: false,
       bankToken: ''
     }
