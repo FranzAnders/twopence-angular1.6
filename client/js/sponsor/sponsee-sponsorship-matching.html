@@ -1,77 +1,90 @@
 
 
 <div class="row">
-  
-  <div class="small-12 columns" 
+
+  <div class="small-12 columns"
        ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
-        
+
     <form ng-submit="sponseeSponsorship.createSponsorship(     sponseeSponsorship.sponsorshipDetailsForm)"
           name="sponseeSponsorship.sponsorshipDetailsForm">
-        
+
       <div ng-if="sponseeSponsorship.formNotSubmited">
 
         <h1>Monthly Matching Set Up</h1>
-      
+
         <h2>Sponsee: {{sponseeSponsorship.name}}</h2>
 
         <fieldset >
-        
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="100"
                  id="oneHundredLimit"
-                 checked="checked"> 
+                 checked="checked">
           <label for="oneHundredLimit">$100</label>
-          
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="300"
                  id="threeHundredLimit">
           <label for="threeHundredLimit">$300</label>
-        
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="500"
                  id="fivehundredLimit">
           <label for="fivehundredLimit">$500</label>
-          
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
                  name="limit"
                  value="unlimited"
                  id="unlimitedLimit">
           <label for="unlimitedLimit">Unlimited</label>
-        
-        
+
+
           <input type="checkbox"
                  ng-model="customLimit"
                  name="limit"
                  id="custom">
-        
+
           <label for="custom">Custom</label>
-        
-          <input type="text" 
+
+          <input type="text"
                  id="customValue"
                  name="custom"
                  class="input--medium  input--primary"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit">
-        
+
         </fieldset>
-        
+
         <div clas="text-center">
-        
+
           <div class="mtrbl5">BANK ACCOUNT LINKING</div>
-        
+          <span> Plaid Linked: {{ sponseeSponsorship.plaidInfo.bankislinked  }}</span>
+          <br />
+
+          <span> Plaid Token: {{ sponseeSponsorship.plaidInfo.bankToken  }}</span>
+          <br />
+          <br />
+
         </div>
-        
+
+        <button type="button" ng-click="sponseeSponsorship.link()">
+
+          Link your Bank Account!
+
+        </button>
+
+
         <button type="submit"
                 class="button--expanded  button--primary  button--medium">
-          
+
           Continue
-        
+
         </button>
 
       </div>
@@ -81,11 +94,11 @@
   </div>
 
 
-  <div class="small-12  columns"  
+  <div class="small-12  columns"
        ng-if="sponseeSponsorship.formSubmittedSuccesfully" >
 
       <div class="text-center">
-          
+
           <h1>${{sponseeSponsorship.sponsorshipInfo.plan.limit}}</h1>
           Matching Limit
           Pledged to: {{sponseeSponsorship.name}}

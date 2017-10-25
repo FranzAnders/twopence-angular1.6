@@ -9,7 +9,8 @@ twopence = angular.module('twopence', [
      'ui.router',
      'vesparny.fancyModal',
      'ngCookies',
-     'ngMessages'
+     'xeditable',
+     'ngMessages',
       ]);
 
 
@@ -18,14 +19,13 @@ twopence.config(
          '$urlRouterProvider',
          '$locationProvider',
          '$compileProvider',
-         '$locationProvider',
          function(
             $stateProvider,
             $urlRouterProvider,
+            $locationProvider,
             $compileProvider,
-            $locationProvider
+            plaidLinkProvider
             ) {
-
     //
     //If anything is unmatched just go to home
     //
@@ -141,18 +141,6 @@ twopence.config(
         .state('main.signUp.confirmation', {
 
           url: "/confirmation",
-          resolve: {
-            initialised: function(User, $q) {
-              var deferred = $q.defer();
-
-              User.verify().then(function(initialised) {
-                deferred.resolve(initialised);
-              }).catch(function(err) {
-                deferred.reject(err);
-              });
-              return deferred.promise;
-            }
-          },
           views: {
 
             'main@main' : {
@@ -219,19 +207,20 @@ twopence.config(
         })
         .state('sponsor.edit', {
 
-          url: "sponsee/:sponseeEmail/edit",
+          url: "editing/{plan:int}",
           views: {
 
             'sponsor': {
 
               templateUrl: "js/sponsor/sponsee-plan-edit.html",
-              controller: "sponseeCtrl",
-              controllerAs: "sponsee"
+              controller: "sponseePlanEditCtrl",
+              controllerAs: "sponseePlanEdit"
 
             }
           },
           params: {
-            sponseeEmail: null
+            plan: null,
+            sponsee: null
           }
 
         })
@@ -271,7 +260,7 @@ twopence.config(
           },
           params: {
 
-            sponseeId: null,
+            sponseeId: null
 
           }
 
@@ -388,6 +377,7 @@ twopence.run(
      '$cookies',
      '$location',
      'Auth',
+     'editableOptions',
      function(
         $rootScope,
         $document,
@@ -397,7 +387,8 @@ twopence.run(
         $http,
         $cookies,
         $location,
-        Auth
+        Auth,
+        editableOptions
         ) {
 
 
@@ -410,6 +401,9 @@ twopence.run(
     $rootScope.$on('stateChangeStart', function(event) {
 
     });
+
+    editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+
 
 
     // Attempting Login Check - Yay!
@@ -467,6 +461,15 @@ twopence.run(
       // }
     });
 
+
+
+
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
+      console.log(toParams);
+
+    });
 
 
     // Function to set data-useragent attribute to document

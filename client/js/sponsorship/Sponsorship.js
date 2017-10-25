@@ -2,7 +2,7 @@
 'use strict';
 
 /*------------------------------------*\
-   Sponsorship Factory 
+   Sponsorship Factory
 \*------------------------------------*/
 
 
@@ -12,17 +12,17 @@ twopence.factory('Sponsorship', [
     'Auth',
     'BASE_URL',
     function(
-      $q, 
+      $q,
       $http,
       Auth,
       BASE_URL) {
 
 
-  var sponsorship = {}; 
+  var sponsorship = {};
 
 
   //
-  // Creates a sponsorship plan between user and logged-in sponsor 
+  // Creates a sponsorship plan between user and logged-in sponsor
   //
   sponsorship.create = function(pSponsorshipInfo) {
 
@@ -37,19 +37,66 @@ twopence.factory('Sponsorship', [
 
       }).then(function(res) {
 
-        resolve(res.data); 
+        resolve(res.data);
 
       }).catch(function(err){
 
-        reject(err); 
+        reject(err);
 
       })
 
-    }); 
+    });
 
 
   };
 
-  return sponsorship; 
 
-}]); 
+  //
+  //  Looks up a sponsorship plan via an id
+  //
+  sponsorship.get = function(pPlanId) {
+
+    return $q(function(resolve, reject) {
+
+        $http.get(BASE_URL + '/v1/sponsorships/' + pPlanId, {
+
+          headers: {
+
+            'Authorization' : 'bearer ' + Auth.getToken()
+
+          }
+
+        }).then(function(res) {
+
+          resolve(res.data);
+
+        }).catch(function(err) {
+
+          reject(err);
+
+        });
+
+
+    });
+
+  };
+
+  sponsorship.patch = function(load) {
+    console.log("I'm patching my G");
+    return $q(function(resolve, reject) {
+      $http.patch(BASE_URL + '/v1/sponsorships/' + load.id, load, {
+        headers: {
+          'Authorization' : 'bearer ' + Auth.getToken(),
+          'Content-type' : 'application/json'
+        },
+      }).then(function(res) {
+        resolve(res.data);
+      }).catch(function(err) {
+        reject(err);
+      });
+    });
+  };
+
+  return sponsorship;
+
+}]);

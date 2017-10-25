@@ -29,7 +29,7 @@ twopence.factory('User', [
         $http.post(BASE_URL +  '/v1/users',pLoginInfo)
           .then(function(res) {
             console.log(res);
-            Auth.setToken(res.data.token);
+            Auth.setToken(res.data.token, res.data.username);
             resolve(res.data);
           }).catch(function(err) {
             reject(err);
@@ -39,7 +39,7 @@ twopence.factory('User', [
 
 
     //
-    // Sends out email verification to sponsor's email 
+    // Sends out email verification to sponsor's email
     //
     User.verify = function() {
       return $q(function(resolve, reject) {
@@ -60,7 +60,7 @@ twopence.factory('User', [
 
 
     //
-    // Updates a user's settings 
+    // Updates a user's settings
     //
     User.updateSettings = function(pSettingsToChange) {
 
@@ -76,18 +76,18 @@ twopence.factory('User', [
         })
         .then(function(res){
 
-          resolve(res.data); 
+          resolve(res.data);
 
         }).catch(function(err){
 
-          reject(err); 
+          reject(err);
 
         })
 
 
-      }); 
+      });
 
-    }; 
+    };
 
     return User;
 

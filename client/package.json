@@ -23,6 +23,10 @@
     "grunt-svgstore": "^1.0.0",
     "grunt-usemin": "~3.1.1",
     "grunt-wiredep": "^3.0.1",
+    "load-grunt-tasks": "~3.1.0"
+  },
+  "dependencies": {
+    "angular-plaid-link": "^1.0.1",
     "load-grunt-tasks": "~3.5.2"
   }
 }

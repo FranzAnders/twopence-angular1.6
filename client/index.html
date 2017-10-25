@@ -13,7 +13,10 @@
 
     <!-- build:css css/app.min.css -->
     <link rel="stylesheet" href="css/app.css">
+    <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+
     <!-- endbuild -->
+
 
     <!-- build:js js/vendor/modernizr.min.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -55,7 +58,6 @@
 
     </ui-view>
 
-
     <!-- build:js js/vendor/libraries.min.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -65,11 +67,13 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-fancy-modal/dist/angular-fancy-modal.js"></script>
+    <script src="bower_components/angular-plaid-link/src/angular-plaid-link.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
 
 
     <!-- build:js js/vendor/foundation.min.js -->
@@ -79,6 +83,7 @@
 
 
     <!-- CDNJS Vendor Scripts -->
+
 
 
     <!-- build:js js/app.min.js -->
@@ -103,8 +108,8 @@
     <script src="js/sponsor/sponseeJoltCtrl.js"></script>
     <script src="js/sponsor/sponseeSponsorshipCtrl.js"></script>
     <script src="js/sponsor/dashboardCtrl.js"></script>
+    <script src="js/sponsor/sponseePlanEditCtrl.js"></script>
     <script src="js/sponsor/settingsCtrl.js"></script>
-
 
     <!--Sponsoship-->
     <script src="js/sponsorship/Sponsorship.js"></script>
@@ -113,11 +118,11 @@
     <!-- Auth -->
     <script src="js/auth/Session.js"></script>
     <script src="js/auth/Auth.js"></script>
-
+    <!-- Plaid Auth -->
+    <script src="js/plaid/plaid.js"></script>
 
     <!--User-->
     <script src="js/user/User.js"></script>
-
     <!--General-->
     <script src="js/general/compareTo.js"></script>
 
@@ -127,7 +132,6 @@
     <script src="js/vendor/breakpoint.js"></script>
 
     <!-- endbuild -->
-
 
 
     <!--build:remove-->

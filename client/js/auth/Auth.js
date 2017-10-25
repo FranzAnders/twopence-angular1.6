@@ -63,9 +63,9 @@ twopence.factory('Auth', [
     // Gets the token created upon loging to  make calls
     //
     auth.getToken = function() {
-      
+
       token = $cookies.get('userToken');
-      
+
       if(token === 'null') {
 
         token = null

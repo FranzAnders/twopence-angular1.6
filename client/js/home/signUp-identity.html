@@ -46,7 +46,7 @@
                >
 
         <label for="sms_contacting" class="mb0">
-          I wish to be contacted by text messages
+           I wish to be contacted by text messages
         </label>
 
       </div>
@@ -54,18 +54,30 @@
     </div>
     
     <div class="row mb2">
+      <div class="small-12 columns grid grid--center">
+        <input type="checkbox"
+          id="accepted_tc"
+          ng-model="signUp.sponsorInfo.accepted_tc"
+          required
+          >
+        <label for="accepted_tc" class="mb0">
+          I Agree to the Terms and Conditions
+        </label>
+
+        <!-- <span ng-show="signUp.sponsorCreationForm.sponsorInfo.accepted_tc.$submitted && signUp.sponsorCreationForm.sponsorInfo.accepted_tc.$invalid">Please agree to Terms &amp; Conditions.</span> -->
+
+      </div>
+    </div>
+    <div class="row mb2">
 
       <div class="small-12 columns  grid grid--center">
 
         <br />
-        <input type="checkbox"
-               id="terms_conditions"
-               ng-model="signUp.sponsorInfo.termsagreed"
-               >
 
-        <label for="terms_conditions" class="mb0">
-          I agree to terms and conditions
-        </label>
+               <a type="button" ng-click="signUp.openTermsModal()">
+                 Tap to read Terms &amp; Conditions
+               </a>
+
 
       </div>
 
@@ -85,9 +97,6 @@
         type="submit"
         class="button--medium  button--primary  button--expanded">
       Create Account
-    </button>
-    <button type="button" ng-click="signUp.openTermsModal()">
-      Read Terms &amp; Conditions
     </button>
 
   </form>

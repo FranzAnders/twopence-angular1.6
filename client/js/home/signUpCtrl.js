@@ -59,8 +59,8 @@ twopence.controller('signUpCtrl', [
 
       if(Auth.getToken()) {
 
-        console.log('theres a token'); 
-        
+        console.log('theres a token');
+
         $state.go('main.signUp.identity');
 
       } else {
@@ -105,13 +105,18 @@ twopence.controller('signUpCtrl', [
 
           vm.sponsorInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
 
-          Sponsor.create(vm.sponsorInfo);
-
-          console.log('valid');
-
-          $state.go('main.signUp.confirmation');
+          Sponsor.create(vm.sponsorInfo).then(function() {
+            console.log('valid');
+            $state.go('main.signUp.confirmation');
 
 
+            User.verify().then(function(initialised) {
+              this.resolve(initialised);
+            }).catch(function(err) {
+              this.reject(err);
+            });
+
+          });
         } else {
 
 
