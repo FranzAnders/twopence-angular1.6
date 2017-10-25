@@ -59,6 +59,8 @@ twopence.controller('signUpCtrl', [
 
       if(Auth.getToken()) {
 
+        console.log('theres a token'); 
+        
         $state.go('main.signUp.identity');
 
       } else {

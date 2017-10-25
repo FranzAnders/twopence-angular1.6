@@ -9,7 +9,8 @@ twopence = angular.module('twopence', [
      'ui.router',
      'vesparny.fancyModal',
      'ngCookies',
-     'xeditable'
+     'xeditable',
+     'ngMessages',
       ]);
 
 
@@ -278,7 +279,7 @@ twopence.config(
         })
         .state('sponsor.settings', {
 
-          url: "sponsor/settings.html",
+          url: "sponsor/settings",
           views: {
 
             'sponsor': {
@@ -376,7 +377,7 @@ twopence.config(
         });
 
 
-}]).constant("BASE_URL", "http://localhost:8000/api");
+}]).constant("BASE_URL", "https://api.onepence.co");
 
 twopence.run(
     ['$rootScope',
@@ -509,6 +510,7 @@ twopence.run(
      $http.defaults.headers.common['Content-Type'] = "application/json";
      $http.defaults.headers.post['Content-Type'] = "application/json";
      $http.defaults.headers.get = {'Content-Type' : "application/json"};
+     $http.defaults.headers.patch = {'Content-Type' : "application/json"};
 
 
 }]);

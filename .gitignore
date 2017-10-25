@@ -4,6 +4,7 @@
 .sass-cache
 client/bower_components
 client/images
+client/package-lock.json
 dist
 materials
 node_modules
