@@ -151,13 +151,36 @@ twopence.config(
 
         })
         .state('main.verify', {
-          url: '/verify/{verifytoken}',
-          templateUrl: "",
-          controller: "",
-          controllerAs: "",
+          url: 'verify/:verifyToken',
+          views: {
+
+            'main': {
+              templateUrl: "js/verify/verify.html",
+              controller: "verifyCtrl",
+              controllerAs: "verify"
+
+            }
+          },
           params: {
-            verifytoken: null
+              verifyToken: null
+          },
+          resolve: {
+
+            verify: ['$stateParams', function($stateParams) {
+
+                var token = $stateParams.verifyToken;
+
+                token.replace('(\s+|#%7B|%7D)', "");
+
+                console.log($stateParams.verifyToken);
+                console.log(token);
+
+                return true;
+
+            }]
+
           }
+
         })
         .state('sponsor', {
           abstract: true,
