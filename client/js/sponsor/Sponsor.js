@@ -128,7 +128,7 @@ twopence.factory('Sponsor', [
 
 
   //
-  // Gets all the sponsees for a sponsor 
+  // Gets all the sponsees for a sponsor
   //
   Sponsor.getSponsees = function() {
 
@@ -152,7 +152,7 @@ twopence.factory('Sponsor', [
 
 
   //
-  // Gets all the contributions made by a sponsor to date 
+  // Gets all the contributions made by a sponsor to date
   //
   Sponsor.getAllContributions = function() {
 
@@ -198,7 +198,7 @@ twopence.factory('Sponsor', [
           });
       });
 
-  }; 
+  };
 
 
   Sponsor.getSponsorInfo = function() {
@@ -227,7 +227,7 @@ twopence.factory('Sponsor', [
 
 
   //
-  // Creates the sponsor object 
+  // Creates the sponsor object
   //
   Sponsor.create = function(pSponsorInfo) {
 
@@ -249,6 +249,21 @@ twopence.factory('Sponsor', [
     });
 
   };
+
+  Sponsor.verifyEmail = function(emailToken) {
+
+    return $q(function(resolve, reject) {
+      $http.patch(BASE_URL +  '/v1/sponsors/verification', emailToken, {})
+      .then(function(res) {
+        console.log(res);
+        resolve(res.data);
+        }).catch(function(err) {
+          reject(err);
+        });
+    });
+
+  };
+
 
 
   return Sponsor

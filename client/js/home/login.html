@@ -5,6 +5,10 @@
 
     <div class="small-12  columns">
 
+      <div ng-if="login.verified">
+        <h5>Thanks for verifiying! Please login</h5>
+      </div>
+
       <form name="loginForm" ng-submit="login.logInUser()">
 
         <label for="username">Username</label>

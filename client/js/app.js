@@ -86,6 +86,9 @@ twopence.config(
               controllerAs: "login"
             }
 
+          },
+          params: {
+            camefromemail: false
           }
 
         })
@@ -166,16 +169,36 @@ twopence.config(
           },
           resolve: {
 
-            verify: ['$stateParams', function($stateParams) {
+            verify: ['$stateParams', '$state', 'Sponsor', function($stateParams, $state, Sponsor) {
 
                 var token = $stateParams.verifyToken;
 
-                token.replace('(\s+|#%7B|%7D)', "");
+                console.log("Do I have Brackets?");
+                console.log($stateParams);
+                // To Do : Combine into 1 Regex
+                var newtoken = token.replace(/{/, '');
+                var finaltoken = newtoken.replace(/}/, '');
 
-                console.log($stateParams.verifyToken);
-                console.log(token);
+                console.log(finaltoken);
 
-                return true;
+                var tokenObj = {
+                  "token": finaltoken
+                };
+
+                Sponsor.verifyEmail(tokenObj).then(
+                  function() {
+
+                    $state.go("main.login", {camefromemail: true});
+                    console.log("Token Verified");
+
+                    return true;
+                  }
+                ).catch(
+
+                );
+
+
+
 
             }]
 

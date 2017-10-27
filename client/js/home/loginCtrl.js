@@ -7,11 +7,13 @@
 twopence.controller('loginCtrl', [
   '$state',
   '$timeout',
+  '$stateParams',
   'Auth',
   'AUTH_EVENTS',
   function(
     $state,
     $timeout,
+    $stateParams,
     Auth,
     AUTH_EVENTS) {
 
@@ -23,6 +25,14 @@ twopence.controller('loginCtrl', [
       username: '',
       password: ''
     };
+
+    console.log($stateParams);
+
+    vm.verified = {
+      camefromemail: $stateParams.camefromemail
+    }
+
+    console.log(vm.verified);
 
     vm.logInUser = function() {
 
