@@ -150,6 +150,15 @@ twopence.config(
           }
 
         })
+        .state('main.verify', {
+          url: '/verify/{verifytoken}',
+          templateUrl: "",
+          controller: "",
+          controllerAs: "",
+          params: {
+            verifytoken: null
+          }
+        })
         .state('sponsor', {
           abstract: true,
           url: "/sponsor/",

@@ -45,15 +45,15 @@ twopence.factory('User', [
       return $q(function(resolve, reject) {
         console.log("Going for it: ");
         var jwtToken = Auth.getToken();
-        $http.post(BASE_URL + '/v1/sponsors/verification', {
-          headers: {
-            "Authorization": 'bearer ' + jwtToken
-          }
+        $http.post(BASE_URL + '/v1/sponsors/verification', {}, {
+            headers: {
+              "Authorization": "Bearer " + jwtToken
+            }
         })
         .then(function(res) {
           console.log("E-Mail sent");
         }).catch(function(err) {
-          reject(err);
+           console.log(err);
         });
       });
     };

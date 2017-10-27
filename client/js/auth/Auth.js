@@ -80,10 +80,12 @@ twopence.factory('Auth', [
     //
     // Sets the token
     //
-    auth.setToken = function(pToken) {
+    auth.setToken = function(pToken, username) {
+      console.log(pToken);
       token = pToken;
+      username = username
       // var authData = Base64.encode(username + ':' + password);
-
+      $cookies.put('userToken', token);
       $rootScope.globals = {
         currentUser: {
           username: username,

@@ -85,6 +85,12 @@ twopence.controller('signUpCtrl', [
             $state.go('main.signUp.identity');
 
 
+          }).catch(function(err){
+
+            console.log(err);
+
+            vm.status = err.data.message
+
           });
 
         } else {
@@ -105,10 +111,11 @@ twopence.controller('signUpCtrl', [
 
           vm.sponsorInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
 
+          console.log(vm.sponsorInfo);
+
           Sponsor.create(vm.sponsorInfo).then(function() {
             console.log('valid');
             $state.go('main.signUp.confirmation');
-
 
             User.verify().then(function(initialised) {
               this.resolve(initialised);
@@ -116,7 +123,12 @@ twopence.controller('signUpCtrl', [
               this.reject(err);
             });
 
-          });
+          }).catch(function(err) {
+            console.log("Yo shit is messed up");
+            console.log(err);
+            vm.status = err.data.message;
+            console.log(vm.status);
+          })
         } else {
 
 

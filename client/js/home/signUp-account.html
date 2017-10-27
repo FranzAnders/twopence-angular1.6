@@ -1,7 +1,7 @@
 
 <div >
 
-  <form ng-submit="signUp.createUser(signUp.userCreationForm)" 
+  <form ng-submit="signUp.createUser(signUp.userCreationForm)"
         name="signUp.userCreationForm"
         ng-model-options="{ getterSetter: true }"
         novalidate>
@@ -10,7 +10,7 @@
       Email
     </label>
 
-    <input type="email" 
+    <input type="email"
            id="email"
            name="email"
            placeholder="Email is your username"
@@ -19,7 +19,7 @@
            ng-minlength = "8"
            ng-model-options="{debounce: 200}"
            required>
-    
+
     <div ng-messages="signUp.userCreationForm.email.$error"
          ng-show="signUp.userCreationForm.email.$touched"
          role="alert">
@@ -41,7 +41,7 @@
     <input type="password" id="password"
            name="password"
            class="input--primary input--medium"
-           ng-model="signUp.userInfo.password" 
+           ng-model="signUp.userInfo.password"
            required
            ng-minlength = "8"
            ng-model-options="{debounce: 200}">
@@ -55,7 +55,7 @@
         </div>
 
         <div ng-message="ng-minlength">
-            Oops! Password must be atleast 8 characters in length 
+            Oops! Password must be atleast 8 characters in length
         </div>
 
         <div ng-message="pattern">
@@ -96,6 +96,11 @@
         </div>
 
     </div>
+    <br /> <br />
+    <div>
+      Status of Form: {{ signUp.status }} <br /> <br />
+    </div>
+
 
     <button class="button--primary  button--medium button--expanded"
             type="submit">
