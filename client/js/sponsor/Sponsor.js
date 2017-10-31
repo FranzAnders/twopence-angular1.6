@@ -184,7 +184,7 @@ twopence.factory('Sponsor', [
       console.log("Your JWT is: " + jwtToken);
 
       return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/sponsors/dashboard', {
+        $http.get(BASE_URL + '/v1/sponsorships', {
           headers: {
 
             "Authorization": 'bearer ' + jwtToken
@@ -249,11 +249,35 @@ twopence.factory('Sponsor', [
     });
 
   };
+  // Attempt At v2 Call for Creating new users
+
+  Sponsor.new = function(pSponsorInfo) {
+
+    return $q(function(resolve, reject) {
+      $http.post(BASE_URL +  '/v1/users', pSponsorInfo, {
+
+      }).then(function(res) {
+          console.log(res);
+          resolve(res.data);
+        }).catch(function(err) {
+          reject(err);
+        });
+    });
+
+  };
+
 
   Sponsor.verifyEmail = function(emailToken) {
 
+    console.log("Verify e-mail arg:");
+    console.log(emailToken);
+
     return $q(function(resolve, reject) {
-      $http.patch(BASE_URL +  '/v1/sponsors/verification', emailToken, {})
+      $http.post(BASE_URL +  '/v1/verification/token', emailToken, {
+        headers: {
+          "Authorization": "Bearer " + Auth.getToken()
+        }
+      })
       .then(function(res) {
         console.log(res);
         resolve(res.data);

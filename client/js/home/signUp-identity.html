@@ -1,7 +1,7 @@
 
 <div>
 
-  <form ng-submit="signUp.createSponsor(signUp.sponsorCreationForm)"
+  <form ng-submit="signUp.createUser(signUp.sponsorCreationForm)"
         name="signUp.sponsorCreationForm"
         novalidate>
 
@@ -12,7 +12,7 @@
     <input type="text" id="first name"
            placeholder="Your first name"
            class="input--primary input--medium"
-           ng-model="signUp.sponsorInfo.first_name"
+           ng-model="signUp.userInfo.first_name"
            required>
 
 
@@ -23,7 +23,7 @@
     <input type="text" id="full name"
            placeholder="Your last name"
            class="input--primary input--medium"
-           ng-model="signUp.sponsorInfo.last_name"
+           ng-model="signUp.userInfo.last_name"
            required>
 
 
@@ -34,7 +34,7 @@
     <input type="tel" id="full name"
            placeholder="First and last name"
           class="input--primary input--medium"
-          ng-model="signUp.sponsorInfo.phone">
+          ng-model="signUp.userInfo.phone">
 
     <div class="row mb2">
 
@@ -42,7 +42,7 @@
 
         <input type="checkbox"
                id="sms_contacting"
-               ng-model="signUp.sponsorInfo.sms_preferred"
+               ng-model="signUp.userInfo.sms_preferred"
                >
 
         <label for="sms_contacting" class="mb0">
@@ -57,7 +57,7 @@
       <div class="small-12 columns grid grid--center">
         <input type="checkbox"
           id="accepted_tc"
-          ng-model="signUp.sponsorInfo.accepted_tc"
+          ng-model="signUp.userInfo.accepted_tc"
           required
           >
         <label for="accepted_tc" class="mb0">
