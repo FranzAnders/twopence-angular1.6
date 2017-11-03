@@ -50,6 +50,30 @@ twopence.factory('Sponsorship', [
 
   };
 
+  sponsorship.createPlan = function(pSponseePlan, pSponseeId) {
+
+    return $q(function(resolve, reject) {
+
+      $http.post(BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans/', pSponseePlan, {
+
+        headers: {
+
+          'Authorization': 'bearer ' + Auth.getToken()
+
+        }
+      }).then(function(res) {
+
+        resolve(res.data);
+
+      }).catch(function(err) {
+
+        reject(err);
+
+      });
+
+    });
+
+  };
 
   //
   //  Looks up a sponsorship plan via an id

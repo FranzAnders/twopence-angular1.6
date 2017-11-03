@@ -308,8 +308,7 @@ twopence.config(
 
               templateUrl: "js/sponsor/sponsee-sponsorship.html",
               controller: "sponseeSponsorshipCtrl",
-              controllerAs: "sponseeSponsorship",
-              reload: true
+              controllerAs: "sponseeSponsorship"
             }
 
           },

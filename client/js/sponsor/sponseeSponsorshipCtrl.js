@@ -26,6 +26,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
     vm.formNotSubmited = true;
 
     vm.formSubmittedSuccesfully = false;
+console.log($stateParams);
 
     vm.sponseeId = $stateParams.sponseeId;
 
@@ -72,9 +73,6 @@ twopence.controller('sponseeSponsorshipCtrl', [
     //
 
     vm.sponsorshipInfo = {
-      "user": {
-        "id": vm.sponseeId
-      },
       "plan": {
         "type": null,
         "frequency": null
@@ -136,6 +134,27 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     };
 
+    vm.createPlan = function(pSponsorshipDetailsForm, pSponseeId) {
+
+      var sponseeID = pSponseeId;
+
+      if (pSponsorshipDetailsForm.$valid) {
+
+        Sponsorship.createPlan(vm.sponsorshipInfo, sponseeID).then(function(sponsorship) {
+          console.log(sponsorship);
+
+          vm.formNotSubmited = false;
+          vm.formSubmittedSuccesfully = true;
+
+          $timeout(function() {
+            $state.go('sponsor.sponsee', {
+              sponseeId: sponseeID
+            })
+          })
+        })
+
+      }
+    }
 
 
 
