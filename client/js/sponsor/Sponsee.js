@@ -2,27 +2,27 @@
 'use strict';
 
 /*------------------------------------*\
-   Sponsee Service 
+   Sponsee Service
 \*------------------------------------*/
 
 twopence.factory('Sponsee', [
     'Sponsor',
     '$http',
-    '$q', 
+    '$q',
     'Auth',
     'BASE_URL',
     function(
       Sponsor,
       $http,
-      $q, 
-      Auth, 
+      $q,
+      Auth,
       BASE_URL) {
 
 
-  var Sponsee = {}; 
+  var Sponsee = {};
 
   //
-  // Searchers for a sponsee via email 
+  // Searchers for a sponsee via email
   //
   Sponsee.search = function(pSponseeInfo) {
 
@@ -38,27 +38,27 @@ twopence.factory('Sponsee', [
       }).then(function(res) {
 
         console.log(res)
-        resolve(res.data); 
+        resolve(res.data);
 
       }).catch(function(err){
 
-        reject(err); 
+        reject(err);
 
       })
 
-    }); 
+    });
 
-  }; 
+  };
 
 
   //
-  // Gets a sponsee via id 
+  // Gets a sponsee via id
   //
   Sponsee.getSponsee = function(pId) {
 
     return $q(function(resolve, reject) {
 
-      $http.get(BASE_URL + '/v1/sponsees/' + pId, {
+      $http.get(BASE_URL + '/v1/sponsorships/' + pId, {
 
         headers: {
 
@@ -68,18 +68,18 @@ twopence.factory('Sponsee', [
 
       }).then(function(res) {
 
-        resolve(res.data); 
+        resolve(res.data);
 
       }).catch(function(err) {
 
-        reject(err); 
+        reject(err);
 
       })
 
-    }); 
+    });
 
   };
 
   return Sponsee
 
-}]); 
+}]);

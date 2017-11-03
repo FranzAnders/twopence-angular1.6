@@ -63,7 +63,7 @@ twopence.factory('Sponsorship', [
         }
       }).then(function(res) {
 
-        resolve(res.data);
+        resolve(res);
 
       }).catch(function(err) {
 
