@@ -198,33 +198,7 @@ twopence.factory('Sponsor', [
           });
       });
 
-  };
-
-
-  Sponsor.getSponsorInfo = function() {
-
-      var jwtToken = Auth.getToken();
-
-      console.log("Your JWT is: " + jwtToken);
-
-      return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/sponsors', {
-          headers: {
-
-            "Authorization": 'bearer ' + jwtToken
-
-          }})
-          .then(function(res) {
-            console.log(res.data);
-            resolve(res.data);
-          }).catch(function(err) {
-            reject(err);
-          });
-      });
-
-
-  }
-
+    }
 
   //
   // Creates the sponsor object

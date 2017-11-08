@@ -8,12 +8,14 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
+    'User',
     'Auth',
     '$fancyModal',
     '$state',
     function(
         Sponsee,
         Sponsor,
+        User,
         Auth,
         $fancyModal,
       $state) {
@@ -26,19 +28,47 @@ twopence.controller('dashboardCtrl', [
     //
     // Get sponsor information
     //
-    Sponsor.getSponsorInfo().then(function(sponsorInfo) {
+
+    User.getUserInfo().then(function(sponsorInfo) {
 
       vm.sponsorInfo = sponsorInfo;
 
       vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
 
+      console.log(sponsorInfo)
+
     });
 
+    //
+    // Gets the sponsor's dashboard data : KILL THIS
+    //
+    //
+    // Sponsor.getDashboard().then(function(dashboard) {
+    //
+    //   console.log(dashboard);
+    //
+    //   vm.sponsees = dashboard.sponsees;
+    //
+    //   console.log(vm.sponsees);
+    //
+    // }).catch(function(){
+    //
+    //
+    //
+    //   $state.go('main.signUp.identity');
+    //
+    // });
+    //
+    // vm.logout = function() {
+    //   console.log("Logging you out fam-o");
+    //   Auth.logout();
+    // };
 
     //
-    // Gets the sponsor's dashboard data
+    // New User's dashboard data
     //
-    Sponsor.getDashboard().then(function(dashboard) {
+
+    User.getUserInfo().then(function(dashboard) {
 
       console.log(dashboard);
 
@@ -48,7 +78,8 @@ twopence.controller('dashboardCtrl', [
 
     }).catch(function(){
 
-      $state.go('main.signUp.identity');
+
+      // $state.go('main.signUp.identity');
 
     });
 
@@ -56,6 +87,7 @@ twopence.controller('dashboardCtrl', [
       console.log("Logging you out fam-o");
       Auth.logout();
     };
+
 
     //
     // Opens the jolt modal using the $fancyModal service
