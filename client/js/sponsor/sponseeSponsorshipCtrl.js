@@ -95,6 +95,8 @@ console.log($stateParams);
       bankislinked: false,
       bankToken: ''
     }
+
+    
     //
     // Creates a sponsorship, if succesfull, shows success screen and
     // takes user to the sponsee's page
