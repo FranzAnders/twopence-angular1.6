@@ -6,6 +6,7 @@ pipelines:
           - step:
               script:
                   - cd client
+                  - apk update
                   - apk add git
                   - gem install compass
                   - npm install
