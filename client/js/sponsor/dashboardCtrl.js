@@ -8,6 +8,7 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
+    'Sponsorship',
     'User',
     'Auth',
     '$fancyModal',
@@ -15,6 +16,7 @@ twopence.controller('dashboardCtrl', [
     function(
         Sponsee,
         Sponsor,
+        Sponsorship,
         User,
         Auth,
         $fancyModal,
@@ -25,50 +27,16 @@ twopence.controller('dashboardCtrl', [
     vm.sponsorInfo = {};
 
 
-    //
-    // Gets the sponsor's dashboard data : KILL THIS
-    //
-    //
-    // Sponsor.getDashboard().then(function(dashboard) {
-    //
-    //   console.log(dashboard);
-    //
-    //   vm.sponsees = dashboard.sponsees;
-    //
-    //   console.log(vm.sponsees);
-    //
-    // }).catch(function(){
-    //
-    //
-    //
-    //   $state.go('main.signUp.identity');
-    //
-    // });
-    //
-    // vm.logout = function() {
-    //   console.log("Logging you out fam-o");
-    //   Auth.logout();
-    // };
 
     //
-    // New User's dashboard data
+    // Gets user's info 
     //
-
     User.getUserInfo().then(function(dashboard) {
 
-      console.log(dashboard);
+      vm.sponsorInfo = dashboard; 
+      console.log(dashboard); 
 
-      vm.sponsees = dashboard.sponsorships;
-
-      console.log(vm.sponsees);
-
-      Sponsor.getAllContributions().then(function(contriubutions) {
-
-        console.log("Testing the contributions")
-
-        console.log(contriubutions);
-
-      });
+      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name; 
 
     }).catch(function(){
 
@@ -76,6 +44,32 @@ twopence.controller('dashboardCtrl', [
 
     });
 
+
+
+    //
+    // Gets a sponsors contributions
+    //
+    Sponsor.getAllContributions().then(function(contributions) {
+
+      console.log(contributions); 
+
+    });
+
+
+    //
+    // Gets a sponsors' sponsorships
+    //
+    Sponsorship.getAll().then(function(sponsorships) {
+
+      console.log(sponsorships)
+      vm.sponsees = sponsorships.data;  
+
+    }); 
+
+
+    //
+    // Logs a user out 
+    //
     vm.logout = function() {
 
       console.log("Logging you out fam-o");

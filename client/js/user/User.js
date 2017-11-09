@@ -60,7 +60,7 @@ twopence.factory('User', [
 
 
     //
-    // Updates a user's settings
+    // Updates a user's information object 
     //
     User.updateSettings = function(pSettingsToChange) {
 
