@@ -308,12 +308,12 @@
     @include justify-content(center); 
 }
 
-.grid--justifyRight {
+.grid--justifyEnd {
     -ms-flex-pack: end; 
     @include justify-content(flex-end); 
 }
 
-.grid--justifyLeft {
+.grid--justifyStart {
     -ms-flex-pack: start; 
     @include justify-content(flex-start); 
 }
