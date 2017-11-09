@@ -12,39 +12,47 @@
     </div>
 </sponsor-nav-dir>
 
-<ul class="grid grid--center grid--justifySpaceAround topborder greybutton mb0">
+    <div class="row medium-collapse">
+      <div class="small-12  medium-3 columns">
+        <ul class="grid grid--center grid--flexDirectionColumn  grid--justifySpaceAround topborder greybutton mb0">
+        
+          <li class="ptb5">
+             <a ui-sref="sponsor.faq">FAQ</a>
+          </li>
+        
+        
+          <li class="ptb5">
+            <a ui-sref="sponsor.contributions">Contributions</a>
+          </li>
+        
+        
+          <li class="ptb5">
+            <a ui-sref="sponsor.dashboard">Sponsees</a>
+          </li>
+        
+          <li class="ptb5">
+             <a ui-sref="sponsor.settings">Settings</a>
+          </li>
+        
+        
+          <li class="ptb5">
+             <a ui-sref="sponsor.logout">Logout</a>
+          </li>
+        
+        
+        </ul>
+      
+      </div>
 
-  <li class="ptb5">
-     <a ui-sref="sponsor.faq">FAQ</a>
-  </li>
+      <div class="small-12  medium-9 columns">
 
-
-  <li class="ptb5">
-    <a ui-sref="sponsor.contributions">Contributions</a>
-  </li>
-
-
-  <li class="ptb5">
-    <a ui-sref="sponsor.dashboard">Sponsees</a>
-  </li>
-
-  <li class="ptb5">
-     <a ui-sref="sponsor.settings">Settings</a>
-  </li>
-
-
-  <li class="ptb5">
-     <a ui-sref="sponsor.logout">Logout</a>
-  </li>
-
-
-</ul>
-
-    <div ui-view="sponsor">
-
-
+          <div ui-view="sponsor">
+        
+        
+          </div>
+          
+      </div>
     </div>
-
 
 <footer>
 

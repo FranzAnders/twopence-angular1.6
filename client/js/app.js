@@ -44,8 +44,8 @@ twopence.config(
     //
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -308,8 +308,7 @@ twopence.config(
 
               templateUrl: "js/sponsor/sponsee-sponsorship.html",
               controller: "sponseeSponsorshipCtrl",
-              controllerAs: "sponseeSponsorship",
-              reload: true
+              controllerAs: "sponseeSponsorship"
             }
 
           },

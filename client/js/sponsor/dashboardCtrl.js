@@ -8,54 +8,76 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
+    'Sponsorship',
+    'User',
     'Auth',
     '$fancyModal',
     '$state',
     function(
         Sponsee,
         Sponsor,
+        Sponsorship,
+        User,
         Auth,
         $fancyModal,
-      $state) {
+        $state) {
 
     var vm = this;
 
     vm.sponsorInfo = {};
 
 
-    //
-    // Get sponsor information
-    //
-    Sponsor.getSponsorInfo().then(function(sponsorInfo) {
-
-      vm.sponsorInfo = sponsorInfo;
-
-      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
-
-    });
-
 
     //
-    // Gets the sponsor's dashboard data
+    // Gets user's info 
     //
-    Sponsor.getDashboard().then(function(dashboard) {
+    User.getUserInfo().then(function(dashboard) {
 
-      console.log(dashboard);
+      vm.sponsorInfo = dashboard; 
+      console.log(dashboard); 
 
-      vm.sponsees = dashboard.sponsees;
-
-      console.log(vm.sponsees);
+      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name; 
 
     }).catch(function(){
 
-      $state.go('main.signUp.identity');
+      // $state.go('main.signUp.identity');
 
     });
 
+
+
+    //
+    // Gets a sponsors contributions
+    //
+    Sponsor.getAllContributions().then(function(contributions) {
+
+      console.log(contributions); 
+
+    });
+
+
+    //
+    // Gets a sponsors' sponsorships
+    //
+    Sponsorship.getAll().then(function(sponsorships) {
+
+      console.log(sponsorships)
+      vm.sponsees = sponsorships.data;  
+
+    }); 
+
+
+    //
+    // Logs a user out 
+    //
     vm.logout = function() {
+
       console.log("Logging you out fam-o");
+
       Auth.logout();
+
     };
+
 
     //
     // Opens the jolt modal using the $fancyModal service

@@ -11,12 +11,14 @@ twopence.controller('sponseeCreationCtrl', [
     '$timeout',
     'Sponsor',
     'Sponsee',
+    'Sponsorship',
     function(
         $state,
         $stateParams,
         $timeout,
         Sponsor,
-        Sponsee) {
+        Sponsee,
+        Sponsorship) {
 
       var vm = this;
 
@@ -24,28 +26,36 @@ twopence.controller('sponseeCreationCtrl', [
 
       vm.form = {};
 
-      vm.searchData = {}; 
+      vm.searchData = {};
 
-      vm.sponseeId = null; 
+      vm.sponseeId = null;
 
       vm.cameFromEmail = $stateParams.cameFromEmail;
 
 
       //
-      // Searches a sponsee and sets the sponsee id in the controller 
-      // so sponsor can then set a plan based on the id returned. 
-      // If succesful, we take the sponsor to the sponsorship setup state and 
-      // use parameters to give id of sponsor 
+      // Searches a sponsee and sets the sponsee id in the controller
+      // so sponsor can then set a plan based on the id returned.
+      // If succesful, we take the sponsor to the sponsorship setup state and
+      // use parameters to give id of sponsor
       //
       vm.searchSponsee = function(pSponseeSearchForm) {
 
         vm.unsubmittedForm = false;
 
+        console.log(vm.searchData);
+
+        vm.sponseeInfo = {
+          "user": vm.searchData
+        };
+
+        console.log(vm.sponseeInfo);
+
         if(pSponseeSearchForm.$valid) {
 
-          Sponsee.search(vm.searchData).then(function(res) {
-
-            vm.sponseeId = res.id; 
+          Sponsorship.create(vm.sponseeInfo).then(function(res) {
+            console.log(res);
+            vm.sponseeId = res.id;
 
             console.log('success');
 
@@ -55,11 +65,11 @@ twopence.controller('sponseeCreationCtrl', [
 
             console.log('rejected, something went wrong')
 
-          }); 
+          });
 
         } else {
 
-          console.log('nope, the form is not right'); 
+          console.log('nope, the form is not right');
 
         }
 

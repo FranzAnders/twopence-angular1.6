@@ -1,4 +1,3 @@
-
 'use strict';
 
 /*------------------------------------*\
@@ -6,114 +5,130 @@
 \*------------------------------------*/
 
 twopence.controller('signUpCtrl', [
-    '$filter',
-    '$scope',
-    '$state',
-    '$timeout',
-    '$fancyModal',
-    'User',
-    'Sponsor',
-    'Auth',
-    function(
-      $filter,
-      $scope,
-      $state,
-      $timeout,
-      $fancyModal,
-      User,
-      Sponsor,
-      Auth) {
+  '$filter',
+  '$scope',
+  '$state',
+  '$timeout',
+  '$fancyModal',
+  'User',
+  'Sponsor',
+  'Auth',
+  function(
+    $filter,
+    $scope,
+    $state,
+    $timeout,
+    $fancyModal,
+    User,
+    Sponsor,
+    Auth) {
 
-      var vm = this;
+    var vm = this;
 
-      vm.formUnsubmitted = true;
+    vm.formUnsubmitted = true;
 
-      $scope.$state = $state;
+    $scope.$state = $state;
 
-      vm.userCreationForm = {};
+    vm.userCreationForm = {};
 
-      vm.sposorCreationForm = {};
-
-
-      //
-      // We store the sponsor info and user info as objects to then
-      // inject into the requests
-      //
-      vm.sponsorInfo = {
-        'sms_preferred': false,
-        'accepted_tc': false
-      };
+    vm.sposorCreationForm = {};
 
 
-      vm.userInfo = {
-        'phone': ''
-      };
+    //
+    // We store the sponsor info and user info as objects to then
+    // inject into the requests
+    //
+    vm.sponsorInfo = {
+      'sms_preferred': false,
+      'accepted_tc': false,
+      'phone': '',
+      'first_name': '',
+      'last_name': ''
+    };
 
 
-      //
-      // We store the DOB in a separate property because angular 1.3+
-      // ng-model for type='date' in input fields expects dates and not strings
-      // or converted dates
-      vm.sponsorDob = new Date('2017', 9, 22);
+    //
+    // We store the DOB in a separate property because angular 1.3+
+    // ng-model for type='date' in input fields expects dates and not strings
+    // or converted dates
+    vm.sponsorDob = new Date('2017', 9, 22);
 
 
-      if(Auth.getToken()) {
+    if (Auth.getToken()) {
 
-        console.log('theres a token');
+      console.log('theres a token');
+
+      $state.go('main.signUp.identity');
+
+    } else {
+
+      $state.go('main.signUp.account');
+    }
+
+
+    //
+    // Creates the user from the information provided
+    //
+
+    // API V1 createUser
+
+    /*
+    vm.createUser = function(form) {
+
+      if(form.$valid) {
+
+        delete vm.userInfo.confirmPassword;
+
+        User.create(vm.userInfo).then(function() {
+
+          console.log('yep, it passes ');
+
+          $state.go('main.signUp.identity');
+
+
+
+      } else {
+
+        console.log('not yet boy');
+
+      }
+
+    }; */
+
+    // V2 createUser calls
+
+    vm.createAccount = function(form) {
+
+      if (form.$valid) {
+
+        delete vm.userInfo.confirmPassword;
+
+        console.log(vm.userInfo);
 
         $state.go('main.signUp.identity');
 
       } else {
 
-        $state.go('main.signUp.account');
+        console.log('not yet boy');
+
       }
 
+    };
 
-      //
-      // Creates the user from the information provided
-      //
-      vm.createUser = function(form) {
 
-        if(form.$valid) {
+    //
+    // Creates the sponsor fom the information provided and the logged in account
+    //
+    vm.createUser = function(pSponsorForm) {
 
-          delete vm.userInfo.confirmPassword;
+      if (pSponsorForm.$valid) {
+        vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
+        console.log("This is valid. Just to confirm your variables");
+        console.log(vm.userInfo);
+        console.log(vm.userInfo.first_name);
+
 
           User.create(vm.userInfo).then(function() {
-
-            console.log('yep, it passes ');
-
-            $state.go('main.signUp.identity');
-
-
-          }).catch(function(err){
-
-            console.log(err);
-
-            vm.status = err.data.message
-
-          });
-
-        } else {
-
-          console.log('not yet boy');
-
-        }
-
-      };
-
-
-      //
-      // Creates the sponsor fom the information provided and the logged in account
-      //
-      vm.createSponsor = function(pSponsorForm) {
-
-        if(pSponsorForm.$valid) {
-
-          vm.sponsorInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
-
-          console.log(vm.sponsorInfo);
-
-          Sponsor.create(vm.sponsorInfo).then(function() {
             console.log('valid');
             $state.go('main.signUp.confirmation');
 
@@ -129,51 +144,48 @@ twopence.controller('signUpCtrl', [
             vm.status = err.data.message;
             console.log(vm.status);
           })
-        } else {
 
+      } else {
+        console.log("We are not valid")
+      }
+    };
 
-          console.log('not valid')
+    vm.verifyEmail = function() {
+      console.log("Starting verification");
+      User.verify();
+      $state.go('sponsor.dashboard');
+    };
 
+    vm.openTermsModal = function() {
+      console.log("Attempting opening of Modal");
+      $fancyModal.open({
 
-        }
+        templateUrl: 'js/home/signUp-terms.html',
+        controller: 'signUpCtrl as signUp'
 
-      };
+      });
 
-      vm.verifyEmail = function() {
-        console.log("Starting verification");
-        User.verify();
-        $state.go('sponsor.dashboard');
-      };
-
-      vm.openTermsModal = function() {
-        console.log("Attempting opening of Modal");
-        $fancyModal.open({
-
-          templateUrl: 'js/home/signUp-terms.html',
-          controller: 'signUpCtrl as signUp'
-
-        });
-
-      };
+    };
 
 
 
-      // vm.processForm = function() {
+    // vm.processForm = function() {
 
-      //   console.log("processing form...");
+    //   console.log("processing form...");
 
-      //   console.log($scope.user);
+    //   console.log($scope.user);
 
-      //   vm.formUnsubmitted = false;
+    //   vm.formUnsubmitted = false;
 
-      //   $timeout(function() {
+    //   $timeout(function() {
 
-      //     $state.go('main.signUp.confirmation');
+    //     $state.go('main.signUp.confirmation');
 
-      //   }, 1400);
-
-
-      // };
+    //   }, 1400);
 
 
-    }]);
+    // };
+
+
+  }
+]);
