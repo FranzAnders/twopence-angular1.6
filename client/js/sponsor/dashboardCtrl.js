@@ -18,26 +18,12 @@ twopence.controller('dashboardCtrl', [
         User,
         Auth,
         $fancyModal,
-      $state) {
+        $state) {
 
     var vm = this;
 
     vm.sponsorInfo = {};
 
-
-    //
-    // Get sponsor information
-    //
-
-    User.getUserInfo().then(function(sponsorInfo) {
-
-      vm.sponsorInfo = sponsorInfo;
-
-      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
-
-      console.log(sponsorInfo)
-
-    });
 
     //
     // Gets the sponsor's dashboard data : KILL THIS
@@ -72,20 +58,30 @@ twopence.controller('dashboardCtrl', [
 
       console.log(dashboard);
 
-      vm.sponsees = dashboard.sponsees;
+      vm.sponsees = dashboard.sponsorships;
 
       console.log(vm.sponsees);
 
-    }).catch(function(){
+      Sponsor.getAllContributions().then(function(contriubutions) {
 
+        console.log("Testing the contributions")
+
+        console.log(contriubutions);
+
+      });
+
+    }).catch(function(){
 
       // $state.go('main.signUp.identity');
 
     });
 
     vm.logout = function() {
+
       console.log("Logging you out fam-o");
+
       Auth.logout();
+
     };
 
 
