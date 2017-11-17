@@ -25,18 +25,12 @@ input[type="search"],
 input[type="tel"], 
 input[type="time"], 
 input[type="url"], 
-input[type="color"] {
+input[type="color"], {
     
-    color: black; 
-    border: 0; 
-    background-color: transparent; 
-    border-bottom: 2px solid $tertiaryColor;
-    margin-bottom: rem-calc($level2); 
+    margin-bottom: rem-calc($base-magic-number);
     margin-right: rem-calc($level2); 
-    width: 100%; 
     @include border-radius(0); 
     @extend %prl2; 
-    @extend %position-relative; 
 
     &:focus,
     &:active {
@@ -56,94 +50,32 @@ input:-webkit-autofill {
 
 
 /*------------------------------------*\
-    #Form Groups  
-\*------------------------------------*/
-
- 
- $formGroupSpeed: .4s; 
-
-
-.form-group {
-    
-    width: 100%;    
-    margin-bottom: rem-calc($level4); 
-    margin-bottom: rem-calc($level3);
-    @extend %position-relative; 
-
-    &:after {
-        content: "";
-        background-color: $primaryColor;
-        height: rem-calc(4px);
-        bottom: rem-calc(10px);
-        z-index: 3;
-        width: 0; 
-        left: 0; 
-        right: 0; 
-        opacity: 0; 
-        margin-right: auto; 
-        margin-left: auto; 
-        @include transition(all, $formGroupSpeed, ceaser($easeInOutQuint)); 
-        @extend %position-absolute;
-    }
-
-    input{
-
-        z-index: 1; 
-        width: 100%; 
-
-    }
-
-    label {
-        z-index: 0; 
-        @include single-transition(transform, $formGroupSpeed, ceaser($easeInOutQuint)); 
-        @extend %text-micro; 
-        @extend %position-absolute; 
-    }
-
-    &.is-focused,
-    &.is-filled {
-        
-        label {
-            
-            @include transform(scale(.9) translateY(-14px));
-
-            @media #{$medium-up} {
-
-                @include transform(scale(.9) translateY(-27px));
-
-            }
-
-        }
-
-    }
-
-    &.is-focused {
-
-        &:after {
-            opacity: 1; 
-            width: 100%;
-            @include transition(all, $formGroupSpeed, ceaser($easeInOutQuint)); 
-
-        }
-
-    }
-
-}
-
-
-
-
-
-/*------------------------------------*\
     #Input Properties 
 \*------------------------------------*/
 
 
-input {
+input,
+textarea {
+    
+  width: 100%;
+  border: none; 
+  border-left: 6px solid $accentColor; 
+  background-color: $grey--light; 
+  color: $grey--med; 
+  @include transition(all .4s ceaser($easeInOutQuint));
 
-    &.input--expanded {
-        width: 100%; 
-    }
+  &:active,
+  &:focus{
+
+    border-left: 12px solid $secondaryColor; 
+    color: $body-color; 
+
+  }
+
+
+  &.input--expanded {
+      width: 100%; 
+  }
 }
 
 
@@ -158,21 +90,20 @@ input {
 
 
 
-
-
 /*------------------------------------*\
     #Input Sizes 
 \*------------------------------------*/
 
 
 input {
-  
-  &.input--small {
+
+   &.input--small {
 
     padding-top: rem-calc($level1);
     padding-bottom: rem-calc($level1);
 
-  }
+  } 
+
   &.input--medium {
 
     padding-top: rem-calc($level2);
@@ -196,36 +127,32 @@ input {
 
 
 
-
 /*------------------------------------*\
-    #Input Types 
+    #Input With Button 
 \*------------------------------------*/
 
 
-input {
-    
-    &.input--primary {
-        background-color: transparent;
-        border: 1px solid $secondaryColor;
-        width: 100%;
+.inputWithButton {
 
-        &:-webkit-autofill {
+  .inputWithButton-input {
 
-          background-color: $secondaryColor--translucent !important; 
+    width: 100%; 
 
-        }
+  }
+
+  .inputWithButton-button {
+
+    width: 100%; 
+
+    @media #{$large-up} {
+
+      width: 80%;
+      padding-left: rem-calc($level2); 
 
     }
-
-    &.input--secondary {
-        background-color: #fff;
-        border: 2px solid $primaryColor;
-        width: 100%;
-    }
+  }
 
 }
-
-
 
 
 
@@ -254,68 +181,7 @@ label {
 select {
 
   width: 100%; 
-  margin-bottom: rem-calc($level2); 
-  @extend %prl2; 
-  @include border-radius(0); 
     
-}
-
-
-
-
-
-/*------------------------------------*\
-    #Select Types
-\*------------------------------------*/
-
-
-.select--primary {
-    background-color: transparent; 
-    outline: 0;
-    border: 2px solid $primaryColor; 
-    @extend %br1; 
-
-    &:hover,
-    &:active,
-    &:focus {
-
-        background-color: $primaryColor; 
-    }
-}
-
-
-
-
-
-/*------------------------------------*\
-    #Select Sizes 
-\*------------------------------------*/
-
-
-select {
-  
-  &.select--small {
-
-    padding-top: rem-calc($level1);
-    padding-bottom: rem-calc($level1);
-
-  }
-  &.select--medium {
-
-    padding-top: rem-calc($level2);
-    padding-bottom: rem-calc($level2);
-
-  }
-
-
-  &.select--large {
-
-    padding-top: rem-calc($level3);
-    padding-bottom: rem-calc($level3);
-
-  }
-
-
 }
 
 
@@ -328,9 +194,35 @@ select {
 
 
 textarea {
-    
-    border: 2px solid $primaryColor; 
-    width: 100%; 
-    @extend %ptrbl2; 
+
+  @extend %ptrbl2; 
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Form Alerts
+\*------------------------------------*/
+
+.alert--warning {
+
+    color: #FF6F92; 
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Form Alerts
+\*------------------------------------*/
+
+
+.formAreaDivider--left {
+
+    border-left: 1px solid $grey--med; 
 }
 

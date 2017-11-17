@@ -9,18 +9,20 @@ module.exports = function(grunt) {
 		app: '.',
 		dist: 'dist',
 
-       compass: {
-         dist: {
-           options: {
-             config: 'config.rb',
-             importPath: '<%= app %>/bower_components/foundation/scss',
-             outputStyle: 'expanded',
-             boring: true,
-             sassDir: '<%= app %>/scss/main.scss',
-             cssDir: '<%= app %>/css/app.css'
-           }
+     compass: {
+       dist: {
+         options: {
+           config: 'config.rb',
+           importPath: '<%= app %>/bower_components/foundation/scss',
+           outputStyle: 'expanded',
+           boring: true,
+           sassDir: '<%= app %>/scss/*.scss',
+           cssDir: '<%= app %>/css/app.css',
+           basePath: '<%= app %>'
          }
-       },
+       }
+
+     },
 
 		jshint: {
 			options: {
@@ -84,7 +86,7 @@ module.exports = function(grunt) {
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['compass']
+				tasks: ['compass:dist']
 			},
 			sass: {
 				files: '<%= app %>/scss/**/*.scss',
@@ -143,7 +145,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('bower-install', ['wiredep']);
 
-    grunt.registerTask('default', ['bower-install', 'compass', 'connect:app', 'watch']);
+    grunt.registerTask('default', ['bower-install', 'compass:dist', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
 

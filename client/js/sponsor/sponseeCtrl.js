@@ -24,7 +24,7 @@ twopence.controller('sponseeCtrl', [
 
     $scope.$state = $state; 
 
-    console.log('reload'); 
+    vm.sponsorshipId = sponseeId; 
 
     Sponsorship.get(sponseeId).then(function(sponsorship) {
 
