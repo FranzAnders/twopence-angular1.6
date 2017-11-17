@@ -29,19 +29,8 @@ twopence.config(
     //
     //If anything is unmatched just go to home
     //
-    $urlRouterProvider.otherwise("no-longer-here/");
-    //$httpProvider.interceptors.push(httpInterceptor);
-    // function httpInterceptor($q, $log, $cookieStore) {
-    //   return {
-    //     request: function(config) {
-    //       config.headers.Authorization =
-    //         $cookieStore.get('authToken');
-    //         return config;
-    //     }
-    //   };
-    // }
+    $urlRouterProvider.otherwise("/");
 
-    //
     // Pretty URLs
     //
     // $locationProvider.html5Mode(true);
@@ -62,18 +51,10 @@ twopence.config(
 
                 'main' : {
 
-                    templateUrl: "js/home/home.html",
-                    controller: "homeCtrl",
-                    controllerAs: "home"
+                    templateUrl: "js/home/home.html"
 
                 }
             },
-            params: {
-
-                back: null
-
-            }
-
         })
         .state('main.login', {
 
@@ -456,33 +437,27 @@ twopence.run(
 
     });
 
-    editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 
+    //
+    // Checking if the user is logged in, if not, we take them to the homepage
+    //
+    // $timeout(function () {
+    //   var authChecker = Auth.checkIfVisited();
+    //   var tokenCheck = Auth.getToken();
 
+    //       if(authChecker == "true") {
+    //         console.log("You've already logged in. Let's redirect you");
+    //       //  $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck;
+    //         $state.go("sponsor.dashboard");
+    //       }
+    //       else {
+    //         console.log("Login again, my dude");
+    //       }
 
-    // Attempting Login Check - Yay!
-    // $rootScope.globals.currentUser.authData = $cookies.get('authToken') || {};
-    // console.log("Your cookie ID is: ")
-    $timeout(function () {
-      console.log("I hope this works.....")
-      var authChecker = Auth.checkIfVisited();
-      var tokenCheck = Auth.getToken();
-      console.log(authChecker);
-      console.log(tokenCheck);
-          if(authChecker == "true") {
-            console.log("You've already logged in. Let's redirect you");
-          //  $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck;
-            $state.go("sponsor.dashboard");
-          }
-          else {
-            console.log("Login again, my dude");
-            $state.go("main.login");
-          }
-    }, 0);
+    // }, 0);
 
     // tokenCheck = $cookies.get('authToken');
     // console.log(tokenCheck.length);
-    console.log("Are you Authing?: " + Auth.checkIfVisited());
 
     // Old script to save users and check auth in RootScope.
     // May use for reference before deleting.
