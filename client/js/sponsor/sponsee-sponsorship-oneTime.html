@@ -1,67 +1,67 @@
 
 
 <div class="row">
-  
+
   <div class="small-12 columns" ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
-    <form  ng-submit="sponseeSponsorship.createSponsorship(     sponseeSponsorship.sponsorshipDetailsForm)"
+    <form  ng-submit="sponseeSponsorship.createPlan(     sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponseeId)"
           name="sponseeSponsorship.sponsorshipDetailsForm">
 
       <div ng-if="sponseeSponsorship.formNotSubmited">
 
         <h1>Make <br>One-Time Jolt</h1>
-      
+
         <h2>Sponsee: {{sponseeSponsorship.name}}</h2>
-        
+
         <fieldset>
-        
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                  name="limit"
                  value="50"
-                 id="fiftyOneTime"> 
+                 id="fiftyOneTime">
           <label for="fiftyOneTime">$50</label>
-          
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                  name="limit"
                  value="100"
                  id="oneHundredOneTime">
           <label for="oneHundredOneTime">$100</label>
-        
+
           <input type="radio"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                  name="limit"
                  value="250"
                  id="twoHundredAndFiftty">
           <label for="twoHundredAndFiftty">$250</label>
-        
+
           <input type="checkbox"
                  ng-model="customLimit"
                  name="limit"
                  id="custom">
-        
+
           <label for="custom">Custom</label>
-        
-          <input type="text" 
+
+          <input type="text"
                  id="customValue"
                  name="custom"
                  class="input--medium  input--primary"
                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount">
-        
+
         </fieldset>
 
         <div clas="text-center">
-        
+
           <div class="mtrbl5">BANK ACCOUNT LINKING</div>
-        
+
         </div>
-        
-        <button ng-click="sponseeSponsorship.processForm()" 
+
+        <button ng-click="sponseeSponsorship.processForm()"
                 class="button--expanded  button--primary  button--medium">
-          
+
           Continue
-        
+
         </button>
 
       </div>
@@ -73,7 +73,7 @@
   <div class="small-12  columns"  ng-if="sponseeSponsorship.formSubmittedSuccesfully" >
 
       <div class="text-center">
-          
+
           <h1>
             <span class="fwb">${{sponseeSponsorship.sponsorshipInfo.plan.amount}}</span>
             <br>
