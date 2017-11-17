@@ -26,7 +26,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
     vm.formNotSubmited = true;
 
     vm.formSubmittedSuccesfully = false;
-console.log($stateParams);
+    console.log($stateParams);
 
     vm.sponseeId = $stateParams.sponseeId;
 
@@ -96,7 +96,7 @@ console.log($stateParams);
       bankToken: ''
     }
 
-    
+
     //
     // Creates a sponsorship, if succesfull, shows success screen and
     // takes user to the sponsee's page
@@ -142,7 +142,7 @@ console.log($stateParams);
 
       if (pSponsorshipDetailsForm.$valid) {
 
-        Sponsorship.createPlan(vm.sponsorshipInfo, sponseeID).then(function(sponsorship) {
+        Sponsorship.newPlan(sponseeID, vm.sponsorshipInfo).then(function(sponsorship) {
           console.log(sponsorship);
 
           vm.formNotSubmited = false;

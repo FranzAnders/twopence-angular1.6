@@ -23,11 +23,11 @@ twopence.controller('sponseePlanEditCtrl', [
 
     console.log(vm.sponsee);
 
-    if (!$stateParams.sponsee) {
-
-      $state.go('sponsor.dashboard');
-
-    }
+    // if (!$stateParams.sponsee) {
+    //
+    //   $state.go('sponsor.dashboard');
+    //
+    // }
 
     //
     // Gets a plan via an id

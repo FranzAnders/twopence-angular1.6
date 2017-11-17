@@ -81,6 +81,33 @@ twopence.factory('Sponsorship', [
 
   };
 
+  sponsorship.newPlan = function(pSponseeId, pSponseeInfo) {
+
+    return $q(function(resolve, reject) {
+
+        $http.post(BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans', pSponseeInfo, {
+
+          headers: {
+
+            'Authorization' : 'bearer ' + Auth.getToken()
+
+          }
+
+        }).then(function(res) {
+
+          resolve(res.data);
+
+        }).catch(function(err) {
+
+          reject(err);
+
+        });
+
+
+    });
+
+  }
+
 
   //
   // Gets all current sponsorships for a logged in user
@@ -110,7 +137,7 @@ twopence.factory('Sponsorship', [
 
     });
 
-  }; 
+  };
 
 
   //
