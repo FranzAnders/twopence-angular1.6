@@ -182,7 +182,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       if (pType === 'one-time') {
 
-        vm.sponsorshipInfo.plan.type = 'one-time';
+        vm.sponsorshipInfo.plan.type = 'fixed';
         vm.sponsorshipInfo.plan.frequency = 'one-time';
         vm.sponsorshipInfo.plan.amount = 0;
 
