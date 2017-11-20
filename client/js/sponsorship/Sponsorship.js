@@ -19,8 +19,6 @@ twopence.factory('Sponsorship', [
 
 
   var sponsorship = {};
-
-
   //
   // Creates a sponsorship plan between user and logged-in sponsor
   //
@@ -146,10 +144,10 @@ twopence.factory('Sponsorship', [
   //
   // Patches the sponsorship specified for pausing or changing the plan details
   //
-  sponsorship.patch = function(load) {
+  sponsorship.patch = function(pSponsorshipId, pPlanId, load) {
     console.log("I'm patching my G");
     return $q(function(resolve, reject) {
-      $http.patch(BASE_URL + '/v1/sponsorships/' + load.id, load, {
+      $http.patch(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
         headers: {
           'Authorization' : 'bearer ' + Auth.getToken(),
           'Content-type' : 'application/json'
