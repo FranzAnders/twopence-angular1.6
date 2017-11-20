@@ -16,8 +16,8 @@ module.exports = function(grunt) {
              importPath: '<%= app %>/bower_components/foundation/scss',
              outputStyle: 'expanded',
              boring: true,
-             sassDir: '<%= app %>/scss/main.scss',
-             cssDir: '<%= app %>/css/app.css'
+             sassDir: '<%= app %>/scss/',
+             cssDir: '<%= app %>/css/'
            }
          }
        },
