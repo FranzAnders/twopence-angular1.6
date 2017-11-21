@@ -126,30 +126,12 @@ twopence.controller('sponseePlanEditCtrl', [
 
       console.log("Is this active?: ");
 
-      Sponsorship.get(planId).then(function(plan) {
-
-          vm.sponseePlan = plan;
-
-          console.log(vm.sponseePlan);
-
-          // To-Do : Detect Active true
-          // Knows what to Send out if Active or Not
-
-        })
-
-        .catch(function(err) {
-
-          console.log('no bueno');
-
-        });
-
-
       //
       // To Do: Make For Loop if
       // Plan array contains more than 1 object
       //
 
-      console.log(vm.sponseePlan.plans[0].active)
+      console.log(vm.sponseePlan.plans[0].id)
 
       var payLoad = {
 

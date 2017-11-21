@@ -29,14 +29,14 @@ twopence.controller('dashboardCtrl', [
 
 
     //
-    // Gets user's info 
+    // Gets user's info
     //
     User.getUserInfo().then(function(dashboard) {
 
-      vm.sponsorInfo = dashboard; 
-      console.log(dashboard); 
+      vm.sponsorInfo = dashboard;
+      console.log(dashboard);
 
-      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name; 
+      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
 
     }).catch(function(){
 
@@ -51,7 +51,7 @@ twopence.controller('dashboardCtrl', [
     //
     Sponsor.getAllContributions().then(function(contributions) {
 
-      console.log(contributions); 
+      console.log(contributions);
 
     });
 
@@ -62,13 +62,13 @@ twopence.controller('dashboardCtrl', [
     Sponsorship.getAll().then(function(sponsorships) {
 
       console.log(sponsorships)
-      vm.sponsees = sponsorships.data;  
+      vm.sponsees = sponsorships.data;
 
-    }); 
+    });
 
 
     //
-    // Logs a user out 
+    // Logs a user out
     //
     vm.logout = function() {
 
@@ -77,6 +77,20 @@ twopence.controller('dashboardCtrl', [
       Auth.logout();
 
     };
+
+    vm.sendReminder = function(sponseeId) {
+
+      console.log("Remind me to do something");
+
+      var remindLoad = {
+        "user": {
+          "id": sponseeId
+        }
+      };
+
+      Sponsee.remind(remindLoad);
+
+    }
 
 
     //
@@ -87,7 +101,9 @@ twopence.controller('dashboardCtrl', [
       $fancyModal.open({
 
         templateUrl: 'js/sponsor/sponsee-jolt-modal.html',
+
         controller: 'sponseeJoltCtrl as sponseeJolt',
+
         resolve: {
 
             SponseeInformation: function() {
