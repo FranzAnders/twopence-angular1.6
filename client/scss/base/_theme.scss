@@ -4,21 +4,82 @@
 \*------------------------------------*/
 
 
+
+
 /*------------------------------------*\
-    #Backgrounds
+    #Brand Colors
 \*------------------------------------*/
 
 
-// Mixin to generate text color classes based off pack ingredients
-// @each $color_name, $color in $ingredientColors {
+.brandColor--primaryColor {
+  background-color: $primaryColor;
+}
+
+.brandColor--primaryColor--dark {
+  background-color: $primaryColor--dark; 
+}
+
+.brandColor--secondaryColor {
+  background-color: $secondaryColor; 
+}
+
+.brandColor--tertiaryColor {
+    background-color: $tertiaryColor; 
+}
+
+
+.brandColor--quaternaryColor {
+    background-color: $quaternaryColor; 
+}
+
+
+.brandColor--quintenaryColor {
+    background-color: $quintenaryColor; 
+}
+
+.brandColor--accentColor {
+    background-color: $accentColor; 
+}
+
+.brandColor--grey {
+    background-color: $grey--dark; 
+}
+
+[class*='brandColor--'] {
     
-//     .bg-#{$color_name} {
-        
-//         background-color: $color; 
+    color: #828282; 
 
-//     }
+}
 
-// }
+
+
+
+
+/*------------------------------------*\
+    #Greys
+\*------------------------------------*/
+
+
+.brandColor--greyLight {
+  
+  background-color: $grey--light; 
+
+}
+
+
+.brandColor--greyMed {
+  
+  background-color: $grey--med; 
+
+}
+
+
+
+.brandColor--greyDark {
+  
+  background-color: $grey--dark; 
+
+}
 
 
 
@@ -27,6 +88,7 @@
 /*------------------------------------*\
     #Border Radius
 \*------------------------------------*/
+
 
 
 .br1 {
@@ -46,53 +108,4 @@
 .br4 {
     @extend %br4; 
    
-}
-
-
-
-
-
-
-/*------------------------------------*\
-    #UI Guide 
-\*------------------------------------*/
-
-
-.ui-guide {
-
-  .brandColor--primaryColor {
-      background-color: $primaryColor;
-  }
-
-  .brandColor--primaryColor--dark {
-      background-color: $primaryColor--dark; 
-  }
-
-  .brandColor--secondaryColor {
-      background-color: $secondaryColor; 
-  }
-
-  .brandColor--tertiaryColor {
-        background-color: $tertiaryColor; 
-    }
-
-
-  .brandColor--quaternaryColor {
-        background-color: $quaternaryColor; 
-    }
-
-
-    .brandColor--accentColor {
-        background-color: $accentColor; 
-    }
-
-    .brandColor--grey {
-        background-color: $grey--dark; 
-    }
-
-    [class*='brandColor--'] {
-        
-        color: #fff; 
-    }
-
 }

@@ -1,23 +1,7 @@
 
 /*------------------------------------*\
-    #Utility  
+    #Generics 
 \*------------------------------------*/
-
-
-/*------------------------------------*\
-    #Padding + Margin Levels  
-\*------------------------------------*/
-
-$level1: 6;
-$level2: 12; 
-$level3: 18;
-$level4: 24; 
-$level5: 30;  
-$level6: 36; 
-$level7: 48; 
-
-
-
 
 
 /*------------------------------------*\
@@ -86,9 +70,7 @@ $level7: 48;
 }
 
 
-%textshadow1 {
-  @include text-shadow(1px 1px 12px rgba(0,0,0, .4)); 
-}
+
 
 
 /*------------------------------------*\
@@ -204,14 +186,14 @@ $level7: 48;
 
 
 @mixin media($float: left) {
-  overflow: hidden;
+  overflow: auto;
   zoom: 1; 
   & > :first-child {
     float: $float;
   }
   
   & > :last-child {
-    overflow: hidden;
+    overflow: auto;
   }
 }
 
@@ -283,7 +265,6 @@ $level7: 48;
 
 
 
-
 /*------------------------------------*\
     #Text Alignment  
 \*------------------------------------*/
@@ -291,6 +272,23 @@ $level7: 48;
 %text-center { text-align: center; }
 %text-left {text-align: left;}
 %text-right {text-align: right;}
+
+
+
+
+
+/*------------------------------------*\
+    #Padding + Margin Levels  
+\*------------------------------------*/
+
+
+$level1: 6;
+$level2: 12; 
+$level3: 18;
+$level4: 24; 
+$level5: 30;  
+$level6: 36; 
+$level7: 48; 
 
 
 

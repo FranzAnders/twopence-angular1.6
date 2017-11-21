@@ -1,17 +1,30 @@
 
+// Make sure the charset is set appropriately
+@charset 'UTF-8';
+
+
 // Imports Compass Easing plugin
 @import "ceaser-easing";
-@import 'normalize';
-
-// Foundation Imports 
-@import 
-   'abstracts/foundation--overwrite',
-    'abstracts/foundationComponents';
 
 
 // Compass Dependency, after Foundation to avoid conflict
 @import "compass/css3";
 @import "compass/utilities";
+
+
+// Normalize
+@import  "normalize.scss"; 
+
+
+// Vendors 
+@import
+    "vendor/animate", 
+    "vendor/foundationGlobals",
+    "vendor/foundationFunctions",
+    "vendor/foundationGrid",
+    "vendor/foundationMixins",
+    "vendor/foundationTables",
+    "vendor/foundationVisibility";
 
 
 // Abstracts
@@ -22,17 +35,14 @@
     'abstracts/buttons',
     'abstracts/colors',
     'abstracts/icons',
-    'abstracts/lists',
     'abstracts/panels',
+    'abstracts/theme',
     'abstracts/typography',
     'abstracts/utility';
 
 
-
-
 // Base
 @import 
-  'base/angular',
   'base/animations',
   'base/icons',
   'base/noSvg',
@@ -46,32 +56,26 @@
 
 // Layout
 @import 
- 'layout/buttons',
- 'layout/forms',
  'layout/footer',
+ 'layout/forms',
  'layout/navs',
+ 'layout/responsiveVideo',
  'layout/sections';
 
 
 // Components
 @import 
-    'components/accordion',
-    'components/cards',
-    'components/modals',
-    'components/tables';
+    'components/blockquote',
+    'components/buttons',
+    'components/headlines',
+    'components/heroHeader',
+    'components/lazyImages',
+    'components/lists',
+    'components/loaders',
+    'components/pageHeaders',
+    'components/socialButtons';
 
 
-
-
-
-//Vendors 
-@import
-    "vendor/fancyModal",
-    "vendor/animate";
-
-//Pages
-// @import
-//     'pages/about',
-//     'pages/project';
+// Pages
 
 

@@ -29,6 +29,7 @@ input[type="color"], {
     
     margin-bottom: rem-calc($base-magic-number);
     margin-right: rem-calc($level2); 
+    @include type-setting(0); 
     @include border-radius(0); 
     @extend %prl2; 
 
@@ -59,15 +60,12 @@ textarea {
     
   width: 100%;
   border: none; 
-  border-left: 6px solid $accentColor; 
-  background-color: $grey--light; 
   color: $grey--med; 
   @include transition(all .4s ceaser($easeInOutQuint));
 
   &:active,
   &:focus{
 
-    border-left: 12px solid $secondaryColor; 
     color: $body-color; 
 
   }
@@ -90,37 +88,164 @@ input {
 
 
 
+
+
+/*------------------------------------*\
+    #Input Groups  
+\*------------------------------------*/
+
+ 
+ $formGroupSpeed: .4s; 
+
+
+.input-group {
+    
+    width: 100%;    
+    margin-bottom: rem-calc($base-magic-number);
+    @extend %position-relative; 
+
+    &:after {
+        content: "";
+        background-color: $primaryColor;
+        height: rem-calc(4px);
+        bottom: 0;
+        z-index: 3;
+        left: 0; 
+        margin-right: auto; 
+        margin-left: auto; 
+        width: 0; 
+        @include transition(all $formGroupSpeed ceaser($easeInOutQuint)); 
+        @extend %position-absolute;
+    }
+
+    input{
+
+        z-index: 1; 
+        width: 100%; 
+        margin-bottom: 0; 
+        background-color: transparent; 
+        border-bottom: 4px solid $secondaryColor; 
+
+        &:active,
+        &:focus {
+
+          color: $secondaryColor; 
+
+        }
+
+    }
+
+    label {
+        z-index: 0; 
+        bottom: rem-calc($level2);
+        left: rem-calc($level1); 
+        margin-bottom: 0; 
+        @include transition(all $formGroupSpeed ceaser($easeInOutQuint)); 
+        @extend %position-absolute; 
+    }
+
+    &.is-focused,
+    &.is-filled {
+        
+        label {
+            
+          @include transform(scale(.8) translateY(-36px));
+
+        }
+
+    }
+
+    &.is-focused {
+
+        color: $secondaryColor; 
+
+        input {
+
+         color: $secondaryColor; 
+
+        }
+
+        &:after {
+            width: 100%;
+
+        }
+
+    }
+
+}
+
+
+
+
+
 /*------------------------------------*\
     #Input Sizes 
 \*------------------------------------*/
 
 
-input {
+.input-group {
 
    &.input--small {
+    
+    label {
 
-    padding-top: rem-calc($level1);
-    padding-bottom: rem-calc($level1);
+      @include type-setting(-1); 
 
+    }
+
+    input {
+      
+      padding-top: rem-calc(3px);
+      padding-bottom: rem-calc(3px);
+      @include type-setting(-1); 
+
+    }
+  
   } 
 
   &.input--medium {
 
-    padding-top: rem-calc($level2);
-    padding-bottom: rem-calc($level2);
+    label {
+
+      @include type-setting(0); 
+
+    }
+
+    input {
+
+      padding-top: rem-calc($level1);
+      padding-bottom: rem-calc($level1);
+      @include type-setting(0); 
+
+    }
 
   }
 
 
   &.input--large {
 
-    padding-top: rem-calc($level3);
-    padding-bottom: rem-calc($level3);
+    label {
+
+      @include type-setting(1); 
+
+    }
+
+    input {
+
+      padding-top: rem-calc($level2);
+      padding-bottom: rem-calc($level2);
+      @include type-setting(1); 
+
+    }
 
   }
 
 
 }
+
+
+
+
 
 
 

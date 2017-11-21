@@ -229,63 +229,63 @@
 \*------------------------------------*/
 
 
-@-webkit-keyframes downPush {
+// @-webkit-keyframes downPush {
 
-    0% {
-        @include transform(scale(1));
-    }
-    50% {
-        @include transform(scale(.8)); 
-    }
-    100% {
-        @include transform(scale(1)); 
-    }
-}
-
-
-
-.ui-view-container {
-    position: relative;
-}
+//     0% {
+//         @include transform(scale(1));
+//     }
+//     50% {
+//         @include transform(scale(.8)); 
+//     }
+//     100% {
+//         @include transform(scale(1)); 
+//     }
+// }
 
 
 
-$slide-speed: .6s; 
+// .ui-view-container {
+//     position: relative;
+// }
 
 
-@media #{$medium-up} {
 
-    [ui-view].main-view.ng-enter, [ui-view].main-view.ng-leave {
-        position: absolute;
-        left: 0;
-        right: 0;
-    }
+// $slide-speed: .6s; 
 
-    [ui-view].main-view.ng-enter {
-        -webkit-animation: slideInRight $slide-speed ceaser($easeInOutQuart);
-        animation: slideInRight $slide-speed ceaser($easeInOutQuart);
-    }
 
-    /*[ui-view].main-view.ng-enter-active {}*/
+// @media #{$medium-up} {
 
-    [ui-view].main-view.ng-leave {
-        -webkit-animation: slideOutLeft $slide-speed ceaser($easeInOutQuart);
-        animation: slideOutLeft $slide-speed ceaser($easeInOutQuart);
-    }
+//     [ui-view].main-view.ng-enter, [ui-view].main-view.ng-leave {
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//     }
 
-    /*[ui-view].main-view.ng-leave-active {}*/
+//     [ui-view].main-view.ng-enter {
+//         -webkit-animation: slideInRight $slide-speed ceaser($easeInOutQuart);
+//         animation: slideInRight $slide-speed ceaser($easeInOutQuart);
+//     }
 
-    [ui-view].main-view.ng-enter.back {
-        -webkit-animation: slideInLeft $slide-speed ceaser($easeInOutQuart);
-        animation: slideInLeft $slide-speed ceaser($easeInOutQuart);
-    }
+//     [ui-view].main-view.ng-enter-active {}
 
-    [ui-view].main-view.ng-leave.back {
-        -webkit-animation: slideOutRight $slide-speed ceaser($easeInOutQuart);
-        animation: slideOutRight $slide-speed ceaser($easeInOutQuart);
-    }
+//     [ui-view].main-view.ng-leave {
+//         -webkit-animation: slideOutLeft $slide-speed ceaser($easeInOutQuart);
+//         animation: slideOutLeft $slide-speed ceaser($easeInOutQuart);
+//     }
 
-}
+//     /*[ui-view].main-view.ng-leave-active {}*/
+
+//     [ui-view].main-view.ng-enter.back {
+//         -webkit-animation: slideInLeft $slide-speed ceaser($easeInOutQuart);
+//         animation: slideInLeft $slide-speed ceaser($easeInOutQuart);
+//     }
+
+//     [ui-view].main-view.ng-leave.back {
+//         -webkit-animation: slideOutRight $slide-speed ceaser($easeInOutQuart);
+//         animation: slideOutRight $slide-speed ceaser($easeInOutQuart);
+//     }
+
+// }
 
 
 .floating{

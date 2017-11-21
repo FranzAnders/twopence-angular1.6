@@ -13,11 +13,11 @@ module.exports = function(grunt) {
        dist: {
          options: {
            config: 'config.rb',
-           importPath: '<%= app %>/bower_components/foundation/scss',
+           importPath: '<%= app %>/bower_components/normalize-scss/sass/',
            outputStyle: 'expanded',
            boring: true,
-           sassDir: '<%= app %>/scss/*.scss',
-           cssDir: '<%= app %>/css/app.css',
+           sassDir: '<%= app %>/scss/',
+           cssDir: '<%= app %>/css/',
            basePath: '<%= app %>'
          }
        }

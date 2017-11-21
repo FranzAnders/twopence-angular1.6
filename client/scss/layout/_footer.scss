@@ -4,13 +4,58 @@
 \*------------------------------------*/
 
 
-
 footer {
+
+  background-color: $primaryColor; 
+  position: relative; 
+  padding-top: rem-calc(77px); 
+  color: #fff; 
+  
+  @media #{$medium-up} {
+
+    padding-top: rem-calc($level7 + $level7);
+
+  }
+
+  .footer-title {
+    
+    letter-spacing: 1px; 
+    font-family: $secondary-font-family; 
+    margin-bottom: rem-calc($level2); 
+    color: #fff; 
+    @include type-setting(-1);
+    @extend %fwb; 
+    @extend %uc; 
+
+  }
+
+  .footer-aboutDaaabon {
+      
+    padding-right: rem-calc($level2); 
+    margin-bottom: rem-calc($level4); 
+
+    p {
+      
+      margin-bottom: 0; 
+      @include type-setting(-1); 
+        
+    }
+    
+  }
+
 
   .footer-logo {
 
     margin-top: rem-calc($level6); 
     margin-bottom: rem-calc($level6 + $level3); 
+    position: absolute; 
+    right: 0; 
+    top: 0; 
+    left: 0; 
+    margin-right: auto; 
+    margin-left: auto; 
+    width: 9rem; 
+    top: rem-calc(-77px);
 
     @media #{$medium-up} {
 
@@ -20,126 +65,120 @@ footer {
     }
 
   }
+
+  .footer-social {
+
+    margin-bottom: 0; 
+    margin-left: rem-calc($level1); 
+
+    &:before {
+
+      content: "|"; 
+
+    }
+
+    .footer-social-link {
+
+      fill: $primaryColor; 
+      height: rem-calc(16px);
+      width: rem-calc(16px);
+      position: relative; 
+      bottom: -4px; 
+      margin-left: rem-calc($level1); 
+
+      &:hover, 
+      &:focus {
+        
+        fill: #fff; 
+
+      }
+
+    }
+
+  }
+
 }
 
 
-// .footer-menu {
+.footer-menu {
     
-//     @include flex-direction(column);
-//     @extend %text-center; 
-//     @extend .grid; 
-//     @extend %pb3; 
+    @include flex-direction(column);  
+    @extend .grid; 
+    @extend %pb3; 
 
-//     @media #{$medium-up} {
+    @media #{$medium-up} {
 
-//         @include flex-direction(row); 
-//         @include justify-content(space-around);
+      height: rem-calc(142px);
 
-//     }
+    }
 
-//     .footer-menu-link {
+    .footer-menu-title {
+      
+      letter-spacing: 1px; 
+      font-family: $secondary-font-family; 
+      margin-bottom: rem-calc($level2); 
+      color: #fff; 
+      @include type-setting(-1);
+      @extend %fwb; 
+      @extend %uc; 
+    
+    }
 
-//         @extend %ptb2;
-//         @extend %mtb1;  
-//         @extend %display-block; 
-//     }
+    .footer-menu-item {
 
-// }
+      margin-bottom: rem-calc($level1); 
+      text-align: left; 
+      width: 100%;
 
-// .footer-social {
+    }
 
-//     .footer-social-link {
+    .footer-menu-item:last-child {
 
-//         border: 4px solid #fff; 
-//         background-color: transparent; 
-//         width: rem-calc(60px);
-//         height: rem-calc(60px); 
-//         @include single-transition(all, .4s, ease-in-out); 
-//         @include border-radius(100%); 
-//         @extend %position-relative; 
-//         @extend .grid; 
-//         @extend .grid--center;
-//         @extend .grid--justifyCenter; 
-
-//         &:before {
-
-//             content: ""; 
-//             background-color: #fff;
-//             width: 105%; 
-//             height: 105%; 
-//             z-index: 0; 
-//             @include transition(transform .4s ceaser($easeInOutQuint)); 
-//             @include transform(scale(0)); 
-//             @include border-radius(100%); 
-//             @extend %position-absoluteCentered; 
-//         }
-
-//         &:hover,
-//         &:focus {
-
-//             a {
-
-//                 color: $primaryColor; 
-//             }
+      margin-bottom: 0; 
 
 
-//             &:before {
+    }
 
-//                 @include transform(scale(1)); 
+    .footer-menu-link {
 
-//             }
-//         }   
+      color: #fff; 
+      @include type-setting(-1);
 
-//         a {
-//             color: #fff; 
-//             z-index: 1; 
-//             @include single-transition(all, .4s, ease-in-out); 
 
-//             &:before {
+      &:hover, 
+      &:focus {
 
-//                 margin-right: 0; 
-//             }
+        color: #fff; 
+        text-decoration: underline; 
 
-//         }
+      }
 
-//     }
+      &:active {
 
-// }
+        background-color: $secondaryColor; 
+        color: $body-color; 
+
+      }
+
+    }
+
+}
 
 
 
+.footer-credit {
 
-/*------------------------------------*\
-    #Sticky Footer
-\*------------------------------------*/
+  background: $primaryColor--dark; 
+  width: 100%;
+  padding-top: rem-calc($level2);
+  padding-bottom: rem-calc($level2);
+  color: $primaryColor; 
+  @include type-setting(-1); 
 
+  @media #{$medium-up} {
 
-// html, body {
-//     @media #{$medium-up} {
+    margin-top: rem-calc($level5);
 
-//         height: 100%;
+  }
 
-//     }   
-// }
-
-// [role*='main'] {
-//     @media #{$medium-up} {
-
-//         min-height: 100%;
-//         height: auto !important; This line and the next line are not necessary unless you need IE6 support
-//         height: 100%;
-//         margin: 0 auto 0; /* the bottom margin is the negative value of the footer's height */
-
-//     }
-// }
-
-
-// footer, 
-// .push {
-//     @media #{$medium-up} {
-
-//        // height: 50px; /* .push must be the same height as .footer */
-
-//     }
-// }
-
+}

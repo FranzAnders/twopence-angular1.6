@@ -30,8 +30,6 @@
 
 }
 
-
-
 @include keyframes(loading) {
   
 
@@ -103,30 +101,13 @@
    will-change: opacity; 
    @extend %position-fixed; 
 
-   // &.is-hidden {
+   &.is-hidden {
 
-   //    @include animation(loading-screen-out .6s ceaser($easeInOutQuint) forwards); 
-
-   // }
-
-}
-
-
-
-.loadingScreen {
-    
-    &.ng-enter {
-      @include animation(loading-screen-in .6s ceaser($easeInOutQuint) forwards); 
-    }
-
-    &.ng-leave {
       @include animation(loading-screen-out .6s ceaser($easeInOutQuint) forwards); 
-        
-    }
+
+   }
 
 }
-
-
 
 .loader,
 .loader:after {
@@ -177,24 +158,16 @@
 
 @include keyframes(loading-screen-in) {
 
-   0% {
-    
+    0% {
 
-     opacity: 0; 
-    @include transform(translateX(100%)); 
-
-    }
-    1% {
-      opacity: 0; 
-      @include transform(translateX(0)); 
+        @include transform(translateX(-100%)); 
 
     }
 
     100% {
-      opacity: 1; 
-
+        @include transform(translateX(0)); 
     }
-    
+
 }
 
 
