@@ -3,122 +3,147 @@
     #Sections (Extends from _generics.scss, _colors.scss)
 \*------------------------------------*/
 
-
-
-/*------------------------------------*\
-    #Normal Section
-\*------------------------------------*/
-
 .section {
-    padding-bottom: rem-calc($level7);
-    @extend %position-relative; 
-
-    @media #{$medium-up} {
-
-      padding-bottom: rem-calc($level7 + $level5);
-      
-    }
-
-    @media #{$large-up} {
-
-      padding-bottom: rem-calc($level7 + $level7 + $level2);
-      
-    }
-    
-}
-
-
-
-
-
-/*------------------------------------*\
-    #Lead Section
-\*------------------------------------*/
-
-
-.section--lead {
-
-  padding-top: rem-calc($level7);
+  padding-bottom: rem-calc($level7 + $level1);
+  @extend %position-relative; 
 
   @media #{$medium-up} {
 
-    padding-top: rem-calc($level7 + $level5);
+    padding-bottom: rem-calc($level7 + $level3);
     
   }
 
   @media #{$large-up} {
 
-    padding-top: rem-calc($level7 + $level5);
+    padding-bottom: rem-calc($level7 + $level4);
     
   }
+    
 }
 
+.section--initial {
+
+  padding-top: rem-calc($level7 + $level1);
+
+  @media #{$medium-up} {
+
+    padding-top: rem-calc($level7 + $level3);
+    
+  }
+
+  @media #{$large-up} {
+
+    padding-top: rem-calc($level7 + $level4);
+    
+  }
+
+}
+
+
+.section--padded {
+  padding-bottom: rem-calc($level7);
+  padding-top: rem-calc($level7);
+
+  @media #{$medium-up} {
+    padding-bottom: rem-calc($level7 + $level2);
+    padding-top: rem-calc($level7 + $level2);
+    
+  }
+
+  @media #{$large-up} {
+    padding-bottom: rem-calc($level7 + $level7 + $level4);
+    padding-top: rem-calc($level7 + $level7 + $level4);
+    
+  }
+
+}
+
+
+.section--shadowed {    
+  
+  z-index: 6; 
+  @include box-shadow(0 0 26px rgba(0,0,0, .2)); 
+
+}
+
+.section--bordered {
+
+  border-bottom: 8px solid black; 
+  
+}
 
 
 
 
 
 /*------------------------------------*\
-    #Main Section
+    #Section Types 
 \*------------------------------------*/
 
 
-.section--main {
-
-  padding-top: rem-calc($level7 + $level2); 
-
-  @media #{$large-up} {
-
-    padding-top: 0; 
-
-  }
-  
-}
-
-
-
-
-
-
 .section--primary {
-  
-  background-color: $primaryColor; 
+    background-color: #fff; 
 
-  .section-text {
+    .section-text {
 
-    color:  $tertiaryColor; 
-  }
-
+      color:  $body-color; 
+    }
 }
 
 
 .section--secondary {
-    
+  
   background-color: $secondaryColor; 
 
-}
+  .section-text {
 
+    color: #fff; 
 
-.section--tertiary {
-    
-  background-color: $tertiaryColor; 
-
-}
-
-.section--quaternary {
-
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#63decb+0,238eb2+100 */
-background: #63decb; /* Old browsers */
-background: -moz-linear-gradient(top, #63decb 0%, #238eb2 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #63decb 0%,#238eb2 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #63decb 0%,#238eb2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63decb', endColorstr='#238eb2',GradientType=0 ); /* IE6-9 */
-  
-  color: #fff; 
-  background-size: 140%; 
+  }
 
 }
 
 
+.section--alt {
 
+    overflow: hidden;
+    width: 100%; 
+        
+    & > .row { 
+      @extend %position-relative; 
+    }
+
+    .section-title {
+        color: #fff; 
+    }
+
+    .section-text {
+        color: #fff; 
+    }
+
+     .section-content {
+        left:0; 
+        right: 0; 
+        bottom: 0;
+        top: 0;  
+        width: 100%;
+        z-index: 1; 
+        background-repeat: no-repeat; 
+        background-size: cover; 
+        background-position: center; 
+        @extend %position-absolute; 
+
+    }
+
+}
+.section--highlighted {
+
+  background-color: $grey--light; 
+
+}
+
+.section--photoDivider {
+
+    height: rem-calc(500); 
+}
 

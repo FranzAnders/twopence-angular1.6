@@ -1,6 +1,6 @@
 
 /*------------------------------------*\
-    #Typograp#hy  (Extends variables/placeholders from typography abstract)
+    #Typograp#hy  (Extends variables/placeholders from typography module)
 \*------------------------------------*/
 
 
@@ -64,10 +64,9 @@ abbr, acronym {
 body, html {
 
   font-family: $primary-font-family; 
-  font-weight: $base-font-weight;
   line-height: $base-font-line-height; 
   color: $body-color; 
-    
+  
 }
 
 
@@ -76,15 +75,29 @@ body, html {
 // Reference: http://jsfiddle.net/csswizardry/8nYqN/
 
 /* Common margin-bottom for vertical rhythm. */
-h1,h2,h3,h4,h5,h6,
 ul,ol,dl,
 fieldset,
 p,
 table,
 pre,
 hr{
-    margin-bottom: rem-calc($base-magic-number / 2);
+    margin-bottom: rem-calc($base-magic-number);
 }
+
+h1,h2,h3,h4,h5,h6 {
+
+  margin-bottom: rem-calc(16px);
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Links
+\*------------------------------------*/
+
 
 a {
 
@@ -92,76 +105,90 @@ a {
 
 }
 
-
 p {
 
   a {
 
     color: $body-color;
-    text-decoration: none; 
-    border-bottom: $accentColor 2px solid; 
-    @include transition(all .3s ceaser($easeInOutQuint)); 
-
-    &:hover,
-    &:focus {
-
-        color: $accentColor;
-        border-bottom: transparent 2px solid; 
-
-    }
-
-  }
-
-}
-
-a.styled-link {
-
-    color: $body-color;
-    text-decoration: none; 
-    border-bottom: $accentColor 2px solid; 
-    @include transition(all .3s ceaser($easeInOutQuint)); 
-
-    &:hover,
-    &:focus {
-
-        color: $accentColor;
-        border-bottom: transparent 2px solid; 
-
-    }
-
-}
-
-a.styled-link2 {
-  color: $body-color;
-  font-family: $secondary-font-family; 
-  @extend %fwb; 
-  @extend %uc; 
-  @extend %position-relative; 
-
-  &:after {
-
-    content: " ";
-    left: 0;
-    bottom: -8px; 
-    width: rem-calc(36px); 
-    border-bottom: 4px solid $accentColor; 
-    @include transition(all .2s ease-in-out); 
-    @extend %position-absolute; 
-
-  }
-
-  &:hover, 
-  &:focus {
-
-    &:after {
+    position: relative; 
+    @include transition(all .2s ceaser($easeInOutQuint)); 
+    
+    &:before {
       
+      content: " "; 
+      right: 0; 
+      left: 0; 
+      bottom: 0; 
       width: 100%; 
+      height: 4px; 
+      background-color: $secondaryColor; 
+      position: absolute; 
+      opacity: 1; 
+      @include transition(all .2s ceaser($easeInOutQuint)); 
+
+    }
+
+    &:hover,
+    &:focus {
+
+      color: $accentColor;
+
+      &:before{
+        
+        height: 100%; 
+
+      }
 
     }
 
   }
 
 }
+
+
+
+p {
+
+  a.alt-link {
+
+    color: #fff; 
+
+    &:hover, 
+    &:focus {
+
+      color: #fff; 
+
+    }
+
+  }
+
+}
+
+
+
+.section--secondary {
+
+  p.section-text {
+    
+    a {
+
+      color: #fff; 
+
+      &:hover, 
+      &:focus {
+
+        color: #fff; 
+        background-color: $secondaryColor; 
+
+      }
+
+    }
+
+  }
+
+}
+
+
 
 
 
@@ -193,28 +220,25 @@ a.styled-link2 {
 
 
 .txtc1 {
-  @extend %txtc1; 
+    color: $primaryColor; 
 }
 
 .txtc2 {
-  @extend %txtc2; 
+    color: $secondaryColor; 
 }
 
 .txtc3 {
-  @extend %txtc3; 
+    color: $tertiaryColor; 
 }
 
 .txtc4 {
-  @extend %txtc4; 
-}
 
-.txtc5 {
-  @extend %txtc5; 
+    color: $accentColor; 
 }
-
 
 .txtc--warning {
-  @extend %txtc--warning; 
+
+    color: $warningColor; 
 }
 
 
@@ -225,22 +249,10 @@ a.styled-link2 {
 \*------------------------------------*/
 
 
-.ff1 {
-  
-  @extend %primary-font-family; 
-    
-}
-
 .ff2 {
 
-  @extend %secondary-font-family; 
+    @extend %secondary-font-family; 
     
-}
-
-
-.ff3 {
-  letter-spacing: 2px; 
-  @extend %tertiary-font-family;  
 }
 
 
@@ -315,13 +327,12 @@ h6,
 
 
 
-
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
 
-$hrHeight: rem-calc(1px); 
-$hrHeightBig: .3rem; 
+$hrHeight: rem-calc(2px); 
+$hrHeightBig: rem-calc(4px); 
 
 hr {
     border-style: none; 
@@ -331,7 +342,7 @@ hr {
 
 .hr--primary {
 
-   background-color: #2f2c2f;
+   background-color: $primaryColor;
 
 }
 
@@ -350,6 +361,18 @@ hr {
 .hr--quaternary {
 
    background-color: $quaternaryColor; 
+
+}
+
+.hr--quintenary {
+
+   background-color: $quintenaryColor; 
+
+}
+
+.hr--faded {
+
+  background-color: rgba(0, 0, 0, 0.18);
 
 }
 
@@ -373,7 +396,7 @@ hr {
 .hr--cut {
     width: rem-calc($level5);
     margin-left: 0;
-    height: $hrHeightBig;
+    height: $hrHeight;
 }
 
 .hr--center {
@@ -382,6 +405,32 @@ hr {
 }
 
 
+
+
+/*------------------------------------*\
+    #Guideline
+\*------------------------------------*/
+
+
+.guideLine,
+.guideline {
+
+  height: rem-calc($level7 + $level7); 
+  width: $border-thickness1; 
+  background-color: $secondaryColor; 
+  position: relative; 
+  left: 0; 
+  right:0; 
+  margin: auto; 
+  margin-bottom: rem-calc($base-magic-number); 
+
+}
+
+.guideline--secondary {
+
+  background-color: $primaryColor; 
+
+}
 
 
 
@@ -439,27 +488,46 @@ hr {
 
 
 /*------------------------------------*\
-    #Paragraph Sizes 
+    #Paragraph styles 
 \*------------------------------------*/
 
 
-.p1 {
-
-  @extend %p1;
-
-}
-
 .p2 {
-  
-  @extend %p2; 
+
+  @include type-setting(2); 
+  @include line-height(-1); 
+
 }
 
 .p3 {
-  
-  @extend %p3;
+
+  @include type-setting(1); 
+  @include line-height(0); 
+
+  @media #{$medium-up} {
+    
+    margin-bottom: rem-calc($level5); 
+    @include type-setting(2); 
+    @include line-height(0); 
+
+  }
 
 }
 
+
+
+
+/*------------------------------------*\
+    #Superscripts (Extends _typography.scss module)
+\*------------------------------------*/
+
+.superscript {
+  
+  margin-top: rem-calc(-1 *   $level3); 
+  @extend %position-absolute; 
+  @extend %h4; 
+
+}
 
 
 
@@ -472,7 +540,7 @@ hr {
 
 .fwn         { @extend %fwn; }
 .fwb, strong { @extend %fwb; }
-.fwxb        { font-weight: 800;}
+.fwxb        { @extend %fwxb}
 .uc          { @extend %uc;  }
 .fsi         {font-style: italic;}
 

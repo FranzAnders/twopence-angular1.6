@@ -47,6 +47,12 @@
     @include flex(2);
 }
 
+.grid-cell--3 {
+    -ms-flex: 3 1 auto; 
+    @include flex(3);
+}
+
+
 .grid--flexCells > .grid-cell {
     display: -ms-flexbox; 
     @include display-flex(flex); 
@@ -87,12 +93,12 @@
     @include align-items(stretch);
 }
 
-.grid--left {
+.grid--top {
       -ms-flex-align: flex-start; 
     @include align-items(flex-start);
 }
 
-.grid--right {
+.grid--bottom {
       -ms-flex-align: flex-end; 
     @include align-items(flex-end);
 }
@@ -308,12 +314,12 @@
     @include justify-content(center); 
 }
 
-.grid--justifyEnd {
+.grid--justifyRight {
     -ms-flex-pack: end; 
     @include justify-content(flex-end); 
 }
 
-.grid--justifyStart {
+.grid--justifyLeft {
     -ms-flex-pack: start; 
     @include justify-content(flex-start); 
 }

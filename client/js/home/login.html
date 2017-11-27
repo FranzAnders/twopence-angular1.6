@@ -3,7 +3,7 @@
 
   <div class="row grid-cell">
 
-    <div class="small-12  columns">
+    <div class="small-12 medium-6 medium-centered large-4 columns">
 
       <!--
       ===
@@ -15,17 +15,25 @@
       </div> -->
 
       <form name="loginForm" ng-submit="login.logInUser()">
+        
+        <div class="input-group input--medium">
 
-        <label for="username">Username</label>
-        <input id="username" ng-model="login.form.email" type="text" placeholder="Account Email" class="input--primary  input--medium">
+          <label for="username">Email</label>
+          <input id="username" ng-model="login.form.email" type="text" floating-label>
+
+        </div>
 
 
-        <label for="password">Password</label>
-        <input id="password" ng-model="login.form.password" type="password" class="input--primary  input--medium" placeholder="Password">
-        <button class="button  button--primary  button--medium  button--expanded"
-                type="submit">
-          Login
-        </button>
+        <div class="input-group input--medium">
+          <label for="password">Password</label>
+          <input id="password" ng-model="login.form.password" type="password" floating-label>
+
+        </div>
+
+          <button class="button  button--primary  button--medium  button--expanded"
+                  type="submit">
+            Login
+          </button>
 
       </form>
 

@@ -5,45 +5,268 @@
 
 button,
 .button {
-  margin-bottom: rem-calc($level3); 
-  @extend %button;
+  white-space: nowrap; 
+  font-family: $secondary-font-family; 
+  margin-bottom: rem-calc($base-magic-number);
   @extend %uc; 
-  @extend %fwn; 
-}
+  @extend %fwb; 
+  @extend %button;
 
-.button--primary {
+  .button-inner {
 
-  background-color: $primaryColor;
-  color: #fff; 
-  @include border-radius(6px); 
-
-  &:hover, 
-  &:focus {
-  
+    position: relative; 
+    z-index: 1; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
   }
- 
+
 }
 
-.button--secondary {
-    background-color: $secondaryColor; 
-    color: black; 
 
-    &:hover, 
-    &:focus {
-      
-      color: white; 
+.button--primary {
+    
+  background-color: $secondaryColor;
+  position: relative; 
+  color: $accentColor; 
+  @include transition(all .1s ease .1s); 
+
+  &:after {
+
+    content: " "; 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    left: 0; 
+    width: 0; 
+    height: 100%;
+    background-color: $accentColor;  
+    @include transition(all .2s ceaser($easeInOutQuint)); 
+
+  } 
+  
+  &:hover,
+  &:focus {
+
+    color: #fff; 
+
+    &:after {
+
+      width: 100%;  
+
+    }
+  }
+
+}
+
+
+.button--secondary {
+
+  background-color: $primaryColor;
+  position: relative; 
+  color: #fff; 
+  @include transition(all .1s ease .1s); 
+
+  &:after {
+
+    content: " "; 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    left: 0; 
+    width: 0; 
+    height: 100%;
+    background-color: $accentColor;  
+    @include transition(all .2s ceaser($easeInOutQuint)); 
+
+  } 
+  
+  &:hover,
+  &:focus {
+
+    color: #fff; 
+
+    &:after {
+
+      width: 100%;  
+
+    }
+  }
+}
+
+
+.button--tertiary {
+
+  background-color: transparent;
+  position: relative; 
+  color: #fff; 
+  border: 2px solid white; 
+  @include transition(all .1s ease .1s); 
+
+  &:after {
+
+    content: " "; 
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 0; 
+    background-color: #fff;  
+    @include transition(all .2s ceaser($easeInOutQuint)); 
+
+  } 
+
+  &:hover,
+  &:focus {
+    
+    color: $accentColor; 
+
+    &:after {
+
+      width: 100%; 
 
     }
 
+  }
 }
 
 
-.button--warning {
 
-    @include button--flat($warningColor); 
+
+
+
+/*------------------------------------*\
+    #Play Button
+\*------------------------------------*/
+
+
+.playButton {
+  
+  background-color: $secondaryColor; 
+  height: rem-calc(40px); 
+  width: rem-calc(40px); 
+  position: relative; 
+  @include transform(translateX(-50px)); 
+  @extend .grid; 
+  @extend .grid--center; 
+  @include transition(all .8s ceaser($easeInOutQuint)); 
+  @include border-radius(100%); 
+  
+
+  &:after,
+  &:before {
     
+    @include transition(all .8s ceaser($easeInOutQuint)); 
+
+  } 
+
+  &:after {
+
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 4px;
+    margin: auto;
+    height: 16px;
+    width: 10px;
+    bottom: 0;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-left: 17px solid #fff;
+    z-index: 2; 
+
+  }
+
+  &:before {  
+    
+    content: " "; 
+    height: 100%; 
+    width: 100%; 
+    background-color: $secondaryColor; 
+    position: absolute; 
+    right: 0; 
+    left: 0; 
+    bottom: 0; 
+    top:0; 
+    z-index: 1; 
+    border: 2px solid transparent; 
+    @include border-radius(100%); 
+
+  }
+
+  .playButton-inner {
+
+    position: absolute; 
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff; 
+    @include transform(translateX(55px)); 
+    @include transition(all .8s ceaser($easeInOutQuint)); 
+
+  }
+
+
+  &:hover,
+  &:focus {
+    
+
+    .playButton-inner {
+      
+      opacity: 1; 
+      color: #fff; 
+      @include transform(translateX(55px)); 
+
+    }
+
+
+    &:before {  
+      
+      background-color: transparent; 
+      border: 2px solid $secondaryColor; 
+      @include transform(scale(1.2));
+
+    }
+  }
+
 }
+
+
+.playButton--primary {
+
+  .playButton-inner {
+
+    color: $accentColor; 
+
+  }
+
+  &:hover, 
+  &:focus {
+
+    color: $accentColor; 
+  }
+
+}
+
+
+.playButton--secondary {
+
+  .playButton-inner {
+
+    color: #fff; 
+
+  }
+
+  &:hover, 
+  &:focus {
+
+    color: #fff; 
+  }
+
+}
+
 
 
 
@@ -53,55 +276,54 @@ button,
 \*------------------------------------*/
 
 
-
 .button--micro {
-    padding: rem-calc(6);
+    padding: rem-calc(3px);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
     @extend %text-micro; 
 }
 
 .button--small {
-    padding: rem-calc(6);
-    padding-right: rem-calc($level3);
-    padding-left: rem-calc($level3);
-    @extend %h5; 
+    padding: rem-calc($level1);
+    padding-right: rem-calc($level4);
+    padding-left: rem-calc($level4);
+    @include type-setting(-1);
+
 }
 
 
 .button--medium {
     padding: rem-calc($level2);
-    padding-right: rem-calc($level4);
-    padding-left: rem-calc($level4);
-    @extend %h5; 
+    padding-right: rem-calc($level3);
+    padding-left: rem-calc($level3);
 }
 
 .button--large {
-    padding: rem-calc(12);
+    padding: rem-calc($level3);
     padding-right: rem-calc($level5);
     padding-left: rem-calc($level5);
-    @extend %h4; 
+    @extend %h3; 
 }
 
 .button--kilo {
     padding: rem-calc(16);
     padding-right: rem-calc($level6);
     padding-left: rem-calc($level6); 
-    @extend %h4; 
+    @extend %h2; 
 }
 
 .button--mega {
     padding: rem-calc(18);
     padding-right: rem-calc($level7);
     padding-left: rem-calc($level7); 
-    @extend %h3; 
+    @extend %h1; 
 }
 
 .button--giga {
     padding: rem-calc(22);
     padding-right: rem-calc($level7);
     padding-left: rem-calc($level7); 
-    @extend %h2; 
+    @extend %h1; 
 }
 
 

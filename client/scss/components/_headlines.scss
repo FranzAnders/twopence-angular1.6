@@ -1,58 +1,35 @@
 
+
 /*------------------------------------*\
-    #Headline Styles 
+    #Headlines
 \*------------------------------------*/
 
-.headline {
-  
-  margin-bottom: rem-calc($level1); 
-  @extend %h4;
-  @extend %fwb; 
-  @extend %uc; 
-  @extend %ltrs1; 
-  @include line-height(2); 
 
+.headlineGroup {
+
+  margin-bottom: rem-calc($level4); 
+  
 }
 
 
+.headline {
 
-
-
-
-/*------------------------------------*\
-    #Headline Variations
-\*------------------------------------*/
-
-.headline--primary {
-
-  @extend %secondary-font-family; 
+  font-family: $secondary-font-family; 
 
 }
 
 .headline--secondary {
+  
 
-  @extend %tertiary-font-family; 
-
+  
 }
 
-.headline--standout {
-  color: $body-color;
-  letter-spacing: 0; 
-  text-transform: capitalize; 
-  font-family: $secondary-font-family;  
-  @extend %fwn; 
-  @extend %text-kilo; 
+.headline--alt {
 
-}
-
-.headline--spaced {
-
+  font-family: $primary-font-family; 
+  letter-spacing: 1px; 
   margin-bottom: rem-calc($level1); 
-
-  @media #{$medium-up} {
-
-    margin-bottom: rem-calc($level2); 
-
-  }
+  @extend %uc; 
+  @extend %fwb; 
 
 }
