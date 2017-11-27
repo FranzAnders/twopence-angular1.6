@@ -13481,7 +13481,7 @@ input.input--alt {
 .input-group:after {
   content: "";
   background-color: #6AC6C5;
-  height: 0.25rem;
+  height: 0.1875rem;
   bottom: 0;
   z-index: 3;
   left: 0;
@@ -13499,7 +13499,7 @@ input.input--alt {
   width: 100%;
   margin-bottom: 0;
   background-color: transparent;
-  border-bottom: 4px solid #333031;
+  border-bottom: 3px solid #757575;
 }
 /* line 129, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
@@ -13508,8 +13508,8 @@ input.input--alt {
 /* line 138, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
-  bottom: 0.75rem;
-  left: 0.375rem;
+  bottom: 0.375rem;
+  left: 0;
   margin-bottom: 0;
   -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -13518,14 +13518,14 @@ input.input--alt {
 }
 /* line 150, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
-  -moz-transform: scale(0.8) translateY(-36px);
-  -ms-transform: scale(0.8) translateY(-36px);
-  -webkit-transform: scale(0.8) translateY(-36px);
-  transform: scale(0.8) translateY(-36px);
+  -moz-transform: scale(0.8) translateY(-28px);
+  -ms-transform: scale(0.8) translateY(-28px);
+  -webkit-transform: scale(0.8) translateY(-28px);
+  transform: scale(0.8) translateY(-28px);
 }
 /* line 158, ../scss/layout/_forms.scss */
 .input-group.is-focused {
-  color: #333031;
+  color: #6AC6C5;
 }
 /* line 162, ../scss/layout/_forms.scss */
 .input-group.is-focused input {

@@ -107,7 +107,7 @@ input {
     &:after {
         content: "";
         background-color: $primaryColor;
-        height: rem-calc(4px);
+        height: rem-calc(3px);
         bottom: 0;
         z-index: 3;
         left: 0; 
@@ -124,7 +124,7 @@ input {
         width: 100%; 
         margin-bottom: 0; 
         background-color: transparent; 
-        border-bottom: 4px solid $secondaryColor; 
+        border-bottom: 3px solid $grey--med; 
 
         &:active,
         &:focus {
@@ -137,8 +137,8 @@ input {
 
     label {
         z-index: 0; 
-        bottom: rem-calc($level2);
-        left: rem-calc($level1); 
+        bottom: rem-calc($level1);
+        left: 0;  
         margin-bottom: 0; 
         @include transition(all $formGroupSpeed ceaser($easeInOutQuint)); 
         @extend %position-absolute; 
@@ -149,15 +149,15 @@ input {
         
         label {
             
-          @include transform(scale(.8) translateY(-36px));
+          @include transform(scale(.8) translateY(-28px));
 
         }
 
     }
 
     &.is-focused {
-
-        color: $secondaryColor; 
+        
+        color: $primaryColor; 
 
         input {
 
