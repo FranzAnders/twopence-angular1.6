@@ -10,39 +10,35 @@
 
 
 /* Base Typefaces */
-$primary-font-family: "Roboto", sans-serif; // Base Font Family
+$primary-font-family: 'Work Sans', sans-serif; // Base Font Family
 
-$secondary-font-family: "ITC Souvenir Std", serif; // Secondary Font Family
-
-$tertiary-font-family: 'Acta-Black', serif; // Secondary Font Family
+$secondary-font-family: 'ITC Souvenir Std', sans-serif; // Secondary Font Family
 
 
 // Weights 
-$light: 300;
-$normal: 400;
-$bold: 900;
-$extra-bold: 900;
+$light: 300; 
+$normal: 500;
+$bold: 700;
+$extra-bold: 800;
 $base-font-weight: $normal;
 
 
+// Base font sizes and numbers for typographic rhytm
+$base-font-size: rem-calc(16px); // 1rem
+$base-font-size-px: 16px; 
+$base-font-line-height: 1.6; //24px
+$base-magic-number: 24; 
+$base-magic-number-px: 24px;  
 
 
 // Font families used throughout the project 
 %primary-font-family {
     font-family:  $primary-font-family; 
-    font-weight: normal; 
-
 }
 
 %secondary-font-family {
     font-family: $secondary-font-family; 
 }
-
-
-%tertiary-font-family {
-    font-family: $tertiary-font-family; 
-}
-
 
 
 
@@ -56,7 +52,8 @@ $base-font-weight: $normal;
 
 
 %fwn {font-weight: $normal;}
-%fwb {font-weight: $extra-bold; }; 
+%fwb {font-weight: $bold; };
+%fwxb {font-weight: $extra-bold; }; 
 %uc {text-transform: uppercase;}
 
 
@@ -70,7 +67,7 @@ $base-font-weight: $normal;
 
 
 %ltrs1 {
-    letter-spacing: rem-calc(2px); 
+    letter-spacing: rem-calc(1px); 
 }
 
 
@@ -114,11 +111,8 @@ $base-font-weight: $normal;
 }
 
 %txtc5 {
-
-  color: $accentColor; 
-
+    color: $quintenaryColor; 
 }
-
 
 
 
@@ -167,17 +161,6 @@ $base-font-weight: $normal;
     #Base Typographic Rhythm Mixins
 \*------------------------------------*/
 
-
-// Base font sizes and numbers for typographic rhytm
-
-$base-magic-number: 24; 
-$base-magic-number-px: 24px;  
-$base-font-size: rem-calc(16px); // 1rem
-$base-font-size: 16; 
-$base-font-line-height: $base-magic-number / $base-font-size; //24px
-
-
-
 @function type-scale($level) {
 
   @return  map-get(
@@ -205,8 +188,9 @@ $type-settings: (
 
     -2: (
 
-        font-size: 0.6rem,
-        line-height: $base-magic-number / 16
+      font-size: 0.6rem,
+      line-height: $base-magic-number / 16
+
     ),
     -1: (
         
@@ -235,13 +219,13 @@ $type-settings: (
     3: (
 
     font-size: 1.5rem, //24px
-    line-height:  $base-magic-number / 24 //24px
+    line-height:  $base-magic-number / 18 //24px
 
     ),
     4: (
 
     font-size: 2rem, //32px
-    line-height:  $base-magic-number / 24  //48px
+    line-height:  $base-magic-number / 18  //48px
 
     ),
     5: (
@@ -252,14 +236,14 @@ $type-settings: (
     ),
     6: (
     
-    font-size: 3rem, //60px
-    line-height: $base-magic-number / 24
+    font-size: 2.75rem, //60px
+    line-height: $base-magic-number / 18
 
     ),
     7: (
     
     font-size: 4rem, //64px
-    line-height: $base-magic-number / 24 // 72px
+    line-height: $base-magic-number / 20 // 72px
 
     )
 
@@ -318,13 +302,7 @@ $type-settings: (
 
 %h1 {
     
-    @include type-setting(3); 
-
-    @media #{$medium-up} {
-    
-     @include type-setting(4); 
-
-    }
+  @include type-setting(4); 
 
 }
 
@@ -357,13 +335,19 @@ $type-settings: (
 }
 
 %text-giga {
-  @include type-setting(6); 
+    @include type-setting(4); 
 
-  @media #{$medium-up} {
-  
-   @include type-setting(7); 
+    @media #{$medium-up} {
+    
+     @include type-setting(6); 
 
-  } 
+    }
+
+    @media #{$large-up} {
+    
+     @include type-setting(7); 
+
+    } 
 }
 
 
@@ -397,48 +381,3 @@ $type-settings: (
 
 
 
-
-/*------------------------------------*\
-    #Paragraph Sizes 
-\*------------------------------------*/
-
-%p1 {
-
-  @include type-setting(0);
-
-  @media #{$medium-up} {
-      
-    @include type-setting(1);
-    @include line-height(0);  
-
-  }
-
-}
-
-
-%p2 {
-
-  @include type-setting(1);
-
-  @media #{$medium-up} {
-      
-    @include type-setting(2);
-    @include line-height(0);  
-
-  }
-
-}
-
-
-%p3 {
-
-  @include type-setting(2);
-
-  @media #{$medium-up} {
-      
-    @include type-setting(3);
-    @include line-height(0);  
-
-  }
-
-}

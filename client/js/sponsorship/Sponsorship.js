@@ -19,8 +19,6 @@ twopence.factory('Sponsorship', [
 
 
   var sponsorship = {};
-
-
   //
   // Creates a sponsorship plan between user and logged-in sponsor
   //
@@ -81,6 +79,36 @@ twopence.factory('Sponsorship', [
 
   };
 
+  // Creating new plan between Sponsor & Sponsee
+  // Using SponseeID and Plan Info
+
+  sponsorship.newPlan = function(pSponseeId, pSponseeInfo) {
+
+    return $q(function(resolve, reject) {
+
+        $http.post(BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans', pSponseeInfo, {
+
+          headers: {
+
+            'Authorization' : 'bearer ' + Auth.getToken()
+
+          }
+
+        }).then(function(res) {
+
+          resolve(res.data);
+
+        }).catch(function(err) {
+
+          reject(err);
+
+        });
+
+
+    });
+
+  }
+
 
   //
   // Gets all current sponsorships for a logged in user
@@ -110,16 +138,16 @@ twopence.factory('Sponsorship', [
 
     });
 
-  }; 
+  };
 
 
   //
   // Patches the sponsorship specified for pausing or changing the plan details
   //
-  sponsorship.patch = function(load) {
+  sponsorship.patch = function(pSponsorshipId, pPlanId, load) {
     console.log("I'm patching my G");
     return $q(function(resolve, reject) {
-      $http.patch(BASE_URL + '/v1/sponsorships/' + load.id, load, {
+      $http.patch(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
         headers: {
           'Authorization' : 'bearer ' + Auth.getToken(),
           'Content-type' : 'application/json'

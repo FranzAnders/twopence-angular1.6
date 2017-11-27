@@ -13,22 +13,24 @@ twopence.controller('sponseeCtrl', [
   'Sponsorship',
   function(
     $scope,
-    $stateParams, 
+    $stateParams,
     $state,
-    $rootScope, 
+    $rootScope,
     Sponsorship) {
 
-    var vm = this; 
+    var vm = this;
 
-    var sponseeId = $stateParams.sponseeId; 
+    var sponseeId = $stateParams.sponseeId;
 
-    $scope.$state = $state; 
+    vm.sponsorshipId = sponseeId;
 
-    console.log('reload'); 
+    $scope.$state = $state;
+
+    console.log('reload');
 
     Sponsorship.get(sponseeId).then(function(sponsorship) {
 
-      vm.sponseeInfo = sponsorship.sponsee; 
+      vm.sponseeInfo = sponsorship.sponsee;
 
     }).catch(function(error){
 
@@ -37,4 +39,4 @@ twopence.controller('sponseeCtrl', [
     });
 
 
-}]); 
+}]);

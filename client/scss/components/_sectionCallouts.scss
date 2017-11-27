@@ -1,0 +1,62 @@
+
+
+/*------------------------------------*\
+    #Section Callout
+\*------------------------------------*/
+
+
+.sectionCallout {
+
+  .sectionCallout-imageContainer {
+    
+    padding-left: 0;
+    padding-right: 0;
+    
+    @media #{$medium-up} {
+      
+      padding-left: $column-gutter; 
+
+    }
+
+  }
+  
+  .sectionCallout-copyContainer {
+    
+    padding-left: 0;
+    padding-right: 0;
+       
+    @media #{$medium-up} {    
+      
+      padding-left: 0; 
+
+    }
+
+    .sectionCallout-copy {
+
+      margin-right: rem-calc($level2); 
+      margin-left: rem-calc($level2); 
+      border: $border-thickness1 solid $secondaryColor;
+      border-top: 0; 
+      padding-top: rem-calc($level5); 
+      padding-bottom: rem-calc($level3); 
+      padding-left: rem-calc($level3); 
+      padding-right: rem-calc($level3); 
+ 
+      @media #{$medium-up} {    
+
+        margin-top: rem-calc(24px);
+        margin-bottom: rem-calc(24px); 
+        border-top: $border-thickness1 solid $secondaryColor;
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0; 
+        padding-top: rem-calc($level1); 
+        padding-bottom: rem-calc($level1); 
+      
+      }
+
+    }
+
+  }
+
+}

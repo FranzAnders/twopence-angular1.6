@@ -1,0 +1,111 @@
+
+/*------------------------------------*\
+    #Blockquote 
+\*------------------------------------*/
+
+
+blockquote{
+  
+  font-family: $primary-font-family; 
+  border-left: 6px solid black; 
+  padding-left: rem-calc(12px); 
+  padding-bottom: rem-calc($level2); 
+  margin-bottom: rem-calc($level2); 
+  @include type-setting(1); 
+  @include line-height(0); 
+
+
+  @media #{$medium-up} {
+    
+    @include type-setting(2); 
+    @include line-height(1); 
+
+  }
+
+  @media #{$large-up} {
+
+    @include type-setting(3); 
+    @include line-height(1); 
+
+  }
+
+  cite {
+    margin-top: rem-calc($level2); 
+    @extend %display-block; 
+    @include type-setting(-1)
+
+  }
+ 
+}
+
+
+.blockquote--callout {
+
+  border-left: 12px solid black; 
+  @include type-setting(2); 
+  @include line-height(1); 
+
+  cite {
+    
+    @media #{$medium-up} {
+
+      @include type-setting(0); 
+
+    }
+  }
+
+  @media #{$medium-up} {
+    
+    @include type-setting(4); 
+    @include line-height(1); 
+
+  }
+
+  @media #{$large-up} {
+
+    @include type-setting(6); 
+    @include line-height(1); 
+
+  }
+
+}
+
+
+
+
+/*------------------------------------*\
+    #Blockquote Color Styles
+\*------------------------------------*/
+
+
+.blockquote--primary {
+  
+  border-left-color: $primaryColor; 
+
+}
+
+
+.blockquote--secondary {
+  
+  border-left-color: $secondaryColor; 
+
+}
+
+.blockquote--tertiary {
+  
+  border-left-color: $tertiaryColor; 
+
+}
+
+.blockquote--quaternary {
+  
+  border-left-color: $quaternaryColor; 
+
+}
+
+
+.blockquote--quintenary {
+  
+  border-left-color: $quintenaryColor; 
+
+}

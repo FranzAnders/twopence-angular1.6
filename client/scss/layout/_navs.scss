@@ -1,14 +1,13 @@
-
-
 /*------------------------------------*\
-    #Navigation Styles
+    #Navigation Styles  
 \*------------------------------------*/
 
 
 .nav-is-open {
 
-  // overflow: hidden;
-  // overflow-x: hidden;
+  overflow: hidden; 
+  overflow-x: hidden; 
+
 }
 
 
@@ -19,591 +18,45 @@
 
 .mainNav {
 
-  background-color: transparent;
-  width: 100%;
-  position: fixed;
+  width: 100%; 
+  position: relative;
+  height: rem-calc(60px); 
 
-  .mainNav-title {
-    z-index: 190;
-    @include transition(all .8s ceaser($easeInOutCubic));
-
-  }
-
-}
-
-
-
-
-/*------------------------------------*\
-    #Header Logo
-\*------------------------------------*/
-
-
-.headerLogo {
-
-  // position: fixed;
-  display: inline-block;
-  z-index: 200;
-  // height: rem-calc(60px);
-  width: 25%;
-  margin-bottom: 0;
-  padding: 15px 10px;
-
-  @media #{$medium-up} {
-    position: fixed;
-    height: rem-calc(75px)
-
-  }
-
-  @media #{$large-up} {
-
-    width: 8.5rem;
+  &:after {
+    
+    content: " ";
     position: absolute;
-    margin-top: rem-calc($level2);
-
-  }
-
-  .headerLogo-inner {
-
-    width: rem-calc(50px);
-
-  }
-
-  h1 {
-    margin-bottom: 0;
-  }
-
-}
-
-.mobile-settings {
-  display: inline-block;
-  float: right;
-  width: auto;
-  margin-bottom: 0;
-  padding: 15px 10px;
-  @media #{$medium-up} {
-    display: none;
-  }
-  @media #{$large-up} {
-    display: none;
-  }
-
-}
-
-.greybutton li {
-  background-color: #cccccc;
-  width: 100%;
-  text-align: center;
-  border-left: 1px black solid;
-  border-bottom: 1px black solid;
-}
-
-.greybutton a {
-  color: black;
-}
-
-.greybutton a:visited {
-  color: black;
-}
-
-li.desktop-show {
-  display: none;
-  @media #{$medium-up} {
-    display: list-item;
-  }
-  @media #{$large-up} {
-    display: list-item;
-  }
-
-}
-
-/*------------------------------------*\
-    #Main Nav Position Styles
-\*------------------------------------*/
-
-
-.fixed-nav {
-
-  width: 100%;
-  z-index: 100;
-  @extend %position-fixed;
-
-}
-
-.absolute-nav {
-
-  width: 100%;
-  z-index: 100;
-  top: 0;
-  @extend %position-absolute;
-
-}
-
-.mobile-border{
-  border-bottom: black 2px solid!important;
-  display: block;
-}
-
-
-
-
-/*------------------------------------*\
-    #Main Navigation Small
-\*------------------------------------*/
-
-
-.mainNav--small {
-  height: rem-calc(60px);
-  width: 100%;
-  z-index: 199;
-  @extend %position-relative;
-
-  @media #{$medium-up} {
-
-    height: rem-calc(75px)
-
-  }
-
-  @media #{$large-up} {
-
-    width: 13rem;
-    height: 7rem;
-    right: 0;
-
-  }
-
-  .mainNav-cartToggle {
-    padding-right: rem-calc($level2);
-  }
-
-  .mainNav-title {
-    height: 100%;
-    background-color: $primaryColor;
-    width: 25%;
-    @extend %position-relative;
-
-    @media #{$large-up} {
-
-      display: none;
-
-    }
-
-  }
-
-
-  /*------------------------------------*\
-      #Main Nav Small Menu Toggle
-  \*------------------------------------*/
-
-  $toggleStrokeWidth: 4px;
-  $toggleHeight: .9rem;
-  $toggleWidth: 2.1rem;
-
-  .mainNav-menuToggleWrapper {
-      background-color: $secondaryColor;
-      color: #fff;
-      padding-right: rem-calc($level3);
-      right: 0;
-      width: 75%;
-      z-index: 201;
-      height: 100%;
-      @extend %text-center;
-
-      @media #{$large-up} {
-
-        width: 100%;
-
-      }
-  }
-
-  .mainNav-menuToggle {
-
-    background-color: transparent;
-    margin-bottom: 0;
-
-  }
-
-
-  .menuToggle-icon {
-
-    height: $toggleHeight;
-    width: $toggleWidth;
-    @extend %display-block;
-    @extend %position-relative;
-    @extend %text-center;
-    @include transition(all .4s ceaser($easeInOutCubic));
-
-
-    &:after,
-    &:before {
-
-      content: "";
-      height: $toggleStrokeWidth;
-      background-color: $accentColor;
-      width: 100%;
-      left: 0;
-      right: 0;
-      @extend %position-absolute;
-      @include transition(all .2s ceaser($easeInOutCubic));
-
-    }
-
-    &:after {
-
-      top: 70%;
-
-    }
-
-    &:hover,
-    &:focus {
-
-      @include transform(scale(1.1));
-
-    }
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    bottom:0; 
+    left: 0; 
+    right: 0; 
+    @include transition(all .2s ceaser($easeOutCubic))
 
   }
 
 }
-
-
-
-
-/*------------------------------------*\
-    #Main Nav Small Menu Toggle Open
-\*------------------------------------*/
-
-
-.mainNav-menuToggle.is-menu-open {
-
-  .menuToggle-label {
-
-    opacity: 0;
-
-  }
-
-  .menuToggle-icon {
-
-    border-bottom: solid 2px transparent;
-
-    &:before {
-      top: 50%;
-      background-color: $accentColor;
-      @include transform(translateY(0) rotate(-45deg));
-
-    }
-
-
-    &:after {
-      top: 50%;
-      background-color: $accentColor;
-      @include transform(translateY(0) rotate(45deg));
-
-    }
-
-    &:hover,
-    &:focus {
-
-      @include transform(scale(1.1));
-
-    }
-
-  }
-
-}
-
-
-
-
-
-
-/*------------------------------------*\
-    #Main Nav Off Canvas
-\*------------------------------------*/
-
-.mainNav--offCanvas {
-
-    background-color: $secondaryColor;
-    height: 100vh;
-    width: 100vw;
-    z-index: 180;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: #fff;
-    margin-top: rem-calc(60px);
-    @extend %position-fixed;
-    @include transform(translateY(-100%));
-
-
-    @media #{$large-up} {
-
-      width: 13rem;
-      left: auto;
-
-    }
-
-    .mainNav-navToggle {
-
-      width: 100%;
-      padding-left: rem-calc(3px);
-      @extend %text-right;
-
-      .navToggle-icon {
-
-        color: $tertiaryColor;
-        z-index: 201;
-
-        &:active  {
-
-          color: $primaryColor;
-
-        }
-
-      }
-
-    }
-
-    .mainNav-container {
-
-      height: 100vh;
-      @extend %position-relative;
-    }
-
-    .mainNav-menu {
-
-      padding-top: rem-calc($level7 + $level2);
-      margin-left: 25%;
-      margin-bottom: rem-calc($level4);
-      @extend %text-left;
-
-      @media #{$large-up} {
-
-        margin-left: rem-calc($level5);
-
-      }
-
-      .mainNav-menu-item {
-
-        margin-bottom: rem-calc($level4);
-
-      }
-
-      .mainNav-menu-link {
-
-        color: #fff;
-        width: 100%;
-        margin-bottom: rem-calc($level2);
-        @extend %display-block;
-        @extend %tertiary-font-family;
-        @include type-setting(4);
-        @include transition(all .200s ceaser($easeInOutCubic));
-
-        @media #{$large-up} {
-
-          margin-bottom: rem-calc($level1);
-          @include type-setting(3);
-
-        }
-
-        &:hover,
-        &:focus {
-
-          //color: $accentColor;
-
-        }
-
-      }
-
-      // @for $i from 1 through 5 {
-      //    li:nth-child(#{$i}) {
-      //       .mainNav-animElem {
-
-      //         @include transition-delay(.06s * $i);
-
-      //       }
-      //     }
-      // }
-
-    }
-
-
-    .mainNav-animElem {
-
-      opacity: 0;
-      @include transform(translatey(-70px));
-      @include transition(all .4s ceaser($easeInOutCubic));
-
-    }
-
-    .mainNav-social {
-      margin-bottom: rem-calc($level6);
-      margin-left: 25%;
-      color: $accentColor;
-      @extend %text-left;
-      @include transition-delay(.06s * 5);
-
-      @media #{$large-up} {
-
-        margin-left: rem-calc($level5);
-
-      }
-
-      .mainNav-social-link {
-
-        color: #fff;
-        @extend %display-block;
-
-        &:hover,
-        &:active,
-        &:focus {
-          color: $accentColor;
-        }
-
-      }
-
-    }
-
-    .mainNav-tagline {
-
-      color: $primaryColor;
-      margin-left: 25%;
-      font-family: $secondary-font-family;
-      margin-bottom: 30%;
-      @extend %position-relative;
-
-      @media #{$medium-up} {
-
-        margin-bottom: 20%;
-      }
-
-      @media #{$large-up} {
-
-        margin-bottom: 40%;
-
-      }
-
-      .mainNav-tagline-icon {
-
-        width: 1.4rem;
-        left: -13px;
-        top: -35px;
-        @extend %position-absolute;
-
-      }
-
-    }
-
-    .mainNav-contact {
-
-      margin-left: rem-calc($level3);
-      margin-bottom: rem-calc($level4);
-      color: #fff;
-      @include transition-delay(.06s * 6);
-
-    }
-
-    .mainNav-address {
-
-      @extend %text-left;
-
-    }
-
-
-    &.is-closed {  // for when nav is closed
-        @include animation(main-nav-disappear .6s ceaser($easeInOutCubic) forwards);
-    }
-
-    &.is-open { // for when nav is open
-        @include animation(main-nav-appear .8s ceaser($easeInOutCubic) forwards);
-
-      .mainNav-animElem {
-
-          opacity: 1;
-          @include transform(translateX(0));
-
-      }
-
-    }
-
-    .mainNav-dropDown {
-
-      margin-bottom: 0;
-
-      &.is-open {
-
-        margin-bottom: rem-calc($level5);
-
-        .mainNav-dropDown-item {
-
-          display: block;
-          margin-bottom: rem-calc($level2);
-
-          @media #{$large-up} {
-
-            margin-bottom: rem-calc($level1);
-
-          }
-
-
-        }
-
-      }
-
-      .mainNav-dropDown-item {
-
-        display: none;
-
-        @media #{$large-up} {
-
-          //display: block !important;
-
-        }
-
-      }
-
-      .mainNav-dropDown-link {
-
-        color: #ffffff;
-        @include type-setting(1);
-
-        @media #{$large-up} {
-
-          @include type-setting(0);
-
-        }
-
-        &:hover,
-        &:focus {
-
-          border-bottom: 2px solid $accentColor;
-
-        }
-
-      }
-
-  }
-
-}
-
-
 
 
 @include keyframes(main-nav-appear) {
 
   0% {
-    @include transform(translateY(-300%));
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
 
 
   }
 
   1% {
 
-    @include transform(translateY(-300%));
+    opacity: 0; 
+    @include transform(translateX(0)); 
   }
 
  100% {
-    @include transform(translateY(0));
+    opacity: 1; 
+    @include transform(translateX(0)); 
 
   }
 
@@ -612,19 +65,466 @@ li.desktop-show {
 @include keyframes(main-nav-disappear) {
 
   0% {
-    @include transform(translateY(0));
+    opacity: 1; 
+    @include transform(translateX(0)); 
 
 
   }
 
   99% {
 
-    @include transform(translateY(-300%));
+    opacity: 0; 
+    @include transform(translateX(0)); 
 
   }
 
  100% {
-    @include transform(translateY(-300%));
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+
+}
+
+
+
+.fixed-nav {
+  
+  width: 100%; 
+  z-index: 100;
+  @extend %position-fixed; 
+
+}
+
+.absolute-nav {
+
+  width: 100%; 
+  z-index: 100; 
+  top: 0; 
+  @extend %position-absolute; 
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Main Navigation Inner Components Styles  
+\*------------------------------------*/
+
+
+.mainNav {
+
+  .mainNav-header {
+    height: rem-calc(60px);
+    width: 100%; 
+    padding-top: rem-calc($level1); 
+    padding-bottom: rem-calc($level1); 
+    z-index: 200; 
+    @extend %position-relative; 
+
+    .mainNav-title {
+        width: 8rem; 
+        height: 100%; 
+        margin-left: rem-calc($level2);
+        @include transform(translateX(0)); 
+        @include transition(all .2s ceaser($easeOutCubic));
+        @extend %position-relative; 
+
+        @media #{$medium-up} {
+        
+          margin-top: rem-calc($level2);  
+          margin-left: rem-calc($level3);
+          width: 9rem;
+
+        }
+
+        .mainNav-title-logo {
+          
+          width: 100%; 
+
+        }
+      
+    }
+
+  }
+
+  .mainNav-menu {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    opacity: 0; 
+    margin-top: rem-calc($level4); 
+    padding-top: rem-calc($level3);
+    padding-bottom: rem-calc($level3); 
+    width: 85%; 
+    margin-right: auto;
+    margin-left: auto; 
+    z-index: 6; 
+    @include transition(all .6s ceaser($easeOutCubic)); 
+    @include transform(translateY(250px) translateX(100%));
+    @extend %text-left; 
+
+    @media #{$medium-up} {
+      padding-top: rem-calc($level7 + $level2); 
+      width: 80%; 
+
+    }
+
+    @media #{$large-up} {
+      width: 60%;
+      padding-top: rem-calc($level7); 
+
+    }
+
+    .mainNav-menu-logo {
+      margin-top: rem-calc($level2); 
+      margin-bottom: rem-calc($level2); 
+      margin-right: rem-calc($level2); 
+      width: 10rem; 
+      @extend %text-center; 
+
+      @media #{$medium-up} {
+
+        width: 11rem; 
+        margin-right: rem-calc($level4); 
+
+      }
+
+    }
+
+    .mainNav-link {
+      color: $secondaryColor; 
+      letter-spacing: 1px; 
+      @include type-setting(-1);  
+      @extend %fwb; 
+      @extend %uc; 
+
+      &:hover, 
+      &:focus {
+        color: $secondaryColor; 
+        text-decoration: underline; 
+
+      }
+
+      @media #{$medium-up} {
+
+        float: right;
+
+      }
+
+    }
+
+    .mainNav-divider {
+      
+      @media #{$medium-up} {
+        margin-bottom: rem-calc($level5); 
+
+      } 
+    
+    }
+
+    .mainNav-menu-primaryLinks {
+      position: relative;
+      width: 100%; 
+
+      @media #{$medium-up} {
+
+        margin-bottom: rem-calc($level5); 
+
+      }
+
+      @media #{$large-up} {
+
+        width: 100%; 
+
+      }
+
+      .mainNav-menu-item {
+
+        margin-bottom: rem-calc($level4); 
+
+        @media #{$medium-up} {
+
+          margin-bottom: rem-calc($level7); 
+
+        }
+
+        @media #{$large-up} {
+
+          margin-bottom: rem-calc($level5); 
+
+        }
+
+      }
+
+      .mainNav-menu-item:last-child {
+
+        margin-bottom: 0;
+
+      }
+
+      .mainNav-menu-link {
+          color: #fff; 
+          white-space: nowrap;  
+          border-bottom: 0; 
+          font-family: $primary-font-family; 
+          @extend %text-left; 
+          @extend %position-relative; 
+          @include type-setting(3); 
+          @include transition(all .4s ceaser($easeOutCubic)); 
+            
+            
+          @media #{$medium-up} {
+           
+            display: block; 
+            width: 100%; 
+            @include type-setting(5); 
+
+          }
+          
+          @media #{$large-up} {
+
+              @include type-setting(6); 
+
+          }
+
+          &:before {
+
+            content: "";
+            width: 0; 
+            height: 0px; 
+            bottom: -4px;  
+            left: 0;
+            border-bottom: 2px solid $secondaryColor;
+            @extend %position-absolute; 
+            @include transition(width .3s ceaser($easeOutCubic), height .2s ceaser($easeOutCubic) .3s); 
+
+            @media #{$large-up} {
+              
+              bottom: -2px;  
+
+            }
+              
+          }
+
+          &:hover,
+          &:focus {
+              
+            color: #fff;  
+
+            .mainNav-menu-linkLabel {
+
+              opacity: 1; 
+
+            }
+
+            &:before {
+
+              width: 100%; 
+
+              @media #{$medium-up} {
+
+                height: rem-calc($level3); 
+                border-right: 2px solid $secondaryColor;
+
+              }
+
+            }
+    
+          }
+
+        .mainNav-menu-linkLabel {
+
+          display: none; 
+          @include transition(all .2s ceaser($easeOutCubic) .3s); 
+
+
+          @media #{$medium-up} {
+          
+            top: -16px; 
+            opacity: 0; 
+            display: block; 
+            position: absolute;
+            right: rem-calc($level2);
+            width: 200px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: $secondary-font-family;
+            @include type-setting(-1);  
+
+          }
+
+          @media #{$large-up} {
+
+            top: 0; 
+
+          }
+          
+          .icon {
+          
+            margin-right: rem-calc($level1); 
+
+            @media #{$medium-up} {
+
+              width: rem-calc(38px); 
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .mainNav-menu-secondaryLinks {
+    
+      .mainNav-menu-item {
+
+        margin-bottom: rem-calc($level2); 
+        text-align: center; 
+
+        .mainNav-menu-link {
+
+          font-family: $primary-font-family; 
+          color: #fff; 
+          position: relative; 
+          @include type-setting(1); 
+
+          &:before {
+
+            content: "";
+            background-color: $secondaryColor;
+            width: 0; 
+            height: 2px; 
+            bottom: -2px;  
+            left: 0;
+            @extend %position-absolute; 
+            @include transition(all .2s ceaser($easeOutCubic)); 
+
+          }
+
+          &:hover, 
+          &:focus { 
+
+              
+            &:before {
+              
+              width: 100%; 
+              
+            }
+
+          }
+
+        }
+
+      }
+
+      .mainNav-menu-item:last-child {
+
+        margin-bottom: 0;
+
+      }
+
+
+    }
+
+    .mainNav-menu-social {
+      
+      .social-link {
+        
+        fill: #fff; 
+
+        &:hover, 
+        &:focus {
+
+          color: $secondaryColor; 
+
+        }
+
+      }
+  
+    }
+
+
+  }
+
+
+  .mainNav-overlay {
+
+    width: rem-calc(60px);
+    height: rem-calc(60px);
+    color: #fff; 
+    right: -5px; 
+    top: 0; 
+    margin-top: .6rem;
+    margin-right: 1rem;
+    position: fixed; 
+    transform-origin: center; 
+    @include transition(all .6s ceaser($easeInOutQuint)); 
+
+    @media #{$large-up} {
+
+      width: rem-calc(72px);
+      height: rem-calc(72px);
+
+    }
+
+
+    &:before {
+
+      content: " ";
+      width: 100%; 
+      height: 100%; 
+      position: absolute; 
+      top: 0; 
+      right: 0; 
+      left: 0; 
+      bottom: 0; 
+      background-color: rgba($primaryColor, .9);
+      -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+      clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+      transform-origin: center; 
+      @include transform(scale(1), rotate(0deg)); 
+      @include transition(all .7s ceaser($easeInOutQuint)); 
+
+    }
+  
+  }
+
+  &.is-closed {  // for when nav is closed
+  
+  
+  }
+
+  &.is-open { // for when nav is open
+    
+    .mainNav-overlay {
+
+      width: 100vw;
+      height: 100vh;
+
+      &:before {
+      
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 17%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 17%);
+          background-color: $primaryColor; 
+          @include transform(scale(28) rotate(20deg));
+  
+        }
+
+      }
+
+    .mainNav-menu {
+      
+      opacity: 1; 
+      @include transform(translateY(0) translateX(0))
+
+    }
 
   }
 
@@ -634,24 +534,167 @@ li.desktop-show {
 
 
 
+/*------------------------------------*\
+    #Main Nav Small Menu Toggle
+\*------------------------------------*/
+
+$toggleStrokeWidth: 3px;
+$toggleHeight: 1.1rem; 
+$toggleWidth: 1.4rem;  
+$toggleColor: $secondaryColor; 
+
+.mainNav-menuToggle {
+
+    width: rem-calc(60px);
+    height: rem-calc(60px);
+    color: $primaryColor; 
+    right: 0; 
+    top: 0; 
+    z-index: 201; 
+    margin-top: rem-calc($level1); 
+    margin-right: rem-calc($level2);
+    position: absolute; 
+
+    @media #{$large-up} {
+
+      width: rem-calc(72px);
+      height: rem-calc(72px);
+      margin-right: rem-calc($level3);
+
+    }
+
+
+    &:before {
+
+      content: " ";
+      width: 100%; 
+      height: 100%; 
+      position: absolute; 
+      top: 0; 
+      right: 0; 
+      left: 0; 
+      bottom: 0; 
+      background-color: transparent;
+      -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+      clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+      transform-origin: center; 
+      @include transform(rotate(0)); 
+      @include transition(all .2s ceaser($easeInOutQuint)); 
+
+    }
+
+    &:hover, 
+    &:focus {
+      
+      &:before {
+
+        @include transform(rotate(-180deg)); 
+
+      }
+
+    }
+
+    @media #{$medium-up} {
+      width: 60px; 
+      height: 60px; 
+      margin-top: rem-calc($level2); 
+      margin-right: rem-calc($level3);
+
+    }
+
+    @media #{$large-up} {
+
+      width: 60px; 
+      height: 60px; 
+
+    }
+
+    a {
+      color: $toggleColor; 
+      padding-top: 6px; 
+    }
+ 
+}
+
+
+.menuToggle-icon {
+
+  border-bottom: $toggleStrokeWidth solid $toggleColor; 
+  height: $toggleHeight;
+  width: $toggleWidth; 
+  z-index: 202; 
+  @extend %display-inlineBlock;
+  @extend %position-relative; 
+
+
+  &:after,
+  &:before {
+  
+    content: ""; 
+    height: $toggleStrokeWidth;
+    background-color: $toggleColor; 
+    width: 100%;  
+    @extend %position-absolute; 
+    @include transition(all .2s ceaser($easeInOutQuint)); 
+
+  }
+
+  &:after {
+
+  top: 50%; 
+
+  }
+
+  &:hover,
+  &:focus {
+    
+
+    
+  }
+ 
+}
+
+
+
+
 
 /*------------------------------------*\
-    #Main Navigation Large
+    #Main Nav Menu Toggle Open
 \*------------------------------------*/
 
 
+.mainNav-menuToggle.is-menu-open {
+  
+  .menuToggle-label {
 
+    opacity: 0; 
 
+  }
 
+  .menuToggle-icon {
 
+    border-bottom: solid 2px transparent; 
 
-/*------------------------------------*\
-    #Main Nav Message
-\*------------------------------------*/
+    &:before {
+      top: 50%; 
+      background-color: $secondaryColor; 
+      @include transform(rotate(45deg)); 
+    }
 
-.mainNav-message {
+    &:after{
+      background-color: $secondaryColor; 
+      @include transform(translateY(0) rotate(-45deg)); 
+    }
 
-  z-index: 102;
-  @extend %position-relative;
+    &:hover,
+    &:focus {
+      
+      @include transform(scale(1.2)); 
+
+    }
+
+  }
 
 }
+
+

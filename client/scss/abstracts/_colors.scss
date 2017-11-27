@@ -3,52 +3,44 @@
     #Colors 
 \*------------------------------------*/
 
-//Pickpocket Teal 
-$primaryColor: #4EC4C3; 
+$primaryColor: #6AC6C5; 
 $primaryColor--dark: darken($primaryColor, 15%); 
-$primaryColor--translucent: rgba(85, 85, 85, .7); 
+$primaryColor--translucent: rgba($primaryColor, .9); 
 
-//Pickpocket Charcoal
-$secondaryColor: #231F20; 
+$secondaryColor: #333031; 
 $secondaryColor--dark: darken($secondaryColor, 20%); 
-$secondaryColor--translucent: rgba(136, 136, 136, .7);
+$secondaryColor--translucent: rgba($secondaryColor, .9);
 
-//Medium Grey  
-$tertiaryColor: #B5B5B5; 
+$tertiaryColor: #3D817F; 
 $tertiaryColor--dark: darken($tertiaryColor, 25%); 
-$tertiaryColor--translucent: rgba(0,0,0, .7); 
+$tertiaryColor--translucent: rgba($tertiaryColor, .9); 
 
-
-//Light Grey 
-$quaternaryColor: #EBEBEB; 
-$quaternaryColor--dark: darken($quaternaryColor, 25%); 
-$quaternaryColor--translucent: rgba(58,38,30, .7); 
-
-
-//Whiskers Teal 
-$accentColor: #3FD5AE; 
+$accentColor: #FBC510; 
 $accentColor--dark: darken($accentColor, 45%); 
-$accentColor--translucent: rgba(68, 219, 228, 0.7);  
-   
-$translucentBlack:  rgba(14, 14, 14, 0.9);
+$accentColor--translucent: rgba($accentColor, 0.9);  
 
-$body-color: black; 
-
-
-$white--translucent: rgba(255,255,255, .7); 
 
 
 
 
 /*------------------------------------*\
-    #Blacks n greys
+    #Greys
 \*------------------------------------*/
 
+$grey--light: #F7F7F7;
+$grey--med: #757575;
+$grey--dark: #333031 ;
 
-$off-black: #191919;
-$grey--light: #f3f3f3;
-$grey--mid: #808083; //dfdfdf
-$grey--dark: #7B7878;
+
+
+
+
+/*------------------------------------*\
+    #Typography Colors 
+\*------------------------------------*/
+
+$body-color: $grey--med; 
+
 
 
 
@@ -72,5 +64,20 @@ $red-pinterest: #cb2027;
     #UI Colors 
 \*------------------------------------*/
 
-//Whiskers Red 
-$warningColor: #FF5959; 
+$warningColor: red; 
+$translucentBlack:  rgba(14, 14, 14, 0.9);
+$white--translucent: rgba(255,255,255, .7); 
+
+
+
+
+
+
+$quaternaryColor: #F1F1F1; 
+$quaternaryColor--dark: darken($quaternaryColor, 25%); 
+$quaternaryColor--translucent: rgba($quaternaryColor, .9); 
+
+$quintenaryColor: #3D817F; 
+$quintenaryColor--dark: darken($quintenaryColor, 25%); 
+$quintenaryColor--translucent: rgba($quintenaryColor, .9); 
+

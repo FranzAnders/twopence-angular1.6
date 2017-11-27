@@ -21,39 +21,50 @@
 
       <form ng-submit="sponseeCreation.searchSponsee(sponseeCreation.sponseeSearchForm)"
             name="sponseeCreation.sponseeSearchForm">
-          
-        <label for="first name">
-          First Name
-        </label>
-          
-        <input type="text" id="first name" 
-               placeholder="Your first name"
-               class="input--primary input--medium"
-               ng-model="sponseeCreation.searchData.first_name"
-               required>
+                  
+        <div class="input-group input--medium">
 
+          <label for="first name">
+            First Name
+          </label>
+            
+          <input type="text" id="first name" 
+                 class="input--primary input--medium"
+                 ng-model="sponseeCreation.searchData.first_name"
+                 required
+                 floating-label>
 
-        <label for="full name">
-          Last Name
-        </label>
-          
-        <input type="text" id="full name" 
-               placeholder="Your last name"
-               class="input--primary input--medium"
-               ng-model="sponseeCreation.searchData.last_name"
-               required>
+        </div>
+        
+        <div class="input-group input--medium">
 
+          <label for="full name">
+            Last Name
+          </label>
+            
+          <input type="text" id="full name" 
+                 class="input--primary input--medium"
+                 ng-model="sponseeCreation.searchData.last_name"
+                 required
+                 floating-label>
+       
+        </div>
+        
 
-        <label for="email">
-          Email
-        </label>
+        <div class="input-group input--medium">
 
-        <input type="text" 
-               id="email" 
-               placeholder="Sponsee email" 
-               class="input--primary input--medium" 
-               ng-model="sponseeCreation.searchData.email"
-               required>
+          <label for="email">
+            Email
+          </label>
+
+          <input type="text" 
+                 id="email" 
+                 class="input--primary input--medium" 
+                 ng-model="sponseeCreation.searchData.email"
+                 floating-label
+                 required>
+
+        </div>
 
         <button type="submit" class="button--medium  button--primary   button--expanded">
           Add Sponsee

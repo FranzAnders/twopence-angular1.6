@@ -5,36 +5,46 @@
         name="signUp.sponsorCreationForm"
         novalidate>
 
-    <label for="first name">
+    <div class="input-group input--medium">
+
+        <label for="first name">
       First Name
-    </label>
-
-    <input type="text" id="first name"
-           placeholder="Your first name"
-           class="input--primary input--medium"
+          </label>
+      
+          <input type="text" id="first name"
            ng-model="signUp.userInfo.first_name"
-           required>
+           required
+           floating-label>
 
+    </div>
 
-    <label for="full name">
-      Last Name
-    </label>
+    <div class="input-group input--medium">
 
-    <input type="text" id="full name"
-           placeholder="Your last name"
-           class="input--primary input--medium"
-           ng-model="signUp.userInfo.last_name"
-           required>
+      <label for="full name">
+        Last Name
+      </label>
 
+      <input type="text" id="full name"
+             class="input--primary input--medium"
+             ng-model="signUp.userInfo.last_name"
+             floating-label
+             required>
 
-    <label for="full name">
-      Cell Phone Number
-    </label>
+    </div>
 
-    <input type="tel" id="full name"
-           placeholder="First and last name"
-          class="input--primary input--medium"
-          ng-model="signUp.userInfo.phone">
+    
+    <div class="input-group  input--medium">
+
+      <label for="full name">
+        Cell Phone Number
+      </label>
+
+      <input type="tel" id="full name"
+            class="input--primary input--medium"
+            ng-model="signUp.userInfo.phone"
+            floating-label>
+
+    </div>
 
     <div class="row mb2">
 
