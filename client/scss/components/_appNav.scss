@@ -1,0 +1,98 @@
+
+/*------------------------------------*\
+    #App Nav
+\*------------------------------------*/
+
+.appNav {
+  background-color: white;
+  border-top: 1px solid $grey--light;  
+  position: fixed; 
+  width: 100%; 
+  bottom: 0; 
+  z-index: 50;
+  left: 0; 
+  right: 0;  
+
+  @media #{$large-up} {
+
+    position: relative; 
+
+  }
+  
+  .appNav-menu {
+    width: 100%; 
+    padding-right: rem-calc($level4);
+    padding-left: rem-calc($level4);
+    margin-bottom: 0; 
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+
+    .appNav-menu-item {
+      
+
+    }
+
+    .appNav-menu-link {
+      color: $grey--med; 
+      @include type-setting(-1);
+
+    }
+
+  }
+
+
+}
+
+
+.appNav-menu-link {
+    background-color: transparent; 
+    margin-bottom: 0; 
+    text-transform: none;
+    opacity: .7; 
+    @extend %fwn;  
+
+    &:hover, 
+    &:focus,
+    &:active {
+      color: $secondaryColor; 
+      
+      .menu-link-icon {
+      fill: $secondaryColor; 
+
+      }    
+
+    }
+
+    &.is-active {
+      
+      .menu-link-icon {
+
+        fill: $tertiaryColor; 
+
+      }  
+
+      .menu-link-label {
+
+        color: $tertiaryColor; 
+      }
+    
+    }
+
+  .menu-link-icon {
+    fill: $grey--med; 
+    width: rem-calc(38px); 
+    margin-bottom: rem-calc(2px); 
+
+    &.home {
+      width: rem-calc(28px); 
+    }
+
+
+  }
+
+  .menu-link-label {
+    color: $grey--med; 
+
+  }
+
+}
