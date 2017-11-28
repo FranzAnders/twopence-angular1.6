@@ -4,36 +4,36 @@
 \*------------------------------------*/
 
 .section {
-  padding-bottom: rem-calc($level7 + $level1);
+  padding-bottom: rem-calc($level7);
   @extend %position-relative; 
 
   @media #{$medium-up} {
 
-    padding-bottom: rem-calc($level7 + $level3);
+    padding-bottom: rem-calc($level7 + $level2);
     
   }
 
   @media #{$large-up} {
 
-    padding-bottom: rem-calc($level7 + $level4);
+    padding-bottom: rem-calc($level7);
     
   }
     
 }
 
-.section--initial {
+.section--lead {
 
-  padding-top: rem-calc($level7 + $level1);
+  padding-top: rem-calc($level7);
 
   @media #{$medium-up} {
 
-    padding-top: rem-calc($level7 + $level3);
+    padding-top: rem-calc($level7 + $level2);
     
   }
 
   @media #{$large-up} {
 
-    padding-top: rem-calc($level7 + $level4);
+    padding-top: rem-calc($level7);
     
   }
 

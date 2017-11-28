@@ -1,168 +1,167 @@
 
-<div class="section--main  section--quaternary  ">
+<div class="section--quaternary  section--lead">
 
   <div class="row">
 
     <div class="small-12 columns mb3">
 
-      <h1 class="ff2">Welcome,<br>
+      <h1 class="ff2  txtc2">
+        Welcome,<br>
         {{dashboard.sponsorInfo.name}}
       </h1>
 
     </div>
-
+  
   </div>
 
 </div>
 
-<div class="section section--lead  ">
+<div class="section ">
 
+  <div class="row">
 
-      <div class="row">
+    <div class="small-12 columns large-8">
+        <div class="section">
 
-        <div class="small-12 columns large-8">
-            <div class="section">
+      <h1 class="ff2 h4">
+        Your Sponsees
+      </h1>
 
-          <h1 class="ff2 h4">
-            Your Sponsees
-          </h1>
+      <ul class="grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap">
 
-          <ul class="grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap">
+        <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees track by $index">
 
-            <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees track by $index">
+          <div class="card">
 
-              <div class="card">
+            <h2 class=""
+                ng-bind="sponsorship.sponsee.first_name + ' ' + sponsorship.sponsee.last_name">
+            </h2>
 
-                <h2 class=""
-                    ng-bind="sponsorship.sponsee.first_name + ' ' + sponsorship.sponsee.last_name">
-                </h2>
+            <div class="txtc2  text-micro">Plan:
 
-                <div class="txtc2  text-micro">Plan:
+              <span ng-switch="sponsorship.plans[0].active"
+                    ng-if='sponsorship.sponsee.status === "active"'>
 
-                  <span ng-switch="sponsorship.plans[0].active"
-                        ng-if='sponsorship.sponsee.status === "active"'>
+                <span ng-switch-when="true" class="uc">
+                     ${{sponsee.current_sponsorship.plan.limit}} {{sponsee.current_sponsorship.plan.frequency}} Limit
+                </span>
 
-                    <span ng-switch-when="true" class="uc">
-                         ${{sponsee.current_sponsorship.plan.limit}} {{sponsee.current_sponsorship.plan.frequency}} Limit
-                    </span>
+                <span ng-switch-when="false">
+                    <span class="fwb  uc">Paused</span>
+                </span>
 
-                    <span ng-switch-when="false">
-                        <span class="fwb  uc">Paused</span>
-                    </span>
+              </span>
 
-                  </span>
-
-                  <span ng-if='sponsorship.sponsee.status === "invited" || sponsorship.sponsee.status === "onboarding"'>
-                      <span class="fwb  txtc--warning uc">Invite Pending</span>
-                  </span>
-
-                </div>
-
-                <div class="ptb4">
-                  <span class="text-micro">
-                    Contributions To Date
-                  </span>
-                  <h2>
-
-                    ${{sponsorship.contributions_to_date}}
-                  </h2>
-                </div>
-
-                <div class="row">
-
-                  <div class="small-6 medium-12  large-6  columns">
-
-                  <span ng-if='sponsorship.sponsee.status == "active"'>
-
-                    <span ng-switch-when="true" class="fwb uc">
-
-                      <button  class="button--expanded  button--primary"
-
-                               ng-click="dashboard.openJoltModal(sponsorship)">
-
-                      Jolt
-
-                      </button>
-
-                    </span>
-
-                  </span>
-
-                  <span ng-if='sponsorship.sponsee.status == "invited" || sponsorship.sponsee.status == "onboarding"'>
-
-                    <button  class="button--expanded  button--primary">
-
-                    <span class="text-micro"
-
-                          ng-click="dashboard.sendReminder(sponsorship.sponsee.id)">
-
-                          Send Reminder
-
-                    </span>
-
-                    </button>
-
-                  </span>
-
-                  </div>
-
-                  <div class="small-6 medium-12  large-6  columns">
-
-                    <button  class="button--expanded  button--primary"
-                              ui-sref="sponsor.sponsee({sponseeId: sponsorship.id})">
-                      View More
-                    </button>
-
-                  </div>
-
-                </div>
-              </div>
-
-            </li>
-
-          </ul>
-
-          <div class="row">
-
-            <div class="small-12 columns">
-
-              <button class="button--micro  button--primary"
-                      ui-sref="sponsor.sponseeAdd">
-
-                Add Sponsee
-
-              </button>
+              <span ng-if='sponsorship.sponsee.status === "invited" || sponsorship.sponsee.status === "onboarding"'>
+                  <span class="fwb  txtc--warning uc">Invite Pending</span>
+              </span>
 
             </div>
 
+            <div class="ptb4">
+              <span class="text-micro">
+                Contributions To Date
+              </span>
+              <h2>
+
+                ${{sponsorship.contributions_to_date}}
+              </h2>
+            </div>
+
+            <div class="row">
+
+              <div class="small-6 medium-12  large-6  columns">
+
+              <span ng-if='sponsorship.sponsee.status == "active"'>
+
+                <span ng-switch-when="true" class="fwb uc">
+
+                  <button  class="button--expanded  button--primary"
+
+                           ng-click="dashboard.openJoltModal(sponsorship)">
+
+                  Jolt
+
+                  </button>
+
+                </span>
+
+              </span>
+
+              <span ng-if='sponsorship.sponsee.status == "invited" || sponsorship.sponsee.status == "onboarding"'>
+
+                <button  class="button--expanded  button--primary">
+
+                <span class="text-micro"
+
+                      ng-click="dashboard.sendReminder(sponsorship.sponsee.id)">
+
+                      Send Reminder
+
+                </span>
+
+                </button>
+
+              </span>
+
+              </div>
+
+              <div class="small-6 medium-12  large-6  columns">
+
+                <button  class="button--expanded  button--primary"
+                          ui-sref="sponsor.sponsee({sponseeId: sponsorship.id})">
+                  View More
+                </button>
+
+              </div>
+
+            </div>
           </div>
 
-        </div>
+        </li>
 
-        </div>
+      </ul>
 
-        <div class="small-12 medium-6 large-4    columns">
+      <div class="row">
 
-          <div class="section">
+        <div class="small-12 columns">
 
-              <h1 class="h2">Your Contributions</h1>
-              <ul>
+          <button class="button--micro  button--primary"
+                  ui-sref="sponsor.sponseeAdd">
 
-                <li>
-                  Total Contributions: $100,000,000
-                  <hr>
-                </li>
-              </ul>
+            Add Sponsee
 
-              <a ui-sref="sponsor.contributions" class="button  button--small  button--expanded  button--primary">
-                View All Contributions
-              </a>
-
-          </div>
+          </button>
 
         </div>
 
       </div>
 
+    </div>
+
+    </div>
+
+    <div class="small-12 medium-6 large-4    columns">
+
+      <div class="section">
+
+          <h1 class="h2">Your Contributions</h1>
+          <ul>
+
+            <li>
+              Total Contributions: $100,000,000
+              <hr>
+            </li>
+          </ul>
+
+          <a ui-sref="sponsor.contributions" class="button  button--small  button--expanded  button--primary">
+            View All Contributions
+          </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
