@@ -8,7 +8,6 @@
       <h1 ng-bind="sponsee.sponseeInfo.first_name + ' ' + sponsee.sponseeInfo.last_name ">
       </h1>
 
-
       <p class="txtc2">Matching Plan:
 
         <span ng-switch="sponsee.information.current_sponsorship.plan.active"
@@ -41,10 +40,9 @@
 
       </p>
 
-
     </div>
 
-    <div class="small-12 columns  mb7">
+<!--     <div class="small-12 columns  mb7">
 
       <div class="card">
 
@@ -59,23 +57,37 @@
         </ul>
       </div>
 
-    </div>
+    </div> -->
 
-    <div class="small-12 columns  mb7">
+    <div class="small-12 medium-10 medium-pull-2 columns  mb7">
 
-      <h2>Your Contributions</h2>
+      <div class="card">
 
-      <p>Total to date: $1,000,000</p>
+        <h2 class="headline headline--alt h5">Total Contributions</h2>
+        
+        <p>{{sponsee.sponseeInfo.contributionsTotal}}</p>
+        
+        <ul>
+        
+          <li ng-repeat="contribution in sponsee.sponseeInfo.contributions track by $index">
+            
+        
+            <div class="grid grid--center grid--justifySpaceBetween ptrbl2">
+              <div class="text-micro">
+                {{contribution.date}}
+                        
+                        
+                        </div>
+                      
+              <div class="h4">${{contribution.amount}}</div>
+            </div>
 
-      <ul>
+            <hr class="hr--primary">
+          </li>
+        
+        </ul>
 
-        <li ng-repeat="contribution in sponsee.information.contributions track by $index">
-
-          ${{contribution.amount}}
-          <hr class="hr--primary">
-        </li>
-
-      </ul>
+      </div>
 
     </div>
 

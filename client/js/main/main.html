@@ -3,11 +3,25 @@
   
 </main-nav-dir>
 
-  <div ui-view="main">
+
+<nav class="fixed  ptrbl4">
+  
+  <a class="button--medium  button--primary  button--expanded"
+     ui-sref="main.login">
+    
+    Sponsor Login
+  
+  </a>
+  
+</nav>
+
+<div class="grid grid--flexDirectionColumn grid--stretch">
+  <div ui-view="main" class="grid-cell">
     
   </div>
-
-
-<footer-dir ng-hide="$state.includes('main.404')">
   
-</footer-dir>
+  
+  <footer-dir ng-hide="$state.includes('main.404')" class="grid-cell">
+    
+  </footer-dir>
+</div>
