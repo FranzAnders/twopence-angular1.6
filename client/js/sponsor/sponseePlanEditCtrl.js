@@ -24,11 +24,9 @@ twopence.controller('sponseePlanEditCtrl', [
     console.log(planId);
 
     console.log(vm.sponsee);
-
     // To Do
     // Send Object To Sponsorship Edit Control via Route
     // Save into Sponsee
-
 
 
     // if (!$stateParams.sponsee) {
@@ -46,7 +44,9 @@ twopence.controller('sponseePlanEditCtrl', [
         vm.sponseePlan = plan;
 
         console.log(vm.sponseePlan);
-
+        console.log('Testing plan');
+        console.log(vm.sponseePlan.plans["0"].limit);
+        console.log(vm.sponseePlan.sponsee.status);
         // To-Do : Detect Active true
         // Knows what to Send out if Active or Not
 
