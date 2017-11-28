@@ -11,7 +11,7 @@ $secondaryColor: #333031;
 $secondaryColor--dark: darken($secondaryColor, 20%); 
 $secondaryColor--translucent: rgba($secondaryColor, .9);
 
-$tertiaryColor: #3D817F; 
+$tertiaryColor: #238EB2; 
 $tertiaryColor--dark: darken($tertiaryColor, 25%); 
 $tertiaryColor--translucent: rgba($tertiaryColor, .9); 
 
@@ -27,8 +27,8 @@ $accentColor--translucent: rgba($accentColor, 0.9);
     #Greys
 \*------------------------------------*/
 
-$grey--light: #F7F7F7;
-$grey--med: #757575;
+$grey--light: #f4f5f6;
+$grey--med: #818181;
 $grey--dark: #333031 ;
 
 
