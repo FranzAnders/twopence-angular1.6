@@ -152,6 +152,6 @@ module.exports = function(grunt) {
     //
     // Publish tasks
     //
-    grunt.registerTask('publish', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin']);
+    grunt.registerTask('publish', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'imagemin']);
 
 };
