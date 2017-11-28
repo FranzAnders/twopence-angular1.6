@@ -11,7 +11,7 @@
       </h1>
 
     </div>
-  
+
   </div>
 
 </div>
@@ -39,7 +39,7 @@
 
             <div class="txtc2  text-micro">Plan:
 
-              <span ng-switch="sponsorship.plans[0].active"
+              <!-- <span ng-switch="sponsorship.plans[0].active"
                     ng-if='sponsorship.sponsee.status === "active"'>
 
                 <span ng-switch-when="true" class="uc">
@@ -50,7 +50,7 @@
                     <span class="fwb  uc">Paused</span>
                 </span>
 
-              </span>
+              </span> -->
 
               <span ng-if='sponsorship.sponsee.status === "invited" || sponsorship.sponsee.status === "onboarding"'>
                   <span class="fwb  txtc--warning uc">Invite Pending</span>
@@ -74,19 +74,13 @@
 
               <span ng-if='sponsorship.sponsee.status == "active"'>
 
-                <span ng-switch-when="true" class="fwb uc">
-
                   <button  class="button--expanded  button--primary"
 
                            ng-click="dashboard.openJoltModal(sponsorship)">
 
-                  Jolt
-
-                  </button>
-
-                </span>
-
-              </span>
+                  Jolt </button>
+                  
+              </span
 
               <span ng-if='sponsorship.sponsee.status == "invited" || sponsorship.sponsee.status == "onboarding"'>
 
