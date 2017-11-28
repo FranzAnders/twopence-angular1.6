@@ -14341,35 +14341,35 @@ select {
 \*------------------------------------*/
 /* line 6, ../scss/layout/_sections.scss */
 .section {
-  padding-bottom: 3.375rem;
+  padding-bottom: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 6, ../scss/layout/_sections.scss */
   .section {
-    padding-bottom: 4.125rem;
+    padding-bottom: 3.75rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 6, ../scss/layout/_sections.scss */
   .section {
-    padding-bottom: 4.5rem;
+    padding-bottom: 3rem;
   }
 }
 
 /* line 24, ../scss/layout/_sections.scss */
-.section--initial {
-  padding-top: 3.375rem;
+.section--lead {
+  padding-top: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 24, ../scss/layout/_sections.scss */
-  .section--initial {
-    padding-top: 4.125rem;
+  .section--lead {
+    padding-top: 3.75rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 24, ../scss/layout/_sections.scss */
-  .section--initial {
-    padding-top: 4.5rem;
+  .section--lead {
+    padding-top: 3rem;
   }
 }
 

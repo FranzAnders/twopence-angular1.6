@@ -43,6 +43,8 @@ twopence.controller('contributionsCtrl', [
 
     vm.contributionsShowing = contributions.data;
 
+    console.log(vm.contributionsShowing); 
+
   }); 
 
 }]);

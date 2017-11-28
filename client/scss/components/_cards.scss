@@ -1,0 +1,21 @@
+
+
+/*------------------------------------*\
+    #Cards
+\*------------------------------------*/
+
+.card {
+
+  border: 1px solid $grey--light; 
+  padding: rem-calc(12px); 
+  margin-bottom: rem-calc(12px);
+  background-color: #FFF; 
+  @include box-shadow(0 0 4px rgba(0,0,0, .2)); 
+
+  @media #{$large-up} {
+
+    padding: rem-calc($level3); 
+    
+  }
+
+}

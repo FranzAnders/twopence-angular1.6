@@ -160,6 +160,38 @@ twopence.factory('Sponsorship', [
     });
   };
 
+
+  //
+  //  Gets all the contributions made for a sponsorship 
+  //
+  sponsorship.getContributions = function(pSponsorshipId) {
+
+    return $q(function(resolve, reject) {
+
+        $http.get(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/contributions', {
+
+          headers: {
+
+            'Authorization' : 'bearer ' + Auth.getToken()
+
+          }
+
+        }).then(function(res) {
+
+          resolve(res.data);
+
+        }).catch(function(err) {
+
+          reject(err);
+
+        });
+
+
+    });
+
+
+  }
+
   return sponsorship;
 
 }]);

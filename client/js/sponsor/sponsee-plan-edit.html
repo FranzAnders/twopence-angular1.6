@@ -27,7 +27,7 @@
          e-form="sponseeDollars"
          onaftersave="checkName($data)"
          >
-         {{sponseePlanEdit.sponseePlan.plan.limit ||  "$$$"}} </span>
+         {{sponseePlanEdit.sponseePlan.plans["0"].limit ||  "$$$"}} </span>
 
         <button
            class="button--secondary  sbutton--micro  button--expanded"
@@ -46,8 +46,8 @@
         <div class="small-12 columns  text-center">
 
           <h5 class="fwb">Plan Status</h5>
-            {{sponseePlanEdit.information.status}}
-           <span ng-switch="sponseePlanEdit.information.plan.status"
+            {{sponseePlanEdit.sponseePlan.sponsee.status}}
+           <span ng-switch="sponseePlanEdit.sponseePlan.sponsee.status"
                 class="text-kilo">
 
             <span ng-switch-when="active">

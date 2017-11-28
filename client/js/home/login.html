@@ -1,5 +1,5 @@
 
-<div class="vh100 grid grid--center">
+<div class="vh100 grid grid--center  section--highlighted">
 
   <div class="row grid-cell">
 
@@ -13,31 +13,33 @@
       <div ng-if="login.verified">
         <h5>Thanks for verifiying! Please login</h5>
       </div> -->
+      
+      <div class="card">
 
-      <form name="loginForm" ng-submit="login.logInUser()">
-        
-        <div class="input-group input--medium">
+          <form name="loginForm" ng-submit="login.logInUser()">
+            
+            <div class="input-group input--medium">
 
-          <label for="username">Email</label>
-          <input id="username" ng-model="login.form.email" type="text" floating-label>
+              <label for="username">Email</label>
+              <input id="username" ng-model="login.form.email" type="text" floating-label>
 
-        </div>
-
-
-        <div class="input-group input--medium">
-          <label for="password">Password</label>
-          <input id="password" ng-model="login.form.password" type="password" floating-label>
-
-        </div>
-
-          <button class="button  button--primary  button--medium  button--expanded"
-                  type="submit">
-            Login
-          </button>
-
-      </form>
+            </div>
 
 
+            <div class="input-group input--medium">
+              <label for="password">Password</label>
+              <input id="password" ng-model="login.form.password" type="password" floating-label>
+
+            </div>
+
+              <button class="button  button--primary  button--medium  button--expanded"
+                      type="submit">
+                Login
+              </button>
+
+          </form>
+
+      </div>
 
       <p class="text-micro  text-center">
 
