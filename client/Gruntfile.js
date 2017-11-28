@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd:'<%= app %>/',
-					src: ['assets/fonts/**', '**.png', '**.ico', '**/*.html','*.xml', '**/*.php', '!**/*.scss', '!bower_components/**', '!node_modules/**', 'data/**'],
+					src: ['assets/images/**', 'assets/fonts/**', '**.png', '**.ico', '**/*.html','*.xml', '**/*.php', '!**/*.scss', '!bower_components/**', '!node_modules/**', 'data/**'],
 					dest: '<%= dist %>/'
 				} ]
 			},
@@ -152,6 +152,6 @@ module.exports = function(grunt) {
     //
     // Publish tasks
     //
-    grunt.registerTask('publish', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'imagemin']);
+    grunt.registerTask('publish', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin']);
 
 };
