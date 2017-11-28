@@ -15,11 +15,13 @@
   
 </nav>
 
-  <div ui-view="main">
+<div class="grid grid--flexDirectionColumn grid--stretch">
+  <div ui-view="main" class="grid-cell">
     
   </div>
-
-
-<footer-dir ng-hide="$state.includes('main.404')">
   
-</footer-dir>
+  
+  <footer-dir ng-hide="$state.includes('main.404')" class="grid-cell">
+    
+  </footer-dir>
+</div>
