@@ -15054,7 +15054,6 @@ button .button-inner,
 \*------------------------------------*/
 /* line 7, ../scss/components/_cards.scss */
 .card {
-  padding: 0.75rem;
   margin-bottom: 0.75rem;
   background-color: #FFF;
   color: #818181;
@@ -15070,7 +15069,7 @@ button .button-inner,
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 25, ../scss/components/_cards.scss */
+  /* line 24, ../scss/components/_cards.scss */
   .cardList .card {
     margin-right: 0.75rem;
   }
