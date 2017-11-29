@@ -6,16 +6,29 @@
 
 .card {
 
-  border: 1px solid $grey--light; 
   padding: rem-calc(12px); 
   margin-bottom: rem-calc(12px);
   background-color: #FFF; 
-  @include box-shadow(0 0 4px rgba(0,0,0, .2)); 
+  color: $body-color; 
+  @include box-shadow(0 0 1px rgba(0,0,0, .2)); 
 
   @media #{$large-up} {
 
     padding: rem-calc($level3); 
     
+  }
+
+}
+
+.cardList {
+  
+  .card {
+
+    @media #{$medium-up} {
+
+      margin-right: rem-calc(12px); 
+
+    }
   }
 
 }

@@ -12,6 +12,7 @@ twopence.directive('appNavDir', function() {
 
     restrict: "E", 
     scope: {}, 
+    replace: true, 
     controller: ['$state', function($state) {
 
         var vm = this; 

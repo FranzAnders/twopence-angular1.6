@@ -14373,27 +14373,39 @@ select {
   }
 }
 
-/* line 43, ../scss/layout/_sections.scss */
+/* line 42, ../scss/layout/_sections.scss */
+.section--main {
+  padding-top: 2.25rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 42, ../scss/layout/_sections.scss */
+  .section--main {
+    padding-left: 10%;
+    min-height: 100vh;
+  }
+}
+
+/* line 55, ../scss/layout/_sections.scss */
 .section--padded {
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 43, ../scss/layout/_sections.scss */
+  /* line 55, ../scss/layout/_sections.scss */
   .section--padded {
     padding-bottom: 3.75rem;
     padding-top: 3.75rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 43, ../scss/layout/_sections.scss */
+  /* line 55, ../scss/layout/_sections.scss */
   .section--padded {
     padding-bottom: 7.5rem;
     padding-top: 7.5rem;
   }
 }
 
-/* line 62, ../scss/layout/_sections.scss */
+/* line 74, ../scss/layout/_sections.scss */
 .section--shadowed {
   z-index: 6;
   -moz-box-shadow: 0 0 26px rgba(0, 0, 0, 0.2);
@@ -14401,7 +14413,7 @@ select {
   box-shadow: 0 0 26px rgba(0, 0, 0, 0.2);
 }
 
-/* line 69, ../scss/layout/_sections.scss */
+/* line 81, ../scss/layout/_sections.scss */
 .section--bordered {
   border-bottom: 8px solid black;
 }
@@ -14409,38 +14421,50 @@ select {
 /*------------------------------------*\
     #Section Types 
 \*------------------------------------*/
-/* line 84, ../scss/layout/_sections.scss */
+/* line 96, ../scss/layout/_sections.scss */
 .section--primary {
   background-color: #fff;
 }
-/* line 87, ../scss/layout/_sections.scss */
+/* line 99, ../scss/layout/_sections.scss */
 .section--primary .section-text {
   color: #818181;
 }
 
-/* line 94, ../scss/layout/_sections.scss */
+/* line 106, ../scss/layout/_sections.scss */
 .section--secondary {
   background-color: #333031;
 }
-/* line 98, ../scss/layout/_sections.scss */
+/* line 110, ../scss/layout/_sections.scss */
 .section--secondary .section-text {
   color: #fff;
 }
 
-/* line 107, ../scss/layout/_sections.scss */
+/* line 119, ../scss/layout/_sections.scss */
 .section--alt {
   overflow: hidden;
   width: 100%;
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
+  background: #1e5799;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #1e5799 0%, #238eb2 0%, #63decb 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #1e5799 0%, #238eb2 0%, #63decb 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #1e5799 0%, #238eb2 0%, #63decb 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
+  /* IE6-9 */
 }
-/* line 116, ../scss/layout/_sections.scss */
+/* line 131, ../scss/layout/_sections.scss */
 .section--alt .section-title {
   color: #fff;
 }
-/* line 120, ../scss/layout/_sections.scss */
+/* line 135, ../scss/layout/_sections.scss */
 .section--alt .section-text {
   color: #fff;
 }
-/* line 124, ../scss/layout/_sections.scss */
+/* line 139, ../scss/layout/_sections.scss */
 .section--alt .section-content {
   left: 0;
   right: 0;
@@ -14453,14 +14477,36 @@ select {
   background-position: center;
 }
 
-/* line 139, ../scss/layout/_sections.scss */
+/* line 154, ../scss/layout/_sections.scss */
 .section--highlighted {
   background-color: #f4f5f6;
 }
 
-/* line 145, ../scss/layout/_sections.scss */
+/* line 160, ../scss/layout/_sections.scss */
 .section--photoDivider {
   height: 31.25rem;
+}
+
+/*------------------------------------*\
+    #App Header
+\*------------------------------------*/
+/* line 7, ../scss/components/_appheader.scss */
+.appHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #6AC6C5;
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  z-index: 55;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 7, ../scss/components/_appheader.scss */
+  .appHeader {
+    width: 10%;
+  }
 }
 
 /*------------------------------------*\
@@ -14480,59 +14526,88 @@ select {
 @media only screen and (min-width: 64.0625em) {
   /* line 6, ../scss/components/_appNav.scss */
   .appNav {
-    position: relative;
+    height: 100vh;
+    width: 10%;
   }
 }
-/* line 22, ../scss/components/_appNav.scss */
+/* line 23, ../scss/components/_appNav.scss */
 .appNav .appNav-menu {
   width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
   margin-bottom: 0;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
 }
-/* line 35, ../scss/components/_appNav.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 23, ../scss/components/_appNav.scss */
+  .appNav .appNav-menu {
+    padding-top: 6rem;
+  }
+}
+/* line 41, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
   color: #818181;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   line-height: 1.5;
 }
+@media only screen and (min-width: 64.0625em) {
+  /* line 41, ../scss/components/_appNav.scss */
+  .appNav .appNav-menu .appNav-menu-link {
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}
 
-/* line 47, ../scss/components/_appNav.scss */
+/* line 60, ../scss/components/_appNav.scss */
 .appNav-menu-link {
   background-color: transparent;
   margin-bottom: 0;
   text-transform: none;
   opacity: .7;
 }
-/* line 54, ../scss/components/_appNav.scss */
+/* line 67, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover, .appNav-menu-link:focus, .appNav-menu-link:active {
   color: #333031;
 }
-/* line 59, ../scss/components/_appNav.scss */
+/* line 72, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover .menu-link-icon, .appNav-menu-link:focus .menu-link-icon, .appNav-menu-link:active .menu-link-icon {
   fill: #333031;
 }
-/* line 68, ../scss/components/_appNav.scss */
+/* line 81, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active .menu-link-icon {
   fill: #238EB2;
 }
-/* line 74, ../scss/components/_appNav.scss */
+/* line 87, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active .menu-link-label {
   color: #238EB2;
 }
-/* line 81, ../scss/components/_appNav.scss */
+/* line 94, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon {
   fill: #818181;
-  width: 2.375rem;
+  width: 1.875rem;
   margin-bottom: 0.125rem;
 }
-/* line 86, ../scss/components/_appNav.scss */
+/* line 99, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon.home {
-  width: 1.75rem;
+  width: 1.375rem;
 }
-/* line 93, ../scss/components/_appNav.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 94, ../scss/components/_appNav.scss */
+  .appNav-menu-link .menu-link-icon {
+    width: 2.25rem;
+  }
+  /* line 107, ../scss/components/_appNav.scss */
+  .appNav-menu-link .menu-link-icon.home {
+    width: 1.75rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 94, ../scss/components/_appNav.scss */
+  .appNav-menu-link .menu-link-icon {
+    margin-right: 0.75rem;
+  }
+}
+/* line 121, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-label {
   color: #818181;
 }
@@ -14640,10 +14715,9 @@ blockquote cite {
 button,
 .button {
   white-space: nowrap;
-  font-family: "ITC Souvenir Std", sans-serif;
   margin-bottom: 1.5rem;
 }
-/* line 15, ../scss/components/_buttons.scss */
+/* line 14, ../scss/components/_buttons.scss */
 button .button-inner,
 .button .button-inner {
   position: relative;
@@ -14653,18 +14727,18 @@ button .button-inner,
   letter-spacing: 1px;
 }
 
-/* line 28, ../scss/components/_buttons.scss */
+/* line 27, ../scss/components/_buttons.scss */
 .button--primary {
-  background-color: #333031;
+  background-color: #6AC6C5;
   position: relative;
-  color: #FBC510;
+  color: #fff;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
   -webkit-transition: all 0.1s ease;
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 35, ../scss/components/_buttons.scss */
+/* line 34, ../scss/components/_buttons.scss */
 .button--primary:after {
   content: " ";
   position: absolute;
@@ -14679,16 +14753,16 @@ button .button-inner,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 49, ../scss/components/_buttons.scss */
+/* line 48, ../scss/components/_buttons.scss */
 .button--primary:hover, .button--primary:focus {
   color: #fff;
 }
-/* line 54, ../scss/components/_buttons.scss */
+/* line 53, ../scss/components/_buttons.scss */
 .button--primary:hover:after, .button--primary:focus:after {
   width: 100%;
 }
 
-/* line 64, ../scss/components/_buttons.scss */
+/* line 63, ../scss/components/_buttons.scss */
 .button--secondary {
   background-color: #6AC6C5;
   position: relative;
@@ -14699,7 +14773,7 @@ button .button-inner,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 71, ../scss/components/_buttons.scss */
+/* line 70, ../scss/components/_buttons.scss */
 .button--secondary:after {
   content: " ";
   position: absolute;
@@ -14714,16 +14788,16 @@ button .button-inner,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 85, ../scss/components/_buttons.scss */
+/* line 84, ../scss/components/_buttons.scss */
 .button--secondary:hover, .button--secondary:focus {
   color: #fff;
 }
-/* line 90, ../scss/components/_buttons.scss */
+/* line 89, ../scss/components/_buttons.scss */
 .button--secondary:hover:after, .button--secondary:focus:after {
   width: 100%;
 }
 
-/* line 99, ../scss/components/_buttons.scss */
+/* line 98, ../scss/components/_buttons.scss */
 .button--tertiary {
   background-color: transparent;
   position: relative;
@@ -14735,7 +14809,7 @@ button .button-inner,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 107, ../scss/components/_buttons.scss */
+/* line 106, ../scss/components/_buttons.scss */
 .button--tertiary:after {
   content: " ";
   position: absolute;
@@ -14750,11 +14824,11 @@ button .button-inner,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 121, ../scss/components/_buttons.scss */
+/* line 120, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
   color: #FBC510;
 }
-/* line 126, ../scss/components/_buttons.scss */
+/* line 125, ../scss/components/_buttons.scss */
 .button--tertiary:hover:after, .button--tertiary:focus:after {
   width: 100%;
 }
@@ -14762,7 +14836,7 @@ button .button-inner,
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 145, ../scss/components/_buttons.scss */
+/* line 144, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #333031;
   height: 2.5rem;
@@ -14780,14 +14854,14 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 158, ../scss/components/_buttons.scss */
+/* line 157, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 165, ../scss/components/_buttons.scss */
+/* line 164, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -14803,7 +14877,7 @@ button .button-inner,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 183, ../scss/components/_buttons.scss */
+/* line 182, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -14820,7 +14894,7 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 200, ../scss/components/_buttons.scss */
+/* line 199, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -14835,7 +14909,7 @@ button .button-inner,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 216, ../scss/components/_buttons.scss */
+/* line 215, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -14844,7 +14918,7 @@ button .button-inner,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 225, ../scss/components/_buttons.scss */
+/* line 224, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #333031;
@@ -14854,20 +14928,20 @@ button .button-inner,
   transform: scale(1.2);
 }
 
-/* line 239, ../scss/components/_buttons.scss */
+/* line 238, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 245, ../scss/components/_buttons.scss */
+/* line 244, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 256, ../scss/components/_buttons.scss */
+/* line 255, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 262, ../scss/components/_buttons.scss */
+/* line 261, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -14875,51 +14949,53 @@ button .button-inner,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 279, ../scss/components/_buttons.scss */
+/* line 278, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.1875rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 286, ../scss/components/_buttons.scss */
+/* line 285, ../scss/components/_buttons.scss */
 .button--small {
-  padding: 0.375rem;
+  padding: 0.75rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
 
-/* line 295, ../scss/components/_buttons.scss */
+/* line 294, ../scss/components/_buttons.scss */
 .button--medium {
-  padding: 0.75rem;
+  padding: 1.125rem;
   padding-right: 1.125rem;
   padding-left: 1.125rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
-/* line 301, ../scss/components/_buttons.scss */
+/* line 302, ../scss/components/_buttons.scss */
 .button--large {
   padding: 1.125rem;
   padding-right: 1.875rem;
   padding-left: 1.875rem;
 }
 
-/* line 308, ../scss/components/_buttons.scss */
+/* line 309, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 315, ../scss/components/_buttons.scss */
+/* line 316, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 322, ../scss/components/_buttons.scss */
+/* line 323, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -14929,7 +15005,7 @@ button .button-inner,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 338, ../scss/components/_buttons.scss */
+/* line 339, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -14978,18 +15054,25 @@ button .button-inner,
 \*------------------------------------*/
 /* line 7, ../scss/components/_cards.scss */
 .card {
-  border: 1px solid #f4f5f6;
   padding: 0.75rem;
   margin-bottom: 0.75rem;
   background-color: #FFF;
-  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  color: #818181;
+  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 7, ../scss/components/_cards.scss */
   .card {
     padding: 1.125rem;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 25, ../scss/components/_cards.scss */
+  .cardList .card {
+    margin-right: 0.75rem;
   }
 }
 

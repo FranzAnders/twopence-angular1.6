@@ -23,7 +23,7 @@ whiskersSite.directive('mainNavDir',
       vm.activeDropDown = false;  
       
       $rootScope.$on('$stateChangeSuccess', function() {
-
+        
         vm.mainNavIsOpen = false; 
         
         $scope.$emit('nav-is-closed');

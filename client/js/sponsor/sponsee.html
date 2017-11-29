@@ -1,96 +1,81 @@
-
-<div class="section--main">
-
-  <div class="row">
-
-    <div class="small-12 columns mb7">
-
-      <h1 ng-bind="sponsee.sponseeInfo.first_name + ' ' + sponsee.sponseeInfo.last_name ">
-      </h1>
-
-      <p class="txtc2">Matching Plan:
-
-        <span ng-switch="sponsee.information.current_sponsorship.plan.active"
-              ng-if='sponsee.information.status == "active"'>
-
-          <span ng-switch-when="true" class="fwb uc">
-               ${{sponsee.information.current_sponsorship.plan.limit}} {{sponsee.information.current_sponsorship.plan.frequency}} Limit
+<div class="section--lead">
+  
+    <div class="row">
+      
+      <div class="small-12   columns ">
+      
+        <h1 ng-bind="sponsee.sponseeInfo.first_name + ' ' + sponsee.sponseeInfo.last_name ">
+        </h1>
+      
+        <p class="txtc2">Matching Plan:
+      
+          <span ng-switch="sponsee.information.current_sponsorship.plan.active"
+                ng-if='sponsee.information.status == "active"'>
+      
+            <span ng-switch-when="true" class="fwb uc">
+                 ${{sponsee.information.current_sponsorship.plan.limit}} {{sponsee.information.current_sponsorship.plan.frequency}} Limit
+            </span>
+      
+            <span ng-switch-when="false">
+                <span class="fwb  uc">none</span>
+            </span>
+      
           </span>
-
-          <span ng-switch-when="false">
-              <span class="fwb  uc">none</span>
+      
+          <span ng-if='sponsee.information.status == "invited" || sponsee.information.status == "onboarding"'>
+              <span class="fwb  txtc--warning uc">Invite Pending</span>
           </span>
-
-        </span>
-
-        <span ng-if='sponsee.information.status == "invited" || sponsee.information.status == "onboarding"'>
-            <span class="fwb  txtc--warning uc">Invite Pending</span>
-        </span>
-
-        <span ng-if="sponsee.information.current_sponsorship === null">
-
-          <span>
-              <span class="fwb  uc">none</span>
+      
+          <span ng-if="sponsee.information.current_sponsorship === null">
+      
+            <span>
+                <span class="fwb  uc">none</span>
+            </span>
+      
           </span>
-
-        </span>
-
-        (<a ui-sref="sponsor.edit({plan: sponsee.sponsorshipId, sponsee: sponsee.information})" class="">
-        edit</a> )
-
-      </p>
-
-    </div>
-
-<!--     <div class="small-12 columns  mb7">
-
-      <div class="card">
-
-        <h2>Loan Status</h2>
-
-        <hr class="hr--primary">
-
-        <ul>
-          <li class="mb4">Percent of Loan paid off</li>
-          <li class="mb4">Interest Avoided</li>
-          <li class="mb4">Days Reclaimed</li>
-        </ul>
+      
+          (<a ui-sref="sponsor.edit({plan: sponsee.sponsorshipId, sponsee: sponsee.information})" class="">
+          edit</a> )
+      
+        </p>
+      
       </div>
-
-    </div> -->
-
-    <div class="small-12 medium-10 medium-pull-2 columns  mb7">
-
-      <div class="card">
-
-        <h2 class="headline headline--alt h5">Total Contributions</h2>
-        
-        <p>{{sponsee.sponseeInfo.contributionsTotal}}</p>
-        
-        <ul>
-        
-          <li ng-repeat="contribution in sponsee.sponseeInfo.contributions track by $index">
+      
+      
+      <div class="small-12  columns ">
             
-        
-            <div class="grid grid--center grid--justifySpaceBetween ptrbl2">
-              <div class="text-micro">
-                {{contribution.date}}
-                        
-                        
-                        </div>
-                      
-              <div class="h4">${{contribution.amount}}</div>
-            </div>
-
-            <hr class="hr--primary">
-          </li>
-        
-        </ul>
-
+      <div class="row">
+        <div class="small-12 columns medium-10  large-6"><div class="card">
+                
+            <h2 class="headline headline--alt h5">Total Contributions</h2>
+            
+            <p>{{sponsee.sponseeInfo.contributionsTotal}}</p>
+            
+            <ul>
+            
+              <li ng-repeat="contribution in sponsee.sponseeInfo.contributions track by $index">
+                
+            
+                <div class="grid grid--center grid--justifySpaceBetween ptrbl2">
+                  <div class="text-micro">
+                    {{contribution.date}}
+                            
+                            
+                            </div>
+                          
+                  <div class="h4">${{contribution.amount}}</div>
+                </div>
+                
+                <hr class="hr--primary">
+              </li>
+            
+            </ul>
+                
+          </div>
+                </div>
       </div>
-
+      </div>
+      
     </div>
 
   </div>
-
-</div>

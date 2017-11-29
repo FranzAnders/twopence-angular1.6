@@ -15,17 +15,23 @@
 
   @media #{$large-up} {
 
-    position: relative; 
+    height: 100vh; 
+    width: 10%; 
 
   }
   
   .appNav-menu {
     width: 100%; 
-    padding-right: rem-calc($level4);
-    padding-left: rem-calc($level4);
     margin-bottom: 0; 
-    padding-top: rem-calc($level2);
-    padding-bottom: rem-calc($level2);
+    padding-top: rem-calc($level1);
+    padding-bottom: rem-calc($level1);
+
+    @media #{$large-up} {
+      
+
+      padding-top: rem-calc($level7 + $level7);
+
+    }
 
     .appNav-menu-item {
       
@@ -34,7 +40,14 @@
 
     .appNav-menu-link {
       color: $grey--med; 
-      @include type-setting(-1);
+      @include type-setting(-2);
+
+      @media #{$large-up} {
+
+        margin-bottom: rem-calc($level4); 
+        @include type-setting(-1);
+
+      }
 
     }
 
@@ -80,13 +93,28 @@
 
   .menu-link-icon {
     fill: $grey--med; 
-    width: rem-calc(38px); 
+    width: rem-calc(30px); 
     margin-bottom: rem-calc(2px); 
 
     &.home {
-      width: rem-calc(28px); 
+      width: rem-calc(22px); 
     }
 
+    @media #{$medium-up} {
+      
+      width: rem-calc(36px); 
+
+      &.home {
+        width: rem-calc(28px); 
+      }
+
+    }
+
+    @media #{$large-up} {
+
+      margin-right: rem-calc($level2); 
+
+    }
 
   }
 
