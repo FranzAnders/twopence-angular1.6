@@ -5,13 +5,13 @@
 
     <div class="small-12 columns mb3">
 
-      <h1 class="ff2  txtc2">
-        Welcome,<br>
+      <h1 class="h4    txtc2  section-text">
+        Welcome, 
         {{dashboard.sponsorInfo.name}}
       </h1>
 
     </div>
-
+  
   </div>
 
 </div>
@@ -20,20 +20,17 @@
 
   <div class="row">
 
-    <div class="small-12 columns large-8">
+    <div class="small-12 columns medium-9 ">
         <div class="section">
 
-      <h1 class="ff2 h4">
-        Your Sponsees
-      </h1>
 
-      <ul class="grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap">
+      <ul class="cardList  grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap large-grid--1of3">
 
         <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees track by $index">
 
           <div class="card">
 
-            <h2 class=""
+            <h2 class="h4"
                 ng-bind="sponsorship.sponsee.first_name + ' ' + sponsorship.sponsee.last_name">
             </h2>
 
@@ -43,7 +40,7 @@
                     ng-if='sponsorship.sponsee.status === "active"'>
 
                 <span ng-switch-when="true" class="uc">
-                     ${{sponsorship.plans[0].limit}} {{sponsorship.plans[0].frequency }} Limit
+                     ${{sponsee.current_sponsorship.plan.limit}} {{sponsee.current_sponsorship.plan.frequency}} Limit
                 </span>
 
                 <span ng-switch-when="false">
@@ -58,11 +55,11 @@
 
             </div>
 
-            <div class="ptb4">
-              <span class="text-micro">
+            <div class="ptb2  text-center">
+              <span class="text-mini  headline  headline--alt  txtc2">
                 Contributions To Date
               </span>
-              <h2>
+              <h2 class="  uc txtc1  text-kilo mb0">
 
                 ${{sponsorship.contributions_to_date}}
               </h2>
@@ -74,13 +71,19 @@
 
               <span ng-if='sponsorship.sponsee.status == "active"'>
 
+                <span ng-switch-when="true" class="fwb uc">
+
                   <button  class="button--expanded  button--primary"
 
                            ng-click="dashboard.openJoltModal(sponsorship)">
 
-                  Jolt </button>
+                  Jolt
 
-              </span
+                  </button>
+
+                </span>
+
+              </span>
 
               <span ng-if='sponsorship.sponsee.status == "invited" || sponsorship.sponsee.status == "onboarding"'>
 
@@ -135,22 +138,25 @@
 
     </div>
 
-    <div class="small-12 medium-6 large-4    columns">
+    <div class="small-12 medium-3 large-3    columns">
 
       <div class="section">
 
-          <h1 class="h2">Your Contributions</h1>
-          <ul>
+        <div class="card text-left">
 
-            <li>
-              Total Contributions: $100,000,000
-              <hr>
-            </li>
-          </ul>
+<div class="grid grid--center  grid--justifySpaceBetween">
+  <h1 class=" text-micro ">Your Contributions</h1>
+  
+   <p class="h4  txtc3 fwb">$100,000</p>
+</div>
 
+          <hr class="hr--faded">
+      
           <a ui-sref="sponsor.contributions" class="button  button--small  button--expanded  button--primary">
-            View All Contributions
+            View All-Time
           </a>
+
+        </div>
 
       </div>
 

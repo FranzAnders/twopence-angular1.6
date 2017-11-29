@@ -6,7 +6,6 @@
 button,
 .button {
   white-space: nowrap; 
-  font-family: $secondary-font-family; 
   margin-bottom: rem-calc($base-magic-number);
   @extend %uc; 
   @extend %fwb; 
@@ -27,9 +26,9 @@ button,
 
 .button--primary {
     
-  background-color: $secondaryColor;
+  background-color: $primaryColor;
   position: relative; 
-  color: $accentColor; 
+  color: #fff; 
   @include transition(all .1s ease .1s); 
 
   &:after {
@@ -284,7 +283,7 @@ button,
 }
 
 .button--small {
-    padding: rem-calc($level1);
+    padding: rem-calc($level2);
     padding-right: rem-calc($level4);
     padding-left: rem-calc($level4);
     @include type-setting(-1);
@@ -293,9 +292,11 @@ button,
 
 
 .button--medium {
-    padding: rem-calc($level2);
+    padding: rem-calc($level3);
     padding-right: rem-calc($level3);
     padding-left: rem-calc($level3);
+    @include type-setting(-1);
+
 }
 
 .button--large {

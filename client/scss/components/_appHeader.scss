@@ -1,0 +1,25 @@
+
+
+/*------------------------------------*\
+    #App Header
+\*------------------------------------*/
+
+.appHeader {
+
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  background-color: $primaryColor; 
+  width: 100%; 
+  padding-top: rem-calc($level2);
+  padding-bottom: rem-calc($level2);
+  z-index: 55; 
+
+  @media #{$large-up} {
+
+      width: 10%; 
+
+  }
+  
+}
