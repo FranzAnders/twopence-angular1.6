@@ -9,10 +9,12 @@ twopence.controller('sponseePlanEditCtrl', [
   '$stateParams',
   '$state',
   '$scope',
+  '$fancyModal',
   'Sponsorship',
   function($stateParams,
     $state,
     $scope,
+    $fancyModal,
     Sponsorship) {
 
     var vm = this;
@@ -24,6 +26,35 @@ twopence.controller('sponseePlanEditCtrl', [
     console.log(planId);
 
     console.log(vm.sponsee);
+
+
+    // Cacluating today's date to compare to Termination Date in Pause / Unpause
+
+    var today = new Date();
+
+    var dd = today.getDate();
+
+    var mm = today.getMonth() + 1; //January is 0!
+
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+
+      dd = '0' + dd
+
+    }
+
+    if (mm < 10) {
+
+      mm = '0' + mm
+
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    console.log("Today be: " + today);
+
+
     // To Do
     // Send Object To Sponsorship Edit Control via Route
     // Save into Sponsee
@@ -85,7 +116,6 @@ twopence.controller('sponseePlanEditCtrl', [
 
         console.log("new limit: " + vm.sponseePlan.plan.limit);
 
-
         var limitLoad = {
 
           "user": {
@@ -135,29 +165,99 @@ twopence.controller('sponseePlanEditCtrl', [
 
       var payLoad = {
 
-          "pause": true
+        "pause": true
 
       };
 
-      if (vm.sponseePlan.plans[0].active === true) {
+      console.log(vm.sponseePlan.plans[0].schedules[0].date_effective);
 
-        console.log("Should be paused");
+      if (vm.sponseePlan.plans[0].schedules[0].date_termination === today) {
 
-        Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad);
+        console.log($fancyModal)
 
-      }
+        $fancyModal.open({
 
-      else {
+          template: '<div>Sponsorship is already paused. Please wait till tomorrow to see your paused plan.</div>',
 
-        console.log("Should be resumed");
+          themeClass: 'fancymodal--secondary',
 
-        payLoad.pause = false;
+          openingClass: 'is-open',
 
-        console.log("New Payload");
+          closingClass: 'is-closed'
 
-        console.log(payLoad);
+        })
 
-        Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad);
+      } else {
+
+        if (vm.sponseePlan.plans[0].active === true) {
+
+          console.log("Should be paused");
+
+          Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad).catch(
+
+            function(error) {
+
+              console.log("You got caught son")
+
+              console.log(error.data.message);
+
+              vm.errorMsg = error.data.message;
+
+              $fancyModal.open({
+
+                template: '<div>This plan cannot be paused.</div>',
+
+                themeClass: 'fancymodal--secondary',
+
+                openingClass: 'is-open',
+
+                closingClass: 'is-closed'
+
+              })
+
+
+
+            }
+
+          );
+
+        } else {
+
+          console.log("Should be resumed");
+
+          payLoad.pause = false;
+
+          console.log("New Payload");
+
+          console.log(payLoad);
+
+          Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad).catch(
+
+            function(error) {
+
+              console.log("Son. You was caught.");
+
+              console.log(error.data.message);
+
+
+              $fancyModal.open({
+
+                template: '<div>This plan cannot be unpaused.</div>',
+
+                themeClass: 'fancymodal--secondary',
+
+                openingClass: 'is-open',
+
+                closingClass: 'is-closed'
+
+              })
+
+
+            }
+
+          );
+
+        }
 
       }
 

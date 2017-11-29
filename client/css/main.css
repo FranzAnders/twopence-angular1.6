@@ -6213,7 +6213,7 @@ button,
     #Dropshadows 
 \*------------------------------------*/
 /* line 60, ../scss/abstracts/_utility.scss */
-.dropshadow1 {
+.dropshadow1, .fancymodal--secondary .fancymodal-content {
   -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -6302,18 +6302,27 @@ button,
     #Position Types 
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
-.relative, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link, .menuToggle-icon, .section, .section--alt > .row, .pageHeader, .pageHeader .pageHeader-content {
+.relative, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link, .menuToggle-icon, .section, .section--alt > .row, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
   position: relative;
 }
 
 /* line 223, ../scss/abstracts/_utility.scss */
-.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, .absolute-nav, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before, .mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:before, .menuToggle-icon:after, .menuToggle-icon:before, .section--alt .section-content {
+.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, .absolute-nav, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before, .mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:before, .menuToggle-icon:after, .menuToggle-icon:before, .section--alt .section-content, .fancymodal .fancymodal-close {
   position: absolute;
 }
 
 /* line 227, ../scss/abstracts/_utility.scss */
-.fixed, .fixed-nav, .loadingbar, .loadingtext, .loadingScreen {
+.fancymodal, .fixed, .fixed-nav, .loadingbar, .loadingtext, .loadingScreen {
   position: fixed;
+}
+
+/* line 231, ../scss/abstracts/_utility.scss */
+.fancymodal {
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 /* line 240, ../scss/abstracts/_utility.scss */
@@ -6360,7 +6369,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, .mainNav .mainNav-menu .mainNav
     #Paddings 
 \*------------------------------------*/
 /* line 303, ../scss/abstracts/_utility.scss */
-.ptrbl0 {
+.ptrbl0, .fancymodal--emailSubscription .fancymodal-content {
   padding: 0 !important;
 }
 
@@ -6380,7 +6389,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, .mainNav .mainNav-menu .mainNav
 }
 
 /* line 319, ../scss/abstracts/_utility.scss */
-.ptrbl4 {
+.ptrbl4, .fancymodal--secondary .fancymodal-content {
   padding: 1.5rem !important;
 }
 
@@ -6435,7 +6444,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, .mainNav .mainNav-menu .mainNav
 }
 
 /* line 368, ../scss/abstracts/_utility.scss */
-.pt7 {
+.pt7, .fancymodal--large, .fancymodal--medium {
   padding-top: 3rem !important;
 }
 
@@ -14490,7 +14499,7 @@ select {
 /*------------------------------------*\
     #App Header
 \*------------------------------------*/
-/* line 7, ../scss/components/_appheader.scss */
+/* line 7, ../scss/components/_appHeader.scss */
 .appHeader {
   position: fixed;
   top: 0;
@@ -14503,7 +14512,7 @@ select {
   z-index: 55;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 7, ../scss/components/_appheader.scss */
+  /* line 7, ../scss/components/_appHeader.scss */
   .appHeader {
     width: 10%;
   }
@@ -15425,6 +15434,391 @@ button .button-inner,
     -ms-transform: translateX(100%);
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
+  }
+}
+/*------------------------------------*\
+    #Modals
+\*------------------------------------*/
+/* line 7, ../scss/components/_modals.scss */
+body.fancymodal-open {
+  overflow: hidden;
+}
+
+/* line 11, ../scss/components/_modals.scss */
+.fancymodal,
+.fancymodal *,
+.fancymodal *:before,
+.fancymodal *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 20, ../scss/components/_modals.scss */
+.fancymodal {
+  padding-top: 6rem;
+  padding-bottom: 7.125rem;
+  overflow: auto;
+  z-index: 1050;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*------------------------------------*\
+    #Modal Overlay
+\*------------------------------------*/
+/* line 44, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-overlay {
+  background: rgba(51, 48, 49, 0.9);
+  -webkit-backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 57, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-overlay-opening {
+  -moz-animation: fancymodal-fadeIn 0.6s forwards;
+  -webkit-animation: fancymodal-fadeIn 0.6s forwards;
+  animation: fancymodal-fadeIn 0.6s forwards;
+}
+
+/* line 64, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-overlay-closing {
+  -moz-animation: fancymodal-fadeOut 0.6s forwards;
+  -webkit-animation: fancymodal-fadeOut 0.6s forwards;
+  animation: fancymodal-fadeOut 0.6s forwards;
+}
+
+/*------------------------------------*\
+    #Modal Content
+\*------------------------------------*/
+/* line 81, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-content {
+  max-width: 500px;
+  background: transparent;
+  -webkit-backface-visibility: hidden;
+  padding: 2em 1em;
+  margin: 0 auto;
+}
+/* line 90, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-content.is-open {
+  -moz-animation: fancymodal-in 0.6s forwards;
+  -webkit-animation: fancymodal-in 0.6s forwards;
+  animation: fancymodal-in 0.6s forwards;
+}
+/* line 96, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-content.is-closed {
+  -moz-animation: fancymodal-out 0.6s forwards;
+  -webkit-animation: fancymodal-out 0.6s forwards;
+  animation: fancymodal-out 0.6s forwards;
+}
+
+/* line 106, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-close {
+  border-radius: 3px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+/* line 116, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-close:before {
+  border-radius: 3px;
+  position: absolute;
+  content: "\00D7";
+  font-size: 26px;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  top: 3px;
+  right: 3px;
+  color: #ccc;
+}
+
+/* line 133, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-close:hover:before,
+.fancymodal .fancymodal-close:active:before {
+  color: #777;
+  background: #e0e0e0;
+}
+
+/*------------------------------------*\
+    #Modal Types
+\*------------------------------------*/
+/* line 153, ../scss/components/_modals.scss */
+.fancymodal--secondary {
+  padding-top: 0.75rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 153, ../scss/components/_modals.scss */
+  .fancymodal--secondary {
+    overflow: hidden;
+  }
+}
+/* line 163, ../scss/components/_modals.scss */
+.fancymodal--secondary .fancymodal-content {
+  max-width: 31.5rem;
+  width: 98%;
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+  border-top: 8px solid #6AC6C5;
+}
+/* line 184, ../scss/components/_modals.scss */
+.fancymodal--secondary .fancymodal-content.is-open {
+  -moz-animation: fancymodal-in 0.6s forwards;
+  -webkit-animation: fancymodal-in 0.6s forwards;
+  animation: fancymodal-in 0.6s forwards;
+}
+/* line 190, ../scss/components/_modals.scss */
+.fancymodal--secondary .fancymodal-content.is-closed {
+  -moz-animation: fancymodal-out 0.6s forwards;
+  -webkit-animation: fancymodal-out 0.6s forwards;
+  animation: fancymodal-out 0.6s forwards;
+}
+
+/* line 208, ../scss/components/_modals.scss */
+.fancymodal--emailSubscription .fancymodal-content .fancymodal-data > div {
+  background-color: #6AC6C5;
+  color: #fff;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 208, ../scss/components/_modals.scss */
+  .fancymodal--emailSubscription .fancymodal-content .fancymodal-data > div {
+    background-color: transparent;
+    background-image: url("../assets/images/emailSignUpBg.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+/* line 227, ../scss/components/_modals.scss */
+.fancymodal--emailSubscription .fancymodal-content .fancymodal-close:before {
+  top: -30px;
+  right: -10px;
+  font-size: 2.5rem;
+  color: #6AC6C5;
+  -moz-transition: -moz-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: -o-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 240, ../scss/components/_modals.scss */
+.fancymodal--emailSubscription .fancymodal-content .fancymodal-close:hover:before, .fancymodal--emailSubscription .fancymodal-content .fancymodal-close:active:before, .fancymodal--emailSubscription .fancymodal-content .fancymodal-close:focus:before {
+  color: #6AC6C5;
+  background-color: transparent;
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* line 258, ../scss/components/_modals.scss */
+.fancyModal--fullScreen {
+  padding-top: 0;
+}
+/* line 262, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content {
+  padding-top: 2.25rem;
+  background-color: transparent;
+  color: #fff;
+  max-width: 100%;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 262, ../scss/components/_modals.scss */
+  .fancyModal--fullScreen .fancymodal-content {
+    padding-top: 7.5rem;
+  }
+}
+/* line 275, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content.is-open {
+  -moz-animation: fancymodal-fadeIn 0.6s forwards;
+  -webkit-animation: fancymodal-fadeIn 0.6s forwards;
+  animation: fancymodal-fadeIn 0.6s forwards;
+}
+/* line 281, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content.is-closed {
+  -moz-animation: fancymodal-fadeOut 0.6s forwards;
+  -webkit-animation: fancymodal-fadeOut 0.6s forwards;
+  animation: fancymodal-fadeOut 0.6s forwards;
+}
+/* line 291, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content .fancymodal-close:before {
+  top: 1.125rem;
+  right: 0.75rem;
+  font-size: 2.5rem;
+  color: #fff;
+  -moz-transition: -moz-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: -o-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 303, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content .fancymodal-close:hover:before, .fancyModal--fullScreen .fancymodal-content .fancymodal-close:active:before, .fancyModal--fullScreen .fancymodal-content .fancymodal-close:focus:before {
+  color: #fff;
+  background-color: transparent;
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/*------------------------------------*\
+    #Modal Sizes
+\*------------------------------------*/
+/* line 331, ../scss/components/_modals.scss */
+.fancyModal--fullScreen .fancymodal-content {
+  background-color: transparent;
+}
+
+/* line 341, ../scss/components/_modals.scss */
+.fancymodal--large .fancymodal-content {
+  max-width: 68.75rem;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 348, ../scss/components/_modals.scss */
+  .fancymodal--medium {
+    padding-top: 6rem !important;
+  }
+}
+/* line 357, ../scss/components/_modals.scss */
+.fancymodal--medium .fancymodal-content {
+  max-width: 41.25rem;
+}
+
+/*------------------------------------*\
+    #Modal Animations
+\*------------------------------------*/
+@-moz-keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fancymodal-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fancymodal-fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes fancymodal-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-moz-keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+}
+@-webkit-keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
+  }
+}
+@keyframes fancymodal-out {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    transform: translateY(200px);
   }
 }
 /*------------------------------------*\
