@@ -11,7 +11,7 @@
       </h1>
 
     </div>
-  
+
   </div>
 
 </div>
@@ -43,7 +43,7 @@
                     ng-if='sponsorship.sponsee.status === "active"'>
 
                 <span ng-switch-when="true" class="uc">
-                     ${{sponsee.current_sponsorship.plan.limit}} {{sponsee.current_sponsorship.plan.frequency}} Limit
+                     ${{sponsorship.plans[0].limit}} {{sponsorship.plans[0].frequency }} Limit
                 </span>
 
                 <span ng-switch-when="false">
@@ -74,19 +74,13 @@
 
               <span ng-if='sponsorship.sponsee.status == "active"'>
 
-                <span ng-switch-when="true" class="fwb uc">
-
                   <button  class="button--expanded  button--primary"
 
                            ng-click="dashboard.openJoltModal(sponsorship)">
 
-                  Jolt
+                  Jolt </button>
 
-                  </button>
-
-                </span>
-
-              </span>
+              </span
 
               <span ng-if='sponsorship.sponsee.status == "invited" || sponsorship.sponsee.status == "onboarding"'>
 

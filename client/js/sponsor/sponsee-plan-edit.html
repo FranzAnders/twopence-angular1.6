@@ -46,12 +46,12 @@
         <div class="small-12 columns  text-center">
 
           <h5 class="fwb">Plan Status</h5>
-            {{sponseePlanEdit.sponseePlan.sponsee.status}}
+            {{sponseePlanEdit.sponseePlan.sponsee.status}} <br />
            <span ng-switch="sponseePlanEdit.sponseePlan.sponsee.status"
                 class="text-kilo">
 
             <span ng-switch-when="active">
-                 ${{sponseePlanEdit.information.plan.limit}} Monthly Limit
+                 ${{sponseePlanEdit.sponseePlan.plan.limit}} Monthly Limit
             </span>
 
             <span ng-switch-when="none">

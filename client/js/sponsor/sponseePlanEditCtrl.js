@@ -62,7 +62,7 @@ twopence.controller('sponseePlanEditCtrl', [
     //    checkName Method
     //
 
-    $scope.checkName = function(newLimit) {
+    vm.checkName = function(newLimit) {
 
       console.log("Yo my dog: " + newLimit);
 
@@ -74,7 +74,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
         console.log("Plan ID: " + vm.sponseePlan.id);
 
-        console.log("User ID: " + vm.sponseePlan.user.id);
+        // console.log("User ID: " + vm.sponseePlan.user.id);
 
         console.log(vm.sponseePlan.plan);
 

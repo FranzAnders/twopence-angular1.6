@@ -62,7 +62,10 @@ twopence.controller('dashboardCtrl', [
     Sponsorship.getAll().then(function(sponsorships) {
 
       console.log(sponsorships)
+      
       vm.sponsees = sponsorships.data;
+
+      console.log(vm.sponsees);
 
     });
 
