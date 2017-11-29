@@ -23,6 +23,8 @@ twopence.controller('sponseePlanEditCtrl', [
 
     vm.sponsee = $stateParams.sponsee;
 
+    vm.customAmount = ''
+
     console.log(planId);
 
     console.log(vm.sponsee);
@@ -274,5 +276,38 @@ twopence.controller('sponseePlanEditCtrl', [
       // })
 
     };
+
+      // Create plan
+
+      vm.createPlan = function() {
+
+        console.log(vm.customAmount);
+
+        console.log("Yo");
+
+        Sponsorship.newPlan()
+
+          .then(function(sucess){
+
+            console.log("Congrats on creating the plan");
+
+            console.log(success);
+
+          })
+
+          .catch(
+
+          function(error){
+
+            console.log("Something bad happened");
+
+            console.log(error.statusText);
+
+          }
+
+        )
+
+      }
+
   }
 ]);

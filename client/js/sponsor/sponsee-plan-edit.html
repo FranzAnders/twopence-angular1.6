@@ -17,6 +17,10 @@
 
     </div>
 
+<!--
+
+    // Possible removal of this section after git update
+
     <div class="small-12 columns  text-center">
 
         <h5 class="fwb">Monthly Limit</h5>
@@ -37,13 +41,22 @@
         </button>
 
       </div>
+ -->
 
-
-    <form ng-submit="">
-
-
+    <form ng-submit="sponseePlanEdit.createPlan()">
 
         <div class="small-12 columns  text-center">
+
+          <h5 class="fwb">Monthly Limit</h5>
+
+          <label>
+
+          Custom Amount
+
+          <input type="number" ng-model="sponseePlanEdit.customAmount" />
+
+          </label>
+
 
           <h5 class="fwb">Plan Status</h5>
             {{sponseePlanEdit.sponseePlan.sponsee.status}} <br />
@@ -65,9 +78,14 @@
           </span>
 
 
-          <button class="mt4  button--small  button--secondary  button--expanded" ng-click="sponseePlanEdit.pausePlan()">
+          <button class="mt4 mb2 button--small  button--secondary  button--expanded" ng-click="sponseePlanEdit.pausePlan()">
             Pause Plan
           </button>
+
+          <button type="submit" class="button--small  button--secondary  button--expanded">
+            Save New Plan
+          </button>
+
 
         </div>
 
