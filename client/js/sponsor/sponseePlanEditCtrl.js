@@ -285,9 +285,23 @@ twopence.controller('sponseePlanEditCtrl', [
 
         console.log("Yo");
 
-        Sponsorship.newPlan()
+        var sponseeInfo = {
+          "plan":{
+              "type":"match",
+              "frequency":"monthly",
+              "limit": vm.customAmount
+          }
+        }
 
-          .then(function(sucess){
+        console.log(sponseeInfo);
+
+        // We should grab the sponseeID and pass it to the call
+
+        var sponseeId = vm.sponseePlan.sponsee.ids
+
+        Sponsorship.newPlan(planId, sponseeInfo)
+
+          .then(function(success){
 
             console.log("Congrats on creating the plan");
 
