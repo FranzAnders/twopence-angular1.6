@@ -6,15 +6,15 @@
 
 
 twopence.controller('sponseePlanEditCtrl', [
+  '$scope',
   '$stateParams',
   '$state',
-  '$scope',
   '$timeout',
   '$fancyModal',
   'Sponsorship',
-  function($stateParams,
+  function($scope,
+    $stateParams,
     $state,
-    $scope,
     $timeout,
     $fancyModal,
     Sponsorship) {
@@ -27,7 +27,9 @@ twopence.controller('sponseePlanEditCtrl', [
 
     vm.customAmount = ''
 
-    vm.latestPlan = 'something';
+    vm.latestPlan = '';
+
+    // $scope.latestPlan = 'Yo, is I a plan?'
 
     console.log(planId);
 
@@ -76,7 +78,8 @@ twopence.controller('sponseePlanEditCtrl', [
     // Gets a plan via an id
     //
 
-    Sponsorship.get(planId).then(function(plan) {
+    vm.getPlan = function() {
+      Sponsorship.get(planId).then(function(plan) {
 
         vm.sponseePlan = plan;
 
@@ -84,10 +87,6 @@ twopence.controller('sponseePlanEditCtrl', [
         console.log('Testing plan');
         console.log(vm.sponseePlan.plans["0"].limit);
         console.log(vm.sponseePlan.sponsee.status);
-        // To-Do : Detect Active true
-        // Knows what to Send out if Active or Not
-
-
 
         var length = vm.sponseePlan.plans.length - 1;
 
@@ -107,7 +106,7 @@ twopence.controller('sponseePlanEditCtrl', [
         console.log('no bueno');
 
       });
-
+    }
     //
     //    checkName Method
     //
@@ -316,6 +315,8 @@ twopence.controller('sponseePlanEditCtrl', [
 
         var sponseeId = vm.sponseePlan.sponsee.ids
 
+        console.log(sponseeInfo);
+
         Sponsorship.newPlan(planId, sponseeInfo)
 
           .then(function(success){
@@ -323,9 +324,10 @@ twopence.controller('sponseePlanEditCtrl', [
             console.log("Congrats on creating the plan");
 
             console.log(success);
+
             $timeout(function(){
 
-              vm.latestPlan = sponseeInfo;
+              vm.getPlan()
 
               console.log(vm.latestPlan);
 
@@ -351,5 +353,6 @@ twopence.controller('sponseePlanEditCtrl', [
 
       }
 
+      vm.getPlan();
   }
 ]);
