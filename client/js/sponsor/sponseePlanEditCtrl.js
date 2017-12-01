@@ -6,13 +6,12 @@
 
 
 twopence.controller('sponseePlanEditCtrl', [
-  '$scope',
   '$stateParams',
   '$state',
   '$timeout',
   '$fancyModal',
   'Sponsorship',
-  function($scope,
+  function(
     $stateParams,
     $state,
     $timeout,
@@ -25,7 +24,19 @@ twopence.controller('sponseePlanEditCtrl', [
 
     vm.sponsee = $stateParams.sponsee;
 
-    vm.customAmount = ''
+    vm.customAmount = null
+
+    var numRound = function(number, precision) {
+
+      var factor = Math.pow(10, precision);
+
+      var tempNumber = number * factor;
+
+      var roundedTempNumber = Math.round(tempNumber);
+
+      return roundedTempNumber / factor;
+
+    }
 
     vm.latestPlan = '';
 
@@ -93,6 +104,12 @@ twopence.controller('sponseePlanEditCtrl', [
         console.log(length);
 
         vm.latestPlan = vm.sponseePlan.plans[length];
+
+        vm.customAmount = vm.latestPlan.limit;
+
+        vm.customAmount = numRound(vm.customAmount, 2);
+
+        console.log(vm.customAmount)
 
         console.log("LATEST PLAN")
 
@@ -332,10 +349,6 @@ twopence.controller('sponseePlanEditCtrl', [
               console.log(vm.latestPlan);
 
             });
-
-
-
-
 
           })
 

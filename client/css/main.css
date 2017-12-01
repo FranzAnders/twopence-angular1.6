@@ -13380,10 +13380,10 @@ footer .footer-social .footer-social-link:hover, footer .footer-social .footer-s
 }
 
 /*------------------------------------*\
-    #Forms 
+    #Forms
 \*------------------------------------*/
 /*------------------------------------*\
-    #Inputs 
+    #Inputs
 \*------------------------------------*/
 /* line 15, ../scss/layout/_forms.scss */
 input[type="text"],
@@ -13447,7 +13447,7 @@ input:-webkit-autofill {
 }
 
 /*------------------------------------*\
-    #Input Properties 
+    #Input Properties
 \*------------------------------------*/
 /* line 58, ../scss/layout/_forms.scss */
 input,
@@ -13479,7 +13479,7 @@ input.input--alt {
 }
 
 /*------------------------------------*\
-    #Input Groups  
+    #Input Groups
 \*------------------------------------*/
 /* line 101, ../scss/layout/_forms.scss */
 .input-group {
@@ -13546,7 +13546,7 @@ input.input--alt {
 }
 
 /*------------------------------------*\
-    #Input Sizes 
+    #Input Sizes
 \*------------------------------------*/
 /* line 190, ../scss/layout/_forms.scss */
 .input-group.input--small label {
@@ -13586,7 +13586,7 @@ input.input--alt {
 }
 
 /*------------------------------------*\
-    #Input With Button 
+    #Input With Button
 \*------------------------------------*/
 /* line 262, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
@@ -13605,7 +13605,7 @@ input.input--alt {
 }
 
 /*------------------------------------*\
-    #Labels 
+    #Labels
 \*------------------------------------*/
 /* line 291, ../scss/layout/_forms.scss */
 label {
@@ -13637,6 +13637,17 @@ select {
 /* line 349, ../scss/layout/_forms.scss */
 .formAreaDivider--left {
   border-left: 1px solid #818181;
+}
+
+/*------------------------------------*\
+    # Custom Inputs
+\*------------------------------------*/
+/* line 358, ../scss/layout/_forms.scss */
+.clearField {
+  background-color: transparent;
+  color: #FFF !important;
+  font-size: 3em !important;
+  text-align: center;
 }
 
 /*------------------------------------*\
