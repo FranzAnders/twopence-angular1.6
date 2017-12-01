@@ -9,11 +9,13 @@ twopence.controller('sponseePlanEditCtrl', [
   '$stateParams',
   '$state',
   '$scope',
+  '$timeout',
   '$fancyModal',
   'Sponsorship',
   function($stateParams,
     $state,
     $scope,
+    $timeout,
     $fancyModal,
     Sponsorship) {
 
@@ -24,6 +26,8 @@ twopence.controller('sponseePlanEditCtrl', [
     vm.sponsee = $stateParams.sponsee;
 
     vm.customAmount = ''
+
+    vm.latestPlan = 'something';
 
     console.log(planId);
 
@@ -82,6 +86,19 @@ twopence.controller('sponseePlanEditCtrl', [
         console.log(vm.sponseePlan.sponsee.status);
         // To-Do : Detect Active true
         // Knows what to Send out if Active or Not
+
+
+
+        var length = vm.sponseePlan.plans.length - 1;
+
+        console.log(length);
+
+        vm.latestPlan = vm.sponseePlan.plans[length];
+
+        console.log("LATEST PLAN")
+
+        console.log(vm.latestPlan);
+
 
       })
 
@@ -306,6 +323,17 @@ twopence.controller('sponseePlanEditCtrl', [
             console.log("Congrats on creating the plan");
 
             console.log(success);
+            $timeout(function(){
+
+              vm.latestPlan = sponseeInfo;
+
+              console.log(vm.latestPlan);
+
+            });
+
+
+
+
 
           })
 
@@ -315,7 +343,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
             console.log("Something bad happened");
 
-            console.log(error.statusText);
+            console.log(error);
 
           }
 

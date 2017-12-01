@@ -59,12 +59,14 @@
 
 
           <h5 class="fwb">Plan Status</h5>
+
+           ${{sponseePlanEdit.latestPlan.limit}} Monthly Limit
             {{sponseePlanEdit.sponseePlan.sponsee.status}} <br />
            <span ng-switch="sponseePlanEdit.sponseePlan.sponsee.status"
                 class="text-kilo">
 
             <span ng-switch-when="active">
-                 ${{sponseePlanEdit.sponseePlan.plan.limit}} Monthly Limit
+
             </span>
 
             <span ng-switch-when="none">
