@@ -1,6 +1,6 @@
 
 /*------------------------------------*\
-    #Forms 
+    #Forms
 \*------------------------------------*/
 
 
@@ -8,34 +8,34 @@
 
 
 /*------------------------------------*\
-    #Inputs 
+    #Inputs
 \*------------------------------------*/
 
 
-input[type="text"], 
-input[type="password"], 
-input[type="date"], 
-input[type="datetime"], 
-input[type="datetime-local"], 
-input[type="month"], 
-input[type="week"], 
-input[type="email"], 
-input[type="number"], 
-input[type="search"], 
-input[type="tel"], 
-input[type="time"], 
-input[type="url"], 
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
 input[type="color"], {
-    
+
     margin-bottom: rem-calc($base-magic-number);
-    margin-right: rem-calc($level2); 
-    @include type-setting(0); 
-    @include border-radius(0); 
-    @extend %prl2; 
+    margin-right: rem-calc($level2);
+    @include type-setting(0);
+    @include border-radius(0);
+    @extend %prl2;
 
     &:focus,
     &:active {
-        outline: 0; 
+        outline: 0;
     }
 
 }
@@ -51,28 +51,28 @@ input:-webkit-autofill {
 
 
 /*------------------------------------*\
-    #Input Properties 
+    #Input Properties
 \*------------------------------------*/
 
 
 input,
 textarea {
-    
+
   width: 100%;
-  border: none; 
-  color: $grey--med; 
+  border: none;
+  color: $grey--med;
   @include transition(all .4s ceaser($easeInOutQuint));
 
   &:active,
   &:focus{
 
-    color: $body-color; 
+    color: $body-color;
 
   }
 
 
   &.input--expanded {
-      width: 100%; 
+      width: 100%;
   }
 }
 
@@ -80,8 +80,8 @@ textarea {
 input {
 
     &.input--alt {
-        min-height: 3.2rem; 
-        border: 2px solid $primaryColor; 
+        min-height: 3.2rem;
+        border: 2px solid $primaryColor;
 
     }
 }
@@ -91,18 +91,18 @@ input {
 
 
 /*------------------------------------*\
-    #Input Groups  
+    #Input Groups
 \*------------------------------------*/
 
- 
- $formGroupSpeed: .4s; 
+
+ $formGroupSpeed: .4s;
 
 
 .input-group {
-    
-    width: 100%;    
+
+    width: 100%;
     margin-bottom: rem-calc($base-magic-number);
-    @extend %position-relative; 
+    @extend %position-relative;
 
     &:after {
         content: "";
@@ -110,45 +110,45 @@ input {
         height: rem-calc(3px);
         bottom: 0;
         z-index: 3;
-        left: 0; 
-        margin-right: auto; 
-        margin-left: auto; 
-        width: 0; 
-        @include transition(all $formGroupSpeed ceaser($easeInOutQuint)); 
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: 0;
+        @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
         @extend %position-absolute;
     }
 
     input{
 
-        z-index: 1; 
-        width: 100%; 
-        margin-bottom: 0; 
-        background-color: transparent; 
-        border-bottom: 3px solid $grey--med; 
+        z-index: 1;
+        width: 100%;
+        margin-bottom: 0;
+        background-color: transparent;
+        border-bottom: 3px solid $grey--med;
 
         &:active,
         &:focus {
 
-          color: $secondaryColor; 
+          color: $secondaryColor;
 
         }
 
     }
 
     label {
-        z-index: 0; 
+        z-index: 0;
         bottom: rem-calc($level1);
-        left: 0;  
-        margin-bottom: 0; 
-        @include transition(all $formGroupSpeed ceaser($easeInOutQuint)); 
-        @extend %position-absolute; 
+        left: 0;
+        margin-bottom: 0;
+        @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+        @extend %position-absolute;
     }
 
     &.is-focused,
     &.is-filled {
-        
+
         label {
-            
+
           @include transform(scale(.8) translateY(-28px));
 
         }
@@ -156,12 +156,12 @@ input {
     }
 
     &.is-focused {
-        
-        color: $primaryColor; 
+
+        color: $primaryColor;
 
         input {
 
-         color: $secondaryColor; 
+         color: $secondaryColor;
 
         }
 
@@ -179,35 +179,35 @@ input {
 
 
 /*------------------------------------*\
-    #Input Sizes 
+    #Input Sizes
 \*------------------------------------*/
 
 
 .input-group {
 
    &.input--small {
-    
+
     label {
 
-      @include type-setting(-1); 
+      @include type-setting(-1);
 
     }
 
     input {
-      
+
       padding-top: rem-calc(3px);
       padding-bottom: rem-calc(3px);
-      @include type-setting(-1); 
+      @include type-setting(-1);
 
     }
-  
-  } 
+
+  }
 
   &.input--medium {
 
     label {
 
-      @include type-setting(0); 
+      @include type-setting(0);
 
     }
 
@@ -215,7 +215,7 @@ input {
 
       padding-top: rem-calc($level1);
       padding-bottom: rem-calc($level1);
-      @include type-setting(0); 
+      @include type-setting(0);
 
     }
 
@@ -226,7 +226,7 @@ input {
 
     label {
 
-      @include type-setting(1); 
+      @include type-setting(1);
 
     }
 
@@ -234,7 +234,7 @@ input {
 
       padding-top: rem-calc($level2);
       padding-bottom: rem-calc($level2);
-      @include type-setting(1); 
+      @include type-setting(1);
 
     }
 
@@ -253,7 +253,7 @@ input {
 
 
 /*------------------------------------*\
-    #Input With Button 
+    #Input With Button
 \*------------------------------------*/
 
 
@@ -261,18 +261,18 @@ input {
 
   .inputWithButton-input {
 
-    width: 100%; 
+    width: 100%;
 
   }
 
   .inputWithButton-button {
 
-    width: 100%; 
+    width: 100%;
 
     @media #{$large-up} {
 
       width: 80%;
-      padding-left: rem-calc($level2); 
+      padding-left: rem-calc($level2);
 
     }
   }
@@ -284,13 +284,13 @@ input {
 
 
 /*------------------------------------*\
-    #Labels 
+    #Labels
 \*------------------------------------*/
 
 
 label {
-    margin-bottom: rem-calc(4px); 
-    @extend %display-block; 
+    margin-bottom: rem-calc(4px);
+    @extend %display-block;
 }
 
 
@@ -305,8 +305,8 @@ label {
 
 select {
 
-  width: 100%; 
-    
+  width: 100%;
+
 }
 
 
@@ -320,7 +320,7 @@ select {
 
 textarea {
 
-  @extend %ptrbl2; 
+  @extend %ptrbl2;
 
 }
 
@@ -334,7 +334,7 @@ textarea {
 
 .alert--warning {
 
-    color: #FF6F92; 
+    color: #FF6F92;
 }
 
 
@@ -348,6 +348,16 @@ textarea {
 
 .formAreaDivider--left {
 
-    border-left: 1px solid $grey--med; 
+    border-left: 1px solid $grey--med;
 }
 
+/*------------------------------------*\
+    # Custom Inputs
+\*------------------------------------*/
+
+.clearField {
+  background-color: transparent;
+  color: #FFF!important;
+  font-size: 3em!important;
+  text-align: center;
+}

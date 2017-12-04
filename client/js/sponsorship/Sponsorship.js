@@ -145,24 +145,38 @@ twopence.factory('Sponsorship', [
   // Patches the sponsorship specified for pausing or changing the plan details
   //
   sponsorship.patch = function(pSponsorshipId, pPlanId, load) {
+
     console.log("I'm patching my G");
+
     return $q(function(resolve, reject) {
+
       $http.patch(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
+
         headers: {
+
           'Authorization' : 'bearer ' + Auth.getToken(),
+
           'Content-type' : 'application/json'
+
         },
+
       }).then(function(res) {
+
         resolve(res.data);
+
       }).catch(function(err) {
+
         reject(err);
+
       });
+
     });
+
   };
 
 
   //
-  //  Gets all the contributions made for a sponsorship 
+  //  Gets all the contributions made for a sponsorship
   //
   sponsorship.getContributions = function(pSponsorshipId) {
 

@@ -6,6 +6,7 @@
 \*------------------------------------*/
 
 twopence.controller('sponseeCreationCtrl', [
+    '$scope',
     '$state',
     '$stateParams',
     '$timeout',
@@ -13,6 +14,7 @@ twopence.controller('sponseeCreationCtrl', [
     'Sponsee',
     'Sponsorship',
     function(
+        $scope,
         $state,
         $stateParams,
         $timeout,

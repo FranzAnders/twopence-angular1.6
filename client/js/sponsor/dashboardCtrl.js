@@ -26,11 +26,10 @@ twopence.controller('dashboardCtrl', [
 
     vm.sponsorInfo = {};
 
-
-
     //
     // Gets user's info
     //
+    
     User.getUserInfo().then(function(dashboard) {
 
       vm.sponsorInfo = dashboard;
@@ -62,7 +61,7 @@ twopence.controller('dashboardCtrl', [
     Sponsorship.getAll().then(function(sponsorships) {
 
       console.log(sponsorships)
-      
+
       vm.sponsees = sponsorships.data;
 
       console.log(vm.sponsees);

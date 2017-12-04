@@ -8,11 +8,14 @@
 twopence.controller('sponseePlanEditCtrl', [
   '$stateParams',
   '$state',
-  '$scope',
+  '$timeout',
+  '$fancyModal',
   'Sponsorship',
-  function($stateParams,
+  function(
+    $stateParams,
     $state,
-    $scope,
+    $timeout,
+    $fancyModal,
     Sponsorship) {
 
     var vm = this;
@@ -21,9 +24,56 @@ twopence.controller('sponseePlanEditCtrl', [
 
     vm.sponsee = $stateParams.sponsee;
 
+    vm.customAmount = null
+
+    var numRound = function(number, precision) {
+
+      var factor = Math.pow(10, precision);
+
+      var tempNumber = number * factor;
+
+      var roundedTempNumber = Math.round(tempNumber);
+
+      return roundedTempNumber / factor;
+
+    }
+
+    vm.latestPlan = '';
+
+    // $scope.latestPlan = 'Yo, is I a plan?'
+
     console.log(planId);
 
     console.log(vm.sponsee);
+
+
+    // Cacluating today's date to compare to Termination Date in Pause / Unpause
+
+    var today = new Date();
+
+    var dd = today.getDate();
+
+    var mm = today.getMonth() + 1; //January is 0!
+
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+
+      dd = '0' + dd
+
+    }
+
+    if (mm < 10) {
+
+      mm = '0' + mm
+
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    console.log("Today be: " + today);
+
+
     // To Do
     // Send Object To Sponsorship Edit Control via Route
     // Save into Sponsee
@@ -39,7 +89,8 @@ twopence.controller('sponseePlanEditCtrl', [
     // Gets a plan via an id
     //
 
-    Sponsorship.get(planId).then(function(plan) {
+    vm.getPlan = function() {
+      Sponsorship.get(planId).then(function(plan) {
 
         vm.sponseePlan = plan;
 
@@ -47,8 +98,23 @@ twopence.controller('sponseePlanEditCtrl', [
         console.log('Testing plan');
         console.log(vm.sponseePlan.plans["0"].limit);
         console.log(vm.sponseePlan.sponsee.status);
-        // To-Do : Detect Active true
-        // Knows what to Send out if Active or Not
+
+        var length = vm.sponseePlan.plans.length - 1;
+
+        console.log(length);
+
+        vm.latestPlan = vm.sponseePlan.plans[length];
+
+        vm.customAmount = vm.latestPlan.limit;
+
+        vm.customAmount = numRound(vm.customAmount, 2);
+
+        console.log(vm.customAmount)
+
+        console.log("LATEST PLAN")
+
+        console.log(vm.latestPlan);
+
 
       })
 
@@ -57,7 +123,7 @@ twopence.controller('sponseePlanEditCtrl', [
         console.log('no bueno');
 
       });
-
+    }
     //
     //    checkName Method
     //
@@ -84,7 +150,6 @@ twopence.controller('sponseePlanEditCtrl', [
         vm.sponseePlan.plan.limit = newLimit
 
         console.log("new limit: " + vm.sponseePlan.plan.limit);
-
 
         var limitLoad = {
 
@@ -135,29 +200,99 @@ twopence.controller('sponseePlanEditCtrl', [
 
       var payLoad = {
 
-          "pause": true
+        "pause": true
 
       };
 
-      if (vm.sponseePlan.plans[0].active === true) {
+      console.log(vm.sponseePlan.plans[0].schedules[0].date_effective);
 
-        console.log("Should be paused");
+      if (vm.sponseePlan.plans[0].schedules[0].date_termination === today) {
 
-        Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad);
+        console.log($fancyModal)
 
-      }
+        $fancyModal.open({
 
-      else {
+          template: '<div>Sponsorship is already paused. Please wait till tomorrow to see your paused plan.</div>',
 
-        console.log("Should be resumed");
+          themeClass: 'fancymodal--secondary',
 
-        payLoad.pause = false;
+          openingClass: 'is-open',
 
-        console.log("New Payload");
+          closingClass: 'is-closed'
 
-        console.log(payLoad);
+        })
 
-        Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad);
+      } else {
+
+        if (vm.sponseePlan.plans[0].active === true) {
+
+          console.log("Should be paused");
+
+          Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad).catch(
+
+            function(error) {
+
+              console.log("You got caught son")
+
+              console.log(error.data.message);
+
+              vm.errorMsg = error.data.message;
+
+              $fancyModal.open({
+
+                template: '<div>This plan cannot be paused.</div>',
+
+                themeClass: 'fancymodal--secondary',
+
+                openingClass: 'is-open',
+
+                closingClass: 'is-closed'
+
+              })
+
+
+
+            }
+
+          );
+
+        } else {
+
+          console.log("Should be resumed");
+
+          payLoad.pause = false;
+
+          console.log("New Payload");
+
+          console.log(payLoad);
+
+          Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad).catch(
+
+            function(error) {
+
+              console.log("Son. You was caught.");
+
+              console.log(error.data.message);
+
+
+              $fancyModal.open({
+
+                template: '<div>This plan cannot be unpaused.</div>',
+
+                themeClass: 'fancymodal--secondary',
+
+                openingClass: 'is-open',
+
+                closingClass: 'is-closed'
+
+              })
+
+
+            }
+
+          );
+
+        }
 
       }
 
@@ -174,5 +309,63 @@ twopence.controller('sponseePlanEditCtrl', [
       // })
 
     };
+
+      // Create plan
+
+      vm.createPlan = function() {
+
+        console.log(vm.customAmount);
+
+        console.log("Yo");
+
+        var sponseeInfo = {
+          "plan":{
+              "type":"match",
+              "frequency":"monthly",
+              "limit": vm.customAmount
+          }
+        }
+
+        console.log(sponseeInfo);
+
+        // We should grab the sponseeID and pass it to the call
+
+        var sponseeId = vm.sponseePlan.sponsee.ids
+
+        console.log(sponseeInfo);
+
+        Sponsorship.newPlan(planId, sponseeInfo)
+
+          .then(function(success){
+
+            console.log("Congrats on creating the plan");
+
+            console.log(success);
+
+            $timeout(function(){
+
+              vm.getPlan()
+
+              console.log(vm.latestPlan);
+
+            });
+
+          })
+
+          .catch(
+
+          function(error){
+
+            console.log("Something bad happened");
+
+            console.log(error);
+
+          }
+
+        )
+
+      }
+
+      vm.getPlan();
   }
 ]);

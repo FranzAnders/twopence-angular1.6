@@ -13,12 +13,12 @@
 
 
 // Normalize
-@import  "normalize.scss"; 
+@import  "normalize.scss";
 
 
-// Vendors 
+// Vendors
 @import
-    "vendor/animate", 
+    "vendor/animate",
     "vendor/foundationGlobals",
     "vendor/foundationFunctions",
     "vendor/foundationGrid",
@@ -28,7 +28,7 @@
 
 
 // Abstracts
-@import 
+@import
     'abstracts/animations',
     'abstracts/blockquotes',
     'abstracts/borderRadius',
@@ -42,7 +42,7 @@
 
 
 // Base
-@import 
+@import
   'base/animations',
   'base/icons',
   'base/noSvg',
@@ -51,11 +51,11 @@
   'base/typography',
   'base/utility',
   'base/flexbox',
-  'base/webfont'; 
-  
+  'base/webfont';
+
 
 // Layout
-@import 
+@import
  'layout/footer',
  'layout/forms',
  'layout/navs',
@@ -64,7 +64,7 @@
 
 
 // Components
-@import 
+@import
     'components/appHeader',
     'components/appNav',
     'components/blockquote',
@@ -75,10 +75,9 @@
     'components/lazyImages',
     'components/lists',
     'components/loaders',
+    'components/modals',
     'components/pageHeaders',
     'components/socialButtons';
 
 
 // Pages
-
-
