@@ -36,6 +36,7 @@ $secondary-app-nav-width: 30%;
 
     @media #{$large-up} {
       padding-top: rem-calc($level7 + $level7);
+      height: 100%;
 
     }
     
@@ -76,7 +77,6 @@ $secondary-app-nav-width: 30%;
     z-index: 40; 
     background-color: white;
     border-top: 1px solid $grey--light;  
-
     @include transition(all .4s ceaser($easeInOutQuint)); 
     @include transform(translateY(100vh));  
 
@@ -89,7 +89,6 @@ $secondary-app-nav-width: 30%;
       width: 100%;
       padding: rem-calc($level3); 
       text-align: center;
-
 
     }
 
