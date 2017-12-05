@@ -1,20 +1,32 @@
-  
-<main-nav-dir>
-  
-</main-nav-dir>
 
 
-<nav class="fixed  ptrbl4">
-  
-  <a class="button--medium  button--primary  button--expanded"
-     ui-sref="main.login">
+
+
+
+<header >
+  <nav class="mainNav grid  grid--center  grid--justifySpaceBetween" >
     
-    Sponsor Login
-  
-  </a>
-  
-</nav>
 
+<div class="mainNav-title">
+      <img src="assets/images/pickpocket-logo.png" alt="Pickpocket Logo" width="120">
+   
+</div>
+
+<ul clas="mainNav-menu mb0">
+  <li>
+    <a class="button  button--small  button--secondary mb0"
+       ui-sref="main.login">
+      
+      Sponsor Login
+    
+    </a>
+  </li>
+</ul>
+
+
+</nav>
+</header>
+    
 <div class="grid grid--flexDirectionColumn grid--stretch">
   <div ui-view="main" class="grid-cell">
     

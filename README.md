@@ -5,9 +5,8 @@ Front-end of the Pickpocket webapp
 - SCSS
 - HTML5
 - jQuery
-- Angular Foundation
-- Foundation SCSS Framework (Partial Use)
-- Angular 1.4.8
+- Angular 
+- Normalize
 - Grunt
 - Bower
 - Node
