@@ -17,41 +17,28 @@
 
     </div>
 
-    <div class="small-12 columns  text-center">
-
-        <h5 class="fwb">Monthly Limit</h5>
-
-        <span
-         class="text-kilo"
-         editable-text="sponseePlanEdit.sponseePlan.plan.limit"
-         e-form="sponseeDollars"
-         onaftersave="checkName($data)"
-         >
-         {{sponseePlanEdit.sponseePlan.plans["0"].limit ||  "$$$"}} </span>
-
-        <button
-           class="button--secondary  sbutton--micro  button--expanded"
-           ng-click="sponseeDollars.$show()"
-           ng-hide="sponseeDollars.$visible">
-          Change Limit
-        </button>
-
-      </div>
-
-
-    <form ng-submit="" editable-form>
-
-
+    <form ng-submit="sponseePlanEdit.createPlan()">
 
         <div class="small-12 columns  text-center">
 
+          <label>
+
+            <h5 class="fwb">Monthly Limit</h5>
+
+          <input class="clearField" type="number" step="0.01" ng-model="sponseePlanEdit.customAmount" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" />
+
+          </label>
+
+
           <h5 class="fwb">Plan Status</h5>
+
+           ${{sponseePlanEdit.latestPlan.limit}} Monthly Limit
             {{sponseePlanEdit.sponseePlan.sponsee.status}} <br />
            <span ng-switch="sponseePlanEdit.sponseePlan.sponsee.status"
                 class="text-kilo">
 
             <span ng-switch-when="active">
-                 ${{sponseePlanEdit.sponseePlan.plan.limit}} Monthly Limit
+
             </span>
 
             <span ng-switch-when="none">
@@ -65,9 +52,14 @@
           </span>
 
 
-          <button class="mt4  button--small  button--secondary  button--expanded" ng-click="sponseePlanEdit.pausePlan()">
+          <button class="mt4 mb2 button--small  button--secondary  button--expanded" ng-click="sponseePlanEdit.pausePlan()">
             Pause Plan
           </button>
+
+          <button type="submit" class="button--small  button--secondary  button--expanded">
+            Save New Plan
+          </button>
+
 
         </div>
 
