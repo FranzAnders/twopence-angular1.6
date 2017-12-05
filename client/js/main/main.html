@@ -2,32 +2,12 @@
 
 
 
+<main-nav-dir  ng-hide="$state.includes('main.kitchenSink')">
 
-<header >
-  <nav class="mainNav grid  grid--center  grid--justifySpaceBetween" >
+</main-nav-dir>
     
-
-<div class="mainNav-title">
-      <img src="assets/images/pickpocket-logo.png" alt="Pickpocket Logo" width="120">
-   
-</div>
-
-<ul clas="mainNav-menu mb0">
-  <li>
-    <a class="button  button--small  button--secondary mb0"
-       ui-sref="main.login">
-      
-      Sponsor Login
-    
-    </a>
-  </li>
-</ul>
-
-
-</nav>
-</header>
-    
-<div class="grid grid--flexDirectionColumn grid--stretch">
+<div class=" grid grid--flexDirectionColumn grid--stretch">
+  
   <div ui-view="main" class="grid-cell">
     
   </div>
@@ -36,4 +16,5 @@
   <footer-dir ng-hide="$state.includes('main.404')" class="grid-cell">
     
   </footer-dir>
+  
 </div>

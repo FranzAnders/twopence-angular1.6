@@ -1,7 +1,11 @@
 
 'use strict';
 
-whiskersSite.directive('mainNavDir', 
+/*------------------------------------*\
+   Main Navigation Directive
+\*------------------------------------*/
+
+twopence.directive('mainNavDir', 
       
         function() {
 

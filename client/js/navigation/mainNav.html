@@ -1,204 +1,31 @@
 
-<div>
-
-  <!-- Navigation for small devices--> 
-  <header>
-
-    <h1 class="headerLogo grid grid--center grid--justifyCenter   large-grid--justifyLeft">
-
-      <a ui-sref="main.home">
-      
-        <img src="assets/images/logo--whiskers--badge.svg" 
-         alt="Whiskers Logo" 
-         class="headerLogo-inner">
-
-      </a>
-
-    </h1>
-
-    <nav class="mainNav  mainNav--small  grid grid--center  grid--justifyRight">
-
-      <div class="mainNav-title">
+<div class="fixed-nav">
   
+  <header >
 
-      </div>
-
-      <div class="mainNav-menuToggleWrapper  grid  grid--center  grid--justifyCenter">
-        
-        <button class="cartToggle show-for-large-up">
-              
-              Cart  
-
-               <span class="cartToggle-total">0</span>
-        
-        </button>
-
-
-        <button class="mainNav-menuToggle  grid grid--center "
-             ng-class="{'is-menu-open' : mainNav.mainNavIsOpen, 'is-menu-closed' : !mainNav.mainNavIsOpen}"
-             ng-click="mainNav.toggleMainNav()">
-            
-            <span class="menuToggle-label text-mini  pr1 show-for-large-up">
-               Menu
-            </span>
-
-            <span class="menuToggle-icon">
-              
-            </span>
-        
-        </button>
-
-      </div>
-
-      <!-- Off canvas navigation for small devices--> 
-      <aside class="mainNav--offCanvas"
-           ng-class="{'is-open' : mainNav.mainNavIsOpen, 'is-closed' : !mainNav.mainNavIsOpen}">
+    <nav class="mainNav grid  grid--center  grid--justifySpaceBetween" >
       
-              
-         <div class="mainNav-container  grid 
-                    grid--flexDirectionColumn 
-                    grid--justifySpaceBetween">
+    <div class="mainNav-title">
+          <img src="assets/images/pickpocket-logo.png" alt="Pickpocket Logo" width="120">
+       
+    </div>
 
-            <div>
-
-              <ul class="mainNav-menu ">
-                
-                <li class="mainNav-menu-item  hide-for-large-up">
-                
-                    <a ui-sref="main.cart"
-                       ng-click="mainNav.toggleMainNav()"
-                       class="mainNav-menu-link   mainNav-animElem">Cart (0)</a>
-              
-                </li>
-                
-                <li class="mainNav-menu-item">
-                
-                  <a 
-                     ng-click="mainNav.openDrawer('shop')"
-                     class="mainNav-menu-link   mainNav-animElem">Shop</a>
-                  
-                  <ul class="mainNav-dropDown"
-                      ng-class="{'is-open' : mainNav.checkIfActive('shop')}">
-                    
-                    <li class="mainNav-dropDown-item">
-                      
-                      <a ui-sref="main.shopLaces({productType: 'laces'})"
-                         class="mainNav-dropDown-link">
-                        Laces
-                      </a>
-                      
-                    </li>
-
-                    <li class="mainNav-dropDown-item">
-                      <a ui-sref="main.shopBoxes"
-                         class="mainNav-dropDown-link">
-                         Box Sets
-                      </a>
-                    </li>
-
-                  </ul>
-
-                </li>
-                
-                <li class="mainNav-menu-item">
-                
-                  <a  ng-click="mainNav.openDrawer('lifestyle')"
-                     class="mainNav-menu-link   mainNav-animElem">Lifestyle</a>
-                  
-                  <ul class="mainNav-dropDown"
-                      ng-class="{'is-open' : mainNav.checkIfActive('lifestyle')}">
-                    
-                    <li class="mainNav-dropDown-item">
-                      
-                      <a ui-sref="main.lacingStyles"
-                         class="mainNav-dropDown-link">
-                        Lacing Guide
-                      </a>
-                    </li>
-
-                    <li class="mainNav-dropDown-item">
-                      <a 
-                         class="mainNav-dropDown-link">
-                        Ethos
-                      </a>
-                    </li>
-
-                  </ul>    
-
-                </li>
-              
-                <li class="mainNav-menu-item">
-                
-                  <a ui-sref="main.contact"
-                       ng-click="mainNav.openDrawer('support')"
-                       class="mainNav-menu-link   mainNav-animElem"
-                       >Support</a>
-
-                  <ul class="mainNav-dropDown"
-                      ng-class="{'is-open' : mainNav.checkIfActive('support')}">
-                    
-                    
-                    <li class="mainNav-dropDown-item">
-                      
-                      <a ui-sref="main.lacingGuide"
-                         class="mainNav-dropDown-link">
-                        FAQ
-                      </a>
-                    </li>
-
-                    <li class="mainNav-dropDown-item">
-                      <a ui-sref="main.shopLaces({productType: 'laces'})"
-                         class="mainNav-dropDown-link">
-                        Sales
-                      </a>
-                    </li>
-                  </ul>  
-
-                </li>
-            
-              </ul>
-              
+    <ul clas="mainNav-menu mb0">
       
-              <ul class="[ grid  grid--center  grid--justifyStart ]  [ mainNav-social mainNav-animElem ]">
-                                              
-                 <li>
-              
-                   <a href="https://www.instagram.com/humanaut.is/" target="_blank" class="mainNav-social-link   icon-instagram icon--medium  mr1">
-              
-                   </a> 
-              
-                 </li>
-                            
-                 <li>
-              
-                   <a href="https://twitter.com/humanaut?lang=en" target="_blank" class="mainNav-social-link   icon-twitter icon--medium  ml1">
-              
-                   </a>
-                            
-                 </li>
-                
-               </ul>
+      <li>
+        <a class="button  button--small  button--secondary mb0"
+           ui-sref="main.login">
+          
+          Sponsor Login
+        
+        </a>
+      </li>
+      
+    </ul>
 
-            </div>
 
-            <div class="mainNav-tagline">
-              
-              <div class="mainNav-tagline-icon">
-                <img src="assets/images/whiskIcon--iceCream_red.svg" alt="">
-              </div>
-
-              Tastefully Wrong.
-
-            </div>
-           
-         </div>
-
-      </aside>
-      <!--End off canvas navigation--> 
-  
     </nav>
-  
+
   </header>
-  <!--End small devices navigation--> 
 
 </div>
