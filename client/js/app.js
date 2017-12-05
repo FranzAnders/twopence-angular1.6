@@ -42,7 +42,9 @@ twopence.config(
         .state('main', { // we have a main state for persistent content
             abstract: true,
             url: "/",
-            templateUrl: "js/main/main.html"
+            templateUrl: "js/main/main.html",
+            controller: "mainCtrl",
+            controllerAs: "main"
 
         })
         .state('main.home', {
@@ -371,7 +373,7 @@ twopence.config(
           }
 
         })
-        .state('main.sink', {
+        .state('main.kitchenSink', {
           url: "kitchen-sink/",
           views: {
 
