@@ -3,6 +3,9 @@
     #App Nav
 \*------------------------------------*/
 
+$secondary-app-nav-width: 30%; 
+
+
 .appNav {
   background-color: white;
   border-top: 1px solid $grey--light;  
@@ -14,7 +17,6 @@
   right: 0;  
 
   @media #{$large-up} {
-
     height: 100vh; 
     width: 10%; 
 
@@ -27,11 +29,15 @@
     padding-bottom: rem-calc($level1);
 
     @media #{$large-up} {
-      
-
       padding-top: rem-calc($level7 + $level7);
 
     }
+    
+    &.secondary-app-nav-is-open {
+      @include transform(translateX(-$secondary-app-nav-width)); 
+  
+    }
+
 
     .appNav-menu-item {
       
@@ -43,11 +49,28 @@
       @include type-setting(-2);
 
       @media #{$large-up} {
-
         margin-bottom: rem-calc($level4); 
         @include type-setting(-1);
 
       }
+
+    }
+
+  }
+
+  .appNav-secondaryMenu {
+    position: fixed; 
+    height: 100vh; 
+    background-color: #FFF;
+    width: $secondary-app-nav-width; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    @include transition(all .4s ceaser($easeInOutQuint)); 
+    @include transform(translateX(100vw));  
+
+    &.is-active {
+      @include transform(translateX(0)); 
 
     }
 
@@ -79,13 +102,11 @@
     &.is-active {
       
       .menu-link-icon {
-
         fill: $tertiaryColor; 
 
       }  
 
       .menu-link-label {
-
         color: $tertiaryColor; 
       }
     
@@ -111,7 +132,6 @@
     }
 
     @media #{$large-up} {
-
       margin-right: rem-calc($level2); 
 
     }
@@ -120,6 +140,26 @@
 
   .menu-link-label {
     color: $grey--med; 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Off Canvas App Nav Styles
+\*------------------------------------*/
+
+
+.app-nav-wrapper {
+  @include transition(all .4s ceaser($easeInOutCubic)); 
+
+
+  &.app-nav-is-open {
+    @include transform(translateX(-$secondary-app-nav-width)); 
 
   }
 

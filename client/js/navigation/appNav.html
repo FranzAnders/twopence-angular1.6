@@ -1,8 +1,10 @@
+
   <nav class="appNav">
   
     <div class="appNav-inner">
   
-      <ul class="appNav-menu  grid  grid--center  grid--justifySpaceBetween grid--1of3 large-grid--flexDirectionColumn ">
+      <ul class="appNav-menu  grid  grid--center  grid--justifySpaceBetween grid--1of3 large-grid--flexDirectionColumn "
+        ng-class="{'secondary-app-nav-is-open' : nav.secondaryMenuActive}">
   
         <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter">
           
@@ -43,7 +45,7 @@
         <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter">
   
           <button class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center" 
-             ng-click="nav.showSecondaryMenu()">
+             ng-click="nav.toggleSecondaryMenu()">
                 
               <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="menu-link-icon" viewBox="0 0 17.7 11.4">
                 <title>
@@ -74,7 +76,12 @@
           </button>
   
         </li>
-  <!-- 
+
+      </ul>
+
+      <ul class="appNav-secondaryMenu"
+          ng-class="{'is-active' : nav.secondaryMenuActive}">
+        
         <li class="appNav-menu-item">
            <a class="appNav-menu-link"  ui-sref="sponsor.settings">Settings</a>
         </li>
@@ -85,10 +92,10 @@
               
         <li class="appNav-menu-item">
            <a class="appNav-menu-link"  ui-sref="sponsor.logout">Logout</a>
-        </li> -->
-          
+        </li>
+
       </ul>
-  
+
     </div>
   
   </nav>
