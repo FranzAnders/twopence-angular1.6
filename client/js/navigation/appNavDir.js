@@ -53,17 +53,17 @@ twopence.directive('appNavDir', function() {
     templateUrl: "js/navigation/appNav.html",
     link: function(scope, attrs, element) {
 
-      scope.$on('app-nav-is-open', function(event, data) {
+      // scope.$on('app-nav-is-open', function(event, data) {
 
-        $('.app-nav-wrapper').addClass('app-nav-is-open');
+      //   $('.app-nav-wrapper').addClass('app-nav-is-open');
         
-      });
+      // });
 
-      scope.$on('app-nav-is-closed', function(event, data) {
+      // scope.$on('app-nav-is-closed', function(event, data) {
 
-        $('.app-nav-wrapper').removeClass('app-nav-is-open');
+      //   $('.app-nav-wrapper').removeClass('app-nav-is-open');
 
-      });
+      // });
 
 
     }

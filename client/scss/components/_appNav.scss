@@ -7,8 +7,6 @@ $secondary-app-nav-width: 30%;
 
 
 .appNav {
-  background-color: white;
-  border-top: 1px solid $grey--light;  
   position: fixed; 
   width: 100%; 
   bottom: 0; 
@@ -27,6 +25,14 @@ $secondary-app-nav-width: 30%;
     margin-bottom: 0; 
     padding-top: rem-calc($level1);
     padding-bottom: rem-calc($level1);
+    z-index: 51;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 49; 
+    background-color: white;
+    border-top: 1px solid $grey--light;  
 
     @media #{$large-up} {
       padding-top: rem-calc($level7 + $level7);
@@ -34,13 +40,14 @@ $secondary-app-nav-width: 30%;
     }
     
     &.secondary-app-nav-is-open {
-      @include transform(translateX(-$secondary-app-nav-width)); 
   
     }
 
 
     .appNav-menu-item {
-      
+      padding: rem-calc($level1);
+      width: 100%; 
+      text-align: center; 
 
     }
 
@@ -59,20 +66,37 @@ $secondary-app-nav-width: 30%;
   }
 
   .appNav-secondaryMenu {
-    position: fixed; 
-    height: 100vh; 
+    position: absolute; 
+    height: 40vh; 
     background-color: #FFF;
-    width: $secondary-app-nav-width; 
-    top: 0; 
+    width: 100%; 
     right: 0; 
-    bottom: 0; 
+    left: 0; 
+    bottom: 27px; 
+    z-index: 40; 
+    background-color: white;
+    border-top: 1px solid $grey--light;  
+
     @include transition(all .4s ceaser($easeInOutQuint)); 
-    @include transform(translateX(100vw));  
+    @include transform(translateY(100vh));  
 
     &.is-active {
       @include transform(translateX(0)); 
 
     }
+
+    .appNav-menu-item {
+      width: 100%;
+      padding: rem-calc($level3); 
+      text-align: center;
+
+
+    }
+
+    .appNav-menu-link {
+        color: $grey--med; 
+
+    } 
 
   }
 
@@ -140,6 +164,19 @@ $secondary-app-nav-width: 30%;
 
   .menu-link-label {
     color: $grey--med; 
+
+  }
+
+
+  .appNav-overlay {
+    background-color: $translucentBlack; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    left: 0; 
+    width: 100vh; 
+    height: 100vw; 
 
   }
 
