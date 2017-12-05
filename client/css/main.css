@@ -15249,32 +15249,32 @@ select {
 @media only screen and (min-width: 64.0625em) {
   /* line 42, ../scss/layout/_sections.scss */
   .section--main {
-    padding-left: 10%;
+    padding-left: 12%;
     min-height: 100vh;
   }
 }
 
-/* line 55, ../scss/layout/_sections.scss */
+/* line 54, ../scss/layout/_sections.scss */
 .section--padded {
   padding-bottom: 3rem;
   padding-top: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 55, ../scss/layout/_sections.scss */
+  /* line 54, ../scss/layout/_sections.scss */
   .section--padded {
     padding-bottom: 3.75rem;
     padding-top: 3.75rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 55, ../scss/layout/_sections.scss */
+  /* line 54, ../scss/layout/_sections.scss */
   .section--padded {
     padding-bottom: 7.5rem;
     padding-top: 7.5rem;
   }
 }
 
-/* line 74, ../scss/layout/_sections.scss */
+/* line 73, ../scss/layout/_sections.scss */
 .section--shadowed {
   z-index: 6;
   -moz-box-shadow: 0 0 26px rgba(0, 0, 0, 0.2);
@@ -15282,7 +15282,7 @@ select {
   box-shadow: 0 0 26px rgba(0, 0, 0, 0.2);
 }
 
-/* line 81, ../scss/layout/_sections.scss */
+/* line 80, ../scss/layout/_sections.scss */
 .section--bordered {
   border-bottom: 8px solid black;
 }
@@ -15290,39 +15290,39 @@ select {
 /*------------------------------------*\
     #Section Types 
 \*------------------------------------*/
-/* line 96, ../scss/layout/_sections.scss */
+/* line 95, ../scss/layout/_sections.scss */
 .section--primary {
   background-color: #fff;
 }
-/* line 99, ../scss/layout/_sections.scss */
+/* line 98, ../scss/layout/_sections.scss */
 .section--primary .section-text {
   color: #818181;
 }
 
-/* line 106, ../scss/layout/_sections.scss */
+/* line 105, ../scss/layout/_sections.scss */
 .section--secondary {
   background-color: #333031;
 }
-/* line 110, ../scss/layout/_sections.scss */
+/* line 109, ../scss/layout/_sections.scss */
 .section--secondary .section-text {
   color: #fff;
 }
 
-/* line 119, ../scss/layout/_sections.scss */
+/* line 118, ../scss/layout/_sections.scss */
 .section--alt {
   overflow: hidden;
   width: 100%;
   color: #fff;
 }
-/* line 130, ../scss/layout/_sections.scss */
+/* line 129, ../scss/layout/_sections.scss */
 .section--alt .section-title {
   color: #fff;
 }
-/* line 134, ../scss/layout/_sections.scss */
+/* line 133, ../scss/layout/_sections.scss */
 .section--alt .section-text {
   color: #fff;
 }
-/* line 138, ../scss/layout/_sections.scss */
+/* line 137, ../scss/layout/_sections.scss */
 .section--alt .section-content {
   left: 0;
   right: 0;
@@ -15335,12 +15335,12 @@ select {
   background-position: center;
 }
 
-/* line 153, ../scss/layout/_sections.scss */
+/* line 152, ../scss/layout/_sections.scss */
 .section--highlighted {
   background-color: #f4f5f6;
 }
 
-/* line 159, ../scss/layout/_sections.scss */
+/* line 158, ../scss/layout/_sections.scss */
 .section--photoDivider {
   height: 31.25rem;
 }
@@ -15383,7 +15383,7 @@ select {
   /* line 9, ../scss/components/_appNav.scss */
   .appNav {
     height: 100vh;
-    width: 10%;
+    width: 12%;
   }
 }
 /* line 23, ../scss/components/_appNav.scss */
@@ -15406,29 +15406,32 @@ select {
   .appNav .appNav-menu {
     padding-top: 6rem;
     height: 100%;
+    -moz-box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.1) inset;
   }
 }
-/* line 48, ../scss/components/_appNav.scss */
+/* line 49, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-item {
   padding: 0.375rem;
   width: 100%;
   text-align: center;
 }
-/* line 55, ../scss/components/_appNav.scss */
+/* line 56, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
   color: #818181;
   font-size: 0.6rem;
   line-height: 1.5;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 55, ../scss/components/_appNav.scss */
+  /* line 56, ../scss/components/_appNav.scss */
   .appNav .appNav-menu .appNav-menu-link {
     margin-bottom: 1.5rem;
     font-size: 0.8rem;
     line-height: 1.5;
   }
 }
-/* line 69, ../scss/components/_appNav.scss */
+/* line 70, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu {
   position: absolute;
   height: 40vh;
@@ -15449,78 +15452,78 @@ select {
   -webkit-transform: translateY(100vh);
   transform: translateY(100vh);
 }
-/* line 83, ../scss/components/_appNav.scss */
+/* line 84, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu.is-active {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 88, ../scss/components/_appNav.scss */
+/* line 89, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-item {
   width: 100%;
   padding: 1.125rem;
   text-align: center;
 }
-/* line 95, ../scss/components/_appNav.scss */
+/* line 96, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-link {
   color: #818181;
 }
 
-/* line 106, ../scss/components/_appNav.scss */
+/* line 107, ../scss/components/_appNav.scss */
 .appNav-menu-link {
   background-color: transparent;
   margin-bottom: 0;
   text-transform: none;
   opacity: .7;
 }
-/* line 113, ../scss/components/_appNav.scss */
+/* line 114, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover, .appNav-menu-link:focus, .appNav-menu-link:active {
   color: #333031;
 }
-/* line 118, ../scss/components/_appNav.scss */
+/* line 119, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover .menu-link-icon, .appNav-menu-link:focus .menu-link-icon, .appNav-menu-link:active .menu-link-icon {
   fill: #333031;
 }
-/* line 127, ../scss/components/_appNav.scss */
+/* line 128, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active .menu-link-icon {
   fill: #238EB2;
 }
-/* line 132, ../scss/components/_appNav.scss */
+/* line 133, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active .menu-link-label {
   color: #238EB2;
 }
-/* line 138, ../scss/components/_appNav.scss */
+/* line 139, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon {
   fill: #818181;
   width: 1.875rem;
   margin-bottom: 0.125rem;
 }
-/* line 143, ../scss/components/_appNav.scss */
+/* line 144, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon.home {
   width: 1.375rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 138, ../scss/components/_appNav.scss */
+  /* line 139, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon {
     width: 2.25rem;
   }
-  /* line 151, ../scss/components/_appNav.scss */
+  /* line 152, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon.home {
     width: 1.75rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 138, ../scss/components/_appNav.scss */
+  /* line 139, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon {
     margin-right: 0.75rem;
   }
 }
-/* line 164, ../scss/components/_appNav.scss */
+/* line 165, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-label {
   color: #818181;
 }
-/* line 170, ../scss/components/_appNav.scss */
+/* line 171, ../scss/components/_appNav.scss */
 .appNav-menu-link .appNav-overlay {
   background-color: rgba(14, 14, 14, 0.9);
   position: absolute;
@@ -15535,14 +15538,14 @@ select {
 /*------------------------------------*\
     #Off Canvas App Nav Styles
 \*------------------------------------*/
-/* line 193, ../scss/components/_appNav.scss */
+/* line 194, ../scss/components/_appNav.scss */
 .app-nav-wrapper {
   -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 197, ../scss/components/_appNav.scss */
+/* line 198, ../scss/components/_appNav.scss */
 .app-nav-wrapper.app-nav-is-open {
   -moz-transform: translateX(-30%);
   -ms-transform: translateX(-30%);
