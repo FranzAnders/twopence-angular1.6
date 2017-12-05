@@ -4,42 +4,38 @@
     #Hero Section Component
 \*------------------------------------*/
 
-
-@include keyframes(gradFade) {
-
-    0%, 100% {
-
-        background-position: 0 50%
-
-    }
-
-    50% {
-
-        background-position: 100% 50%
-
-    }
-
-}
-
-
 .heroHeader {
-  
   position: relative; 
+  overflow: hidden; 
 
   .heroHeader-background {
-
     width: 100vw; 
+    height: 100vh;
+    padding-top: rem-calc($level7); 
+    padding-bottom: rem-calc($level7); 
+    @include primaryGradient(); 
+
+    @media #{$medium-up} {
+      height: 85vh;
+
+    }
+
+    @media #{$large-up} {
+      height: 90vh; 
+      
+    }
     
+
   }
 
   .heroHeader-content {
-  
     position: absolute; 
     top: 0; 
     right: 0; 
     bottom :0; 
     left: 0; 
     z-index: 1; 
+    color: #fff; 
 
   }
 
