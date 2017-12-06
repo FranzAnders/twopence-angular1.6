@@ -1,0 +1,91 @@
+
+<div class="card  card--sponsorship">
+
+<div class="card-header">
+
+  <h1 class="sponsorship-name"
+      ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name">
+  </h1>
+  
+  <div class="sponsorship-plan">
+
+    Plan Status:
+  
+    <span ng-switch="sponsorship.currentPlan.active"
+          ng-if='sponsorship.sponsorshipInfo.sponsee.status === "active"'>
+  
+      <span ng-switch-when="true" class="tag tag--active">
+        Active
+      </span>
+  
+      <span ng-switch-when="false" class="tag  tag--inactive">
+          Paused<
+      </span>
+  
+    </span>
+  
+    <span ng-if='sponsorship.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
+        <span class="tag  tag--warning">Invite Pending</span>
+    </span>
+  
+  </div>
+
+</div>
+
+<div class="card-content  text-center">
+
+  <h2 class="statLabel">
+    Contributions To Date
+  </h2>
+
+  <a  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" class="stat sponsorship-contributions">
+    <span class="">$</span>{{sponsorship.sponsorshipInfo.contributions_to_date}}
+  </a>
+
+</div>
+
+<div class="card-actions  grid grid--1of2">
+
+  
+  
+
+<div class="grid-cell">
+  <button  class="button--expanded  card-action"
+           ng-click="dashboard.openJoltModal(sponsorship)">
+  
+  Boost
+  
+  </button>
+</div>
+
+  
+<!--     <span ng-if='sponsorship.sponsorshipInfo.sponsee.status == "invited" || sponsorship.sponsorshipInfo.sponsee.status == "onboarding"'>
+  
+      <button  class="button--expanded  button--primary">
+  
+      <span class="text-micro"
+  
+            ng-click="dashboard.sendReminder(sponsorship.sponsorshipInfo.sponsee.id)">
+  
+            Send Reminder
+  
+      </span>
+  
+      </button>
+  
+    </span>
+  
+    </div>
+   -->
+    <div class="grid-cell">
+  
+      <button  class="button--expanded  card-action"
+                ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})">
+        Progress
+      </button>
+  
+    </div>
+  
+  </div>
+
+</div>

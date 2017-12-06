@@ -35,7 +35,6 @@
     'abstracts/buttons',
     'abstracts/colors',
     'abstracts/icons',
-    'abstracts/panels',
     'abstracts/theme',
     'abstracts/typography',
     'abstracts/utility';
@@ -77,7 +76,13 @@
     'components/loaders',
     'components/modals',
     'components/pageHeaders',
-    'components/socialButtons';
+    'components/stats',
+    'components/socialButtons',
+    'components/tags';
+
 
 
 // Pages
+@import
+    'pages/sponsorView';
+

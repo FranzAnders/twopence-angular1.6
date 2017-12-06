@@ -1,0 +1,20 @@
+
+
+/*------------------------------------*\
+    #Stats
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+    #Stat Labels
+\*------------------------------------*/
+
+.statLabel {
+    color: $secondaryColor; 
+    letter-spacing: 1px; 
+    margin-bottom: 0; 
+    @extend %uc; 
+    @include type-setting(-2); 
+
+}

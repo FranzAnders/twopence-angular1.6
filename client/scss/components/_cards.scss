@@ -6,28 +6,151 @@
 
 .card {
 
-  margin-bottom: rem-calc(12px);
+  margin-bottom: rem-calc($level3);
   background-color: #FFF; 
   color: $body-color; 
-  @include box-shadow(0 0 1px rgba(0,0,0, .2)); 
+  @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
 
-  @media #{$large-up} {
+  .card-header {
+    border-bottom: $grey--light 1px solid; 
+    padding: rem-calc($level2); 
+    width: 100%;
 
-    padding: rem-calc($level3); 
-    
+  }
+  
+  .card-content {
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+
+  }
+
+  .card-actions {
+    border-top: $grey--light 1px solid; 
+    width: 100%;
+  
+    .card-action {
+      color: $secondaryColor; 
+      background-color: transparent; 
+      margin-bottom: 0; 
+      border-left: $grey--light 1px solid; 
+      padding-top: rem-calc($level3);
+      padding-bottom: rem-calc($level3);
+      @include border-radius(0); 
+
+      &:hover,
+      &:focus {
+        background-color: black; 
+        color: #fff; 
+
+      }
+
+    }
+
   }
 
 }
 
 .cardList {
+
+  @media #{$medium-up} {
   
-  .card {
+    li:nth-child(odd) {
 
-    @media #{$medium-up} {
-
-      margin-right: rem-calc(12px); 
+      padding-right: rem-calc($level3); 
 
     }
+
+  }
+
+  @media #{$large-up} {
+    
+    li {
+      padding-right: rem-calc($level3);
+
+    }
+
+    li:nth-child(3n+3) {
+      padding-right: 0; 
+
+    }
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #A sponsorship card 
+\*------------------------------------*/
+
+
+.card--sponsorship {
+  @include transition(all .2s ceaser($easeInOutCubic)); 
+
+  &:hover, 
+  &:focus {
+   @include box-shadow(0 1px 20px rgba(30,30,30, .1));
+   @include transform(translateY(-2px)); 
+
+  }
+
+  .card-header {
+  
+    .sponsorship-name {
+      margin-bottom: rem-calc($level2); 
+      @include type-setting(1);
+
+    }
+
+    .sponsorship-plan {
+      margin-bottom: rem-calc($level1); 
+      @extend %uc; 
+      @include type-setting(-2);
+
+    }
+
+  }
+
+  .card-content {
+
+    .sponsorship-contributions {
+      color: $primaryColor; 
+      margin-bottom: 0; 
+      @extend %fwb; 
+      @include type-setting(6); 
+
+      &:hover, 
+      &:focus {
+        color: $tertiaryColor; 
+        
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Am inactive sponsorship Card
+\*------------------------------------*/
+
+.card--sponsorship.is-inactive {
+  
+  .card-content {
+    opacity: .5; 
+    
+  }
+
+  .card-actions {
+    opacity: .5; 
+
   }
 
 }

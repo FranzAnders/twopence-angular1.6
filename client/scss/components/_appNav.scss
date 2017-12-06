@@ -37,7 +37,7 @@ $secondary-app-nav-width: 30%;
     @media #{$large-up} {
       padding-top: rem-calc($level7 + $level7);
       height: 100%;
-      @include box-shadow(-4px 4px 4px rgba(0,0,0, .1) inset);
+      //@include box-shadow(-4px 4px 4px rgba(0,0,0, .1) inset);
 
     }
     

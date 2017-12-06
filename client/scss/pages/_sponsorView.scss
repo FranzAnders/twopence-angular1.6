@@ -1,0 +1,28 @@
+
+
+/*------------------------------------*\
+    #Styles Specific to Sponsor View 
+\*------------------------------------*/
+
+
+.sponsorViewContainer {
+  padding-top: rem-calc($level6);
+
+  @media #{$large-up} {
+    padding-left: 12%; 
+    min-height: 100vh; 
+
+  }
+
+}
+
+
+.sponsorView-inner {
+
+  @media #{$large-up} {
+    padding-left: rem-calc($level2);
+    padding-right: rem-calc($level2);
+
+  }
+
+}
