@@ -12613,7 +12613,7 @@ input[type="color"] {
 \*------------------------------------*/
 /* line 63, ../scss/base/_theme.scss */
 .brandColor--greyLight {
-  background-color: #f4f5f6;
+  background-color: #F7F7F7;
 }
 
 /* line 70, ../scss/base/_theme.scss */
@@ -15337,7 +15337,7 @@ select {
 
 /* line 152, ../scss/layout/_sections.scss */
 .section--highlighted {
-  background-color: #f4f5f6;
+  background-color: #F7F7F7;
 }
 
 /* line 158, ../scss/layout/_sections.scss */
@@ -15363,7 +15363,8 @@ select {
 @media only screen and (min-width: 64.0625em) {
   /* line 7, ../scss/components/_appHeader.scss */
   .appHeader {
-    width: 10%;
+    width: 12%;
+    height: 6.25rem;
   }
 }
 
@@ -15399,7 +15400,7 @@ select {
   bottom: 0;
   z-index: 49;
   background-color: white;
-  border-top: 1px solid #f4f5f6;
+  border-top: 1px solid #F7F7F7;
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 23, ../scss/components/_appNav.scss */
@@ -15442,7 +15443,7 @@ select {
   bottom: 27px;
   z-index: 40;
   background-color: white;
-  border-top: 1px solid #f4f5f6;
+  border-top: 1px solid #F7F7F7;
   -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
