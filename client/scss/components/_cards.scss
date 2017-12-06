@@ -5,7 +5,6 @@
 \*------------------------------------*/
 
 .card {
-
   margin-bottom: rem-calc($level3);
   background-color: #FFF; 
   color: $body-color; 
@@ -30,17 +29,20 @@
   
     .card-action {
       color: $secondaryColor; 
+      fill: $secondaryColor; 
       background-color: transparent; 
       margin-bottom: 0; 
       border-left: $grey--light 1px solid; 
       padding-top: rem-calc($level3);
       padding-bottom: rem-calc($level3);
       @include border-radius(0); 
+      @include type-setting(-1); 
 
       &:hover,
       &:focus {
-        background-color: black; 
         color: #fff; 
+        fill: #fff; 
+        background-color: black; 
 
       }
 
@@ -105,9 +107,8 @@
     }
 
     .sponsorship-plan {
-      margin-bottom: rem-calc($level1); 
-      @extend %uc; 
-      @include type-setting(-2);
+      margin-bottom: 0;  
+      @include type-setting(-1);
 
     }
 
@@ -124,7 +125,7 @@
       &:hover, 
       &:focus {
         color: $tertiaryColor; 
-        
+
       }
 
     }

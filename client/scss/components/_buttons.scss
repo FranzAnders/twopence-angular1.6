@@ -133,6 +133,28 @@ button,
 }
 
 
+.button--withIcon {
+
+  .button-icon, 
+  .button-label {
+    display: inline-block; 
+
+  }
+
+  .button-icon {
+    width: rem-calc(24px); 
+    margin-right: rem-calc($level1); 
+
+  }
+
+  .button-label {
+    position: relative; 
+    bottom: -2px; 
+
+  }
+}
+
+
 
 
 
