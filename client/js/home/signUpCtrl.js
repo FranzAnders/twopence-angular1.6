@@ -38,7 +38,9 @@ twopence.controller('signUpCtrl', [
     // We store the user info and user info as objects to then
     // inject into the requests
     //
-    vm.userInfo = {};
+    vm.userInfo = {
+      'sms_preferred' : true
+    };
 
 
 
@@ -46,11 +48,13 @@ twopence.controller('signUpCtrl', [
     // Checks if there is already a token in session from users
     //
     if (Auth.getToken()) {
-
       $state.go('main.signUp.identity');
-
     } else {
+      $state.go('main.signUp.account');
+    }
 
+
+    if(!vm.userInfo.email) {
       $state.go('main.signUp.account');
     }
 
@@ -60,23 +64,15 @@ twopence.controller('signUpCtrl', [
     // Submits the first half of the user info needed to create one
     //
     vm.submitAccountInfo = function(form) {
-       
       if (form.$valid) {
         delete vm.userInfo.confirmPassword;
         vm.loadingScreen = true; 
-
         $timeout(function() {
-          
           $state.go('main.signUp.identity');
           vm.loadingScreen = false; 
-
-        }, 1200); 
-
-
+        }, 800); 
       } else {
-        console.log('not yet boy');
-        console.log(form); 
-
+        console.log('ERROR: Form is not valid.');
       }
 
     };
@@ -87,24 +83,15 @@ twopence.controller('signUpCtrl', [
     //
     vm.createUser = function(pSponsorForm) {
 
-      if (pSponsorForm.$valid) {
+      console.log(pSponsorForm); 
+
+      if(pSponsorForm.$valid) {
         vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
-        console.log("This is valid. Just to confirm your variables");
 
-        console.log(vm.userInfo); 
-
-          User.create(vm.userInfo).then(function() {
+          User.create(vm.userInfo).then(function(res) {
             $state.go('main.signUp.confirmation');
-
-            User.verify().then(function(initialised) {
-              this.resolve(initialised);
-            }).catch(function(err) {
-              this.reject(err);
-            });
-
           }).catch(function(err) {
-            vm.status = err.data.message;
-
+            vm.status = err.status;
             console.log(vm.status); 
 
             if(vm.status === 'Email has already been taken.') {
@@ -123,11 +110,19 @@ twopence.controller('signUpCtrl', [
 
     };
 
+
+    //
+    // Verifies a user email by sending them a reminder via email 
+    //
     vm.verifyEmail = function() {
       User.verify();
       $state.go('sponsor.dashboard');
     };
 
+
+    //
+    // Opens the terms of agreement for the app 
+    // 
     vm.openTermsModal = function() {
 
       $fancyModal.open({
@@ -141,26 +136,6 @@ twopence.controller('signUpCtrl', [
       });
 
     };
-
-
-
-    // vm.processForm = function() {
-
-    //   console.log("processing form...");
-
-    //   console.log($scope.user);
-
-    //   vm.formUnsubmitted = false;
-
-    //   $timeout(function() {
-
-    //     $state.go('main.signUp.confirmation');
-
-    //   }, 1400);
-
-
-    // };
-
 
   }
 ]);

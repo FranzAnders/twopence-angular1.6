@@ -10,6 +10,7 @@ button,
   @extend %uc; 
   @extend %fwb; 
   @extend %button;
+  @include border-radius(2px); 
 
   .button-inner {
 
@@ -17,7 +18,6 @@ button,
     z-index: 1; 
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
     @include type-setting(-1); 
 
   }
@@ -100,34 +100,28 @@ button,
 
   background-color: transparent;
   position: relative; 
-  color: #fff; 
-  border: 2px solid white; 
+  color: $primaryColor; 
+  border: 2px solid $primaryColor; 
   @include transition(all .1s ease .1s); 
 
-  &:after {
+  // &:after {
 
-    content: " "; 
-    position: absolute; 
-    bottom: 0; 
-    right: 0; 
-    left: 0; 
-    height: 100%; 
-    width: 0; 
-    background-color: #fff;  
-    @include transition(all .2s ceaser($easeInOutQuint)); 
+  //   content: " "; 
+  //   position: absolute; 
+  //   bottom: 0; 
+  //   right: 0; 
+  //   left: 0; 
+  //   height: 100%; 
+  //   width: 0; 
+  //   background-color: $secondaryColor;  
+  //   @include transition(all .2s ceaser($easeInOutQuint)); 
 
-  } 
+  // } 
 
   &:hover,
   &:focus {
-    
-    color: $accentColor; 
-
-    &:after {
-
-      width: 100%; 
-
-    }
+    color: #fff;
+    background-color: $primaryColor;  
 
   }
 }
@@ -307,8 +301,8 @@ button,
 
 .button--small {
     padding: rem-calc($level1);
-    padding-right: rem-calc($level1);
-    padding-left: rem-calc($level1);
+    padding-right: rem-calc($level2);
+    padding-left: rem-calc($level2);
     @include type-setting(-1);
 
 }

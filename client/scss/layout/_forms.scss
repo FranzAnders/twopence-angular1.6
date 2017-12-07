@@ -39,6 +39,22 @@ input[type="color"], {
 
 }
 
+.input-group {
+
+  input[type="date"]{
+    color: #fff; 
+  }
+
+  &.is-filled {
+
+    input[type="date"]{
+
+      color: $secondaryColor; 
+    }
+  
+  }
+
+}
 
 /* Change the white to any color ;) */
 input:-webkit-autofill {
@@ -125,7 +141,7 @@ input {
 
       &:-webkit-autofill {
         background-color: $tertiaryColor--translucent; 
-        
+
       }
 
 
