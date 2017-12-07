@@ -1,3 +1,4 @@
+  
 'use strict';
 
 /*------------------------------------*\
@@ -29,34 +30,22 @@ twopence.controller('signUpCtrl', [
 
     $scope.$state = $state;
 
-    vm.userCreationForm = {};
+    vm.loadingScreen = false; 
 
-    vm.sposorCreationForm = {};
 
 
     //
-    // We store the sponsor info and user info as objects to then
+    // We store the user info and user info as objects to then
     // inject into the requests
     //
-    vm.sponsorInfo = {
-      'sms_preferred': false,
-      'accepted_tc': false,
-      'phone': '',
-      'first_name': '',
-      'last_name': ''
-    };
+    vm.userInfo = {};
+
 
 
     //
-    // We store the DOB in a separate property because angular 1.3+
-    // ng-model for type='date' in input fields expects dates and not strings
-    // or converted dates
-    vm.sponsorDob = new Date('2017', 9, 22);
-
-
+    // Checks if there is already a token in session from users
+    //
     if (Auth.getToken()) {
-
-      console.log('theres a token');
 
       $state.go('main.signUp.identity');
 
@@ -66,50 +55,27 @@ twopence.controller('signUpCtrl', [
     }
 
 
+
     //
-    // Creates the user from the information provided
+    // Submits the first half of the user info needed to create one
     //
-
-    // API V1 createUser
-
-    /*
-    vm.createUser = function(form) {
-
-      if(form.$valid) {
-
-        delete vm.userInfo.confirmPassword;
-
-        User.create(vm.userInfo).then(function() {
-
-          console.log('yep, it passes ');
-
-          $state.go('main.signUp.identity');
-
-
-
-      } else {
-
-        console.log('not yet boy');
-
-      }
-
-    }; */
-
-    // V2 createUser calls
-
-    vm.createAccount = function(form) {
-
+    vm.submitAccountInfo = function(form) {
+       
       if (form.$valid) {
-
         delete vm.userInfo.confirmPassword;
+        vm.loadingScreen = true; 
 
-        console.log(vm.userInfo);
+        $timeout(function() {
+          
+          $state.go('main.signUp.identity');
+          vm.loadingScreen = false; 
 
-        $state.go('main.signUp.identity');
+        }, 1200); 
+
 
       } else {
-
         console.log('not yet boy');
+        console.log(form); 
 
       }
 
@@ -124,12 +90,8 @@ twopence.controller('signUpCtrl', [
       if (pSponsorForm.$valid) {
         vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
         console.log("This is valid. Just to confirm your variables");
-        console.log(vm.userInfo);
-        console.log(vm.userInfo.first_name);
-
 
           User.create(vm.userInfo).then(function() {
-            console.log('valid');
             $state.go('main.signUp.confirmation');
 
             User.verify().then(function(initialised) {
@@ -139,29 +101,31 @@ twopence.controller('signUpCtrl', [
             });
 
           }).catch(function(err) {
-            console.log("Yo shit is messed up");
-            console.log(err);
             vm.status = err.data.message;
-            console.log(vm.status);
           })
 
       } else {
-        console.log("We are not valid")
+
+        console.log("ERROR: Form is not valid");
+
       }
+
     };
 
     vm.verifyEmail = function() {
-      console.log("Starting verification");
       User.verify();
       $state.go('sponsor.dashboard');
     };
 
     vm.openTermsModal = function() {
-      console.log("Attempting opening of Modal");
+
       $fancyModal.open({
 
         templateUrl: 'js/home/signUp-terms.html',
-        controller: 'signUpCtrl as signUp'
+        controller: 'signUpCtrl as signUp',
+        themeClass: 'fancymodal--secondary fancymodal--medium',
+        openingClass: 'is-open',
+        closingClass: 'is-closed'
 
       });
 

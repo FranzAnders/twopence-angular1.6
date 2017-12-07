@@ -299,25 +299,25 @@ button,
 
 
 .button--micro {
-    padding: rem-calc(3px);
-    padding-right: rem-calc($level2);
-    padding-left: rem-calc($level2);
+    padding: rem-calc($level1);
+    padding-right: rem-calc($level1);
+    padding-left: rem-calc($level1);
     @extend %text-micro; 
 }
 
 .button--small {
-    padding: rem-calc($level2);
-    padding-right: rem-calc($level4);
-    padding-left: rem-calc($level4);
+    padding: rem-calc($level1);
+    padding-right: rem-calc($level1);
+    padding-left: rem-calc($level1);
     @include type-setting(-1);
 
 }
 
 
 .button--medium {
-    padding: rem-calc($level3);
-    padding-right: rem-calc($level3);
-    padding-left: rem-calc($level3);
+    padding: rem-calc($level2);
+    padding-right: rem-calc($level2);
+    padding-left: rem-calc($level2);
     @include type-setting(-1);
 
 }

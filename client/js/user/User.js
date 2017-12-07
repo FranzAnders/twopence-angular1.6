@@ -28,9 +28,7 @@ twopence.factory('User', [
       return $q(function(resolve, reject) {
         $http.post(BASE_URL +  '/v1/users', pLoginInfo)
           .then(function(res) {
-            console.log(res);
             Auth.setToken(res.data.token, res.data.username);
-            resolve(res.data);
           }).catch(function(err) {
             reject(err);
           });
@@ -43,11 +41,9 @@ twopence.factory('User', [
     //
     User.verify = function() {
       return $q(function(resolve, reject) {
-        console.log("Going for it: ");
-        var jwtToken = Auth.getToken();
         $http.post(BASE_URL + '/v1/sponsors/verification', {}, {
             headers: {
-              "Authorization": "Bearer " + jwtToken
+              "Authorization": "Bearer " + Auth.getToken()
             }
         })
         .then(function(res) {
@@ -67,57 +63,35 @@ twopence.factory('User', [
       return $q(function(resolve, reject) {
 
         $http.patch(BASE_URL + '/v1/users', pSettingsToChange, {
-
           headers: {
-
             "Authorization" : "Bearer " + Auth.getToken()
           }
-
         })
         .then(function(res){
-
           resolve(res.data);
-
         }).catch(function(err){
-
           reject(err);
-
         })
-
-
       });
-
     };
 
 
     //
-    // Get Users
+    // Gets User Information
     //
     User.getUserInfo = function() {
-
       return $q(function(resolve, reject) {
-
         $http.get(BASE_URL + '/v1/users', {
-
           headers: {
-
             "Authorization" : "Bearer " + Auth.getToken()
           }
-
         })
         .then(function(res){
-
           resolve(res.data);
-
         }).catch(function(err){
-
           reject(err);
-
         })
-
-
       });
-
     };
 
 

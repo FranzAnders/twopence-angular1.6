@@ -1,8 +1,8 @@
 
 <div>
 
-  <form ng-submit="signUp.createUser(signUp.sponsorCreationForm)"
-        name="signUp.sponsorCreationForm"
+  <form ng-submit="signUp.createUser(signUp.userIdentityForm)"
+        name="signUp.userIdentityForm"
         novalidate>
 
     <div class="input-group input--medium">
@@ -63,31 +63,18 @@
 
     </div>
 
-    <div class="row mb2">
-      <div class="small-12 columns grid grid--center">
+    <div class="row">
+
+      <div class="small-12 columns grid grid--center 
+      ">
         <input type="checkbox"
           id="accepted_tc"
           ng-model="signUp.userInfo.accepted_tc"
           required
           >
-        <label for="accepted_tc" class="mb0">
-          I Agree to the Terms and Conditions
+        <label for="accepted_tc" class="mb0 grid-cell">
+          I Agree to the <a href="#" ng-click="signUp.openTermsModal()">Terms and Conditions</a>
         </label>
-
-        <!-- <span ng-show="signUp.sponsorCreationForm.sponsorInfo.accepted_tc.$submitted && signUp.sponsorCreationForm.sponsorInfo.accepted_tc.$invalid">Please agree to Terms &amp; Conditions.</span> -->
-
-      </div>
-    </div>
-    <div class="row mb2">
-
-      <div class="small-12 columns  grid grid--center">
-
-        <br />
-
-               <a type="button" ng-click="signUp.openTermsModal()">
-                 Tap to read Terms &amp; Conditions
-               </a>
-
 
       </div>
 

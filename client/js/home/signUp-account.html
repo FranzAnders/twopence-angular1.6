@@ -1,53 +1,62 @@
 
-<div >
+<div class="fieldset">
 
-  <form ng-submit="signUp.createAccount(signUp.userCreationForm)"
-        name="signUp.userCreationForm"
+  <form ng-submit="signUp.submitAccountInfo(signUp.userAccountForm)"
+        name="signUp.userAccountForm"
         ng-model-options="{ getterSetter: true }"
         novalidate>
 
-    <label for="email">
-      Email
-    </label>
+    <div class="input-group  input--medium">
 
-    <input type="email"
-           id="email"
-           name="email"
-           placeholder="Email is your username"
-           class="input--primary input--medium"
-           ng-model="signUp.userInfo.email"
-           ng-minlength = "8"
-           ng-model-options="{debounce: 200}"
-           required>
+      <label for="email">
+        Email
+      </label>
 
-    <div ng-messages="signUp.userCreationForm.email.$error"
-         ng-show="signUp.userCreationForm.email.$touched"
+      <input type="email" 
+             id="email"
+             name="email"
+            class="input--primary input--medium"
+            ng-model="signUp.userInfo.email"
+            ng-minlength = "8"
+            required
+            floating-label>
+
+    </div>
+
+    <div ng-messages="signUp.userAccountForm.email.$error"
+         ng-show="signUp.userAccountForm.$submitted || signUp.userAccountForm.email.$error"
          role="alert">
 
         <div ng-message="required">
-            Oops! We need an email from ya
+            Sorry, we need an email from ya.
         </div>
 
         <div ng-message="email">
-            Email must be valid 'example@email.com'
+            Sorry, but your email must be valid ('example@email.com')
         </div>
 
     </div>
 
-    <label for="password">
-      Password
-    </label>
 
-    <input type="password" id="password"
-           name="password"
-           class="input--primary input--medium"
-           ng-model="signUp.userInfo.password"
-           required
-           ng-minlength = "8"
-           ng-model-options="{debounce: 200}">
+    <div class="input-group  input--medium">
 
-    <div ng-messages="signUp.userCreationForm.password.$error"
-         ng-show="signUp.userCreationForm.password.$touched"
+      <label for="password">
+        Password
+      </label>
+
+      <input type="password" 
+             id="password"
+             name="password"
+             class="input--primary input--medium"
+             ng-model="signUp.userInfo.password"
+             required
+             ng-minlength = "8"
+             floating-label>
+
+    </div>
+
+    <div ng-messages="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
+         ng-show="signUp.userAccountForm.password.$touched"
          role="alert">
 
         <div ng-message="required">
@@ -66,21 +75,25 @@
 
 
 
-    <label for="confirm_password">
-      Re-enter Password
-    </label>
+    <div class="input-group  input--medium">
 
-    <input type="password" id="confirm_password"
-           name="confirmPassword"
-           class="input--primary input--medium"
-           required
-           ng-minlength="8"
-           ng-model="signUp.userInfo.confirmPassword"
-           ng-model-options="{debounce: 200}"
-           compare-to="signUp.userInfo.password">
+      <label for="confirmPassword">
+        Re-enter Password
+      </label>
 
-    <div ng-messages="signUp.userCreationForm.password.$error"
-         ng-show="signUp.userCreationForm.password.$touched"
+      <input type="password" 
+             id="confirmPassword"
+             name="confirmPassword"
+             class="input--primary input--medium"
+             ng-minlength="8"
+             ng-model="signUp.userInfo.confirmPassword"
+             compare-to="signUp.userInfo.password"
+             floating-label>
+
+    </div>
+
+    <div ng-messages="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
+         ng-show="signUp.userAccountForm.password.$touched"
          role="alert">
 
         <div ng-message="required">
@@ -96,15 +109,16 @@
         </div>
 
     </div>
-    <br /> <br />
+
     <div>
       Status of Form: {{ signUp.status }} <br /> <br />
     </div>
 
 
-    <button class="button--primary  button--medium button--expanded"
+    <button class="button--secondary  button--medium button--expanded mb0"
             type="submit">
-      Continue
+      NEXT STEP
+      <span ng-if="signUp.loadingScreen">Nicely done, setting up...</span>
     </button>
 
   </form>
