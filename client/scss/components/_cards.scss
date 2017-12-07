@@ -8,6 +8,7 @@
   margin-bottom: rem-calc($level3);
   background-color: #FFF; 
   color: $body-color; 
+  width: 100%; 
   @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
 
   .card-header {
@@ -19,14 +20,6 @@
   
   .card-content {
     padding: rem-calc($level3);
-
-
-    @media #{$large-up} {
-      padding-top: rem-calc($level4);
-      padding-bottom: rem-calc($level4);
-
-    }
-
   }
 
   .card-actions {
@@ -107,7 +100,8 @@
   .card-header {
   
     .sponsorship-name {
-      margin-bottom: rem-calc($level2); 
+      margin-bottom: rem-calc($level1); 
+      color: $secondaryColor; 
       @include type-setting(1);
 
     }
