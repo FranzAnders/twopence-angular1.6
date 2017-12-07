@@ -20,22 +20,25 @@
             ng-minlength = "8"
             required
             floating-label>
+      
+
+      <div ng-messages="signUp.userAccountForm.email.$error"
+           ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.email.$error"
+           role="alert"
+           class="alerts  alert--warning">
+
+          <div ng-message="required">
+              Sorry, we need an email from ya.
+          </div>
+
+          <div ng-message="email">
+              Sorry, but your email must be valid ('example@email.com')
+          </div>
+
+      </div>
 
     </div>
 
-    <div ng-messages="signUp.userAccountForm.email.$error"
-         ng-show="signUp.userAccountForm.$submitted || signUp.userAccountForm.email.$error"
-         role="alert">
-
-        <div ng-message="required">
-            Sorry, we need an email from ya.
-        </div>
-
-        <div ng-message="email">
-            Sorry, but your email must be valid ('example@email.com')
-        </div>
-
-    </div>
 
 
     <div class="input-group  input--medium">
@@ -53,26 +56,27 @@
              ng-minlength = "8"
              floating-label>
 
+      <div ng-messages="signUp.userAccountForm.password.$error"
+           ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
+           role="alert"
+           class="alerts  alert--warning"
+           >
+
+          <div ng-message="required">
+              Oops! A password is required
+          </div>
+
+          <div ng-message="ng-minlength">
+              Oops! Password must be atleast 8 characters in length
+          </div>
+
+          <div ng-message="pattern">
+              Email must be valid 'example@email.com'
+          </div>
+
+      </div>
+
     </div>
-
-    <div ng-messages="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
-         ng-show="signUp.userAccountForm.password.$touched"
-         role="alert">
-
-        <div ng-message="required">
-            Oops! A password is required
-        </div>
-
-        <div ng-message="ng-minlength">
-            Oops! Password must be atleast 8 characters in length
-        </div>
-
-        <div ng-message="pattern">
-            Email must be valid 'example@email.com'
-        </div>
-
-    </div>
-
 
 
     <div class="input-group  input--medium">
@@ -90,25 +94,28 @@
              compare-to="signUp.userInfo.password"
              floating-label>
 
+      <div ng-messages="signUp.userAccountForm.password.$error"
+           ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
+           role="alert"
+           class="alerts  alert--warning">
+
+          <div ng-message="required">
+              Sorry, passwords must match.
+          </div>
+
+          <div ng-message="ng-minlength">
+              Oops! Password must be atleast 8 characters in length.
+          </div>
+
+          <div ng-message="compare-to">
+              Oops! Passwords must match.
+          </div>
+
+      </div>
+
     </div>
 
-    <div ng-messages="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
-         ng-show="signUp.userAccountForm.password.$touched"
-         role="alert">
 
-        <div ng-message="required">
-            Oops! Password confirmation is required.
-        </div>
-
-        <div ng-message="ng-minlength">
-            Oops! Password must be atleast 8 characters in length.
-        </div>
-
-        <div ng-message="compare-to">
-            Oops! Passwords must match.
-        </div>
-
-    </div>
 
     <div>
       Status of Form: {{ signUp.status }} <br /> <br />

@@ -91,6 +91,8 @@ twopence.controller('signUpCtrl', [
         vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
         console.log("This is valid. Just to confirm your variables");
 
+        console.log(vm.userInfo); 
+
           User.create(vm.userInfo).then(function() {
             $state.go('main.signUp.confirmation');
 
@@ -102,6 +104,15 @@ twopence.controller('signUpCtrl', [
 
           }).catch(function(err) {
             vm.status = err.data.message;
+
+            console.log(vm.status); 
+
+            if(vm.status === 'Email has already been taken.') {
+
+              alert('No duplicates! It appears there is an account with this email.')
+
+            }
+
           })
 
       } else {

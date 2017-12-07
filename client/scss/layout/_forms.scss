@@ -98,7 +98,7 @@ input {
 .input-group {
     width: 100%;
     margin-top: rem-calc($level1); 
-    margin-bottom: rem-calc($base-magic-number);
+    margin-bottom: rem-calc($level5);
     @extend %position-relative;
 
     &:after {
@@ -122,6 +122,12 @@ input {
       margin-bottom: 0;
       background-color: transparent;
       border-bottom: 2px solid $grey--light;
+
+      &:-webkit-autofill {
+        background-color: $tertiaryColor--translucent; 
+        
+      }
+
 
       &:active,
       &:focus {
@@ -162,6 +168,16 @@ input {
           width: 100%;
 
         }
+
+    }
+
+
+    .alerts {
+      position: absolute; 
+      left: 0; 
+      width: 100%; 
+      bottom: rem-calc(-24px); 
+      @include type-setting(-1); 
 
     }
 
@@ -341,8 +357,7 @@ textarea {
 \*------------------------------------*/
 
 .alert--warning {
-
-    color: #FF6F92;
+    color: $warningColor;
 }
 
 
