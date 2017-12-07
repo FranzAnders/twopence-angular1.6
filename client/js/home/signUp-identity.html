@@ -3,6 +3,7 @@
 
   <form ng-submit="signUp.createUser(signUp.userIdentityForm)"
         name="signUp.userIdentityForm"
+        ng-model-options="{ getterSetter: true }"
         novalidate>
 
     <div class="input-group input--medium">
@@ -11,10 +12,28 @@
       First Name
           </label>
       
-          <input type="text" id="first name"
+          <input type="text" 
+            id="first name"
            ng-model="signUp.userInfo.first_name"
+           name="first_name"
            required
+           ng-minlength="3"
            floating-label>
+
+      <div ng-messages="signUp.userIdentityForm.first_name.$error"
+           ng-show="signUp.userIdentityForm.$submitted && signUp.userIdentityForm.first_name.$error"
+           role="alert"
+           class="alerts  alert--warning">
+
+          <div ng-message="required">
+              Sorry, a first name is needed. 
+          </div>
+
+          <div ng-message="minlength">
+              Sorry, name must be atleast 2 characters in length.
+          </div>
+
+      </div>
 
     </div>
 
@@ -24,40 +43,60 @@
         Last Name
       </label>
 
-      <input type="text" id="full name"
+      <input type="text" 
+             id="full name"
              class="input--primary input--medium"
              ng-model="signUp.userInfo.last_name"
+             name="last_name"
+             ng-minlength="2"
              floating-label
              required>
+
+      <div ng-messages="signUp.userIdentityForm.last_name.$error"
+           ng-show="signUp.userIdentityForm.$submitted && signUp.userIdentityForm.last_name.$error"
+           role="alert"
+           class="alerts  alert--warning">
+
+         <div ng-message="required">
+              Sorry, a last name is needed. 
+          </div>
+
+          <div ng-message="minlength">
+              Sorry, last name must be atleast 2 characters in length.
+          </div>
+
+      </div>
 
     </div>
 
     
-    <div class="input-group  input--medium">
+    <div class="input-group  input--medium mb1">
 
-      <label for="full name">
-        Cell Phone Number
+      <label for="phone number">
+        Preferred  Number
       </label>
 
-      <input type="tel" id="full name"
-            class="input--primary input--medium"
+      <input type="tel" 
+             id="phone number"
+            class="input--primary input--medium mb0"
             ng-model="signUp.userInfo.phone"
+            ng-minlength="10"
+            verify-check-box="signUp.userInfo.sms_preferred"
+            name="phone_number"
             floating-label>
 
-    </div>
+      <div ng-messages="signUp.userIdentityForm.phone_number.$error"
+           ng-show="signUp.userIdentityForm.$submitted && signUp.userIdentityForm.phone_number.$error"
+           role="alert"
+           class="alerts  alert--warning" >
 
-    <div class="row mb2">
-
-      <div class="small-12 columns  grid grid--center">
-
-        <input type="checkbox"
-               id="sms_contacting"
-               ng-model="signUp.userInfo.sms_preferred"
-               >
-
-        <label for="sms_contacting" class="mb0">
-           I wish to be contacted by text messages
-        </label>
+         <div ng-message="verifyCheckBox">
+              Sorry, we need a number to send messages to.
+          </div>
+  
+          <div ng-message="minlength">
+              Sorry, number must be a valid format (xxx) xxx-xxxx.
+          </div>
 
       </div>
 
@@ -65,38 +104,78 @@
 
     <div class="row">
 
-      <div class="small-12 columns grid grid--center 
+      <div class="small-12 columns  grid  grid--right">
+
+        <div class=" grid  grid--center  grid--justifySpaceBetween">
+
+          <div>
+            <input type="checkbox"
+                   id="sms_contacting"
+                   name="sms_preferred"
+                   ng-model="signUp.userInfo.sms_preferred"
+                   class="mb0 mr4"
+                   >
+          </div>
+
+          <label for="sms_preferred" class="text-mini mb0 grid-cell--autoSize ">
+             I wish to be contacted by text messages
+          </label>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <div class="row  grid  grid--center grid--flexWrap">
+      
+      <div class="small-12 medium-6 columns">
+        
+
+         <div class="input-group input--medium">
+
+            <label for="dob">
+            Date of birth
+            </label>
+
+            <input type="date"
+                id="dob"
+                class="input--medium  input--primary mb0"
+                ng-model="signUp.sponsorDob"
+                placeholder="" 
+                required
+                floating-label>
+         </div>
+
+      </div>
+
+
+      <div class="small-12   columns grid  grid--center  grid--justifyCenter
       ">
-        <input type="checkbox"
-          id="accepted_tc"
-          ng-model="signUp.userInfo.accepted_tc"
-          required
-          >
-        <label for="accepted_tc" class="mb0 grid-cell">
-          I Agree to the <a href="#" ng-click="signUp.openTermsModal()">Terms and Conditions</a>
-        </label>
+       <div class=" grid  grid--center  grid--justifySpaceBetween mb4">
+
+          <div class="">
+            <input type="checkbox"
+             id="accepted_tc"
+             ng-model="signUp.userInfo.accepted_tc"
+             class="mb0 mr4"
+             required
+             >
+          </div>
+      
+          <label class="text-micro mb0 grid-cell--autoSize  " for="accepted_tc">
+            I Agree to <a href="#" ng-click="signUp.openTermsModal()">Terms and Conditions</a>
+          </label>
+        </div>
 
       </div>
 
     </div>
 
-    <label for="date of birth">
-      Date of birth
-    </label>
-
-    <input type="date"
-           placeholder="YYYY-MM-DD"
-           class="input--medium  input--primary"
-           ng-model="signUp.sponsorDob"
-           required>
-
-    <div>
-      Status of Form: {{ signUp.status }} <br /> <br />
-    </div>
 
     <button
         type="submit"
-        class="button--medium  button--primary  button--expanded">
+        class="button--medium  button--primary  button--expanded mb0">
       Create Account
     </button>
 

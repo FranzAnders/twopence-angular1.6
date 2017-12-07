@@ -14086,8 +14086,17 @@ input[type="color"]:active {
   outline: 0;
 }
 
-/* Change the white to any color ;) */
 /* line 44, ../scss/layout/_forms.scss */
+.input-group input[type="date"] {
+  color: #fff;
+}
+/* line 50, ../scss/layout/_forms.scss */
+.input-group.is-filled input[type="date"] {
+  color: #333031;
+}
+
+/* Change the white to any color ;) */
+/* line 60, ../scss/layout/_forms.scss */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   -webkit-text-fill-color: #6AC6C5 !important;
@@ -14096,7 +14105,7 @@ input:-webkit-autofill {
 /*------------------------------------*\
     #Input Properties
 \*------------------------------------*/
-/* line 57, ../scss/layout/_forms.scss */
+/* line 73, ../scss/layout/_forms.scss */
 input,
 textarea {
   width: 100%;
@@ -14107,19 +14116,19 @@ textarea {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 65, ../scss/layout/_forms.scss */
+/* line 81, ../scss/layout/_forms.scss */
 input:active, input:focus,
 textarea:active,
 textarea:focus {
   color: #818181;
 }
-/* line 72, ../scss/layout/_forms.scss */
+/* line 88, ../scss/layout/_forms.scss */
 input.input--expanded,
 textarea.input--expanded {
   width: 100%;
 }
 
-/* line 80, ../scss/layout/_forms.scss */
+/* line 96, ../scss/layout/_forms.scss */
 input.input--alt {
   min-height: 3.2rem;
   border: 2px solid #6AC6C5;
@@ -14128,13 +14137,13 @@ input.input--alt {
 /*------------------------------------*\
     #Input Groups
 \*------------------------------------*/
-/* line 98, ../scss/layout/_forms.scss */
+/* line 114, ../scss/layout/_forms.scss */
 .input-group {
   width: 100%;
   margin-top: 0.375rem;
   margin-bottom: 1.875rem;
 }
-/* line 104, ../scss/layout/_forms.scss */
+/* line 120, ../scss/layout/_forms.scss */
 .input-group:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -14151,7 +14160,7 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 119, ../scss/layout/_forms.scss */
+/* line 135, ../scss/layout/_forms.scss */
 .input-group input {
   z-index: 1;
   width: 100%;
@@ -14159,15 +14168,15 @@ input.input--alt {
   background-color: transparent;
   border-bottom: 2px solid #EDEFEF;
 }
-/* line 126, ../scss/layout/_forms.scss */
+/* line 142, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
   background-color: rgba(35, 142, 178, 0.9);
 }
-/* line 133, ../scss/layout/_forms.scss */
+/* line 148, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
   color: #333031;
 }
-/* line 141, ../scss/layout/_forms.scss */
+/* line 156, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
   bottom: 0.375rem;
@@ -14178,26 +14187,26 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 153, ../scss/layout/_forms.scss */
+/* line 168, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
   -moz-transform: scale(0.8) translateY(-28px) translateX(-7px);
   -ms-transform: scale(0.8) translateY(-28px) translateX(-7px);
   -webkit-transform: scale(0.8) translateY(-28px) translateX(-7px);
   transform: scale(0.8) translateY(-28px) translateX(-7px);
 }
-/* line 160, ../scss/layout/_forms.scss */
+/* line 175, ../scss/layout/_forms.scss */
 .input-group.is-focused {
   color: #238EB2;
 }
-/* line 163, ../scss/layout/_forms.scss */
+/* line 178, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
   color: #333031;
 }
-/* line 168, ../scss/layout/_forms.scss */
+/* line 183, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
   width: 100%;
 }
-/* line 176, ../scss/layout/_forms.scss */
+/* line 191, ../scss/layout/_forms.scss */
 .input-group .alerts {
   position: absolute;
   left: 0;
@@ -14210,36 +14219,36 @@ input.input--alt {
 /*------------------------------------*\
     #Input Sizes
 \*------------------------------------*/
-/* line 200, ../scss/layout/_forms.scss */
+/* line 215, ../scss/layout/_forms.scss */
 .input-group.input--small label {
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 206, ../scss/layout/_forms.scss */
+/* line 221, ../scss/layout/_forms.scss */
 .input-group.input--small input {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 218, ../scss/layout/_forms.scss */
+/* line 233, ../scss/layout/_forms.scss */
 .input-group.input--medium label {
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 224, ../scss/layout/_forms.scss */
+/* line 239, ../scss/layout/_forms.scss */
 .input-group.input--medium input {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 237, ../scss/layout/_forms.scss */
+/* line 252, ../scss/layout/_forms.scss */
 .input-group.input--large label {
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 243, ../scss/layout/_forms.scss */
+/* line 258, ../scss/layout/_forms.scss */
 .input-group.input--large input {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -14250,16 +14259,16 @@ input.input--alt {
 /*------------------------------------*\
     #Input With Button
 \*------------------------------------*/
-/* line 272, ../scss/layout/_forms.scss */
+/* line 287, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
   width: 100%;
 }
-/* line 278, ../scss/layout/_forms.scss */
+/* line 293, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-button {
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 278, ../scss/layout/_forms.scss */
+  /* line 293, ../scss/layout/_forms.scss */
   .inputWithButton .inputWithButton-button {
     width: 80%;
     padding-left: 0.75rem;
@@ -14269,7 +14278,7 @@ input.input--alt {
 /*------------------------------------*\
     #Labels
 \*------------------------------------*/
-/* line 301, ../scss/layout/_forms.scss */
+/* line 316, ../scss/layout/_forms.scss */
 label {
   margin-bottom: 0.25rem;
 }
@@ -14277,7 +14286,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 316, ../scss/layout/_forms.scss */
+/* line 331, ../scss/layout/_forms.scss */
 select {
   width: 100%;
 }
@@ -14288,7 +14297,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 349, ../scss/layout/_forms.scss */
+/* line 364, ../scss/layout/_forms.scss */
 .fieldset {
   margin-bottom: 1.5rem;
 }
@@ -14296,7 +14305,7 @@ select {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 360, ../scss/layout/_forms.scss */
+/* line 375, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -14304,7 +14313,7 @@ select {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 373, ../scss/layout/_forms.scss */
+/* line 388, ../scss/layout/_forms.scss */
 .formAreaDivider--left {
   border-left: 1px solid #818181;
 }
@@ -14312,7 +14321,7 @@ select {
 /*------------------------------------*\
     # Custom Inputs
 \*------------------------------------*/
-/* line 387, ../scss/layout/_forms.scss */
+/* line 402, ../scss/layout/_forms.scss */
 .clearField {
   background-color: transparent;
   color: #FFF !important;
@@ -15417,15 +15426,17 @@ button,
 .button {
   white-space: nowrap;
   margin-bottom: 1.5rem;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
-/* line 14, ../scss/components/_buttons.scss */
+/* line 15, ../scss/components/_buttons.scss */
 button .button-inner,
 .button .button-inner {
   position: relative;
   z-index: 1;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-size: 0.8rem;
   line-height: 1.5;
 }
@@ -15504,49 +15515,31 @@ button .button-inner,
 .button--tertiary {
   background-color: transparent;
   position: relative;
-  color: #fff;
-  border: 2px solid white;
+  color: #6AC6C5;
+  border: 2px solid #6AC6C5;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
   -webkit-transition: all 0.1s ease;
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 107, ../scss/components/_buttons.scss */
-.button--tertiary:after {
-  content: " ";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background-color: #fff;
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
 /* line 121, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
-  color: #FBC510;
-}
-/* line 126, ../scss/components/_buttons.scss */
-.button--tertiary:hover:after, .button--tertiary:focus:after {
-  width: 100%;
+  color: #fff;
+  background-color: #6AC6C5;
 }
 
-/* line 138, ../scss/components/_buttons.scss */
+/* line 132, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 144, ../scss/components/_buttons.scss */
+/* line 138, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
 }
-/* line 150, ../scss/components/_buttons.scss */
+/* line 144, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
   bottom: -2px;
@@ -15555,7 +15548,7 @@ button .button-inner,
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 167, ../scss/components/_buttons.scss */
+/* line 161, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #333031;
   height: 2.5rem;
@@ -15573,14 +15566,14 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 180, ../scss/components/_buttons.scss */
+/* line 174, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 187, ../scss/components/_buttons.scss */
+/* line 181, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -15596,7 +15589,7 @@ button .button-inner,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 205, ../scss/components/_buttons.scss */
+/* line 199, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -15613,7 +15606,7 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 222, ../scss/components/_buttons.scss */
+/* line 216, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -15628,7 +15621,7 @@ button .button-inner,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 238, ../scss/components/_buttons.scss */
+/* line 232, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -15637,7 +15630,7 @@ button .button-inner,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 247, ../scss/components/_buttons.scss */
+/* line 241, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #333031;
@@ -15647,20 +15640,20 @@ button .button-inner,
   transform: scale(1.2);
 }
 
-/* line 261, ../scss/components/_buttons.scss */
+/* line 255, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 267, ../scss/components/_buttons.scss */
+/* line 261, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 278, ../scss/components/_buttons.scss */
+/* line 272, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 284, ../scss/components/_buttons.scss */
+/* line 278, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -15668,23 +15661,23 @@ button .button-inner,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 301, ../scss/components/_buttons.scss */
+/* line 295, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 308, ../scss/components/_buttons.scss */
+/* line 302, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.375rem;
-  padding-right: 0.375rem;
-  padding-left: 0.375rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
 
-/* line 317, ../scss/components/_buttons.scss */
+/* line 311, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -15693,28 +15686,28 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 325, ../scss/components/_buttons.scss */
+/* line 319, ../scss/components/_buttons.scss */
 .button--large {
   padding: 1.125rem;
   padding-right: 1.875rem;
   padding-left: 1.875rem;
 }
 
-/* line 332, ../scss/components/_buttons.scss */
+/* line 326, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 339, ../scss/components/_buttons.scss */
+/* line 333, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 346, ../scss/components/_buttons.scss */
+/* line 340, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -15724,7 +15717,7 @@ button .button-inner,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 362, ../scss/components/_buttons.scss */
+/* line 356, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -16941,7 +16934,6 @@ body.fancymodal-open {
 .loginView {
   min-height: 100vh;
   padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 /*------------------------------------*\
