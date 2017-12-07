@@ -8,35 +8,31 @@
   position: relative; 
   overflow: hidden; 
   margin-top: rem-calc(60px); 
+  width: 100vw; 
+  min-height: 100vh;
 
-  .heroHeader-background {
-    width: 100vw; 
-    height: 100vh;
-    padding-top: rem-calc($level7); 
-    padding-bottom: rem-calc($level7); 
-    @include primaryGradient(); 
-
-    @media #{$medium-up} {
-      height: 85vh;
-
-    }
-
-    @media #{$large-up} {
-      height: 90vh; 
-      
-    }
-    
+  @media #{$medium-up} {
+    height: 85vh;
 
   }
 
-  .heroHeader-content {
+  @media #{$large-up} {
+    min-height: 110vh; 
+    
+  }
+
+  .heroHeader-background {
     position: absolute; 
     top: 0; 
     right: 0; 
     bottom :0; 
     left: 0; 
-    z-index: 1; 
-    color: #fff; 
+    @include primaryGradient(); 
+
+  }
+
+  .heroHeader-content {
+    color: #fff;  
 
   }
 

@@ -1,0 +1,27 @@
+
+
+/*------------------------------------*\
+    #Form Steps
+\*------------------------------------*/
+
+.formTabs {
+  margin-bottom: rem-calc($level2); 
+
+  .formTabs-tab {
+
+    .tab-title {
+      color: $grey--med; 
+      @include type-setting(0); 
+
+    }
+
+    &.is-active {
+
+      .tab-title {
+        color: $secondaryColor; 
+        @extend %fwb; 
+
+      }
+    }
+  }
+}

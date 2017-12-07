@@ -20,7 +20,7 @@
 
   width: 100%; 
   position: relative;
-  height: rem-calc(60px); 
+  height: rem-calc(40px); 
   background-color: #fff; 
 
 }
@@ -102,6 +102,8 @@
 
 
 .mainNav {
+  padding-right: rem-calc($level2);
+  padding-left: rem-calc($level2);
 
   .mainNav-header {
     height: rem-calc(60px);
@@ -112,7 +114,6 @@
     @extend %position-relative; 
 
     .mainNav-title {
-        width: 8rem; 
         height: 100%; 
         margin-left: rem-calc($level2);
         @include transform(translateX(0)); 

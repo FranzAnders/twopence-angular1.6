@@ -13,19 +13,12 @@
 
 
 .headline {
-
   font-family: $secondary-font-family; 
 
 }
 
-.headline--secondary {
-  
 
-  
-}
-
-.headline--alt {
-
+.subline {
   font-family: $primary-font-family; 
   letter-spacing: 1px; 
   margin-bottom: rem-calc($level1); 

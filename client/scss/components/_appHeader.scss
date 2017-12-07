@@ -17,8 +17,8 @@
   z-index: 55; 
 
   @media #{$large-up} {
-
-      width: 10%; 
+    width: 12%; 
+    height: rem-calc(100px); 
 
   }
   

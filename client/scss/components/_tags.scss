@@ -1,0 +1,36 @@
+
+
+/*------------------------------------*\
+    #Tags
+\*------------------------------------*/
+
+.tag {
+  padding-right: rem-calc($level3); 
+  padding-left: rem-calc($level3); 
+  padding-top: rem-calc(2px); 
+  padding-bottom: rem-calc(2px); 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  color: #fff; 
+  @extend %fwb; 
+  @extend %uc; 
+  @include border-radius(2px); 
+  @include type-setting(-2); 
+
+}
+
+
+.tag--warning {
+  background-color: $warningColor; 
+
+}
+
+.tag--active {
+  background-color: $accentColor; 
+
+}
+
+.tag--inactive {
+  background-color: $grey--med; 
+
+}

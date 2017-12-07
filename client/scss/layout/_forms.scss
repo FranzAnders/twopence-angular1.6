@@ -31,7 +31,6 @@ input[type="color"], {
     margin-right: rem-calc($level2);
     @include type-setting(0);
     @include border-radius(0);
-    @extend %prl2;
 
     &:focus,
     &:active {
@@ -65,7 +64,6 @@ textarea {
 
   &:active,
   &:focus{
-
     color: $body-color;
 
   }
@@ -97,78 +95,89 @@ input {
 
  $formGroupSpeed: .4s;
 
-
 .input-group {
-
     width: 100%;
-    margin-bottom: rem-calc($base-magic-number);
+    margin-top: rem-calc($level1); 
+    margin-bottom: rem-calc($level5);
     @extend %position-relative;
 
     &:after {
-        content: "";
-        background-color: $primaryColor;
-        height: rem-calc(3px);
-        bottom: 0;
-        z-index: 3;
-        left: 0;
-        margin-right: auto;
-        margin-left: auto;
-        width: 0;
-        @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
-        @extend %position-absolute;
+      content: "";
+      background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
+      background-color: $primaryColor; 
+      height: rem-calc(3px);
+      bottom: 0;
+      z-index: 3;
+      right: 0;
+      margin-right: auto;
+      margin-left: auto;
+      width: 0;
+      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @extend %position-absolute;
     }
 
     input{
+      z-index: 1;
+      width: 100%;
+      margin-bottom: 0;
+      background-color: transparent;
+      border-bottom: 2px solid $grey--light;
 
-        z-index: 1;
-        width: 100%;
-        margin-bottom: 0;
-        background-color: transparent;
-        border-bottom: 3px solid $grey--med;
+      &:-webkit-autofill {
+        background-color: $tertiaryColor--translucent; 
+        
+      }
 
-        &:active,
-        &:focus {
 
-          color: $secondaryColor;
+      &:active,
+      &:focus {
+        color: $secondaryColor;
 
-        }
+      }
 
     }
 
     label {
-        z-index: 0;
-        bottom: rem-calc($level1);
-        left: 0;
-        margin-bottom: 0;
-        @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
-        @extend %position-absolute;
+      z-index: 0;
+      bottom: rem-calc($level1);
+      left: 0;
+      margin-bottom: 0;
+      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @extend %position-absolute;
     }
 
     &.is-focused,
     &.is-filled {
 
-        label {
+      label {
+        @include transform(scale(.8) translateY(-28px) translateX(-7px));
 
-          @include transform(scale(.8) translateY(-28px));
-
-        }
+      }
 
     }
 
     &.is-focused {
-
-        color: $primaryColor;
+        color: $tertiaryColor; 
 
         input {
-
          color: $secondaryColor;
 
         }
 
         &:after {
-            width: 100%;
+          width: 100%;
 
         }
+
+    }
+
+
+    .alerts {
+      position: absolute; 
+      left: 0; 
+      width: 100%; 
+      bottom: rem-calc(-24px); 
+      @include type-setting(-1); 
 
     }
 
@@ -328,13 +337,27 @@ textarea {
 
 
 
+
+
+
+/*------------------------------------*\
+    #Field Sets
+\*------------------------------------*/
+
+
+.fieldset{
+  margin-bottom: rem-calc($base-magic-number); 
+  
+}
+
+
+
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
 
 .alert--warning {
-
-    color: #FF6F92;
+    color: $warningColor;
 }
 
 
@@ -350,6 +373,11 @@ textarea {
 
     border-left: 1px solid $grey--med;
 }
+
+
+
+
+
 
 /*------------------------------------*\
     # Custom Inputs

@@ -1,77 +1,84 @@
-
-<div class="section--main">
-
-  <div class="vh100 grid grid--center grid--justifyCenter">
+  
+<div class="loginView  section--alt  grid  grid--center">
       
-    <div class="row grid-cell">
+  <div class="row grid-cell">
 
-      <div class="small-12  medium-9 large-5  medium-centered columns">
+    <div class="small-12  medium-8 large-5  medium-centered columns">
 
-        <div class="row"  ng-if="signUp.formUnsubmitted">
-          
-          <div class="small-12 columns">
-              
-              <ul class="grid  grid--center grid--justifySpaceAround">
-                  
-                <li>
-                  
-                  <span ng-class="{'fwb' : $state.is('main.signUp.account')}">Account
-                  </span>
-        
-                </li>
-        
-                <li>
-                  
-                  <span ng-class="{'fwb' : $state.is('main.signUp.identity')}">Identity
-                  </span>
-        
-                </li>
-        
-              </ul>
-        
-              <hr class="hr--primary">
-        
-          </div>
-        
-          <div class="small-12 columns mb5">
+      <div class="card">
+
+        <div class="card-content">
+
+          <div class="row"  ng-if="signUp.formUnsubmitted">
             
-            <div >
-        
-              
-              <div ui-view="form">
+            <div class="small-12 columns">
                 
-            
-              </div>
-            
-        
+                <ul class="formTabs  grid  grid--center grid--justifySpaceAround">
+                    
+                  <li class="formTabs-tab"
+                      ng-class="{'is-active' : $state.is('main.signUp.account')}">
+                    
+                    <span class="tab-title">
+                      1. Account
+                    </span>
+          
+                  </li>
+          
+                  <li class="formTabs-tab"
+                      ng-class="{'is-active' : $state.is('main.signUp.identity')}">
+                    
+                    <span class="tab-title">
+                      2. Identity
+                    </span>
+          
+                  </li>
+          
+                </ul>
+          
+                <hr class="hr--secondary mb3">
+          
             </div>
-        
-          </div>
-        
-          <div class="small-12 columns">
-              
-              <p class="text-center">
-                Already have an account?
-                <br>
-                <a ui-sref="main.login">Login</a>
-              </p>
-        
-          </div>
-        
-        </div>
-        
-        <div class="row" ng-if="!signUp.formUnsubmitted">
           
-          <div class="small-12 columns  text-center pt7 pb7">
+            <div class="small-12 columns">
               
-              <h1>Creating Account...</h1>
-        
+              <div >
+                
+                <div ui-view="form">
+                  
+              
+                </div>
+              
+              </div>
+          
+            </div>
+          
           </div>
           
+          <div class="row" ng-if="!signUp.formUnsubmitted">
+            
+            <div class="small-12 columns  text-center pt7 pb7">
+                
+                <h1>Creating Account...</h1>
+          
+            </div>
+            
+          </div>
+
         </div>
 
       </div>
-
+      
+      <div class="row">
+          <div class="small-12 columns">
+                
+                <p class="text-center">
+                  Already have an account?
+                  <br>
+                  <a ui-sref="main.login">Login</a>
+                </p>
+          
+            </div>
+      </div>
     </div>
 
   </div>

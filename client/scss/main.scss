@@ -35,7 +35,6 @@
     'abstracts/buttons',
     'abstracts/colors',
     'abstracts/icons',
-    'abstracts/panels',
     'abstracts/theme',
     'abstracts/typography',
     'abstracts/utility';
@@ -53,13 +52,13 @@
   'base/flexbox',
   'base/webfont';
 
-
+  
 // Layout
 @import
  'layout/footer',
  'layout/forms',
+ 'layout/formTabs',
  'layout/navs',
- 'layout/responsiveVideo',
  'layout/sections';
 
 
@@ -77,7 +76,14 @@
     'components/loaders',
     'components/modals',
     'components/pageHeaders',
-    'components/socialButtons';
+    'components/stats',
+    'components/socialButtons',
+    'components/tags';
+
 
 
 // Pages
+@import
+    'pages/login',
+    'pages/sponsorView';
+

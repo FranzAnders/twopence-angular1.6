@@ -13,25 +13,33 @@
   
     <div class="text-center">
         
-        <img src="assets/images/pickpocket-logo.png" alt="Pickpocket Logo" width="120">
+      <a ui-sref="sponsor.dashboard">
+        
+          <img src="assets/images/pickpocket-logo.png" alt="Pickpocket Logo" width="120">
+
+      </a>
   
     </div>
   
   </div>
   
-  <div class="section section--highlighted  section--main">
+  <div class="section  section--highlighted  sponsorViewContainer">
   
-    <div class="row ">
-    
-      <div class="small-12    columns">
-    
-          <div class="" ui-view="sponsor">
-        
-        
-          </div>
+    <div class="sponsorView-inner">
+      
+      <div class="row ">
+      
+        <div class="small-12  medium-12  columns">
+      
+            <div class="" ui-view="sponsor">
           
+          
+            </div>
+            
+        </div>
+      
       </div>
-    
+      
     </div>
   
   </div>

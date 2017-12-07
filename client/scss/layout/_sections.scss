@@ -39,17 +39,6 @@
 
 }
 
-.section--main {
-  padding-top: rem-calc($level6);
-
-  @media #{$large-up} {
-    
-    padding-left: 10%; 
-    min-height: 100vh; 
-
-  }
-
-}
 
 
 .section--padded {
@@ -117,39 +106,15 @@
 
 
 .section--alt {
-
     overflow: hidden;
     width: 100%; 
     color: #fff; 
-    
+    @include primaryGradient(); 
 
-    & > .row { 
-      @extend %position-relative; 
-    }
-
-    .section-title {
-        color: #fff; 
-    }
-
-    .section-text {
-        color: #fff; 
-    }
-
-     .section-content {
-        left:0; 
-        right: 0; 
-        bottom: 0;
-        top: 0;  
-        width: 100%;
-        z-index: 1; 
-        background-repeat: no-repeat; 
-        background-size: cover; 
-        background-position: center; 
-        @extend %position-absolute; 
-
-    }
 
 }
+
+
 .section--highlighted {
 
   background-color: $grey--light; 
