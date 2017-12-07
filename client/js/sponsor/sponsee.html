@@ -1,81 +1,117 @@
-<div class="section--lead">
+
+<div class="row">
   
+  <div class="small-12   columns ">
+  
+
+      <div class="card-content grid grid--center grid--justifySpaceBetween">
+
+        <div>
+
+          <h1 class="txtc2  mb2" ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name ">
+          </h1>
+            
+          <p >
+            Plan Status:
+                  
+            <span ng-switch="sponsorship.currentPlan.active"
+                  ng-if='sponsorship.sponsorshipInfo.sponsee.status === "active"'>
+                  
+              <span ng-switch-when="true" class="tag tag--active">
+                Active
+              </span>
+                  
+              <span ng-switch-when="false" class="tag  tag--inactive">
+                  Paused<
+              </span>
+                  
+            </span>
+                  
+            <span ng-if='sponsorship.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
+                <span class="tag  tag--warning">Invite Pending</span>
+            </span>
+            
+            (
+            <a ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})">
+              Edit Plan
+            </a>
+            )
+          </p>
+        
+        </div>
+        
+        <div class="grid-cell text-center">
+          
+          <h2 class="statLabel">
+            Contributions To Date
+          </h2>
+        
+          <a  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" 
+              class="stat  txtc1  text-kilo  fwb">
+            <span class="">$</span>{{sponsorship.sponsorshipInfo.contributions_to_date}}
+          </a>
+        
+        </div>
+        
+      </div>
+  
+
+    <hr class="hr--faded">
+
+</div>
+
+
+  
+  
+  
+  <div class="small-12  columns ">
+          
     <div class="row">
-      
-      <div class="small-12   columns ">
-      
-        <h1 ng-bind="sponsee.sponseeInfo.first_name + ' ' + sponsee.sponseeInfo.last_name ">
-        </h1>
-      
-        <p class="txtc2">Matching Plan:
-      
-          <span ng-switch="sponsee.information.current_sponsorship.plan.active"
-                ng-if='sponsee.information.status == "active"'>
-      
-            <span ng-switch-when="true" class="fwb uc">
-                 ${{sponsee.information.current_sponsorship.plan.limit}} {{sponsee.information.current_sponsorship.plan.frequency}} Limit
-            </span>
-      
-            <span ng-switch-when="false">
-                <span class="fwb  uc">none</span>
-            </span>
-      
-          </span>
-      
-          <span ng-if='sponsee.information.status == "invited" || sponsee.information.status == "onboarding"'>
-              <span class="fwb  txtc--warning uc">Invite Pending</span>
-          </span>
-      
-          <span ng-if="sponsee.information.current_sponsorship === null">
-      
-            <span>
-                <span class="fwb  uc">none</span>
-            </span>
-      
-          </span>
-      
-          (<a ui-sref="sponsor.edit({plan: sponsee.sponsorshipId, sponsee: sponsee.information})" class="">
-          edit</a> )
-      
-        </p>
-      
-      </div>
-      
-      
-      <div class="small-12  columns ">
-            
-      <div class="row">
-        <div class="small-12 columns medium-10  large-6"><div class="card">
-                
-            <h2 class="headline headline--alt h5">Total Contributions</h2>
-            
-            <p>{{sponsee.sponseeInfo.contributionsTotal}}</p>
-            
-            <ul>
-            
-              <li ng-repeat="contribution in sponsee.sponseeInfo.contributions track by $index">
-                
-            
-                <div class="grid grid--center grid--justifySpaceBetween ptrbl2">
-                  <div class="text-micro">
-                    {{contribution.date}}
+
+      <div class="small-12 columns medium-10  large-6">
+
+          <div class="card">
+
+              <div class="card-header">
+
+                <h1 class="card-title">Contribution History</h1>
+
+              </div>
+       
+       
+            <div class="card-content">
+              
+              <ul class="table  table--list mb0">
+              
+                <li ng-repeat="contribution in sponsorship.sponsorshipInfo.contributions track by $index"
+                    class="table-row">
+                  
+              
+                  <div class="grid grid--center grid--justifySpaceBetween">
+                    <div class="text-micro">
+                      {{contribution.date}}
+                    </div>
                             
+                    <div class="h4">${{contribution.amount}}</div>
+                  </div>
+                  
+                </li>
+                
+
+              <!--   <li class="text-center">
+                  <a href="">View All</a>
+                </li> -->
+
+              </ul>
+
+            </div>
                             
-                            </div>
-                          
-                  <div class="h4">${{contribution.amount}}</div>
-                </div>
-                
-                <hr class="hr--primary">
-              </li>
-            
-            </ul>
-                
-          </div>
-                </div>
+        </div>
+       
       </div>
-      </div>
-      
+
     </div>
 
   </div>
+  
+</div>

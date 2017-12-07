@@ -5,7 +5,7 @@
    Sponsee Controller
 \*------------------------------------*/
 
-twopence.controller('sponseeCtrl', [
+twopence.controller('sponsorshipCtrl', [
   '$scope',
   '$stateParams',
   '$state',
@@ -26,32 +26,42 @@ twopence.controller('sponseeCtrl', [
 
     $scope.$state = $state;
 
-    console.log('reload');
+    vm.currentPlan = null; 
 
+
+    vm.$onInit = function() {
+
+      //
+      // Gets information for a sponsorship 
+      //
+      Sponsorship.get(sponseeId).then(function(sponsorship) {
+        vm.sponsorshipInfo = sponsorship;
+        vm.currentPlan = vm.getLatestPlan(sponsorship);
+
+        // Gets contributions made for a sponsor's sponsorship 
+        //
+        Sponsorship.getContributions(sponseeId).then(function(contributions) {
+          vm.sponsorshipInfo.contributions  = contributions.data; 
+        }).catch(function() {
+            console.log("ERROR: Something went wrong, please try again.");
+
+        }); 
+      }).catch(function() {
+        console.log("ERROR: Something went wrong, please try again.");
+
+      }); 
+
+    }
 
     //
-    // Gets information for a sponsorship 
+    // Gets the latest plan for a sponsorship
     //
-    Sponsorship.get(sponseeId).then(function(sponsorship) {
+    vm.getLatestPlan = function(pSponsorship) {
+      var plan = null; 
+      var plansLength = pSponsorship.plans.length; 
+      plan = pSponsorship.plans[plansLength - 1];
+      return plan; 
 
-      vm.sponseeInfo = sponsorship.sponsee;
-
-      console.log(vm.sponseeInfo); 
-      
-    // Gets contributions made for a sponsor's sponsorship 
-    //
-    Sponsorship.getContributions(sponseeId).then(function(contributions) {
-
-      vm.sponseeInfo.contributions  = contributions.data; 
-
-    }); 
-
-
-    }).catch(function(error){
-
-      console.log('sponsee not in system');
-
-    });
-
+    }; 
 
 }]);

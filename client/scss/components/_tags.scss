@@ -12,6 +12,7 @@
   text-transform: uppercase; 
   letter-spacing: 1px; 
   color: #fff; 
+  margin-right: rem-calc($level2); 
   @extend %fwb; 
   @extend %uc; 
   @include border-radius(2px); 
