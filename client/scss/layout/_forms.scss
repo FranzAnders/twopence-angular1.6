@@ -368,6 +368,9 @@ textarea {
 
 
 
+
+
+
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
@@ -381,27 +384,36 @@ textarea {
 
 
 /*------------------------------------*\
-    #Form Alerts
+    #Clear Field
 \*------------------------------------*/
 
+input.clearField {
+  background-color: transparent;
+  text-align: center;
+  color: $primaryColor; 
+  @include type-setting(7); 
 
-.formAreaDivider--left {
+  &:active, 
+  &:focus {
+    color: $secondaryColor; 
 
-    border-left: 1px solid $grey--med;
+  }
+
 }
 
 
+.clearField-container {
+  position: relative; 
 
+  &.clearField--money {
 
+    &:before {
+      content: "$"; 
+      position: absolute; 
+      left: 0; 
+      bottom: 0; 
 
+    }
 
-/*------------------------------------*\
-    # Custom Inputs
-\*------------------------------------*/
-
-.clearField {
-  background-color: transparent;
-  color: #FFF!important;
-  font-size: 3em!important;
-  text-align: center;
+  }
 }

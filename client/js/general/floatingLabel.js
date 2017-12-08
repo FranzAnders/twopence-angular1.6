@@ -7,7 +7,16 @@ function() {
 
         restrict: 'A', 
         scope: {}, 
-        link: function(scope, elem, attr ) {
+        link: function(scope, elem, attr ) {  
+            
+            console.log(elem); 
+
+            $(elem).change(function() {
+
+                console.log('hello');
+
+            }); 
+
 
             $(elem).focusout(function() {
                 $('.input-group').removeClass('is-focused');

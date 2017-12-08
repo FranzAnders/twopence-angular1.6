@@ -59,14 +59,15 @@
  'layout/forms',
  'layout/formTabs',
  'layout/navs',
- 'layout/sections';
+ 'layout/sections',
+ 'layout/tables';
+
 
 
 // Components
 @import
     'components/appHeader',
     'components/appNav',
-    'components/blockquote',
     'components/buttons',
     'components/cards',
     'components/headlines',

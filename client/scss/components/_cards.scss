@@ -8,25 +8,25 @@
   margin-bottom: rem-calc($level3);
   background-color: #FFF; 
   color: $body-color; 
+  width: 100%; 
   @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
 
   .card-header {
     border-bottom: $grey--light 1px solid; 
-    padding: rem-calc($level2); 
+    padding: rem-calc($level3); 
     width: 100%;
+
+    .card-title {
+      color: $secondaryColor; 
+      margin-bottom: 0; 
+      @include type-setting(0); 
+
+    }
 
   }
   
   .card-content {
     padding: rem-calc($level3);
-
-
-    @media #{$large-up} {
-      padding-top: rem-calc($level4);
-      padding-bottom: rem-calc($level4);
-
-    }
-
   }
 
   .card-actions {
@@ -35,7 +35,7 @@
   
     .card-action {
       color: $secondaryColor; 
-      fill: $secondaryColor; 
+      fill: $secondaryColor;
       background-color: transparent; 
       margin-bottom: 0; 
       border-left: $grey--light 1px solid; 
@@ -107,7 +107,8 @@
   .card-header {
   
     .sponsorship-name {
-      margin-bottom: rem-calc($level2); 
+      margin-bottom: rem-calc($level1); 
+      color: $secondaryColor; 
       @include type-setting(1);
 
     }

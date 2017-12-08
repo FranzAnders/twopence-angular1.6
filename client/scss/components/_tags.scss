@@ -12,6 +12,7 @@
   text-transform: uppercase; 
   letter-spacing: 1px; 
   color: #fff; 
+  margin-right: rem-calc($level2); 
   @extend %fwb; 
   @extend %uc; 
   @include border-radius(2px); 
@@ -32,5 +33,23 @@
 
 .tag--inactive {
   background-color: $grey--med; 
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Tag Sizes
+\*------------------------------------*/
+
+
+.tag--large {
+  padding-right: rem-calc($level4); 
+  padding-left: rem-calc($level4); 
+  padding-top: rem-calc($level1); 
+  padding-bottom: rem-calc($level1); 
+  @include type-setting(2); 
 
 }

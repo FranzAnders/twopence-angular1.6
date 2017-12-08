@@ -20,12 +20,29 @@ twopence.controller('sponseePlanEditCtrl', [
 
     var vm = this;
 
-    var planId = $stateParams.plan;
 
-    vm.sponsee = $stateParams.sponsee;
+    //
+    // Sets up variables and any values required by controller before operating
+    //
+    vm.$onInit = function() {
 
-    vm.customAmount = null
+      vm.sponsorshipId = $stateParams.plan;
 
+      vm.sponsee = null;
+
+      vm.customAmount = null
+
+      vm.latestPlan = '';
+
+      getPlan(vm.sponsorshipId);
+
+    }
+
+
+
+    //
+    // Rounds numbers to prevent decimals and keep numbers whole 
+    //
     var numRound = function(number, precision) {
 
       var factor = Math.pow(10, precision);
@@ -38,40 +55,37 @@ twopence.controller('sponseePlanEditCtrl', [
 
     }
 
-    vm.latestPlan = '';
-
-    // $scope.latestPlan = 'Yo, is I a plan?'
-
-    console.log(planId);
-
-    console.log(vm.sponsee);
 
 
-    // Cacluating today's date to compare to Termination Date in Pause / Unpause
+    //
+    // Cacluating today's date to compare to termination Date in Pause / Unpause
+    //
+    var getTodaysDate = function() {
 
-    var today = new Date();
+      var today = new Date();
 
-    var dd = today.getDate();
+      var dd = today.getDate();
 
-    var mm = today.getMonth() + 1; //January is 0!
+      var mm = today.getMonth() + 1; 
 
-    var yyyy = today.getFullYear();
+      var yyyy = today.getFullYear();
 
-    if (dd < 10) {
+      if (dd < 10) {
 
-      dd = '0' + dd
+        dd = '0' + dd
 
-    }
+      }
 
-    if (mm < 10) {
+      if (mm < 10) {
 
-      mm = '0' + mm
+        mm = '0' + mm
 
-    }
+      }
 
-    today = yyyy + '-' + mm + '-' + dd;
+      return today = yyyy + '-' + mm + '-' + dd;
 
-    console.log("Today be: " + today);
+    };
+
 
 
     // To Do
@@ -86,53 +100,34 @@ twopence.controller('sponseePlanEditCtrl', [
     // }
 
     //
-    // Gets a plan via an id
+    // Gets a sponsorship's plans and then gets the latest one 
     //
+    var getPlan = function(pSponsorshipId) {
 
-    vm.getPlan = function() {
-      Sponsorship.get(planId).then(function(plan) {
-
-        vm.sponseePlan = plan;
-
-        console.log(vm.sponseePlan);
-        console.log('Testing plan');
-        console.log(vm.sponseePlan.plans["0"].limit);
-        console.log(vm.sponseePlan.sponsee.status);
-
-        var length = vm.sponseePlan.plans.length - 1;
-
-        console.log(length);
-
-        vm.latestPlan = vm.sponseePlan.plans[length];
-
-        vm.customAmount = vm.latestPlan.limit;
-
-        vm.customAmount = numRound(vm.customAmount, 2);
-
-        console.log(vm.customAmount)
-
-        console.log("LATEST PLAN")
-
-        console.log(vm.latestPlan);
-
+      Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
+        console.log(sponsorship); 
+        vm.sponsee = sponsorship.sponsee; 
+        vm.latestPlan = vm.getLatestPlan(sponsorship);
+        console.log(vm.latestPlan); 
+        vm.customAmount = parseInt(vm.latestPlan.limit);
 
       })
-
       .catch(function(err) {
-
-        console.log('no bueno');
+        console.log('ERROR: We were unable to get the current sponsorship information.');
 
       });
-    }
-    //
-    //    checkName Method
-    //
 
+    }
+
+
+    //
+    //
+    //
     vm.checkName = function(newLimit) {
 
       console.log("Yo my dog: " + newLimit);
 
-      Sponsorship.get(planId).then(function(plan) {
+      Sponsorship.get(vm.sponsorshipId).then(function(plan) {
 
         vm.newPlan = plan;
 
@@ -181,76 +176,69 @@ twopence.controller('sponseePlanEditCtrl', [
 
       });
 
-      console.log("You prob created something. Hopefully in User# : " + planId);
+      console.log("You prob created something. Hopefully in User# : " + vm.planId);
 
     };
 
-    vm.pausePlan = function() {
 
-      console.log(vm.sponseePlan);
 
-      console.log("Is this active?: ");
+    //
+    // Gets the latest plan for a sponsorship
+    //
+    vm.getLatestPlan = function(pSponsorship) {
+      var plan = null; 
+      var plansLength = pSponsorship.plans.length; 
+      plan = pSponsorship.plans[plansLength - 1];
+      return plan; 
 
-      //
-      // To Do: Make For Loop if
-      // Plan array contains more than 1 object
-      //
+    }; 
 
-      console.log(vm.sponseePlan.plans[0].id)
+
+
+    //
+    // Pauses the plan 
+    //
+    vm.pausePlan = function(pPlan, pSponsorshipId) {
+
+      console.log(pPlan);
+
+      var planId = pPlan.id; 
 
       var payLoad = {
-
         "pause": true
+      }; 
 
-      };
-
-      console.log(vm.sponseePlan.plans[0].schedules[0].date_effective);
-
-      if (vm.sponseePlan.plans[0].schedules[0].date_termination === today) {
-
+      if (pPlan.schedules[0].date_termination === getTodaysDate()) {
+        console.log('already paused'); 
         console.log($fancyModal)
 
         $fancyModal.open({
-
-          template: '<div>Sponsorship is already paused. Please wait till tomorrow to see your paused plan.</div>',
-
+          template: '<div>This plan is already in the process of being paused, please wait 24 hours for changes to take effect.</div>',
           themeClass: 'fancymodal--secondary',
-
           openingClass: 'is-open',
-
           closingClass: 'is-closed'
 
         })
 
       } else {
 
-        if (vm.sponseePlan.plans[0].active === true) {
+        if (pPlan.active === true) {
 
-          console.log("Should be paused");
+          Sponsorship.patch(pSponsorshipId, planId, payLoad)
+          .then(function() {
+            alert('You’ve successfully paused your plan. Your changes will take 24 hours to go into effect.');
 
-          Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad).catch(
-
+          }).catch(
             function(error) {
-
-              console.log("You got caught son")
-
               console.log(error.data.message);
-
               vm.errorMsg = error.data.message;
-
               $fancyModal.open({
-
-                template: '<div>This plan cannot be paused.</div>',
-
+                template: '<div>This plan is already in the process of being paused, please wait 24 hours for changes to take effect.</div>',
                 themeClass: 'fancymodal--secondary',
-
                 openingClass: 'is-open',
-
                 closingClass: 'is-closed'
 
               })
-
-
 
             }
 
@@ -258,67 +246,35 @@ twopence.controller('sponseePlanEditCtrl', [
 
         } else {
 
-          console.log("Should be resumed");
-
+          //
+          // Sets pause prop to false to resume plan 
+          //
           payLoad.pause = false;
 
-          console.log("New Payload");
+          Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
+            alert("Plan is now being resumed.");
 
-          console.log(payLoad);
+          }).catch(function(error) {
 
-          Sponsorship.patch(planId, vm.sponseePlan.plans[0].id, payLoad).catch(
+              console.log("ERROR " + error.data.message);
 
-            function(error) {
-
-              console.log("Son. You was caught.");
-
-              console.log(error.data.message);
-
-
-              $fancyModal.open({
-
-                template: '<div>This plan cannot be unpaused.</div>',
-
-                themeClass: 'fancymodal--secondary',
-
-                openingClass: 'is-open',
-
-                closingClass: 'is-closed'
-
-              })
-
-
-            }
-
-          );
+            });
 
         }
 
       }
 
-      console.log(vm.sponseePlan);
-
-      //
-      // When it's paused then it knows what to send
-      //
-
-      // Sponsorship.get(payLoad.id).then(function(plan) {
-      //
-      //   console.log(plan);
-      //
-      // })
-
     };
 
-      // Create plan
 
-      vm.createPlan = function() {
+    //
+    // Create plan
+    //
+    vm.createPlan = function(pPlanEditForm, pSponsorshipId, pSponseeInfo) {
 
-        console.log(vm.customAmount);
+      if(pPlanEditForm.$valid) {
 
-        console.log("Yo");
-
-        var sponseeInfo = {
+        var planInfo = {
           "plan":{
               "type":"match",
               "frequency":"monthly",
@@ -326,46 +282,33 @@ twopence.controller('sponseePlanEditCtrl', [
           }
         }
 
-        console.log(sponseeInfo);
+      var sponseeId = pSponseeInfo.id; 
 
-        // We should grab the sponseeID and pass it to the call
+      Sponsorship.createNewPlan(pSponsorshipId, planInfo)
+        .then(function(success){
+          alert("Your changes have been saved! Just note they will take effect within 24 hours.");
+          getPlan(vm.sponsorshipId); 
+          console.log(vm.latestPlan); 
 
-        var sponseeId = vm.sponseePlan.sponsee.ids
+        })
+        .catch(function(error){
+          console.log(error);
+          console.log("ERROR: New Plan could not be made.");
 
-        console.log(sponseeInfo);
+        }
 
-        Sponsorship.newPlan(planId, sponseeInfo)
+      )
 
-          .then(function(success){
 
-            console.log("Congrats on creating the plan");
+      } else {
 
-            console.log(success);
 
-            $timeout(function(){
-
-              vm.getPlan()
-
-              console.log(vm.latestPlan);
-
-            });
-
-          })
-
-          .catch(
-
-          function(error){
-
-            console.log("Something bad happened");
-
-            console.log(error);
-
-          }
-
-        )
+          console.log('ERROR: form is not valid'); 
 
       }
 
-      vm.getPlan();
+
+    }
+
   }
 ]);

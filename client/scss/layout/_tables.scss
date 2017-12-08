@@ -1,0 +1,24 @@
+
+
+
+.table {
+
+
+
+}
+
+.table--list {
+  
+  .table-row {
+    padding: rem-calc($level3);
+    color: $secondaryColor;
+
+  }
+
+  .table-row:nth-child(odd) {
+    background-color: $grey--light; 
+
+  }
+
+
+}

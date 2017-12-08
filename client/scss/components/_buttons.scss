@@ -7,6 +7,7 @@ button,
 .button {
   white-space: nowrap; 
   margin-bottom: rem-calc($base-magic-number);
+  background-color: transparent; 
   @extend %uc; 
   @extend %fwb; 
   @extend %button;
