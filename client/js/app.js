@@ -137,7 +137,7 @@ twopence.config(
 
         })
         .state('main.verify', {
-          url: 'verify/:verifyToken/',
+          url: 'verify/:verifyToken',
           views: {
 
             'main': {
