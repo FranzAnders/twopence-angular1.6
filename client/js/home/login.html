@@ -4,37 +4,91 @@
   <div class="row grid-cell">
 
     <div class="small-12 medium-6 medium-centered large-4 columns">
-
-      <!--
-      ===
-      === To Fix: cameFromEmail params  
-      ===
-
-      <div ng-if="login.verified">
-        <h5>Thanks for verifiying! Please login</h5>
-      </div> -->
+      
 
       
       <div class="card">
 
         <div class="card-content">
 
-          <form name="loginForm" ng-submit="login.logInUser()">
+          <div ng-if="login.verified.camefromemail">
+            <h5>Thanks for verifiying! Let's log you in.</h5>
+          </div> 
+
+          <form name="login.loginForm" 
+                novalidate
+                ng-model-options="{ getterSetter: true }"
+                ng-submit="login.logInUser(login.loginForm)">
             
             <div class="input-group input--medium">
           
               <label for="username">Email</label>
-              <input id="username" ng-model="login.form.email" type="text" floating-label>
-          
+
+              <input id="username" 
+                     name="username"
+                     ng-model="login.form.email" 
+                     type="text" 
+                     required
+                     floating-label>
+
+              <div ng-messages="login.loginForm.username.$error"
+                   ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
+                   role="alert"
+                   class="alerts  alert--warning">
+
+                <div ng-message="required">
+                   An email is required.
+                </div>
+
+              </div>
+
             </div>
           
           
             <div class="input-group input--medium">
+
               <label for="password">Password</label>
-              <input id="password" ng-model="login.form.password" type="password" floating-label>
-          
+
+              <input id="password" 
+                     ng-model="login.form.password" 
+                     type="password" 
+                     name="password"
+                     required
+                     floating-label>
+
+              <div ng-messages="login.loginForm.password.$error"
+                   ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
+                   role="alert"
+                   class="alerts  alert--warning">
+
+                <div ng-message="required">
+                   A password is required.
+                </div>
+
+              </div>
+
             </div>
-          
+
+            <div class="text-micro mb4"
+                 role="alert"
+                 ng-if="login.formSubmissionErrors.error">
+    
+                <div ng-if="login.formSubmissionErrors.invalidCombination && !login.formSubmissionErrors.rateLimitError">
+                    
+    
+                    <span class="alert--warning">Password and username combination is incorrect.</span> <br>Please try a different login or <a ui-sref="main.signUp.account">make an account</a>. If you've made an account, be sure to verify your email before proceeding.
+    
+                </div>
+              
+                <div ng-if="login.formSubmissionErrors.rateLimitError"
+                     class="alert--warning"> 
+    
+                      You've made too many successive attempts to login. Please wait a few minutes before trying again.
+                  
+                </div>
+
+            </div>
+
               <button class="button  button--secondary  button--medium  button--expanded mb0"
                       type="submit">
                 Login

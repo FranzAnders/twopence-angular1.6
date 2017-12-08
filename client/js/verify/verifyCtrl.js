@@ -8,13 +8,20 @@ twopence.controller('verifyCtrl', [
   '$stateParams',
   '$state',
   '$scope',
+  '$timeout', 
   function($stateParams,
     $state,
-    $scope) {
+    $scope, 
+    $timeout) {
 
     var vm = this;
 
-    console.log("Hello yo.")
+    $timeout(function() {
 
-    }
+     $state.go('main.login', {cameFromEmail: true});
+
+    }, 2000); 
+
+  }
+
 ]);
