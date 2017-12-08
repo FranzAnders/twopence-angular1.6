@@ -94,11 +94,19 @@ twopence.factory('Auth', [
       }
 
     };
+
+
+    //
     // Check if the user is Authenticated
+    //
     auth.isAuthenticated = function() {
       return !!Session.userToken;
     }
+
+
+    //
     // Check to see if user is authorized to see page
+    //
     auth.isAuthorized = function (authorizedRoles) {
       if (!angular.isArray(authorizedRoles)) {
         authorizedRoles = [authorizedRoles];

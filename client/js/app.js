@@ -156,11 +156,7 @@ twopence.config(
 
                 var token = $stateParams.verifyToken;
 
-                console.log("Do I have Brackets?");
-                console.log($stateParams);
-                // To Do : Combine into 1 Regex
-                var newtoken = token.replace(/{/, '');
-                var finaltoken = newtoken.replace(/}/, '');
+                var finaltoken = token.replace(/{/, '').replace(/}/, '');
 
                 console.log(finaltoken);
 
@@ -169,19 +165,18 @@ twopence.config(
                 };
 
                 Sponsor.verifyEmail(tokenObj).then(
-                  function() {
+                  function(success) {
 
                     $state.go("main.login", {camefromemail: true});
                     console.log("Token Verified");
 
                     return true;
                   }
-                ).catch(
+                ).catch(function(err) {
 
-                );
+                    console.log(err); 
 
-
-
+                });
 
             }]
 

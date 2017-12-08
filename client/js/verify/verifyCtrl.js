@@ -16,12 +16,6 @@ twopence.controller('verifyCtrl', [
 
     var vm = this;
 
-    $timeout(function() {
-
-     $state.go('main.login', {cameFromEmail: true});
-
-    }, 2000); 
-
   }
 
 ]);
