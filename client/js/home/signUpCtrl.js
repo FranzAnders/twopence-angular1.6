@@ -90,11 +90,12 @@ twopence.controller('signUpCtrl', [
 
           User.create(vm.userInfo).then(function(res) {
             $state.go('main.signUp.confirmation');
-          }).catch(function(err) {
-            vm.status = err.status;
-            console.log(vm.status); 
 
-            if(vm.status === 'Email has already been taken.') {
+          }).catch(function(err) {
+            vm.statusText = err.data.message;
+            console.log(err); 
+
+            if(vm.statusText === 'Email has already been taken.') {
 
               alert('No duplicates! It appears there is an account with this email.')
 
