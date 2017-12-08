@@ -89,7 +89,9 @@ twopence.controller('signUpCtrl', [
         vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
 
           User.create(vm.userInfo).then(function(res) {
+            
             $state.go('main.signUp.confirmation');
+            User.verify(); 
 
           }).catch(function(err) {
             vm.statusText = err.data.message;
@@ -109,15 +111,6 @@ twopence.controller('signUpCtrl', [
 
       }
 
-    };
-
-
-    //
-    // Verifies a user email by sending them a reminder via email 
-    //
-    vm.verifyEmail = function() {
-      User.verify();
-      $state.go('sponsor.dashboard');
     };
 
 
