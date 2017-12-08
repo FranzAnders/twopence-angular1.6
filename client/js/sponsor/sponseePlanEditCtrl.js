@@ -34,6 +34,8 @@ twopence.controller('sponseePlanEditCtrl', [
 
       vm.latestPlan = '';
 
+      vm.isActive = false; 
+
       getPlan(vm.sponsorshipId);
 
     }
@@ -82,7 +84,9 @@ twopence.controller('sponseePlanEditCtrl', [
 
       }
 
-      return today = yyyy + '-' + mm + '-' + dd;
+      today = yyyy + '-' + mm + '-' + dd;
+
+      return today; 
 
     };
 
@@ -100,16 +104,19 @@ twopence.controller('sponseePlanEditCtrl', [
     // }
 
     //
-    // Gets a sponsorship's plans and then gets the latest one 
+    // Gets a sponsorship's information and then gets the latest plan and sponsee data  
+    // also sets the customAmount in the matching limit field
     //
     var getPlan = function(pSponsorshipId) {
-
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
-        console.log(sponsorship); 
         vm.sponsee = sponsorship.sponsee; 
         vm.latestPlan = vm.getLatestPlan(sponsorship);
-        console.log(vm.latestPlan); 
         vm.customAmount = parseInt(vm.latestPlan.limit);
+
+        //
+        // We check if plan ends today, if so, it's a paused plan
+        //
+        vm.checkIfPaused(vm.latestPlan, getTodaysDate()); 
 
       })
       .catch(function(err) {
@@ -120,65 +127,81 @@ twopence.controller('sponseePlanEditCtrl', [
     }
 
 
+
+    //
+    // Check if plan ends today 
+    //
+    vm.checkIfPaused = function(pPlan, pTodaysDate) {
+
+        console.log(pPlan.schedules[0].date_termination); 
+        console.log(pTodaysDate); 
+
+        var today = pTodaysDate; 
+
+        vm.isActive = !(pPlan.schedules[0].date_termination == today); 
+
+    }
+
+
     //
     //
     //
-    vm.checkName = function(newLimit) {
+    // vm.checkName = function(newLimit) {
 
-      console.log("Yo my dog: " + newLimit);
+    //   console.log("Yo my dog: " + newLimit);
 
-      Sponsorship.get(vm.sponsorshipId).then(function(plan) {
+    //   Sponsorship.get(vm.sponsorshipId).then(function(plan) {
 
-        vm.newPlan = plan;
+    //     vm.newPlan = plan;
 
-        console.log(vm.sponseePlan);
+    //     console.log(vm.sponseePlan);
 
-        console.log("Plan ID: " + vm.sponseePlan.id);
+    //     console.log("Plan ID: " + vm.sponseePlan.id);
 
-        // console.log("User ID: " + vm.sponseePlan.user.id);
+    //     // console.log("User ID: " + vm.sponseePlan.user.id);
 
-        console.log(vm.sponseePlan.plan);
+    //     console.log(vm.sponseePlan.plan);
 
-        console.log(vm.sponseePlan.plan.limit);
-        // need userID + newAmount in Data PayLoad
+    //     console.log(vm.sponseePlan.plan.limit);
+    //     // need userID + newAmount in Data PayLoad
 
-        vm.sponseePlan.plan.limit = newLimit
+    //     vm.sponseePlan.plan.limit = newLimit
 
-        console.log("new limit: " + vm.sponseePlan.plan.limit);
+    //     console.log("new limit: " + vm.sponseePlan.plan.limit);
 
-        var limitLoad = {
+    //     var limitLoad = {
 
-          "user": {
+    //       "user": {
 
-            "id": vm.newPlan.user.id
+    //         "id": vm.newPlan.user.id
 
-          },
+    //       },
 
-          "plan": {
+    //       "plan": {
 
-            "type": "match",
+    //         "type": "match",
 
-            "frequency": "monthly",
+    //         "frequency": "monthly",
 
-            "limit": newLimit,
+    //         "limit": newLimit,
 
-            "amount": null
+    //         "amount": null
 
-          }
+    //       }
 
-        };
+    //     };
 
-        console.log("Payload");
+    //     console.log("Payload");
 
-        console.log(limitLoad);
+    //     console.log(limitLoad);
 
-        Sponsorship.create(limitLoad);
+    //     Sponsorship.create(limitLoad);
 
-      });
+    //   });
 
-      console.log("You prob created something. Hopefully in User# : " + vm.planId);
+    //   console.log("You prob created something. Hopefully in User# : " + vm.planId);
 
-    };
+    // };
 
 
 
@@ -200,8 +223,6 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     vm.pausePlan = function(pPlan, pSponsorshipId) {
 
-      console.log(pPlan);
-
       var planId = pPlan.id; 
 
       var payLoad = {
@@ -209,9 +230,6 @@ twopence.controller('sponseePlanEditCtrl', [
       }; 
 
       if (pPlan.schedules[0].date_termination === getTodaysDate()) {
-        console.log('already paused'); 
-        console.log($fancyModal)
-
         $fancyModal.open({
           template: '<div>This plan is already in the process of being paused, please wait 24 hours for changes to take effect.</div>',
           themeClass: 'fancymodal--secondary',
@@ -223,17 +241,17 @@ twopence.controller('sponseePlanEditCtrl', [
       } else {
 
         if (pPlan.active === true) {
-
           Sponsorship.patch(pSponsorshipId, planId, payLoad)
           .then(function() {
             alert('You’ve successfully paused your plan. Your changes will take 24 hours to go into effect.');
+            vm.checkIfPaused(pPlan, getTodaysDate()); 
 
           }).catch(
             function(error) {
-              console.log(error.data.message);
+              console.log(error); 
               vm.errorMsg = error.data.message;
               $fancyModal.open({
-                template: '<div>This plan is already in the process of being paused, please wait 24 hours for changes to take effect.</div>',
+                template: '<div>This matching plan is already paused, please wait 24 hrs for changes to take effect.</div>',
                 themeClass: 'fancymodal--secondary',
                 openingClass: 'is-open',
                 closingClass: 'is-closed'
@@ -253,6 +271,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
           Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
             alert("Plan is now being resumed.");
+            vm.checkIfPaused(); 
 
           }).catch(function(error) {
 
@@ -286,14 +305,17 @@ twopence.controller('sponseePlanEditCtrl', [
 
       Sponsorship.createNewPlan(pSponsorshipId, planInfo)
         .then(function(success){
-          alert("Your changes have been saved! Just note they will take effect within 24 hours.");
+          alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
           getPlan(vm.sponsorshipId); 
-          console.log(vm.latestPlan); 
 
         })
         .catch(function(error){
           console.log(error);
-          console.log("ERROR: New Plan could not be made.");
+
+          if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
+            alert("The existing plan already has a limit of " + "$" + planInfo.plan.limit)
+
+          }
 
         }
 

@@ -295,8 +295,8 @@ button,
 
 .button--micro {
     padding: rem-calc($level1);
-    padding-right: rem-calc($level1);
-    padding-left: rem-calc($level1);
+    padding-right: rem-calc($level2);
+    padding-left: rem-calc($level2);
     @extend %text-micro; 
 }
 

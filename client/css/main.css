@@ -6271,7 +6271,7 @@ button,
 }
 
 /* line 223, ../scss/abstracts/_utility.scss */
-.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, .absolute-nav, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before, .mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:before, .menuToggle-icon:after, .menuToggle-icon:before, .fancymodal .fancymodal-close {
+.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, input.clearField:after, .absolute-nav, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before, .mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:before, .menuToggle-icon:after, .menuToggle-icon:before, .fancymodal .fancymodal-close {
   position: absolute;
 }
 
@@ -14322,15 +14322,36 @@ input.clearField {
   line-height: 1.2;
 }
 /* line 396, ../scss/layout/_forms.scss */
+input.clearField:after {
+  content: "";
+  background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
+  background-color: #6AC6C5;
+  height: 0.1875rem;
+  bottom: 0;
+  z-index: 3;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 0;
+  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 411, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #333031;
 }
+/* line 415, ../scss/layout/_forms.scss */
+input.clearField:active:after, input.clearField:focus:after {
+  width: 100%;
+}
 
-/* line 405, ../scss/layout/_forms.scss */
+/* line 425, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 410, ../scss/layout/_forms.scss */
+/* line 430, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15588,8 +15609,8 @@ button .button-inner,
 /* line 296, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
-  padding-right: 0.375rem;
-  padding-left: 0.375rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
 }
 
 /* line 303, ../scss/components/_buttons.scss */
@@ -16863,8 +16884,8 @@ body.fancymodal-open {
   padding-left: 1.5rem;
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  font-size: 1.125rem;
+  line-height: 1.33333;
 }
 
 /*------------------------------------*\

@@ -81,41 +81,33 @@
 
           <div class="card-content">
       
-            <div class="grid grid--full med-grid--1of3 med-grid--flexDirectionRow grid--flexDirectionColumn grid--justifyCenter med-grid--justifySpaceAround med-grid--top">
+            <div class="grid grid--full med-grid--1of3 med-grid--flexDirectionRow grid--flexDirectionColumn grid--justifyCenter med-grid--justifySpaceAround med-grid--center">
 
               <div class="grid-cell">
-                  <h2 class="text-center  medium-text-left  uc txtc2 fwb  text-micro">Plan Status</h2>
+                  <h2 class="text-center  medium-text-left  uc txtc2 fwb  text-micro mb0">Plan Status</h2>
               </div>
               
 
-              <div class="grid-cell mb3 text-center">
+              <div class="grid-cell  text-center">
 
-                <span ng-switch="sponseePlanEdit.latestPlan.active">
-              
-                  <span ng-switch-when="true" class="tag tag--active  tag--large mrl0">
+                <span ng-if="sponseePlanEdit.isActive" class="tag tag--active  tag--large mrl0">
                     Active
                   </span>
-              
-                  <span ng-switch-when="false" class="tag  tag--inactive  tag--large mrl0">
-                    Paused
-                  </span>
-              
+                        
+                <span ng-if="!sponseePlanEdit.isActive" class="tag  tag--inactive  tag--large mrl0">
+                  Paused
                 </span>
-
-                  <span ng-if="false" class="tag  tag--inactive  tag--large mrl0">
-                    Paused
-                  </span>
-              
-              
+            
+            
                 <span ng-if='sponseePlanEdit.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
                     <span class="tag  tag--warning  tag--large">Invite Pending</span>
                 </span>
 
             </div>
 
-            <div class="grid-cell">
+            <div class="grid-cell  text-center">
 
-                <a class="button button--tertiary" ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponseePlanEdit.sponsorshipId)">
+                <a class="mb0" ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponseePlanEdit.sponsorshipId)">
                  Pause Plan
                 </a>
 
