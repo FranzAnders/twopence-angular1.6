@@ -154,29 +154,23 @@ twopence.config(
 
             verify: ['$stateParams', '$state', 'Sponsor', function($stateParams, $state, Sponsor) {
 
-                var token = $stateParams.verifyToken;
+              var token = $stateParams.verifyToken;
 
-                var finaltoken = token.replace(/{/, '').replace(/}/, '');
+              var finaltoken = token.replace(/{/, '').replace(/}/, '');
 
-                console.log(finaltoken);
+              var tokenObj = {
+                "token": finaltoken
+              };
 
-                var tokenObj = {
-                  "token": finaltoken
-                };
+              Sponsor.verifyEmail(tokenObj).then(
+                function(success) {
+                  return true;
+                }
+              ).catch(function(err) {
 
-                Sponsor.verifyEmail(tokenObj).then(
-                  function(success) {
+                  return err
 
-                    $state.go("main.login", {camefromemail: true});
-                    console.log("Token Verified");
-
-                    return true;
-                  }
-                ).catch(function(err) {
-
-                    console.log(err); 
-
-                });
+              });
 
             }]
 
