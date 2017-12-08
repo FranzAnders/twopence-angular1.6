@@ -35,3 +35,21 @@
   background-color: $grey--med; 
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Tag Sizes
+\*------------------------------------*/
+
+
+.tag--large {
+  padding-right: rem-calc($level4); 
+  padding-left: rem-calc($level4); 
+  padding-top: rem-calc($level1); 
+  padding-bottom: rem-calc($level1); 
+  @include type-setting(2); 
+
+}

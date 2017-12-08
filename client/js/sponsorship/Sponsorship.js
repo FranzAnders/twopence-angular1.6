@@ -79,10 +79,11 @@ twopence.factory('Sponsorship', [
 
   };
 
+  //
   // Creating new plan between Sponsor & Sponsee
   // Using SponseeID and Plan Info
 
-  sponsorship.newPlan = function(pSponseeId, pSponseeInfo) {
+  sponsorship.createNewPlan = function(pSponseeId, pSponseeInfo) {
 
     return $q(function(resolve, reject) {
 

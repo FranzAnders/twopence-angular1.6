@@ -9,9 +9,11 @@
 twopence.controller('settingsCtrl', [
     'Sponsor',
     'User',
+    '$timeout',
     function(
       Sponsor, 
-      User) {
+      User, 
+      $timeout) {
 
     var vm = this; 
 
@@ -34,12 +36,17 @@ twopence.controller('settingsCtrl', [
     // Gets the sponsor's current information and sets the respective properties
     // to the userSettings object that gets used in the form submission
     //
-    Sponsor.getSponsorInfo().then(function(sponsorInfo) {
+    User.getUserInfo().then(function(sponsorInfo) {
 
       vm.sponsorInfo = sponsorInfo;
 
+      $timeout(function() {
+
       vm.userSettings.phone = vm.sponsorInfo.phone; 
       vm.userSettings.sms_preferred = vm.sponsorInfo.sms_preferred; 
+
+      }, 200); 
+
 
     })  
     .catch(function(err) {
