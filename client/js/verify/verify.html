@@ -5,45 +5,51 @@
 
     <div class="small-11 medium-8  large-6  small-centered columns text-center">
 
-      <div ng-hide="verify.isTokenExpired || verify.emailVerificationSent">
-        <div class="row">
-          <div class="small-12 columns text-center">
-            <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
+      <div ng-hide="verify.emailVerificationSent">
+        <div ng-hide="verify.isTokenExpired">
+          <div class="row">
+            <div class="small-12 columns text-center">
+              <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
+            </div>
+          </div>
+          <h1 class="h2  ff2 txtc2">Thanks for verifying your account!</h1>
+          <p>You will now be redirected to the Pickpocket login screen. If it doesn't automatically redirect you, click below.</p>
+
+          <div class="row">
+            <div class="small-10 columns medium-6 small-centered large-3">
+        
+              <a ui-sref="main.login" class="button  button--primary  button--small button--expanded ">
+                <span class="button-inner">Login</span>
+              </a>
+            
+            </div>
           </div>
         </div>
-        <h1 class="h2  ff2 txtc2">Thanks for verifying your account!</h1>
-        <p>You will now be redirected to the Pickpocket login screen. If it doesn't automatically redirect you, click below.</p>
         
-        <a ui-sref="main.login" class="button  button--primary  button--small button--expanded ">
-          <span class="button-inner">Login</span>
-        </a>
-        
-      </div>
-
-      <div ng-show="verify.isTokenExpired"
-           ng-hide="verify.emailVerificationSent">
-        <div class="row">
-          <div class="small-12 columns text-center">
-            <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
+        <div ng-show="verify.isTokenExpired">
+          <div class="row">
+            <div class="small-12 columns text-center">
+              <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
+            </div>
           </div>
-        </div>
+          
+          <h1 class="h2 txtc2 ff2">Email verification token is expired!</h1>
+          <p>The verification code sent is no longer valid. <br class="show-for-medium-up">Try send yourself a new code below!<p>
+          
+          <div class="row">
+            <div class="small-10 columns medium-6 small-centered large-3">
         
-        <h1 class="h2 txtc2 ff2">Email verification token is expired!</h1>
-        <p>The verification code sent is no longer valid. <br class="show-for-medium-up">Try send yourself a new code below!<p>
+              <button ng-click="verify.resendVerificationEmail()" 
+                      ng-hide="verify.emailVerificationSent"
+                      class="button--primary  button--small button--expanded ">
+                <span class="button-inner">Resend  Code</span>
+              </button>
         
-        <div class="row">
-          <div class="small-10 columns medium-6 small-centered large-3">
-
-            <button ng-click="verify.resendVerificationEmail()" 
-                    ng-hide="verify.emailVerificationSent"
-                    class="button--primary  button--small button--expanded ">
-              <span class="button-inner">Resend  Code</span>
-            </button>
-
+            </div>
           </div>
+        
+        
         </div>
-
-
       </div>
 
       <div class="row" ng-show="verify.emailVerificationSent">

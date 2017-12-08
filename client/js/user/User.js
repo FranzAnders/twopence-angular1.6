@@ -41,6 +41,7 @@ twopence.factory('User', [
     // Sends out email verification to sponsor's email
     //
     User.verify = function() {
+
       return $q(function(resolve, reject) {
         $http.post(BASE_URL + '/v1/verification', {"type": "email"}, {
             headers: {
