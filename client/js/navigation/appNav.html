@@ -6,26 +6,26 @@
       <ul class="appNav-menu  grid  grid--center  grid--justifyLeft grid--1of3 med-grid--fit  large-grid--flexDirectionColumn "
         ng-class="{'secondary-app-nav-is-open' : nav.secondaryMenuActive}">
   
-        <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter">
+        <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter  large-grid--justifyStart">
           
-          <a ng-class="{'is-active' : nav.isActive('sponsor.dashboard')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center"  ui-sref="sponsor.dashboard">
+          <a ng-class="{'is-active' : nav.isActive('sponsor.dashboard')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center "  ui-sref="sponsor.dashboard">
   
             <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg"  class="menu-link-icon  home" viewBox="0 0 18.7 19">
               <title>
-                Page 1
+                Pocket
               </title>
               <path class="st0" d="M16.8 2.7c-.1 0-.1 0 0 0h-5.6L6.9.5c-.2-.1-.5-.1-.6.1L4.7 2.7H2.1c-.4 0-.7.3-.7.7v10.2c0 .2.1.5.3.6L9 18.6l.4.2.3-.2 7.3-4.4c.2-.1.3-.4.3-.6V3.4c.1-.4-.2-.7-.5-.7zM6.7 1L10 2.7H5.5L6.7 1z"/>
             </svg>
   
-            <div class="menu-link-label">Home</div>
+            <div class="menu-link-label">Sponsorships</div>
   
           </a>
   
         </li>
   
-        <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter">
+        <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter  large-grid--justifyStart">
   
-          <a ng-class="{'is-active' : nav.isActive('sponsor.contributions')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center"  ui-sref="sponsor.contributions">
+          <a ng-class="{'is-active' : nav.isActive('sponsor.contributions')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center "  ui-sref="sponsor.contributions">
   
             <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="menu-link-icon" viewBox="0 0 17.7 11.4">
           
@@ -42,9 +42,11 @@
   
         </li>
         
+
+        <!--View more toggle for small devices-->
         <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter  hide-for-large-up">
   
-          <button class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center" 
+          <button class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center " 
              ng-click="nav.toggleSecondaryMenu()">
                 
               <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="menu-link-icon" viewBox="0 0 17.7 11.4">
@@ -76,11 +78,11 @@
           </button>
   
         </li>
-
+  
 
         <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter  show-for-large-up">
 
-           <a class="appNav-menu-link"  ui-sref="sponsor.settings">
+           <a  ng-class="{'is-active' : nav.isActive('sponsor.contributions')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  grid--center  large-grid--justifyLeft"  ui-sref="sponsor.settings">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="menu-link-icon" 
                viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
             <path class="st0" d="M10.3,13.5c-1.3,0-2.4-0.8-2.9-1.9C7,10.4,7.2,9,8.1,8.1C9,7.2,10.4,7,11.5,7.5c1.2,0.5,1.9,1.6,1.9,2.9
@@ -103,12 +105,15 @@
 
         </li>
         
-        <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter  show-for-large-up">
-           <a class="appNav-menu-link" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">
+        <li class="appNav-menu-item   grid-cell  grid  grid--justifyCenter  show-for-large-up">
+           <a class="appNav-menu-link   grid  grid--flexDirectionColumn  grid--center  large-grid--justifyLeft" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">
 
-           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="menu-link-icon" 
+           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="menu-link-icon faq" 
                  viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
-           
+              
+              <title>
+                Frequently Asked Questions
+              </title>
               <path class="st0" d="M9.5,13.8c0-0.4,0.4-0.8,0.8-0.8s0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8S9.5,14.2,9.5,13.8z M8.7,8.4H7.6
                 c0-0.7,0.3-1.4,0.8-1.9s1.2-0.7,1.9-0.7c1.3,0.1,2.4,1.2,2.5,2.5c0.1,1.1-0.6,2.1-1.6,2.5c-0.3,0.1-0.4,0.4-0.4,0.7v0.4H9.7v-0.4
                 c0-0.7,0.4-1.4,1.1-1.7c0.6-0.2,1-0.8,0.9-1.5c0-0.8-0.7-1.4-1.4-1.4C9.9,6.8,9.5,7,9.2,7.3C8.9,7.6,8.7,8,8.7,8.4z M20.2,10.3
@@ -116,13 +121,13 @@
               </svg>
 
               <div class="menu-link-label">
-                FAQ
+                FAQs
               </div>
             </a>
         </li>
               
-        <li class="appNav-menu-item  grid-cell  grid  grid--justifyCenter  show-for-large-up">
-           <a class="appNav-menu-link"  ui-sref="sponsor.logout">Logout</a>
+        <li class="appNav-menu-item  grid-cell  grid-cell  grid  grid--justifyCenter  show-for-large-up">
+           <a class="appNav-menu-link"  ui-sref="sponsor.logout">Log Out</a>
         </li>
 
       </ul>
@@ -139,7 +144,7 @@
         </li>
               
         <li class="appNav-menu-item">
-           <a class="appNav-menu-link"  ui-sref="sponsor.logout">Logout</a>
+           <a class="appNav-menu-link"  ui-sref="sponsor.logout">Log Out</a>
         </li>
 
       </ul>

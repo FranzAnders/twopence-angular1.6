@@ -1,7 +1,7 @@
 
 <div class="row">
   
-  <div class="small-12   columns ">
+  <div class="small-12   medium-6 columns ">
   
 
       <div class="card-content grid grid--center grid--justifySpaceBetween">
@@ -39,36 +39,51 @@
           </p>
         
         </div>
-        
-        <div class="grid-cell text-center">
-          
-          <h2 class="statLabel">
-            Contributions To Date
-          </h2>
-        
-          <a  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" 
-              class="stat  txtc1  text-kilo  fwb">
-            <span class="">$</span>{{sponsorship.sponsorshipInfo.contributions_to_date}}
-          </a>
-        
-        </div>
+   
         
       </div>
   
 
-    <hr class="hr--faded">
-
 </div>
 
 
-  
-  
-  
   <div class="small-12  columns ">
           
     <div class="row">
 
-      <div class="small-12 columns medium-10  large-6">
+      <div class="small-12 large-4 large-push-8 columns">
+        
+        <div class="card">
+          
+          <div class="card-header">
+            
+            <div class="card-title">
+              Sponsorship Progress
+            </div>
+
+          </div>
+
+          <div class="card-content">
+                    <div class="grid-cell text-center">
+              
+              <h2 class="statLabel">
+                Contributions To Date
+              </h2>
+            
+              <a  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" 
+                  class="stat  txtc1  text-kilo  fwb">
+                <span class="">$</span>{{sponsorship.sponsorshipInfo.contributions_to_date}}
+              </a>
+            
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="small-12 columns medium-10  large-8 large-pull-4">
 
           <div class="card">
 
@@ -92,7 +107,7 @@
                       {{contribution.date}}
                     </div>
                             
-                    <div class="h4">${{contribution.amount}}</div>
+                    <div class="table-contribution">${{contribution.amount}}</div>
                   </div>
                   
                 </li>

@@ -4,7 +4,7 @@
 \*------------------------------------*/
 
 $secondary-app-nav-width: 30%; 
-
+$app-nav-width: 14%; 
 
 .appNav {
   position: fixed; 
@@ -16,10 +16,21 @@ $secondary-app-nav-width: 30%;
 
   @media #{$large-up} {
     height: 100vh; 
-    width: 12%; 
+    width: $app-nav-width;  
 
   }
   
+  .appNav-inner {
+    height: 100%; 
+    position: relative; 
+
+    @media #{$large-up} {
+      margin-top: rem-calc(100px); 
+
+    }
+
+  }
+
   .appNav-menu {
     width: 100%; 
     margin-bottom: 0; 
@@ -35,14 +46,13 @@ $secondary-app-nav-width: 30%;
     border-top: 1px solid $grey--light;  
 
     @media #{$large-up} {
-      padding-top: rem-calc($level7 + $level7);
+      padding-top: 0; 
       height: 100%;
+      background-color: #fff;
+      border-top: none;  
+      border-right: 1px solid $grey--light;  
       //@include box-shadow(-4px 4px 4px rgba(0,0,0, .1) inset);
 
-    }
-    
-    &.secondary-app-nav-is-open {
-  
     }
 
 
@@ -50,16 +60,30 @@ $secondary-app-nav-width: 30%;
       padding: rem-calc($level1);
       width: 100%; 
       text-align: center; 
+      
+      @media #{$large-up} {
+        max-height: rem-calc(100px); 
+
+      }
 
     }
-
+  
     .appNav-menu-link {
       color: $grey--med; 
       @include type-setting(-2);
 
       @media #{$large-up} {
-        margin-bottom: rem-calc($level4); 
+        margin-bottom: rem-calc($level2); 
         @include type-setting(-1);
+
+      }
+
+    }
+
+    .appNav-menu-link:first-child {
+
+      @media #{$large-up} {
+        margin-top: rem-calc($level4); 
 
       }
 
@@ -104,26 +128,38 @@ $secondary-app-nav-width: 30%;
 }
 
 
+
+
+
+/*------------------------------------*\
+    #App Nav Menu Links
+\*------------------------------------*/
+
+
 .appNav-menu-link {
     background-color: transparent; 
     margin-bottom: 0; 
     text-transform: none;
     opacity: .7; 
+    width: 100%; 
     @extend %fwn;  
 
     &:hover, 
     &:focus,
     &:active {
-      color: $secondaryColor; 
+      color: $grey--med; 
+      opacity: 1; 
       
       .menu-link-icon {
-      fill: $secondaryColor; 
+      fill: $grey--med; 
 
       }    
 
     }
 
     &.is-active {
+      
+      opacity: 1; 
       
       .menu-link-icon {
         fill: $tertiaryColor; 
@@ -156,7 +192,19 @@ $secondary-app-nav-width: 30%;
     }
 
     @media #{$large-up} {
-      margin-right: rem-calc($level2); 
+      margin-bottom: rem-calc($level2); 
+      width: rem-calc(30px); 
+
+      &.home,
+      &.faq {
+        width: rem-calc(24px); 
+      }
+
+      &.settings {
+
+        width: rem-calc(22px); 
+
+      }
 
     }
 

@@ -12,6 +12,11 @@
   .table-row {
     padding: rem-calc($level3);
     color: $secondaryColor;
+    
+    .table-contribution {
+      @include type-setting(3);
+
+    }
 
   }
 

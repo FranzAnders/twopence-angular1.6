@@ -210,10 +210,21 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     vm.getLatestPlan = function(pSponsorship) {
       var plan = null; 
-      var plansLength = pSponsorship.plans.length; 
-      plan = pSponsorship.plans[plansLength - 1];
-      return plan; 
+      var plansLength = pSponsorship.plans.length - 1;  
 
+      for(var i = plansLength; i >= 0; i--) {
+
+        if(pSponsorship.plans[i].type == 'Match') {
+
+            console.log(pSponsorship.plans[i]);
+            return pSponsorship.plans[i]; 
+
+        } 
+
+      }
+
+      return false; 
+      
     }; 
 
 
@@ -313,7 +324,7 @@ twopence.controller('sponseePlanEditCtrl', [
           console.log(error);
 
           if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
-            alert("The existing plan already has a limit of " + "$" + planInfo.plan.limit)
+            alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
 
           }
 
