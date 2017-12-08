@@ -58,10 +58,21 @@ twopence.controller('sponsorshipCtrl', [
     //
     vm.getLatestPlan = function(pSponsorship) {
       var plan = null; 
-      var plansLength = pSponsorship.plans.length; 
-      plan = pSponsorship.plans[plansLength - 1];
-      return plan; 
+      var plansLength = pSponsorship.plans.length - 1;  
 
+      for(var i = plansLength; i >= 0; i--) {
+
+        if(pSponsorship.plans[i].type == 'Match') {
+
+            console.log(pSponsorship.plans[i]);
+            return pSponsorship.plans[i]; 
+
+        } 
+
+      }
+
+      return false; 
+     
     }; 
 
 }]);

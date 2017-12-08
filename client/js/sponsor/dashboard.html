@@ -36,15 +36,11 @@
 
     <div class="small-12 columns ">
 
-      <h2 class="h5  txtc2">
-        Your Sponsorships
-      </h2>
-
       <ul class="cardList  grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap large-grid--1of3  grid--flexDirectionRow">
 
         <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees track by $index">
 
-         <sponsorship-card-dir sponsorship-info="sponsorship">
+         <sponsorship-card-dir sponsorship-info="sponsorship"  boost-sponsorship="dashboard.openBoostModal(sponsorship)">
 
          </sponsorship-card-dir>
 

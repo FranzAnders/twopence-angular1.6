@@ -98,14 +98,14 @@ twopence.controller('dashboardCtrl', [
     //
     // Opens the jolt modal using the $fancyModal service
     //
-    vm.openJoltModal = function(sponsee) {
+    vm.openBoostModal = function(sponsee) {
 
       $fancyModal.open({
-
         templateUrl: 'js/sponsor/sponsee-jolt-modal.html',
-
         controller: 'sponseeJoltCtrl as sponseeJolt',
-
+        themeClass: 'fancymodal--secondary fancymodal--medium',
+        openingClass: 'is-open',
+        closingClass: 'is-closed',
         resolve: {
 
             SponseeInformation: function() {

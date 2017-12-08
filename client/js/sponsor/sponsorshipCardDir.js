@@ -27,13 +27,30 @@ twopence.directive('sponsorshipCardDir',
           vm.getLatestPlan = function(pSponsorship) {
 
             var plan = null; 
+              var plansLength = pSponsorship.plans.length - 1;  
 
-            var plansLength = pSponsorship.plans.length; 
+              for(var i = plansLength; i >= 0; i--) {
 
-            plan = pSponsorship.plans[plansLength - 1];
+                if(pSponsorship.plans[i].type == 'Match') {
 
-            return plan; 
+                    console.log(pSponsorship.plans[i]);
+                    return pSponsorship.plans[i]; 
 
+                } 
+
+              }
+
+              return false; 
+              
+
+          }; 
+
+
+          //
+          // Wrapper for boost sponsorship function from dashboard controller
+          //
+          vm.boostSponsorship = function(pSponsorship) {
+              vm.boostSponsorship(pSponsorship); 
           }; 
 
 
@@ -44,11 +61,7 @@ twopence.directive('sponsorshipCardDir',
 
               vm.sponsorshipInfo; 
 
-              console.log(vm.sponsorshipInfo);
-
               vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo); 
-
-             console.log(vm.currentPlan); 
 
           };
 
@@ -57,7 +70,8 @@ twopence.directive('sponsorshipCardDir',
         controllerAs: "sponsorship", 
         bindToController: {
 
-          "sponsorshipInfo" : "="
+          "sponsorshipInfo" : "=",
+          "boostSponsorship" : "&"
         },
         templateUrl: "js/sponsor/sponsorshipCard.html",
         link: function(scope, element, attrs) {

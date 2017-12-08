@@ -23,16 +23,17 @@ twopence.controller('sponseeJoltCtrl', [
 
     var vm = this; 
 
-    console.log(SponseeInformation); 
 
-    vm.SponseeInformation = SponseeInformation;
+    vm.sponsorshipInfo = SponseeInformation;
+
+    console.log(vm.sponsorshipInfo); 
 
     vm.joltSuccessfull = false; 
 
 
     vm.joltInfo = {
       "user": {
-          "id" : vm.SponseeInformation.id
+          "id" : vm.sponsorshipInfo.id
       }, 
       "plan": {
         "type": 'fixed',
@@ -44,19 +45,22 @@ twopence.controller('sponseeJoltCtrl', [
 
 
     //
-    // Jolts the sponsee if the form is valid
+    // Boosts the sponsee if the form is valid
     //
-    vm.joltSponsee = function(pJoltForm) {
+    vm.boostSponsee = function(pJoltForm) {
 
       if(pJoltForm.$valid) {
 
         vm.joltInfo.plan.amount  = parseInt(vm.joltInfo.plan.amount);
 
-          console.log(vm.joltInfo); 
+        Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.joltInfo).then(function(success) {
 
-        Sponsorship.create(vm.joltInfo).then(function(jolt) {
+        alert('Success boosting!');
+          
 
-          console.log(jolt)
+        }).catch(function(err) {
+
+          alert("Repeat payments of the same amount can not be made on the same day. Wait ")
 
         }); 
 

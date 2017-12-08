@@ -393,9 +393,29 @@ input.clearField {
   color: $primaryColor; 
   @include type-setting(7); 
 
+  &:after {
+    content: "";
+    background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
+    background-color: $primaryColor; 
+    height: rem-calc(3px);
+    bottom: 0;
+    z-index: 3;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 0;
+    @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+    @extend %position-absolute;
+  }
+
   &:active, 
   &:focus {
     color: $secondaryColor; 
+
+    &:after {
+      width: 100%; 
+
+    }
 
   }
 
