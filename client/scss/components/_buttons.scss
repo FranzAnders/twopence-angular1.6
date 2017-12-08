@@ -14,7 +14,6 @@ button,
   @include border-radius(2px); 
 
   .button-inner {
-
     position: relative; 
     z-index: 1; 
     font-weight: bold;
@@ -27,30 +26,16 @@ button,
 
 
 .button--primary {
-    
   background-color: $primaryColor;
   position: relative; 
   color: #fff; 
   @include transition(all .1s ease .1s); 
 
-  &:after {
-
-    content: " "; 
-    position: absolute; 
-    bottom: 0; 
-    right: 0; 
-    left: 0; 
-    width: 0; 
-    height: 100%;
-    background-color: $accentColor;  
-    @include transition(all .2s ceaser($easeInOutQuint)); 
-
-  } 
-  
   &:hover,
   &:focus {
 
-    color: #fff; 
+    color: $primaryColor; 
+    background-color: transparent;
 
     &:after {
 
@@ -63,30 +48,15 @@ button,
 
 
 .button--secondary {
-
   background-color: $secondaryColor;
   position: relative; 
   color: #fff; 
   @include transition(all .1s ease .1s); 
-
-  &:after {
-
-    content: " "; 
-    position: absolute; 
-    bottom: 0; 
-    right: 0; 
-    left: 0; 
-    width: 0; 
-    height: 100%;
-    background-color: $accentColor;  
-    @include transition(all .2s ceaser($easeInOutQuint)); 
-
-  } 
   
   &:hover,
   &:focus {
-
-    color: #fff; 
+    color: $secondaryColor;
+    background-color: transparent;  
 
     &:after {
 
@@ -98,31 +68,16 @@ button,
 
 
 .button--tertiary {
-
   background-color: transparent;
   position: relative; 
-  color: $primaryColor; 
-  border: 2px solid $primaryColor; 
+  color: $secondaryColor; 
+  border: 2px solid $secondaryColor; 
   @include transition(all .1s ease .1s); 
-
-  // &:after {
-
-  //   content: " "; 
-  //   position: absolute; 
-  //   bottom: 0; 
-  //   right: 0; 
-  //   left: 0; 
-  //   height: 100%; 
-  //   width: 0; 
-  //   background-color: $secondaryColor;  
-  //   @include transition(all .2s ceaser($easeInOutQuint)); 
-
-  // } 
 
   &:hover,
   &:focus {
     color: #fff;
-    background-color: $primaryColor;  
+    background-color: $secondaryColor;  
 
   }
 }

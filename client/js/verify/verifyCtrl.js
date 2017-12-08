@@ -21,23 +21,44 @@ twopence.controller('verifyCtrl', [
     var vm = this;
 
     vm.$onInit = function() {
-
       vm.isTokenExpired = false; 
+      vm.emailVerificationSent = false; 
 
-      if(verify.data.message === "Sorry, that token is expired.") {
-
+      if(verify !== true && verify.data.message === "Sorry, that token is expired.") {
         vm.isTokenExpired = true; 
 
       } else {
+        $timeout(function() {
+          $state.go("main.login", {camefromemail: true});
 
-        $state.go("main.login", {camefromemail: true});
+        }, 4500); 
 
       }
 
     }
 
     vm.resendVerificationEmail = function() {
-      User.verify();
+
+      vm.emailVerificationSent = false; 
+
+      User.verify().then(function() {
+
+        vm.emailVerificationSent = true; 
+
+        console.log('sent');
+
+        $timeout(function() {
+
+          $state.go("main.login", {camefromemail: true});
+
+        }, 2000); 
+
+      }).catch(function(err) {
+        
+          console.log(err); 
+
+      });
+
     }
 
   }

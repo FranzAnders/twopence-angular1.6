@@ -33,8 +33,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -162,12 +162,13 @@ twopence.config(
                 "token": finaltoken
               };
 
-              Sponsor.verifyEmail(tokenObj).then(
-                function(success) {
+              return Sponsor.verifyEmail(tokenObj).then(function(success) {
+                  console.log(tokenObj);
                   return true;
                 }
               ).catch(function(err) {
 
+                  console.log(err); 
                   return err
 
               });
