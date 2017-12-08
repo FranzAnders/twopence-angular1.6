@@ -81,7 +81,6 @@ twopence.factory('Auth', [
     // Sets the token
     //
     auth.setToken = function(pToken, username) {
-      console.log(pToken);
       token = pToken;
       username = username
       // var authData = Base64.encode(username + ':' + password);

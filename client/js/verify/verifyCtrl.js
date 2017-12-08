@@ -24,7 +24,7 @@ twopence.controller('verifyCtrl', [
 
       vm.isTokenExpired = false; 
 
-      if(verify.data.message ==== "Sorry, that token is expired.") {
+      if(verify.data.message === "Sorry, that token is expired.") {
 
         vm.isTokenExpired = true; 
 
@@ -38,7 +38,6 @@ twopence.controller('verifyCtrl', [
 
     vm.resendVerificationEmail = function() {
       User.verify();
-      
     }
 
   }
