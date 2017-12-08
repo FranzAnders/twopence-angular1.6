@@ -150,9 +150,6 @@ twopence.factory('Sponsor', [
 
   Sponsor.verifyEmail = function(emailToken) {
 
-    console.log("Verify e-mail arg:");
-    console.log(emailToken);
-
     return $q(function(resolve, reject) {
       $http.post(BASE_URL +  '/v1/verification/token', emailToken, {
         headers: {
@@ -165,6 +162,7 @@ twopence.factory('Sponsor', [
         }).catch(function(err) {
           reject(err);
         });
+        
     });
 
   };
