@@ -42,15 +42,15 @@ twopence.factory('User', [
     //
     User.verify = function() {
       return $q(function(resolve, reject) {
-        $http.post(BASE_URL + '/v1/sponsors/verification', {}, {
+        $http.post(BASE_URL + '/v1/verification', {"type": "email"}, {
             headers: {
               "Authorization": "Bearer " + Auth.getToken()
             }
         })
         .then(function(res) {
-          console.log("E-Mail sent");
+          resolve(res); 
         }).catch(function(err) {
-           console.log(err);
+           reject(error); 
         });
       });
     };
