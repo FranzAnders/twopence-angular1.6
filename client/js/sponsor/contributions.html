@@ -36,40 +36,41 @@
 
     <div class="small-12 medium-8 columns">
 
-      <div class="card  table--primary">
+      <div class="card">
 
-        <table class="table--primary">
-          
-          <tr>
-            
-            <th>Amount</th>
+<div class="card-content">
+  <table class="table--list">
+    
+    <tr>
+      
+      <th>Amount</th>
+  
+      <th>
+        Sponsee
+      </th>
+  
+      <th>
+        Date
+      </th>
+    </tr>
+  
+    <tr ng-repeat="contribution in contributions.contributionsShowing | filter: 
+      (!!contributions.sponseeFilter || undefined) && 
+      {sponsee : {email: contributions.sponseeFilter}}">
         
-            <th>
-              Sponsee
-            </th>
-        
-            <th>
-              Date
-            </th>
-          </tr>
-        
-          <tr ng-repeat="contribution in contributions.contributionsShowing | filter: 
-            (!!contributions.sponseeFilter || undefined) && 
-            {sponsee : {email: contributions.sponseeFilter}}">
-              
-            <td>${{contribution.amount}}</td>
-        
-            <td>{{contribution.sponsee.name}}</td>
-        
-            <td>{{contribution.date}}</td>
-          </tr>
-        
-        </table>
-
-        <button class="button  button--secondary  button--small  button--expanded">
-          More Contributions
-        </button>
-     
+      <td>${{contribution.amount}}</td>
+  
+      <td>{{contribution.sponsee.name}}</td>
+  
+      <td>{{contribution.date}}</td>
+    </tr>
+  
+  </table>
+  
+  <button class="button  button--secondary  button--small  button--expanded">
+    More Contributions
+  </button>
+       </div>
        </div>
 
     </div>

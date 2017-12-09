@@ -9,7 +9,7 @@
   background-color: #FFF; 
   color: $body-color; 
   width: 100%; 
-  @include border-radius(2px); 
+  @include border-radius(4px); 
   @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
 
   a {
@@ -84,18 +84,18 @@
 
   }
 
-  @media #{$large-up} {
+  // @media #{$large-up} {
     
-    li {
-      padding-right: rem-calc($level3);
+  //   li {
+  //     padding-right: rem-calc($level3);
 
-    }
+  //   }
 
-    li:nth-child(3n+3) {
-      padding-right: 0; 
+  //   li:nth-child(3n+3) {
+  //     padding-right: 0; 
 
-    }
-  }
+  //   }
+  // }
 
 }
 

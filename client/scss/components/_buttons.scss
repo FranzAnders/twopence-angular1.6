@@ -11,7 +11,7 @@ button,
   @extend %uc; 
   @extend %fwb; 
   @extend %button;
-  @include border-radius(2px); 
+  @include border-radius(4px); 
 
   .button-inner {
     position: relative; 
