@@ -142,7 +142,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       if (pSponsorshipDetailsForm.$valid) {
 
-        Sponsorship.newPlan(sponseeID, vm.sponsorshipInfo).then(function(sponsorship) {
+        Sponsorship.createNewPlan(sponseeID, vm.sponsorshipInfo).then(function(sponsorship) {
           console.log(sponsorship);
 
           vm.formNotSubmited = false;

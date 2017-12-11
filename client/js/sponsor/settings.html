@@ -15,127 +15,177 @@
     </div>
     
 
-    <div class="small-12 medium-8 columns">
+    <div class="small-12 medium-8  large-7 large-pull-1 columns">
   
 <div class="card">
 
-<div class="card-content">
-  <div class="input-group  input--medium mb1">
-  
-    <label for="phone number">
-      Preferred  Phone Number
-    </label>
-  
-    <input type="tel" 
-           id="phone number"
-          ng-model="settings.userSettings.phone"
-          ng-minlength="10"
-          verify-check-box="settings.userSettings.sms_preferred"
-          name="phone_number"
-          floating-label>
-  
-    <div ng-messages="settings.userSettingsForm.phone_number.$error"
-         ng-show="settings.userSettingsForm.$submitted && settings.userSettingsForm.phone_number.$error"
-         role="alert"
-         class="alerts  alert--warning" >
-  
-       <div ng-message="verifyCheckBox">
-            Sorry, we need a number to send messages to.
-        </div>
-      
-        <div ng-message="minlength">
-            Sorry, number must be a valid format (xxx) xxx-xxxx.
-        </div>
-  
-    </div>
-  
+  <div class="card-header">
+
+    <h1 class="card-title">Contact Information</h1>
+
   </div>
-  
-  
-    <div class="small-12 columns  grid  grid--right">
-  
-      <div class=" grid  grid--center  grid--justifySpaceBetween">
-  
-        <div>
-          <input type="checkbox"
-                 id="sms_contacting"
-                 name="sms_preferred"
-                 ng-model="settings.userSettings.sms_preferred"
-                 class="mb0 mr4"
-                 >
+
+  <div class="card-content">
+
+    <div class="row">
+
+      <div class="small-12 columns large-7">
+
+        <div class="input-group  input--medium mb2">
+        
+          <label for="phone number">
+            Preferred  Phone Number
+          </label>
+        
+          <input type="tel" 
+                 id="phone number"
+                ng-model="settings.userSettings.phone"
+                ng-minlength="10"
+                verify-check-box="settings.userSettings.sms_preferred"
+                name="phone_number"
+                floating-label>
+        
+          <div ng-messages="settings.userSettingsForm.phone_number.$error"
+               ng-show="settings.userSettingsForm.$submitted && settings.userSettingsForm.phone_number.$error"
+               role="alert"
+               class="alerts  alert--warning" >
+        
+             <div ng-message="verifyCheckBox">
+                  Sorry, we need a number to send messages to.
+              </div>
+            
+              <div ng-message="minlength">
+                  Sorry, number must be a valid format (xxx) xxx-xxxx.
+              </div>
+        
+          </div>
+        
         </div>
-  
-        <label for="sms_preferred" class="text-mini mb0 grid-cell--autoSize ">
-           I wish to be contacted by text messages
-        </label>
-  
-      </div>
-  
-      </div>
-</div>
-<!-- 
-        <label for="cell phone number">Phone Number:</label>
 
-        <input type="tel" 
-               id="cell phone number" 
-               name="phone"
-               class="input--medium  input--primary"
-               ng-change="settings.indicateUserMadeChanges()"
-               ng-model="settings.userSettings.phone">
+        <div class=" grid  grid--center  grid--justifyLeft">
 
-        <div class="row mb2">
-
-          <div class="small-12 columns  grid grid--center">
-
+          <div>
             <input type="checkbox"
                    id="sms_contacting"
+                   name="sms_preferred"
                    ng-model="settings.userSettings.sms_preferred"
+                   class="mb0 mr4"
                    >
-
-            <label for="sms_contacting" class="mb0">
-              I wish to be contacted by text messages
-            </label>
-
           </div>
 
+          <label for="sms_preferred" class="text-mini mb0 grid-cell--autoSize ">
+             I wish to also be contacted by text messages
+          </label>
+
         </div>
- -->
-<h2>Account Password</h2>
-      
-  <label for="password">
-    Password
-  </label>
-  
-  <input type="password" id="password"
-         class="input--primary input--medium"
-         name="password"
-         ng-model="settings.userSettings.password" 
-         ng-minlength = "8"
-         ng-model-options="{debounce: 200}">
-  
-  <label for="re-enter password">
-    Re-enter Password
-  </label>
-  
-  <input type="password" id="re-enter password"
-         class="input--primary input--medium"
-         name="confirmPassword"
-         ng-minlength="8"
-         ng-model="settings.userSettings.confirmPassword"
-         ng-model-options="{debounce: 200}"
-         compare-to="settings.userSettings.password">
+        
       </div>
-    </div>    
+
+    </div>
+
+  </div>
+  
+  <div class="card-header">
+
+    <h1 class="card-title">Account Password</h1>
+  
+  </div>
+
+  <div class="card-content">
+        
+<div class="row">
+  <div class="small-12 large-7 columns">
+    <div class="input-group  input--medium">
+    
+      <label for="password">
+        Password
+      </label>
+    
+      <input type="password" 
+             id="password"
+             name="password"
+             class="input--primary input--medium"
+             ng-model="settings.userInfo.password"
+             required
+             ng-minlength = "8"
+             floating-label>
+    
+      <div ng-messages="settings.userAccountForm.password.$error"
+           ng-show="settings.userAccountForm.$submitted &&  settings.userAccountForm.password.$error"
+           role="alert"
+           class="alerts  alert--warning"
+           >
+    
+          <div ng-message="required">
+              Oops! A password is required
+          </div>
+    
+          <div ng-message="ng-minlength">
+              Oops! Password must be atleast 8 characters in length
+          </div>
+    
+          <div ng-message="pattern">
+              Email must be valid 'example@email.com'
+          </div>
+    
+      </div>
+    
+    </div>
     
     
-    <div class="small-12 columns">
+    <div class="input-group  input--medium">
+    
+      <label for="confirmPassword">
+        Re-enter Password
+      </label>
+    
+      <input type="password" 
+             id="confirmPassword"
+             name="confirmPassword"
+             class="input--primary input--medium"
+             ng-minlength="8"
+             ng-model="settings.userInfo.confirmPassword"
+             compare-to="settings.userInfo.password"
+             floating-label>
+    
+      <div ng-messages="settings.userAccountForm.password.$error"
+           ng-show="settings.userAccountForm.$submitted && settings.userAccountForm.password.$error"
+           role="alert"
+           class="alerts  alert--warning">
+    
+          <div ng-message="required">
+              Sorry, passwords must match.
+          </div>
+    
+          <div ng-message="ng-minlength">
+              Oops! Password must be atleast 8 characters in length.
+          </div>
+    
+          <div ng-message="compare-to">
+              Oops! Passwords must match.
+          </div>
+    
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+        </div>
+      </div>    
       
-      <button type="submit" 
-              class="button--medium  button--primary"
-              ng-show="settings.userSettingsForm.$dirty && settings.userSettingsForm.$valid">
-          Save Changes
-      </button>
-    
+      
+      <div class="small-12 columns">
+        
+        <button type="submit" 
+                class="button--medium  button--primary"
+                ng-show="settings.userSettingsForm.$dirty && settings.userSettingsForm.$valid">
+            Save Changes
+        </button>
+      
+      </div>
+
     </div>
 
   </form>
