@@ -5,7 +5,7 @@
 \*------------------------------------*/
 
 .card {
-  margin-bottom: rem-calc($level3);
+  margin-bottom: rem-calc($base-magic-number);
   background-color: #FFF; 
   color: $body-color; 
   width: 100%; 

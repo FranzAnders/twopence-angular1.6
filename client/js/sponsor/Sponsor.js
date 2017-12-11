@@ -91,7 +91,7 @@ twopence.factory('Sponsor', [
       console.log("Your JWT is: " + jwtToken);
 
       return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/sponsorships', {
+        $http.get(BASE_URL + '/v1/sponsors/dashboard', {
           headers: {
 
             "Authorization": 'bearer ' + jwtToken

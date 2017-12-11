@@ -5,7 +5,8 @@
 
 twopence.controller('contributionsCtrl', [
     'Sponsor', 
-      function(Sponsor) {
+    'Sponsorship',
+      function(Sponsor, Sponsorship) {
 
   var vm = this; 
 
@@ -21,7 +22,7 @@ twopence.controller('contributionsCtrl', [
   // Gets all the sponsees a sponsor is currently managing in order to filter 
   // contributions
   //
-  Sponsor.getSponsees().then(function(sponsees) {
+  Sponsorship.getAll().then(function(sponsees) {
 
     vm.sponsees  = sponsees.data; 
 

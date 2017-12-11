@@ -30,23 +30,27 @@
 
     </div>
 
-    <div class="small-12  medium-8  columns">
+    <div class="small-12  medium-8  large-7    columns">
 
-      <label for="contributionsFilter" class="text-micro">
-        Showing contributions for:
+      <label for="contributionsFilter" class="label text-micro">
+        Filter:
       </label>
 
-      <select name="contributionsFilter" id="contributionsFilter" 
-              class="select--small  select--primary"
-              ng-model="contributions.sponseeFilter"
-              ng-change="contributions.showFilter()"
-              ng-options="sponsee.id as sponsee.first_name for sponsee in contributions.sponsees">
+      <div class="select-customWrapper">
 
-            <option value="" selected>
-              All
-            </option> 
+          <select name="contributionsFilter" id="contributionsFilter" 
+                  class="select--medium  select--prim"
+                  ng-model="contributions.sponseeFilter"
+                  ng-change="contributions.showFilter()"
+                  ng-options="sponsee.id as sponsee.first_name for sponsee in contributions.sponsees">
 
-      </select>  
+                <option value="" selected>
+                  All
+                </option> 
+
+          </select> 
+
+      </div>
 
     </div>
 
