@@ -14,11 +14,29 @@
   width: 100%; 
   padding-top: rem-calc($level2);
   padding-bottom: rem-calc($level2);
+  padding-right: rem-calc($level4);
+  padding-left: rem-calc($level4);
   z-index: 55; 
 
   @media #{$large-up} {
-    width: 14%; 
-    height: rem-calc(100px); 
+    width: 100%; 
+    height: rem-calc(60px); 
+
+  }
+
+
+  .appHeader-menu {
+
+    margin-bottom: 0; 
+
+    .appHeader-menu-link {
+      color: #fff;
+      background-color: transparent; 
+      margin-bottom: 0; 
+      padding: rem-calc($level1); 
+
+    }
+
 
   }
   

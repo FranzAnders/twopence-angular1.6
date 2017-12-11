@@ -138,7 +138,9 @@ twopence.controller('sponseePlanEditCtrl', [
 
         var today = pTodaysDate; 
 
-        vm.isActive = !(pPlan.schedules[0].date_termination == today); 
+        vm.isActive = (pPlan.schedules[0].date_termination == today); 
+
+        console.log(vm.isActive); 
 
     }
 
@@ -281,7 +283,7 @@ twopence.controller('sponseePlanEditCtrl', [
           payLoad.pause = false;
 
           Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
-            alert("Plan is now being resumed.");
+            alert("Succes!! Your matching plan will be resumed tomorrow.");
             vm.checkIfPaused(); 
 
           }).catch(function(error) {

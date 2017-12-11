@@ -304,7 +304,7 @@ input {
 
 }
 
-
+m
 
 
 
@@ -329,10 +329,100 @@ label {
 
 
 select {
-
-  width: 100%;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    text-align-last: left; 
+    margin-bottom: rem-calc($base-magic-number); 
+    position: relative; 
+    border: none; 
+    @include type-setting(0); 
 
 }
+
+
+
+
+
+
+/*------------------------------------*\
+    #Select Types
+\*------------------------------------*/
+
+.select-customWrapper {
+  position: relative; 
+  
+   &:after {
+
+      content: " "; 
+      width: 0; 
+      height: 0; 
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 8px solid $grey--med;
+      right: 1rem; 
+      top: rem-calc(18px); 
+      bottom: 0; 
+      position: absolute; 
+      pointer-events:none;
+
+    }
+
+}
+
+.select--primary {
+    background-color: #fff; 
+    outline: 0;
+    color: $body-color;
+    border: 0; 
+    @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+    @extend %br1; 
+
+    &:active,
+    &:focus {
+
+      background-color: #fff; 
+      border: 1px solid $secondaryColor; 
+      @include box-shadow(0 1px 20px rgba(30,30,30, .1));
+
+    }
+
+}
+
+
+.select--quantity {
+
+  min-width: rem-calc(80px); 
+  text-align-last: center; 
+  
+}
+
+.select--small {
+
+    padding: rem-calc(6);
+    padding-right: rem-calc($level1);
+    padding-left: rem-calc($level1); 
+
+}
+
+.select--medium {
+  padding: rem-calc(8);
+  padding-right: rem-calc($level2);
+  padding-left: rem-calc($level2); 
+
+}
+
+.select--quantity {
+  
+  width: rem-calc(40px); 
+
+  @media #{$medium-up} {
+
+    width: rem-calc(60px); 
+    
+  }
+
+}
+
 
 
 

@@ -39,7 +39,7 @@ table,
     border-bottom: 1px solid $grey--light;
 
     @media #{$large-up} {
-      padding: rem-calc($level5);
+      padding: rem-calc($level4);
 
     }
   
@@ -58,7 +58,7 @@ table,
   
   tr:nth-child(odd), 
   .table-row:nth-child(odd) {
-    background-color: white; 
+   background-color: $grey--light; 
 
   }
 

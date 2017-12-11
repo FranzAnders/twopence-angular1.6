@@ -3,27 +3,7 @@
 
   <div class="row  grid  grid--bottom">
 
-    <div class="small-12 medium-6  columns  mb5">
 
-      <h1 class="txtc2  ff2  section-text">
-        Hi,
-        {{dashboard.sponsorInfo.name}}!
-      </h1>
-
-    </div>
-<!-- 
-    <div class="small-12  medium-6  columns show-for-medium-up">
-         <a class=" mb0 text-center mr3">
-          
-          <img src="assets/images/badge--boost.png" alt="" width="100" class="mb1">
-           
-           <p class="txtc2  uc text-mini">Boost Sponsee</p>
-   
-         </a>
-
-               
-    </div>
- -->
   </div>
 
 
@@ -34,11 +14,45 @@
 
   <div class="row">
 
+
+    <div class="small-12 medium-4  columns  mb5">
+
+        <h1 class="txtc2  ff2  section-text">
+          Sponsor Dashboard
+        </h1>
+        <p >
+          An eagly-eye of all your on-going sponsorships. Boost or add a sponsee, or view how much you've given.
+        </p>
+
+
+        <h1 class="headline  headline--alt subline text-micro text-center  txtc2">
+          Contributions TO DATE
+        </h1>
+        
+        <h2 class=" text-center  fwb txtc1 text-mega  text-center">
+           $555.00
+        </h2>
+<!-- 
+
+        <li class="grid-cell  text-center">
+
+          <button class="button--micro  button--tertiary  mb0"
+                  ui-sref="sponsor.sponseeAdd">
+          
+          Add Sponsee
+          
+        </button>
+      
+        </li> -->
+
+
+    </div>
+
     <div class="small-12 columns medium-8 ">
 
       <ul class="cardList  grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap   grid--flexDirectionRow">
 
-        <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees track by $index">
+        <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees | orderBy: 'contributions_to_date':true track by $index">
 
          <sponsorship-card-dir sponsorship-info="sponsorship"  boost-sponsorship="dashboard.openBoostModal(sponsorship)">
 
@@ -46,18 +60,6 @@
 
         </li>
 
-        <li class="grid-cell">
-
-          <div class="card">
-              <button class="button--micro  button--primary  mb0"
-                    ui-sref="sponsor.sponseeAdd">
-              
-              Add Sponsee
-              
-            </button>
-          </div>
-          
-        </li>
       </ul>
 
     </div>

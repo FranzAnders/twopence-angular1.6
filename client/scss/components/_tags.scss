@@ -32,10 +32,14 @@
 }
 
 .tag--inactive {
-  background-color: $accentColor; 
+  background-color: $grey--med; 
 
 }
 
+
+.tag--pending {
+  background-color: $accentColor; 
+}
 
 
 

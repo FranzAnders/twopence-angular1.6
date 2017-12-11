@@ -33,7 +33,6 @@ twopence.directive('sponsorshipCardDir',
 
                 if(pSponsorship.plans[i].type == 'Match') {
 
-                    console.log(pSponsorship.plans[i]);
                     return pSponsorship.plans[i]; 
 
                 } 
@@ -62,6 +61,10 @@ twopence.directive('sponsorshipCardDir',
               vm.sponsorshipInfo; 
 
               vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo); 
+
+              console.log(vm.sponsorshipInfo);
+              console.log(vm.currentPlan);
+
 
           };
 
