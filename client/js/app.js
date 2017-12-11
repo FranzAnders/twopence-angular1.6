@@ -182,6 +182,8 @@ twopence.config(
         .state('sponsor', {
           abstract: true,
           url: "/sponsor/",
+          controller: 'sponsorCtrl', 
+          controllerAs: 'sponsor', 
           templateUrl: "js/sponsor/sponsor.html"
 
         })

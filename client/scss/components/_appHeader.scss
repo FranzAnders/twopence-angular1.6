@@ -5,15 +5,13 @@
 \*------------------------------------*/
 
 .appHeader {
-
   position: fixed; 
   top: 0; 
   left: 0; 
   right: 0; 
   background-color: $primaryColor; 
   width: 100%; 
-  padding-top: rem-calc($level2);
-  padding-bottom: rem-calc($level2);
+  height: rem-calc(60px); 
   padding-right: rem-calc($level4);
   padding-left: rem-calc($level4);
   z-index: 55; 
@@ -22,9 +20,33 @@
     width: 100%; 
     height: rem-calc(60px); 
     position: relative; 
+  padding-right: rem-calc($level5);
+  padding-left: rem-calc($level5);
+
+  }
+  
+  .appHeader-inner {
+    height: 100%;
 
   }
 
+  .appHeader-title {
+    height: 100%; 
+
+    a {
+      height: 100%;
+      display: block;  
+
+    }
+
+    .appHeader-logo {
+      height: 100%; 
+      width: rem-calc(120px);
+      fill: #fff; 
+
+    }
+
+  }
 
   .appHeader-menu {
 
@@ -36,8 +58,29 @@
       margin-bottom: 0; 
       padding: rem-calc($level1); 
 
-    }
+      
 
+    }
+  
+
+    .appHeader-menu-link--userActions {
+
+      .userActions-avatar {
+        width: rem-calc(32px); 
+        height: rem-calc(32px); 
+        background-color: $secondaryColor;
+        margin-right: rem-calc($level1); 
+        color: #fff;
+        @include type-setting(-1); 
+        @include border-radius(100%); 
+      }
+
+      .userActions-name {
+        color: #fff; 
+
+      } 
+
+    }
 
   }
   

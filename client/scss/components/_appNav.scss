@@ -63,6 +63,7 @@ $app-nav-width: 14%;
         height: 100%;
         width: auto; 
         padding: 0; 
+        margin-right: rem-calc($level4); 
 
       }
 
@@ -141,7 +142,25 @@ $app-nav-width: 14%;
     &:active {
       color: $grey--med; 
       opacity: 1; 
-      
+
+
+      @media #{$large-up} {
+
+        &:after {
+          content: " "; 
+          position: absolute; 
+          bottom: 0; 
+          width: 100%; 
+          background-color: $grey--med; 
+          height: 1px; 
+          right: 0; 
+          left: 0; 
+
+        }
+        
+      }
+
+
       .menu-link-icon {
       fill: $grey--med; 
 
@@ -161,7 +180,24 @@ $app-nav-width: 14%;
       .menu-link-label {
         color: $tertiaryColor; 
       }
-    
+      
+
+      @media #{$large-up} {
+
+        &:after {
+          content: " "; 
+          position: absolute; 
+          bottom: 0; 
+          width: 100%; 
+          background-color: $tertiaryColor; 
+          height: 1px; 
+          right: 0; 
+          left: 0; 
+
+        }
+        
+      }
+
     }
 
   .menu-link-icon {
