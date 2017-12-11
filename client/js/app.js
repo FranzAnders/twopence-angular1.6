@@ -34,10 +34,8 @@ twopence.config(
     // Pretty URLs
     //
 
-    <!-- comments : uncomment -->
-    // $locationProvider.html5Mode(true);
-    // $locationProvider.hashPrefix('');
-    <!-- endcomments -->
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
 
 
 
