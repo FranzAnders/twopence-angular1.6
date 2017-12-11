@@ -1,5 +1,6 @@
 
-<div class="card  card--sponsorship">
+<div class="card  card--sponsorship"
+     ng-class="{'is-inactive' : sponsorship.sponsorshipInfo.sponsee.status !== 'active'}">
 
 <div class="card-header">
 
@@ -19,13 +20,13 @@
       </span>
   
       <span ng-switch-when="false" class="tag  tag--inactive">
-          Paused<
+          Paused
       </span>
   
     </span>
   
     <span ng-if='sponsorship.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
-        <span class="tag  tag--inactive">Invite Pending</span>
+        <span class="tag  tag--pending">Invite Pending</span>
     </span>
   
   </div>

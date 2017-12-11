@@ -166,12 +166,17 @@
 .card--sponsorship.is-inactive {
   
   .card-content {
-    opacity: .5; 
+    opacity: .4; 
     
   }
 
   .card-actions {
-    opacity: .5; 
+    opacity: .4; 
+
+  }
+
+  *  {
+    pointer-events: none; 
 
   }
 

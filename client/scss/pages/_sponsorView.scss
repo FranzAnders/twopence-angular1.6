@@ -6,12 +6,11 @@
 
 
 .sponsorViewContainer {
-  padding-top: rem-calc($level7 + $level3);
+  padding-top: rem-calc($level7 + $level5);
 
   @media #{$large-up} {
-    padding-left: 14%; 
     min-height: 100vh; 
-    padding-top: rem-calc($level7);
+    padding-top: rem-calc($level7 + $level7);
 
   }
 
@@ -19,11 +18,16 @@
 
 
 .sponsorView-inner {
+  min-height: 100vh; 
 
   @media #{$large-up} {
     padding-left: rem-calc($level2);
     padding-right: rem-calc($level2);
-
+    background-image: url('../assets/images/sponsorBg.svg');
+    background-repeat: no-repeat;
+    background-size: 30% 30%;
+    background-position: -5% 95%;
+    background-attachment: fixed;
   }
 
 }
