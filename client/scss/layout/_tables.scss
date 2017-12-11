@@ -1,27 +1,64 @@
 
+/*------------------------------------*\
+    #Tables
+\*------------------------------------*/
 
 
+table,
 .table {
+  border: none; 
+  width: 100%; 
 
+  th {
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+    @include type-setting(-1); 
+    @extend %uc; 
+    @extend %text-left; 
 
+  }
 
 }
 
+
+
+
+
+/*------------------------------------*\
+    #Table Types
+\*------------------------------------*/
+
+
 .table--list {
-  
+  width: 100%; 
+
+  tr,
   .table-row {
-    padding: rem-calc($level3);
+    padding: rem-calc($level4);
     color: $secondaryColor;
-    
+    border-bottom: 1px solid $grey--light;
+
+    @media #{$large-up} {
+      padding: rem-calc($level5);
+
+    }
+  
+    td, 
+    .table-data {
+      @extend %text-left; 
+
+    }
+
     .table-contribution {
       @include type-setting(3);
 
     }
 
   }
-
+  
+  tr:nth-child(odd), 
   .table-row:nth-child(odd) {
-    background-color: $grey--light; 
+    background-color: white; 
 
   }
 

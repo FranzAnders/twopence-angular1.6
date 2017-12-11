@@ -5,10 +5,29 @@
     
     <div class="small-12 medium-4  columns">
       
-      <h1 class="txtc2  ff2">Contribution <br>History</h1>  
-      <p>
-        Review all contributions towards your sponsees student loans. 
-      </p>
+      <div class="mb7">
+
+        <h1 class="txtc2  ff2">Contribution <br>History</h1>  
+
+        <p>
+          Review all contributions towards your sponsees student loans. 
+        </p>
+
+      </div>
+
+
+      <div class="mb7">
+
+        <h1 class="headline  headline--alt subline text-micro text-center">
+          Total Contributions
+        </h1>
+        
+        <h2 class=" text-center  fwb txtc3 text-kilo  text-center">
+           $100,000.00
+        </h2>
+
+      </div>
+
     </div>
 
     <div class="small-12  medium-8  columns">
@@ -29,49 +48,65 @@
 
       </select>  
 
-      <h2 class="h4">Total to Date: $100,000.00</h2>
-
     </div>
 
-
-    <div class="small-12 medium-8 columns">
+    <div class="small-12 medium-8  large-7  large-pull-1  columns">
 
       <div class="card">
 
-<div class="card-content">
-  <table class="table--list">
-    
-    <tr>
-      
-      <th>Amount</th>
-  
-      <th>
-        Sponsee
-      </th>
-  
-      <th>
-        Date
-      </th>
-    </tr>
-  
-    <tr ng-repeat="contribution in contributions.contributionsShowing | filter: 
-      (!!contributions.sponseeFilter || undefined) && 
-      {sponsee : {email: contributions.sponseeFilter}}">
-        
-      <td>${{contribution.amount}}</td>
-  
-      <td>{{contribution.sponsee.name}}</td>
-  
-      <td>{{contribution.date}}</td>
-    </tr>
-  
-  </table>
-  
-  <button class="button  button--secondary  button--small  button--expanded">
-    More Contributions
-  </button>
-       </div>
-       </div>
+
+          <table class="table--list">
+            
+            <tr>
+
+              <th>
+                Date
+              </th>    
+
+              <th>
+                Sponsee
+              </th>
+
+              <th>Amount</th>
+
+            </tr>
+          
+            <tr ng-repeat="contribution in contributions.contributionsShowing | filter: 
+              (!!contributions.sponseeFilter || undefined) && 
+              {sponsee : {email: contributions.sponseeFilter}} | orderBy: 'date':true track by $index | limitTo: contributions.inView">
+              
+              <td ng-if="!contribution.date">
+                  
+                  <span class="tag  tag--inactive">pending</span>
+
+              </td>
+
+              <td ng-if="contribution.date" class="text-center">
+              <div class="grid grid--justifyLeft">
+                
+              <div class="pl4">
+                <span class="uc fwb text-micro display-block  text-center mb0">{{contribution.date | date: 'MMM'}}</span>
+                <span class="uc h4  display-block  text-center">{{contribution.date | date: 'd'}}</span>
+              </div>
+              </div>
+
+
+              </td>
+          
+              <td>{{contribution.sponsee.name}}</td>
+
+              <td class="table-contribution" >${{contribution.amount}}</td>
+
+            </tr>
+          
+          </table>
+          
+          <button class="button  button--secondary  button--small  button--expanded  button--link"
+                  ng-click="contributions.showMore()">
+            Show More
+          </button>
+
+        </div>
 
     </div>
 

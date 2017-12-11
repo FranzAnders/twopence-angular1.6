@@ -33,8 +33,11 @@ twopence.config(
 
     // Pretty URLs
     //
-    // $locationProvider.html5Mode(true);
-    // $locationProvider.hashPrefix('');
+    <!--build:add-->
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
+    <!-- endBuild--> 
+
 
 
 

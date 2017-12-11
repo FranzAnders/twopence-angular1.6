@@ -105,6 +105,19 @@ button,
 }
 
 
+.button--link {
+  background: transparent; 
+  color: $primaryColor; 
+
+  &:hover, 
+  &:focus {
+    color: $secondaryColor; 
+    text-decoration: underline; 
+
+  }
+
+}
+
 
 
 
