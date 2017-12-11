@@ -11,7 +11,7 @@ button,
   @extend %uc; 
   @extend %fwb; 
   @extend %button;
-  @include border-radius(2px); 
+  @include border-radius(4px); 
 
   .button-inner {
     position: relative; 
@@ -104,6 +104,19 @@ button,
   }
 }
 
+
+.button--link {
+  background: transparent; 
+  color: $primaryColor; 
+
+  &:hover, 
+  &:focus {
+    color: $secondaryColor; 
+    text-decoration: underline; 
+
+  }
+
+}
 
 
 

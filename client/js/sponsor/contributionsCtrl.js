@@ -15,7 +15,7 @@ twopence.controller('contributionsCtrl', [
 
   vm.sponseeFilter = null; 
 
-
+  vm.inView = 3; 
 
   //
   // Gets all the sponsees a sponsor is currently managing in order to filter 
@@ -25,15 +25,14 @@ twopence.controller('contributionsCtrl', [
 
     vm.sponsees  = sponsees.data; 
 
+    console.log("SUCCESS: SPONSEES")
     console.log(vm.sponsees); 
 
+  }).catch(function(err){
+
+    console.log("ERROR: Sponsees not coming up."); 
+
   }); 
-
-  vm.showFilter = function() {
-
-    console.log(vm.sponseeFilter); 
-
-  };
 
 
   //
@@ -43,8 +42,30 @@ twopence.controller('contributionsCtrl', [
 
     vm.contributionsShowing = contributions.data;
 
-    console.log(vm.contributionsShowing); 
+    console.log("SUCCESS: CONTRIBUTIONS")
+    console.log(vm.contributionsShowing)
 
   }); 
+
+
+  //
+  // Shows more contributions of a specified value
+  //
+  vm.showMore = function(pNumToAdd) {
+
+    vm.inView = vm.inView + pNumToAdd;
+
+  };
+
+
+  //
+  //
+  //
+  vm.showFilter = function() {
+
+    console.log(vm.sponseeFilter); 
+
+  };
+
 
 }]);

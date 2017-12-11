@@ -51,6 +51,7 @@ $app-nav-width: 14%;
       background-color: #fff;
       border-top: none;  
       border-right: 1px solid $grey--light;  
+      background-color: $secondaryColor; 
       //@include box-shadow(-4px 4px 4px rgba(0,0,0, .1) inset);
 
     }
