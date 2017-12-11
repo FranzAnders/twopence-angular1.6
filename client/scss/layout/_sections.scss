@@ -86,8 +86,8 @@
     background-color: #fff; 
 
     .section-text {
-
       color:  $body-color; 
+      
     }
 }
 
@@ -111,18 +111,11 @@
     color: #fff; 
     @include primaryGradient(); 
 
-
 }
 
 
 .section--highlighted {
+  background-color: $quaternaryColor; 
 
-  background-color: $grey--light; 
-
-}
-
-.section--photoDivider {
-
-    height: rem-calc(500); 
 }
 

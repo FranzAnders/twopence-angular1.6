@@ -15,19 +15,17 @@ $app-nav-width: 14%;
   right: 0;  
 
   @media #{$large-up} {
-    height: 100vh; 
-    width: $app-nav-width;  
+    height: rem-calc(55px);  
+    width: 100%;  
+    position: relative; 
+    border-bottom: 1px solid $grey--light; 
 
   }
   
   .appNav-inner {
     height: 100%; 
     position: relative; 
-
-    @media #{$large-up} {
-      margin-top: rem-calc(100px); 
-
-    }
+    width: 100%; 
 
   }
 
@@ -46,13 +44,12 @@ $app-nav-width: 14%;
     border-top: 1px solid $grey--light;  
 
     @media #{$large-up} {
-      padding-top: 0; 
+      padding-top: 0;
+      padding-bottom: 0;  
       height: 100%;
       background-color: #fff;
       border-top: none;  
-      border-right: 1px solid $grey--light;  
-      background-color: $secondaryColor; 
-      //@include box-shadow(-4px 4px 4px rgba(0,0,0, .1) inset);
+      position: relative; 
 
     }
 
@@ -63,7 +60,9 @@ $app-nav-width: 14%;
       text-align: center; 
       
       @media #{$large-up} {
-        max-height: rem-calc(100px); 
+        height: 100%;
+        width: auto; 
+        padding: 0; 
 
       }
 
@@ -74,17 +73,9 @@ $app-nav-width: 14%;
       @include type-setting(-2);
 
       @media #{$large-up} {
-        margin-bottom: rem-calc($level2); 
+        height: 100%;
+        position: relative; 
         @include type-setting(-1);
-
-      }
-
-    }
-
-    .appNav-menu-link:first-child {
-
-      @media #{$large-up} {
-        margin-top: rem-calc($level4); 
 
       }
 
@@ -193,17 +184,16 @@ $app-nav-width: 14%;
     }
 
     @media #{$large-up} {
-      margin-bottom: rem-calc($level2); 
-      width: rem-calc(30px); 
+      width: rem-calc(26px); 
+      margin-right: rem-calc($level1);
 
       &.home,
       &.faq {
-        width: rem-calc(24px); 
+        width: rem-calc(22px); 
       }
 
       &.settings {
-
-        width: rem-calc(22px); 
+        width: rem-calc(20px); 
 
       }
 
