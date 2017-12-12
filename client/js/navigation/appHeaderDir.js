@@ -35,6 +35,8 @@ twopence.directive('appHeaderDir', function() {
 
         vm.secondaryMenuActive = !vm.secondaryMenuActive; 
 
+        console.log(vm.secondaryMenuActive); 
+
           if(vm.secondaryMenuActive) {
 
             $scope.$emit('app-nav-is-open');
@@ -55,7 +57,7 @@ twopence.directive('appHeaderDir', function() {
         }
 
     }], 
-    controllerAs: 'appHeader', 
+    controllerAs: 'nav', 
     bindToController: {
 
         sponsor: "="
