@@ -62,8 +62,8 @@ twopence.directive('sponsorshipCardDir',
 
               vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo); 
 
-              console.log(vm.sponsorshipInfo);
-              console.log(vm.currentPlan);
+              // console.log(vm.sponsorshipInfo);
+              // console.log(vm.currentPlan);
 
 
           };
