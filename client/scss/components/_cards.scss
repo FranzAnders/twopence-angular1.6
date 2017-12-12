@@ -26,6 +26,11 @@
       margin-bottom: 0; 
       @include type-setting(0); 
 
+      &.card-title--alt {
+        color: $primaryColor; 
+        
+      }
+
     }
 
   }

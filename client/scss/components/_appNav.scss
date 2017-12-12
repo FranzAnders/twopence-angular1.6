@@ -106,7 +106,14 @@ $app-nav-width: 14%;
     .appNav-menu-item {
       width: 100%;
       padding: rem-calc($level3); 
-      text-align: center;
+      text-align: left;
+      border-bottom: 1px solid $grey--light; 
+
+    }
+
+
+    .appNav-menu-item:last-child {
+      border-bottom: 0; 
 
     }
 

@@ -1,0 +1,27 @@
+
+
+/*------------------------------------*\
+    #Quick Actions
+\*------------------------------------*/
+
+.quickActionsBtn {
+  background-color: $primaryColor;
+  position: fixed; 
+  height: rem-calc(60px); 
+  width: rem-calc(60px); 
+  bottom: rem-calc($level7 + $level4);
+  right: rem-calc($level1); 
+  z-index: 100; 
+  @include border-radius(100%); 
+
+  .quickActionsBtn-inner {
+    text-align: center; 
+  
+  }
+
+  .quickActionsBtn-icon {
+    
+
+  }
+
+}
