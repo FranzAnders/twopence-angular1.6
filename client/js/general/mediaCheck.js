@@ -10,7 +10,7 @@
 var mediaCheck = (function() {
 
     // Media Query Breakpoints;
-    var small = 641;
+    var small = 680;
     var medium = 1024; 
     var large = 1441; 
 

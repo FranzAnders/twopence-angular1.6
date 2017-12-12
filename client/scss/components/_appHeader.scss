@@ -27,6 +27,8 @@
   
   .appHeader-inner {
     height: 100%;
+    position: relative;
+    width: 100%; 
 
   }
 
@@ -49,39 +51,141 @@
   }
 
   .appHeader-menu {
-
     margin-bottom: 0; 
-
-    .appHeader-menu-link {
-      color: #fff;
-      background-color: transparent; 
-      margin-bottom: 0; 
-      padding: rem-calc($level1); 
-
+    background-color: #FFF; 
+    position: absolute; 
+    top: rem-calc($level7 + $level1); 
+    right: rem-calc($level2); 
+    left: auto; 
+    width: 90%; 
+    margin: auto; 
+    @include border-radius(4px); 
+    @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
       
+      @media #{$medium-up} {
+        width: 40%; 
+        max-width: rem-calc(180px); 
+        left: auto; 
+        right: rem-calc($level1); 
+
+      }
+      
+    &.is-open {
+      @include animation(show-app-nav .2s ceaser($easeInOutQuint) forwards); 
 
     }
-  
 
-    .appHeader-menu-link--userActions {
+    &.is-closed {
+      @include animation(hide-app-nav .2s ceaser($easeInOutQuint) forwards); 
 
-      .userActions-avatar {
-        width: rem-calc(32px); 
-        height: rem-calc(32px); 
-        background-color: $secondaryColor;
-        margin-right: rem-calc($level1); 
+    }
+
+    .appHeader-menu-item {  
+      border-bottom: 1px solid $grey--light;
+      padding: rem-calc($level1);
+
+      .appHeader-menu-link {
         color: #fff;
-        @include type-setting(-1); 
-        @include border-radius(100%); 
+        background-color: transparent; 
+        margin-bottom: 0; 
+        padding: rem-calc($level4); 
+        color: $body-color; 
+        @include transition(.2s ceaser($easeInOutQuint) forwards); 
+        @include transform(translateX(0)); 
+
+        &:hover, 
+        &:focus {
+          color: $tertiaryColor; 
+          @include transform(translateX(10px)); 
+
+        }
+ 
       }
-
-      .userActions-name {
-        color: #fff; 
-
-      } 
 
     }
 
   }
   
+}
+
+
+
+@include keyframes(show-app-nav){
+
+  0% {
+    opacity: 0; 
+    @include transform(translateX(-100%)); 
+
+  }
+  
+  1% {
+    opacity: 0; 
+    @include transform(translateX(0)); 
+    @include transform(translateY(20px)); 
+    
+  }
+
+  100% {
+    opacity: 1; 
+    @include transform(translateY(0)); 
+
+  }
+
+}
+
+@include keyframes(hide-app-nav){
+
+  0% {
+    opacity: 1; 
+    @include transform(translateY(0px)); 
+
+  }
+  
+  99% {
+    opacity: 0; 
+    @include transform(translateY(20px)); 
+    
+  }
+
+  100% {
+    opacity: 0; 
+    @include transform(translateX(-100%)); 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Menu Toggle
+\*------------------------------------*/
+
+
+.appHeader-menuToggle {
+  color: #fff;
+  background-color: transparent; 
+  margin-bottom: 0; 
+  padding: rem-calc($level1); 
+  text-transform: none; 
+  @extend %fwn; 
+
+  .userActions-avatar {
+    width: rem-calc(32px); 
+    height: rem-calc(32px); 
+    background-color: $secondaryColor;
+    margin-right: rem-calc($level1); 
+    color: #fff;
+    @include type-setting(-1); 
+    @include border-radius(100%); 
+  }
+
+  .userActions-name {
+    color: #fff; 
+    @extend %fwn; 
+
+  } 
+
 }

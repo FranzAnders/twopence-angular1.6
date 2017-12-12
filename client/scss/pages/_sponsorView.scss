@@ -10,7 +10,7 @@
 
   @media #{$large-up} {
     min-height: 100vh; 
-    padding-top: rem-calc($level4);
+    padding-top: rem-calc($level5);
 
   }
 
@@ -21,13 +21,87 @@
   min-height: 100vh; 
 
   @media #{$large-up} {
-    padding-left: rem-calc($level2);
-    padding-right: rem-calc($level2);
+    padding-left: rem-calc($level1);
+    padding-right: rem-calc($level1);
+    //background-image: url('../assets/images/sponsorBg.svg');
+    // background-repeat: no-repeat;
+    // background-size: 30% 30%;
+    // background-position: -5% 95%;
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Sponsor Section Illustrations
+\*------------------------------------*/
+
+
+.sponsorSection-illustrContainer {
+  top: 0; 
+  bottom:0; 
+  height: 100vh; 
+  width: 10px; 
+  position: absolute;
+}
+
+.sponsorSection-illustr {
+  position: absolute; 
+  left: 0; 
+  bottom: 0; 
+  width: rem-calc(400px); 
+  height: rem-calc(300px);
+  left: -130px;
+  bottom: 20%;
+  width: 23rem;
+  height: 15rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left bottom;
+
+  @media #{$large-up} {
+  left: -180px;
+  width: 25rem;
+  height: 18.75rem;
+  }
+
+} 
+
+.sponsorSection-illustr--dashboard {
+  @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg.svg');
-    background-repeat: no-repeat;
-    background-size: 30% 30%;
-    background-position: -5% 95%;
-    background-attachment: fixed;
+    background-size: 80% 80%;
+    bottom: 18%;
+
+  }
+
+}
+
+.sponsorSection-illustr--settings {
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--settings.svg');
+
+  }
+
+}
+
+.sponsorSection-illustr--contributions {
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--contributions.svg');
+
+  }
+
+}
+
+.sponsorSection-illustr--managePlan {
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--managePlan.svg');
+    bottom: 24%; 
+    left: -160px; 
+
   }
 
 }

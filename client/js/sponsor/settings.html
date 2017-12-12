@@ -1,194 +1,204 @@
-  
-<div class="row">
-    
-  <form novalidate 
-      ng-model-options="{ getterSetter: true }"
-      name="settings.userSettingsForm"
-      ng-submit="settings.saveChanges(settings.userSettingsForm)">
 
-    <div class="small-12 medium-4   columns">
+<div class="section">  
+  
+  <div class="sponsorSection-illustrContainer">
+    <div class="sponsorSection-illustr  sponsorSection-illustr--settings  show-for-medium-up">
       
-        <h1 class="txtc2  ff2">Account <br> Settings</h1>
-
-        <p>Edit this information to manage how we contact with you about any sponsorship updates or to reset your password.</p>
-    
     </div>
-    
-
-    <div class="small-12 medium-8  large-7 large-pull-1 columns">
-  
-<div class="card">
-
-  <div class="card-header">
-
-    <h1 class="card-title">Contact Information</h1>
-
   </div>
 
-  <div class="card-content">
-
-    <div class="row">
-
-      <div class="small-12 columns large-7">
-
-        <div class="input-group  input--medium mb2">
+  <div class="row">
+      
+    <form novalidate 
+        ng-model-options="{ getterSetter: true }"
+        name="settings.userSettingsForm"
+        ng-submit="settings.saveChanges(settings.userSettingsForm)">
+  
+      <div class="small-12 medium-4   columns">
         
-          <label for="phone number">
-            Preferred  Phone Number
-          </label>
-        
-          <input type="tel" 
-                 id="phone number"
-                ng-model="settings.userSettings.phone"
-                ng-minlength="10"
-                verify-check-box="settings.userSettings.sms_preferred"
-                name="phone_number"
-                floating-label>
-        
-          <div ng-messages="settings.userSettingsForm.phone_number.$error"
-               ng-show="settings.userSettingsForm.$submitted && settings.userSettingsForm.phone_number.$error"
-               role="alert"
-               class="alerts  alert--warning" >
-        
-             <div ng-message="verifyCheckBox">
-                  Sorry, we need a number to send messages to.
+          <h1 class="txtc2  ff2">Account <br> Settings</h1>
+  
+          <p>Edit this information to manage how we contact with you about any sponsorship updates or to reset your password.</p>
+      
+      </div>
+      
+  
+      <div class="small-12 medium-8  large-7 large-pull-1 columns">
+    
+        <div class="card">
+  
+          <div class="card-header">
+  
+            <h1 class="card-title">Contact Information</h1>
+  
+          </div>
+  
+          <div class="card-content">
+  
+            <div class="row">
+  
+              <div class="small-12 columns large-7">
+  
+                <div class="input-group  input--medium mb2">
+                
+                  <label for="phone number">
+                    Preferred  Phone Number
+                  </label>
+                
+                  <input type="tel" 
+                         id="phone number"
+                        ng-model="settings.userSettings.phone"
+                        ng-minlength="10"
+                        verify-check-box="settings.userSettings.sms_preferred"
+                        name="phone_number"
+                        floating-label>
+                
+                  <div ng-messages="settings.userSettingsForm.phone_number.$error"
+                       ng-show="settings.userSettingsForm.$submitted && settings.userSettingsForm.phone_number.$error"
+                       role="alert"
+                       class="alerts  alert--warning" >
+                
+                     <div ng-message="verifyCheckBox">
+                          Sorry, we need a number to send messages to.
+                      </div>
+                    
+                      <div ng-message="minlength">
+                          Sorry, number must be a valid format (xxx) xxx-xxxx.
+                      </div>
+                
+                  </div>
+                
+                </div>
+  
+                <div class=" grid  grid--center  grid--justifyLeft">
+  
+                  <div>
+                    <input type="checkbox"
+                           id="sms_contacting"
+                           name="sms_preferred"
+                           ng-model="settings.userSettings.sms_preferred"
+                           class="mb0 mr4"
+                           >
+                  </div>
+  
+                  <label for="sms_preferred" class="text-mini mb0 grid-cell--autoSize ">
+                     I wish to also be contacted by text messages
+                  </label>
+  
+                </div>
+                
               </div>
+  
+            </div>
+  
+          </div>
+          
+          <div class="card-header">
+  
+            <h1 class="card-title">Account Password</h1>
+          
+          </div>
+  
+          <div class="card-content">
+                
+          <div class="row">
             
-              <div ng-message="minlength">
-                  Sorry, number must be a valid format (xxx) xxx-xxxx.
+            <div class="small-12 large-7 columns">
+              
+              <div class="input-group  input--medium">
+              
+                <label for="password">
+                  Password
+                </label>
+              
+                <input type="password" 
+                       id="password"
+                       name="password"
+                       class="input--primary input--medium"
+                       ng-model="settings.userInfo.password"
+                       required
+                       ng-minlength = "8"
+                       floating-label>
+              
+                <div ng-messages="settings.userAccountForm.password.$error"
+                     ng-show="settings.userAccountForm.$submitted &&  settings.userAccountForm.password.$error"
+                     role="alert"
+                     class="alerts  alert--warning"
+                     >
+              
+                    <div ng-message="required">
+                        Oops! A password is required
+                    </div>
+              
+                    <div ng-message="ng-minlength">
+                        Oops! Password must be atleast 8 characters in length
+                    </div>
+              
+                    <div ng-message="pattern">
+                        Email must be valid 'example@email.com'
+                    </div>
+              
+                </div>
+              
               </div>
-        
-          </div>
-        
-        </div>
-
-        <div class=" grid  grid--center  grid--justifyLeft">
-
-          <div>
-            <input type="checkbox"
-                   id="sms_contacting"
-                   name="sms_preferred"
-                   ng-model="settings.userSettings.sms_preferred"
-                   class="mb0 mr4"
-                   >
-          </div>
-
-          <label for="sms_preferred" class="text-mini mb0 grid-cell--autoSize ">
-             I wish to also be contacted by text messages
-          </label>
-
-        </div>
-        
-      </div>
-
-    </div>
-
-  </div>
+              
+              
+              <div class="input-group  input--medium">
+              
+                <label for="confirmPassword">
+                  Re-enter Password
+                </label>
+              
+                <input type="password" 
+                       id="confirmPassword"
+                       name="confirmPassword"
+                       class="input--primary input--medium"
+                       ng-minlength="8"
+                       ng-model="settings.userInfo.confirmPassword"
+                       compare-to="settings.userInfo.password"
+                       floating-label>
+              
+                <div ng-messages="settings.userAccountForm.password.$error"
+                     ng-show="settings.userAccountForm.$submitted && settings.userAccountForm.password.$error"
+                     role="alert"
+                     class="alerts  alert--warning">
+              
+                    <div ng-message="required">
+                        Sorry, passwords must match.
+                    </div>
+              
+                    <div ng-message="ng-minlength">
+                        Oops! Password must be atleast 8 characters in length.
+                    </div>
+              
+                    <div ng-message="compare-to">
+                        Oops! Passwords must match.
+                      </div>
+                
+                  </div>
+                
+                </div>
+              </div>
   
-  <div class="card-header">
-
-    <h1 class="card-title">Account Password</h1>
+              </div>
+  
+            </div>
+  
+        </div>    
+        
+        <div class="small-12 columns">
+          
+          <button type="submit" 
+                  class="button--medium  button--primary"
+                  ng-show="settings.userSettingsForm.$dirty && settings.userSettingsForm.$valid">
+              Save Changes
+          </button>
+        
+        </div>
+  
+      </div>
+  
+    </form>
   
   </div>
-
-  <div class="card-content">
-        
-<div class="row">
-  <div class="small-12 large-7 columns">
-    <div class="input-group  input--medium">
-    
-      <label for="password">
-        Password
-      </label>
-    
-      <input type="password" 
-             id="password"
-             name="password"
-             class="input--primary input--medium"
-             ng-model="settings.userInfo.password"
-             required
-             ng-minlength = "8"
-             floating-label>
-    
-      <div ng-messages="settings.userAccountForm.password.$error"
-           ng-show="settings.userAccountForm.$submitted &&  settings.userAccountForm.password.$error"
-           role="alert"
-           class="alerts  alert--warning"
-           >
-    
-          <div ng-message="required">
-              Oops! A password is required
-          </div>
-    
-          <div ng-message="ng-minlength">
-              Oops! Password must be atleast 8 characters in length
-          </div>
-    
-          <div ng-message="pattern">
-              Email must be valid 'example@email.com'
-          </div>
-    
-      </div>
-    
-    </div>
-    
-    
-    <div class="input-group  input--medium">
-    
-      <label for="confirmPassword">
-        Re-enter Password
-      </label>
-    
-      <input type="password" 
-             id="confirmPassword"
-             name="confirmPassword"
-             class="input--primary input--medium"
-             ng-minlength="8"
-             ng-model="settings.userInfo.confirmPassword"
-             compare-to="settings.userInfo.password"
-             floating-label>
-    
-      <div ng-messages="settings.userAccountForm.password.$error"
-           ng-show="settings.userAccountForm.$submitted && settings.userAccountForm.password.$error"
-           role="alert"
-           class="alerts  alert--warning">
-    
-          <div ng-message="required">
-              Sorry, passwords must match.
-          </div>
-    
-          <div ng-message="ng-minlength">
-              Oops! Password must be atleast 8 characters in length.
-          </div>
-    
-          <div ng-message="compare-to">
-              Oops! Passwords must match.
-          </div>
-    
-      </div>
-    
-    </div>
   </div>
-</div>
-
-
-        </div>
-      </div>    
-      
-      
-      <div class="small-12 columns">
-        
-        <button type="submit" 
-                class="button--medium  button--primary"
-                ng-show="settings.userSettingsForm.$dirty && settings.userSettingsForm.$valid">
-            Save Changes
-        </button>
-      
-      </div>
-
-    </div>
-
-  </form>
-
-</div>
-

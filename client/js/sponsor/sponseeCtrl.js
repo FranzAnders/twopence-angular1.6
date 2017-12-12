@@ -26,6 +26,7 @@ twopence.controller('sponsorshipCtrl', [
 
     $scope.$state = $state;
 
+
     vm.currentPlan = null; 
 
 
