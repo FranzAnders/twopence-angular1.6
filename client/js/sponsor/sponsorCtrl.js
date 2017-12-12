@@ -12,6 +12,8 @@ twopence.controller('sponsorCtrl', [
     'User',
     'Auth',
     '$fancyModal',
+    '$rootScope',
+    '$scope',
     '$state',
     function(
         Sponsee,
@@ -20,11 +22,15 @@ twopence.controller('sponsorCtrl', [
         User,
         Auth,
         $fancyModal,
+        $rootScope, 
+        $scope, 
         $state) {
 
     var vm = this;
 
     vm.info = false;
+
+    $scope.$state = $state; 
 
     //
     // Gets user's info
