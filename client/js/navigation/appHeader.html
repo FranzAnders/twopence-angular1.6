@@ -35,31 +35,52 @@
 
           </div>
 
-          <ul  class="appHeader-menu">
+          <button  class="appHeader-menuToggle"
+                   ng-click="nav.toggleSecondaryMenu()">
+
+            <div 
+                role="button"
+               class="appHeader-menu-link appHeader-menu-link--userActions  grid  grid--center">
+
+               <div class="userActions-avatar  grid  grid--center  grid--justifyCenter">
+                  <div>{{nav.sponsorInitials}}</div>
+               </div>
+
+              <div class="userActions-name">
+                {{nav.sponsorName}}
+               </div>
+
+            </div>
+
+          </button>
+
+
+          <ul class="appHeader-menu"
+              ng-class="nav.secondaryMenuActive ? 'is-open' : 'is-closed'">
+          
             <li class="appHeader-menu-item">
+               <a class="appHeader-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="sponsor.settings">Settings</a>
+            </li>
 
-              <div 
-                  ng-click="appHeader.openActions()"
-                  role="button"
-                 class="appHeader-menu-link appHeader-menu-link--userActions  grid  grid--center">
 
-                 <div class="userActions-avatar  grid  grid--center  grid--justifyCenter">
-                    <div>{{appHeader.sponsorInitials}}</div>
-                 </div>
+            <li class="appHeader-menu-item">
+               <a class="appHeader-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">FAQ</a>
+            </li>
 
-                <div class="userActions-name">
-                  {{appHeader.sponsorName}}
-                 </div>
 
-              </div>
-
+            <li class="appHeader-menu-item">
+               <a class="appHeader-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">Log Out</a>
             </li>
 
           </ul>
+    
         </div>
 
       </div>
 
-    </div>
+
+
+
+  </div>
 
 </div>
