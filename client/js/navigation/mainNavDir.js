@@ -56,23 +56,8 @@ twopence.directive('mainNavDir',
       };
 
 
-      vm.openDrawer = function(pDropDownId) {
-
-        if(pDropDownId === vm.activeDropDown) {
-
-          vm.activeDropDown = false; 
-
-        } else {
-
-        vm.activeDropDown = pDropDownId; 
-          
-        }
-
-
-      }; 
-
     }],
-    controllerAs: 'mainNav',
+    controllerAs: 'nav',
     templateUrl: 'js/navigation/mainNav.html',
     link: function(scope, element) {
 

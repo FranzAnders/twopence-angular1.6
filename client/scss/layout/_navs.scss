@@ -22,6 +22,12 @@
   position: relative;
   height: rem-calc(60px); 
   background-color: #fff; 
+  @include box-shadow(0 1px 24px rgba(30,30,30, .2)); 
+
+  @media #{$medium-up} {
+    height: rem-calc(72px)
+
+  }
 
 }
 
@@ -76,7 +82,6 @@
 
 
 .fixed-nav {
-  
   width: 100%; 
   z-index: 100;
   @extend %position-fixed; 
@@ -84,7 +89,6 @@
 }
 
 .absolute-nav {
-
   width: 100%; 
   z-index: 100; 
   top: 0; 
@@ -104,12 +108,17 @@
 .mainNav {
   padding-right: rem-calc($level2);
   padding-left: rem-calc($level2);
+    
+  @media #{$large-up} {
+    padding-right: rem-calc(0);
+    padding-left: rem-calc(0);
+    
+  }
+
 
   .mainNav-header {
     width: 100%; 
     height: 100%;
-    padding-top: rem-calc($level1); 
-    padding-bottom: rem-calc($level1); 
     z-index: 200; 
     @extend %position-relative; 
 
@@ -126,6 +135,17 @@
           width: rem-calc(120px);
           fill: $secondaryColor; 
 
+          @media #{$medium-up} {
+            width: rem-calc(140px); 
+
+          }
+
+
+          @media #{$large-up} {
+            width: rem-calc(160px); 
+
+          }
+
         }
       
     }
@@ -136,224 +156,115 @@
     position: absolute;
     left: 0; 
     right: 0; 
-    opacity: 0; 
-    margin-top: rem-calc($level4); 
-    padding-top: rem-calc($level3);
-    padding-bottom: rem-calc($level3); 
-    width: 85%; 
+    width: 100%; 
     margin-right: auto;
     margin-left: auto; 
     z-index: 6; 
-    @include transition(all .6s ceaser($easeOutCubic)); 
-    @include transform(translateY(250px) translateX(100%));
+    padding-top: rem-calc($level7 + $level7); 
     @extend %text-left; 
 
     @media #{$medium-up} {
-      padding-top: rem-calc($level7 + $level2); 
-      width: 80%; 
+      position: relative; 
+      padding-top: 0; 
+      right: auto; 
+      left: auto; 
+      margin-left: 3%;
 
     }
 
-    @media #{$large-up} {
-      width: 60%;
-      padding-top: rem-calc($level7); 
+    .mainNav-menu-item {
+      width: 100%;
+      margin-bottom: rem-calc($level4); 
+      text-align: center; 
+      @include transition(all .4s ceaser($easeInOutCubic)); 
+
+      @media #{$medium-up} {
+        margin-bottom: 0; 
+        margin-right: rem-calc($level2); 
+
+      }
+
+    }
+  
+    @for $i from 1 through 6 {
+
+      .mainNav-menu-item:nth-of-type(#{$i}) {
+
+        @include transition-delay(.03s * $i); 
+
+      }
+
+    }
+
+    .mainNav-menu-item:last-child {
+      
+      @media #{$medium-up} {
+        margin-right: 0;  
+
+      }
 
     }
 
     .mainNav-menu-logo {
-      margin-top: rem-calc($level2); 
-      margin-bottom: rem-calc($level2); 
-      margin-right: rem-calc($level2); 
-      width: 10rem; 
-      @extend %text-center; 
-
-      @media #{$medium-up} {
-
-        width: 11rem; 
-        margin-right: rem-calc($level4); 
-
-      }
+      fill: #fff; 
+      width: rem-calc(140px); 
+      margin-bottom: rem-calc($level3); 
+      left: 0; 
+      right: 0; 
+      margin-right: auto;  
+      margin-left: auto;  
 
     }
 
-    .mainNav-link {
-      color: $secondaryColor; 
-      letter-spacing: 1px; 
-      @include type-setting(-1);  
-      @extend %fwb; 
-      @extend %uc; 
+    .mainNav-menu-links {
+        width: 100%;
+        max-width: rem-calc(400px); 
+
+      @media #{$large-up} {
+        max-width: rem-calc(420px); 
+
+      }
+    }
+
+    .mainNav-menu-link {
+      color: #fff; 
+      @extend %position-relative; 
+      @include type-setting(5);  
+
+      &:after {
+        content:  " "; 
+        width: 0; 
+        height: rem-calc(6px); 
+        background-color: $primaryColor; 
+        right: 0; 
+        left: 0; 
+        top: 50%;
+        @include transition(all .2s ceaser($easeInOutCubic)); 
+        @extend %position-absolute; 
+
+      }
+        
+      @media #{$medium-up} {
+        
+        color: $secondaryColor; 
+        @include type-setting(-1);  
+
+      }
 
       &:hover, 
       &:focus {
-        color: $secondaryColor; 
-        text-decoration: underline; 
-
-      }
-
-      @media #{$medium-up} {
-
-        float: right;
-
-      }
-
-    }
-
-    .mainNav-divider {
-      
-      @media #{$medium-up} {
-        margin-bottom: rem-calc($level5); 
-
-      } 
-    
-    }
-
-    .mainNav-menu-primaryLinks {
-      position: relative;
-      width: 100%; 
-
-      @media #{$medium-up} {
-
-        margin-bottom: rem-calc($level5); 
-
-      }
-
-      @media #{$large-up} {
-
-        width: 100%; 
-
-      }
-
-      .mainNav-menu-item {
-
-        margin-bottom: rem-calc($level4); 
+        color: #fff; 
 
         @media #{$medium-up} {
-
-          margin-bottom: rem-calc($level7); 
-
-        }
-
-        @media #{$large-up} {
-
-          margin-bottom: rem-calc($level5); 
+          color: $secondaryColor; 
 
         }
 
-      }
+        &:after{
+          width: 100%; 
 
-      .mainNav-menu-item:last-child {
-
-        margin-bottom: 0;
-
-      }
-
-      .mainNav-menu-link {
-          color: #fff; 
-          white-space: nowrap;  
-          border-bottom: 0; 
-          font-family: $primary-font-family; 
-          @extend %text-left; 
-          @extend %position-relative; 
-          @include type-setting(3); 
-          @include transition(all .4s ceaser($easeOutCubic)); 
-            
-            
           @media #{$medium-up} {
-           
-            display: block; 
-            width: 100%; 
-            @include type-setting(5); 
-
-          }
-          
-          @media #{$large-up} {
-
-              @include type-setting(6); 
-
-          }
-
-          &:before {
-
-            content: "";
             width: 0; 
-            height: 0px; 
-            bottom: -4px;  
-            left: 0;
-            border-bottom: 2px solid $secondaryColor;
-            @extend %position-absolute; 
-            @include transition(width .3s ceaser($easeOutCubic), height .2s ceaser($easeOutCubic) .3s); 
-
-            @media #{$large-up} {
-              
-              bottom: -2px;  
-
-            }
-              
-          }
-
-          &:hover,
-          &:focus {
-              
-            color: #fff;  
-
-            .mainNav-menu-linkLabel {
-
-              opacity: 1; 
-
-            }
-
-            &:before {
-
-              width: 100%; 
-
-              @media #{$medium-up} {
-
-                height: rem-calc($level3); 
-                border-right: 2px solid $secondaryColor;
-
-              }
-
-            }
-    
-          }
-
-        .mainNav-menu-linkLabel {
-
-          display: none; 
-          @include transition(all .2s ceaser($easeOutCubic) .3s); 
-
-
-          @media #{$medium-up} {
-          
-            top: -16px; 
-            opacity: 0; 
-            display: block; 
-            position: absolute;
-            right: rem-calc($level2);
-            width: 200px;
-            color: #fff;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-family: $secondary-font-family;
-            @include type-setting(-1);  
-
-          }
-
-          @media #{$large-up} {
-
-            top: 0; 
-
-          }
-          
-          .icon {
-          
-            margin-right: rem-calc($level1); 
-
-            @media #{$medium-up} {
-
-              width: rem-calc(38px); 
-
-            }
 
           }
 
@@ -363,62 +274,37 @@
 
     }
 
-    .mainNav-menu-secondaryLinks {
-    
-      .mainNav-menu-item {
+    .mainNav-menu-button {
+      border: 1px solid #fff; 
+      color: #fff; 
+      background-color: transparent; 
+      margin-top: rem-calc($level4); 
+      margin-bottom: 0; 
 
-        margin-bottom: rem-calc($level2); 
-        text-align: center; 
+      &:hover, 
+      &:focus {
+        background-color: #fff; 
 
-        .mainNav-menu-link {
+      }
 
-          font-family: $primary-font-family; 
-          color: #fff; 
-          position: relative; 
-          @include type-setting(1); 
+      @media #{$medium-up} {
+        border: 1px solid $secondaryColor; 
+        color: $secondaryColor; 
+        margin-top: 0; 
 
-          &:before {
-
-            content: "";
-            background-color: $secondaryColor;
-            width: 0; 
-            height: 2px; 
-            bottom: -2px;  
-            left: 0;
-            @extend %position-absolute; 
-            @include transition(all .2s ceaser($easeOutCubic)); 
-
-          }
-
-          &:hover, 
-          &:focus { 
-
-              
-            &:before {
-              
-              width: 100%; 
-              
-            }
-
-          }
+        &:hover, 
+        &:focus {
+          background-color: $secondaryColor; 
 
         }
 
       }
-
-      .mainNav-menu-item:last-child {
-
-        margin-bottom: 0;
-
-      }
-
 
     }
 
     .mainNav-menu-social {
       
       .social-link {
-        
         fill: #fff; 
 
         &:hover, 
@@ -432,79 +318,81 @@
   
     }
 
+    .mainNav-actions {
+      width: 100%; 
+      max-width: rem-calc(200px); 
+      margin-bottom: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
+      left: 0; 
+      right: 0;
+
+      @media #{$medium-up} {
+        padding-left: 5%; 
+        margin-right: rem-calc($level2);
+
+      } 
+
+    }
 
   }
 
 
   .mainNav-overlay {
-
-    width: rem-calc(60px);
-    height: rem-calc(60px);
     color: #fff; 
-    right: -5px; 
-    top: 0; 
-    margin-top: .6rem;
-    margin-right: 1rem;
     position: fixed; 
     transform-origin: center; 
-    @include transition(all .6s ceaser($easeInOutQuint)); 
+    background-color: $translucentBlack;
+    top: 0; 
+    bottom: 0; 
+    right: 0; 
+    left: 0; 
 
-    @media #{$large-up} {
-
-      width: rem-calc(72px);
-      height: rem-calc(72px);
-
-    }
-
-
-    &:before {
-
-      content: " ";
-      width: 100%; 
-      height: 100%; 
-      position: absolute; 
-      top: 0; 
-      right: 0; 
-      left: 0; 
-      bottom: 0; 
-      background-color: rgba($primaryColor, .9);
-      -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-      clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-      transform-origin: center; 
-      @include transform(scale(1), rotate(0deg)); 
-      @include transition(all .7s ceaser($easeInOutQuint)); 
+    @media #{$medium-up} {
+      display: none; 
 
     }
-  
+
   }
 
   &.is-closed {  // for when nav is closed
-  
-  
+
+    .mainNav-menu {
+      
+      .mainNav-menu-item {
+
+         @media #{$small-only} {
+            opacity: 0;   
+            @include transform(translateY(26px));     
+
+         }
+
+      }
+
+    }
+
+    .mainNav-overlay {
+      @include animation(main-nav-disappear .4s ceaser($easeInOutCubic) forwards .2s); 
+
+    }
+
   }
 
   &.is-open { // for when nav is open
     
-    .mainNav-overlay {
-
-      width: 100vw;
-      height: 100vh;
-
-      &:before {
+    .mainNav-menu {
       
-          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 17%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 17%);
-          background-color: $primaryColor; 
-          @include transform(scale(28) rotate(20deg));
-  
-        }
+      .mainNav-menu-item {
+        opacity: 1;   
+        @include transform(translateY(0));     
 
       }
 
-    .mainNav-menu {
-      
-      opacity: 1; 
-      @include transform(translateY(0) translateX(0))
+    }
+
+
+    .mainNav-overlay {
+      @include animation(main-nav-appear .4s ceaser($easeInOutCubic) forwards); 
 
     }
 
@@ -520,74 +408,29 @@
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
 
-$toggleStrokeWidth: 3px;
-$toggleHeight: 1.1rem; 
-$toggleWidth: 1.4rem;  
+$toggleStrokeWidth: 4px;
+$toggleHeight: 1.3rem; 
+$toggleWidth: 2.1rem;  
 $toggleColor: $secondaryColor; 
 
 .mainNav-menuToggle {
-
     width: rem-calc(60px);
     height: rem-calc(60px);
     color: $primaryColor; 
     right: 0; 
-    top: 0; 
+    top: 3px; 
     z-index: 201; 
-    margin-top: rem-calc($level1); 
-    margin-right: rem-calc($level2);
     position: absolute; 
 
-    @media #{$large-up} {
-
-      width: rem-calc(72px);
-      height: rem-calc(72px);
-      margin-right: rem-calc($level3);
-
-    }
-
-
-    &:before {
-
-      content: " ";
-      width: 100%; 
-      height: 100%; 
-      position: absolute; 
-      top: 0; 
-      right: 0; 
-      left: 0; 
-      bottom: 0; 
-      background-color: transparent;
-      -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-      clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-      transform-origin: center; 
-      @include transform(rotate(0)); 
-      @include transition(all .2s ceaser($easeInOutQuint)); 
+    @media #{$medium-up} {
+      display: none; 
 
     }
 
     &:hover, 
     &:focus {
       
-      &:before {
 
-        @include transform(rotate(-180deg)); 
-
-      }
-
-    }
-
-    @media #{$medium-up} {
-      width: 60px; 
-      height: 60px; 
-      margin-top: rem-calc($level2); 
-      margin-right: rem-calc($level3);
-
-    }
-
-    @media #{$large-up} {
-
-      width: 60px; 
-      height: 60px; 
 
     }
 
@@ -600,38 +443,30 @@ $toggleColor: $secondaryColor;
 
 
 .menuToggle-icon {
-
-  border-bottom: $toggleStrokeWidth solid $toggleColor; 
   height: $toggleHeight;
   width: $toggleWidth; 
   z-index: 202; 
+
   @extend %display-inlineBlock;
   @extend %position-relative; 
 
-
   &:after,
   &:before {
-  
     content: ""; 
     height: $toggleStrokeWidth;
     background-color: $toggleColor; 
     width: 100%;  
+    right: 0; 
+    left: 0; 
     @extend %position-absolute; 
-    @include transition(all .2s ceaser($easeInOutQuint)); 
+    @include border-radius(4px); 
+    @include transition(all .2s ceaser($easeInOutCubic)); 
 
   }
 
   &:after {
+    top: 50%; 
 
-  top: 50%; 
-
-  }
-
-  &:hover,
-  &:focus {
-    
-
-    
   }
  
 }
@@ -648,23 +483,21 @@ $toggleColor: $secondaryColor;
 .mainNav-menuToggle.is-menu-open {
   
   .menuToggle-label {
-
     opacity: 0; 
 
   }
 
   .menuToggle-icon {
-
     border-bottom: solid 2px transparent; 
 
     &:before {
       top: 50%; 
-      background-color: $secondaryColor; 
+      background-color: #fff; 
       @include transform(rotate(45deg)); 
     }
 
     &:after{
-      background-color: $secondaryColor; 
+      background-color: #fff; 
       @include transform(translateY(0) rotate(-45deg)); 
     }
 
