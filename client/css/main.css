@@ -5933,8 +5933,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 }
 
 /* line 55, ../scss/abstracts/_typography.scss */
-.fwb, strong, footer .footer-title, .footer-menu .footer-menu-title, .formTabs .formTabs-tab.is-active .tab-title, .mainNav .mainNav-menu .mainNav-link, button,
-.button, .card .card-content .card-subTitle, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
+.fwb, strong, footer .footer-title, .footer-menu .footer-menu-title, .formTabs .formTabs-tab.is-active .tab-title, .card .card-content .card-subTitle, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -5944,9 +5943,8 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 }
 
 /* line 57, ../scss/abstracts/_typography.scss */
-.uc, footer .footer-title, .footer-menu .footer-menu-title, .mainNav .mainNav-menu .mainNav-link, table th,
-.table th, button,
-.button, .card .card-content .card-subTitle, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
+.uc, footer .footer-title, .footer-menu .footer-menu-title, table th,
+.table th, .card .card-content .card-subTitle, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
   text-transform: uppercase;
 }
 
@@ -5962,12 +5960,12 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
     #Text Alignments 
 \*------------------------------------*/
 /* line 82, ../scss/abstracts/_typography.scss */
-.text-center, .mainNav .mainNav-menu .mainNav-menu-logo, .pageHeader .pageHeader-headlineContainer {
+.text-center, .pageHeader .pageHeader-headlineContainer {
   text-align: center;
 }
 
 /* line 83, ../scss/abstracts/_typography.scss */
-caption, th, .text-left, .mainNav .mainNav-menu, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link, table th,
+caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table th, .table--list tr td,
 .table--list tr .table-data,
 .table--list .table-row td,
@@ -6272,12 +6270,12 @@ label {
     #Position Types 
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
-.relative, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
+.relative, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
   position: relative;
 }
 
 /* line 223, ../scss/abstracts/_utility.scss */
-.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, input.clearField:after, .absolute-nav, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before, .mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:before, .menuToggle-icon:after, .menuToggle-icon:before, .fancymodal .fancymodal-close {
+.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, input.clearField:after, .absolute-nav, .mainNav .mainNav-menu .mainNav-menu-link:after, .menuToggle-icon:after, .menuToggle-icon:before, .fancymodal .fancymodal-close {
   position: absolute;
 }
 
@@ -6318,12 +6316,12 @@ label {
     #Text Alignment  
 \*------------------------------------*/
 /* line 272, ../scss/abstracts/_utility.scss */
-.text-center, .mainNav .mainNav-menu .mainNav-menu-logo, .pageHeader .pageHeader-headlineContainer {
+.text-center, .pageHeader .pageHeader-headlineContainer {
   text-align: center;
 }
 
 /* line 273, ../scss/abstracts/_utility.scss */
-caption, th, .text-left, .mainNav .mainNav-menu, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link, table th,
+caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table th, .table--list tr td,
 .table--list tr .table-data,
 .table--list .table-row td,
@@ -13528,13 +13526,13 @@ p a.alt-link:hover, p a.alt-link:focus {
 \*------------------------------------*/
 /* line 202, ../scss/base/_typography.scss */
 ::selection {
-  background-color: rgba(14, 14, 14, 0.9);
+  background-color: rgba(23, 35, 39, 0.95);
   color: #fff;
 }
 
 /* line 207, ../scss/base/_typography.scss */
 ::-moz-selection {
-  background-color: rgba(14, 14, 14, 0.9);
+  background-color: rgba(23, 35, 39, 0.95);
   color: #fff;
 }
 
@@ -15442,6 +15440,15 @@ input.clearField:active:after, input.clearField:focus:after {
   position: relative;
   height: 3.75rem;
   background-color: #fff;
+  -moz-box-shadow: 0 1px 24px rgba(30, 30, 30, 0.2);
+  -webkit-box-shadow: 0 1px 24px rgba(30, 30, 30, 0.2);
+  box-shadow: 0 1px 24px rgba(30, 30, 30, 0.2);
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 19, ../scss/layout/_navs.scss */
+  .mainNav {
+    height: 4.5rem;
+  }
 }
 
 @-moz-keyframes main-nav-appear {
@@ -15558,13 +15565,13 @@ input.clearField:active:after, input.clearField:focus:after {
     transform: translateX(-300%);
   }
 }
-/* line 78, ../scss/layout/_navs.scss */
+/* line 84, ../scss/layout/_navs.scss */
 .fixed-nav {
   width: 100%;
   z-index: 100;
 }
 
-/* line 86, ../scss/layout/_navs.scss */
+/* line 91, ../scss/layout/_navs.scss */
 .absolute-nav {
   width: 100%;
   z-index: 100;
@@ -15574,20 +15581,25 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Main Navigation Inner Components Styles  
 \*------------------------------------*/
-/* line 104, ../scss/layout/_navs.scss */
+/* line 108, ../scss/layout/_navs.scss */
 .mainNav {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
-/* line 108, ../scss/layout/_navs.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 108, ../scss/layout/_navs.scss */
+  .mainNav {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/* line 119, ../scss/layout/_navs.scss */
 .mainNav .mainNav-header {
   width: 100%;
   height: 100%;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
   z-index: 200;
 }
-/* line 116, ../scss/layout/_navs.scss */
+/* line 125, ../scss/layout/_navs.scss */
 .mainNav .mainNav-header .mainNav-title {
   height: 100%;
   margin-left: 0.75rem;
@@ -15600,438 +15612,324 @@ input.clearField:active:after, input.clearField:focus:after {
   -webkit-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
-/* line 124, ../scss/layout/_navs.scss */
+/* line 133, ../scss/layout/_navs.scss */
 .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
   height: 100%;
   width: 7.5rem;
   fill: #333031;
 }
-/* line 135, ../scss/layout/_navs.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 133, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
+    width: 8.75rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 133, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
+    width: 10rem;
+  }
+}
+/* line 155, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu {
   position: absolute;
   left: 0;
   right: 0;
-  opacity: 0;
-  margin-top: 1.5rem;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
-  width: 85%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   z-index: 6;
-  -moz-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -o-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -moz-transform: translateY(250px) translateX(100%);
-  -ms-transform: translateY(250px) translateX(100%);
-  -webkit-transform: translateY(250px) translateX(100%);
-  transform: translateY(250px) translateX(100%);
+  padding-top: 6rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 135, ../scss/layout/_navs.scss */
+  /* line 155, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu {
-    padding-top: 3.75rem;
-    width: 80%;
+    position: relative;
+    padding-top: 0;
+    right: auto;
+    left: auto;
+    margin-left: 3%;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 135, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu {
-    width: 60%;
-    padding-top: 3rem;
-  }
-}
-/* line 163, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-logo {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  margin-right: 0.75rem;
-  width: 10rem;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 163, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-logo {
-    width: 11rem;
-    margin-right: 1.5rem;
-  }
-}
-/* line 179, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-link {
-  color: #333031;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-/* line 186, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-link:hover, .mainNav .mainNav-menu .mainNav-link:focus {
-  color: #333031;
-  text-decoration: underline;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 179, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-link {
-    float: right;
-  }
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 201, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-divider {
-    margin-bottom: 1.875rem;
-  }
-}
-/* line 210, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks {
-  position: relative;
+/* line 175, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item {
   width: 100%;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 210, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks {
-    margin-bottom: 1.875rem;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 210, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks {
-    width: 100%;
-  }
-}
-/* line 226, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-item {
   margin-bottom: 1.5rem;
+  text-align: center;
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 226, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-item {
-    margin-bottom: 3rem;
+  /* line 175, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-item {
+    margin-bottom: 0;
+    margin-right: 0.75rem;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 226, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-item {
-    margin-bottom: 1.875rem;
-  }
+/* line 191, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(1) {
+  -moz-transition-delay: 0.03s;
+  -o-transition-delay: 0.03s;
+  -webkit-transition-delay: 0.03s;
+  transition-delay: 0.03s;
 }
-/* line 244, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-item:last-child {
-  margin-bottom: 0;
+/* line 191, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(2) {
+  -moz-transition-delay: 0.06s;
+  -o-transition-delay: 0.06s;
+  -webkit-transition-delay: 0.06s;
+  transition-delay: 0.06s;
 }
-/* line 250, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link {
-  color: #fff;
-  white-space: nowrap;
-  border-bottom: 0;
-  font-family: "Work Sans", sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.33333;
-  -moz-transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+/* line 191, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(3) {
+  -moz-transition-delay: 0.09s;
+  -o-transition-delay: 0.09s;
+  -webkit-transition-delay: 0.09s;
+  transition-delay: 0.09s;
+}
+/* line 191, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(4) {
+  -moz-transition-delay: 0.12s;
+  -o-transition-delay: 0.12s;
+  -webkit-transition-delay: 0.12s;
+  transition-delay: 0.12s;
+}
+/* line 191, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(5) {
+  -moz-transition-delay: 0.15s;
+  -o-transition-delay: 0.15s;
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+/* line 191, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(6) {
+  -moz-transition-delay: 0.18s;
+  -o-transition-delay: 0.18s;
+  -webkit-transition-delay: 0.18s;
+  transition-delay: 0.18s;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 250, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link {
-    display: block;
-    width: 100%;
-    font-size: 2.5rem;
-    line-height: 1;
+  /* line 199, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-item:last-child {
+    margin-right: 0;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 250, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link {
-    font-size: 3rem;
-    line-height: 1.33333;
-  }
-}
-/* line 275, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before {
-  content: "";
-  width: 0;
-  height: 0px;
-  bottom: -4px;
+/* line 208, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-logo {
+  fill: #fff;
+  width: 8.75rem;
+  margin-bottom: 1.125rem;
   left: 0;
-  border-bottom: 2px solid #333031;
-  -moz-transition: width 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000), height 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s;
-  -o-transition: width 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000), height 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s;
-  -webkit-transition: width 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000), height 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition-delay: 0s, 0.3s;
-  transition: width 0.3s cubic-bezier(0.215, 0.610, 0.355, 1.000), height 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* line 219, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-links {
+  width: 100%;
+  max-width: 25rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 275, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:before {
-    bottom: -2px;
+  /* line 219, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-links {
+    max-width: 26.25rem;
   }
 }
-/* line 294, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:hover, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:focus {
+/* line 229, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-link {
   color: #fff;
+  font-size: 2.5rem;
+  line-height: 1;
 }
-/* line 299, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:hover .mainNav-menu-linkLabel, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:focus .mainNav-menu-linkLabel {
-  opacity: 1;
-}
-/* line 305, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:hover:before, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:focus:before {
-  width: 100%;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 305, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:hover:before, .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link:focus:before {
-    height: 1.125rem;
-    border-right: 2px solid #333031;
-  }
-}
-/* line 320, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link .mainNav-menu-linkLabel {
-  display: none;
-  -moz-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s;
-  -o-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s;
-  -webkit-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition-delay: 0.3s;
-  transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.3s;
+/* line 234, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-link:after {
+  content: " ";
+  width: 0;
+  height: 0.375rem;
+  background-color: #6AC6C5;
+  right: 0;
+  left: 0;
+  top: 50%;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 320, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link .mainNav-menu-linkLabel {
-    top: -16px;
-    opacity: 0;
-    display: block;
-    position: absolute;
-    right: 0.75rem;
-    width: 200px;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: "itc_souvenirmedium", sans-serif;
+  /* line 229, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-link {
+    color: #333031;
     font-size: 0.8rem;
     line-height: 1.5;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 320, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link .mainNav-menu-linkLabel {
-    top: 0;
-  }
-}
-/* line 348, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link .mainNav-menu-linkLabel .icon {
-  margin-right: 0.375rem;
+/* line 254, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-link:hover, .mainNav .mainNav-menu .mainNav-menu-link:focus {
+  color: #fff;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 348, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-menu .mainNav-menu-primaryLinks .mainNav-menu-link .mainNav-menu-linkLabel .icon {
-    width: 2.375rem;
+  /* line 254, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-link:hover, .mainNav .mainNav-menu .mainNav-menu-link:focus {
+    color: #333031;
   }
 }
-/* line 368, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item {
-  margin-bottom: 0.75rem;
-  text-align: center;
-}
-/* line 373, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link {
-  font-family: "Work Sans", sans-serif;
-  color: #fff;
-  position: relative;
-  font-size: 1.125rem;
-  line-height: 1.33333;
-}
-/* line 380, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:before {
-  content: "";
-  background-color: #333031;
-  width: 0;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  -moz-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-}
-/* line 397, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:hover:before, .mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item .mainNav-menu-link:focus:before {
+/* line 263, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-link:hover:after, .mainNav .mainNav-menu .mainNav-menu-link:focus:after {
   width: 100%;
 }
-/* line 409, ../scss/layout/_navs.scss */
-.mainNav .mainNav-menu .mainNav-menu-secondaryLinks .mainNav-menu-item:last-child {
+@media only screen and (min-width: 40.0625em) {
+  /* line 263, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-link:hover:after, .mainNav .mainNav-menu .mainNav-menu-link:focus:after {
+    width: 0;
+  }
+}
+/* line 277, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-button {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  margin-top: 1.5rem;
   margin-bottom: 0;
 }
-/* line 420, ../scss/layout/_navs.scss */
+/* line 284, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
+  background-color: #fff;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 277, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-button {
+    border: 1px solid #333031;
+    color: #333031;
+    margin-top: 0;
+  }
+  /* line 295, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
+    background-color: #333031;
+  }
+}
+/* line 307, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link {
   fill: #fff;
 }
-/* line 424, ../scss/layout/_navs.scss */
+/* line 310, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link:hover, .mainNav .mainNav-menu .mainNav-menu-social .social-link:focus {
   color: #333031;
 }
-/* line 439, ../scss/layout/_navs.scss */
-.mainNav .mainNav-overlay {
-  width: 3.75rem;
-  height: 3.75rem;
-  color: #fff;
-  right: -5px;
-  top: 0;
-  margin-top: .6rem;
-  margin-right: 1rem;
-  position: fixed;
-  transform-origin: center;
-  -moz-transition: all 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+/* line 321, ../scss/layout/_navs.scss */
+.mainNav .mainNav-menu .mainNav-actions {
+  width: 100%;
+  max-width: 12.5rem;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 439, ../scss/layout/_navs.scss */
-  .mainNav .mainNav-overlay {
-    width: 4.5rem;
-    height: 4.5rem;
+@media only screen and (min-width: 40.0625em) {
+  /* line 321, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-menu .mainNav-actions {
+    padding-left: 5%;
+    margin-right: 0.75rem;
   }
 }
-/* line 460, ../scss/layout/_navs.scss */
-.mainNav .mainNav-overlay:before {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  position: absolute;
+/* line 341, ../scss/layout/_navs.scss */
+.mainNav .mainNav-overlay {
+  color: #fff;
+  position: fixed;
+  transform-origin: center;
+  background-color: rgba(23, 35, 39, 0.95);
   top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
-  bottom: 0;
-  background-color: rgba(106, 198, 197, 0.9);
-  -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-  transform-origin: center;
-  -moz-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  -moz-transition: all 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.7s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 488, ../scss/layout/_navs.scss */
-.mainNav.is-open .mainNav-overlay {
-  width: 100vw;
-  height: 100vh;
+@media only screen and (min-width: 40.0625em) {
+  /* line 341, ../scss/layout/_navs.scss */
+  .mainNav .mainNav-overlay {
+    display: none;
+  }
 }
-/* line 493, ../scss/layout/_navs.scss */
-.mainNav.is-open .mainNav-overlay:before {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 17%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%, 25% 100%, 0 100%, 0 17%);
-  background-color: #6AC6C5;
-  -moz-transform: scale(28) rotate(20deg);
-  -ms-transform: scale(28) rotate(20deg);
-  -webkit-transform: scale(28) rotate(20deg);
-  transform: scale(28) rotate(20deg);
+@media only screen and (max-width: 40em) {
+  /* line 362, ../scss/layout/_navs.scss */
+  .mainNav.is-closed .mainNav-menu .mainNav-menu-item {
+    opacity: 0;
+    -moz-transform: translateY(26px);
+    -ms-transform: translateY(26px);
+    -webkit-transform: translateY(26px);
+    transform: translateY(26px);
+  }
 }
-/* line 504, ../scss/layout/_navs.scss */
-.mainNav.is-open .mainNav-menu {
+/* line 374, ../scss/layout/_navs.scss */
+.mainNav.is-closed .mainNav-overlay {
+  -moz-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
+  -webkit-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
+  animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
+}
+/* line 385, ../scss/layout/_navs.scss */
+.mainNav.is-open .mainNav-menu .mainNav-menu-item {
   opacity: 1;
-  -moz-transform: translateY(0) translateX(0);
-  -ms-transform: translateY(0) translateX(0);
-  -webkit-transform: translateY(0) translateX(0);
-  transform: translateY(0) translateX(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* line 394, ../scss/layout/_navs.scss */
+.mainNav.is-open .mainNav-overlay {
+  -moz-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+  -webkit-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+  animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
 }
 
 /*------------------------------------*\
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
-/* line 528, ../scss/layout/_navs.scss */
+/* line 416, ../scss/layout/_navs.scss */
 .mainNav-menuToggle {
   width: 3.75rem;
   height: 3.75rem;
   color: #6AC6C5;
   right: 0;
-  top: 0;
+  top: 3px;
   z-index: 201;
-  margin-top: 0.375rem;
-  margin-right: 0.75rem;
   position: absolute;
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 528, ../scss/layout/_navs.scss */
-  .mainNav-menuToggle {
-    width: 4.5rem;
-    height: 4.5rem;
-    margin-right: 1.125rem;
-  }
-}
-/* line 549, ../scss/layout/_navs.scss */
-.mainNav-menuToggle:before {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: transparent;
-  -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-  transform-origin: center;
-  -moz-transform: rotate(0);
-  -ms-transform: rotate(0);
-  -webkit-transform: rotate(0);
-  transform: rotate(0);
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 571, ../scss/layout/_navs.scss */
-.mainNav-menuToggle:hover:before, .mainNav-menuToggle:focus:before {
-  -moz-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  -webkit-transform: rotate(-180deg);
-  transform: rotate(-180deg);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 528, ../scss/layout/_navs.scss */
+  /* line 416, ../scss/layout/_navs.scss */
   .mainNav-menuToggle {
-    width: 60px;
-    height: 60px;
-    margin-top: 0.75rem;
-    margin-right: 1.125rem;
+    display: none;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 528, ../scss/layout/_navs.scss */
-  .mainNav-menuToggle {
-    width: 60px;
-    height: 60px;
-  }
-}
-/* line 594, ../scss/layout/_navs.scss */
+/* line 437, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
   color: #333031;
   padding-top: 6px;
 }
 
-/* line 602, ../scss/layout/_navs.scss */
+/* line 445, ../scss/layout/_navs.scss */
 .menuToggle-icon {
-  border-bottom: 3px solid #333031;
-  height: 1.1rem;
-  width: 1.4rem;
+  height: 1.3rem;
+  width: 2.1rem;
   z-index: 202;
 }
-/* line 612, ../scss/layout/_navs.scss */
+/* line 453, ../scss/layout/_navs.scss */
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
-  height: 3px;
+  height: 4px;
   background-color: #333031;
   width: 100%;
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  right: 0;
+  left: 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 624, ../scss/layout/_navs.scss */
+/* line 467, ../scss/layout/_navs.scss */
 .menuToggle-icon:after {
   top: 50%;
 }
@@ -16039,32 +15937,32 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Main Nav Menu Toggle Open
 \*------------------------------------*/
-/* line 650, ../scss/layout/_navs.scss */
+/* line 485, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 656, ../scss/layout/_navs.scss */
+/* line 490, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 660, ../scss/layout/_navs.scss */
+/* line 493, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
-  background-color: #333031;
+  background-color: #fff;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 666, ../scss/layout/_navs.scss */
+/* line 499, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
-  background-color: #333031;
+  background-color: #fff;
   -moz-transform: translateY(0) rotate(-45deg);
   -ms-transform: translateY(0) rotate(-45deg);
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 671, ../scss/layout/_navs.scss */
+/* line 504, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -16295,7 +16193,6 @@ table th,
   -moz-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
-<<<<<<< HEAD
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 53, ../scss/components/_appHeader.scss */
@@ -16430,142 +16327,6 @@ table th,
     transform: translateX(-100%);
   }
 }
-=======
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 53, ../scss/components/_appHeader.scss */
-  .appHeader .appHeader-menu {
-    width: 40%;
-    max-width: 11.25rem;
-    left: auto;
-    right: 0.375rem;
-  }
-}
-/* line 73, ../scss/components/_appHeader.scss */
-.appHeader .appHeader-menu.is-open {
-  -moz-animation: show-app-nav 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-  -webkit-animation: show-app-nav 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-  animation: show-app-nav 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-}
-/* line 78, ../scss/components/_appHeader.scss */
-.appHeader .appHeader-menu.is-closed {
-  -moz-animation: hide-app-nav 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-  -webkit-animation: hide-app-nav 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-  animation: hide-app-nav 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-}
-/* line 83, ../scss/components/_appHeader.scss */
-.appHeader .appHeader-menu .appHeader-menu-item {
-  border-bottom: 1px solid #dae0e0;
-  padding: 0.375rem;
-}
-/* line 87, ../scss/components/_appHeader.scss */
-.appHeader .appHeader-menu .appHeader-menu-item .appHeader-menu-link {
-  color: #fff;
-  background-color: transparent;
-  margin-bottom: 0;
-  padding: 1.5rem;
-  color: #6d6c6c;
-  -moz-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000) 0.2s forwards;
-  -o-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000) 0.2s forwards;
-  -webkit-transition: cubic-bezier(0.860, 0.000, 0.070, 1.000) 0.2s forwards;
-  transition: cubic-bezier(0.860, 0.000, 0.070, 1.000) 0.2s forwards;
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-/* line 96, ../scss/components/_appHeader.scss */
-.appHeader .appHeader-menu .appHeader-menu-item .appHeader-menu-link:hover, .appHeader .appHeader-menu .appHeader-menu-item .appHeader-menu-link:focus {
-  color: #238EB2;
-  -moz-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  -webkit-transform: translateX(10px);
-  transform: translateX(10px);
-}
-
-@-moz-keyframes show-app-nav {
-  0% {
-    opacity: 0;
-    -moz-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  1% {
-    opacity: 0;
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-    -moz-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes show-app-nav {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  1% {
-    opacity: 0;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@keyframes show-app-nav {
-  0% {
-    opacity: 0;
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  1% {
-    opacity: 0;
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    -moz-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    -webkit-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@-moz-keyframes hide-app-nav {
-  0% {
-    opacity: 1;
-    -moz-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-  99% {
-    opacity: 0;
-    -moz-transform: translateY(20px);
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 0;
-    -moz-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-}
->>>>>>> 5422e4f9a628b874ccb60cbd6f2b1a9f024b615c
 @-webkit-keyframes hide-app-nav {
   0% {
     opacity: 1;
@@ -16861,7 +16622,7 @@ table th,
 }
 /* line 253, ../scss/components/_appNav.scss */
 .appNav-menu-link .appNav-overlay {
-  background-color: rgba(14, 14, 14, 0.9);
+  background-color: rgba(23, 35, 39, 0.95);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -16902,7 +16663,7 @@ button,
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 16, ../scss/components/_buttons.scss */
+/* line 14, ../scss/components/_buttons.scss */
 button .button-inner,
 .button .button-inner {
   position: relative;
@@ -16913,7 +16674,7 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 28, ../scss/components/_buttons.scss */
+/* line 26, ../scss/components/_buttons.scss */
 .button--primary {
   background-color: #6AC6C5;
   position: relative;
@@ -16924,17 +16685,17 @@ button .button-inner,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 34, ../scss/components/_buttons.scss */
+/* line 32, ../scss/components/_buttons.scss */
 .button--primary:hover, .button--primary:focus {
   color: #6AC6C5;
   background-color: transparent;
 }
-/* line 40, ../scss/components/_buttons.scss */
+/* line 38, ../scss/components/_buttons.scss */
 .button--primary:hover:after, .button--primary:focus:after {
   width: 100%;
 }
 
-/* line 50, ../scss/components/_buttons.scss */
+/* line 48, ../scss/components/_buttons.scss */
 .button--secondary {
   background-color: #333031;
   position: relative;
@@ -16945,17 +16706,17 @@ button .button-inner,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 56, ../scss/components/_buttons.scss */
+/* line 54, ../scss/components/_buttons.scss */
 .button--secondary:hover, .button--secondary:focus {
   color: #333031;
   background-color: transparent;
 }
-/* line 61, ../scss/components/_buttons.scss */
+/* line 59, ../scss/components/_buttons.scss */
 .button--secondary:hover:after, .button--secondary:focus:after {
   width: 100%;
 }
 
-/* line 70, ../scss/components/_buttons.scss */
+/* line 68, ../scss/components/_buttons.scss */
 .button--tertiary {
   background-color: transparent;
   position: relative;
@@ -16967,34 +16728,34 @@ button .button-inner,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 77, ../scss/components/_buttons.scss */
+/* line 75, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
   color: #fff;
   background-color: #333031;
 }
 
-/* line 88, ../scss/components/_buttons.scss */
+/* line 86, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 94, ../scss/components/_buttons.scss */
+/* line 92, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
 }
-/* line 100, ../scss/components/_buttons.scss */
+/* line 98, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
   bottom: -2px;
 }
 
-/* line 108, ../scss/components/_buttons.scss */
+/* line 106, ../scss/components/_buttons.scss */
 .button--link {
   background: transparent;
   color: #6AC6C5;
 }
-/* line 112, ../scss/components/_buttons.scss */
+/* line 110, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
   color: #333031;
   text-decoration: underline;
@@ -17003,7 +16764,7 @@ button .button-inner,
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 130, ../scss/components/_buttons.scss */
+/* line 128, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #333031;
   height: 2.5rem;
@@ -17021,14 +16782,14 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 143, ../scss/components/_buttons.scss */
+/* line 141, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 150, ../scss/components/_buttons.scss */
+/* line 148, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -17044,7 +16805,7 @@ button .button-inner,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 168, ../scss/components/_buttons.scss */
+/* line 166, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -17061,7 +16822,7 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 185, ../scss/components/_buttons.scss */
+/* line 183, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -17076,7 +16837,7 @@ button .button-inner,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 201, ../scss/components/_buttons.scss */
+/* line 199, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -17085,7 +16846,7 @@ button .button-inner,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 210, ../scss/components/_buttons.scss */
+/* line 208, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #333031;
@@ -17095,20 +16856,20 @@ button .button-inner,
   transform: scale(1.2);
 }
 
-/* line 224, ../scss/components/_buttons.scss */
+/* line 222, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 230, ../scss/components/_buttons.scss */
+/* line 228, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 241, ../scss/components/_buttons.scss */
+/* line 239, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 247, ../scss/components/_buttons.scss */
+/* line 245, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -17116,14 +16877,14 @@ button .button-inner,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 264, ../scss/components/_buttons.scss */
+/* line 262, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 271, ../scss/components/_buttons.scss */
+/* line 269, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.375rem;
   padding-right: 0.75rem;
@@ -17132,7 +16893,7 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 280, ../scss/components/_buttons.scss */
+/* line 278, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -17141,28 +16902,28 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 288, ../scss/components/_buttons.scss */
+/* line 286, ../scss/components/_buttons.scss */
 .button--large {
   padding: 1.125rem;
   padding-right: 1.875rem;
   padding-left: 1.875rem;
 }
 
-/* line 295, ../scss/components/_buttons.scss */
+/* line 293, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 302, ../scss/components/_buttons.scss */
+/* line 300, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 309, ../scss/components/_buttons.scss */
+/* line 307, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -17172,7 +16933,7 @@ button .button-inner,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 325, ../scss/components/_buttons.scss */
+/* line 323, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -17384,6 +17145,7 @@ button .button-inner,
   margin-top: 3.75rem;
   width: 100vw;
   min-height: 100vh;
+  padding-top: 1.875rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 7, ../scss/components/_heroHeader.scss */
@@ -17397,7 +17159,7 @@ button .button-inner,
     min-height: 110vh;
   }
 }
-/* line 24, ../scss/components/_heroHeader.scss */
+/* line 25, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background {
   position: absolute;
   top: 0;
@@ -17412,7 +17174,7 @@ button .button-inner,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 34, ../scss/components/_heroHeader.scss */
+/* line 35, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-content {
   color: #fff;
 }

@@ -10,6 +10,7 @@
   margin-top: rem-calc(60px); 
   width: 100vw; 
   min-height: 100vh;
+  padding-top: rem-calc($level5); 
 
   @media #{$medium-up} {
     height: 85vh;

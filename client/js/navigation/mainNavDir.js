@@ -72,7 +72,7 @@ twopence.directive('mainNavDir',
       }; 
 
     }],
-    controllerAs: 'mainNav',
+    controllerAs: 'nav',
     templateUrl: 'js/navigation/mainNav.html',
     link: function(scope, element) {
 
