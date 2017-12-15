@@ -37,7 +37,14 @@ twopence.controller('sponsorshipCtrl', [
       //
       Sponsorship.get(sponseeId).then(function(sponsorship) {
         vm.sponsorshipInfo = sponsorship;
-        vm.currentPlan = vm.getLatestPlan(sponsorship);
+
+        //
+        // Finds out the status of the plan 
+        //
+        vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo); 
+
+        vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
+
 
         // Gets contributions made for a sponsor's sponsorship 
         //
@@ -47,6 +54,7 @@ twopence.controller('sponsorshipCtrl', [
             console.log("ERROR: Something went wrong, please try again.");
 
         }); 
+
       }).catch(function() {
         console.log("ERROR: Something went wrong, please try again.");
 
@@ -71,6 +79,8 @@ twopence.controller('sponsorshipCtrl', [
         } 
 
       }
+
+
 
       return false; 
      
