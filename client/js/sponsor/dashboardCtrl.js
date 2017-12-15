@@ -44,30 +44,36 @@ twopence.controller('dashboardCtrl', [
     });
 
 
-
     //
-    // Gets a sponsors contributions
-    //
-    Sponsor.getAllContributions().then(function(contributions) {
-
-      console.log(contributions);
-
-    });
-
-
-    //
-    // Gets a sponsors' sponsorships
+    // Gets a sponsors' sponsorships and total contributions made 
     //
     Sponsorship.getAll().then(function(sponsorships) {
 
-      console.log(sponsorships)
+      vm.sponsorships = sponsorships.data;
 
-      vm.sponsees = sponsorships.data;
-
-      console.log(vm.sponsees);
+      vm.totalContributions = vm.getTotalContributions(sponsorships.data); 
 
     });
 
+
+
+    vm.getTotalContributions = function(sponsorships) {
+
+      var total = 0; 
+
+      for(var i = 0; i <= sponsorships.length; i++) {
+
+        if(sponsorships[i]) {
+        
+         total = total + parseInt(sponsorships[i].contributions_to_date);
+
+        }
+
+      }
+
+      return total;
+
+    };
 
     //
     // Logs a user out

@@ -27,7 +27,7 @@ twopence.directive('sponsorshipCardDir',
             var plan = null; 
             var plansLength = pSponsorship.plans.length - 1;  
 
-            for(var i = plansLength; i >= 0; i--) {
+            for(var i = 0; i <= plansLength; i++) {
 
               if(pSponsorship.plans[i].type == 'Match') {
 
@@ -36,7 +36,9 @@ twopence.directive('sponsorshipCardDir',
               } 
 
             }
-            
+
+          return false;
+
           };
 
           //

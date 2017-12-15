@@ -61,9 +61,7 @@ twopence.factory('Sponsorship', [
   //
   var getLastSchedule = function(pSchedules) {
 
-    var lastScheduleIndex = pSchedules.length - 1;   
-
-    return pSchedules[lastScheduleIndex]; 
+    return pSchedules[0]; 
 
   }
 
@@ -198,8 +196,6 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.patch = function(pSponsorshipId, pPlanId, load) {
 
-    console.log("I'm patching my G");
-
     return $q(function(resolve, reject) {
 
       $http.patch(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
@@ -278,47 +274,47 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.checkIfStartsToday = function(pPlan) {
 
-    var tomorrowsDate =  new Date();  
     var todaysDate = $filter('date')(new Date(), 'yyyy-MM-dd')
     var lastPlan = getLastSchedule(pPlan.schedules);
-
-
-    tomorrowsDate.setDate(tomorrowsDate.getDate() + 1);
-    tomorrowsDate = $filter('date')(tomorrowsDate, 'yyyy-MM-dd'); 
-
-
-
-    console.log(pPlan); 
-    console.log(todaysDate);
-    console.log(tomorrowsDate); 
-
-
-    if(todaysDate === lastPlan.date_effective || tomorrowsDate === lastPlan.date_effective) {
-
-      return true;
-
-    } else {
-
-      return false; 
-    }
-
+    
+    return todaysDate === lastPlan.date_effective;
 
   };
 
+
+  //
+  // Checks if plan starts tomorrow 
+  //
+  sponsorship.checkIfStartsTomorrow = function(pPlan) {
+
+    var tomorrowsDate = new Date();
+    tomorrowsDate.setDate(tomorrowsDate.getDate() + 1);
+    tomorrowsDate = $filter('date')(tomorrowsDate, 'yyyy-MM-dd'); 
+
+    var lastPlan = getLastSchedule(pPlan.schedules);
+
+    return tomorrowsDate === lastPlan.date_effective; 
+
+  }; 
 
   //
   // Returns the status of a plan based on sponsee info and a plan 
   //
   sponsorship.getPlanStatus = function(pPlan, pSponseeInfo) {
 
+    console.log(pSponseeInfo); 
+
       var status = '';
       var planEndsToday = false; 
       var planStartsToday = false; 
+      var planStartsTomorrow = false; 
 
       if(pPlan) {
 
         planEndsToday = sponsorship.checkIfTerminatesToday(pPlan);
         planStartsToday = sponsorship.checkIfStartsToday(pPlan);
+        planStartsTomorrow = sponsorship.checkIfStartsTomorrow(pPlan);
+
 
 
       } else {
@@ -343,6 +339,12 @@ twopence.factory('Sponsorship', [
 
         }
 
+        if(planStartsTomorrow) {
+
+          status = 'activating';
+
+        }
+
       }
       
 
@@ -351,8 +353,6 @@ twopence.factory('Sponsorship', [
         status = 'invite pending'
 
       }
-
-      console.log(status); 
 
       return status; 
 
