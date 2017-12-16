@@ -38,6 +38,9 @@ twopence.controller('sponseePlanEditCtrl', [
 
       getPlan(vm.sponsorshipId);
 
+      vm.planStatus = 'active';
+
+
     }
 
 
@@ -113,6 +116,13 @@ twopence.controller('sponseePlanEditCtrl', [
         vm.latestPlan = vm.getLatestPlan(sponsorship);
         vm.customAmount = parseInt(vm.latestPlan.limit);
 
+
+        //
+        // Finds out the status of the plan 
+        //
+        vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
+  
+
         //
         // We check if plan ends today, if so, it's a paused plan
         //
@@ -146,88 +156,25 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    //
-    //
-    // vm.checkName = function(newLimit) {
-
-    //   console.log("Yo my dog: " + newLimit);
-
-    //   Sponsorship.get(vm.sponsorshipId).then(function(plan) {
-
-    //     vm.newPlan = plan;
-
-    //     console.log(vm.sponseePlan);
-
-    //     console.log("Plan ID: " + vm.sponseePlan.id);
-
-    //     // console.log("User ID: " + vm.sponseePlan.user.id);
-
-    //     console.log(vm.sponseePlan.plan);
-
-    //     console.log(vm.sponseePlan.plan.limit);
-    //     // need userID + newAmount in Data PayLoad
-
-    //     vm.sponseePlan.plan.limit = newLimit
-
-    //     console.log("new limit: " + vm.sponseePlan.plan.limit);
-
-    //     var limitLoad = {
-
-    //       "user": {
-
-    //         "id": vm.newPlan.user.id
-
-    //       },
-
-    //       "plan": {
-
-    //         "type": "match",
-
-    //         "frequency": "monthly",
-
-    //         "limit": newLimit,
-
-    //         "amount": null
-
-    //       }
-
-    //     };
-
-    //     console.log("Payload");
-
-    //     console.log(limitLoad);
-
-    //     Sponsorship.create(limitLoad);
-
-    //   });
-
-    //   console.log("You prob created something. Hopefully in User# : " + vm.planId);
-
-    // };
-
-
-
-    //
     // Gets the latest plan for a sponsorship
     //
     vm.getLatestPlan = function(pSponsorship) {
       var plan = null; 
       var plansLength = pSponsorship.plans.length - 1;  
 
-      for(var i = plansLength; i >= 0; i--) {
+      for(var i = 0; i <= plansLength; i++) {
 
         if(pSponsorship.plans[i].type == 'Match') {
 
-            console.log(pSponsorship.plans[i]);
             return pSponsorship.plans[i]; 
 
         } 
 
       }
 
-      return false; 
+      return false;
       
-    }; 
+    };
 
 
 

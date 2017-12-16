@@ -12,23 +12,24 @@
 
     Plan Status:
   
-    <span ng-switch="sponsorship.currentPlan.active"
-          ng-if='sponsorship.sponsorshipInfo.sponsee.status === "active"'>
+    <span ng-switch="sponsorship.planStatus">
   
-      <span ng-switch-when="true" class="tag tag--active">
+      <span ng-switch-when="active" class="tag tag--active">
         Active
       </span>
   
-      <span ng-switch-when="false" class="tag  tag--inactive">
+      <span ng-switch-when="paused" class="tag  tag--inactive">
           Paused
       </span>
-  
+
+      <span ng-switch-when="activating" class="tag  tag--pending">
+          Activating
+      </span>
+
+      <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
+
     </span>
-  
-    <span ng-if='sponsorship.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
-        <span class="tag  tag--pending">Invite Pending</span>
-    </span>
-  
+
   </div>
 
 </div>

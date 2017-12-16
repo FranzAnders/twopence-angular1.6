@@ -14,8 +14,9 @@
     <div class="small-12 medium-4  columns  mb5">
 
       <h1 class="txtc2  ff2  section-text">
-        Sponsor Dashboard
+        Sponsor <br> Home
       </h1>
+      
       <p >
         See an eagle-eye perspective for all your on-going sponsorships. Boost or add a sponsee and view how much you've contributed.
       </p>
@@ -27,7 +28,7 @@
       </h1>
       
       <h2 class=" text-center  fwb txtc1 text-mega  text-center">
-         $555.00
+         ${{dashboard.totalContributions}}
       </h2>
 
       <hr class="hr--faded mb0">
@@ -38,7 +39,7 @@
 
       <ul class="cardList  grid grid--stretch grid--full  med-grid--1of2 grid--flexWrap   grid--flexDirectionRow">
 
-        <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsees | orderBy: 'contributions_to_date':true track by $index">
+        <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsorships | orderBy: 'contributions_to_date':true track by $index">
 
          <sponsorship-card-dir sponsorship-info="sponsorship"  boost-sponsorship="dashboard.openBoostModal(sponsorship)">
 

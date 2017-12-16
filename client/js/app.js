@@ -33,8 +33,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    // $locationProvider.html5Mode(true);
-    // $locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
 
 
 
@@ -54,6 +54,17 @@ twopence.config(
                 'main' : {
 
                     templateUrl: "js/home/home.html"
+
+                }
+            },
+        })
+        .state('main.sponsorHome', {
+            url: "home-sponsor",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/sponsor-home.html"
 
                 }
             },

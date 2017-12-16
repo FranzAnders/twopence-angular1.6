@@ -7,18 +7,67 @@
 
 
 twopence.factory('Sponsorship', [
+    '$filter',
     '$q',
     '$http',
     'Auth',
     'BASE_URL',
     function(
+      $filter,
       $q,
       $http,
       Auth,
       BASE_URL) {
 
 
-  var sponsorship = {};
+   var sponsorship = {};
+
+
+  //
+  // Cacluating today's date to compare to termination Date in Pause / Unpause
+  //
+  var getTodaysDate = function() {
+
+    var today = new Date();
+
+    var dd = today.getDate();
+
+    var mm = today.getMonth() + 1; 
+
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+
+      dd = '0' + dd
+
+    }
+
+    if (mm < 10) {
+
+      mm = '0' + mm
+
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    return today; 
+
+  };
+
+
+
+  //
+  // Gets the last schedule of a matching plan 
+  //
+  var getLastSchedule = function(pSchedules) {
+
+    return pSchedules[0]; 
+
+  }
+
+
+
+
   //
   // Creates a sponsorship plan between user and logged-in sponsor
   //
@@ -147,8 +196,6 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.patch = function(pSponsorshipId, pPlanId, load) {
 
-    console.log("I'm patching my G");
-
     return $q(function(resolve, reject) {
 
       $http.patch(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
@@ -201,11 +248,115 @@ twopence.factory('Sponsorship', [
 
         });
 
-
     });
 
-
   }
+
+
+  //
+  // Checks if a plan terminates today 
+  //
+  sponsorship.checkIfTerminatesToday = function(pPlan) {
+
+    var todaysDate = getTodaysDate(); 
+
+    var lastPlan = getLastSchedule(pPlan.schedules);
+
+    var planEndDate = lastPlan.date_termination; 
+
+    return planEndDate === todaysDate; 
+
+  }; 
+
+
+  //
+  // Checks if plan starts today 
+  //
+  sponsorship.checkIfStartsToday = function(pPlan) {
+
+    var todaysDate = $filter('date')(new Date(), 'yyyy-MM-dd')
+    var lastPlan = getLastSchedule(pPlan.schedules);
+    
+    return todaysDate === lastPlan.date_effective;
+
+  };
+
+
+  //
+  // Checks if plan starts tomorrow 
+  //
+  sponsorship.checkIfStartsTomorrow = function(pPlan) {
+
+    var tomorrowsDate = new Date();
+    tomorrowsDate.setDate(tomorrowsDate.getDate() + 1);
+    tomorrowsDate = $filter('date')(tomorrowsDate, 'yyyy-MM-dd'); 
+
+    var lastPlan = getLastSchedule(pPlan.schedules);
+
+    return tomorrowsDate === lastPlan.date_effective; 
+
+  }; 
+
+  //
+  // Returns the status of a plan based on sponsee info and a plan 
+  //
+  sponsorship.getPlanStatus = function(pPlan, pSponseeInfo) {
+
+    console.log(pSponseeInfo); 
+
+      var status = '';
+      var planEndsToday = false; 
+      var planStartsToday = false; 
+      var planStartsTomorrow = false; 
+
+      if(pPlan) {
+
+        planEndsToday = sponsorship.checkIfTerminatesToday(pPlan);
+        planStartsToday = sponsorship.checkIfStartsToday(pPlan);
+        planStartsTomorrow = sponsorship.checkIfStartsTomorrow(pPlan);
+
+
+
+      } else {
+
+        planEndsToday = false;
+        planStartsToday = false;
+
+      }
+
+      if(pPlan) {
+
+        if(planEndsToday || !pPlan.status) {
+
+          status = 'paused';
+
+        }
+
+
+        if(pPlan.status || planStartsToday) {
+
+          status = 'active'; 
+
+        }
+
+        if(planStartsTomorrow) {
+
+          status = 'activating';
+
+        }
+
+      }
+      
+
+      if(pSponseeInfo.sponsee.status !== 'active') {
+
+        status = 'invite pending'
+
+      }
+
+      return status; 
+
+  };
 
   return sponsorship;
 

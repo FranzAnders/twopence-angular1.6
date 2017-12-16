@@ -3,14 +3,9 @@
   
   <div class="small-12  columns ">
    
-
-
     <div class="row">
 
       <div class="small-12 large-4  columns">
-
-
-
       
         <div class="card ">
 
@@ -18,33 +13,34 @@
 
             <h1 class="txtc2 h2 ff2 mb1" 
                 ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name ">
-          </h1>
+            </h1>
 
-        <p  class="mb0  text-left">
-            Plan Status:   
-            <span ng-switch="sponsorship.currentPlan.active"
-                  class="text-center"
-                  ng-if='sponsorship.sponsorshipInfo.sponsee.status === "active"'>
-                  
-              <span ng-switch-when="true" class="tag tag--active   ">
-                Active
-              </span>
-                  
-              <span ng-switch-when="false" class="tag  tag--inactive  ">
-                  Paused
-              </span>
-                  
-            </span>
-                  
-            <span ng-if='sponsorship.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
-                <span class="tag  tag--warning">Invite Pending</span>
-            </span>
+          <p  class="mb0  text-left">
+              Plan Status:   
+  
+              <span ng-switch="sponsorship.planStatus">
             
-            <a class="" ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})">
-              (Edit)
-            </a>
+                <span ng-switch-when="active" class="tag tag--active">
+                  Active
+                </span>
+            
+                <span ng-switch-when="paused" class="tag  tag--inactive">
+                    Paused
+                </span>
 
-          </p>
+                <span ng-switch-when="activating" class="tag  tag--pending">
+                    Activating
+                </span>
+                              
+                <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
+
+              </span>
+
+              <a class="" ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})">
+                (Edit)
+              </a>
+
+            </p>
         
           </div>
         

@@ -13,37 +13,33 @@ twopence.directive('sponsorshipCardDir',
         restrict: "E", 
         replace: true, 
         scope: {}, 
-        controller: function() {
+        controller: ['Sponsorship', function(Sponsorship) {
 
           var vm  = this; 
 
           vm.currentPlan = null;  
 
 
-
           //
           // Gets the latest plan for a sponsorship
           //
           vm.getLatestPlan = function(pSponsorship) {
-
             var plan = null; 
-              var plansLength = pSponsorship.plans.length - 1;  
+            var plansLength = pSponsorship.plans.length - 1;  
 
-              for(var i = plansLength; i >= 0; i--) {
+            for(var i = 0; i <= plansLength; i++) {
 
-                if(pSponsorship.plans[i].type == 'Match') {
-                    
-                    return pSponsorship.plans[i]; 
+              if(pSponsorship.plans[i].type == 'Match') {
 
-                } 
+                  return pSponsorship.plans[i]; 
 
-              }
+              } 
 
-              return false; 
-              
+            }
 
-          }; 
+          return false;
 
+          };
 
           //
           // Wrapper for boost sponsorship function from dashboard controller
@@ -58,18 +54,14 @@ twopence.directive('sponsorshipCardDir',
           //
           vm.$onInit = function() {
 
-              vm.sponsorshipInfo; 
-
               vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo); 
 
-              console.log(vm.sponsorshipInfo);
-              console.log(vm.currentPlan);
-
+              vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
 
           };
 
 
-        }, 
+        }], 
         controllerAs: "sponsorship", 
         bindToController: {
 

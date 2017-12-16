@@ -16,12 +16,12 @@
 
         <div class="small-12 large-11 large-centered columns">
 
-          <h1 class="txtc2">
+          <h1 class="txtc2  ff2">
             Manage <br> Matching Plan
           </h1>
           
-          <p class="">
-            Edit <span class=" fwb" ng-bind="sponseePlanEdit.sponsee.first_name + ' ' + sponseePlanEdit.sponsee.last_name">
+          <p>
+            Edit <span class="fwb" ng-bind="sponseePlanEdit.sponsee.first_name + ' ' + sponseePlanEdit.sponsee.last_name">
                 
               </span>'s monthly matching limit or pause their existing active matching plan. 
           </p>
@@ -103,47 +103,55 @@
               </div>
               
 
-              <div class="grid-cell  grid grid--center  text-center med-grid--justifySpaceAround">
+              <div class="grid-cell  grid grid--center grid--justifyCenter grid--flexDirectionColumn text-center med-grid--justifyCenter">
 
-                <div>
-
-                <span ng-if="sponseePlanEdit.isActive" 
-                      class="tag tag--active  tag--large mrl0 mb1  display-block text-center">
-                      Active
-                </span>
-
-                <span ng-if="!sponseePlanEdit.isActive" 
-                      class="tag  tag--inactive  tag--large mrl0 mb1  display-block text-center">
-                      Paused
-                </span>
-                      
-                      
-                <span ng-if='sponseePlanEdit.sponsorshipInfo.sponsee.status === "invited" || sponsorship.sponsorshipInfo.sponsee.status === "onboarding"'>
-                <span class="tag  tag--warning  tag--large">Invite Pending</span>
-                </span>
+                <span ng-switch="sponseePlanEdit.planStatus" class="pb2">
               
+                  <span ng-switch-when="active" class="tag  tag--large tag--active">
+                    Active
+                  </span>
+              
+                  <span ng-switch-when="paused" class="tag  tag--large  tag--inactive">
+                      Paused
+                  </span>
 
-                <a class="text-micro button--withIcon" ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId)"
-                  ng-if="sponseePlanEdit.isActive">
+                  <span ng-switch-when="activating" class="tag tag--large tag--pending">
+                  Activating
+                  </span>
+            
+                  <span  ng-switch-when="invite pending" class="tag  tag--large  tag--pending">Invite Pending</span>
+
+                </span>
+                
+                <span class="text-mini" ng-if="sponseePlanEdit.planStatus === 'activating'">
+                 Plan will be effective starting tomorrow. 
+                </span>
+
+                <a class="text-micro button--withIcon" 
+                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId)"
+                  ng-if="sponseePlanEdit.planStatus === 'active'">
                    
 
-<span class="icon--center" width=><svg version="1.1" id="Layer_1"  width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
-    <g>
-    <g>
-    <path d="M8.5,2.9h-5c-0.2,0-0.3,0.1-0.4,0.2C2.9,3.2,2.9,3.3,2.9,3.5v13.7c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.3,0.2,0.4,0.2h5
-    c0.2,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.3,0.2-0.4V3.5c0-0.2-0.1-0.3-0.2-0.4C8.8,2.9,8.6,2.9,8.5,2.9z"/>
-    <path d="M17.6,3.1c-0.1-0.1-0.3-0.2-0.4-0.2h-5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.3-0.2,0.4v13.7c0,0.2,0.1,0.3,0.2,0.4
-    c0.1,0.1,0.3,0.2,0.4,0.2h5c0.2,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.3,0.2-0.4V3.5C17.8,3.3,17.8,3.2,17.6,3.1z"/>
-    </g>
-    </g>
-    </svg></span>
+                    <span class="icon--center" width=><svg version="1.1" id="Layer_1"  width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
+                        <g>
+                        <g>
+                        <path d="M8.5,2.9h-5c-0.2,0-0.3,0.1-0.4,0.2C2.9,3.2,2.9,3.3,2.9,3.5v13.7c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.3,0.2,0.4,0.2h5
+                        c0.2,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.3,0.2-0.4V3.5c0-0.2-0.1-0.3-0.2-0.4C8.8,2.9,8.6,2.9,8.5,2.9z"/>
+                        <path d="M17.6,3.1c-0.1-0.1-0.3-0.2-0.4-0.2h-5c-0.2,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.3-0.2,0.4v13.7c0,0.2,0.1,0.3,0.2,0.4
+                        c0.1,0.1,0.3,0.2,0.4,0.2h5c0.2,0,0.3-0.1,0.4-0.2c0.1-0.1,0.2-0.3,0.2-0.4V3.5C17.8,3.3,17.8,3.2,17.6,3.1z"/>
+                        </g>
+                        </g>
+                        </svg>
+
+                    </span>
                   <span class="button-inner"> Pause Plan</span>
                 </a>
 
 
-                <a class="text-micro button--withIcon" ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId)"
-                  ng-if="!sponseePlanEdit.isActive">
+                <a class="text-micro button--withIcon" 
+                   ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId)"
+                   ng-if="sponseePlanEdit.planStatus === 'paused'">
                    
 <!-- 
 <span class="icon--center" width=><svg version="1.1" id="Layer_1"  width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
