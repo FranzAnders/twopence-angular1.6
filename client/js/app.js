@@ -58,6 +58,17 @@ twopence.config(
                 }
             },
         })
+        .state('main.sponsorHome', {
+            url: "home-sponsor",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/sponsor-home.html"
+
+                }
+            },
+        })
         .state('main.login', {
 
           url: "login",

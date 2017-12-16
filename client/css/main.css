@@ -16679,44 +16679,48 @@ button .button-inner,
   background-color: #6AC6C5;
   position: relative;
   color: #fff;
+  border: 1px solid transparent;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
   -webkit-transition: all 0.1s ease;
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 32, ../scss/components/_buttons.scss */
+/* line 33, ../scss/components/_buttons.scss */
 .button--primary:hover, .button--primary:focus {
   color: #6AC6C5;
   background-color: transparent;
+  border: 1px solid #6AC6C5;
 }
-/* line 38, ../scss/components/_buttons.scss */
+/* line 40, ../scss/components/_buttons.scss */
 .button--primary:hover:after, .button--primary:focus:after {
   width: 100%;
 }
 
-/* line 48, ../scss/components/_buttons.scss */
+/* line 50, ../scss/components/_buttons.scss */
 .button--secondary {
   background-color: #333031;
   position: relative;
   color: #fff;
+  border: 1px solid transparent;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
   -webkit-transition: all 0.1s ease;
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 54, ../scss/components/_buttons.scss */
+/* line 57, ../scss/components/_buttons.scss */
 .button--secondary:hover, .button--secondary:focus {
   color: #333031;
   background-color: transparent;
+  border: 1px solid #333031;
 }
-/* line 59, ../scss/components/_buttons.scss */
+/* line 63, ../scss/components/_buttons.scss */
 .button--secondary:hover:after, .button--secondary:focus:after {
   width: 100%;
 }
 
-/* line 68, ../scss/components/_buttons.scss */
+/* line 72, ../scss/components/_buttons.scss */
 .button--tertiary {
   background-color: transparent;
   position: relative;
@@ -16728,34 +16732,34 @@ button .button-inner,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 75, ../scss/components/_buttons.scss */
+/* line 79, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
   color: #fff;
   background-color: #333031;
 }
 
-/* line 86, ../scss/components/_buttons.scss */
+/* line 90, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 92, ../scss/components/_buttons.scss */
+/* line 96, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
 }
-/* line 98, ../scss/components/_buttons.scss */
+/* line 102, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
   bottom: -2px;
 }
 
-/* line 106, ../scss/components/_buttons.scss */
+/* line 110, ../scss/components/_buttons.scss */
 .button--link {
   background: transparent;
   color: #6AC6C5;
 }
-/* line 110, ../scss/components/_buttons.scss */
+/* line 114, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
   color: #333031;
   text-decoration: underline;
@@ -16764,7 +16768,7 @@ button .button-inner,
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 128, ../scss/components/_buttons.scss */
+/* line 132, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #333031;
   height: 2.5rem;
@@ -16782,14 +16786,14 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 141, ../scss/components/_buttons.scss */
+/* line 145, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 148, ../scss/components/_buttons.scss */
+/* line 152, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -16805,7 +16809,7 @@ button .button-inner,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 166, ../scss/components/_buttons.scss */
+/* line 170, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -16822,7 +16826,7 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 183, ../scss/components/_buttons.scss */
+/* line 187, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -16837,7 +16841,7 @@ button .button-inner,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 199, ../scss/components/_buttons.scss */
+/* line 203, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -16846,7 +16850,7 @@ button .button-inner,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 208, ../scss/components/_buttons.scss */
+/* line 212, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #333031;
@@ -16856,20 +16860,20 @@ button .button-inner,
   transform: scale(1.2);
 }
 
-/* line 222, ../scss/components/_buttons.scss */
+/* line 226, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 228, ../scss/components/_buttons.scss */
+/* line 232, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 239, ../scss/components/_buttons.scss */
+/* line 243, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 245, ../scss/components/_buttons.scss */
+/* line 249, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -16877,14 +16881,14 @@ button .button-inner,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 262, ../scss/components/_buttons.scss */
+/* line 266, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 269, ../scss/components/_buttons.scss */
+/* line 273, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.375rem;
   padding-right: 0.75rem;
@@ -16893,7 +16897,7 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 278, ../scss/components/_buttons.scss */
+/* line 282, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -16902,28 +16906,28 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 286, ../scss/components/_buttons.scss */
+/* line 290, ../scss/components/_buttons.scss */
 .button--large {
   padding: 1.125rem;
   padding-right: 1.875rem;
   padding-left: 1.875rem;
 }
 
-/* line 293, ../scss/components/_buttons.scss */
+/* line 297, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 300, ../scss/components/_buttons.scss */
+/* line 304, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 307, ../scss/components/_buttons.scss */
+/* line 311, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -16933,7 +16937,7 @@ button .button-inner,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 323, ../scss/components/_buttons.scss */
+/* line 327, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }

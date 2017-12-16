@@ -5,12 +5,13 @@
 
     <div class="small-12 medium-6 medium-centered large-4 columns">
       
+      <div class="text-center">
+        <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="160" class="mb6"></a>
+      </div>
 
-      
       <div class="card">
 
         <div class="card-content">
-
 
           <form name="login.loginForm" 
                 novalidate
@@ -86,12 +87,24 @@
 
             </div>
 
-              <button class="button  button--secondary  button--medium  button--expanded mb0"
-                      type="submit">
-                Login
-              </button>
+            <div class="row">
+
+              <div class="small-12 columns">
+
+                <button class="button  button--secondary  button--medium  button--expanded mb1"
+                        type="submit">
+                  Login
+                </button>
+
+              </div>
+
+            </div>
           
           </form>
+
+           <div class="text-center mb2">
+             <a ui-sref="sponsor.passwordReset" class="txtc1  text-micro"> Forgot your password? </a>
+           </div>
 
         </div>
 
