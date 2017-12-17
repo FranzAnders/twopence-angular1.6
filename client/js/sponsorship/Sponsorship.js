@@ -326,14 +326,14 @@ twopence.factory('Sponsorship', [
 
       if(pPlan) {
 
-        if(planEndsToday || !pPlan.status) {
+        if(planEndsToday || !pPlan.active) {
 
           status = 'paused';
 
         }
 
 
-        if(pPlan.status || planStartsToday) {
+        if((pPlan.active || planStartsToday) &&  !planEndsToday) {
 
           status = 'active'; 
 
