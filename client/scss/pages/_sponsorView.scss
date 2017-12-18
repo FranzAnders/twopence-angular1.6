@@ -9,7 +9,7 @@
   padding-top: rem-calc($level6);
 
   @media #{$large-up} {
-    min-height: 100vh; 
+    min-height: 90vh; 
     padding-top: rem-calc($level5);
 
   }
@@ -18,7 +18,7 @@
 
 
 .sponsorView-inner {
-  min-height: 100vh; 
+  min-height: 90vh; 
 
   @media #{$large-up} {
     padding-left: rem-calc($level1);

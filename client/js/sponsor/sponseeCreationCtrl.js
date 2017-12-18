@@ -55,19 +55,7 @@ twopence.controller('sponseeCreationCtrl', [
 
         if(pSponseeSearchForm.$valid) {
 
-          Sponsorship.create(vm.sponseeInfo).then(function(res) {
-            console.log(res);
-            vm.sponseeId = res.id;
-
-            console.log('success');
-
-            $state.go('sponsor.sponsorshipSetup.options', {sponseeId: vm.sponseeId})
-
-          }).catch(function(err) {
-
-            console.log('rejected, something went wrong')
-
-          });
+            $state.go('sponsor.sponsorshipSetup.options', {data: vm.sponseeInfo.user , email: vm.sponseeInfo.user.email});
 
         } else {
 

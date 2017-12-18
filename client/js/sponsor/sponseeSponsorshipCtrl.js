@@ -26,9 +26,12 @@ twopence.controller('sponseeSponsorshipCtrl', [
     vm.formNotSubmited = true;
 
     vm.formSubmittedSuccesfully = false;
-    console.log($stateParams);
 
-    vm.sponseeId = $stateParams.sponseeId;
+    vm.sponsee = $stateParams.data; 
+
+    vm.email = $stateParams.email; 
+
+    vm.linkedBank = false; 
 
     var sandboxHandler = Plaid.create({
       apiVersion: 'v2',
@@ -40,10 +43,10 @@ twopence.controller('sponseeSponsorshipCtrl', [
       selectAccount: true,
       forceIframe: true, // required
       onSuccess: function(public_token, metadata) {
+
+        //
         // send public_token to server to exchange for access_token
-        console.log(public_token, metadata);
-        console.log("This is when you would want to post to /plaid/token");
-        console.log(metadata);
+        //
         $timeout(function () {
           vm.plaidInfo.bankislinked = true;
           vm.plaidInfo.bankToken = metadata.public_token;
@@ -53,17 +56,23 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           vm.plaidInfo.accounts[0].id = metadata.accounts[0].id;
           vm.plaidInfo.accounts[0].name = metadata.accounts[0].name;
-          console.log(vm.plaidInfo);
-          PlaidAuth.login(vm.plaidInfo)
+
+          PlaidAuth.login(vm.plaidInfo);
+
+          alert("Yay! You’ve successfully linked your bank account! We will not disclose your bank account information with any third parties.");
+
+          vm.linkedBank = true; 
 
         }, 0);
+
       },
       onExit: function(error, metadata) {
         if (error != null) {
-          // Plaid API error
           console.log(error);
         }
-        console.log(metadata);
+
+        alert("ERROR: Something went wrong please try linked your bank account again.");
+
       }
     });
 
@@ -97,81 +106,43 @@ twopence.controller('sponseeSponsorshipCtrl', [
     }
 
 
-    //
-    // Creates a sponsorship, if succesfull, shows success screen and
-    // takes user to the sponsee's page
-    //
-    vm.createSponsorship = function(pSponsorshipDetailsForm) {
 
-      var sponseeId = vm.sponseeId;
+    //
+    // Creates a sponsorship and a plan right after 
+    //
+    vm.createPlan = function(pSponsorshipDetailsForm) {
 
       if (pSponsorshipDetailsForm.$valid) {
 
-        Sponsorship.create(vm.sponsorshipInfo).then(function(sponsorship) {
+          var sponsee = {}; 
 
-          console.log(sponsorship)
+          sponsee.user = vm.sponsee; 
 
-          vm.formNotSubmited = false;
-          vm.formSubmittedSuccesfully = true;
+         Sponsorship.create(sponsee).then(function(res) {
 
-          $timeout(function() {
+            var sponseeInfo = res; 
 
-            $state.go('sponsor.sponsee', {
-              sponseeId: sponseeId
-            });
+            console.log(vm.sponsorshipInfo);
 
-          }, 1000);
+            Sponsorship.createNewPlan(sponseeInfo.id, vm.sponsorshipInfo).then(function(sponsorship) {
 
-        });
-
-        console.log('valid');
+              vm.formNotSubmited = false;
+              vm.formSubmittedSuccesfully = true;
+             
+            }).catch(function(err) {
 
 
-      } else {
+            }); 
 
-        console.log('not valid')
+          }).catch(function(err) {
 
+            console.log(err); 
+            console.log('ERROR: rejected, something went wrong')
 
-      }
-
-    };
-
-    vm.createPlan = function(pSponsorshipDetailsForm, pSponseeId) {
-
-      var sponseeID = pSponseeId;
-
-      if (pSponsorshipDetailsForm.$valid) {
-
-        Sponsorship.createNewPlan(sponseeID, vm.sponsorshipInfo).then(function(sponsorship) {
-          console.log(sponsorship);
-
-          vm.formNotSubmited = false;
-          vm.formSubmittedSuccesfully = true;
-
-          $timeout(function() {
-            $state.go('sponsor.sponsee', {
-              sponseeId: sponseeID
-            })
-          })
-        })
+          });
 
       }
     }
-
-
-
-    //
-    // Gets the sponsee being managed via email
-    //
-    // Sponsee.getSponsee(vm.sponseeEmail).then(function(sponsee) {
-
-    //   vm.name = sponsee.name;
-
-    // }).catch(function(error) {
-
-    //   console.log('error');
-
-    // });
 
 
 
@@ -204,28 +175,28 @@ twopence.controller('sponseeSponsorshipCtrl', [
     // Resets the form if the user goes back to the options state
     // of the sponsorshipSetup UX
     //
-    $scope.$on('$stateChangeSuccess', function() {
+    // $scope.$on('$stateChangeSuccess', function() {
 
-      if ($state.is('sponsor.sponsorshipSetup.options')) {
+    //   if ($state.is('sponsor.sponsorshipSetup.options')) {
 
-        vm.sponsorshipInfo = {
-          "user": {
-            "id": vm.sponseeId
-          },
-          "plan": {
-            "type": null,
-            "frequency": null
-          }
-        };
+    //     vm.sponsorshipInfo = {
+    //       "user": {
+    //         "id": vm.sponseeId
+    //       },
+    //       "plan": {
+    //         "type": null,
+    //         "frequency": null
+    //       }
+    //     };
 
-        vm.formNotSubmited = true;
+    //     vm.formNotSubmited = true;
 
-        vm.formSubmittedSuccesfully = false;
-        console.log('clear form');
+    //     vm.formSubmittedSuccesfully = false;
+    //     console.log('clear form');
 
-      }
+    //   }
 
-    });
+    // });
 
     vm.link = function() {
       sandboxHandler.open();
@@ -317,8 +288,6 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     // }
 
-
-    console.log(vm.sponsorshipInfo); 
 
   }
 ]);

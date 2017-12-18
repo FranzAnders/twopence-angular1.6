@@ -20,6 +20,12 @@ button,
 
   }
 
+  &.is-inactive {
+    opacity: .2; 
+    pointer-events: none; 
+    
+  }
+
 }
 
 
@@ -91,6 +97,26 @@ button,
   }
 }
 
+
+.button--quintenary {
+
+  background-color: $tertiaryColor;
+  position: relative; 
+  color: #fff; 
+  border: 1px solid $tertiaryColor; 
+  @include transition(all .2s ease); 
+  @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+
+  &:hover,
+  &:focus {
+    color: $tertiaryColor;
+    background-color: transparent; 
+    border: 1px solid $tertiaryColor; 
+    @include box-shadow(0 1px 16px rgba(30,30,30, .2)); 
+
+  }
+
+}
 
 .button--withIcon {
 
@@ -295,10 +321,10 @@ button,
 }
 
 .button--large {
-    padding: rem-calc($level3);
-    padding-right: rem-calc($level5);
-    padding-left: rem-calc($level5);
-    @extend %h3; 
+    padding: rem-calc($level4);
+    padding-right: rem-calc($level3);
+    padding-left: rem-calc($level3);
+    @include type-setting(1);
 }
 
 .button--kilo {

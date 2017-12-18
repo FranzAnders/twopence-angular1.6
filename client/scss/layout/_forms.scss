@@ -451,8 +451,9 @@ textarea {
 \*------------------------------------*/
 
 
-.fieldset{
-  margin-bottom: rem-calc($base-magic-number); 
+.fieldset,
+fieldset{
+  margin-bottom: rem-calc($level5); 
   
 }
 
@@ -526,4 +527,15 @@ input.clearField {
     }
 
   }
+}
+
+
+.radio-group {
+  margin-bottom: rem-calc($level3); 
+
+  label {
+    color: $secondaryColor; 
+
+  }
+
 }
