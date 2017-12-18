@@ -63,9 +63,6 @@ twopence.controller('settingsCtrl', [
     //
     vm.saveChanges = function(pUserSettingsForm, pUserSettings) {
 
-      console.log(pUserSettings); 
-      console.log(pUserSettingsForm); 
-
       if(!pUserSettings.password) {
 
         delete pUserSettings.password
@@ -78,12 +75,13 @@ twopence.controller('settingsCtrl', [
 
         User.updateSettings(pUserSettings).then(function() {
 
-          console.log('user has been updated!')
+          alert('Success! Your changes to your account have been succesfully made. ');
+
           vm.resetForm(); 
 
         }).catch(function() {
 
-          alert("ERROR, something went wrong"); 
+          alert("ERROR, something went wrong, try again."); 
 
         }); 
 
