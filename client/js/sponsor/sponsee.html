@@ -74,7 +74,7 @@
 
               </div>
        
-              <div class="card-content">
+              <div class="card-contnt">
 
                   <ul class="table  table--list mb0">
                 
@@ -83,9 +83,15 @@
                     
                 
                     <div class="grid grid--center grid--justifySpaceBetween">
-                      <div class="text-micro">
-                        {{contribution.date}}
-                      </div>
+
+                        <div class="grid grid--justifyLeft">
+                          
+                        <div >
+                          <span class="uc fwb  display-block  text-center mb0">{{contribution.date | date: 'MMM'}}</span>
+                          <span class="uc h4  display-block  text-center">{{contribution.date | date: 'd'}}</span>
+                        </div>
+                        </div>
+
                               
                       <div class="table-contribution">${{contribution.amount}}</div>
                     </div>

@@ -5219,67 +5219,6 @@ select {
     float: left;
   }
 }
-/* line 182, ../scss/vendor/_foundationTables.scss */
-table {
-  background: #FFFFFF;
-  border: solid 1px #DDDDDD;
-  margin-bottom: 1.25rem;
-  table-layout: auto;
-}
-/* line 120, ../scss/vendor/_foundationTables.scss */
-table caption {
-  background: transparent;
-  color: #222222;
-  font-size: 1rem;
-  font-weight: bold;
-}
-/* line 129, ../scss/vendor/_foundationTables.scss */
-table thead {
-  background: #F5F5F5;
-}
-/* line 133, ../scss/vendor/_foundationTables.scss */
-table thead tr th,
-table thead tr td {
-  color: #222222;
-  font-size: 0.875rem;
-  font-weight: bold;
-  padding: 0.5rem 0.625rem 0.625rem;
-}
-/* line 143, ../scss/vendor/_foundationTables.scss */
-table tfoot {
-  background: #F5F5F5;
-}
-/* line 147, ../scss/vendor/_foundationTables.scss */
-table tfoot tr th,
-table tfoot tr td {
-  color: #222222;
-  font-size: 0.875rem;
-  font-weight: bold;
-  padding: 0.5rem 0.625rem 0.625rem;
-}
-/* line 158, ../scss/vendor/_foundationTables.scss */
-table tr th,
-table tr td {
-  color: #222222;
-  font-size: 0.875rem;
-  padding: 0.5625rem 0.625rem;
-  text-align: left;
-}
-/* line 166, ../scss/vendor/_foundationTables.scss */
-table tr.even, table tr.alt, table tr:nth-of-type(even) {
-  background: #EEEEEE;
-}
-/* line 171, ../scss/vendor/_foundationTables.scss */
-table thead tr th,
-table tfoot tr th,
-table tfoot tr td,
-table tbody tr th,
-table tbody tr td,
-table tr td {
-  display: table-cell;
-  line-height: 1.125rem;
-}
-
 /* small displays */
 @media only screen {
   /* line 286, ../scss/vendor/_foundationVisibility.scss */
@@ -5968,6 +5907,10 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table th, .table--list tr td,
 .table--list tr .table-data,
+.table--list td td,
+.table--list td .table-data,
+.table--list th td,
+.table--list th .table-data,
 .table--list .table-row td,
 .table--list .table-row .table-data {
   text-align: left;
@@ -6324,6 +6267,10 @@ label {
 caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table th, .table--list tr td,
 .table--list tr .table-data,
+.table--list td td,
+.table--list td .table-data,
+.table--list th td,
+.table--list th .table-data,
 .table--list .table-row td,
 .table--list .table-row .table-data {
   text-align: left;
@@ -15280,7 +15227,7 @@ input.input--alt {
 /* line 258, ../scss/layout/_forms.scss */
 .input-group.input--large input {
   padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.375rem;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
@@ -16187,27 +16134,31 @@ table th,
 }
 /* line 35, ../scss/layout/_tables.scss */
 .table--list tr,
+.table--list td,
+.table--list th,
 .table--list .table-row {
-  padding: 1.5rem;
+  padding: 1.125rem;
+  padding-left: 1.875rem;
   color: #333031;
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 35, ../scss/layout/_tables.scss */
-  .table--list tr,
-  .table--list .table-row {
-    padding: 1.5rem;
-  }
-}
-/* line 51, ../scss/layout/_tables.scss */
+/* line 49, ../scss/layout/_tables.scss */
 .table--list tr .table-contribution,
+.table--list td .table-contribution,
+.table--list th .table-contribution,
 .table--list .table-row .table-contribution {
   font-size: 1.5rem;
   line-height: 1.33333;
 }
-/* line 58, ../scss/layout/_tables.scss */
-.table--list tr:nth-child(odd),
-.table--list .table-row:nth-child(odd) {
-  background-color: #e8f1f1;
+/* line 56, ../scss/layout/_tables.scss */
+.table--list tr,
+.table--list .table-row {
+  background-color: #FFF;
+}
+/* line 62, ../scss/layout/_tables.scss */
+.table--list tr,
+.table--list .table-row {
+  background-color: #fff;
+  border-bottom: 1px solid #dae0e0;
 }
 
 /*------------------------------------*\
@@ -16812,15 +16763,17 @@ button.is-inactive,
 /* line 74, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
   color: #fff;
+  fill: #fff;
   border: 1px solid #333031;
   background-color: #333031;
 }
 
-/* line 84, ../scss/components/_buttons.scss */
+/* line 85, ../scss/components/_buttons.scss */
 .button--quaternary {
   background-color: transparent;
   position: relative;
   color: #6AC6C5;
+  fill: #6AC6C5;
   border: 1px solid #6AC6C5;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
@@ -16828,14 +16781,15 @@ button.is-inactive,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 91, ../scss/components/_buttons.scss */
+/* line 93, ../scss/components/_buttons.scss */
 .button--quaternary:hover, .button--quaternary:focus {
   color: #fff;
+  fill: #fff;
   border: 1px solid #6AC6C5;
   background-color: #6AC6C5;
 }
 
-/* line 101, ../scss/components/_buttons.scss */
+/* line 104, ../scss/components/_buttons.scss */
 .button--quintenary {
   background-color: #238EB2;
   position: relative;
@@ -16849,7 +16803,7 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 110, ../scss/components/_buttons.scss */
+/* line 113, ../scss/components/_buttons.scss */
 .button--quintenary:hover, .button--quintenary:focus {
   color: #238EB2;
   background-color: transparent;
@@ -16859,28 +16813,27 @@ button.is-inactive,
   box-shadow: 0 1px 16px rgba(30, 30, 30, 0.2);
 }
 
-/* line 123, ../scss/components/_buttons.scss */
+/* line 126, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 129, ../scss/components/_buttons.scss */
+/* line 132, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
 }
-/* line 135, ../scss/components/_buttons.scss */
+/* line 138, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
-  bottom: -2px;
 }
 
-/* line 143, ../scss/components/_buttons.scss */
+/* line 145, ../scss/components/_buttons.scss */
 .button--link {
   background: transparent;
   color: #6AC6C5;
 }
-/* line 147, ../scss/components/_buttons.scss */
+/* line 149, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
   color: #333031;
   text-decoration: underline;
@@ -16889,7 +16842,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 165, ../scss/components/_buttons.scss */
+/* line 167, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #333031;
   height: 2.5rem;
@@ -16907,14 +16860,14 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 178, ../scss/components/_buttons.scss */
+/* line 180, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 185, ../scss/components/_buttons.scss */
+/* line 187, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -16930,7 +16883,7 @@ button.is-inactive,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 203, ../scss/components/_buttons.scss */
+/* line 205, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -16947,7 +16900,7 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 220, ../scss/components/_buttons.scss */
+/* line 222, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -16962,7 +16915,7 @@ button.is-inactive,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 236, ../scss/components/_buttons.scss */
+/* line 238, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -16971,7 +16924,7 @@ button.is-inactive,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 245, ../scss/components/_buttons.scss */
+/* line 247, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #333031;
@@ -16981,20 +16934,20 @@ button.is-inactive,
   transform: scale(1.2);
 }
 
-/* line 259, ../scss/components/_buttons.scss */
+/* line 261, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 265, ../scss/components/_buttons.scss */
+/* line 267, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 276, ../scss/components/_buttons.scss */
+/* line 278, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 282, ../scss/components/_buttons.scss */
+/* line 284, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -17002,14 +16955,14 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 299, ../scss/components/_buttons.scss */
+/* line 301, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 306, ../scss/components/_buttons.scss */
+/* line 308, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -17018,39 +16971,39 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 315, ../scss/components/_buttons.scss */
+/* line 317, ../scss/components/_buttons.scss */
 .button--medium {
-  padding: 1.125rem;
+  padding: 0.75rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-/* line 323, ../scss/components/_buttons.scss */
+/* line 325, ../scss/components/_buttons.scss */
 .button--large {
-  padding: 1.5rem;
+  padding: 1.125rem;
   padding-right: 1.125rem;
   padding-left: 1.125rem;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
 
-/* line 330, ../scss/components/_buttons.scss */
+/* line 332, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 337, ../scss/components/_buttons.scss */
+/* line 339, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 344, ../scss/components/_buttons.scss */
+/* line 346, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -17060,7 +17013,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 360, ../scss/components/_buttons.scss */
+/* line 362, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -18421,12 +18374,14 @@ body.fancymodal-open {
 @media only screen and (min-width: 40.0625em) {
   /* line 91, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--contributions {
+    bottom: 16%;
+    left: -160px;
     background-image: url("../assets/images/sponsorBg--contributions.svg");
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 99, ../scss/pages/_sponsorView.scss */
+  /* line 101, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--managePlan {
     background-image: url("../assets/images/sponsorBg--managePlan.svg");
     bottom: 24%;

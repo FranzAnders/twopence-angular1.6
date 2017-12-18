@@ -28,11 +28,11 @@
            class="alerts  alert--warning">
 
           <div ng-message="required">
-              Sorry, we need an email from ya.
+              We need an email from you to get started.
           </div>
 
           <div ng-message="email">
-              Sorry, but your email must be valid ('example@email.com')
+              Your email must be valid. The format is incorrect. (ex:pickpocketJoe@gmail.com)
           </div>
 
       </div>
@@ -70,10 +70,6 @@
               Oops! Password must be atleast 8 characters in length
           </div>
 
-          <div ng-message="pattern">
-              Email must be valid 'example@email.com'
-          </div>
-
       </div>
 
     </div>
@@ -100,15 +96,11 @@
            class="alerts  alert--warning">
 
           <div ng-message="required">
-              Sorry, passwords must match.
+              The password must be confirmed.
           </div>
 
           <div ng-message="ng-minlength">
               Oops! Password must be atleast 8 characters in length.
-          </div>
-
-          <div ng-message="compare-to">
-              Oops! Passwords must match.
           </div>
 
       </div>
@@ -117,7 +109,7 @@
 
     <button class="button--secondary  button--medium button--expanded mb0"
             type="submit">
-      NEXT STEP
+      <span ng-if="!signUp.loadingScreen" >Next Step </span>
       <span ng-if="signUp.loadingScreen">Nicely done, setting up...</span>
     </button>
 

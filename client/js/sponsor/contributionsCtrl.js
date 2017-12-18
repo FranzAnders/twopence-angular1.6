@@ -26,12 +26,11 @@ twopence.controller('contributionsCtrl', [
 
     vm.sponsees  = sponsees.data; 
 
-    console.log("SUCCESS: SPONSEES")
-    console.log(vm.sponsees); 
+    vm.totalContributions = vm.getTotalContributions(sponsees.data); 
 
   }).catch(function(err){
 
-    console.log("ERROR: Sponsees not coming up."); 
+    console.log("ERROR: Sponsorship not coming up."); 
 
   }); 
 
@@ -42,9 +41,6 @@ twopence.controller('contributionsCtrl', [
   Sponsor.getAllContributions().then(function(contributions) {
 
     vm.contributionsShowing = contributions.data;
-
-    console.log("SUCCESS: CONTRIBUTIONS")
-    console.log(vm.contributionsShowing)
 
   }); 
 
@@ -67,6 +63,27 @@ twopence.controller('contributionsCtrl', [
     console.log(vm.sponseeFilter); 
 
   };
+
+
+
+    vm.getTotalContributions = function(sponsorships) {
+
+      var total = 0; 
+
+      for(var i = 0; i <= sponsorships.length; i++) {
+
+        if(sponsorships[i]) {
+        
+         total = total + parseInt(sponsorships[i].contributions_to_date);
+
+        }
+
+      }
+
+      return total;
+
+    };
+
 
 
 }]);

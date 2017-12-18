@@ -74,6 +74,7 @@ button,
   &:hover,
   &:focus {
     color: #fff;
+    fill: #fff; 
     border: 1px solid $secondaryColor;
     background-color: $secondaryColor;  
 
@@ -85,12 +86,14 @@ button,
   background-color: transparent;
   position: relative; 
   color: $primaryColor; 
+  fill: $primaryColor; 
   border: 1px solid $primaryColor; 
   @include transition(all .1s ease .1s); 
 
   &:hover,
   &:focus {
     color: #fff;
+    fill: #fff; 
     border: 1px solid $primaryColor;
     background-color: $primaryColor;  
 
@@ -134,7 +137,6 @@ button,
 
   .button-label {
     position: relative; 
-    bottom: -2px; 
 
   }
 }
@@ -313,7 +315,7 @@ button,
 
 
 .button--medium {
-    padding: rem-calc($level3);
+    padding: rem-calc($level2);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
     @include type-setting(0);
@@ -321,7 +323,7 @@ button,
 }
 
 .button--large {
-    padding: rem-calc($level4);
+    padding: rem-calc($level3);
     padding-right: rem-calc($level3);
     padding-left: rem-calc($level3);
     @include type-setting(1);

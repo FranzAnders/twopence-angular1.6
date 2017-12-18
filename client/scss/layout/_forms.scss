@@ -258,7 +258,7 @@ input {
     input {
 
       padding-top: rem-calc($level2);
-      padding-bottom: rem-calc($level2);
+      padding-bottom: rem-calc($level1);
       @include type-setting(1);
 
     }

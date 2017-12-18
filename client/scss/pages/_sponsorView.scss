@@ -90,6 +90,8 @@
 
 .sponsorSection-illustr--contributions {
   @media #{$medium-up} {
+    bottom: 16%; 
+    left: -160px; 
     background-image: url('../assets/images/sponsorBg--contributions.svg');
 
   }
