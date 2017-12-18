@@ -37,14 +37,8 @@ twopence.directive('verifyCheckBox', function() {
 
       ngModel.$validators.verifyCheckBox = function(modelValue) {
 
-console.log(ngModel); 
-console.log(modelValue); 
-console.log(verifyCheckBox.otherModelValue); 
-  console.log(ngModel.$valid); 
-
         if(verifyCheckBox.otherModelValue && modelValue) {
 
-            console.log('true')
           return true; 
 
         }

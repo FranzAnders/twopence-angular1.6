@@ -2,7 +2,8 @@
 <div class="section">
 
   <div class="sponsorSection-illustrContainer">
-    <div class="sponsorSection-illustr  sponsorSection-illustr--contributions  show-for-medium-up">
+    <div class="sponsorSection-illustr  sponsorSection-illustr--contributions  show-for-medium-up"
+                ng-if="contributions.totalContributions !== 0">
       
     </div>
   </div>
@@ -21,22 +22,22 @@
 
       </div>
 
+      <hr class="hr--faded">
 
-      <div class="mb7">
+      <h1 class="headline  headline--alt subline text-micro text-center  txtc2">
+        total Contributions 
+      </h1>
+      
+      <h2 class=" text-center  fwb txtc1 text-mega  text-center">
+         ${{contributions.totalContributions}}
+      </h2>
 
-        <h1 class="headline  headline--alt subline text-micro text-center">
-          Total Contributions
-        </h1>
-        
-        <h2 class=" text-center  fwb txtc3 text-kilo  text-center">
-           $100,000.00
-        </h2>
+      <hr class="hr--faded mb0">
 
-      </div>
 
     </div>
 
-    <div class="small-12  medium-8  large-7    columns">
+    <div class="small-12  medium-8  large-7    columns" ng-if="contributions.totalContributions !== 0">
 
       <label for="contributionsFilter" class="label text-micro">
         Filter:
@@ -60,12 +61,11 @@
 
     </div>
 
-    <div class="small-12 medium-8  large-7  large-pull-1  columns">
+    <div class="small-12 medium-8  large-7  large-pull-1  columns" ng-if="contributions.totalContributions !== 0">
 
-      <div class="card">
+      <div class="card" >
 
-
-          <table class="table--list">
+          <table class="table  table--list">
             
             <tr>
 
@@ -77,7 +77,7 @@
                 Sponsee
               </th>
 
-              <th>Amount</th>
+              <th class="text-right">Amount</th>
 
             </tr>
           
@@ -94,7 +94,7 @@
               <td ng-if="contribution.date" class="text-center">
               <div class="grid grid--justifyLeft">
                 
-              <div class="pl4">
+              <div >
                 <span class="uc fwb text-micro display-block  text-center mb0">{{contribution.date | date: 'MMM'}}</span>
                 <span class="uc h4  display-block  text-center">{{contribution.date | date: 'd'}}</span>
               </div>
@@ -103,20 +103,44 @@
 
               </td>
           
-              <td>{{contribution.sponsee.name}}</td>
+              <td>{{contribution.sponsee.first_name}}</td>
 
-              <td class="table-contribution" >${{contribution.amount}}</td>
+              <td class="table-contribution text-right" >${{contribution.amount}}</td>
 
             </tr>
           
           </table>
           
-          <button class="button  button--secondary  button--small  button--expanded  button--link"
-                  ng-click="contributions.showMore()">
-            Show More
-          </button>
+          <div class="card-content pt0"
+               ng-if="contributions.contributionsShowing > 4">
+            <button class="button button--medium  button--expanded  button--link"
+                    ng-click="contributions.showMore()">
+              Show More
+            </button>
+          </div>
 
         </div>
+
+    </div>
+
+    <div class="small-12 medium-8  large-6  large-pull-1  columns text-center" ng-if="contributions.totalContributions === 0">
+      
+      <img src="assets/images/illustr--nothingHere.svg" alt="" width="200" class="mtb4">
+
+      <p>You haven’t made any contributions to your sponsees yet. This is where your contribution history will be once you start making payments. Why not start now?</p>
+
+      <div class="row">
+        <div class="small-12 columns medium-8  medium-centered large-9 large-centered">
+          <a ui-sref="sponsor.dashboard" class="button button--tertiary  button--small  button--expanded">
+          Contribute to a Sponsorship</a>
+        
+         <p>
+              <a ui-sref="sponsor.sponseeAdd" class="">
+           Create a Sponsorship</a>
+         </p>
+
+        </div>
+      </div>
 
     </div>
 

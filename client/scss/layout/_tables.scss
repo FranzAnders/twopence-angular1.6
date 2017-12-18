@@ -33,15 +33,13 @@ table,
   width: 100%; 
 
   tr,
+  td, 
+  th, 
   .table-row {
-    padding: rem-calc($level4);
+    padding: rem-calc($level3);
+    padding-left: rem-calc($level5); 
     color: $secondaryColor;
 
-   @media #{$large-up} {
-      padding: rem-calc($level4);
-
-    }
-  
     td, 
     .table-data {
       @extend %text-left; 
@@ -55,9 +53,16 @@ table,
 
   }
   
-  tr:nth-child(odd), 
-  .table-row:nth-child(odd) {
-   background-color: $quaternaryColor; 
+  tr, 
+  .table-row {
+
+    background-color: #FFF; 
+  }
+
+  tr, 
+  .table-row {
+   background-color: #fff; 
+   border-bottom: 1px solid $grey--light; 
 
   }
 

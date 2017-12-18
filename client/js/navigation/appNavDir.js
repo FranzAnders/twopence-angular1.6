@@ -21,8 +21,6 @@ twopence.directive('appNavDir', function() {
 
         vm.isActive = function(pState) {
 
-          console.log(pState); 
-          
           return $state.is(pState); 
 
         }; 

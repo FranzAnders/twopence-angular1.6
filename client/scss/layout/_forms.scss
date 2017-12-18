@@ -59,7 +59,7 @@ input[type="color"], {
 /* Change the white to any color ;) */
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-    -webkit-text-fill-color: $primaryColor !important;
+    -webkit-text-fill-color: $secondaryColor !important;
 }
 
 
@@ -258,7 +258,7 @@ input {
     input {
 
       padding-top: rem-calc($level2);
-      padding-bottom: rem-calc($level2);
+      padding-bottom: rem-calc($level1);
       @include type-setting(1);
 
     }
@@ -451,8 +451,9 @@ textarea {
 \*------------------------------------*/
 
 
-.fieldset{
-  margin-bottom: rem-calc($base-magic-number); 
+.fieldset,
+fieldset{
+  margin-bottom: rem-calc($level5); 
   
 }
 
@@ -526,4 +527,15 @@ input.clearField {
     }
 
   }
+}
+
+
+.radio-group {
+  margin-bottom: rem-calc($level3); 
+
+  label {
+    color: $secondaryColor; 
+
+  }
+
 }

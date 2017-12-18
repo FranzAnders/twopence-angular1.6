@@ -39,10 +39,8 @@
     padding: rem-calc($level3);
 
     .card-subTitle {
-      color: $secondaryColor;
-      @extend %uc; 
-      @extend %fwb;  
-      @include type-setting(-1); 
+      color: $body-color;
+      @include type-setting(0); 
 
     }
 
@@ -182,6 +180,23 @@
 
   *  {
     pointer-events: none; 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #A login card
+\*------------------------------------*/
+
+.card--form {
+
+  @media #{$large-up} {
+    padding: rem-calc($level4); 
 
   }
 

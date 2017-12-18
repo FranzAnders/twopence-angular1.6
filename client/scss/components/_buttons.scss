@@ -20,6 +20,12 @@ button,
 
   }
 
+  &.is-inactive {
+    opacity: .2; 
+    pointer-events: none; 
+    
+  }
+
 }
 
 
@@ -37,11 +43,6 @@ button,
     background-color: transparent;
     border: 1px solid $primaryColor; 
 
-    &:after {
-
-      width: 100%;  
-
-    }
   }
 
 }
@@ -51,20 +52,14 @@ button,
   background-color: $secondaryColor;
   position: relative; 
   color: #fff; 
-  border: 1px solid transparent; 
-  @include transition(all .1s ease .1s); 
+  border: 1px solid $secondaryColor; 
+  @include transition(all .2s ease); 
   
   &:hover,
   &:focus {
     color: $secondaryColor;
     background-color: transparent; 
     border: 1px solid $secondaryColor; 
-
-    &:after {
-
-      width: 100%;  
-
-    }
   }
 }
 
@@ -73,17 +68,58 @@ button,
   background-color: transparent;
   position: relative; 
   color: $secondaryColor; 
-  border: 2px solid $secondaryColor; 
+  border: 1px solid $secondaryColor; 
   @include transition(all .1s ease .1s); 
 
   &:hover,
   &:focus {
     color: #fff;
+    fill: #fff; 
+    border: 1px solid $secondaryColor;
     background-color: $secondaryColor;  
 
   }
 }
 
+
+.button--quaternary {
+  background-color: transparent;
+  position: relative; 
+  color: $primaryColor; 
+  fill: $primaryColor; 
+  border: 1px solid $primaryColor; 
+  @include transition(all .1s ease .1s); 
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    fill: #fff; 
+    border: 1px solid $primaryColor;
+    background-color: $primaryColor;  
+
+  }
+}
+
+
+.button--quintenary {
+
+  background-color: $tertiaryColor;
+  position: relative; 
+  color: #fff; 
+  border: 1px solid $tertiaryColor; 
+  @include transition(all .2s ease); 
+  @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+
+  &:hover,
+  &:focus {
+    color: $tertiaryColor;
+    background-color: transparent; 
+    border: 1px solid $tertiaryColor; 
+    @include box-shadow(0 1px 16px rgba(30,30,30, .2)); 
+
+  }
+
+}
 
 .button--withIcon {
 
@@ -101,7 +137,6 @@ button,
 
   .button-label {
     position: relative; 
-    bottom: -2px; 
 
   }
 }
@@ -271,7 +306,7 @@ button,
 }
 
 .button--small {
-    padding: rem-calc($level1);
+    padding: rem-calc($level2);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
     @include type-setting(-1);
@@ -283,15 +318,15 @@ button,
     padding: rem-calc($level2);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
-    @include type-setting(-1);
+    @include type-setting(0);
 
 }
 
 .button--large {
     padding: rem-calc($level3);
-    padding-right: rem-calc($level5);
-    padding-left: rem-calc($level5);
-    @extend %h3; 
+    padding-right: rem-calc($level3);
+    padding-left: rem-calc($level3);
+    @include type-setting(1);
 }
 
 .button--kilo {
