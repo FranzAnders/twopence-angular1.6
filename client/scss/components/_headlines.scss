@@ -17,12 +17,16 @@
 
 }
 
+.headline--alt {
+
+  font-family: $primary-font-family; 
+}
+
 
 .subline {
   font-family: $primary-font-family; 
   letter-spacing: 1px; 
   margin-bottom: rem-calc($level1); 
   @extend %uc; 
-  @extend %fwb; 
 
 }

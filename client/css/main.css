@@ -5872,7 +5872,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 }
 
 /* line 55, ../scss/abstracts/_typography.scss */
-.fwb, strong, footer .footer-title, .formTabs .formTabs-tab.is-active .tab-title, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
+.fwb, strong, footer .footer-title, .formTabs .formTabs-tab.is-active .tab-title, .card--sponsorship .card-content .sponsorship-contributions, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -6004,8 +6004,8 @@ h1,
 @media only screen and (min-width: 40.0625em) {
   /* line 309, ../scss/abstracts/_typography.scss */
   .text-kilo {
-    font-size: 2.5rem;
-    line-height: 1;
+    font-size: 2.75rem;
+    line-height: 1.2;
   }
 }
 
@@ -6017,8 +6017,8 @@ h1,
 @media only screen and (min-width: 40.0625em) {
   /* line 320, ../scss/abstracts/_typography.scss */
   .text-mega {
-    font-size: 2.5rem;
-    line-height: 1;
+    font-size: 2.75rem;
+    line-height: 1.2;
   }
 }
 @media only screen and (min-width: 64.0625em) {
@@ -15759,8 +15759,8 @@ input.clearField:active:after, input.clearField:focus:after {
 /* line 229, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link {
   color: #fff;
-  font-size: 2.5rem;
-  line-height: 1;
+  font-size: 2.75rem;
+  line-height: 1.2;
 }
 /* line 234, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link:after {
@@ -16065,7 +16065,8 @@ input.clearField:active:after, input.clearField:focus:after {
 
 /* line 70, ../scss/layout/_sections.scss */
 .section--bordered {
-  border-bottom: 8px solid black;
+  border-top: 1px solid #dae0e0;
+  border-bottom: 1px solid #dae0e0;
 }
 
 /*------------------------------------*\
@@ -17219,7 +17220,12 @@ button.is-inactive,
   font-family: "itc_souvenirmedium", sans-serif;
 }
 
-/* line 21, ../scss/components/_headlines.scss */
+/* line 20, ../scss/components/_headlines.scss */
+.headline--alt {
+  font-family: "Work Sans", sans-serif;
+}
+
+/* line 26, ../scss/components/_headlines.scss */
 .subline {
   font-family: "Work Sans", sans-serif;
   letter-spacing: 1px;
