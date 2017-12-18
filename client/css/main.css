@@ -5872,7 +5872,8 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 }
 
 /* line 55, ../scss/abstracts/_typography.scss */
-.fwb, strong, footer .footer-title, .formTabs .formTabs-tab.is-active .tab-title, .card--sponsorship .card-content .sponsorship-contributions, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
+.fwb, strong, footer .footer-title, .formTabs .formTabs-tab.is-active .tab-title, button,
+.button, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -13295,7 +13296,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 
 /* line 22, ../scss/base/_theme.scss */
 .brandColor--secondaryColor {
-  background-color: #333031;
+  background-color: #231F20;
 }
 
 /* line 26, ../scss/base/_theme.scss */
@@ -13508,7 +13509,7 @@ p a.alt-link:before {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: #333031;
+  background-color: #231F20;
   position: absolute;
   opacity: 0;
   -moz-transform: translateY(3px);
@@ -13522,7 +13523,7 @@ p a.alt-link:before {
 }
 /* line 200, ../scss/base/_typography.scss */
 p a.alt-link:hover, p a.alt-link:focus {
-  color: #333031;
+  color: #231F20;
 }
 /* line 204, ../scss/base/_typography.scss */
 p a.alt-link:hover:after, p a.alt-link:focus:after {
@@ -13542,7 +13543,7 @@ p a.alt-link:hover:before, p a.alt-link:focus:before {
 }
 /* line 218, ../scss/base/_typography.scss */
 p a.alt-link:active {
-  background-color: #333031;
+  background-color: #231F20;
   color: #fff;
 }
 
@@ -13553,7 +13554,7 @@ p a.alt-link:active {
 /* line 238, ../scss/base/_typography.scss */
 .section--secondary p.section-text a:hover, .section--secondary p.section-text a:focus {
   color: #fff;
-  background-color: #333031;
+  background-color: #231F20;
 }
 
 /*------------------------------------*\
@@ -13581,7 +13582,7 @@ p a.alt-link:active {
 
 /* line 287, ../scss/base/_typography.scss */
 .txtc2 {
-  color: #333031;
+  color: #231F20;
 }
 
 /* line 291, ../scss/base/_typography.scss */
@@ -13627,7 +13628,7 @@ hr {
 
 /* line 410, ../scss/base/_typography.scss */
 .hr--secondary {
-  background-color: #333031;
+  background-color: #231F20;
   margin-left: 0;
 }
 
@@ -13687,7 +13688,7 @@ hr {
 .guideline {
   height: 6rem;
   width: 4px;
-  background-color: #333031;
+  background-color: #231F20;
   position: relative;
   left: 0;
   right: 0;
@@ -13735,66 +13736,66 @@ hr {
 /*------------------------------------*\
     #Text Alignments  
 \*------------------------------------*/
-@media only screen and (min-width: 64.0625em) {
-  /* line 608, ../scss/base/_typography.scss */
-  .large-text-right {
-    text-align: right;
-  }
-}
-
-@media only screen and (min-width: 64.0625em) {
-  /* line 616, ../scss/base/_typography.scss */
-  .large-text-center {
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 64.0625em) {
-  /* line 625, ../scss/base/_typography.scss */
-  .large-text-left {
-    text-align: left;
-  }
-}
-
 @media only screen and (min-width: 40.0625em) {
-  /* line 634, ../scss/base/_typography.scss */
-  .medium-text-center {
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 643, ../scss/base/_typography.scss */
-  .medium-text-left {
-    text-align: left;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 651, ../scss/base/_typography.scss */
-  .medium-text-right {
-    text-align: right;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 660, ../scss/base/_typography.scss */
+  /* line 609, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 668, ../scss/base/_typography.scss */
+  /* line 617, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 676, ../scss/base/_typography.scss */
+  /* line 625, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 635, ../scss/base/_typography.scss */
+  .medium-text-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 644, ../scss/base/_typography.scss */
+  .medium-text-left {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 652, ../scss/base/_typography.scss */
+  .medium-text-right {
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 64.0625em) {
+  /* line 661, ../scss/base/_typography.scss */
+  .large-text-right {
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 64.0625em) {
+  /* line 669, ../scss/base/_typography.scss */
+  .large-text-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 64.0625em) {
+  /* line 678, ../scss/base/_typography.scss */
+  .large-text-left {
+    text-align: left;
   }
 }
 
@@ -15085,14 +15086,14 @@ input[type="color"]:active {
 }
 /* line 50, ../scss/layout/_forms.scss */
 .input-group.is-filled input[type="date"] {
-  color: #333031;
+  color: #231F20;
 }
 
 /* Change the white to any color ;) */
 /* line 60, ../scss/layout/_forms.scss */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-  -webkit-text-fill-color: #333031 !important;
+  -webkit-text-fill-color: #231F20 !important;
 }
 
 /*------------------------------------*\
@@ -15167,7 +15168,7 @@ input.input--alt {
 }
 /* line 148, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
-  color: #333031;
+  color: #231F20;
 }
 /* line 156, ../scss/layout/_forms.scss */
 .input-group label {
@@ -15193,7 +15194,7 @@ input.input--alt {
 }
 /* line 178, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
-  color: #333031;
+  color: #231F20;
 }
 /* line 183, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
@@ -15325,7 +15326,7 @@ select {
 /* line 381, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
-  border: 1px solid #333031;
+  border: 1px solid #231F20;
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -15412,7 +15413,7 @@ input.clearField:after {
 }
 /* line 503, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
-  color: #333031;
+  color: #231F20;
 }
 /* line 507, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
@@ -15437,7 +15438,7 @@ input.clearField:active:after, input.clearField:focus:after {
 }
 /* line 537, ../scss/layout/_forms.scss */
 .radio-group label {
-  color: #333031;
+  color: #231F20;
 }
 
 /*------------------------------------*\
@@ -15455,7 +15456,7 @@ input.clearField:active:after, input.clearField:focus:after {
 }
 /* line 20, ../scss/layout/_formTabs.scss */
 .formTabs .formTabs-tab.is-active .tab-title {
-  color: #333031;
+  color: #231F20;
 }
 
 /*------------------------------------*\
@@ -15652,7 +15653,7 @@ input.clearField:active:after, input.clearField:focus:after {
 .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
   height: 100%;
   width: 7.5rem;
-  fill: #333031;
+  fill: #231F20;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 133, ../scss/layout/_navs.scss */
@@ -15796,7 +15797,7 @@ input.clearField:active:after, input.clearField:focus:after {
 @media only screen and (min-width: 40.0625em) {
   /* line 229, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-link {
-    color: #333031;
+    color: #231F20;
     font-size: 0.8rem;
     line-height: 1.5;
   }
@@ -15808,7 +15809,7 @@ input.clearField:active:after, input.clearField:focus:after {
 @media only screen and (min-width: 40.0625em) {
   /* line 254, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-link:hover, .mainNav .mainNav-menu .mainNav-menu-link:focus {
-    color: #333031;
+    color: #231F20;
   }
 }
 /* line 263, ../scss/layout/_navs.scss */
@@ -15840,8 +15841,8 @@ input.clearField:active:after, input.clearField:focus:after {
 @media only screen and (min-width: 40.0625em) {
   /* line 277, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button {
-    border: 1px solid #333031;
-    color: #333031;
+    border: 1px solid #231F20;
+    color: #231F20;
     margin-top: 0;
     padding: 0.75rem;
     font-size: 0.8rem;
@@ -15849,8 +15850,8 @@ input.clearField:active:after, input.clearField:focus:after {
   }
   /* line 298, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
-    background-color: #333031;
-    border: 1px solid #333031;
+    background-color: #231F20;
+    border: 1px solid #231F20;
     color: #fff;
   }
 }
@@ -15860,7 +15861,7 @@ input.clearField:active:after, input.clearField:focus:after {
 }
 /* line 315, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link:hover, .mainNav .mainNav-menu .mainNav-menu-social .social-link:focus {
-  color: #333031;
+  color: #231F20;
 }
 /* line 326, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-actions {
@@ -15948,7 +15949,7 @@ input.clearField:active:after, input.clearField:focus:after {
 }
 /* line 442, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
-  color: #333031;
+  color: #231F20;
   padding-top: 6px;
 }
 
@@ -15962,7 +15963,7 @@ input.clearField:active:after, input.clearField:focus:after {
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
   height: 4px;
-  background-color: #333031;
+  background-color: #231F20;
   width: 100%;
   right: 0;
   left: 0;
@@ -16100,7 +16101,7 @@ input.clearField:active:after, input.clearField:focus:after {
 
 /* line 95, ../scss/layout/_sections.scss */
 .section--secondary {
-  background-color: #333031;
+  background-color: #231F20;
 }
 /* line 99, ../scss/layout/_sections.scss */
 .section--secondary .section-text {
@@ -16158,7 +16159,7 @@ table th,
 .table--list .table-row {
   padding: 1.125rem;
   padding-left: 1.875rem;
-  color: #333031;
+  color: #231F20;
 }
 /* line 49, ../scss/layout/_tables.scss */
 .table--list tr .table-contribution,
@@ -16432,7 +16433,7 @@ table th,
 .appHeader-menuToggle .userActions-avatar {
   width: 2rem;
   height: 2rem;
-  background-color: #333031;
+  background-color: #231F20;
   margin-right: 0.375rem;
   color: #fff;
   font-size: 0.8rem;
@@ -16713,7 +16714,7 @@ button,
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 14, ../scss/components/_buttons.scss */
+/* line 15, ../scss/components/_buttons.scss */
 button .button-inner,
 .button .button-inner {
   position: relative;
@@ -16723,14 +16724,14 @@ button .button-inner,
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 23, ../scss/components/_buttons.scss */
+/* line 24, ../scss/components/_buttons.scss */
 button.is-inactive,
 .button.is-inactive {
   opacity: .2;
   pointer-events: none;
 }
 
-/* line 32, ../scss/components/_buttons.scss */
+/* line 33, ../scss/components/_buttons.scss */
 .button--primary {
   background-color: #6AC6C5;
   position: relative;
@@ -16742,52 +16743,52 @@ button.is-inactive,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 39, ../scss/components/_buttons.scss */
+/* line 40, ../scss/components/_buttons.scss */
 .button--primary:hover, .button--primary:focus {
   color: #6AC6C5;
   background-color: transparent;
   border: 1px solid #6AC6C5;
 }
 
-/* line 51, ../scss/components/_buttons.scss */
+/* line 52, ../scss/components/_buttons.scss */
 .button--secondary {
-  background-color: #333031;
+  background-color: #231F20;
   position: relative;
   color: #fff;
-  border: 1px solid #333031;
+  border: 1px solid #231F20;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 58, ../scss/components/_buttons.scss */
+/* line 59, ../scss/components/_buttons.scss */
 .button--secondary:hover, .button--secondary:focus {
-  color: #333031;
+  color: #231F20;
   background-color: transparent;
-  border: 1px solid #333031;
+  border: 1px solid #231F20;
 }
 
-/* line 67, ../scss/components/_buttons.scss */
+/* line 68, ../scss/components/_buttons.scss */
 .button--tertiary {
   background-color: transparent;
   position: relative;
-  color: #333031;
-  border: 1px solid #333031;
+  color: #231F20;
+  border: 1px solid #231F20;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
   -webkit-transition: all 0.1s ease;
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 74, ../scss/components/_buttons.scss */
+/* line 75, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
   color: #fff;
   fill: #fff;
-  border: 1px solid #333031;
-  background-color: #333031;
+  border: 1px solid #231F20;
+  background-color: #231F20;
 }
 
-/* line 85, ../scss/components/_buttons.scss */
+/* line 86, ../scss/components/_buttons.scss */
 .button--quaternary {
   background-color: transparent;
   position: relative;
@@ -16800,7 +16801,7 @@ button.is-inactive,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 93, ../scss/components/_buttons.scss */
+/* line 94, ../scss/components/_buttons.scss */
 .button--quaternary:hover, .button--quaternary:focus {
   color: #fff;
   fill: #fff;
@@ -16808,7 +16809,7 @@ button.is-inactive,
   background-color: #6AC6C5;
 }
 
-/* line 104, ../scss/components/_buttons.scss */
+/* line 105, ../scss/components/_buttons.scss */
 .button--quintenary {
   background-color: #238EB2;
   position: relative;
@@ -16822,7 +16823,7 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 113, ../scss/components/_buttons.scss */
+/* line 114, ../scss/components/_buttons.scss */
 .button--quintenary:hover, .button--quintenary:focus {
   color: #238EB2;
   background-color: transparent;
@@ -16832,38 +16833,38 @@ button.is-inactive,
   box-shadow: 0 1px 16px rgba(30, 30, 30, 0.2);
 }
 
-/* line 126, ../scss/components/_buttons.scss */
+/* line 127, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 132, ../scss/components/_buttons.scss */
+/* line 133, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
 }
-/* line 138, ../scss/components/_buttons.scss */
+/* line 139, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
 }
 
-/* line 145, ../scss/components/_buttons.scss */
+/* line 146, ../scss/components/_buttons.scss */
 .button--link {
   background: transparent;
   color: #6AC6C5;
 }
-/* line 149, ../scss/components/_buttons.scss */
+/* line 150, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
-  color: #333031;
+  color: #231F20;
   text-decoration: underline;
 }
 
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 167, ../scss/components/_buttons.scss */
+/* line 168, ../scss/components/_buttons.scss */
 .playButton {
-  background-color: #333031;
+  background-color: #231F20;
   height: 2.5rem;
   width: 2.5rem;
   position: relative;
@@ -16879,14 +16880,14 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 180, ../scss/components/_buttons.scss */
+/* line 181, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 187, ../scss/components/_buttons.scss */
+/* line 188, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -16902,12 +16903,12 @@ button.is-inactive,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 205, ../scss/components/_buttons.scss */
+/* line 206, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
   width: 100%;
-  background-color: #333031;
+  background-color: #231F20;
   position: absolute;
   right: 0;
   left: 0;
@@ -16919,7 +16920,7 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 222, ../scss/components/_buttons.scss */
+/* line 223, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -16934,7 +16935,7 @@ button.is-inactive,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 238, ../scss/components/_buttons.scss */
+/* line 239, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -16943,30 +16944,30 @@ button.is-inactive,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 247, ../scss/components/_buttons.scss */
+/* line 248, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
-  border: 2px solid #333031;
+  border: 2px solid #231F20;
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-/* line 261, ../scss/components/_buttons.scss */
+/* line 262, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 267, ../scss/components/_buttons.scss */
+/* line 268, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 278, ../scss/components/_buttons.scss */
+/* line 279, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 284, ../scss/components/_buttons.scss */
+/* line 285, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -16974,14 +16975,14 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 301, ../scss/components/_buttons.scss */
+/* line 302, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 308, ../scss/components/_buttons.scss */
+/* line 309, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -16990,7 +16991,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 317, ../scss/components/_buttons.scss */
+/* line 318, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -16999,7 +17000,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 325, ../scss/components/_buttons.scss */
+/* line 326, ../scss/components/_buttons.scss */
 .button--large {
   padding: 1.125rem;
   padding-right: 1.125rem;
@@ -17008,21 +17009,21 @@ button.is-inactive,
   line-height: 1.33333;
 }
 
-/* line 332, ../scss/components/_buttons.scss */
+/* line 333, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 339, ../scss/components/_buttons.scss */
+/* line 340, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 346, ../scss/components/_buttons.scss */
+/* line 347, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -17032,7 +17033,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 362, ../scss/components/_buttons.scss */
+/* line 363, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -17100,7 +17101,7 @@ button.is-inactive,
 }
 /* line 24, ../scss/components/_cards.scss */
 .card .card-header .card-title {
-  color: #333031;
+  color: #231F20;
   margin-bottom: 0;
   font-size: 1rem;
   line-height: 1.5;
@@ -17126,8 +17127,8 @@ button.is-inactive,
 }
 /* line 53, ../scss/components/_cards.scss */
 .card .card-actions .card-action {
-  color: #333031;
-  fill: #333031;
+  color: #231F20;
+  fill: #231F20;
   background-color: transparent;
   margin-bottom: 0;
   border-left: #dae0e0 1px solid;
@@ -17176,7 +17177,7 @@ button.is-inactive,
 /* line 126, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
-  color: #333031;
+  color: #231F20;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
@@ -17222,6 +17223,28 @@ button.is-inactive,
   .card--form {
     padding: 1.5rem;
   }
+}
+
+/*------------------------------------*\
+    #A Plan card
+\*------------------------------------*/
+/* line 212, ../scss/components/_cards.scss */
+.card--plan {
+  border-top: 4px solid #6AC6C5;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 216, ../scss/components/_cards.scss */
+.card--plan:hover, .card--plan:focus {
+  -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
+  -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
+  box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /*------------------------------------*\
@@ -17637,7 +17660,7 @@ body.fancymodal-open {
 \*------------------------------------*/
 /* line 44, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-overlay {
-  background: rgba(51, 48, 49, 0.9);
+  background: rgba(35, 31, 32, 0.9);
   -webkit-backface-visibility: hidden;
   position: fixed;
   top: 0;
@@ -18077,7 +18100,7 @@ body.fancymodal-open {
 
 /* line 141, ../scss/components/_pageHeaders.scss */
 .pageHeader--primary {
-  background-color: #333031;
+  background-color: #231F20;
 }
 /* line 145, ../scss/components/_pageHeaders.scss */
 .pageHeader--primary .pageHeader-characterContainer {
@@ -18225,7 +18248,7 @@ body.fancymodal-open {
 \*------------------------------------*/
 /* line 13, ../scss/components/_stats.scss */
 .statLabel {
-  color: #333031;
+  color: #231F20;
   letter-spacing: 1px;
   margin-bottom: 0;
   font-size: 0.6rem;

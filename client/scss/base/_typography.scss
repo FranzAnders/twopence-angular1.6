@@ -605,27 +605,28 @@ hr {
 .text-right  { @extend %text-right;  }
 
 
-.large-text-right {
 
-    @media #{$large-up} {
+.small-text-left {
+    @media #{$medium-up} {
+        text-align: left; 
+    }
+}
+
+
+
+.small-text-right {
+
+    @media #{$medium-up} {
 
         text-align: right; 
     }
 }
 
-.large-text-center {
+.small-text-right {
 
-    @media #{$large-up} {
+    @media #{$medium-up} {
 
         text-align: center; 
-    }
-}
-
-
-.large-text-left {
-    @media #{$large-up} {
-
-        text-align: left; 
     }
 }
 
@@ -657,29 +658,28 @@ hr {
 }
 
 
-.small-text-left {
-    @media #{$medium-up} {
-        text-align: left; 
-    }
-}
+.large-text-right {
 
-
-
-.small-text-right {
-
-    @media #{$medium-up} {
+    @media #{$large-up} {
 
         text-align: right; 
     }
 }
 
-.small-text-right {
+.large-text-center {
 
-    @media #{$medium-up} {
+    @media #{$large-up} {
 
         text-align: center; 
     }
 }
 
+
+.large-text-left {
+    @media #{$large-up} {
+
+        text-align: left; 
+    }
+}
 
 
