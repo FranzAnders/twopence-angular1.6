@@ -42,10 +42,10 @@ twopence.controller('settingsCtrl', [
 
       $timeout(function() {
 
-      vm.userSettings.phone = vm.sponsorInfo.phone; 
-      vm.userSettings.sms_preferred = vm.sponsorInfo.sms_preferred; 
+        vm.userSettings.phone = vm.sponsorInfo.phone; 
+        vm.userSettings.sms_preferred = vm.sponsorInfo.sponsor.sms_preferred; 
 
-      }, 200); 
+      }); 
 
 
     })  
@@ -61,35 +61,35 @@ twopence.controller('settingsCtrl', [
     // if it does, we make a patch request  with the userSettings object 
     // We also remove the confirm password prop everytime, not needed in payload
     //
-    vm.saveChanges = function(pUserSettingsForm) {
+    vm.saveChanges = function(pUserSettingsForm, pUserSettings) {
 
-      if(vm.userSettings.password.length === 0) {
+      console.log(pUserSettings); 
+      console.log(pUserSettingsForm); 
 
-        delete vm.userSettings.password
+      if(!pUserSettings.password) {
+
+        delete pUserSettings.password
 
       }
 
-      delete vm.userSettings.confirmPassword
+      delete pUserSettings.confirmPassword
 
       if(pUserSettingsForm.$valid) {
 
-        console.log(vm.userSettings); 
-
-        User.updateSettings(vm.userSettings).then(function() {
+        User.updateSettings(pUserSettings).then(function() {
 
           console.log('user has been updated!')
           vm.resetForm(); 
 
-        })
-        .catch(function() {
+        }).catch(function() {
 
-          console.log('something went wrong!!');
+          alert("ERROR, something went wrong"); 
 
         }); 
 
       } else {
 
-        console.log('no changes have been made'); 
+        console.log('Form is not valid'); 
 
       }
 
@@ -107,5 +107,7 @@ twopence.controller('settingsCtrl', [
       vm.userSettings.confirmPassword = ''; 
 
     }; 
+
+    console.log(vm.userSettings); 
 
 }]); 

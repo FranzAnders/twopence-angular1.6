@@ -12,7 +12,7 @@
     <form novalidate 
         ng-model-options="{ getterSetter: true }"
         name="settings.userSettingsForm"
-        ng-submit="settings.saveChanges(settings.userSettingsForm)">
+        ng-submit="settings.saveChanges(settings.userSettingsForm, settings.userSettings)">
   
       <div class="small-12 medium-4   columns">
         
@@ -23,7 +23,7 @@
       </div>
       
   
-      <div class="small-12 medium-8  large-7 large-pull-1 columns">
+      <div class="small-12 medium-8  large-6 large-pull-2 columns">
     
         <div class="card">
   
@@ -37,7 +37,7 @@
   
             <div class="row">
   
-              <div class="small-12 columns large-7">
+              <div class="small-12 columns large-8">
   
                 <div class="input-group  input--medium mb2">
                 
@@ -48,24 +48,20 @@
                   <input type="tel" 
                          id="phone number"
                         ng-model="settings.userSettings.phone"
+                        ng-required="settings.userSettings.sms_preferred" 
                         ng-minlength="10"
-                        verify-check-box="settings.userSettings.sms_preferred"
                         name="phone_number"
                         floating-label>
                 
                   <div ng-messages="settings.userSettingsForm.phone_number.$error"
                        ng-show="settings.userSettingsForm.$submitted && settings.userSettingsForm.phone_number.$error"
                        role="alert"
-                       class="alerts  alert--warning" >
+                       class="alerts  alert--warning">
                 
-                     <div ng-message="verifyCheckBox">
-                          Sorry, we need a number to send messages to.
+                     <div ng-message="required">
+                         A number is needed for text messages.
                       </div>
                     
-                      <div ng-message="minlength">
-                          Sorry, number must be a valid format (xxx) xxx-xxxx.
-                      </div>
-                
                   </div>
                 
                 </div>
@@ -95,7 +91,7 @@
           
           <div class="card-header">
   
-            <h1 class="card-title">Account Password</h1>
+            <h1 class="card-title">Change Account Password</h1>
           
           </div>
   
@@ -103,7 +99,7 @@
                 
           <div class="row">
             
-            <div class="small-12 large-7 columns">
+            <div class="small-12 large-8 columns">
               
               <div class="input-group  input--medium">
               
@@ -115,27 +111,18 @@
                        id="password"
                        name="password"
                        class="input--primary input--medium"
-                       ng-model="settings.userInfo.password"
-                       required
+                       ng-model="settings.userSettings.password"
                        ng-minlength = "8"
                        floating-label>
               
-                <div ng-messages="settings.userAccountForm.password.$error"
-                     ng-show="settings.userAccountForm.$submitted &&  settings.userAccountForm.password.$error"
+                <div ng-messages="settings.userSettingsForm.password.$error"
+                     ng-show="settings.userSettingsForm.$submitted &&  settings.userSettingsForm.password.$error"
                      role="alert"
                      class="alerts  alert--warning"
                      >
               
-                    <div ng-message="required">
-                        Oops! A password is required
-                    </div>
-              
                     <div ng-message="ng-minlength">
-                        Oops! Password must be atleast 8 characters in length
-                    </div>
-              
-                    <div ng-message="pattern">
-                        Email must be valid 'example@email.com'
+                        Your password must be atleast 8 characters in length
                     </div>
               
                 </div>
@@ -146,7 +133,7 @@
               <div class="input-group  input--medium">
               
                 <label for="confirmPassword">
-                  Re-enter Password
+                  Re-enter Password 
                 </label>
               
                 <input type="password" 
@@ -154,30 +141,24 @@
                        name="confirmPassword"
                        class="input--primary input--medium"
                        ng-minlength="8"
-                       ng-model="settings.userInfo.confirmPassword"
-                       compare-to="settings.userInfo.password"
+                       ng-model="settings.userSettings.confirmPassword"
+                       compare-to="settings.userSettings.password"
+                       ng-required="settings.userSettings.password"
                        floating-label>
               
-                <div ng-messages="settings.userAccountForm.password.$error"
-                     ng-show="settings.userAccountForm.$submitted && settings.userAccountForm.password.$error"
+                <div ng-messages="settings.userSettingsForm.confirmPassword.$error"
+                     ng-show=" settings.userSettingsForm.confirmPassword.$error"
                      role="alert"
                      class="alerts  alert--warning">
-              
-                    <div ng-message="required">
-                        Sorry, passwords must match.
+
+                    <div ng-message="compareTo">
+                      The passwords must match.
                     </div>
-              
-                    <div ng-message="ng-minlength">
-                        Oops! Password must be atleast 8 characters in length.
-                    </div>
-              
-                    <div ng-message="compare-to">
-                        Oops! Passwords must match.
-                      </div>
                 
                   </div>
                 
                 </div>
+
               </div>
   
               </div>
@@ -185,15 +166,15 @@
             </div>
   
         </div>    
-        
-        <div class="small-12 columns">
           
+        <div class="grid grid--center grid--justifyRight">
+
           <button type="submit" 
-                  class="button--medium  button--primary"
-                  ng-show="settings.userSettingsForm.$dirty && settings.userSettingsForm.$valid">
+                  class="button--medium  button--secondary "
+                  ng-class="{'is-inactive' : (!settings.userSettingsForm.$dirty || !settings.userSettingsForm.$valid)}">
               Save Changes
           </button>
-        
+
         </div>
   
       </div>
@@ -201,4 +182,5 @@
     </form>
   
   </div>
-  </div>
+
+</div>
