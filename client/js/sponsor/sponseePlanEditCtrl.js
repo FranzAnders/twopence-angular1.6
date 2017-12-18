@@ -121,7 +121,8 @@ twopence.controller('sponseePlanEditCtrl', [
         // Finds out the status of the plan 
         //
         vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
-  
+        
+        console.log(vm.planStatus); 
 
         //
         // We check if plan ends today, if so, it's a paused plan

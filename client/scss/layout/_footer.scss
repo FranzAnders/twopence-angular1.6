@@ -5,20 +5,28 @@
 
 
 footer {
+  padding-top: rem-calc($level4);
+  padding-bottom: rem-calc($level4);
+  background-color: #fff; 
+  border-top: 1px solid $grey--light; 
+  @extend %position-relative; 
 
-  background-color: $primaryColor; 
-  position: relative; 
-  padding-top: rem-calc(77px); 
-  color: #fff; 
-  
+
+
   @media #{$medium-up} {
+    padding-top: rem-calc($level7 + $level3);
+    padding-bottom: rem-calc($level7 + $level3);
 
-    padding-top: rem-calc($level7 + $level7);
+  }
+
+
+  @media #{$large-up} {
+    padding-top: rem-calc($level7 + $level5);
+    padding-bottom: rem-calc($level7 + $level5);
 
   }
 
   .footer-title {
-    
     letter-spacing: 1px; 
     font-family: $secondary-font-family; 
     margin-bottom: rem-calc($level2); 
@@ -29,45 +37,30 @@ footer {
 
   }
 
-  .footer-aboutDaaabon {
-      
-    padding-right: rem-calc($level2); 
-    margin-bottom: rem-calc($level4); 
-
-    p {
-      
-      margin-bottom: 0; 
-      @include type-setting(-1); 
-        
-    }
-    
-  }
-
 
   .footer-logo {
-
-    margin-top: rem-calc($level6); 
-    margin-bottom: rem-calc($level6 + $level3); 
-    position: absolute; 
-    right: 0; 
-    top: 0; 
-    left: 0; 
-    margin-right: auto; 
-    margin-left: auto; 
-    width: 9rem; 
-    top: rem-calc(-77px);
+    margin-left: 0;
+    width: 100%;
+    max-width: rem-calc(160px); 
+    margin-bottom: rem-calc($level6);
 
     @media #{$medium-up} {
+      margin-left: auto; 
+      margin-right: auto; 
+      max-width: rem-calc(120px); 
 
-      margin-top: rem-calc($level7); 
-      margin-bottom: rem-calc($level7  + $level3); 
+    } 
+
+    @media #{$large-up} {
+      margin-bottom: rem-calc($level2); 
+      max-width: rem-calc(140px); 
+      margin-left: 0; 
 
     }
 
   }
 
   .footer-social {
-
     margin-bottom: 0; 
     margin-left: rem-calc($level1); 
 
@@ -88,7 +81,6 @@ footer {
 
       &:hover, 
       &:focus {
-        
         fill: #fff; 
 
       }
@@ -101,62 +93,69 @@ footer {
 
 
 .footer-menu {
-    
+    margin-bottom: rem-calc($level5); 
     @include flex-direction(column);  
     @extend .grid; 
-    @extend %pb3; 
 
     @media #{$medium-up} {
-
-      height: rem-calc(142px);
+      margin-bottom: 0;
 
     }
 
     .footer-menu-title {
-      
       letter-spacing: 1px; 
-      font-family: $secondary-font-family; 
       margin-bottom: rem-calc($level2); 
-      color: #fff; 
-      @include type-setting(-1);
-      @extend %fwb; 
-      @extend %uc; 
+      color: $tertiaryColor; 
     
     }
 
     .footer-menu-item {
-
       margin-bottom: rem-calc($level1); 
       text-align: left; 
       width: 100%;
 
+      @media #{$large-up} {
+        margin-bottom: rem-calc($level2); 
+
+      }
+
     }
 
     .footer-menu-item:last-child {
-
       margin-bottom: 0; 
-
 
     }
 
     .footer-menu-link {
+      color: $body-color; 
+      position: relative; 
+      @include transition(all .2s ceaser($easeInOutCubic)); 
 
-      color: #fff; 
-      @include type-setting(-1);
+      &:after {
+        content: " "; 
+        position: absolute; 
+        width: 0; 
+        height: 2px;
+        background-color: $tertiaryColor;  
+        bottom: -2px; 
+        left: 0; 
+        @include transition(all .2s ceaser($easeInOutCubic)); 
 
+      }
 
       &:hover, 
       &:focus {
+        color: $grey--dark; 
 
-        color: #fff; 
-        text-decoration: underline; 
+        &:after {
+          width: 100%; 
+
+        }
 
       }
 
       &:active {
-
-        background-color: $secondaryColor; 
-        color: $body-color; 
+        color: $grey--dark;
 
       }
 
@@ -166,19 +165,19 @@ footer {
 
 
 
-.footer-credit {
+// .footer-credit {
 
-  background: $primaryColor--dark; 
-  width: 100%;
-  padding-top: rem-calc($level2);
-  padding-bottom: rem-calc($level2);
-  color: $primaryColor; 
-  @include type-setting(-1); 
+//   background: $primaryColor--dark; 
+//   width: 100%;
+//   padding-top: rem-calc($level2);
+//   padding-bottom: rem-calc($level2);
+//   color: $primaryColor; 
+//   @include type-setting(-1); 
 
-  @media #{$medium-up} {
+//   @media #{$medium-up} {
 
-    margin-top: rem-calc($level5);
+//     margin-top: rem-calc($level5);
 
-  }
+//   }
 
-}
+// }

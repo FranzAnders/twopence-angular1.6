@@ -5,13 +5,13 @@
     #Footer Directive
 \*------------------------------------*/
 
-whiskersSite.directive('footerDir', function() {
+twopence.directive('footerDir', function() {
 
     return {
 
       replace: true, 
       scope: {}, 
-      templateUrl: 'js/footer/footer.html',
+      templateUrl: 'js/home/footer.html',
       link: function() {}
 
     }

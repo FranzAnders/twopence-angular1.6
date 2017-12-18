@@ -5933,7 +5933,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 }
 
 /* line 55, ../scss/abstracts/_typography.scss */
-.fwb, strong, footer .footer-title, .footer-menu .footer-menu-title, .formTabs .formTabs-tab.is-active .tab-title, .card .card-content .card-subTitle, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
+.fwb, strong, footer .footer-title, .formTabs .formTabs-tab.is-active .tab-title, .card .card-content .card-subTitle, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -5943,7 +5943,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
 }
 
 /* line 57, ../scss/abstracts/_typography.scss */
-.uc, footer .footer-title, .footer-menu .footer-menu-title, table th,
+.uc, footer .footer-title, table th,
 .table th, .card .card-content .card-subTitle, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .statLabel, .tag {
   text-transform: uppercase;
 }
@@ -6270,7 +6270,7 @@ label {
     #Position Types 
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
-.relative, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
+.relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
   position: relative;
 }
 
@@ -6436,7 +6436,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /* line 389, ../scss/abstracts/_utility.scss */
-.pb3, .footer-menu {
+.pb3 {
   padding-bottom: 1.125rem !important;
 }
 
@@ -14856,18 +14856,26 @@ hr {
 \*------------------------------------*/
 /* line 7, ../scss/layout/_footer.scss */
 footer {
-  background-color: #6AC6C5;
-  position: relative;
-  padding-top: 4.8125rem;
-  color: #fff;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: #fff;
+  border-top: 1px solid #dae0e0;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 7, ../scss/layout/_footer.scss */
   footer {
-    padding-top: 6rem;
+    padding-top: 4.125rem;
+    padding-bottom: 4.125rem;
   }
 }
-/* line 20, ../scss/layout/_footer.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 7, ../scss/layout/_footer.scss */
+  footer {
+    padding-top: 4.875rem;
+    padding-bottom: 4.875rem;
+  }
+}
+/* line 29, ../scss/layout/_footer.scss */
 footer .footer-title {
   letter-spacing: 1px;
   font-family: "itc_souvenirmedium", sans-serif;
@@ -14876,47 +14884,39 @@ footer .footer-title {
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 32, ../scss/layout/_footer.scss */
-footer .footer-aboutDaaabon {
-  padding-right: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-/* line 37, ../scss/layout/_footer.scss */
-footer .footer-aboutDaaabon p {
-  margin-bottom: 0;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-/* line 47, ../scss/layout/_footer.scss */
+/* line 41, ../scss/layout/_footer.scss */
 footer .footer-logo {
-  margin-top: 2.25rem;
-  margin-bottom: 3.375rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: 9rem;
-  top: -4.8125rem;
+  margin-left: 0;
+  width: 100%;
+  max-width: 10rem;
+  margin-bottom: 2.25rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 47, ../scss/layout/_footer.scss */
+  /* line 41, ../scss/layout/_footer.scss */
   footer .footer-logo {
-    margin-top: 3rem;
-    margin-bottom: 4.125rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 7.5rem;
   }
 }
-/* line 69, ../scss/layout/_footer.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 41, ../scss/layout/_footer.scss */
+  footer .footer-logo {
+    margin-bottom: 0.75rem;
+    max-width: 8.75rem;
+    margin-left: 0;
+  }
+}
+/* line 63, ../scss/layout/_footer.scss */
 footer .footer-social {
   margin-bottom: 0;
   margin-left: 0.375rem;
 }
-/* line 74, ../scss/layout/_footer.scss */
+/* line 67, ../scss/layout/_footer.scss */
 footer .footer-social:before {
   content: "|";
 }
-/* line 80, ../scss/layout/_footer.scss */
+/* line 73, ../scss/layout/_footer.scss */
 footer .footer-social .footer-social-link {
   fill: #6AC6C5;
   height: 1rem;
@@ -14925,73 +14925,79 @@ footer .footer-social .footer-social-link {
   bottom: -4px;
   margin-left: 0.375rem;
 }
-/* line 89, ../scss/layout/_footer.scss */
+/* line 82, ../scss/layout/_footer.scss */
 footer .footer-social .footer-social-link:hover, footer .footer-social .footer-social-link:focus {
   fill: #fff;
 }
 
-/* line 103, ../scss/layout/_footer.scss */
+/* line 95, ../scss/layout/_footer.scss */
 .footer-menu {
+  margin-bottom: 1.875rem;
   -webkit-flex-direction: column;
   flex-direction: column;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 103, ../scss/layout/_footer.scss */
+  /* line 95, ../scss/layout/_footer.scss */
   .footer-menu {
-    height: 8.875rem;
+    margin-bottom: 0;
   }
 }
-/* line 115, ../scss/layout/_footer.scss */
+/* line 105, ../scss/layout/_footer.scss */
 .footer-menu .footer-menu-title {
   letter-spacing: 1px;
-  font-family: "itc_souvenirmedium", sans-serif;
   margin-bottom: 0.75rem;
-  color: #fff;
-  font-size: 0.8rem;
-  line-height: 1.5;
+  color: #238EB2;
 }
-/* line 127, ../scss/layout/_footer.scss */
+/* line 112, ../scss/layout/_footer.scss */
 .footer-menu .footer-menu-item {
   margin-bottom: 0.375rem;
   text-align: left;
   width: 100%;
 }
-/* line 135, ../scss/layout/_footer.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 112, ../scss/layout/_footer.scss */
+  .footer-menu .footer-menu-item {
+    margin-bottom: 0.75rem;
+  }
+}
+/* line 124, ../scss/layout/_footer.scss */
 .footer-menu .footer-menu-item:last-child {
   margin-bottom: 0;
 }
-/* line 142, ../scss/layout/_footer.scss */
+/* line 129, ../scss/layout/_footer.scss */
 .footer-menu .footer-menu-link {
-  color: #fff;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-/* line 148, ../scss/layout/_footer.scss */
-.footer-menu .footer-menu-link:hover, .footer-menu .footer-menu-link:focus {
-  color: #fff;
-  text-decoration: underline;
-}
-/* line 156, ../scss/layout/_footer.scss */
-.footer-menu .footer-menu-link:active {
-  background-color: #333031;
   color: #6d6c6c;
+  position: relative;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-
-/* line 169, ../scss/layout/_footer.scss */
-.footer-credit {
-  background: #3fa5a3;
+/* line 134, ../scss/layout/_footer.scss */
+.footer-menu .footer-menu-link:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #238EB2;
+  bottom: -2px;
+  left: 0;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 146, ../scss/layout/_footer.scss */
+.footer-menu .footer-menu-link:hover, .footer-menu .footer-menu-link:focus {
+  color: #333031;
+}
+/* line 150, ../scss/layout/_footer.scss */
+.footer-menu .footer-menu-link:hover:after, .footer-menu .footer-menu-link:focus:after {
   width: 100%;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: #6AC6C5;
-  font-size: 0.8rem;
-  line-height: 1.5;
 }
-@media only screen and (min-width: 40.0625em) {
-  /* line 169, ../scss/layout/_footer.scss */
-  .footer-credit {
-    margin-top: 1.875rem;
-  }
+/* line 157, ../scss/layout/_footer.scss */
+.footer-menu .footer-menu-link:active {
+  color: #333031;
 }
 
 /*------------------------------------*\
