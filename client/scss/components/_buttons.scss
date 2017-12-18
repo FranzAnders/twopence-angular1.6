@@ -37,11 +37,6 @@ button,
     background-color: transparent;
     border: 1px solid $primaryColor; 
 
-    &:after {
-
-      width: 100%;  
-
-    }
   }
 
 }
@@ -51,20 +46,14 @@ button,
   background-color: $secondaryColor;
   position: relative; 
   color: #fff; 
-  border: 1px solid transparent; 
-  @include transition(all .1s ease .1s); 
+  border: 1px solid $secondaryColor; 
+  @include transition(all .2s ease); 
   
   &:hover,
   &:focus {
     color: $secondaryColor;
     background-color: transparent; 
     border: 1px solid $secondaryColor; 
-
-    &:after {
-
-      width: 100%;  
-
-    }
   }
 }
 
@@ -79,6 +68,7 @@ button,
   &:hover,
   &:focus {
     color: #fff;
+    border: 1px solid $secondaryColor;
     background-color: $secondaryColor;  
 
   }

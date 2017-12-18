@@ -280,6 +280,7 @@
       background-color: transparent; 
       margin-top: rem-calc($level4); 
       margin-bottom: 0; 
+      @include transition(all .2s ease); 
 
       &:hover, 
       &:focus {
@@ -295,6 +296,8 @@
         &:hover, 
         &:focus {
           background-color: $secondaryColor; 
+          border: 1px solid $secondaryColor; 
+          color: #fff; 
 
         }
 
