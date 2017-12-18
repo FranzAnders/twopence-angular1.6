@@ -21,12 +21,6 @@ twopence.directive('compareTo', function() {
 
       var vm = this; 
 
-      vm.$onInit = function() {
-
-        vm.otherModelValue = vm.otherModelValue; 
-
-      };
-
     },
     controllerAs: 'compareTo', 
     link: function(scope, element, attrs, controllers) {
@@ -36,13 +30,12 @@ twopence.directive('compareTo', function() {
       var ngModel = controllers[1]; 
 
       ngModel.$validators.compareTo = function(modelValue)  {
-        
+
         return modelValue === compareTo.otherModelValue; 
 
       };
 
       scope.$watch("compareTo.otherModelValue", function() {
-        
           ngModel.$validate(); 
 
       }); 

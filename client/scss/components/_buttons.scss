@@ -318,7 +318,7 @@ button,
     padding: rem-calc($level2);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
-    @include type-setting(0);
+    @include type-setting(-1);
 
 }
 

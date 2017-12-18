@@ -39,15 +39,22 @@ twopence.directive('verifyCheckBox', function() {
 
         if(verifyCheckBox.otherModelValue && modelValue) {
 
+
+          console.log('true');
           return true; 
 
         }
 
         if(verifyCheckBox.otherModelValue && (modelValue === undefined)) {
+            
+          console.log('false');
+
           return false; 
         }
 
         if(!verifyCheckBox.otherModelValue && modelValue) {
+          
+          console.log('true');
 
           return true; 
 
@@ -56,7 +63,7 @@ twopence.directive('verifyCheckBox', function() {
 
       };
 
-      scope.$watch("compareTo.otherModelValue", function() {
+      scope.$watch("verifyCheckBox.otherModelValue", function() {
         
           ngModel.$validate(); 
 

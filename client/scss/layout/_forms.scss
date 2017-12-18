@@ -192,7 +192,8 @@ input {
       position: absolute; 
       left: 0; 
       width: 100%; 
-      bottom: rem-calc(-24px); 
+      bottom: -1.2rem; 
+      white-space: nowrap; 
       @include type-setting(-1); 
 
     }
