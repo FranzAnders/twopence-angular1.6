@@ -1,15 +1,10 @@
 
 
+/*------------------------------------*\
+    #Styles specific to homepage
+\*------------------------------------*/
 
-.homeBg {
-
-    background-image: url("../assets/images/bg--1--small.gif"); 
-    background-attachment: fixed; 
-
-    @media #{$medium-up} {
-     
-     background-image: url("../assets/images/bg--1--medium.gif"); 
-
-    }
+.contributionMethod {
+  margin-bottom: rem-calc($level7); 
 
 }

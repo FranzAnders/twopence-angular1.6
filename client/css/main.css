@@ -7227,6 +7227,23 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
+    #Icon badge  
+\*------------------------------------*/
+/* line 34, ../scss/base/_icons.scss */
+.icon--badge {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid #6d6c6c;
+  fill: #6d6c6c;
+  position: relative;
+  padding: 0.4375rem;
+  margin-bottom: 1.5rem;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+
+/*------------------------------------*\
     #CSS behavior for when a device doesn't support svgs 
 \*------------------------------------*/
 /* line 12, ../scss/base/_noSvg.scss */
@@ -17248,15 +17265,17 @@ button.is-inactive,
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
     height: 85vh;
+    padding-top: 0;
+    margin-top: 1.875rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
-    min-height: 110vh;
+    min-height: 100vh;
   }
 }
-/* line 25, ../scss/components/_heroHeader.scss */
+/* line 27, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background {
   position: absolute;
   top: 0;
@@ -17271,7 +17290,7 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 35, ../scss/components/_heroHeader.scss */
+/* line 37, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-content {
   color: #fff;
 }
@@ -18288,6 +18307,14 @@ body.fancymodal-open {
   padding-bottom: 0.375rem;
   font-size: 1.125rem;
   line-height: 1.33333;
+}
+
+/*------------------------------------*\
+    #Styles specific to homepage
+\*------------------------------------*/
+/* line 7, ../scss/pages/_home.scss */
+.contributionMethod {
+  margin-bottom: 3rem;
 }
 
 /*------------------------------------*\

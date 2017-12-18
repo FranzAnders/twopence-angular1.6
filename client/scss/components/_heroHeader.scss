@@ -14,11 +14,13 @@
 
   @media #{$medium-up} {
     height: 85vh;
+    padding-top: 0; 
+    margin-top: rem-calc(30px); 
 
   }
 
   @media #{$large-up} {
-    min-height: 110vh; 
+    min-height: 100vh; 
     
   }
 
