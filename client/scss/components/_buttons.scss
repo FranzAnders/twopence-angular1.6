@@ -8,6 +8,7 @@ button,
   white-space: nowrap; 
   margin-bottom: rem-calc($base-magic-number);
   background-color: transparent; 
+  @extend %fwb; 
   @extend %button;
   @include border-radius(4px); 
 

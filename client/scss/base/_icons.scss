@@ -22,4 +22,23 @@
 
 }
 
-    
+
+
+
+
+/*------------------------------------*\
+    #Icon badge  
+\*------------------------------------*/
+
+
+.icon--badge {
+  height: rem-calc(48px);
+  width: rem-calc(48px);
+  border: 1px solid $grey--med;
+  fill: $grey--med;  
+  position: relative; 
+  padding: rem-calc(7px);
+  margin-bottom: rem-calc($base-magic-number); 
+  @include border-radius(100%);
+
+}

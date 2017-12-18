@@ -2,51 +2,51 @@
 <div class="card  card--sponsorship"
      ng-class="{'is-inactive' : sponsorship.sponsorshipInfo.sponsee.status !== 'active'}">
 
-<div class="card-header">
+  <div class="card-header">
 
-  <h1 class="sponsorship-name"
-      ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name">
-  </h1>
-  
-  <div class="sponsorship-plan">
+    <h1 class="sponsorship-name"
+        ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name">
+    </h1>
+    
+    <div class="sponsorship-plan">
 
-    Plan Status:
-  
-    <span ng-switch="sponsorship.planStatus">
-  
-      <span ng-switch-when="active" class="tag tag--active">
-        Active
+      Plan Status:
+    
+      <span ng-switch="sponsorship.planStatus">
+    
+        <span ng-switch-when="active" class="tag tag--active">
+          Active
+        </span>
+    
+        <span ng-switch-when="paused" class="tag  tag--inactive">
+            Paused
+        </span>
+
+        <span ng-switch-when="activating" class="tag  tag--pending">
+            Activating
+        </span>
+
+        <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
+
       </span>
-  
-      <span ng-switch-when="paused" class="tag  tag--inactive">
-          Paused
-      </span>
 
-      <span ng-switch-when="activating" class="tag  tag--pending">
-          Activating
-      </span>
+    </div>
 
-      <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
+  </div>
 
+  <div class="card-content  text-center">
+
+    <h2 class="statLabel">
+      Contributions To Date
+    </h2>
+
+    <span class="stat sponsorship-contributions">
+     ${{sponsorship.sponsorshipInfo.contributions_to_date}}
     </span>
 
   </div>
 
-</div>
-
-<div class="card-content  text-center">
-
-  <h2 class="statLabel">
-    Contributions To Date
-  </h2>
-
-  <span class="stat sponsorship-contributions">
-   ${{sponsorship.sponsorshipInfo.contributions_to_date}}
-  </span>
-
-</div>
-
-<div class="card-actions  grid grid--1of2">
+  <div class="card-actions  grid grid--1of2">
 
     <div class="grid-cell">
 

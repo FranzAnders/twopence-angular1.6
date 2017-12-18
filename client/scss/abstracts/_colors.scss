@@ -7,7 +7,8 @@ $primaryColor: #6AC6C5;
 $primaryColor--dark: darken($primaryColor, 15%); 
 $primaryColor--translucent: rgba($primaryColor, .9); 
 
-$secondaryColor: #333031; 
+//$secondaryColor: #333031; 231F20
+$secondaryColor: #231F20; 
 $secondaryColor--dark: darken($secondaryColor, 20%); 
 $secondaryColor--translucent: rgba($secondaryColor, .9);
 

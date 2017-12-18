@@ -201,3 +201,23 @@
   }
 
 }
+
+
+
+
+/*------------------------------------*\
+    #A Plan card
+\*------------------------------------*/
+
+.card--plan {
+  border-top: 4px solid $primaryColor; 
+  @include transition(all .2s ceaser($easeInOutCubic)); 
+
+  &:hover, 
+  &:focus {
+   @include box-shadow(0 1px 20px rgba(30,30,30, .1));
+   @include transform(translateY(-2px)); 
+
+  }
+
+}
