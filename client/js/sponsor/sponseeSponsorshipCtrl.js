@@ -318,5 +318,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
     // }
 
 
+    console.log(vm.sponsorshipInfo); 
+
   }
 ]);

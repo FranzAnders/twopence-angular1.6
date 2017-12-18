@@ -62,7 +62,7 @@ button,
   background-color: transparent;
   position: relative; 
   color: $secondaryColor; 
-  border: 2px solid $secondaryColor; 
+  border: 1px solid $secondaryColor; 
   @include transition(all .1s ease .1s); 
 
   &:hover,
@@ -70,6 +70,23 @@ button,
     color: #fff;
     border: 1px solid $secondaryColor;
     background-color: $secondaryColor;  
+
+  }
+}
+
+
+.button--quaternary {
+  background-color: transparent;
+  position: relative; 
+  color: $primaryColor; 
+  border: 1px solid $primaryColor; 
+  @include transition(all .1s ease .1s); 
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    border: 1px solid $primaryColor;
+    background-color: $primaryColor;  
 
   }
 }
@@ -261,7 +278,7 @@ button,
 }
 
 .button--small {
-    padding: rem-calc($level1);
+    padding: rem-calc($level2);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
     @include type-setting(-1);
@@ -270,10 +287,10 @@ button,
 
 
 .button--medium {
-    padding: rem-calc($level2);
+    padding: rem-calc($level3);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
-    @include type-setting(-1);
+    @include type-setting(0);
 
 }
 

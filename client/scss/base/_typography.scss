@@ -85,8 +85,7 @@ hr{
 }
 
 h1,h2,h3,h4,h5,h6 {
-
-  margin-bottom: rem-calc(16px);
+  margin-bottom: rem-calc($base-magic-number);
 
 }
 
@@ -556,23 +555,8 @@ hr {
 
 .p2 {
 
-  @include type-setting(2); 
-  @include line-height(-1); 
-
-}
-
-.p3 {
-
   @include type-setting(1); 
-  @include line-height(0); 
-
-  @media #{$medium-up} {
-    
-    margin-bottom: rem-calc($level5); 
-    @include type-setting(2); 
-    @include line-height(0); 
-
-  }
+  @include line-height(-1); 
 
 }
 

@@ -13457,18 +13457,18 @@ hr {
 
 /* line 87, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /*------------------------------------*\
     #Links
 \*------------------------------------*/
-/* line 102, ../scss/base/_typography.scss */
+/* line 101, ../scss/base/_typography.scss */
 a {
   text-decoration: none;
 }
 
-/* line 110, ../scss/base/_typography.scss */
+/* line 109, ../scss/base/_typography.scss */
 p a {
   color: #238EB2;
   position: relative;
@@ -13477,7 +13477,7 @@ p a {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 129, ../scss/base/_typography.scss */
+/* line 128, ../scss/base/_typography.scss */
 p a:before {
   content: " ";
   left: 0;
@@ -13496,11 +13496,11 @@ p a:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 143, ../scss/base/_typography.scss */
+/* line 142, ../scss/base/_typography.scss */
 p a:hover, p a:focus {
   color: #6AC6C5;
 }
-/* line 147, ../scss/base/_typography.scss */
+/* line 146, ../scss/base/_typography.scss */
 p a:hover:after, p a:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13508,7 +13508,7 @@ p a:hover:after, p a:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 153, ../scss/base/_typography.scss */
+/* line 152, ../scss/base/_typography.scss */
 p a:hover:before, p a:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13517,11 +13517,11 @@ p a:hover:before, p a:focus:before {
   transform: translateY(0);
 }
 
-/* line 169, ../scss/base/_typography.scss */
+/* line 168, ../scss/base/_typography.scss */
 p a.alt-link {
   color: #fff;
 }
-/* line 172, ../scss/base/_typography.scss */
+/* line 171, ../scss/base/_typography.scss */
 p a.alt-link:after {
   content: " ";
   right: 0;
@@ -13537,7 +13537,7 @@ p a.alt-link:after {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 186, ../scss/base/_typography.scss */
+/* line 185, ../scss/base/_typography.scss */
 p a.alt-link:before {
   content: " ";
   left: 0;
@@ -13556,11 +13556,11 @@ p a.alt-link:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 201, ../scss/base/_typography.scss */
+/* line 200, ../scss/base/_typography.scss */
 p a.alt-link:hover, p a.alt-link:focus {
   color: #333031;
 }
-/* line 205, ../scss/base/_typography.scss */
+/* line 204, ../scss/base/_typography.scss */
 p a.alt-link:hover:after, p a.alt-link:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13568,7 +13568,7 @@ p a.alt-link:hover:after, p a.alt-link:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 211, ../scss/base/_typography.scss */
+/* line 210, ../scss/base/_typography.scss */
 p a.alt-link:hover:before, p a.alt-link:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13576,17 +13576,17 @@ p a.alt-link:hover:before, p a.alt-link:focus:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 219, ../scss/base/_typography.scss */
+/* line 218, ../scss/base/_typography.scss */
 p a.alt-link:active {
   background-color: #333031;
   color: #fff;
 }
 
-/* line 235, ../scss/base/_typography.scss */
+/* line 234, ../scss/base/_typography.scss */
 .section--secondary p.section-text a {
   color: #fff;
 }
-/* line 239, ../scss/base/_typography.scss */
+/* line 238, ../scss/base/_typography.scss */
 .section--secondary p.section-text a:hover, .section--secondary p.section-text a:focus {
   color: #fff;
   background-color: #333031;
@@ -13595,13 +13595,13 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Default Text Selection Color 
 \*------------------------------------*/
-/* line 264, ../scss/base/_typography.scss */
+/* line 263, ../scss/base/_typography.scss */
 ::selection {
   background-color: rgba(23, 35, 39, 0.95);
   color: #fff;
 }
 
-/* line 269, ../scss/base/_typography.scss */
+/* line 268, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: rgba(23, 35, 39, 0.95);
   color: #fff;
@@ -13610,27 +13610,27 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Font Color Classes 
 \*------------------------------------*/
-/* line 284, ../scss/base/_typography.scss */
+/* line 283, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 288, ../scss/base/_typography.scss */
+/* line 287, ../scss/base/_typography.scss */
 .txtc2 {
   color: #333031;
 }
 
-/* line 292, ../scss/base/_typography.scss */
+/* line 291, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 296, ../scss/base/_typography.scss */
+/* line 295, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 301, ../scss/base/_typography.scss */
+/* line 300, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
@@ -13641,7 +13641,7 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 345, ../scss/base/_typography.scss */
+/* line 344, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -13649,67 +13649,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 399, ../scss/base/_typography.scss */
+/* line 398, ../scss/base/_typography.scss */
 hr {
   border-style: none;
   height: 0.0625rem;
   margin-top: 0;
 }
 
-/* line 405, ../scss/base/_typography.scss */
+/* line 404, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 411, ../scss/base/_typography.scss */
+/* line 410, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #333031;
   margin-left: 0;
 }
 
-/* line 417, ../scss/base/_typography.scss */
+/* line 416, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 423, ../scss/base/_typography.scss */
+/* line 422, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 429, ../scss/base/_typography.scss */
+/* line 428, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 435, ../scss/base/_typography.scss */
+/* line 434, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 441, ../scss/base/_typography.scss */
+/* line 440, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 446, ../scss/base/_typography.scss */
+/* line 445, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 451, ../scss/base/_typography.scss */
+/* line 450, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 458, ../scss/base/_typography.scss */
+/* line 457, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
   height: 0.0625rem;
 }
 
-/* line 464, ../scss/base/_typography.scss */
+/* line 463, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -13718,7 +13718,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 477, ../scss/base/_typography.scss */
+/* line 476, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -13731,7 +13731,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 491, ../scss/base/_typography.scss */
+/* line 490, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -13745,33 +13745,17 @@ hr {
 /*------------------------------------*\
     #Paragraph styles 
 \*------------------------------------*/
-/* line 557, ../scss/base/_typography.scss */
+/* line 556, ../scss/base/_typography.scss */
 .p2 {
-  font-size: 1.25rem;
-  line-height: 1.2;
-  line-height: 1.5;
-}
-
-/* line 564, ../scss/base/_typography.scss */
-.p3 {
   font-size: 1.125rem;
   line-height: 1.33333;
   line-height: 1.5;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 564, ../scss/base/_typography.scss */
-  .p3 {
-    margin-bottom: 1.875rem;
-    font-size: 1.25rem;
-    line-height: 1.2;
-    line-height: 1.5;
-  }
 }
 
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 586, ../scss/base/_typography.scss */
+/* line 570, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -13779,7 +13763,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 607, ../scss/base/_typography.scss */
+/* line 591, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -13788,63 +13772,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 64.0625em) {
-  /* line 624, ../scss/base/_typography.scss */
+  /* line 608, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 632, ../scss/base/_typography.scss */
+  /* line 616, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 641, ../scss/base/_typography.scss */
+  /* line 625, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 650, ../scss/base/_typography.scss */
+  /* line 634, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 659, ../scss/base/_typography.scss */
+  /* line 643, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 667, ../scss/base/_typography.scss */
+  /* line 651, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 676, ../scss/base/_typography.scss */
+  /* line 660, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 684, ../scss/base/_typography.scss */
+  /* line 668, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 692, ../scss/base/_typography.scss */
+  /* line 676, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
@@ -15884,23 +15868,26 @@ input.clearField:active:after, input.clearField:focus:after {
     border: 1px solid #333031;
     color: #333031;
     margin-top: 0;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
-  /* line 296, ../scss/layout/_navs.scss */
+  /* line 298, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
     background-color: #333031;
     border: 1px solid #333031;
     color: #fff;
   }
 }
-/* line 310, ../scss/layout/_navs.scss */
+/* line 312, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link {
   fill: #fff;
 }
-/* line 313, ../scss/layout/_navs.scss */
+/* line 315, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link:hover, .mainNav .mainNav-menu .mainNav-menu-social .social-link:focus {
   color: #333031;
 }
-/* line 324, ../scss/layout/_navs.scss */
+/* line 326, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-actions {
   width: 100%;
   max-width: 12.5rem;
@@ -15911,13 +15898,13 @@ input.clearField:active:after, input.clearField:focus:after {
   right: 0;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 324, ../scss/layout/_navs.scss */
+  /* line 326, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-actions {
     padding-left: 5%;
     margin-right: 0.75rem;
   }
 }
-/* line 344, ../scss/layout/_navs.scss */
+/* line 346, ../scss/layout/_navs.scss */
 .mainNav .mainNav-overlay {
   color: #fff;
   position: fixed;
@@ -15929,13 +15916,13 @@ input.clearField:active:after, input.clearField:focus:after {
   left: 0;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 344, ../scss/layout/_navs.scss */
+  /* line 346, ../scss/layout/_navs.scss */
   .mainNav .mainNav-overlay {
     display: none;
   }
 }
 @media only screen and (max-width: 40em) {
-  /* line 365, ../scss/layout/_navs.scss */
+  /* line 367, ../scss/layout/_navs.scss */
   .mainNav.is-closed .mainNav-menu .mainNav-menu-item {
     opacity: 0;
     -moz-transform: translateY(26px);
@@ -15944,13 +15931,13 @@ input.clearField:active:after, input.clearField:focus:after {
     transform: translateY(26px);
   }
 }
-/* line 377, ../scss/layout/_navs.scss */
+/* line 379, ../scss/layout/_navs.scss */
 .mainNav.is-closed .mainNav-overlay {
   -moz-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
   -webkit-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
   animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
 }
-/* line 388, ../scss/layout/_navs.scss */
+/* line 390, ../scss/layout/_navs.scss */
 .mainNav.is-open .mainNav-menu .mainNav-menu-item {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -15958,7 +15945,7 @@ input.clearField:active:after, input.clearField:focus:after {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 397, ../scss/layout/_navs.scss */
+/* line 399, ../scss/layout/_navs.scss */
 .mainNav.is-open .mainNav-overlay {
   -moz-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
   -webkit-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
@@ -15968,7 +15955,7 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
-/* line 419, ../scss/layout/_navs.scss */
+/* line 421, ../scss/layout/_navs.scss */
 .mainNav-menuToggle {
   width: 3.75rem;
   height: 3.75rem;
@@ -15979,24 +15966,24 @@ input.clearField:active:after, input.clearField:focus:after {
   position: absolute;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 419, ../scss/layout/_navs.scss */
+  /* line 421, ../scss/layout/_navs.scss */
   .mainNav-menuToggle {
     display: none;
   }
 }
-/* line 440, ../scss/layout/_navs.scss */
+/* line 442, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
   color: #333031;
   padding-top: 6px;
 }
 
-/* line 448, ../scss/layout/_navs.scss */
+/* line 450, ../scss/layout/_navs.scss */
 .menuToggle-icon {
   height: 1.3rem;
   width: 2.1rem;
   z-index: 202;
 }
-/* line 456, ../scss/layout/_navs.scss */
+/* line 458, ../scss/layout/_navs.scss */
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
   height: 4px;
@@ -16012,7 +15999,7 @@ input.clearField:active:after, input.clearField:focus:after {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 470, ../scss/layout/_navs.scss */
+/* line 472, ../scss/layout/_navs.scss */
 .menuToggle-icon:after {
   top: 50%;
 }
@@ -16020,15 +16007,15 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Main Nav Menu Toggle Open
 \*------------------------------------*/
-/* line 488, ../scss/layout/_navs.scss */
+/* line 490, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 493, ../scss/layout/_navs.scss */
+/* line 495, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 496, ../scss/layout/_navs.scss */
+/* line 498, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
   background-color: #fff;
@@ -16037,7 +16024,7 @@ input.clearField:active:after, input.clearField:focus:after {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 502, ../scss/layout/_navs.scss */
+/* line 504, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
   background-color: #fff;
   -moz-transform: translateY(0) rotate(-45deg);
@@ -16045,7 +16032,7 @@ input.clearField:active:after, input.clearField:focus:after {
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 507, ../scss/layout/_navs.scss */
+/* line 509, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -16775,12 +16762,8 @@ button .button-inner,
   background-color: transparent;
   border: 1px solid #6AC6C5;
 }
-/* line 40, ../scss/components/_buttons.scss */
-.button--primary:hover:after, .button--primary:focus:after {
-  width: 100%;
-}
 
-/* line 50, ../scss/components/_buttons.scss */
+/* line 45, ../scss/components/_buttons.scss */
 .button--secondary {
   background-color: #333031;
   position: relative;
@@ -16791,58 +16774,73 @@ button .button-inner,
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 57, ../scss/components/_buttons.scss */
+/* line 52, ../scss/components/_buttons.scss */
 .button--secondary:hover, .button--secondary:focus {
   color: #333031;
   background-color: transparent;
   border: 1px solid #333031;
 }
-/* line 63, ../scss/components/_buttons.scss */
-.button--secondary:hover:after, .button--secondary:focus:after {
-  width: 100%;
-}
 
-/* line 72, ../scss/components/_buttons.scss */
+/* line 61, ../scss/components/_buttons.scss */
 .button--tertiary {
   background-color: transparent;
   position: relative;
   color: #333031;
-  border: 2px solid #333031;
+  border: 1px solid #333031;
   -moz-transition: all 0.1s ease 0.1s;
   -o-transition: all 0.1s ease 0.1s;
   -webkit-transition: all 0.1s ease;
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 79, ../scss/components/_buttons.scss */
+/* line 68, ../scss/components/_buttons.scss */
 .button--tertiary:hover, .button--tertiary:focus {
   color: #fff;
   border: 1px solid #333031;
   background-color: #333031;
 }
 
-/* line 91, ../scss/components/_buttons.scss */
+/* line 78, ../scss/components/_buttons.scss */
+.button--quaternary {
+  background-color: transparent;
+  position: relative;
+  color: #6AC6C5;
+  border: 1px solid #6AC6C5;
+  -moz-transition: all 0.1s ease 0.1s;
+  -o-transition: all 0.1s ease 0.1s;
+  -webkit-transition: all 0.1s ease;
+  -webkit-transition-delay: 0.1s;
+  transition: all 0.1s ease 0.1s;
+}
+/* line 85, ../scss/components/_buttons.scss */
+.button--quaternary:hover, .button--quaternary:focus {
+  color: #fff;
+  border: 1px solid #6AC6C5;
+  background-color: #6AC6C5;
+}
+
+/* line 97, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 97, ../scss/components/_buttons.scss */
+/* line 103, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
 }
-/* line 103, ../scss/components/_buttons.scss */
+/* line 109, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
   bottom: -2px;
 }
 
-/* line 111, ../scss/components/_buttons.scss */
+/* line 117, ../scss/components/_buttons.scss */
 .button--link {
   background: transparent;
   color: #6AC6C5;
 }
-/* line 115, ../scss/components/_buttons.scss */
+/* line 121, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
   color: #333031;
   text-decoration: underline;
@@ -16851,7 +16849,7 @@ button .button-inner,
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 133, ../scss/components/_buttons.scss */
+/* line 139, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #333031;
   height: 2.5rem;
@@ -16869,14 +16867,14 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 146, ../scss/components/_buttons.scss */
+/* line 152, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 153, ../scss/components/_buttons.scss */
+/* line 159, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -16892,7 +16890,7 @@ button .button-inner,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 171, ../scss/components/_buttons.scss */
+/* line 177, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -16909,7 +16907,7 @@ button .button-inner,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 188, ../scss/components/_buttons.scss */
+/* line 194, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -16924,7 +16922,7 @@ button .button-inner,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 204, ../scss/components/_buttons.scss */
+/* line 210, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -16933,7 +16931,7 @@ button .button-inner,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 213, ../scss/components/_buttons.scss */
+/* line 219, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #333031;
@@ -16943,20 +16941,20 @@ button .button-inner,
   transform: scale(1.2);
 }
 
-/* line 227, ../scss/components/_buttons.scss */
+/* line 233, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 233, ../scss/components/_buttons.scss */
+/* line 239, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 244, ../scss/components/_buttons.scss */
+/* line 250, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 250, ../scss/components/_buttons.scss */
+/* line 256, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -16964,24 +16962,15 @@ button .button-inner,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 267, ../scss/components/_buttons.scss */
+/* line 273, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 274, ../scss/components/_buttons.scss */
+/* line 280, ../scss/components/_buttons.scss */
 .button--small {
-  padding: 0.375rem;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-
-/* line 283, ../scss/components/_buttons.scss */
-.button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
@@ -16989,28 +16978,37 @@ button .button-inner,
   line-height: 1.5;
 }
 
-/* line 291, ../scss/components/_buttons.scss */
+/* line 289, ../scss/components/_buttons.scss */
+.button--medium {
+  padding: 1.125rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* line 297, ../scss/components/_buttons.scss */
 .button--large {
   padding: 1.125rem;
   padding-right: 1.875rem;
   padding-left: 1.875rem;
 }
 
-/* line 298, ../scss/components/_buttons.scss */
+/* line 304, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 305, ../scss/components/_buttons.scss */
+/* line 311, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 312, ../scss/components/_buttons.scss */
+/* line 318, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -17020,7 +17018,7 @@ button .button-inner,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 328, ../scss/components/_buttons.scss */
+/* line 334, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -17240,7 +17238,7 @@ button .button-inner,
   position: relative;
   overflow: hidden;
   margin-top: 3.75rem;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   padding-top: 1.875rem;
 }

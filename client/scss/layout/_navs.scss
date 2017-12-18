@@ -292,6 +292,8 @@
         border: 1px solid $secondaryColor; 
         color: $secondaryColor; 
         margin-top: 0; 
+        padding: rem-calc($level2); 
+        @include type-setting(-1); 
 
         &:hover, 
         &:focus {
