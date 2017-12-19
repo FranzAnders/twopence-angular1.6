@@ -17,7 +17,7 @@
         <h1 class="txtc2  ff2">Contribution <br>History</h1>  
 
         <p>
-          Review all contributions towards your sponsees student loans. 
+         This is where you review all of the contributions you’ve made towards your sponsees’ student loans.
         </p>
 
       </div>
@@ -45,29 +45,44 @@
 
       <div class="select-customWrapper">
 
-          <select name="contributionsFilter" id="contributionsFilter" 
-                  class="select--medium  select--prim"
-                  ng-model="contributions.sponseeFilter"
-                  ng-change="contributions.showFilter()"
-                  ng-options="sponsee.id as sponsee.first_name for sponsee in contributions.sponsees">
+        <select name="contributionsFilter" id="contributionsFilter" 
+                class="select--medium  select--primary"
+                ng-model="contributions.sponseeFilter"
+                ng-options="sponsee as (sponsee.first_name + ' ' + sponsee.last_name) for sponsee in contributions.sponsees"
+                arial-label="filter contributions">
 
-                <option value="" selected>
-                  All
-                </option> 
+              <option value="" selected>
+                All Sponsorships
+              </option> 
 
-          </select> 
+        </select> 
 
       </div>
 
     </div>
+    
 
-    <div class="small-12 medium-8  large-7  large-pull-1  columns" ng-if="contributions.totalContributions !== 0">
+    <div class="small-12 medium-8  large-7  large-pull-1  columns">
+          
+      <div class="row">
+        <div class="small-12 columns medium-11 large-8 medium-centered">
+          <div class=" mtb7 text-center" ng-if="contributions.filteredContributions.length == 0">
+          
+            <div class="card-content">
+              
+               <h1 class="h4"> You have made no contributions  for <span ng-bind=" contributions.sponseeFilter.first_name + ' ' + contributions.sponseeFilter.last_name " ></span> yet.</h1>
+               
+            </div>
+          
+          </div>
+        </div>
+      </div>
 
       <div class="card" >
 
           <table class="table  table--list">
             
-            <tr>
+            <tr ng-if="contributions.filteredContributions.length > 0">
 
               <th>
                 Date
@@ -81,9 +96,8 @@
 
             </tr>
           
-            <tr ng-repeat="contribution in contributions.contributionsShowing | filter: 
-              (!!contributions.sponseeFilter || undefined) && 
-              {sponsee : {email: contributions.sponseeFilter}} | orderBy: 'date':true track by $index | limitTo: contributions.inView">
+            <tr ng-repeat="contribution in contributions.filteredContributions = (contributions.contributionsShowing | filter:  (!!contributions.sponseeFilter.email  || undefined) &&
+              {sponsee : {email: contributions.sponseeFilter.email }} )  | orderBy: 'date':true track by $index | limitTo: contributions.inView ">
               
               <td ng-if="!contribution.date">
                   
@@ -103,7 +117,7 @@
 
               </td>
           
-              <td>{{contribution.sponsee.first_name}}</td>
+              <td ng-bind="contribution.sponsee.first_name + ' ' + contribution.sponsee.last_name ">{{}}</td>
 
               <td class="table-contribution text-right" >${{contribution.amount}}</td>
 

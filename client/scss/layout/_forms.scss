@@ -29,6 +29,7 @@ input[type="color"], {
 
     margin-bottom: rem-calc($base-magic-number);
     margin-right: rem-calc($level2);
+    font-family: $primary-font-family; 
     @include type-setting(0);
     @include border-radius(0);
 
@@ -240,7 +241,7 @@ input {
     input {
 
       padding-top: rem-calc($level1);
-      padding-bottom: rem-calc($level1);
+      padding-bottom: rem-calc(1px);
       @include type-setting(0);
 
     }
@@ -376,14 +377,12 @@ select {
     color: $body-color;
     border: 0; 
     @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
-    @extend %br1; 
 
     &:active,
     &:focus {
-
       background-color: #fff; 
-      border: 1px solid $secondaryColor; 
-      @include box-shadow(0 1px 20px rgba(30,30,30, .1));
+      border: 0; 
+      @include box-shadow(0 1px 20px rgba(30,30,30, .2));
 
     }
 

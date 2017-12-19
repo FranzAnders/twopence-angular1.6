@@ -9,12 +9,9 @@
   background-color: #FFF; 
   color: $body-color; 
   width: 100%; 
+  position: relative; 
   @include border-radius(4px); 
   @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
-
-  a {
-    
-  }
 
   .card-header {
     border-bottom: $grey--light 1px solid; 
@@ -77,10 +74,9 @@
 
 .cardList {
 
-  @media #{$medium-up} {
+  @media #{$large-up} {
   
     li:nth-child(odd) {
-
       padding-right: rem-calc($level3); 
 
     }
@@ -156,6 +152,29 @@
 
   }
 
+  .card-inactiveActions {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    width: 90%; 
+    height: 60%; 
+    display: none; 
+    margin-right: auto; 
+    margin-left: auto; 
+    padding: rem-calc($level3); 
+    margin-top: rem-calc($level7 + $level5); 
+    @extend %text-center; 
+
+    @media #{$large-up} {
+
+      padding: rem-calc($level5); 
+
+    }
+  
+  }
+
 }
 
 
@@ -168,17 +187,18 @@
 
 .card--sponsorship.is-inactive {
   
+  .card-inactiveActions {
+    display: block; 
+
+  }
+
   .card-content {
-    opacity: .4; 
+    opacity: 0; 
     
   }
 
   .card-actions {
-    opacity: .4; 
-
-  }
-
-  *  {
+    opacity: 0; 
     pointer-events: none; 
 
   }
@@ -210,7 +230,7 @@
 \*------------------------------------*/
 
 .card--plan {
-  border-top: 4px solid $primaryColor; 
+  border-top: 6px solid $primaryColor; 
   @include transition(all .2s ceaser($easeInOutCubic)); 
 
   &:hover, 

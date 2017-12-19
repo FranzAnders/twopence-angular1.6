@@ -6,7 +6,8 @@
 twopence.controller('contributionsCtrl', [
     'Sponsor', 
     'Sponsorship',
-      function(Sponsor, Sponsorship) {
+    '$timeout', 
+      function(Sponsor, Sponsorship, $timeout) {
 
   var vm = this; 
 
@@ -16,33 +17,40 @@ twopence.controller('contributionsCtrl', [
 
   vm.sponseeFilter = null; 
 
-  vm.inView = 3; 
-
-  //
-  // Gets all the sponsees a sponsor is currently managing in order to filter 
-  // contributions
-  //
-  Sponsorship.getAll().then(function(sponsees) {
-
-    vm.sponsees  = sponsees.data; 
-
-    vm.totalContributions = vm.getTotalContributions(sponsees.data); 
-
-  }).catch(function(err){
-
-    console.log("ERROR: Sponsorship not coming up."); 
-
-  }); 
+  vm.inView = 5; 
 
 
-  //
-  // Gets all contributions a sponsor has made 
-  //
-  Sponsor.getAllContributions().then(function(contributions) {
+  vm.$onInit = function() {
 
-    vm.contributionsShowing = contributions.data;
+    //
+    // Gets all the sponsorships a sponsor is currently managing
+    //
+    Sponsorship.getAll().then(function(sponsees) {
 
-  }); 
+      vm.totalContributions = vm.getTotalContributions(sponsees.data); 
+
+      vm.sponsees =  vm.getSponsees(sponsees.data); 
+
+    }).catch(function(err){
+      console.log("ERROR: Sponsorships not coming up."); 
+
+    }); 
+
+
+    //
+    // Gets all contributions a sponsor has made 
+    //
+    Sponsor.getAllContributions().then(function(contributions) {
+
+      vm.contributionsShowing = contributions.data;
+
+    }).catch(function(err) {
+      console.log("ERROR: Contributions not coming up."); 
+
+    })
+
+  }
+
 
 
   //
@@ -55,35 +63,46 @@ twopence.controller('contributionsCtrl', [
   };
 
 
-  //
-  //
-  //
-  vm.showFilter = function() {
 
-    console.log(vm.sponseeFilter); 
+  //
+  // Gets sponsees to use in filter  
+  //
+  vm.getSponsees = function(pSponsorships) {
+
+    var sponsees = []; 
+
+    for(var i = 0; i <= pSponsorships.length - 1; i++) {
+
+      sponsees.push(pSponsorships[i].sponsee);
+
+    }
+
+    return sponsees; 
+
 
   };
 
 
 
-    vm.getTotalContributions = function(sponsorships) {
+  //
+  // Gets all contributions given to sponsorships and adds them 
+  //
+  vm.getTotalContributions = function(sponsorships) {
 
-      var total = 0; 
+    var total = 0; 
 
-      for(var i = 0; i <= sponsorships.length; i++) {
+    for(var i = 0; i <= sponsorships.length; i++) {
 
-        if(sponsorships[i]) {
-        
-         total = total + parseInt(sponsorships[i].contributions_to_date);
-
-        }
+      if(sponsorships[i]) {
+      
+       total = total + parseInt(sponsorships[i].contributions_to_date);
 
       }
 
-      return total;
+    }
 
-    };
+    return total;
 
-
+  };
 
 }]);

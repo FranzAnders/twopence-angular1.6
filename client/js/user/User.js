@@ -97,6 +97,39 @@ twopence.factory('User', [
     };
 
 
+    //
+    // Reminds a sponsee to sign up 
+    //
+    User.remind = function(pUserId) {
+
+      var payload = { user: {} }; 
+
+      payload.user.id = pUserId; 
+
+      return $q(function(resolve, reject) {
+
+        $http.post(BASE_URL + '/v1/users/action/remind', payload, {
+
+          headers: {
+
+            'Authorization': 'bearer ' + Auth.getToken()
+
+          }
+
+        }).then(function(res) {
+
+          resolve(res.data);
+
+        }).catch(function(err) {
+
+          reject(err);
+
+        })
+
+      });
+
+    }
+
     return User;
 
 }]);

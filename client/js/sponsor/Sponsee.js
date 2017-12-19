@@ -80,31 +80,7 @@ twopence.factory('Sponsee', [
 
   };
 
-  Sponsee.remind = function(pId) {
 
-    return $q(function(resolve, reject) {
-
-      $http.post(BASE_URL + '/v1/users/action/remind', pId, {
-
-        headers: {
-
-          'Authorization': 'bearer ' + Auth.getToken()
-
-        }
-
-      }).then(function(res) {
-
-        resolve(res.data);
-
-      }).catch(function(err) {
-
-        reject(err);
-
-      })
-
-    });
-
-  }
 
   return Sponsee
 
