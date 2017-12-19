@@ -164,7 +164,7 @@
     margin-right: auto; 
     margin-left: auto; 
     padding: rem-calc($level3); 
-    margin-top: rem-calc($level7 + $level7); 
+    margin-top: rem-calc($level7 + $level5); 
     @extend %text-center; 
 
     @media #{$large-up} {
@@ -193,7 +193,7 @@
   }
 
   .card-content {
-    opacity: .1; 
+    opacity: 0; 
     
   }
 
