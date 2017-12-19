@@ -5900,7 +5900,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader-menuToggle, .appHeader-menuToggle .user
     #Text Alignments 
 \*------------------------------------*/
 /* line 82, ../scss/abstracts/_typography.scss */
-.text-center, .pageHeader .pageHeader-headlineContainer {
+.text-center, .card--sponsorship .card-inactiveActions, .pageHeader .pageHeader-headlineContainer {
   text-align: center;
 }
 
@@ -5937,7 +5937,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 /* Sizes for text too small or too large for a header tag */
 /* line 265, ../scss/abstracts/_typography.scss */
 .text-mini {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   line-height: 1.5;
 }
 
@@ -6260,7 +6260,7 @@ label {
     #Text Alignment  
 \*------------------------------------*/
 /* line 272, ../scss/abstracts/_utility.scss */
-.text-center, .pageHeader .pageHeader-headlineContainer {
+.text-center, .card--sponsorship .card-inactiveActions, .pageHeader .pageHeader-headlineContainer {
   text-align: center;
 }
 
@@ -15043,13 +15043,14 @@ input[type="url"],
 input[type="color"] {
   margin-bottom: 1.5rem;
   margin-right: 0.75rem;
+  font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
 }
-/* line 35, ../scss/layout/_forms.scss */
+/* line 36, ../scss/layout/_forms.scss */
 input[type="text"]:focus, input[type="text"]:active,
 input[type="password"]:focus,
 input[type="password"]:active,
@@ -15080,17 +15081,17 @@ input[type="color"]:active {
   outline: 0;
 }
 
-/* line 44, ../scss/layout/_forms.scss */
+/* line 45, ../scss/layout/_forms.scss */
 .input-group input[type="date"] {
   color: #fff;
 }
-/* line 50, ../scss/layout/_forms.scss */
+/* line 51, ../scss/layout/_forms.scss */
 .input-group.is-filled input[type="date"] {
   color: #231F20;
 }
 
 /* Change the white to any color ;) */
-/* line 60, ../scss/layout/_forms.scss */
+/* line 61, ../scss/layout/_forms.scss */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   -webkit-text-fill-color: #231F20 !important;
@@ -15099,7 +15100,7 @@ input:-webkit-autofill {
 /*------------------------------------*\
     #Input Properties
 \*------------------------------------*/
-/* line 73, ../scss/layout/_forms.scss */
+/* line 74, ../scss/layout/_forms.scss */
 input,
 textarea {
   width: 100%;
@@ -15110,19 +15111,19 @@ textarea {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 81, ../scss/layout/_forms.scss */
+/* line 82, ../scss/layout/_forms.scss */
 input:active, input:focus,
 textarea:active,
 textarea:focus {
   color: #6d6c6c;
 }
-/* line 88, ../scss/layout/_forms.scss */
+/* line 89, ../scss/layout/_forms.scss */
 input.input--expanded,
 textarea.input--expanded {
   width: 100%;
 }
 
-/* line 96, ../scss/layout/_forms.scss */
+/* line 97, ../scss/layout/_forms.scss */
 input.input--alt {
   min-height: 3.2rem;
   border: 2px solid #6AC6C5;
@@ -15131,13 +15132,13 @@ input.input--alt {
 /*------------------------------------*\
     #Input Groups
 \*------------------------------------*/
-/* line 114, ../scss/layout/_forms.scss */
+/* line 115, ../scss/layout/_forms.scss */
 .input-group {
   width: 100%;
   margin-top: 0.375rem;
   margin-bottom: 1.875rem;
 }
-/* line 120, ../scss/layout/_forms.scss */
+/* line 121, ../scss/layout/_forms.scss */
 .input-group:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15154,7 +15155,7 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 135, ../scss/layout/_forms.scss */
+/* line 136, ../scss/layout/_forms.scss */
 .input-group input {
   z-index: 1;
   width: 100%;
@@ -15162,15 +15163,15 @@ input.input--alt {
   background-color: transparent;
   border-bottom: 2px solid #dae0e0;
 }
-/* line 142, ../scss/layout/_forms.scss */
+/* line 143, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
   background-color: rgba(35, 142, 178, 0.9);
 }
-/* line 148, ../scss/layout/_forms.scss */
+/* line 149, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
   color: #231F20;
 }
-/* line 156, ../scss/layout/_forms.scss */
+/* line 157, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
   bottom: 0.375rem;
@@ -15181,26 +15182,26 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 168, ../scss/layout/_forms.scss */
+/* line 169, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
   -moz-transform: scale(0.8) translateY(-28px) translateX(-7px);
   -ms-transform: scale(0.8) translateY(-28px) translateX(-7px);
   -webkit-transform: scale(0.8) translateY(-28px) translateX(-7px);
   transform: scale(0.8) translateY(-28px) translateX(-7px);
 }
-/* line 175, ../scss/layout/_forms.scss */
+/* line 176, ../scss/layout/_forms.scss */
 .input-group.is-focused {
   color: #238EB2;
 }
-/* line 178, ../scss/layout/_forms.scss */
+/* line 179, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
   color: #231F20;
 }
-/* line 183, ../scss/layout/_forms.scss */
+/* line 184, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
   width: 100%;
 }
-/* line 191, ../scss/layout/_forms.scss */
+/* line 192, ../scss/layout/_forms.scss */
 .input-group .alerts {
   position: absolute;
   left: 0;
@@ -15214,36 +15215,36 @@ input.input--alt {
 /*------------------------------------*\
     #Input Sizes
 \*------------------------------------*/
-/* line 216, ../scss/layout/_forms.scss */
+/* line 217, ../scss/layout/_forms.scss */
 .input-group.input--small label {
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 222, ../scss/layout/_forms.scss */
+/* line 223, ../scss/layout/_forms.scss */
 .input-group.input--small input {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 234, ../scss/layout/_forms.scss */
+/* line 235, ../scss/layout/_forms.scss */
 .input-group.input--medium label {
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 240, ../scss/layout/_forms.scss */
+/* line 241, ../scss/layout/_forms.scss */
 .input-group.input--medium input {
   padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  padding-bottom: 0.0625rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 253, ../scss/layout/_forms.scss */
+/* line 254, ../scss/layout/_forms.scss */
 .input-group.input--large label {
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 259, ../scss/layout/_forms.scss */
+/* line 260, ../scss/layout/_forms.scss */
 .input-group.input--large input {
   padding-top: 0.75rem;
   padding-bottom: 0.375rem;
@@ -15254,23 +15255,23 @@ input.input--alt {
 /*------------------------------------*\
     #Input With Button
 \*------------------------------------*/
-/* line 288, ../scss/layout/_forms.scss */
+/* line 289, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
   width: 100%;
 }
-/* line 294, ../scss/layout/_forms.scss */
+/* line 295, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-button {
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 294, ../scss/layout/_forms.scss */
+  /* line 295, ../scss/layout/_forms.scss */
   .inputWithButton .inputWithButton-button {
     width: 80%;
     padding-left: 0.75rem;
   }
 }
 
-/* line 308, ../scss/layout/_forms.scss */
+/* line 309, ../scss/layout/_forms.scss */
 m
 label {
   margin-bottom: 0.25rem;
@@ -15279,7 +15280,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 332, ../scss/layout/_forms.scss */
+/* line 333, ../scss/layout/_forms.scss */
 select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -15294,11 +15295,11 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 352, ../scss/layout/_forms.scss */
+/* line 353, ../scss/layout/_forms.scss */
 .select-customWrapper {
   position: relative;
 }
-/* line 355, ../scss/layout/_forms.scss */
+/* line 356, ../scss/layout/_forms.scss */
 .select-customWrapper:after {
   content: " ";
   width: 0;
@@ -15313,7 +15314,7 @@ select {
   pointer-events: none;
 }
 
-/* line 373, ../scss/layout/_forms.scss */
+/* line 374, ../scss/layout/_forms.scss */
 .select--primary {
   background-color: #fff;
   outline: 0;
@@ -15323,7 +15324,7 @@ select {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 381, ../scss/layout/_forms.scss */
+/* line 382, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
   border: 1px solid #231F20;
@@ -15332,32 +15333,32 @@ select {
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
 }
 
-/* line 393, ../scss/layout/_forms.scss */
+/* line 394, ../scss/layout/_forms.scss */
 .select--quantity {
   min-width: 5rem;
   text-align-last: center;
 }
 
-/* line 400, ../scss/layout/_forms.scss */
+/* line 401, ../scss/layout/_forms.scss */
 .select--small {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 408, ../scss/layout/_forms.scss */
+/* line 409, ../scss/layout/_forms.scss */
 .select--medium {
   padding: 0.5rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 415, ../scss/layout/_forms.scss */
+/* line 416, ../scss/layout/_forms.scss */
 .select--quantity {
   width: 2.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 415, ../scss/layout/_forms.scss */
+  /* line 416, ../scss/layout/_forms.scss */
   .select--quantity {
     width: 3.75rem;
   }
@@ -15369,7 +15370,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 455, ../scss/layout/_forms.scss */
+/* line 456, ../scss/layout/_forms.scss */
 .fieldset,
 fieldset {
   margin-bottom: 1.875rem;
@@ -15378,7 +15379,7 @@ fieldset {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 470, ../scss/layout/_forms.scss */
+/* line 471, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -15386,7 +15387,7 @@ fieldset {
 /*------------------------------------*\
     #Clear Field
 \*------------------------------------*/
-/* line 482, ../scss/layout/_forms.scss */
+/* line 483, ../scss/layout/_forms.scss */
 input.clearField {
   background-color: transparent;
   text-align: center;
@@ -15394,7 +15395,7 @@ input.clearField {
   font-size: 6rem;
   line-height: 1.2;
 }
-/* line 488, ../scss/layout/_forms.scss */
+/* line 489, ../scss/layout/_forms.scss */
 input.clearField:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15411,20 +15412,20 @@ input.clearField:after {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 503, ../scss/layout/_forms.scss */
+/* line 504, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #231F20;
 }
-/* line 507, ../scss/layout/_forms.scss */
+/* line 508, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
   width: 100%;
 }
 
-/* line 517, ../scss/layout/_forms.scss */
+/* line 518, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 522, ../scss/layout/_forms.scss */
+/* line 523, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15432,11 +15433,11 @@ input.clearField:active:after, input.clearField:focus:after {
   bottom: 0;
 }
 
-/* line 534, ../scss/layout/_forms.scss */
+/* line 535, ../scss/layout/_forms.scss */
 .radio-group {
   margin-bottom: 1.125rem;
 }
-/* line 537, ../scss/layout/_forms.scss */
+/* line 538, ../scss/layout/_forms.scss */
 .radio-group label {
   color: #231F20;
 }
@@ -16518,7 +16519,7 @@ table th,
 /* line 72, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
   color: #6d6c6c;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   line-height: 1.5;
 }
 @media only screen and (min-width: 64.0625em) {
@@ -17086,6 +17087,7 @@ button.is-inactive,
   background-color: #FFF;
   color: #6d6c6c;
   width: 100%;
+  position: relative;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
@@ -17093,39 +17095,39 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 19, ../scss/components/_cards.scss */
+/* line 16, ../scss/components/_cards.scss */
 .card .card-header {
   border-bottom: #dae0e0 1px solid;
   padding: 1.125rem;
   width: 100%;
 }
-/* line 24, ../scss/components/_cards.scss */
+/* line 21, ../scss/components/_cards.scss */
 .card .card-header .card-title {
   color: #231F20;
   margin-bottom: 0;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 29, ../scss/components/_cards.scss */
+/* line 26, ../scss/components/_cards.scss */
 .card .card-header .card-title.card-title--alt {
   color: #6AC6C5;
 }
-/* line 38, ../scss/components/_cards.scss */
+/* line 35, ../scss/components/_cards.scss */
 .card .card-content {
   padding: 1.125rem;
 }
-/* line 41, ../scss/components/_cards.scss */
+/* line 38, ../scss/components/_cards.scss */
 .card .card-content .card-subTitle {
   color: #6d6c6c;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 49, ../scss/components/_cards.scss */
+/* line 46, ../scss/components/_cards.scss */
 .card .card-actions {
   border-top: #dae0e0 1px solid;
   width: 100%;
 }
-/* line 53, ../scss/components/_cards.scss */
+/* line 50, ../scss/components/_cards.scss */
 .card .card-actions .card-action {
   color: #231F20;
   fill: #231F20;
@@ -17140,15 +17142,15 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 64, ../scss/components/_cards.scss */
+/* line 61, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
   color: #fff;
   fill: #fff;
   background-color: black;
 }
 
-@media only screen and (min-width: 40.0625em) {
-  /* line 82, ../scss/components/_cards.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 79, ../scss/components/_cards.scss */
   .cardList li:nth-child(odd) {
     padding-right: 1.125rem;
   }
@@ -17157,14 +17159,14 @@ button.is-inactive,
 /*------------------------------------*\
     #A sponsorship card 
 \*------------------------------------*/
-/* line 114, ../scss/components/_cards.scss */
+/* line 110, ../scss/components/_cards.scss */
 .card--sponsorship {
   -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 117, ../scss/components/_cards.scss */
+/* line 113, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -17174,44 +17176,66 @@ button.is-inactive,
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-/* line 126, ../scss/components/_cards.scss */
+/* line 122, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
   color: #231F20;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 133, ../scss/components/_cards.scss */
+/* line 129, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 143, ../scss/components/_cards.scss */
+/* line 139, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions {
   color: #6AC6C5;
   margin-bottom: 0;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 149, ../scss/components/_cards.scss */
+/* line 145, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions:hover, .card--sponsorship .card-content .sponsorship-contributions:focus {
   color: #238EB2;
+}
+/* line 155, ../scss/components/_cards.scss */
+.card--sponsorship .card-inactiveActions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 60%;
+  display: none;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.125rem;
+  margin-top: 5.25rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 155, ../scss/components/_cards.scss */
+  .card--sponsorship .card-inactiveActions {
+    padding: 1.875rem;
+  }
 }
 
 /*------------------------------------*\
     #Am inactive sponsorship Card
 \*------------------------------------*/
-/* line 171, ../scss/components/_cards.scss */
+/* line 190, ../scss/components/_cards.scss */
+.card--sponsorship.is-inactive .card-inactiveActions {
+  display: block;
+}
+/* line 195, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-content {
-  opacity: .4;
+  opacity: .1;
 }
-/* line 176, ../scss/components/_cards.scss */
+/* line 200, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-actions {
-  opacity: .4;
-}
-/* line 181, ../scss/components/_cards.scss */
-.card--sponsorship.is-inactive * {
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -17219,7 +17243,7 @@ button.is-inactive,
     #A login card
 \*------------------------------------*/
 @media only screen and (min-width: 64.0625em) {
-  /* line 196, ../scss/components/_cards.scss */
+  /* line 216, ../scss/components/_cards.scss */
   .card--form {
     padding: 1.5rem;
   }
@@ -17228,15 +17252,15 @@ button.is-inactive,
 /*------------------------------------*\
     #A Plan card
 \*------------------------------------*/
-/* line 212, ../scss/components/_cards.scss */
+/* line 232, ../scss/components/_cards.scss */
 .card--plan {
-  border-top: 4px solid #6AC6C5;
+  border-top: 6px solid #6AC6C5;
   -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 216, ../scss/components/_cards.scss */
+/* line 236, ../scss/components/_cards.scss */
 .card--plan:hover, .card--plan:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -18251,7 +18275,7 @@ body.fancymodal-open {
   color: #231F20;
   letter-spacing: 1px;
   margin-bottom: 0;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   line-height: 1.5;
 }
 
@@ -18295,7 +18319,7 @@ body.fancymodal-open {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   line-height: 1.5;
 }
 
@@ -18330,6 +18354,82 @@ body.fancymodal-open {
   padding-bottom: 0.375rem;
   font-size: 1.125rem;
   line-height: 1.33333;
+}
+
+/*------------------------------------*\
+    #Validation Alerts
+\*------------------------------------*/
+/* line 8, ../scss/components/_validationAlerts.scss */
+.validationAlertsContainer {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  width: 80%;
+  z-index: 100;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 8, ../scss/components/_validationAlerts.scss */
+  .validationAlertsContainer {
+    width: 18.75rem;
+  }
+}
+/* line 20, ../scss/components/_validationAlerts.scss */
+.validationAlertsContainer.ng-enter, .validationAlertsContainer.ng-leave {
+  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 26, ../scss/components/_validationAlerts.scss */
+.validationAlertsContainer.ng-enter, .validationAlertsContainer.ng-leave.ng-leave-active {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/* line 32, ../scss/components/_validationAlerts.scss */
+.validationAlertsContainer.ng-leave, .validationAlertsContainer.ng-enter.ng-enter-active {
+  -moz-transform: translateX(150%);
+  -ms-transform: translateX(150%);
+  -webkit-transform: translateX(150%);
+  transform: translateX(150%);
+}
+
+/* line 42, ../scss/components/_validationAlerts.scss */
+.validationAlert {
+  position: relative;
+  background-color: #231F20;
+  padding: 0.75rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 42, ../scss/components/_validationAlerts.scss */
+  .validationAlert {
+    padding: 1.125rem;
+  }
+}
+/* line 53, ../scss/components/_validationAlerts.scss */
+.validationAlert .validationAlert-title {
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* line 60, ../scss/components/_validationAlerts.scss */
+.validationAlert .validationAlert-body {
+  margin-bottom: 0;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 60, ../scss/components/_validationAlerts.scss */
+  .validationAlert .validationAlert-body {
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
 }
 
 /*------------------------------------*\

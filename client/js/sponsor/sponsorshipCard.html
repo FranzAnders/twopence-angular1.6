@@ -9,9 +9,8 @@
     </h1>
     
     <div class="sponsorship-plan">
-
       Plan Status:
-    
+          
       <span ng-switch="sponsorship.planStatus">
     
         <span ng-switch-when="active" class="tag tag--active">
@@ -32,7 +31,11 @@
 
     </div>
 
+
   </div>
+
+
+
 
   <div class="card-content  text-center">
 
@@ -74,24 +77,6 @@
       </button>
 
 
-<!--     <span ng-if='sponsorship.sponsorshipInfo.sponsee.status == "invited" || sponsorship.sponsorshipInfo.sponsee.status == "onboarding"'>
-  
-      <button  class="button--expanded  button--primary">
-  
-      <span class="text-micro"
-  
-            ng-click="dashboard.sendReminder(sponsorship.sponsorshipInfo.sponsee.id)">
-  
-            Send Reminder
-  
-      </span>
-  
-      </button>
-  
-    </span>
-  
-    </div>
-   -->
 
     </div>
 
@@ -124,6 +109,28 @@
   
     </div>
   
+  </div>
+
+
+  <div class="card-inactiveActions"
+      ng-if='sponsorship.sponsorshipInfo.sponsee.status == "invited" || sponsorship.sponsorshipInfo.sponsee.status == "onboarding"'>
+    
+    <p>
+      This sponsee has not accepted your invitation yet.
+      <br><br>
+    <a href="">
+  
+      <span class="text-micro"
+            ng-click="sponsorship.remindSponsee(sponsorship.sponsee.id)">
+  
+           Send Email Reminder
+  
+      </span>
+
+    </a>
+    </p>
+
+
   </div>
 
 </div>

@@ -1,118 +1,120 @@
-
-<div class="fieldset">
-
-  <form ng-submit="signUp.submitAccountInfo(signUp.userAccountForm)"
-        name="signUp.userAccountForm"
-        ng-model-options="{ getterSetter: true }"
-        novalidate>
-
-    <div class="input-group  input--medium">
-
-      <label for="email">
-        Email
-      </label>
-
-      <input type="email" 
-             id="email"
-             name="email"
-            class="input--primary input--medium"
-            ng-model="signUp.userInfo.email"
-            ng-minlength = "8"
-            required
-            floating-label>
-      
-
-      <div ng-messages="signUp.userAccountForm.email.$error"
-           ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.email.$error"
-           role="alert"
-           class="alerts  alert--warning">
-
-          <div ng-message="required">
-              We need an email from you to get started.
-          </div>
-
-          <div ng-message="email">
-              Your email must be valid. The format is incorrect. (ex:pickpocketJoe@gmail.com)
-          </div>
-
+<div>
+    
+    <p class="text-center">
+      Enter your account information.
+    </p>
+  
+    <form ng-submit="signUp.submitAccountInfo(signUp.userAccountForm)"
+          name="signUp.userAccountForm"
+          ng-model-options="{ getterSetter: true }"
+          novalidate>
+  
+      <div class="input-group  input--medium">
+  
+        <label for="email">
+          Email
+        </label>
+  
+        <input type="email" 
+               id="email"
+               name="email"
+              class="input--primary input--medium"
+              ng-model="signUp.userInfo.email"
+              ng-minlength = "8"
+              required
+              floating-label>
+        
+  
+        <div ng-messages="signUp.userAccountForm.email.$error"
+             ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.email.$error"
+             role="alert"
+             class="alerts  alert--warning">
+  
+            <div ng-message="required">
+                We need an email from you to get started.
+            </div>
+  
+            <div ng-message="email">
+                Your email must be valid. The format is incorrect. (ex:pickpocketJoe@gmail.com)
+            </div>
+  
+        </div>
+  
       </div>
-
-    </div>
-
-
-
-    <div class="input-group  input--medium">
-
-      <label for="password">
-        Password
-      </label>
-
-      <input type="password" 
-             id="password"
-             name="password"
-             class="input--primary input--medium"
-             ng-model="signUp.userInfo.password"
-             required
-             ng-minlength = "8"
-             floating-label>
-
-      <div ng-messages="signUp.userAccountForm.password.$error"
-           ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
-           role="alert"
-           class="alerts  alert--warning"
-           >
-
-          <div ng-message="required">
-              Oops! A password is required
-          </div>
-
-          <div ng-message="ng-minlength">
-              Oops! Password must be atleast 8 characters in length
-          </div>
-
+  
+  
+  
+      <div class="input-group  input--medium">
+  
+        <label for="password">
+          Password
+        </label>
+  
+        <input type="password" 
+               id="password"
+               name="password"
+               class="input--primary input--medium"
+               ng-model="signUp.userInfo.password"
+               required
+               ng-minlength = "8"
+               floating-label>
+  
+        <div ng-messages="signUp.userAccountForm.password.$error"
+             ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
+             role="alert"
+             class="alerts  alert--warning"
+             >
+  
+            <div ng-message="required">
+                Oops! A password is required
+            </div>
+  
+            <div ng-message="ng-minlength">
+                Oops! Password must be atleast 8 characters in length
+            </div>
+  
+        </div>
+  
       </div>
-
-    </div>
-
-
-    <div class="input-group  input--medium">
-
-      <label for="confirmPassword">
-        Confirm Password
-      </label>
-
-      <input type="password" 
-             id="confirmPassword"
-             name="confirmPassword"
-             class="input--primary input--medium"
-             ng-minlength="8"
-             ng-model="signUp.userInfo.confirmPassword"
-             compare-to="signUp.userInfo.password"
-             floating-label>
-
-      <div ng-messages="signUp.userAccountForm.password.$error"
-           ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
-           role="alert"
-           class="alerts  alert--warning">
-
-          <div ng-message="required">
-              The password must be confirmed.
-          </div>
-
-          <div ng-message="ng-minlength">
-              Oops! Password must be atleast 8 characters in length.
-          </div>
-
+  
+  
+      <div class="input-group  input--medium">
+  
+        <label for="confirmPassword">
+          Confirm Password
+        </label>
+  
+        <input type="password" 
+               id="confirmPassword"
+               name="confirmPassword"
+               class="input--primary input--medium"
+               ng-minlength="8"
+               ng-model="signUp.userInfo.confirmPassword"
+               compare-to="signUp.userInfo.password"
+               floating-label>
+  
+        <div ng-messages="signUp.userAccountForm.password.$error"
+             ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
+             role="alert"
+             class="alerts  alert--warning">
+  
+            <div ng-message="required">
+                The password must be confirmed.
+            </div>
+  
+            <div ng-message="ng-minlength">
+                Oops! Password must be atleast 8 characters in length.
+            </div>
+  
+        </div>
+  
       </div>
-
-    </div>
-
-    <button class="button--secondary  button--medium button--expanded mb0"
-            type="submit">
-      <span ng-if="!signUp.loadingScreen" >Next Step </span>
-      <span ng-if="signUp.loadingScreen">Nicely done, setting up...</span>
-    </button>
-
-  </form>
-
-</div>
+  
+      <button class="button--secondary  button--medium button--expanded mb0"
+              type="submit">
+        <span ng-if="!signUp.loadingScreen" >Next Step </span>
+        <span ng-if="signUp.loadingScreen">Nicely done, setting up...</span>
+      </button>
+  
+    </form>
+  </div>

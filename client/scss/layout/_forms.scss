@@ -29,6 +29,7 @@ input[type="color"], {
 
     margin-bottom: rem-calc($base-magic-number);
     margin-right: rem-calc($level2);
+    font-family: $primary-font-family; 
     @include type-setting(0);
     @include border-radius(0);
 
@@ -240,7 +241,7 @@ input {
     input {
 
       padding-top: rem-calc($level1);
-      padding-bottom: rem-calc($level1);
+      padding-bottom: rem-calc(1px);
       @include type-setting(0);
 
     }

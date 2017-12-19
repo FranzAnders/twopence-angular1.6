@@ -1,15 +1,47 @@
 
-<div class="vh100  section--alt  grid  grid--center">
-  
-  <div class="row grid-cell">
+<div class="section--padded  section--alt  grid  grid--center">
 
-    <div class="small-12 medium-6 medium-centered large-4 columns">
+    <div class="text-micro mb4 validationAlertsContainer"
+       role="alert" ng-if="login.formSubmissionErrors.error">
       
-      <div class="text-center">
-        <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="180" class="mb7"></a>
+      <div class="validationAlert" ng-if="login.formSubmissionErrors.invalidCombination && !login.formSubmissionErrors.rateLimitError">
+          <h1 class="validationAlert-title">
+            Validation Error
+          </h1>
+          <p class="validationAlert-body">
+            Password and username combination is incorrect. If you've made an account linked with this email address, be sure to verify your email before proceeding.
+          </p>
+
+      </div>
+    
+      <div ng-if="login.formSubmissionErrors.rateLimitError"
+           class="alert--warning"> 
+
+            You've made too many successive attempts to login. Please wait a few minutes before trying again.
+        
       </div>
 
-      <div class="card  card--form">
+  </div>
+
+
+  <div class="row grid-cell">
+
+    <div class="small-12 medium-6 medium-centered large-5 columns">
+      
+
+      <div class="row">
+        <div class="small-8 large-12  small-centered columns text-center">
+          <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="260" class="mb5"></a>
+        </div>
+      </div>
+
+      <div class="card  card--form">  
+        
+        <div class="card-content">
+          
+          <h1 class="h3 text-center txtc2 mb2">Sponsor Login</h1>
+          <p class="mb0 text-center">Login now to make and track your contributions.</p>
+        </div>
 
         <div class="card-content">
 
@@ -35,7 +67,7 @@
                    class="alerts  alert--warning">
 
                 <div ng-message="required">
-                   An email is required.
+                  A valid email is required to continue.
                 </div>
 
               </div>
@@ -60,30 +92,10 @@
                    class="alerts  alert--warning">
 
                 <div ng-message="required">
-                   A password is required.
+                   A password is required for access.
                 </div>
 
               </div>
-
-            </div>
-
-            <div class="text-micro mb4"
-                 role="alert"
-                 ng-if="login.formSubmissionErrors.error">
-    
-                <div ng-if="login.formSubmissionErrors.invalidCombination && !login.formSubmissionErrors.rateLimitError">
-                    
-    
-                    <span class="alert--warning">Password and username combination is incorrect.</span> <br>Please try a different login or <a ui-sref="main.signUp.account">make an account</a>. If you've made an account, be sure to verify your email before proceeding.
-    
-                </div>
-              
-                <div ng-if="login.formSubmissionErrors.rateLimitError"
-                     class="alert--warning"> 
-    
-                      You've made too many successive attempts to login. Please wait a few minutes before trying again.
-                  
-                </div>
 
             </div>
 

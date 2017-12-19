@@ -13,7 +13,7 @@ twopence.directive('sponsorshipCardDir',
         restrict: "E", 
         replace: true, 
         scope: {}, 
-        controller: ['Sponsorship', function(Sponsorship) {
+        controller: ['Sponsorship', 'User', function(Sponsorship, User) {
 
           var vm  = this; 
 
@@ -53,12 +53,26 @@ twopence.directive('sponsorshipCardDir',
           // Sets up the properties used by the card 
           //
           vm.$onInit = function() {
+              vm.sponsee = vm.sponsorshipInfo.sponsee;
 
               vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo); 
 
               vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
 
           };
+
+
+          //
+          // Reminds a sponsee to sign up 
+          //
+          vm.remindSponsee = function(pUserId) {
+
+            User.remind(pUserId).then(function() {
+              alert(vm.sponsorshipInfo.sponsee.first_name + ' has been succesfully reminded!'); 
+
+            }); 
+
+          }; 
 
 
         }], 
@@ -69,11 +83,7 @@ twopence.directive('sponsorshipCardDir',
           "boostSponsorship" : "&"
         },
         templateUrl: "js/sponsor/sponsorshipCard.html",
-        link: function(scope, element, attrs) {
-
-
-
-        } 
+        link: function(scope, element, attrs) {} 
 
       }
 
