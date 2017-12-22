@@ -69,20 +69,83 @@ twopence.config(
                 }
             },
         })
-        .state('main.login', {
-
-          url: "login",
+        .state('main.account', {
+          abstract: true, 
           views: {
 
             'main' : {
-              templateUrl: "js/home/login.html",
-              controller: "loginCtrl",
-              controllerAs: "login"
+              templateUrl: "js/home/account.html"
             }
-
           },
           params: {
             camefromemail: false
+          }
+
+        })
+        .state('main.account.login', {
+
+          url: "login", 
+          views:  {
+
+            'account': {
+
+              templateUrl: "js/home/login.html",
+              controller: "loginCtrl",
+              controllerAs: "login"
+
+            }
+
+          }
+
+        })
+        .state('main.account.onboarding', {
+
+          url: "login/onboarding", 
+          views:  {
+
+            'account': {
+
+              templateUrl: "js/home/onboarding.html",
+              controller: "onboardingCtrl",
+              controllerAs: "onboarding"
+
+            }
+
+          }
+
+        })
+        .state('main.account.resetPasswordEmail', {
+
+          url: "account/password/reset", 
+          views:  {
+
+            'account': {
+              templateUrl: "js/home/login-resetPasswordEmail.html",
+              controller: "resetPasswordCtrl",
+              controllerAs: "resetPassword"
+
+            }
+
+          }
+
+        })
+        .state('main.account.resetPassword', {
+
+          url: "account/password/reset/:token", 
+          views:  {
+
+            'account': {
+              templateUrl: "js/home/login-resetPassword.html",
+              controller: "resetPasswordCtrl",
+              controllerAs: "resetPassword"
+
+            }
+
+          }, 
+          params: {
+
+            token: null
+
           }
 
         })

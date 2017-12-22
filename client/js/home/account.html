@@ -1,0 +1,57 @@
+
+<div class="section--padded  section--alt  grid  grid--center">
+
+<!--     <div class="text-micro mb4 validationAlertsContainer"
+       role="alert" ng-if="login.formSubmissionErrors.error">
+      
+      <div class="validationAlert" ng-if="login.formSubmissionErrors.invalidCombination && !login.formSubmissionErrors.rateLimitError">
+          <h1 class="validationAlert-title">
+            Validation Error
+          </h1>
+          <p class="validationAlert-body">
+            Password and username combination is incorrect. If you've made an account linked with this email address, be sure to verify your email before proceeding.
+          </p>
+
+      </div>
+    
+      <div ng-if="login.formSubmissionErrors.rateLimitError"
+           class="alert--warning"> 
+
+            You've made too many successive attempts to login. Please wait a few minutes before trying again.
+        
+      </div>
+
+  </div>
+ -->
+
+  <div class="row grid-cell">
+
+    <div class="small-12 medium-6 medium-centered large-5 columns">
+      
+
+      <div class="row">
+        <div class="small-8 large-12  small-centered columns text-center">
+          <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="260" class="mb5"></a>
+        </div>
+      </div>
+
+      <div class="card  card--form" ui-view="account">  
+
+
+      </div>
+
+      <p class=" text-center">
+
+        Don't have a sponsor account?
+
+        <br>
+
+        <a ui-sref="main.signUp.account" class="alt-link">Sign Up Now</a>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>

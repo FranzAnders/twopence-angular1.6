@@ -130,6 +130,64 @@ twopence.factory('User', [
 
     }
 
+
+    //
+    // Sends a user an email with a link to reset their password to the email provided
+    //
+    User.sendResetPassEmail = function(pEmail) {
+
+      return $q(function(resolve, reject) {
+
+          $http.post(BASE_URL + '/v1/reset', pEmail, {
+
+            headers: {
+
+              'Authorization' : 'bearer ' + Auth.getToken()
+            }
+
+          }).then(function(res) {
+
+            resolve(res.data); 
+
+          }).catch(function(err) {
+
+            resolve(err);
+
+          }); 
+
+      }); 
+
+    };
+
+
+    //
+    // Submits the new password with a token
+    // 
+    User.submitResetPass = function(pPassResetInfo) {
+
+      return $q(function(resolve, reject) {
+
+          $http.patch(BASE_URL + '/v1/reset', pPassResetInfo, {
+
+            headers: {
+
+              'Authorization' : 'bearer ' + Auth.getToken()
+            }
+
+          }).then(function(res) {
+
+            resolve(res.data); 
+
+          }).catch(function(err) {
+
+            resolve(err);
+
+          }); 
+
+      }); 
+
+    }
+
     return User;
 
 }]);
