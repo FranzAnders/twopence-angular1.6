@@ -131,7 +131,7 @@ twopence.config(
         })
         .state('main.account.resetPassword', {
 
-          url: "account/password/reset/:token", 
+          url: "account/reset/:token", 
           views:  {
 
             'account': {
