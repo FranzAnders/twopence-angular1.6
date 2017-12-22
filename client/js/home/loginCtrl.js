@@ -10,12 +10,14 @@ twopence.controller('loginCtrl', [
   '$stateParams',
   'Auth',
   'AUTH_EVENTS',
+  'User',
   function(
     $state,
     $timeout,
     $stateParams,
     Auth,
-    AUTH_EVENTS) {
+    AUTH_EVENTS,
+    User) {
 
     var vm = this;
 
@@ -59,7 +61,32 @@ twopence.controller('loginCtrl', [
       if(pLoginForm.$valid) {
 
         Auth.login(vm.form).then(function(res) {
-          $state.go('sponsor.dashboard');
+
+          console.log(res); 
+
+          User.getUserInfo().then(function(userInfo) {
+
+            if(userInfo.sponsor.status === "onboarding") {
+              $state.go('main.signUp.identity');
+
+            } else {
+
+              if(userInfo.sponsorships.length == 0) {
+
+                $state.go('sponsor.sponseeAdd');
+
+              } else {
+
+                $state.go('sponsor.dashboard'); 
+              }
+
+            }
+
+          }).catch(function(){
+              alert('ERROR: Something went wrong');
+
+          });
+
 
         }).catch(function(err) {
           vm.errData = err.data; 

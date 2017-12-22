@@ -24,17 +24,30 @@ twopence.controller('resetPasswordCtrl', [
 
     vm.form = {};
 
+    vm.newPassword = {}; 
+
+    vm.resetEmailSent = false; 
+
+    vm.passwordResetSuccesfully = false; 
+
 
     //
     // If valid, sends an email with a password reset link to the email specified 
     //
-    vm.sendResetPassEmail = function(pPassResetForm) {
+    vm.sendResetPassEmail = function(pPassResetEmailForm) {
 
-      if(pPassResetForm.$valid) {
+      if(pPassResetEmailForm.$valid) {
 
-        console.log(vm.form); 
+        User.sendResetPassEmail(vm.form).then(function() {
 
-        console.log('its valid gogo');
+          vm.resetEmailSent = true; 
+
+        }).catch(function() {
+
+          vm.resetEmailSent = false; 
+          alert('Reset email failed to send, please try again'); 
+
+        });
 
       } else {
 
@@ -42,8 +55,37 @@ twopence.controller('resetPasswordCtrl', [
 
       }
 
-
     }
 
+
+    //
+    // Resets password via email and token 
+    //
+    vm.resetUserPassword = function(pNewPasswordForm) {
+
+      if(pNewPasswordForm.$valid) {
+
+        delete vm.newPassword.confirmPassword; 
+
+        vm.newPassword.token = $stateParams.token; 
+
+        User.submitResetPass(vm.newPassword).then(function(response) {
+      
+          vm.passwordResetSuccesfully = true; 
+
+        }).catch(function(err){
+
+
+        });
+
+      } else {
+
+        alert("error"); 
+
+      }
+
+    };
+
   }
+
 ]);

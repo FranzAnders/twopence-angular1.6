@@ -88,8 +88,6 @@ twopence.controller('dashboardCtrl', [
 
     vm.sendReminder = function(sponseeId) {
 
-      console.log("Remind me to do something");
-
       var remindLoad = {
         "user": {
           "id": sponseeId
