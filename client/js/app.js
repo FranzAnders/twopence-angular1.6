@@ -33,8 +33,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -69,20 +69,47 @@ twopence.config(
                 }
             },
         })
-        .state('main.login', {
-
-          url: "login",
+        .state('main.account', {
+          abstract: true, 
           views: {
 
             'main' : {
-              templateUrl: "js/home/login.html",
-              controller: "loginCtrl",
-              controllerAs: "login"
+              templateUrl: "js/home/account.html"
             }
-
           },
           params: {
             camefromemail: false
+          }
+
+        })
+        .state('main.account.login', {
+
+          url: "login", 
+          views:  {
+
+            'account': {
+
+              templateUrl: "js/home/login.html",
+              controller: "loginCtrl",
+              controllerAs: "login"
+
+            }
+
+          }
+
+        })
+        .state('main.account.resetPassword', {
+
+          url: "account/password/reset", 
+          views:  {
+
+            'account': {
+              templateUrl: "js/home/resetPassword.html",
+              controller: "resetPasswordCtrl",
+              controllerAs: "resetPassword"
+
+            }
+
           }
 
         })

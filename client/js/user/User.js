@@ -130,6 +130,22 @@ twopence.factory('User', [
 
     }
 
+
+    //
+    // Sends a user an email with a link to reset their password to the email provided
+    //
+    User.sendResetPassEmail = function(pEmail) {
+
+
+      return $q(function(resolve, reject) {
+
+          $http.post(BASE_URL + '/v1/users')
+
+
+      }); 
+
+    };
+
     return User;
 
 }]);

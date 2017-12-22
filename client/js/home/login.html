@@ -1,139 +1,87 @@
 
-<div class="section--padded  section--alt  grid  grid--center">
+<div>
 
-    <div class="text-micro mb4 validationAlertsContainer"
-       role="alert" ng-if="login.formSubmissionErrors.error">
+  <div class="card-content">
+    
+    <h1 class="h3 text-center txtc2 mb2">Sponsor Login</h1>
+    <p class="mb0 text-center">Login now to make and track your contributions.</p>
+  </div>
+
+  <div class="card-content">
+
+    <form name="login.loginForm" 
+          novalidate
+          ng-model-options="{ getterSetter: true }"
+          ng-submit="login.logInUser(login.loginForm)">
       
-      <div class="validationAlert" ng-if="login.formSubmissionErrors.invalidCombination && !login.formSubmissionErrors.rateLimitError">
-          <h1 class="validationAlert-title">
-            Validation Error
-          </h1>
-          <p class="validationAlert-body">
-            Password and username combination is incorrect. If you've made an account linked with this email address, be sure to verify your email before proceeding.
-          </p>
+      <div class="input-group input--medium">
+    
+        <label for="username">Email</label>
+
+        <input id="username" 
+               name="username"
+               ng-model="login.form.email" 
+               type="text" 
+               required
+               floating-label>
+
+        <div ng-messages="login.loginForm.username.$error"
+             ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
+             role="alert"
+             class="alerts  alert--warning">
+
+          <div ng-message="required">
+            A valid email is required to continue.
+          </div>
+
+        </div>
 
       </div>
     
-      <div ng-if="login.formSubmissionErrors.rateLimitError"
-           class="alert--warning"> 
+    
+      <div class="input-group input--medium">
 
-            You've made too many successive attempts to login. Please wait a few minutes before trying again.
-        
+        <label for="password">Password</label>
+
+        <input id="password" 
+               ng-model="login.form.password" 
+               type="password" 
+               name="password"
+               required
+               floating-label>
+
+        <div ng-messages="login.loginForm.password.$error"
+             ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
+             role="alert"
+             class="alerts  alert--warning">
+
+          <div ng-message="required">
+             A password is required for access.
+          </div>
+
+        </div>
+
       </div>
-
-  </div>
-
-
-  <div class="row grid-cell">
-
-    <div class="small-12 medium-6 medium-centered large-5 columns">
-      
 
       <div class="row">
-        <div class="small-8 large-12  small-centered columns text-center">
-          <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="260" class="mb5"></a>
-        </div>
-      </div>
 
-      <div class="card  card--form">  
-        
-        <div class="card-content">
-          
-          <h1 class="h3 text-center txtc2 mb2">Sponsor Login</h1>
-          <p class="mb0 text-center">Login now to make and track your contributions.</p>
-        </div>
+        <div class="small-12 columns">
 
-        <div class="card-content">
-
-          <form name="login.loginForm" 
-                novalidate
-                ng-model-options="{ getterSetter: true }"
-                ng-submit="login.logInUser(login.loginForm)">
-            
-            <div class="input-group input--medium">
-          
-              <label for="username">Email</label>
-
-              <input id="username" 
-                     name="username"
-                     ng-model="login.form.email" 
-                     type="text" 
-                     required
-                     floating-label>
-
-              <div ng-messages="login.loginForm.username.$error"
-                   ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
-                   role="alert"
-                   class="alerts  alert--warning">
-
-                <div ng-message="required">
-                  A valid email is required to continue.
-                </div>
-
-              </div>
-
-            </div>
-          
-          
-            <div class="input-group input--medium">
-
-              <label for="password">Password</label>
-
-              <input id="password" 
-                     ng-model="login.form.password" 
-                     type="password" 
-                     name="password"
-                     required
-                     floating-label>
-
-              <div ng-messages="login.loginForm.password.$error"
-                   ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
-                   role="alert"
-                   class="alerts  alert--warning">
-
-                <div ng-message="required">
-                   A password is required for access.
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="row">
-
-              <div class="small-12 columns">
-
-                <button class="button  button--secondary  button--medium  button--expanded mb1"
-                        type="submit">
-                  Login
-                </button>
-
-              </div>
-
-            </div>
-          
-          </form>
-
-           <p class="text-center mb0">
-
-             <a ui-sref="sponsor.passwordReset" class="text-micro"> Forgot your password? </a>
-           </p>
+          <button class="button  button--secondary  button--medium  button--expanded mb1"
+                  type="submit">
+            Login
+          </button>
 
         </div>
 
       </div>
+    
+    </form>
 
-      <p class=" text-center">
+     <p class="text-center mb0">
 
-        Don't have a sponsor account?
-
-        <br>
-
-        <a ui-sref="main.signUp.account" class="alt-link">Sign Up Now</a>
-
-      </p>
-
-    </div>
+       <a ui-sref="main.account.resetPassword" class="text-micro"> Forgot your password? </a>
+     </p>
 
   </div>
 
