@@ -64,51 +64,71 @@
 
       </div>
 
-      <div class="small-12 columns medium-10  large-8">
+      <div class="small-12 columns medium-10  large-7 large-pull-1">
 
-          <div class="card">
+        <div class="card" >
 
-              <div class="card-header">
+          <table class="table  table--list">
+            
+            <tr ng-if="sponsorship.sponsorshipInfo.contributions.length > 0">
 
-                <h1 class="card-title">Contribution History</h1>
+              <th>
+                Date
+              </th>    
 
-              </div>
-       
-              <div class="card-contnt">
+              <th>
+                Status
+              </th>
 
-                  <ul class="table  table--list mb0">
-                
-                  <li ng-repeat="contribution in sponsorship.sponsorshipInfo.contributions track by $index"
-                      class="table-row">
-                    
-                
-                    <div class="grid grid--center grid--justifySpaceBetween">
+              <th class="text-right">Amount</th>
 
-                        <div class="grid grid--justifyLeft">
-                          
-                        <div >
-                          <span class="uc fwb  display-block  text-center mb0">{{contribution.date | date: 'MMM'}}</span>
-                          <span class="uc h4  display-block  text-center">{{contribution.date | date: 'd'}}</span>
-                        </div>
-                        </div>
+            </tr>
+          
+            <tr ng-repeat="contribution in sponsorship.sponsorshipInfo.contributions  | orderBy: 'date':true track by $index | limitTo: contributions.inView ">
 
-                              
-                      <div class="table-contribution">${{contribution.amount}}</div>
-                    </div>
-                    
-                  </li>
+              <td class="text-center">
+
+                <div class="grid grid--justifyLeft">
                   
-                
-                  <li class="text-center">
-                    <button class="button--medium  button--link">View All</button>
-                  </li>
-                
-                </ul>
-  
-              </div>
+                  <div ng-if="contribution.date">
+
+                    <span class="uc fwb text-micro display-block  text-center mb0">{{contribution.date | date: 'MMM'}}</span>
+                    <span class="uc h4  display-block  text-center">{{contribution.date | date: 'd'}}</span>
+
+                  </div>
+
+                  <div ng-if="!contribution.date">
+                   <span class="fwb"> N/A</span>
+                  </div>
+
+                </div>
+
+              </td>
+              
+              <td >
+                  
+                  <span class="tag  tag--pending" ng-if="!contribution.date">pending</span>
+                  
+                  <span class="tag  tag--active" ng-if="contribution.date">succesful</span>
+
+              </td>
+
+              <td class="table-contribution text-right" >${{contribution.amount}}</td>
+
+            </tr>
+          
+          </table>
+          
+          <div class="card-content pt0"
+               ng-if="contributions.contributionsShowing > 4">
+            <button class="button button--medium  button--expanded  button--link"
+                    ng-click="contributions.showMore()">
+              Show More
+            </button>
+          </div>
 
         </div>
-       
+
       </div>
 
     </div>
