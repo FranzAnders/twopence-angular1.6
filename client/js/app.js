@@ -96,7 +96,6 @@ twopence.config(
             }
 
           }
-
         })
         .state('main.account.onboarding', {
 

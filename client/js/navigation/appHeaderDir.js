@@ -48,6 +48,31 @@ twopence.directive('appHeaderDir', function() {
 
         }; 
 
+
+
+        //
+        // Logs out a user after confirming
+        //
+        vm.logoutUser = function() { 
+
+          vm.toggleSecondaryMenu(); 
+
+           var logoutConfirmation = confirm('Are you sure you wanna logout?');
+
+           if(logoutConfirmation) {
+
+            $state.go('main.home')
+
+           } else {
+
+            return false; 
+            
+           }
+
+        }; 
+
+
+
         vm.$onInit =  function() {
 
           vm.sponsorName = vm.sponsor.first_name + " " + vm.sponsor.last_name;

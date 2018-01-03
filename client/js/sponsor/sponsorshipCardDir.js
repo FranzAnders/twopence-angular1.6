@@ -13,7 +13,14 @@ twopence.directive('sponsorshipCardDir',
         restrict: "E", 
         replace: true, 
         scope: {}, 
-        controller: ['Sponsorship', 'User', function(Sponsorship, User) {
+        controller: [
+          'Sponsorship', 
+          'User',
+          '$fancyModal',
+           function(
+            Sponsorship, 
+            User,
+            $fancyModal) {
 
           var vm  = this; 
 
@@ -68,7 +75,32 @@ twopence.directive('sponsorshipCardDir',
           vm.remindSponsee = function(pUserId) {
 
             User.remind(pUserId).then(function() {
-              alert(vm.sponsorshipInfo.sponsee.first_name + ' has been succesfully reminded!'); 
+
+                $fancyModal.open({
+                    controller: ['sponsee', '$scope', function(sponsee, $scope) {
+                      
+                      $scope.sponsee = sponsee;
+
+                    }], 
+                    templateUrl: 'js/modals/email-reminder-success.html', 
+                    themeClass: 'fancymodal--primary  fancymodal--small',
+                    openingClass: 'is-open', 
+                    closingClass: 'is-closed',
+                    showCloseButton: false, 
+                    resolve: {
+
+                      sponsee: function() {
+
+                        return vm.sponsorshipInfo.sponsee
+
+                      }
+
+                    }
+
+                });
+                
+            }).catch(function() {
+
 
             }); 
 

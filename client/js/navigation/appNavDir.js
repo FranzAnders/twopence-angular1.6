@@ -45,6 +45,17 @@ twopence.directive('appNavDir', function() {
         }; 
 
 
+        //
+        // Logs out a user after confirming
+        //
+        vm.logoutUser = function() { 
+
+          vm.toggleSecondaryMenu(); 
+
+           confirm('Are you sure you wanna logout?');
+
+        }; 
+
     }], 
     controllerAs: 'nav', 
     bindToController: true, 

@@ -110,20 +110,6 @@ p {
     color: $tertiaryColor;
     position: relative; 
     @include transition(all .2s ceaser($easeInOutQuint)); 
-    
-    // &:after {
-    //   content: " "; 
-    //   right: 0; 
-    //   left: 0; 
-    //   bottom: -2px; 
-    //   width: 100%; 
-    //   height: 2px; 
-    //   background-color: #fff; 
-    //   position: absolute; 
-    //   opacity: 1; 
-    //   @include transition(all .2s ceaser($easeInOutQuint)); 
-
-    // }
 
     &:before {
       content: " "; 

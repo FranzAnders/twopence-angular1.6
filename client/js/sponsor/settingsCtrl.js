@@ -9,10 +9,12 @@
 twopence.controller('settingsCtrl', [
     'Sponsor',
     'User',
+    '$fancyModal', 
     '$timeout',
     function(
       Sponsor, 
       User, 
+      $fancyModal,
       $timeout) {
 
     var vm = this; 
@@ -75,7 +77,14 @@ twopence.controller('settingsCtrl', [
 
         User.updateSettings(pUserSettings).then(function() {
 
-          alert('Success! Your changes to your account have been succesfully made. ');
+           $fancyModal.open({
+              templateUrl: 'js/modals/settings-change-success.html', 
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open', 
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+          });
 
           vm.resetForm(); 
 
