@@ -112,98 +112,6 @@ input {
 
  $formGroupSpeed: .4s;
 
-.input-group {
-    width: 100%;
-    margin-top: rem-calc($level1); 
-    margin-bottom: rem-calc($level5);
-    @extend %position-relative;
-
-    &:after {
-      content: "";
-      background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
-      background-color: $primaryColor; 
-      height: rem-calc(3px);
-      bottom: 0;
-      z-index: 3;
-      right: 0;
-      margin-right: auto;
-      margin-left: auto;
-      width: 0;
-      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
-      @extend %position-absolute;
-    }
-
-    input{
-      z-index: 1;
-      width: 100%;
-      margin-bottom: 0;
-      background-color: transparent;
-      border-bottom: 2px solid $grey--light;
-
-      &:-webkit-autofill {
-        background-color: $tertiaryColor--translucent; 
-
-      }
-
-
-      &:active,
-      &:focus {
-        color: $secondaryColor;
-
-      }
-
-    }
-
-    label {
-      z-index: 0;
-      bottom: rem-calc($level1);
-      left: 0;
-      margin-bottom: 0;
-      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
-      @extend %position-absolute;
-    }
-
-    &.is-focused,
-    &.is-filled {
-
-      label {
-        @include transform(scale(.8) translateY(-28px) translateX(-7px));
-
-      }
-
-    }
-
-    &.is-focused {
-        color: $tertiaryColor; 
-
-        input {
-         color: $secondaryColor;
-
-        }
-
-        &:after {
-          width: 100%;
-
-        }
-
-    }
-
-
-    .alerts {
-      position: absolute; 
-      left: 0; 
-      width: 100%; 
-      bottom: -1.2rem; 
-      white-space: nowrap; 
-      @include type-setting(-1); 
-
-    }
-
-}
-
-
-
-
 
 /*------------------------------------*\
     #Input Sizes
@@ -271,9 +179,99 @@ input {
 }
 
 
+/*------------------------------------*\
+    #Input Group Styles
+\*------------------------------------*/
+
+.input-group {
+    width: 100%;
+    margin-top: rem-calc($level1); 
+    margin-bottom: rem-calc($level5);
+    @extend %position-relative;
+
+    &:after {
+      content: "";
+      background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
+      background-color: $primaryColor; 
+      height: rem-calc(3px);
+      bottom: 0;
+      z-index: 3;
+      right: 0;
+      margin-right: auto;
+      margin-left: auto;
+      width: 0;
+      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @extend %position-absolute;
+    }
+
+    input{
+      z-index: 1;
+      width: 100%;
+      margin-bottom: 0;
+      background-color: transparent;
+      border-bottom: 2px solid $grey--light;
+
+      &:-webkit-autofill {
+        background-color: $tertiaryColor--translucent; 
+
+      }
 
 
+      &:active,
+      &:focus {
+        color: $secondaryColor;
 
+      }
+
+    }
+
+    label {
+      z-index: 0;
+      bottom: rem-calc(3px);
+      left: 0;
+      margin-bottom: 0;
+      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @extend %position-absolute;
+    }
+
+    &.is-focused,
+    &.is-filled {
+
+      label {
+        @include type-setting(-2); 
+        @include transform(translateY(-28px));
+
+      }
+
+    }
+
+    &.is-focused {
+        color: $tertiaryColor; 
+
+        input {
+         color: $secondaryColor;
+
+        }
+
+        &:after {
+          width: 100%;
+
+        }
+
+    }
+
+
+    .alerts {
+      position: absolute; 
+      left: 0; 
+      width: 100%; 
+      bottom: -1.2rem; 
+      white-space: nowrap; 
+      @include type-setting(-1); 
+
+    }
+
+}
 
 
 

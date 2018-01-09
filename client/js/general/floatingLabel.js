@@ -1,13 +1,28 @@
 'use strict';
 
-twopence.directive('floatingLabel',
-function() {
+twopence.directive('floatingLabel', ['$timeout', 
+function($timeout) {
 
     return {
 
         restrict: 'A', 
+        require: 'ngModel',
         scope: {}, 
-        link: function(scope, elem, attr ) {  
+        link: function(scope, elem, attr, ctrl) {
+
+          $timeout(function() {
+
+            if(ctrl.$modelValue.length > 0 ) {
+                
+                $(elem).closest('.input-group').addClass('is-filled');
+            }
+
+            $(elem).change(function() {
+
+              console.log('hello'); 
+              $(this).closest('.input-group').addClass('is-focused');
+
+            });  
             
             $(elem).focusout(function() {
                 $('.input-group').removeClass('is-focused');
@@ -33,6 +48,7 @@ function() {
             var values = {};
 
             var validate =  function(pElem) {
+
                 if($(pElem).val().length > 0){
                     $(pElem).closest('.input-group').addClass('is-filled');
                 }
@@ -43,8 +59,25 @@ function() {
 
             validate(elem); 
 
+            //
+            // Setup a watch for changes not done by ng-change 
+            // TODO: unregister for changes made by controller since we won't need this 
+            // after a user edits it. 
+            scope.$watch(function() { return ctrl.$viewValue }, function(newVal, oldVal) {
+
+                if($(elem).val().length > 0){
+                    $(elem).closest('.input-group').addClass('is-filled');
+                }
+                else{
+                    $(elem).closest('.input-group').removeClass('is-filled');
+                }
+
+            }); 
+
+          }, 100); 
+
         }
 
     }
 
-}); 
+}]); 
