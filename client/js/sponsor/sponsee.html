@@ -7,60 +7,69 @@
 
       <div class="small-12 large-4  columns">
       
-        <div class="card ">
-
           <div class="card-header  text-left">
 
-            <h1 class="txtc2 h2 ff2 mb1" 
-                ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name ">
-            </h1>
+          <h1 class="txtc2  ff2 mb1" 
+              ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name">
 
-          <p  class="mb0  text-left">
+          </h1>
+
+          <p class="text-left">
               Plan Status:   
-  
-              <span ng-switch="sponsorship.planStatus">
-            
-                <span ng-switch-when="active" class="tag tag--active">
-                  Active
-                </span>
-            
-                <span ng-switch-when="paused" class="tag  tag--inactive">
-                    Paused
-                </span>
 
-                <span ng-switch-when="activating" class="tag  tag--pending">
-                    Activating
-                </span>
-                              
-                <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
-
+            <span ng-switch="sponsorship.planStatus">
+          
+              <span ng-switch-when="active" class="tag tag--active">
+                Active
+              </span>
+          
+              <span ng-switch-when="paused" class="tag  tag--inactive">
+                  Paused
               </span>
 
-              <a class="" ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})">
-                (Change)
-              </a>
+              <span ng-switch-when="activating" class="tag  tag--pending">
+                  Activating
+              </span>
+                            
+              <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
 
-            </p>
+            </span>
+
+            <a class="" ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})">
+              (Change)
+            </a>
+
+          </p>
         
           </div>
+
+          <hr class="hr--faded">
         
           <div class="card-content">
-                    <div class="grid-cell text-center">
+              
+              <div class="grid-cell text-center">
               
               <h2 class="statLabel">
                 Contributions To Date
               </h2>
             
-              <a  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" 
+              <h3  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" 
                   class="stat  txtc1  text-kilo  fwb">
                 <span class="">$</span>{{sponsorship.sponsorshipInfo.contributions_to_date}}
-              </a>
+              </h3>
             
             </div>
 
           </div>
-    
-        </div>
+
+          <hr class="hr--faded">
+
+
+          <button class="button--secondary  button--small button--expanded">
+            
+            Boost  {{sponsorship.sponsorshipInfo.sponsee.first_name}}
+
+          </button>
 
       </div>
 
