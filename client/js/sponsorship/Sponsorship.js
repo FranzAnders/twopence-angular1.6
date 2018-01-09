@@ -134,6 +134,8 @@ twopence.factory('Sponsorship', [
 
   sponsorship.createNewPlan = function(pSponseeId, pSponseeInfo) {
 
+    console.log(pSponseeInfo); 
+    
     return $q(function(resolve, reject) {
 
         $http.post(BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans', pSponseeInfo, {

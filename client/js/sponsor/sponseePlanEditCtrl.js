@@ -190,38 +190,92 @@ twopence.controller('sponseePlanEditCtrl', [
         "pause": true
       }; 
 
+
+      //
+      // We create an object with the required info to patch the plan for $fancyModal ctrl
+      //
+      var sponseePlanPatchInfo = {}; 
+
+      sponseePlanPatchInfo.planId  = planId;
+      sponseePlanPatchInfo.payLoad = payLoad; 
+      sponseePlanPatchInfo.sponsorshipId = pSponsorshipId; 
+
+
       if (pPlan.schedules[0].date_termination === getTodaysDate()) {
+          
+          console.log('being paused'); 
+
         $fancyModal.open({
-          template: '<div>This plan is already in the process of being paused, please wait 24 hours for changes to take effect.</div>',
-          themeClass: 'fancymodal--secondary',
+          templateUrl: 'js/modals/plan-edit-already-paused.html',
+          themeClass: 'fancymodal--primary  fancymodal--small',
           openingClass: 'is-open',
-          closingClass: 'is-closed'
+          closingClass: 'is-closed',
+          showCloseButton: false
 
         })
 
       } else {
 
         if (pPlan.active === true) {
-          Sponsorship.patch(pSponsorshipId, planId, payLoad)
-          .then(function() {
-            alert('You’ve successfully paused your plan. Your changes will take 24 hours to go into effect.');
-            vm.checkIfPaused(pPlan, getTodaysDate()); 
 
-          }).catch(
-            function(error) {
-              console.log(error); 
-              vm.errorMsg = error.data.message;
-              $fancyModal.open({
-                template: '<div>This matching plan is already paused, please wait 24 hrs for changes to take effect.</div>',
-                themeClass: 'fancymodal--secondary',
-                openingClass: 'is-open',
-                closingClass: 'is-closed'
+          $fancyModal.open({
+            controller: ['sponseePlanPatchInfo', 
+                         'Sponsorship', function(
+                          sponseePlanPatchInfo, 
+                          Sponsorship) {
 
-              })
+              console.log(Sponsorship); 
+              console.log(sponseePlanPatchInfo); 
+
+              vm.patchPlan = function() {
+
+                Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
+                .then(function() {
+                  alert('You’ve successfully paused your plan. Your changes will take 24 hours to go into effect.');
+                  vm.checkIfPaused(pPlan, getTodaysDate()); 
+
+                }).catch(
+                  function(error) {
+                    console.log(error); 
+                    vm.errorMsg = error.data.message;
+                    $fancyModal.open({
+                      template: '<div>This matching plan is already paused, please wait 24 hrs for changes to take effect.</div>',
+                      themeClass: 'fancymodal--secondary',
+                      openingClass: 'is-open',
+                      closingClass: 'is-closed'
+
+                    })
+
+                  }
+
+                );
+
+              }
+
+            }],
+            templateUrl: 'js/modals/plan-edit-pausing-confirmation.html',
+            themeClass: 'fancymodal--primary  fancymodal--small',
+            openingClass: 'is-open',
+            closingClass: 'is-closed',
+            showCloseButton: false,
+            resolve: {
+
+              sponseePlanPatchInfo: function() {
+
+                return sponseePlanPatchInfo
+
+              },
+              Sponsorship: function() {
+
+                return Sponsorship
+
+              }
 
             }
 
-          );
+          })
+
+
 
         } else {
 

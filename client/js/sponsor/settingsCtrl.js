@@ -9,10 +9,12 @@
 twopence.controller('settingsCtrl', [
     'Sponsor',
     'User',
+    '$fancyModal', 
     '$timeout',
     function(
       Sponsor, 
       User, 
+      $fancyModal,
       $timeout) {
 
     var vm = this; 
@@ -45,7 +47,10 @@ twopence.controller('settingsCtrl', [
         vm.userSettings.phone = vm.sponsorInfo.phone; 
         vm.userSettings.sms_preferred = vm.sponsorInfo.sponsor.sms_preferred; 
 
-      }); 
+        console.log(vm.userSettingsForm); 
+
+
+      }, 100); 
 
 
     })  
@@ -75,7 +80,14 @@ twopence.controller('settingsCtrl', [
 
         User.updateSettings(pUserSettings).then(function() {
 
-          alert('Success! Your changes to your account have been succesfully made. ');
+           $fancyModal.open({
+              templateUrl: 'js/modals/settings-change-success.html', 
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open', 
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+          });
 
           vm.resetForm(); 
 
@@ -106,6 +118,5 @@ twopence.controller('settingsCtrl', [
 
     }; 
 
-    console.log(vm.userSettings); 
 
 }]); 

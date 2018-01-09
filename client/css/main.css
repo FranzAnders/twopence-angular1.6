@@ -5937,7 +5937,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 /* Sizes for text too small or too large for a header tag */
 /* line 265, ../scss/abstracts/_typography.scss */
 .text-mini {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   line-height: 1.5;
 }
 
@@ -6125,7 +6125,7 @@ label {
     #Dropshadows 
 \*------------------------------------*/
 /* line 60, ../scss/abstracts/_utility.scss */
-.dropshadow1, .fancymodal--secondary .fancymodal-content {
+.dropshadow1 {
   -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -6214,7 +6214,7 @@ label {
     #Position Types 
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
-.relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--secondary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
+.relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--primary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
   position: relative;
 }
 
@@ -6289,7 +6289,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
     #Paddings 
 \*------------------------------------*/
 /* line 303, ../scss/abstracts/_utility.scss */
-.ptrbl0, .fancymodal--emailSubscription .fancymodal-content {
+.ptrbl0 {
   padding: 0 !important;
 }
 
@@ -6309,7 +6309,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /* line 319, ../scss/abstracts/_utility.scss */
-.ptrbl4, .fancymodal--secondary .fancymodal-content {
+.ptrbl4 {
   padding: 1.5rem !important;
 }
 
@@ -6364,7 +6364,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /* line 368, ../scss/abstracts/_utility.scss */
-.pt7, .fancymodal--large, .fancymodal--medium {
+.pt7, .fancymodal--large, .fancymodal--medium, .fancymodal--small {
   padding-top: 3rem !important;
 }
 
@@ -13442,7 +13442,7 @@ p a {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 128, ../scss/base/_typography.scss */
+/* line 114, ../scss/base/_typography.scss */
 p a:before {
   content: " ";
   left: 0;
@@ -13461,11 +13461,11 @@ p a:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 142, ../scss/base/_typography.scss */
+/* line 128, ../scss/base/_typography.scss */
 p a:hover, p a:focus {
   color: #6AC6C5;
 }
-/* line 146, ../scss/base/_typography.scss */
+/* line 132, ../scss/base/_typography.scss */
 p a:hover:after, p a:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13473,7 +13473,7 @@ p a:hover:after, p a:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 152, ../scss/base/_typography.scss */
+/* line 138, ../scss/base/_typography.scss */
 p a:hover:before, p a:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13482,11 +13482,11 @@ p a:hover:before, p a:focus:before {
   transform: translateY(0);
 }
 
-/* line 168, ../scss/base/_typography.scss */
+/* line 154, ../scss/base/_typography.scss */
 p a.alt-link {
   color: #fff;
 }
-/* line 171, ../scss/base/_typography.scss */
+/* line 157, ../scss/base/_typography.scss */
 p a.alt-link:after {
   content: " ";
   right: 0;
@@ -13502,7 +13502,7 @@ p a.alt-link:after {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 185, ../scss/base/_typography.scss */
+/* line 171, ../scss/base/_typography.scss */
 p a.alt-link:before {
   content: " ";
   left: 0;
@@ -13521,11 +13521,11 @@ p a.alt-link:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 200, ../scss/base/_typography.scss */
+/* line 186, ../scss/base/_typography.scss */
 p a.alt-link:hover, p a.alt-link:focus {
   color: #231F20;
 }
-/* line 204, ../scss/base/_typography.scss */
+/* line 190, ../scss/base/_typography.scss */
 p a.alt-link:hover:after, p a.alt-link:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13533,7 +13533,7 @@ p a.alt-link:hover:after, p a.alt-link:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 210, ../scss/base/_typography.scss */
+/* line 196, ../scss/base/_typography.scss */
 p a.alt-link:hover:before, p a.alt-link:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13541,17 +13541,17 @@ p a.alt-link:hover:before, p a.alt-link:focus:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 218, ../scss/base/_typography.scss */
+/* line 204, ../scss/base/_typography.scss */
 p a.alt-link:active {
   background-color: #231F20;
   color: #fff;
 }
 
-/* line 234, ../scss/base/_typography.scss */
+/* line 220, ../scss/base/_typography.scss */
 .section--secondary p.section-text a {
   color: #fff;
 }
-/* line 238, ../scss/base/_typography.scss */
+/* line 224, ../scss/base/_typography.scss */
 .section--secondary p.section-text a:hover, .section--secondary p.section-text a:focus {
   color: #fff;
   background-color: #231F20;
@@ -13560,13 +13560,13 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Default Text Selection Color 
 \*------------------------------------*/
-/* line 263, ../scss/base/_typography.scss */
+/* line 249, ../scss/base/_typography.scss */
 ::selection {
   background-color: rgba(23, 35, 39, 0.95);
   color: #fff;
 }
 
-/* line 268, ../scss/base/_typography.scss */
+/* line 254, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: rgba(23, 35, 39, 0.95);
   color: #fff;
@@ -13575,27 +13575,27 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Font Color Classes 
 \*------------------------------------*/
-/* line 283, ../scss/base/_typography.scss */
+/* line 269, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 287, ../scss/base/_typography.scss */
+/* line 273, ../scss/base/_typography.scss */
 .txtc2 {
   color: #231F20;
 }
 
-/* line 291, ../scss/base/_typography.scss */
+/* line 277, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 295, ../scss/base/_typography.scss */
+/* line 281, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 300, ../scss/base/_typography.scss */
+/* line 286, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
@@ -13606,7 +13606,7 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 344, ../scss/base/_typography.scss */
+/* line 330, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -13614,67 +13614,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 398, ../scss/base/_typography.scss */
+/* line 384, ../scss/base/_typography.scss */
 hr {
   border-style: none;
   height: 0.0625rem;
   margin-top: 0;
 }
 
-/* line 404, ../scss/base/_typography.scss */
+/* line 390, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 410, ../scss/base/_typography.scss */
+/* line 396, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #231F20;
   margin-left: 0;
 }
 
-/* line 416, ../scss/base/_typography.scss */
+/* line 402, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 422, ../scss/base/_typography.scss */
+/* line 408, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 428, ../scss/base/_typography.scss */
+/* line 414, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 434, ../scss/base/_typography.scss */
+/* line 420, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 440, ../scss/base/_typography.scss */
+/* line 426, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 445, ../scss/base/_typography.scss */
+/* line 431, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 450, ../scss/base/_typography.scss */
+/* line 436, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 457, ../scss/base/_typography.scss */
+/* line 443, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
   height: 0.0625rem;
 }
 
-/* line 463, ../scss/base/_typography.scss */
+/* line 449, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -13683,7 +13683,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 476, ../scss/base/_typography.scss */
+/* line 462, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -13696,7 +13696,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 490, ../scss/base/_typography.scss */
+/* line 476, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -13710,7 +13710,7 @@ hr {
 /*------------------------------------*\
     #Paragraph styles 
 \*------------------------------------*/
-/* line 556, ../scss/base/_typography.scss */
+/* line 542, ../scss/base/_typography.scss */
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -13720,7 +13720,7 @@ hr {
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 570, ../scss/base/_typography.scss */
+/* line 556, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -13728,7 +13728,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 591, ../scss/base/_typography.scss */
+/* line 577, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -13737,63 +13737,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 609, ../scss/base/_typography.scss */
+  /* line 595, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 617, ../scss/base/_typography.scss */
+  /* line 603, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 625, ../scss/base/_typography.scss */
+  /* line 611, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 635, ../scss/base/_typography.scss */
+  /* line 621, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 644, ../scss/base/_typography.scss */
+  /* line 630, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 652, ../scss/base/_typography.scss */
+  /* line 638, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 661, ../scss/base/_typography.scss */
+  /* line 647, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 669, ../scss/base/_typography.scss */
+  /* line 655, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 678, ../scss/base/_typography.scss */
+  /* line 664, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
@@ -15132,13 +15132,56 @@ input.input--alt {
 /*------------------------------------*\
     #Input Groups
 \*------------------------------------*/
-/* line 115, ../scss/layout/_forms.scss */
+/*------------------------------------*\
+    #Input Sizes
+\*------------------------------------*/
+/* line 125, ../scss/layout/_forms.scss */
+.input-group.input--small label {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+/* line 131, ../scss/layout/_forms.scss */
+.input-group.input--small input {
+  padding-top: 0.1875rem;
+  padding-bottom: 0.1875rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+/* line 143, ../scss/layout/_forms.scss */
+.input-group.input--medium label {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* line 149, ../scss/layout/_forms.scss */
+.input-group.input--medium input {
+  padding-top: 0.375rem;
+  padding-bottom: 0.0625rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* line 162, ../scss/layout/_forms.scss */
+.input-group.input--large label {
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+/* line 168, ../scss/layout/_forms.scss */
+.input-group.input--large input {
+  padding-top: 0.75rem;
+  padding-bottom: 0.375rem;
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+
+/*------------------------------------*\
+    #Input Group Styles
+\*------------------------------------*/
+/* line 186, ../scss/layout/_forms.scss */
 .input-group {
   width: 100%;
   margin-top: 0.375rem;
   margin-bottom: 1.875rem;
 }
-/* line 121, ../scss/layout/_forms.scss */
+/* line 192, ../scss/layout/_forms.scss */
 .input-group:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15155,7 +15198,7 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 136, ../scss/layout/_forms.scss */
+/* line 207, ../scss/layout/_forms.scss */
 .input-group input {
   z-index: 1;
   width: 100%;
@@ -15163,18 +15206,18 @@ input.input--alt {
   background-color: transparent;
   border-bottom: 2px solid #dae0e0;
 }
-/* line 143, ../scss/layout/_forms.scss */
+/* line 214, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
   background-color: rgba(35, 142, 178, 0.9);
 }
-/* line 149, ../scss/layout/_forms.scss */
+/* line 220, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
   color: #231F20;
 }
-/* line 157, ../scss/layout/_forms.scss */
+/* line 228, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
-  bottom: 0.375rem;
+  bottom: 0.1875rem;
   left: 0;
   margin-bottom: 0;
   -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -15182,26 +15225,28 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 169, ../scss/layout/_forms.scss */
+/* line 240, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
-  -moz-transform: scale(0.8) translateY(-28px) translateX(-7px);
-  -ms-transform: scale(0.8) translateY(-28px) translateX(-7px);
-  -webkit-transform: scale(0.8) translateY(-28px) translateX(-7px);
-  transform: scale(0.8) translateY(-28px) translateX(-7px);
+  font-size: 0.6rem;
+  line-height: 1.5;
+  -moz-transform: translateY(-28px);
+  -ms-transform: translateY(-28px);
+  -webkit-transform: translateY(-28px);
+  transform: translateY(-28px);
 }
-/* line 176, ../scss/layout/_forms.scss */
+/* line 248, ../scss/layout/_forms.scss */
 .input-group.is-focused {
   color: #238EB2;
 }
-/* line 179, ../scss/layout/_forms.scss */
+/* line 251, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
   color: #231F20;
 }
-/* line 184, ../scss/layout/_forms.scss */
+/* line 256, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
   width: 100%;
 }
-/* line 192, ../scss/layout/_forms.scss */
+/* line 264, ../scss/layout/_forms.scss */
 .input-group .alerts {
   position: absolute;
   left: 0;
@@ -15213,65 +15258,25 @@ input.input--alt {
 }
 
 /*------------------------------------*\
-    #Input Sizes
-\*------------------------------------*/
-/* line 217, ../scss/layout/_forms.scss */
-.input-group.input--small label {
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-/* line 223, ../scss/layout/_forms.scss */
-.input-group.input--small input {
-  padding-top: 0.1875rem;
-  padding-bottom: 0.1875rem;
-  font-size: 0.8rem;
-  line-height: 1.5;
-}
-/* line 235, ../scss/layout/_forms.scss */
-.input-group.input--medium label {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-/* line 241, ../scss/layout/_forms.scss */
-.input-group.input--medium input {
-  padding-top: 0.375rem;
-  padding-bottom: 0.0625rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-/* line 254, ../scss/layout/_forms.scss */
-.input-group.input--large label {
-  font-size: 1.125rem;
-  line-height: 1.33333;
-}
-/* line 260, ../scss/layout/_forms.scss */
-.input-group.input--large input {
-  padding-top: 0.75rem;
-  padding-bottom: 0.375rem;
-  font-size: 1.125rem;
-  line-height: 1.33333;
-}
-
-/*------------------------------------*\
     #Input With Button
 \*------------------------------------*/
-/* line 289, ../scss/layout/_forms.scss */
+/* line 287, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
   width: 100%;
 }
-/* line 295, ../scss/layout/_forms.scss */
+/* line 293, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-button {
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 295, ../scss/layout/_forms.scss */
+  /* line 293, ../scss/layout/_forms.scss */
   .inputWithButton .inputWithButton-button {
     width: 80%;
     padding-left: 0.75rem;
   }
 }
 
-/* line 309, ../scss/layout/_forms.scss */
+/* line 307, ../scss/layout/_forms.scss */
 m
 label {
   margin-bottom: 0.25rem;
@@ -15280,7 +15285,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 333, ../scss/layout/_forms.scss */
+/* line 331, ../scss/layout/_forms.scss */
 select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -15295,11 +15300,11 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 353, ../scss/layout/_forms.scss */
+/* line 351, ../scss/layout/_forms.scss */
 .select-customWrapper {
   position: relative;
 }
-/* line 356, ../scss/layout/_forms.scss */
+/* line 354, ../scss/layout/_forms.scss */
 .select-customWrapper:after {
   content: " ";
   width: 0;
@@ -15314,7 +15319,7 @@ select {
   pointer-events: none;
 }
 
-/* line 374, ../scss/layout/_forms.scss */
+/* line 372, ../scss/layout/_forms.scss */
 .select--primary {
   background-color: #fff;
   outline: 0;
@@ -15324,7 +15329,7 @@ select {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 381, ../scss/layout/_forms.scss */
+/* line 379, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
   border: 0;
@@ -15333,32 +15338,32 @@ select {
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.2);
 }
 
-/* line 392, ../scss/layout/_forms.scss */
+/* line 390, ../scss/layout/_forms.scss */
 .select--quantity {
   min-width: 5rem;
   text-align-last: center;
 }
 
-/* line 399, ../scss/layout/_forms.scss */
+/* line 397, ../scss/layout/_forms.scss */
 .select--small {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 407, ../scss/layout/_forms.scss */
+/* line 405, ../scss/layout/_forms.scss */
 .select--medium {
   padding: 0.5rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 414, ../scss/layout/_forms.scss */
+/* line 412, ../scss/layout/_forms.scss */
 .select--quantity {
   width: 2.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 414, ../scss/layout/_forms.scss */
+  /* line 412, ../scss/layout/_forms.scss */
   .select--quantity {
     width: 3.75rem;
   }
@@ -15370,7 +15375,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 454, ../scss/layout/_forms.scss */
+/* line 452, ../scss/layout/_forms.scss */
 .fieldset,
 fieldset {
   margin-bottom: 1.875rem;
@@ -15379,7 +15384,7 @@ fieldset {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 469, ../scss/layout/_forms.scss */
+/* line 467, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -15387,7 +15392,7 @@ fieldset {
 /*------------------------------------*\
     #Clear Field
 \*------------------------------------*/
-/* line 481, ../scss/layout/_forms.scss */
+/* line 479, ../scss/layout/_forms.scss */
 input.clearField {
   background-color: transparent;
   text-align: center;
@@ -15395,7 +15400,7 @@ input.clearField {
   font-size: 6rem;
   line-height: 1.2;
 }
-/* line 487, ../scss/layout/_forms.scss */
+/* line 485, ../scss/layout/_forms.scss */
 input.clearField:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15412,20 +15417,20 @@ input.clearField:after {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 502, ../scss/layout/_forms.scss */
+/* line 500, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #231F20;
 }
-/* line 506, ../scss/layout/_forms.scss */
+/* line 504, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
   width: 100%;
 }
 
-/* line 516, ../scss/layout/_forms.scss */
+/* line 514, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 521, ../scss/layout/_forms.scss */
+/* line 519, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15433,11 +15438,11 @@ input.clearField:active:after, input.clearField:focus:after {
   bottom: 0;
 }
 
-/* line 533, ../scss/layout/_forms.scss */
+/* line 531, ../scss/layout/_forms.scss */
 .radio-group {
   margin-bottom: 1.125rem;
 }
-/* line 536, ../scss/layout/_forms.scss */
+/* line 534, ../scss/layout/_forms.scss */
 .radio-group label {
   color: #231F20;
 }
@@ -16519,7 +16524,7 @@ table th,
 /* line 72, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
   color: #6d6c6c;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   line-height: 1.5;
 }
 @media only screen and (min-width: 64.0625em) {
@@ -17693,14 +17698,14 @@ body.fancymodal-open {
   left: 0;
 }
 
-/* line 57, ../scss/components/_modals.scss */
+/* line 56, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-overlay-opening {
   -moz-animation: fancymodal-fadeIn 0.6s forwards;
   -webkit-animation: fancymodal-fadeIn 0.6s forwards;
   animation: fancymodal-fadeIn 0.6s forwards;
 }
 
-/* line 64, ../scss/components/_modals.scss */
+/* line 63, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-overlay-closing {
   -moz-animation: fancymodal-fadeOut 0.6s forwards;
   -webkit-animation: fancymodal-fadeOut 0.6s forwards;
@@ -17710,28 +17715,38 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Modal Content
 \*------------------------------------*/
-/* line 81, ../scss/components/_modals.scss */
+/* line 80, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-content {
   max-width: 500px;
   background: transparent;
   -webkit-backface-visibility: hidden;
-  padding: 2em 1em;
   margin: 0 auto;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
-/* line 90, ../scss/components/_modals.scss */
+/* line 88, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-content.is-open {
   -moz-animation: fancymodal-in 0.6s forwards;
   -webkit-animation: fancymodal-in 0.6s forwards;
   animation: fancymodal-in 0.6s forwards;
 }
-/* line 96, ../scss/components/_modals.scss */
+/* line 94, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-content.is-closed {
   -moz-animation: fancymodal-out 0.6s forwards;
   -webkit-animation: fancymodal-out 0.6s forwards;
   animation: fancymodal-out 0.6s forwards;
 }
+/* line 102, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-data {
+  height: 100%;
+}
+/* line 105, ../scss/components/_modals.scss */
+.fancymodal .fancymodal-data > div {
+  height: 100%;
+}
 
-/* line 106, ../scss/components/_modals.scss */
+/* line 114, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close {
   border-radius: 3px;
   top: 0;
@@ -17739,7 +17754,7 @@ body.fancymodal-open {
   cursor: pointer;
 }
 
-/* line 116, ../scss/components/_modals.scss */
+/* line 124, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close:before {
   border-radius: 3px;
   position: absolute;
@@ -17754,7 +17769,7 @@ body.fancymodal-open {
   color: #ccc;
 }
 
-/* line 133, ../scss/components/_modals.scss */
+/* line 141, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close:hover:before,
 .fancymodal .fancymodal-close:active:before {
   color: #777;
@@ -17764,144 +17779,163 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Modal Types
 \*------------------------------------*/
-/* line 153, ../scss/components/_modals.scss */
-.fancymodal--secondary {
-  padding-top: 0.75rem;
+/* line 161, ../scss/components/_modals.scss */
+.fancymodal--primary {
+  padding: 0;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 153, ../scss/components/_modals.scss */
-  .fancymodal--secondary {
+  /* line 161, ../scss/components/_modals.scss */
+  .fancymodal--primary {
     overflow: hidden;
   }
 }
-/* line 163, ../scss/components/_modals.scss */
-.fancymodal--secondary .fancymodal-content {
-  max-width: 31.5rem;
-  width: 98%;
+/* line 169, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-badge {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: #FFF;
+  height: 3.25rem;
+  width: 3.25rem;
+  border: 1px solid #dae0e0;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 181, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-badge .fancymodal-badge-icon {
+  fill: #6AC6C5;
+  width: 56%;
+}
+/* line 189, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-content {
   background: #fff;
   -webkit-backface-visibility: hidden;
-  border-top: 8px solid #6AC6C5;
+  padding-top: 1.125rem;
+  -moz-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
+  box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 184, ../scss/components/_modals.scss */
-.fancymodal--secondary .fancymodal-content.is-open {
+/* line 196, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-content.is-open {
   -moz-animation: fancymodal-in 0.6s forwards;
   -webkit-animation: fancymodal-in 0.6s forwards;
   animation: fancymodal-in 0.6s forwards;
 }
-/* line 190, ../scss/components/_modals.scss */
-.fancymodal--secondary .fancymodal-content.is-closed {
+/* line 202, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-content.is-closed {
   -moz-animation: fancymodal-out 0.6s forwards;
   -webkit-animation: fancymodal-out 0.6s forwards;
   animation: fancymodal-out 0.6s forwards;
 }
-
-/* line 208, ../scss/components/_modals.scss */
-.fancymodal--emailSubscription .fancymodal-content .fancymodal-data > div {
+/* line 211, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-innerContent {
+  padding: 1.5rem;
+}
+/* line 217, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-options {
+  background-color: transparent;
+  border-top: 1px solid #dae0e0;
+}
+/* line 221, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-options .fancymodal-options-option {
+  background-color: transparent;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  width: 100%;
+  font-weight: normal;
+  margin-bottom: 0;
+  color: #238EB2;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 233, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-options .fancymodal-options-option:before {
+  content: " ";
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
   background-color: #6AC6C5;
-  color: #fff;
+  position: absolute;
+  opacity: 0;
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-@media only screen and (min-width: 40.0625em) {
-  /* line 208, ../scss/components/_modals.scss */
-  .fancymodal--emailSubscription .fancymodal-content .fancymodal-data > div {
-    background-color: transparent;
-    background-image: url("../assets/images/emailSignUpBg.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-}
-/* line 227, ../scss/components/_modals.scss */
-.fancymodal--emailSubscription .fancymodal-content .fancymodal-close:before {
-  top: -30px;
-  right: -10px;
-  font-size: 2.5rem;
+/* line 247, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-options .fancymodal-options-option:hover, .fancymodal--primary .fancymodal-options .fancymodal-options-option:focus {
   color: #6AC6C5;
-  -moz-transition: -moz-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: -o-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 240, ../scss/components/_modals.scss */
-.fancymodal--emailSubscription .fancymodal-content .fancymodal-close:hover:before, .fancymodal--emailSubscription .fancymodal-content .fancymodal-close:active:before, .fancymodal--emailSubscription .fancymodal-content .fancymodal-close:focus:before {
-  color: #6AC6C5;
-  background-color: transparent;
-  -moz-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+/* line 251, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-options .fancymodal-options-option:hover:after, .fancymodal--primary .fancymodal-options .fancymodal-options-option:focus:after {
+  opacity: 0;
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
 }
-
-/* line 258, ../scss/components/_modals.scss */
-.fancyModal--fullScreen {
-  padding-top: 0;
-}
-/* line 262, ../scss/components/_modals.scss */
-.fancyModal--fullScreen .fancymodal-content {
-  padding-top: 2.25rem;
-  background-color: transparent;
-  color: #fff;
-  max-width: 100%;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 262, ../scss/components/_modals.scss */
-  .fancyModal--fullScreen .fancymodal-content {
-    padding-top: 7.5rem;
-  }
-}
-/* line 275, ../scss/components/_modals.scss */
-.fancyModal--fullScreen .fancymodal-content.is-open {
-  -moz-animation: fancymodal-fadeIn 0.6s forwards;
-  -webkit-animation: fancymodal-fadeIn 0.6s forwards;
-  animation: fancymodal-fadeIn 0.6s forwards;
-}
-/* line 281, ../scss/components/_modals.scss */
-.fancyModal--fullScreen .fancymodal-content.is-closed {
-  -moz-animation: fancymodal-fadeOut 0.6s forwards;
-  -webkit-animation: fancymodal-fadeOut 0.6s forwards;
-  animation: fancymodal-fadeOut 0.6s forwards;
-}
-/* line 291, ../scss/components/_modals.scss */
-.fancyModal--fullScreen .fancymodal-content .fancymodal-close:before {
-  top: 1.125rem;
-  right: 0.75rem;
-  font-size: 2.5rem;
-  color: #fff;
-  -moz-transition: -moz-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: -o-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: transform 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 303, ../scss/components/_modals.scss */
-.fancyModal--fullScreen .fancymodal-content .fancymodal-close:hover:before, .fancyModal--fullScreen .fancymodal-content .fancymodal-close:active:before, .fancyModal--fullScreen .fancymodal-content .fancymodal-close:focus:before {
-  color: #fff;
-  background-color: transparent;
-  -moz-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+/* line 257, ../scss/components/_modals.scss */
+.fancymodal--primary .fancymodal-options .fancymodal-options-option:hover:before, .fancymodal--primary .fancymodal-options .fancymodal-options-option:focus:before {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
 /*------------------------------------*\
     #Modal Sizes
 \*------------------------------------*/
-/* line 331, ../scss/components/_modals.scss */
+/* line 284, ../scss/components/_modals.scss */
 .fancyModal--fullScreen .fancymodal-content {
   background-color: transparent;
 }
 
-/* line 341, ../scss/components/_modals.scss */
+/* line 294, ../scss/components/_modals.scss */
 .fancymodal--large .fancymodal-content {
   max-width: 68.75rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 348, ../scss/components/_modals.scss */
+  /* line 301, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 6rem !important;
   }
 }
-/* line 357, ../scss/components/_modals.scss */
+/* line 310, ../scss/components/_modals.scss */
 .fancymodal--medium .fancymodal-content {
   max-width: 41.25rem;
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 318, ../scss/components/_modals.scss */
+  .fancymodal--small {
+    padding-top: 6rem !important;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 318, ../scss/components/_modals.scss */
+  .fancymodal--small {
+    padding-top: 10rem !important;
+  }
+}
+/* line 332, ../scss/components/_modals.scss */
+.fancymodal--small .fancymodal-content {
+  width: 23.5rem;
+  min-height: 7.5rem;
 }
 
 /*------------------------------------*\
@@ -18275,7 +18309,7 @@ body.fancymodal-open {
   color: #231F20;
   letter-spacing: 1px;
   margin-bottom: 0;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   line-height: 1.5;
 }
 
@@ -18319,7 +18353,7 @@ body.fancymodal-open {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   line-height: 1.5;
 }
 
@@ -18427,7 +18461,7 @@ body.fancymodal-open {
 @media only screen and (min-width: 64.0625em) {
   /* line 60, ../scss/components/_validationAlerts.scss */
   .validationAlert .validationAlert-body {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     line-height: 1.5;
   }
 }

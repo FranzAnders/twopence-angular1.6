@@ -42,7 +42,6 @@ body.fancymodal-open {
 .fancymodal {
     
     .fancymodal-overlay {
-
         background: $secondaryColor--translucent; 
         -webkit-backface-visibility: hidden;
         position: fixed;
@@ -79,12 +78,11 @@ body.fancymodal-open {
 .fancymodal {
 
     .fancymodal-content {
-    
         max-width: 500px;
         background: transparent;
         -webkit-backface-visibility: hidden;
-        padding: 2em 1em;
         margin: 0 auto;
+        @include border-radius(4px); 
         @extend %position-relative; 
 
         &.is-open {
@@ -98,6 +96,16 @@ body.fancymodal-open {
             @include animation(fancymodal-out .6s forwards);
 
         }
+
+    }
+
+    .fancymodal-data {
+      height: 100%; 
+
+       & > div {
+
+        height: 100%; 
+       }
 
     }
 }
@@ -150,36 +158,40 @@ body.fancymodal-open {
 \*------------------------------------*/
 
 
-.fancymodal--secondary {
-    
-    padding-top: rem-calc($level2); 
+.fancymodal--primary {
+    padding: 0; 
 
     @media #{$medium-up} {
+      overflow: hidden; 
 
-        overflow: hidden; 
+    } 
+
+    .fancymodal-badge {
+      position: absolute; 
+      top: -30px; 
+      right:0; 
+      left: 0; 
+      margin: auto; 
+      background-color: #FFF; 
+      height: rem-calc(52px); 
+      width: rem-calc(52px); 
+      border: 1px solid $grey--light; 
+      @include border-radius(100%); 
+
+      .fancymodal-badge-icon {
+        fill: $primaryColor; 
+        width: 56%; 
+
+      }
 
     }
 
     .fancymodal-content {
-        max-width: 31.5rem; 
-        width: 98%; 
         background: #fff;
         -webkit-backface-visibility: hidden;
-        border-top: 8px solid $primaryColor;
-        @extend %dropshadow1; 
-        @extend %ptrbl4; 
+        padding-top: rem-calc($level3); 
         @extend %position-relative; 
-
-        @media #{$medium-up} {
-            // right: 0;
-            // left: 0; 
-            // bottom: 0;
-            // height: 98%; 
-            // height: 90%;
-            // padding: rem-calc($level6) !important;
-            // position: absolute !important;  
-
-        }
+        @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
 
         &.is-open {
 
@@ -194,127 +206,68 @@ body.fancymodal-open {
         }
 
     }
-}
 
 
-.fancymodal--emailSubscription {
-    
-    .fancymodal-content {
-        
-        @extend %ptrbl0; 
+    .fancymodal-innerContent {
+      padding: rem-calc($level4); 
 
-        .fancymodal-data {
-
-            & > div {
-
-                background-color: $primaryColor; 
-                color: #fff; 
-
-                @media #{$medium-up} {
-                    background-color: transparent; 
-                    background-image: url("../assets/images/emailSignUpBg.jpg"); 
-                    background-size: cover; 
-                    background-position: center; 
-                
-                }
-
-            }
-
-        }
-
-        .fancymodal-close {
-            
-            &:before {
-
-                top: -30px; 
-                right: -10px; 
-                font-size: rem-calc(40px); 
-                color: $primaryColor; 
-                @include transition(transform .2s ceaser($easeInOutQuint)); 
-            }
-
-            &:hover,
-            &:active, 
-            &:focus {
-                
-                &:before {
-
-                    color: $primaryColor; 
-                    background-color: transparent; 
-                    @include transform(scale(1.3)); 
-
-                }
-
-            }
-
-        }
-  
     }
 
-}
-
-
-
-.fancyModal--fullScreen {
     
-    padding-top: 0;
+    .fancymodal-options {
+      background-color: transparent; 
+      border-top: 1px solid $grey--light; 
 
-    .fancymodal-content {
-
-        padding-top: rem-calc($level6);
-
-        @media #{$medium-up} {
-
-            padding-top: rem-calc($level7 + $level7 + $level4); 
-        }
-
+      .fancymodal-options-option {
         background-color: transparent; 
-        color: #fff; 
-        max-width: 100%; 
+        padding-top: rem-calc($level2); 
+        padding-bottom: rem-calc($level2); 
+        width: 100%; 
+        font-weight: normal; 
+        margin-bottom: 0; 
+        color: $tertiaryColor;
+        position: relative; 
+        @include type-setting(0); 
+        @include transition(all .2s ceaser($easeInOutQuint)); 
 
-        &.is-open {
+        &:before {
+          content: " "; 
+          left: 0; 
+          bottom: -2px; 
+          width: 100%; 
+          height: 2px; 
+          background-color: $primaryColor; 
+          position: absolute; 
+          opacity: 0; 
+          @include transform(translateY(3px)); 
+          @include transition(all .2s ceaser($easeInOutQuint)); 
 
-            @include animation(fancymodal-fadeIn .6s forwards);
+        }
+
+        &:hover,
+        &:focus {
+          color: $primaryColor;
+          
+          &:after {
+            opacity: 0; 
+            @include transform(translateY(-4px)); 
+
+          }
+
+          &:before {
+            opacity: 1; 
+            @include transform(translateY(0)); 
+
+          }
 
         }
 
-        &.is-closed {
-
-            @include animation(fancymodal-fadeOut .6s forwards);
-
-        }
-
-
-        .fancymodal-close {
-
-            
-            &:before {
-                top: rem-calc($level3); 
-                right: rem-calc($level2); 
-                font-size: rem-calc(40px); 
-                color: #fff; 
-                @include transition(transform .2s ceaser($easeInOutQuint)); 
-            }
-
-            &:hover,
-            &:active, 
-            &:focus {
-                
-                &:before {
-
-                    color: #fff; 
-                    background-color: transparent; 
-                    @include transform(scale(1.3)); 
-
-                }
-
-            }
-
-        }
+      }
 
     }
 
 }
+
 
 
 
@@ -361,6 +314,27 @@ body.fancymodal-open {
     }
 }
 
+
+.fancymodal--small {
+    @extend %pt7; 
+
+    @media #{$medium-up} {
+
+        padding-top: 6rem !important; 
+    }
+
+    @media #{$large-up} {
+
+        padding-top: 10rem !important; 
+    }
+
+
+    .fancymodal-content {
+        width: 23.5rem;
+        min-height: rem-calc(120px); 
+
+    }
+}
 
 
 

@@ -30,6 +30,6 @@ twopence.controller('logOutCtrl', [
       $cookies.put('loggedIn', false);
       $cookies.put('userToken', null);
 
-      $state.go('main.login');
+      $state.go('main.account.login');
 
     }]);
