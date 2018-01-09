@@ -115,6 +115,5 @@ twopence.controller('settingsCtrl', [
 
     }; 
 
-    console.log(vm.userSettings); 
 
 }]); 
