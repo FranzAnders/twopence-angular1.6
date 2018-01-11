@@ -66,8 +66,11 @@ twopence.controller('loginCtrl', [
 
           User.getUserInfo().then(function(userInfo) {
 
+            console.log(userInfo); 
+
             if(userInfo.sponsor.status === "onboarding") {
-              $state.go('main.signUp.identity');
+
+              $state.go('main.signUp.confirmation');
 
             } else {
 

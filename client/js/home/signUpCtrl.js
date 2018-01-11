@@ -43,7 +43,7 @@ twopence.controller('signUpCtrl', [
     };
 
 
-
+    
     //
     // Checks if there is already a token in session from users
     //
