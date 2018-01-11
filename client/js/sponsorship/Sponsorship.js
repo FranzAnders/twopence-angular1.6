@@ -204,11 +204,9 @@ twopence.factory('Sponsorship', [
 
         headers: {
 
-          'Authorization' : 'bearer ' + Auth.getToken(),
+          'Authorization' : 'bearer ' + Auth.getToken()
 
-          'Content-type' : 'application/json'
-
-        },
+        }
 
       }).then(function(res) {
 

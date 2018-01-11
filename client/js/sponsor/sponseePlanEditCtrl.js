@@ -95,6 +95,41 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
 
+    //
+    // Cacluating today's date to compare to termination Date in Pause / Unpause
+    //
+    var getTomorrowsDate = function() {
+
+      var today = new Date();
+
+      var dd = today.getDate() + 1;
+
+      var mm = today.getMonth() + 1; 
+
+      var yyyy = today.getFullYear();
+
+      if (dd < 10) {
+
+        dd = '0' + dd
+
+      }
+
+      if (mm < 10) {
+
+        mm = '0' + mm
+
+      }
+
+      today = yyyy + '-' + mm + '-' + dd;
+
+      return today; 
+
+    };
+
+
+    console.log(getTomorrowsDate()); 
+
+
     // To Do
     // Send Object To Sponsorship Edit Control via Route
     // Save into Sponsee
@@ -144,16 +179,11 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     vm.checkIfPaused = function(pPlan, pTodaysDate) {
 
-        console.log(pPlan.schedules[0].date_termination); 
-        console.log(pTodaysDate); 
-
         var today = pTodaysDate; 
 
         vm.isActive = (pPlan.schedules[0].date_termination == today); 
 
-        console.log(vm.isActive); 
-
-    }
+    };
 
 
     //
@@ -299,7 +329,7 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     // Create plan
     //
-    vm.createPlan = function(pPlanEditForm, pSponsorshipId, pSponseeInfo) {
+    vm.createPlan = function(pPlanEditForm, pSponsorshipId, pSponseeInfo, pLatestPlan) {
 
       if(pPlanEditForm.$valid) {
 
@@ -307,29 +337,63 @@ twopence.controller('sponseePlanEditCtrl', [
           "plan":{
               "type":"match",
               "frequency":"monthly",
-              "limit": vm.customAmount
+              "limit": vm.customAmount,
+              "date_effective" : getTomorrowsDate()
           }
         }
 
         var sponseeId = pSponseeInfo.id; 
 
-        Sponsorship.createNewPlan(pSponsorshipId, planInfo)
-          .then(function(success){
-            alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
-            getPlan(vm.sponsorshipId); 
+        var planId = pLatestPlan.id; 
 
-          })
-          .catch(function(error){
-            console.log(error);
+        var payLoad = {
+          "pause": true
+        }; 
 
-            if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
-              alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+
+        //
+        // We create an object with the required info to patch the plan 
+        //
+        var sponseePlanPatchInfo = {}; 
+
+        sponseePlanPatchInfo.planId  = planId;
+        sponseePlanPatchInfo.payLoad = payLoad; 
+        sponseePlanPatchInfo.sponsorshipId = pSponsorshipId; 
+
+        console.log(sponseePlanPatchInfo); 
+
+
+        // Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
+        // .then(function(success) {
+
+          Sponsorship.createNewPlan(pSponsorshipId, planInfo)
+            .then(function(success){
+              alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
+              getPlan(vm.sponsorshipId); 
+
+            })
+            .catch(function(error){
+              console.log(error);
+
+              if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
+                alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+
+              }
 
             }
 
-          }
+          )
 
-        )
+
+        // })
+        // .catch(function(err) {
+
+        //   console.log(err);
+        //   alert('wrong'); 
+        // })
+
+
+
 
 
       } else {
