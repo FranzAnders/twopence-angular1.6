@@ -12,11 +12,6 @@ function($timeout) {
 
           $timeout(function() {
 
-            if(ctrl.$modelValue.length > 0 ) {
-                
-                $(elem).closest('.input-group').addClass('is-filled');
-            }
-
             $(elem).change(function() {
 
               console.log('hello'); 

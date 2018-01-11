@@ -15175,13 +15175,13 @@ input.input--alt {
 /*------------------------------------*\
     #Input Group Styles
 \*------------------------------------*/
-/* line 186, ../scss/layout/_forms.scss */
+/* line 190, ../scss/layout/_forms.scss */
 .input-group {
   width: 100%;
   margin-top: 0.375rem;
   margin-bottom: 1.875rem;
 }
-/* line 192, ../scss/layout/_forms.scss */
+/* line 196, ../scss/layout/_forms.scss */
 .input-group:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15198,7 +15198,7 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 207, ../scss/layout/_forms.scss */
+/* line 211, ../scss/layout/_forms.scss */
 .input-group input {
   z-index: 1;
   width: 100%;
@@ -15206,15 +15206,15 @@ input.input--alt {
   background-color: transparent;
   border-bottom: 2px solid #dae0e0;
 }
-/* line 214, ../scss/layout/_forms.scss */
+/* line 218, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
   background-color: rgba(35, 142, 178, 0.9);
 }
-/* line 220, ../scss/layout/_forms.scss */
+/* line 224, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
   color: #231F20;
 }
-/* line 228, ../scss/layout/_forms.scss */
+/* line 232, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
   bottom: 0.1875rem;
@@ -15225,7 +15225,7 @@ input.input--alt {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 240, ../scss/layout/_forms.scss */
+/* line 244, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
   font-size: 0.6rem;
   line-height: 1.5;
@@ -15234,19 +15234,19 @@ input.input--alt {
   -webkit-transform: translateY(-28px);
   transform: translateY(-28px);
 }
-/* line 248, ../scss/layout/_forms.scss */
+/* line 252, ../scss/layout/_forms.scss */
 .input-group.is-focused {
   color: #238EB2;
 }
-/* line 251, ../scss/layout/_forms.scss */
+/* line 255, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
   color: #231F20;
 }
-/* line 256, ../scss/layout/_forms.scss */
+/* line 260, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
   width: 100%;
 }
-/* line 264, ../scss/layout/_forms.scss */
+/* line 268, ../scss/layout/_forms.scss */
 .input-group .alerts {
   position: absolute;
   left: 0;
@@ -15260,23 +15260,23 @@ input.input--alt {
 /*------------------------------------*\
     #Input With Button
 \*------------------------------------*/
-/* line 287, ../scss/layout/_forms.scss */
+/* line 291, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
   width: 100%;
 }
-/* line 293, ../scss/layout/_forms.scss */
+/* line 297, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-button {
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 293, ../scss/layout/_forms.scss */
+  /* line 297, ../scss/layout/_forms.scss */
   .inputWithButton .inputWithButton-button {
     width: 80%;
     padding-left: 0.75rem;
   }
 }
 
-/* line 307, ../scss/layout/_forms.scss */
+/* line 311, ../scss/layout/_forms.scss */
 m
 label {
   margin-bottom: 0.25rem;
@@ -15285,7 +15285,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 331, ../scss/layout/_forms.scss */
+/* line 335, ../scss/layout/_forms.scss */
 select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -15300,11 +15300,11 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 351, ../scss/layout/_forms.scss */
+/* line 355, ../scss/layout/_forms.scss */
 .select-customWrapper {
   position: relative;
 }
-/* line 354, ../scss/layout/_forms.scss */
+/* line 358, ../scss/layout/_forms.scss */
 .select-customWrapper:after {
   content: " ";
   width: 0;
@@ -15319,7 +15319,7 @@ select {
   pointer-events: none;
 }
 
-/* line 372, ../scss/layout/_forms.scss */
+/* line 376, ../scss/layout/_forms.scss */
 .select--primary {
   background-color: #fff;
   outline: 0;
@@ -15329,7 +15329,7 @@ select {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 379, ../scss/layout/_forms.scss */
+/* line 383, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
   border: 0;
@@ -15338,32 +15338,32 @@ select {
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.2);
 }
 
-/* line 390, ../scss/layout/_forms.scss */
+/* line 394, ../scss/layout/_forms.scss */
 .select--quantity {
   min-width: 5rem;
   text-align-last: center;
 }
 
-/* line 397, ../scss/layout/_forms.scss */
+/* line 401, ../scss/layout/_forms.scss */
 .select--small {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 405, ../scss/layout/_forms.scss */
+/* line 409, ../scss/layout/_forms.scss */
 .select--medium {
   padding: 0.5rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 412, ../scss/layout/_forms.scss */
+/* line 416, ../scss/layout/_forms.scss */
 .select--quantity {
   width: 2.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 412, ../scss/layout/_forms.scss */
+  /* line 416, ../scss/layout/_forms.scss */
   .select--quantity {
     width: 3.75rem;
   }
@@ -15375,7 +15375,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 452, ../scss/layout/_forms.scss */
+/* line 456, ../scss/layout/_forms.scss */
 .fieldset,
 fieldset {
   margin-bottom: 1.875rem;
@@ -15384,7 +15384,7 @@ fieldset {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 467, ../scss/layout/_forms.scss */
+/* line 471, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -15392,7 +15392,7 @@ fieldset {
 /*------------------------------------*\
     #Clear Field
 \*------------------------------------*/
-/* line 479, ../scss/layout/_forms.scss */
+/* line 483, ../scss/layout/_forms.scss */
 input.clearField {
   background-color: transparent;
   text-align: center;
@@ -15400,7 +15400,7 @@ input.clearField {
   font-size: 6rem;
   line-height: 1.2;
 }
-/* line 485, ../scss/layout/_forms.scss */
+/* line 489, ../scss/layout/_forms.scss */
 input.clearField:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15417,20 +15417,20 @@ input.clearField:after {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 500, ../scss/layout/_forms.scss */
+/* line 504, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #231F20;
 }
-/* line 504, ../scss/layout/_forms.scss */
+/* line 508, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
   width: 100%;
 }
 
-/* line 514, ../scss/layout/_forms.scss */
+/* line 518, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 519, ../scss/layout/_forms.scss */
+/* line 523, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15438,11 +15438,11 @@ input.clearField:active:after, input.clearField:focus:after {
   bottom: 0;
 }
 
-/* line 531, ../scss/layout/_forms.scss */
+/* line 535, ../scss/layout/_forms.scss */
 .radio-group {
   margin-bottom: 1.125rem;
 }
-/* line 534, ../scss/layout/_forms.scss */
+/* line 538, ../scss/layout/_forms.scss */
 .radio-group label {
   color: #231F20;
 }
@@ -17141,13 +17141,14 @@ button.is-inactive,
   border-left: #dae0e0 1px solid;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  height: 100%;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 61, ../scss/components/_cards.scss */
+/* line 62, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
   color: #fff;
   fill: #fff;
@@ -17155,7 +17156,7 @@ button.is-inactive,
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 79, ../scss/components/_cards.scss */
+  /* line 80, ../scss/components/_cards.scss */
   .cardList li:nth-child(odd) {
     padding-right: 1.125rem;
   }
@@ -17164,14 +17165,20 @@ button.is-inactive,
 /*------------------------------------*\
     #A sponsorship card 
 \*------------------------------------*/
-/* line 110, ../scss/components/_cards.scss */
+/* line 111, ../scss/components/_cards.scss */
 .card--sponsorship {
   -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 113, ../scss/components/_cards.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 111, ../scss/components/_cards.scss */
+  .card--sponsorship {
+    height: e;
+  }
+}
+/* line 119, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -17181,31 +17188,43 @@ button.is-inactive,
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-/* line 122, ../scss/components/_cards.scss */
+/* line 128, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
   color: #231F20;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 129, ../scss/components/_cards.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 128, ../scss/components/_cards.scss */
+  .card--sponsorship .card-header .sponsorship-name {
+    margin-bottom: 0;
+  }
+}
+/* line 140, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 139, ../scss/components/_cards.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 148, ../scss/components/_cards.scss */
+  .card--sponsorship .card-content {
+    padding: 1.875rem;
+  }
+}
+/* line 155, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions {
   color: #6AC6C5;
   margin-bottom: 0;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 145, ../scss/components/_cards.scss */
+/* line 162, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions:hover, .card--sponsorship .card-content .sponsorship-contributions:focus {
   color: #238EB2;
 }
-/* line 155, ../scss/components/_cards.scss */
+/* line 172, ../scss/components/_cards.scss */
 .card--sponsorship .card-inactiveActions {
   position: absolute;
   top: 0;
@@ -17221,7 +17240,7 @@ button.is-inactive,
   margin-top: 4.875rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 155, ../scss/components/_cards.scss */
+  /* line 172, ../scss/components/_cards.scss */
   .card--sponsorship .card-inactiveActions {
     padding: 1.875rem;
   }
@@ -17230,15 +17249,15 @@ button.is-inactive,
 /*------------------------------------*\
     #Am inactive sponsorship Card
 \*------------------------------------*/
-/* line 190, ../scss/components/_cards.scss */
+/* line 207, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-inactiveActions {
   display: block;
 }
-/* line 195, ../scss/components/_cards.scss */
+/* line 212, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-content {
   opacity: 0;
 }
-/* line 200, ../scss/components/_cards.scss */
+/* line 217, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-actions {
   opacity: 0;
   pointer-events: none;
@@ -17248,7 +17267,7 @@ button.is-inactive,
     #A login card
 \*------------------------------------*/
 @media only screen and (min-width: 64.0625em) {
-  /* line 216, ../scss/components/_cards.scss */
+  /* line 233, ../scss/components/_cards.scss */
   .card--form {
     padding: 1.5rem;
   }
@@ -17257,7 +17276,7 @@ button.is-inactive,
 /*------------------------------------*\
     #A Plan card
 \*------------------------------------*/
-/* line 232, ../scss/components/_cards.scss */
+/* line 249, ../scss/components/_cards.scss */
 .card--plan {
   border-top: 6px solid #6AC6C5;
   -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -17265,7 +17284,7 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 236, ../scss/components/_cards.scss */
+/* line 253, ../scss/components/_cards.scss */
 .card--plan:hover, .card--plan:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);

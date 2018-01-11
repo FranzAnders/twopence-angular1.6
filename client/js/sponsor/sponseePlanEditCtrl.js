@@ -203,8 +203,6 @@ twopence.controller('sponseePlanEditCtrl', [
 
       if (pPlan.schedules[0].date_termination === getTodaysDate()) {
           
-          console.log('being paused'); 
-
         $fancyModal.open({
           templateUrl: 'js/modals/plan-edit-already-paused.html',
           themeClass: 'fancymodal--primary  fancymodal--small',
@@ -223,9 +221,6 @@ twopence.controller('sponseePlanEditCtrl', [
                          'Sponsorship', function(
                           sponseePlanPatchInfo, 
                           Sponsorship) {
-
-              console.log(Sponsorship); 
-              console.log(sponseePlanPatchInfo); 
 
               vm.patchPlan = function() {
 
@@ -316,30 +311,28 @@ twopence.controller('sponseePlanEditCtrl', [
           }
         }
 
-      var sponseeId = pSponseeInfo.id; 
+        var sponseeId = pSponseeInfo.id; 
 
-      Sponsorship.createNewPlan(pSponsorshipId, planInfo)
-        .then(function(success){
-          alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
-          getPlan(vm.sponsorshipId); 
+        Sponsorship.createNewPlan(pSponsorshipId, planInfo)
+          .then(function(success){
+            alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
+            getPlan(vm.sponsorshipId); 
 
-        })
-        .catch(function(error){
-          console.log(error);
+          })
+          .catch(function(error){
+            console.log(error);
 
-          if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
-            alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+            if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
+              alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+
+            }
 
           }
 
-        }
-
-      )
+        )
 
 
       } else {
-
-
           console.log('ERROR: form is not valid'); 
 
       }

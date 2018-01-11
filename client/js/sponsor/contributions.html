@@ -11,8 +11,6 @@
   <div class="row">
     
     <div class="small-12 medium-4  columns">
-      
-      <div class="mb7">
 
         <h1 class="txtc2  ff2">Contribution <br>History</h1>  
 
@@ -20,7 +18,6 @@
          This is where you review all of the contributions you’ve made towards your sponsees’ student loans.
         </p>
 
-      </div>
 
       <hr class="hr--faded">
 
@@ -100,20 +97,28 @@
               {sponsee : {email: contributions.sponseeFilter.email }} )  | orderBy: 'date':true track by $index | limitTo: contributions.inView ">
               
               <td ng-if="!contribution.date">
-                  
                 <span class="tag  tag--pending">pending</span>
 
               </td>
 
               <td ng-if="contribution.date" class="text-center">
-              <div class="grid grid--justifyLeft">
-                
-              <div >
-                <span class="uc fwb text-micro display-block  text-center mb0">{{contribution.date | date: 'MMM'}}</span>
-                <span class="uc h4  display-block  text-center">{{contribution.date | date: 'd'}}</span>
-              </div>
-              </div>
 
+                <div class="grid grid--justifyLeft">
+                    
+                  <div>
+                    <span class="uc fwb display-block  text-center mb0 h4">
+                    {{contribution.date | date: 'MMM'}}
+                    
+                     {{contribution.date | date: 'd'}}
+                  </span>
+
+                    <span class="uc   display-block  text-center text-micro">
+                     {{contribution.date | date: 'yyyy'}}
+                     
+                    </span>
+                  </div>
+
+                </div>
 
               </td>
           

@@ -55,6 +55,7 @@
       border-left: $grey--light 1px solid; 
       padding-top: rem-calc($level2);
       padding-bottom: rem-calc($level2);
+      height: 100%;
       @include border-radius(0); 
       @include type-setting(-1); 
 
@@ -110,6 +111,11 @@
 .card--sponsorship {
   @include transition(all .2s ceaser($easeInOutCubic)); 
 
+  @media #{$medium-up} {
+
+    height: e
+  }
+
   &:hover, 
   &:focus {
    @include box-shadow(0 1px 20px rgba(30,30,30, .1));
@@ -124,6 +130,11 @@
       color: $secondaryColor; 
       @include type-setting(1);
 
+      @media #{$medium-up} {
+        margin-bottom: 0; 
+
+      }
+
     }
 
     .sponsorship-plan {
@@ -136,11 +147,17 @@
 
   .card-content {
 
+    @media #{$large-up} {
+      padding: rem-calc($level5); 
+
+    }
+
     .sponsorship-contributions {
       color: $primaryColor; 
       margin-bottom: 0; 
       @extend %fwb; 
       @include type-setting(6); 
+      
 
       &:hover, 
       &:focus {

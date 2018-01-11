@@ -107,7 +107,7 @@ twopence.controller('dashboardCtrl', [
       $fancyModal.open({
         templateUrl: 'js/sponsor/sponsee-jolt-modal.html',
         controller: 'sponseeJoltCtrl as sponseeJolt',
-        themeClass: 'fancymodal--secondary fancymodal--medium',
+        themeClass: 'fancymodal--primary fancymodal--small',
         openingClass: 'is-open',
         closingClass: 'is-closed',
         resolve: {
