@@ -54,30 +54,32 @@
                id="password"
                name="password"
                class="input--primary input--medium"
-               ng-model="signUp.userInfo.password"
                required
+               ng-model="signUp.userInfo.password"
                ng-minlength = "8"
+               ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
+               ng-model-options="{allowInvalid: true, debounce: 200}"
                floating-label>
-  
-        <div ng-messages="signUp.userAccountForm.password.$error"
-             ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
-             role="alert"
-             class="alerts  alert--warning"
-             >
-  
-            <div ng-message="required">
-                Oops! A password is required
-            </div>
-  
-            <div ng-message="ng-minlength">
-                Oops! Password must be atleast 8 characters in length
-            </div>
-  
-        </div>
-  
+    
+          <div ng-messages="signUp.userAccountForm.password.$error"
+               ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
+               role="alert"
+               class="alerts  alert--warning"
+               >
+    
+              <div ng-message="required">
+                  Oops! A password is required
+              </div>
+
+              <div ng-message="pattern">
+                  Must atch patter
+              </div>
+
+          </div>
+
       </div>
-  
-  
+
+
       <div class="input-group  input--medium">
   
         <label for="confirmPassword">
@@ -91,6 +93,7 @@
                ng-minlength="8"
                ng-model="signUp.userInfo.confirmPassword"
                compare-to="signUp.userInfo.password"
+               ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
                floating-label>
   
         <div ng-messages="signUp.userAccountForm.password.$error"
@@ -109,6 +112,10 @@
         </div>
   
       </div>
+
+      <password-requirements-dir password="signUp.userInfo.password">
+
+      </password-requirements-dir>
   
       <button class="button--secondary  button--medium button--expanded mb0"
               type="submit">

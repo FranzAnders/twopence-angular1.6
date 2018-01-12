@@ -18644,6 +18644,21 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
+    #Password Requirements Checkboxes
+\*------------------------------------*/
+/* line 20, ../scss/pages/_login.scss */
+.passRequirementCheck {
+  height: 0.75rem;
+  width: 0.75rem;
+  display: inline-block;
+  border: 1px solid #6d6c6c;
+}
+/* line 26, ../scss/pages/_login.scss */
+.passRequirementCheck.is-checked {
+  background-color: black;
+}
+
+/*------------------------------------*\
     #Styles Specific to Sponsor View 
 \*------------------------------------*/
 /* line 8, ../scss/pages/_sponsorView.scss */

@@ -9,3 +9,23 @@
   padding-top: rem-calc($level7);
 
 }
+
+
+
+
+/*------------------------------------*\
+    #Password Requirements Checkboxes
+\*------------------------------------*/
+
+.passRequirementCheck {
+  height: rem-calc($level2); 
+  width: rem-calc($level2); 
+  display: inline-block; 
+  border: 1px solid $grey--med; 
+
+  &.is-checked {
+    background-color: black; 
+
+  }
+
+}
