@@ -77,6 +77,13 @@ function(
               }
 
 
+            } else {
+
+              requirements.number = false;
+              requirements.specialCharacter = false;
+              requirements.capitalCase = false;
+              requirements.characterLength = false;
+
             }
 
             return requirements

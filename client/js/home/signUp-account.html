@@ -42,8 +42,6 @@
   
       </div>
   
-  
-  
       <div class="input-group  input--medium">
   
         <label for="password">
@@ -61,7 +59,7 @@
                ng-model-options="{allowInvalid: true, debounce: 200}"
                floating-label>
     
-          <div ng-messages="signUp.userAccountForm.password.$error"
+<!--           <div ng-messages="signUp.userAccountForm.password.$error"
                ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
                role="alert"
                class="alerts  alert--warning"
@@ -71,11 +69,7 @@
                   Oops! A password is required
               </div>
 
-              <div ng-message="pattern">
-                  Must atch patter
-              </div>
-
-          </div>
+          </div> -->
 
       </div>
 
@@ -95,7 +89,7 @@
                compare-to="signUp.userInfo.password"
                ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
                floating-label>
-  
+  <!-- 
         <div ng-messages="signUp.userAccountForm.password.$error"
              ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
              role="alert"
@@ -105,11 +99,7 @@
                 The password must be confirmed.
             </div>
   
-            <div ng-message="ng-minlength">
-                Oops! Password must be atleast 8 characters in length.
-            </div>
-  
-        </div>
+        </div> -->
   
       </div>
 

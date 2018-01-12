@@ -21,10 +21,13 @@
   height: rem-calc($level2); 
   width: rem-calc($level2); 
   display: inline-block; 
-  border: 1px solid $grey--med; 
+  border: 1px solid $grey--light; 
+  @include transition(all .3s ceaser($easeInOutCubic)); 
+  @include border-radius(100%); 
 
   &.is-checked {
-    background-color: black; 
+    background-color: $activeColor; 
+    border-color: $activeColor; 
 
   }
 

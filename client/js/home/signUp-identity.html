@@ -134,22 +134,40 @@
         
         <div class="small-12 medium-7  large-8  columns">
           
+          <div class="input-group input--medium">
   
-           <div class="input-group input--medium">
-  
-              <label for="dob">
-              Date of birth
-              </label>
-  
-              <input type="date"
-                  id="dob"
-                  class="input--medium  input--primary mb0"
-                  ng-model="signUp.sponsorDob"
-                  placeholder="" 
-                  required
-                  floating-label>
+            <label for="dob">
+            Date of birth
+            </label>
+
+            <input type="date"
+                id="dob"
+                name="dob"
+                class="input--medium  input--primary mb0"
+                ng-model="signUp.userInfo.sponsorDob"
+                required
+                floating-label
+                check-date
+                >
+
+
+            <div ng-messages="signUp.useIdentityForm.dob.$error"
+                ng-show="signUp.useIdentityForm.$submitted && signUp.useIdentityForm.dob.$error"
+                 role="alert"
+                 class="alerts  alert--warning">
+            
+                <div ng-message="required">
+                Date is required.
+                </div>
+
+                <div ng-message="checkDate">
+                  You must be atleast 18 years of age.
+                </div>
+
+            </div>
+            
            </div>
-  
+           
         </div>
   
   
