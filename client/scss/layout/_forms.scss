@@ -532,12 +532,141 @@ input.clearField {
 }
 
 
-.radio-group {
-  margin-bottom: rem-calc($level3); 
 
-  label {
-    color: $secondaryColor; 
 
-  }
+
+
+/*------------------------------------*\
+    #Checkboxes
+\*------------------------------------*/
+
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color: $secondaryColor;
+    margin-bottom: rem-calc($base-magic-number); 
+    white-space: nowrap; 
+    @include type-setting(0); 
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:rem-calc(20px);
+    height:rem-calc(20px);
+    margin-right: rem-calc($level1); 
+    vertical-align:middle;
+    cursor:pointer;
+    @include border-radius(100%); 
+}
+
+input[type="checkbox"] + label span {
+   background-color: transparent; 
+   border: 2px solid $grey--med; 
+   position: relative; 
+
+}
+
+
+input[type="checkbox"]:hover + label span,
+input[type="checkbox"]:focus + label span {
+     background-color: $secondaryColor;
+     border: 2px solid $secondaryColor; 
+
+}
+
+input[type="checkbox"]:checked + label span{
+     background-color: $secondaryColor;
+     border: 2px solid $secondaryColor; 
+ 
+}
+
+
+input[type="checkbox"] + label span,
+input[type="checkbox"]:checked + label span {
+  
+}
+
+
+input[type="checkbox"].radio--large + label {
+  @include type-setting(1); 
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Radio Buttons
+\*------------------------------------*/
+
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    color: $secondaryColor;
+    margin-bottom: rem-calc($base-magic-number); 
+    white-space: nowrap; 
+    @include type-setting(0); 
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:rem-calc(20px);
+    height:rem-calc(20px);
+    margin-right: rem-calc($level1); 
+    vertical-align:middle;
+    cursor:pointer;
+    @include border-radius(100%); 
+}
+
+input[type="radio"] + label span {
+   background-color: transparent; 
+   border: 2px solid $grey--med; 
+}
+
+
+input[type="radio"]:hover + label span,
+input[type="radio"]:focus + label span {
+     background-color: $secondaryColor;
+     border: 2px solid $secondaryColor; 
+
+}
+
+input[type="radio"]:checked + label span{
+    background-color: $secondaryColor;
+    border: 2px solid $secondaryColor; 
+    position: relative; 
+
+    &:after {
+      content: " "; 
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns:xlink='http://www.w3.org/2000/svg' viewBox='0 0 100 100'  width='24' height='24'><path fill='%23ff69b4' d='M41.373 86a7.839 7.839 0 0 1-5.518-2.287l-19.572-19.59c-3.044-3.043-3.044-7.977 0-11.027a7.796 7.796 0 0 1 11.033 0l12.88 12.875 33.39-49.645a7.804 7.804 0 0 1 10.832-2.113c3.576 2.396 4.52 7.248 2.129 10.826L47.848 82.547a7.791 7.791 0 0 1-5.72 3.41c-.25.022-.5.043-.755.043'/></svg>");
+      position: absolute; 
+      width: rem-calc(12px); 
+      height: rem-calc(12px); 
+      background-size: cover;
+      top: 0; 
+      bottom: 0; 
+      right: 0; 
+      left: 0; 
+
+    }
+
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  
+}
+
+
+input[type="radio"].radio--large + label {
+  @include type-setting(1); 
 
 }
