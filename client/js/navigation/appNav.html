@@ -29,7 +29,7 @@
           
             <li class="appNav-menu-item   grid  grid--justifyCenter  large-grid--justifyStart">
           
-              <a ng-class="{'is-active' : nav.isActive('sponsor.contributions')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center "  ui-sref="sponsor.contributions">
+              <a ng-class="{'is-active' : nav.isActive('sponsor.contributions')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center "  ui-sref="sponsor.contributions" title="View Contributions">
           
                 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="menu-link-icon" viewBox="0 0 17.7 11.4">
               
@@ -86,9 +86,13 @@
 
             <li class="appNav-menu-item   grid  grid--justifyCenter  show-for-large-up">
               
-               <a  ng-class="{'is-active' : nav.isActive('sponsor.settings')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center  large-grid--justifyLeft"  ui-sref="sponsor.settings">
+               <a  ng-class="{'is-active' : nav.isActive('sponsor.settings')}" class="appNav-menu-link  grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center  large-grid--justifyLeft"  ui-sref="sponsor.settings" title="Account Settings">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="menu-link-icon  settings" 
                    viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
+
+                   <title>
+                     Gear Icon
+                   </title>
                 <path class="st0" d="M10.3,13.5c-1.3,0-2.4-0.8-2.9-1.9C7,10.4,7.2,9,8.1,8.1C9,7.2,10.4,7,11.5,7.5c1.2,0.5,1.9,1.6,1.9,2.9
                   c0,0.8-0.3,1.6-0.9,2.2S11.2,13.5,10.3,13.5z M19.1,8.5h-1.5c-0.2-0.7-0.4-1.3-0.8-1.9l1.1-1.1c0.2-0.2,0.4-0.6,0.4-0.9
                   c0-0.3-0.1-0.6-0.4-0.9L17,2.8c-0.2-0.2-0.6-0.4-0.9-0.4s-0.6,0.1-0.9,0.4l-1.1,1.1c-0.6-0.4-1.3-0.6-1.9-0.8V1.6
@@ -109,7 +113,24 @@
               
             </li>
 
+            <li class="appNav-menu-item   grid  grid--justifyCenter  show-for-large-up">
+              
+               <a   class="appNav-menu-link  grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center  large-grid--justifyLeft"  href="https://pickpocket.zendesk.com/hc/en-us" target="_blank" rel="external" title="Read FAQs on Zendesk">
 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 92" class="menu-link-icon  faq">
+                  
+                  <title>
+                    Question Mark Icon
+                  </title>
+                  <path d="M45.386.004C19.983.344-.333 21.215.005 46.619c.34 25.393 21.209 45.715 46.611 45.377 25.398-.342 45.718-21.213 45.38-46.615-.34-25.395-21.21-45.716-46.61-45.377zM45.25 74l-.254-.004c-3.912-.116-6.67-2.998-6.559-6.852.109-3.788 2.934-6.538 6.717-6.538l.227.004c4.021.119 6.748 2.972 6.635 6.937C51.904 71.346 49.123 74 45.25 74zm16.455-32.659c-.92 1.307-2.943 2.93-5.492 4.916l-2.807 1.938c-1.541 1.198-2.471 2.325-2.82 3.434-.275.873-.41 1.104-.434 2.88l-.004.451H39.43l.031-.907c.131-3.728.223-5.921 1.768-7.733 2.424-2.846 7.771-6.289 7.998-6.435.766-.577 1.412-1.234 1.893-1.936 1.125-1.551 1.623-2.772 1.623-3.972a7.74 7.74 0 0 0-1.471-4.576c-.939-1.323-2.723-1.993-5.303-1.993-2.559 0-4.311.812-5.359 2.478-1.078 1.713-1.623 3.512-1.623 5.35v.457H27.936l.02-.477c.285-6.769 2.701-11.643 7.178-14.487C37.947 18.918 41.447 18 45.531 18c5.346 0 9.859 1.299 13.412 3.861 3.6 2.596 5.426 6.484 5.426 11.556 0 2.837-.896 5.502-2.664 7.924z"/></svg>
+              
+                <div class="menu-link-label">
+                  FAQ
+                </div>
+              
+              </a>
+              
+            </li>
 
           </ul>
 
@@ -143,8 +164,28 @@
       <ul class="appNav-secondaryMenu  hide-for-large-up"
           ng-class="{'is-active' : nav.secondaryMenuActive}">
 
-        <li class="appNav-menu-item">
-           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="sponsor.settings">Create Sponsorship</a>
+        <li class="appNav-menu-item ">
+          
+          <div class="row">
+            <div class="small-10 small-centered columns">
+              <a  class="button button--medium   button--quaternary    button--withIcon   mb0  button--expanded"  ui-sref="sponsor.sponseeAdd">
+               
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.7 20.7"  class="button-icon  icon--center" >
+                 
+                 <title>
+                   Add Sponsorship Icon
+                 </title>
+               
+                 <path d="M13 10.4c2 0 3.6-1.6 3.6-3.6S15 3.2 13 3.2 9.5 4.8 9.5 6.8s1.6 3.6 3.5 3.6zM5 8.6V5.9H3.2v2.7H.5v1.8h2.7V13H5v-2.7h2.7V8.6H5zm8 3.5c-2.4 0-7.2 1.2-7.2 3.6v1.8h14.4v-1.8c0-2.4-4.7-3.6-7.2-3.6z"/>
+               </svg> 
+              
+               <div class="button-label">
+                 Create Sponsorship
+               </div>
+                        
+              </a>
+            </div>
+          </div>
         </li>
 
   
@@ -157,10 +198,10 @@
            <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">FAQ</a>
         </li>
 
-
         <li class="appNav-menu-item">
-           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">Log Out</a>
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="main.logout" target="_blank">Log Out</a>
         </li>
+
 
       </ul>
     

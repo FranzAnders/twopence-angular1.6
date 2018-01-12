@@ -235,7 +235,8 @@ $app-nav-width: 14%;
         width: rem-calc(22px); 
       }
 
-      &.settings {
+      &.settings,
+      &.faq {
         width: rem-calc(20px); 
 
       }
