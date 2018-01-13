@@ -106,6 +106,7 @@ twopence.controller('signUpCtrl', [
       } else {
 
         console.log("ERROR: Form is not valid");
+        console.log(pSponsorForm); 
 
       }
 

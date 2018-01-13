@@ -39,84 +39,92 @@
               
                 <div class="grid--flexDirectionColumn med-grid--flexDirectionRow  grid--top grid">
                   
-                  <h2 class="card-subTitle  grid-cell grid-cell--autoSize">
+                  <h2 class="card-subTitle grid-cell grid-cell--autoSize">
                     Monthly Limit
                   </h2>
-                  
-                  <div class="row ">
-              
-                    <div class="small-12 columns ">
-              
                                   
-                        <div class="grid  grid--center grid--1of2 grid--flexWrap grid--gutters">
-                        
-                          <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
-                            <input type="radio"
-                         ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                         name="limit"
-                         value="100"
-                         id="oneHundredLimit"
-                         checked="checked">
-                            <label for="oneHundredLimit">$100</label>
-                          </div>
-                          
-                          <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft">
-                            <input type="radio"
-                         ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                         name="limit"
-                         value="300"
-                         id="threeHundredLimit">
-                            <label for="threeHundredLimit">$300</label>
-                          </div>
-                      
-                          <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
-                            <input type="radio"
-                         ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                         name="limit"
-                         value="500"
-                         id="fivehundredLimit">
-                            <label for="fivehundredLimit">$500</label>
-                          </div>
-                      
-                          <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft">
-                      
-                              <input type="radio"
-                                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                                   name="limit"
-                                   value="unlimited"
-                                   id="unlimitedLimit">
-                            <label for="unlimitedLimit">Unlimited</label>
-                      
-                          </div>
-                                              
-                          <div class="grid-cell radio-group">
-              
-                            <div class="grid grid--flexDirectionRow  grid--justifyLeft">
-                              <div class="grid-cell grid-cell--autoSize">
-                                <input type="checkbox"
-                                       ng-model="sponseeSponsorship.customLimit"
-                                       name="limit"
-                                       id="custom"
-                                       class="mr5">
-                              </div>
-                                
-                              <label for="custom">Custom</label>
-                            </div>
-                              
-                            <input type="text"
-                                   id="customValue"
-                                   name="custom"
-                                   class="input--medium  input--primary"
-                                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                                   ng-if="sponseeSponsorship.customLimit">
-                          </div>
-              
-                        </div>
-              
+                  <div class="grid  grid--center grid--1of2  grid--flexWrap grid--gutters">
+                  
+                    <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
+                      <input type="radio"
+                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                   name="limit"
+                   value="100"
+                   id="oneHundredLimit"
+                   checked="checked"
+                   class="radio--large">
+                      <label for="oneHundredLimit"> <span></span>$100</label>
                     </div>
-              
+                    
+                    <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft">
+                      <input type="radio"
+                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                   name="limit"
+                   value="300"
+                   id="threeHundredLimit"
+                   class="radio--large">
+                      <label for="threeHundredLimit"><span></span>$300</label>
+                    </div>
+                
+                    <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
+                      <input type="radio"
+                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                   name="limit"
+                   value="500"
+                   id="fivehundredLimit"
+                   class="radio--large">
+                      <label for="fivehundredLimit"><span></span>$500</label>
+                    </div>
+                
+                    <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft grid--flexNoWrap">
+                
+                        <input type="radio"
+                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                             name="limit"
+                             value="unlimited"
+                             id="unlimitedLimit"
+                             >
+
+                      <label for="unlimitedLimit">
+                        <span></span>Unlimited
+                      </label>
+                
+                    </div>
+                                        
+                    <div class="grid-cell radio-group">
+        
+                      <div class="grid grid--flexDirectionRow  grid--justifyLeft">
+
+                        <div class="grid-cell grid-cell--autoSize">
+                          <input type="radio"
+                                 ng-model="sponseeSponsorship.customLimit"
+                                 name="limit"
+                                 id="custom"
+                                 class="mr5"
+                                 value="sponseeSponsorship.sponsorshipInfo.plan.limit">
+
+                          <label for="custom">
+                            <span></span><div class="display-inline"
+                                 ng-if="!sponseeSponsorship.customLimit">Custom</div>
+
+                                                    <input type="text"
+                             id="customValue"
+                             name="custom"
+                             class="input--medium  input--primary"
+                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                             ng-if="sponseeSponsorship.customLimit">
+
+                          </label>
+
+                        </div>
+
+                      </div>
+                        
+
+                    </div>
+
                   </div>
-              
+        
                 </div>
               
               </fieldset>
@@ -148,8 +156,6 @@
                           <span ng-if="sponseeSponsorship.linkedBank">Bank Account Linked</span>
                                     
                         </a>
-                                    
-                        <div class="text-center  text-micro">One-time Plaid Authentification</div>
                                     
                       </div>
                                     
@@ -219,7 +225,7 @@
               </p>
 
               <p class="text-left">
-                Feel free to send them a reminder on your <a ui-sref="sponsor.dashboard">dashboard</a> if you don’t hear back in a couple days.   
+                Feel free to send them a reminder on your <a ui-sref="sponsor.dashboard">home page</a> if you don’t hear back in a couple days.   
               </p>
 
               <p class="text-center">

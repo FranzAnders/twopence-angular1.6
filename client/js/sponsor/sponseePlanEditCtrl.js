@@ -144,14 +144,13 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     vm.checkIfPaused = function(pPlan, pTodaysDate) {
 
-        console.log(pPlan.schedules[0].date_termination); 
-        console.log(pTodaysDate); 
+        $timeout(function() {
 
         var today = pTodaysDate; 
 
         vm.isActive = (pPlan.schedules[0].date_termination == today); 
 
-        console.log(vm.isActive); 
+        }, 0); 
 
     }
 

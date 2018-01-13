@@ -59,7 +59,7 @@
                                  name="limit"
                                  value="50"
                                  id="fiftyOneTime">
-                          <label for="fiftyOneTime">$50</label>
+                          <label for="fiftyOneTime"><span></span>$50</label>
                         </div>
 
                         <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
@@ -70,7 +70,7 @@
                                          name="limit"
                                          value="100"
                                          id="oneHundredOneTime">
-                                  <label for="oneHundredOneTime">$100</label>
+                                  <label for="oneHundredOneTime"><span></span>$100</label>
 
                         </div>   
 
@@ -81,23 +81,26 @@
                                          name="limit"
                                          value="250"
                                          id="twoHundredAndFiftty">
-                                  <label for="twoHundredAndFiftty">$250</label>
+                                  <label for="twoHundredAndFiftty"><span></span>$250</label>
                         </div>
 
                         <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
 
-                                  <input type="checkbox"
-                                         ng-model="customLimit"
-                                         name="limit"
-                                         id="custom">
-                                    
-                                  <label for="custom">Other</label>
-                                    
-                                  <input type="text"
-                                         id="customValue"
-                                         name="custom"
-                                         class="input--medium  input--primary"
-                                         ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount">
+                            <input type="checkbox"
+                                   ng-model="sponseeSponsorship.customLimit"
+                                   name="limit"
+                                   id="custom">
+                              
+                            <label for="custom">
+                              <span></span>
+                              <div class="display-inline" ng-if="!sponseeSponsorship.customLimit">Custom</div>
+                            </label>
+                              
+                            <input type="text"
+                                   id="customValue"
+                                   name="custom"
+                                   class="input--medium  input--primary"
+                                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount">
                         </div>
 
                         </div>
@@ -205,7 +208,7 @@
               </p>
 
               <p class="text-left">
-                Feel free to send them a reminder on your <a ui-sref="sponsor.dashboard">dashboard</a> if you don’t hear back in a couple days.   
+                Feel free to send them a reminder on your <a ui-sref="sponsor.dashboard">home page</a> if you don’t hear back in a couple days.   
               </p>
 
               <p class="text-center">

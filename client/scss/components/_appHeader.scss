@@ -106,6 +106,31 @@
 
   }
   
+  .appHeader-logout {
+    margin-bottom: 0; 
+    background-color: transparent; 
+    position: relative; 
+    padding-left: rem-calc($level2); 
+    @include type-setting(-1); 
+    @extend %fwn; 
+
+    &:hover, 
+    &:focus {
+      text-decoration: underline; 
+
+    }
+
+    &:before {
+      content: " | "; 
+      position: absolute; 
+      left: 0; 
+      top: 0; 
+      bottom: 0; 
+
+    }
+
+  }
+
 }
 
 
@@ -164,7 +189,7 @@
 \*------------------------------------*/
 
 
-.appHeader-menuToggle {
+.appHeader-userInfo {
   color: #fff;
   background-color: transparent; 
   margin-bottom: 0; 
@@ -180,10 +205,12 @@
     color: #fff;
     @include type-setting(-1); 
     @include border-radius(100%); 
+ 
   }
 
   .userActions-name {
     color: #fff; 
+    @include type-setting(-1); 
     @extend %fwn; 
 
   } 

@@ -113,9 +113,11 @@
                        class="input--primary input--medium"
                        ng-model="settings.userSettings.password"
                        ng-minlength = "8"
+                       ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
+                       ng-model-options="{allowInvalid: true, debounce: 200}"
                        floating-label>
               
-                <div ng-messages="settings.userSettingsForm.password.$error"
+                <!-- <div ng-messages="settings.userSettingsForm.password.$error"
                      ng-show="settings.userSettingsForm.$submitted &&  settings.userSettingsForm.password.$error"
                      role="alert"
                      class="alerts  alert--warning"
@@ -125,9 +127,15 @@
                         Your password must be atleast 8 characters in length
                     </div>
               
-                </div>
+                </div> -->
               
               </div>
+
+
+              <password-requirements-dir password="settings.userSettings.password" ng-if="settings.userSettings.password">
+
+              </password-requirements-dir>
+  
               
               
               <div class="input-group  input--medium">
@@ -141,6 +149,7 @@
                        name="confirmPassword"
                        class="input--primary input--medium"
                        ng-minlength="8"
+                       ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
                        ng-model="settings.userSettings.confirmPassword"
                        compare-to="settings.userSettings.password"
                        ng-required="settings.userSettings.password"

@@ -133,11 +133,13 @@ button,
   .button-icon {
     width: rem-calc(24px); 
     margin-right: rem-calc($level1); 
+    vertical-align: middle; 
 
   }
 
   .button-label {
     position: relative; 
+    vertical-align: middle; 
 
   }
 }
