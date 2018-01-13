@@ -15441,11 +15441,6 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Checkboxes
 \*------------------------------------*/
-/* line 544, ../scss/layout/_forms.scss */
-input[type="checkbox"] {
-  display: none;
-}
-
 /* line 548, ../scss/layout/_forms.scss */
 input[type="checkbox"] + label {
   color: #231F20;

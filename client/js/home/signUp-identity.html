@@ -1,7 +1,7 @@
 <div>
   
     <p class="text-center">
-     Enter your identity and contact information and create account.
+     Enter your personal information and contact preferences. 
     </p>
   
     <form ng-submit="signUp.createUser(signUp.userIdentityForm)"
@@ -144,20 +144,19 @@
                 id="dob"
                 name="dob"
                 class="input--medium  input--primary mb0"
-                ng-model="signUp.userInfo.sponsorDob"
+                ng-model="signUp.userInfo.dob"
                 required
                 floating-label
                 check-date
                 >
 
-
-            <div ng-messages="signUp.useIdentityForm.dob.$error"
-                ng-show="signUp.useIdentityForm.$submitted && signUp.useIdentityForm.dob.$error"
+            <div ng-messages="signUp.userIdentityForm.dob.$error"
+                 ng-show="signUp.userIdentityForm.$submitted && signUp.userIdentityForm.dob.$error"
                  role="alert"
                  class="alerts  alert--warning">
             
                 <div ng-message="required">
-                Date is required.
+                A date of birth is required to verify your identity.
                 </div>
 
                 <div ng-message="checkDate">
@@ -165,9 +164,9 @@
                 </div>
 
             </div>
-            
+
            </div>
-           
+
         </div>
   
   

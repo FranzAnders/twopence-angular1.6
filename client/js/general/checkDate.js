@@ -57,11 +57,13 @@ twopence.directive('checkDate', ['$filter', function($filter) {
             
           var age = getAge(modelValue); 
 
-          if(age > 18) {
+          if(age >= 18) {
 
+            console.log('true')
             return true
 
           } else {
+            console.log('false')
             
             return false
           }
