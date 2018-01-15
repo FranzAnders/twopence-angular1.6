@@ -34,9 +34,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
       vm.latestPlan = '';
 
-      vm.isActive = false; 
-
-      getPlan(vm.sponsorshipId);
+      vm.getPlan(vm.sponsorshipId);
 
       vm.planStatus = 'active';
 
@@ -145,12 +143,12 @@ twopence.controller('sponseePlanEditCtrl', [
     // Gets a sponsorship's information and then gets the latest plan and sponsee data  
     // also sets the customAmount in the matching limit field
     //
-    var getPlan = function(pSponsorshipId) {
+    vm.getPlan = function(pSponsorshipId) {
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
         vm.sponsee = sponsorship.sponsee; 
         vm.latestPlan = vm.getLatestPlan(sponsorship);
         vm.customAmount = parseInt(vm.latestPlan.limit);
-
+        vm.isActive = vm.checkIfPaused(vm.latestPlan, getTodaysDate()); 
 
         //
         // Finds out the status of the plan 
@@ -158,11 +156,6 @@ twopence.controller('sponseePlanEditCtrl', [
         vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
         
         console.log(vm.planStatus); 
-
-        //
-        // We check if plan ends today, if so, it's a paused plan
-        //
-        vm.checkIfPaused(vm.latestPlan, getTodaysDate()); 
 
       })
       .catch(function(err) {
@@ -179,9 +172,12 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     vm.checkIfPaused = function(pPlan, pTodaysDate) {
 
+      console.log('existing plan is: '); 
+      console.log(pPlan); 
+
         var today = pTodaysDate; 
 
-        vm.isActive = (pPlan.schedules[0].date_termination == today); 
+        return pPlan.schedules[0].date_termination == today; 
 
     };
 
@@ -327,49 +323,78 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Create plan
+    // Creates a plan, checks if it's paused already first if not, pauses existing one and makes
+    // a new one
     //
     vm.createPlan = function(pPlanEditForm, pSponsorshipId, pSponseeInfo, pLatestPlan) {
 
       if(pPlanEditForm.$valid) {
 
-        var planInfo = {
-          "plan":{
-              "type":"match",
-              "frequency":"monthly",
-              "limit": vm.customAmount,
-              "date_effective" : getTomorrowsDate()
-          }
-        }
-
-        var sponseeId = pSponseeInfo.id; 
-
-        var planId = pLatestPlan.id; 
-
+        //
+        // Payload to pause the existing plan 
+        //
         var payLoad = {
           "pause": true
         }; 
-
 
         //
         // We create an object with the required info to patch the plan 
         //
         var sponseePlanPatchInfo = {}; 
 
-        sponseePlanPatchInfo.planId  = planId;
+        sponseePlanPatchInfo.planId  = pLatestPlan.id;
         sponseePlanPatchInfo.payLoad = payLoad; 
         sponseePlanPatchInfo.sponsorshipId = pSponsorshipId; 
 
-        console.log(sponseePlanPatchInfo); 
 
+        //
+        // Holds the new plan info with data_effective set to tomorrow
+        //
+        var newPlanInfo = {
+          "plan":{
+              "type":"match",
+              "frequency":"monthly",
+              "limit": vm.customAmount
+          },
+          "schedule": {
+              "date_effective" : getTomorrowsDate()
+          }
+        }  
 
-        // Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
-        // .then(function(success) {
+        //
+        // We check if plan ends today, if so, it's paused or in the process of being paused 
+        // so we just make a new one. If not, we pause it and make a new one. 
+        //
+        if(vm.checkIfPaused(pLatestPlan, getTodaysDate())) {    
+          
+        console.log(newPlanInfo); 
+          console.log('plan is paused or ends today, making a new one'); 
 
-          Sponsorship.createNewPlan(pSponsorshipId, planInfo)
+          Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
+          .then(function(success){
+            alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
+            vm.getPlan(vm.sponsorshipId);  
+
+          })
+          .catch(function(error){
+            console.log(error);
+
+            if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
+              alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+
+            }
+
+          });
+
+        } else {
+
+         Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
+          .then(function(success) {
+
+            Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
             .then(function(success){
               alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
-              getPlan(vm.sponsorshipId); 
+              vm.getPlan(vm.sponsorshipId);  
 
             })
             .catch(function(error){
@@ -380,24 +405,22 @@ twopence.controller('sponseePlanEditCtrl', [
 
               }
 
-            }
+            });
 
-          )
+          })
+          .catch(function(err) {
 
+            console.log(err);
+            alert('wrong'); 
 
-        // })
-        // .catch(function(err) {
+          })
 
-        //   console.log(err);
-        //   alert('wrong'); 
-        // })
-
-
-
+        };
 
 
       } else {
-          console.log('ERROR: form is not valid'); 
+        
+        console.log('ERROR: form is not valid'); 
 
       }
 
