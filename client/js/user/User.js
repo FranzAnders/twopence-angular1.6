@@ -188,6 +188,29 @@ twopence.factory('User', [
 
     }
 
+
+    //
+    // Verified a user email
+    // 
+    User.verifyEmail = function(emailToken) {
+
+      return $q(function(resolve, reject) {
+        $http.post(BASE_URL +  '/v1/verification/token', emailToken, {
+          headers: {
+            "Authorization": "Bearer " + Auth.getToken()
+          }
+        })
+        .then(function(res) {
+          console.log(res);
+          resolve(res.data);
+          }).catch(function(err) {
+            reject(err);
+          });
+          
+      });
+
+    };
+
     return User;
 
 }]);
