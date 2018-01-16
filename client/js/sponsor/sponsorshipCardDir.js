@@ -113,6 +113,7 @@ twopence.directive('sponsorshipCardDir',
 
           "sponsorshipInfo" : "=",
           "boostSponsorship" : "&"
+          
         },
         templateUrl: "js/sponsor/sponsorshipCard.html",
         link: function(scope, element, attrs) {} 

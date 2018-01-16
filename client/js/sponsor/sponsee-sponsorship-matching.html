@@ -18,7 +18,7 @@
           </h1>  
 
           <p>
-            Match your sponsee's payments towards their student loans. You can only have 1 matching plan per sponsee. <br> <br> Your bank account will be charged $4.99/month while this account is active.
+            Match your sponsee's payments towards their student loans.<br> <br> Your bank account will be charged $4.99/month while this plan is active.
           </p>
 
         </div>
@@ -76,26 +76,11 @@
                       <label for="fivehundredLimit"><span></span>$500</label>
                     </div>
                 
-                    <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft grid--flexNoWrap">
-                
-                        <input type="radio"
-                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                             name="limit"
-                             value="unlimited"
-                             id="unlimitedLimit"
-                             >
-
-                      <label for="unlimitedLimit">
-                        <span></span>Unlimited
-                      </label>
-                
-                    </div>
-                                        
                     <div class="grid-cell radio-group">
         
                       <div class="grid grid--flexDirectionRow  grid--justifyLeft">
 
-                        <div class="grid-cell grid-cell--autoSize">
+                        <div class="">
                           <input type="radio"
                                  ng-model="sponseeSponsorship.customLimit"
                                  name="limit"
@@ -104,15 +89,15 @@
                                  value="sponseeSponsorship.sponsorshipInfo.plan.limit">
 
                           <label for="custom">
-                            <span></span><div class="display-inline"
-                                 ng-if="!sponseeSponsorship.customLimit">Custom</div>
-
-                                                    <input type="text"
+                            <span></span>
+                            
+                            <input type="text"
                              id="customValue"
                              name="custom"
-                             class="input--medium  input--primary"
+                             class="input--small"
                              ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                             ng-if="sponseeSponsorship.customLimit">
+                            placeholder="custom"
+                             >
 
                           </label>
 
