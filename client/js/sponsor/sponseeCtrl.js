@@ -6,12 +6,14 @@
 \*------------------------------------*/
 
 twopence.controller('sponsorshipCtrl', [
+  '$fancyModal',
   '$scope',
   '$stateParams',
   '$state',
   '$rootScope',
   'Sponsorship',
   function(
+    $fancyModal, 
     $scope,
     $stateParams,
     $state,
@@ -81,6 +83,32 @@ twopence.controller('sponsorshipCtrl', [
       }
 
     return false;
+
+    };
+
+
+        //
+    // Opens the jolt modal using the $fancyModal service
+    //
+    vm.openBoostModal = function(sponsee) {
+
+      $fancyModal.open({
+        templateUrl: 'js/sponsor/sponsee-jolt-modal.html',
+        controller: 'sponseeJoltCtrl as sponseeJolt',
+        themeClass: 'fancymodal--primary fancymodal--small',
+        openingClass: 'is-open',
+        closingClass: 'is-closed',
+        resolve: {
+
+            SponseeInformation: function() {
+
+              return sponsee;
+
+            }
+
+        }
+
+      });
 
     };
 

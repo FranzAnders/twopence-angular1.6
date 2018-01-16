@@ -103,6 +103,41 @@ input {
 
 
 
+/*------------------------------------*\
+    #Input Sizes
+\*------------------------------------*/
+
+
+.input {
+
+   &.input--small {
+
+      padding-top: rem-calc(3px);
+      padding-bottom: rem-calc(3px);
+      @include type-setting(-1);
+
+  }
+
+  &.input--medium {
+
+      padding-top: rem-calc($level1);
+      padding-bottom: rem-calc(1px);
+      @include type-setting(0);
+
+  }
+
+
+  &.input--large {
+
+      padding-top: rem-calc($level2);
+      padding-bottom: rem-calc($level1);
+      @include type-setting(1);
+
+
+  }
+
+
+}
 
 
 /*------------------------------------*\
@@ -114,7 +149,7 @@ input {
 
 
 /*------------------------------------*\
-    #Input Sizes
+    #Input Group Sizes
 \*------------------------------------*/
 
 
@@ -541,18 +576,18 @@ input.clearField {
 \*------------------------------------*/
 
 
-input[type="checkbox"] {
-   // display:none;
+input[type="checkbox"].styled {
+   display:none;
 }
 
-input[type="checkbox"] + label {
+input[type="checkbox"].styled + label {
     color: $secondaryColor;
     margin-bottom: rem-calc($base-magic-number); 
     white-space: nowrap; 
     @include type-setting(0); 
 }
 
-input[type="checkbox"] + label span {
+input[type="checkbox"].styled + label span {
     display:inline-block;
     width:rem-calc(20px);
     height:rem-calc(20px);
@@ -562,7 +597,7 @@ input[type="checkbox"] + label span {
     @include border-radius(100%); 
 }
 
-input[type="checkbox"] + label span {
+input[type="checkbox"].styled + label span {
    background-color: transparent; 
    border: 2px solid $grey--med; 
    position: relative; 
@@ -570,27 +605,27 @@ input[type="checkbox"] + label span {
 }
 
 
-input[type="checkbox"]:hover + label span,
-input[type="checkbox"]:focus + label span {
+input[type="checkbox"].styled:hover + label span,
+input[type="checkbox"].styled:focus + label span {
      background-color: $secondaryColor;
      border: 2px solid $secondaryColor; 
 
 }
 
-input[type="checkbox"]:checked + label span{
+input[type="checkbox"].styled:checked + label span{
      background-color: $secondaryColor;
      border: 2px solid $secondaryColor; 
  
 }
 
 
-input[type="checkbox"] + label span,
-input[type="checkbox"]:checked + label span {
+input[type="checkbox"].styled + label span,
+input[type="checkbox"].styled:checked + label span {
   
 }
 
 
-input[type="checkbox"].radio--large + label {
+input[type="checkbox"].styled.radio--large + label {
   @include type-setting(1); 
 
 }

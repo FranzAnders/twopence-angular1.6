@@ -134,8 +134,6 @@ twopence.factory('Sponsorship', [
 
   sponsorship.createNewPlan = function(pSponseeId, pSponseeInfo) {
 
-    console.log(pSponseeInfo); 
-    
     return $q(function(resolve, reject) {
 
         $http.post(BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans', pSponseeInfo, {
@@ -152,6 +150,7 @@ twopence.factory('Sponsorship', [
 
         }).catch(function(err) {
 
+          console.log(err); 
           reject(err);
 
         });
@@ -204,11 +203,9 @@ twopence.factory('Sponsorship', [
 
         headers: {
 
-          'Authorization' : 'bearer ' + Auth.getToken(),
+          'Authorization' : 'bearer ' + Auth.getToken()
 
-          'Content-type' : 'application/json'
-
-        },
+        }
 
       }).then(function(res) {
 
@@ -303,8 +300,6 @@ twopence.factory('Sponsorship', [
   // Returns the status of a plan based on sponsee info and a plan 
   //
   sponsorship.getPlanStatus = function(pPlan, pSponseeInfo) {
-
-    console.log(pSponseeInfo); 
 
       var status = '';
       var planEndsToday = false; 

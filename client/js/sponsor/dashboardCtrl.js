@@ -31,13 +31,13 @@ twopence.controller('dashboardCtrl', [
     //
     
     User.getUserInfo().then(function(dashboard) {
-
       vm.sponsorInfo = dashboard;
-      console.log(dashboard);
 
       vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
 
-    }).catch(function(){
+    }).catch(function(err){
+
+      console.log(err); 
 
       // $state.go('main.signUp.identity');
 
@@ -48,10 +48,13 @@ twopence.controller('dashboardCtrl', [
     // Gets a sponsors' sponsorships and total contributions made 
     //
     Sponsorship.getAll().then(function(sponsorships) {
-
       vm.sponsorships = sponsorships.data;
 
       vm.totalContributions = vm.getTotalContributions(sponsorships.data); 
+
+    }).catch(function(err){
+
+      console.log(err); 
 
     });
 
@@ -79,8 +82,6 @@ twopence.controller('dashboardCtrl', [
     // Logs a user out
     //
     vm.logout = function() {
-
-      console.log("Logging you out fam-o");
 
       Auth.logout();
 

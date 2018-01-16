@@ -21,9 +21,8 @@
           </h1>
           
           <p>
-            Edit <span class="fwb" ng-bind="sponseePlanEdit.sponsee.first_name + ' ' + sponseePlanEdit.sponsee.last_name">
-                
-              </span>'s monthly matching limit or pause their existing active matching plan. 
+            Edit 
+            <span class="fwb" ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s monthly matching limit or pause their existing active matching plan. 
           </p>
 
         </div>
@@ -58,7 +57,8 @@
               </div>
           
               <div class="grid-cell text-center">
-                        <form ng-submit="sponseePlanEdit.createPlan(sponseePlanEdit.planEditForm, sponseePlanEdit.sponsorshipId, sponseePlanEdit.sponsee)"
+                
+                <form ng-submit="sponseePlanEdit.createPlan(sponseePlanEdit.planEditForm, sponseePlanEdit.sponsorshipId, sponseePlanEdit.sponsee, sponseePlanEdit.latestPlan)"
               name="sponseePlanEdit.planEditForm"
               novalidate>
                      <input class="clearField clearField--money mb0" 
@@ -70,21 +70,22 @@
                            ng-model="sponseePlanEdit.customAmount" 
                            ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" 
                            ng-class="{'is-inactive' : sponseePlanEdit.sponseePlan}"/>
+                  
+                  <span class="text-mini  uc"
+                        ng-hide="sponseePlanEdit.planEditForm.planLimit.$dirty">Click to edit limit amount</span>
+
+                  <span ng-hide="sponseePlanEdit.planEditForm.$submitted">
+
+                      <button type="submit"
+                              ng-show="sponseePlanEdit.planEditForm.planLimit.$dirty"
+                              
+                              class="button--primary  button--secondary mb0 ">
+                        Update Limit
+                      </button>
+
+                  </span>
                 
-                <span class="text-mini  uc"
-                      ng-hide="sponseePlanEdit.planEditForm.planLimit.$dirty">Click to edit limit amount</span>
-
-                <span ng-hide="sponseePlanEdit.planEditForm.$submitted">
-
-                    <button type="submit"
-                            ng-show="sponseePlanEdit.planEditForm.planLimit.$dirty"
-                            
-                            class="button--primary  button--secondary mb0 ">
-                      Update Limit
-                    </button>
-
-                </span>
-          </form>
+                </form>
 
               </div>
                       
@@ -128,7 +129,7 @@
                 </span>
 
                 <a class="text-micro button--withIcon" 
-                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId)"
+                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId, sponseePlanEdit.sponsee)"
                   ng-if="sponseePlanEdit.planStatus === 'active'">
                    
 

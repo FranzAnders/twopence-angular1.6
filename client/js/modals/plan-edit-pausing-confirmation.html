@@ -14,20 +14,40 @@
 
   </div>
 
-  <div class="fancymodal-innerContent">
+  <div ng-if="!planEditConfirmation.succesfullyEdited">
 
-    <p class="mb3">
-     Are you sure  you wish to pause Steve Roger's matching plan? Pausing takes up to 24 hours and plan can not be resumed until it has been succesfully paused.
-    </p>
+    <div class="fancymodal-innerContent">
+    
+      <p class="mb3">
+       Are you sure  you wish to pause <span ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s matching plan? Pausing takes up to 24 hours and plan can not be resumed until it has been succesfully paused.
+      </p>
+    
+    </div>
+    
+    <div class="fancymodal-options">
+      
+      <button ng-click="$modal.close()" role="button" class="fancymodal-options-option">Cancel</button>
+    
+      <button ng-click="planEditConfirmation.patchPlan()" role="button" class="fancymodal-options-option">Confirm</button>
+      
+    </div>
 
   </div>
 
-  <div class="fancymodal-options">
+  <div ng-if="planEditConfirmation.succesfullyEdited">
     
-    <button ng-click="$modal.close()" role="button" class="fancymodal-options-option">Cancel</button>
+    <div class="fancymodal-innerContent">
+    
+      <p class="mb3">
+       You've succesfully paused <span ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s matching plan. Your changes will take up to 24 hours to take effect. 
+      </p>
+    
+      <p class="text-center mb0">
+        <a ng-click="$modal.close()" role="button" class="fancymodal-options-option">Close</a>
+      </p>
+  
+    </div>
 
-    <button ng-click=".close()" role="button" class="fancymodal-options-option">Close</button>
-    
   </div>
 
 </div>

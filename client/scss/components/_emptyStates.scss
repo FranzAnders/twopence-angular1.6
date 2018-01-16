@@ -1,0 +1,58 @@
+
+
+/*------------------------------------*\
+    #Empty State
+\*------------------------------------*/
+
+
+.emptyState {
+  
+  @media #{$large-up} {
+    margin-top: rem-calc($level7); 
+
+  }
+
+  .emptyState-illustr {
+    margin-bottom: rem-calc($base-magic-number); 
+
+
+    @media #{$large-up} {
+      margin-bottom: rem-calc($level5); 
+      
+    }
+
+    &.emptyState-illustr--emptyWallet {
+      width: rem-calc(160px); 
+
+      @media #{$large-up} {
+        width: rem-calc(150px); 
+
+      }
+
+    }
+   
+    &.emptyState-illustr--magnifyingGlass {
+      width: rem-calc(180px); 
+
+      @media #{$large-up} {
+        width: rem-calc(190px); 
+
+      }
+
+    } 
+
+  }
+  
+  .emptyState-copy {
+    @extend %text-center; 
+
+    @media #{$large-up} {
+      margin-right: auto; 
+      margin-left: auto; 
+      max-width: rem-calc(600px); 
+
+    }
+
+  }
+
+}

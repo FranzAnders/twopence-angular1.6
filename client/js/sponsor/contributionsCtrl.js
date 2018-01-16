@@ -32,7 +32,7 @@ twopence.controller('contributionsCtrl', [
       vm.sponsees =  vm.getSponsees(sponsees.data); 
 
     }).catch(function(err){
-      console.log("ERROR: Sponsorships not coming up."); 
+      alert("ERROR: Sponsorships not coming up."); 
 
     }); 
 
@@ -45,7 +45,7 @@ twopence.controller('contributionsCtrl', [
       vm.contributionsShowing = contributions.data;
 
     }).catch(function(err) {
-      console.log("ERROR: Contributions not coming up."); 
+      alert("ERROR: Contributions not coming up."); 
 
     })
 

@@ -65,7 +65,9 @@
           <hr class="hr--faded">
 
 
-          <button class="button--secondary  button--small button--expanded">
+          <button class="button--secondary  button--small button--expanded"
+                  ng-click="sponsorship.openBoostModal(sponsorship.sponsorshipInfo)"
+                  ng-if="sponsorship.sponsorshipInfo.contributions.length > 0">
             
             Boost  {{sponsorship.sponsorshipInfo.sponsee.first_name}}
 
@@ -137,6 +139,42 @@
           </div>
 
         </div>
+
+
+        <div class="emptyState"
+             ng-if="sponsorship.sponsorshipInfo.contributions.length === 0">
+
+          <div class="row">
+
+            <div class="small-12 columns  text-center">
+
+              <img src="assets/images/illustr--emptyWallet.svg" 
+                   alt="Hand with empty wallet" 
+                   width="180" class="emptyState-illustr  emptyState-illustr--emptyWallet">
+
+            </div>
+
+          </div>
+          
+          <div class="emptyState-copy">
+            <p>
+              You haven’t made any contributions to <span ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name"></span>  yet. <br class="show-for-medium-up"> Why not make a boost payment now?
+            </p>
+
+            <div class="row">
+              <div class="small-12 columns medium-6 medium-centered  large-5">
+                <button class="center  button--secondary  button--small  button--expanded">
+                  
+                  Boost  {{sponsorship.sponsorshipInfo.sponsee.first_name}}
+                
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
 
       </div>
 

@@ -58,19 +58,20 @@
                                  ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                                  name="limit"
                                  value="50"
+                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                                  id="fiftyOneTime">
                           <label for="fiftyOneTime"><span></span>$50</label>
                         </div>
 
                         <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
                          
-
-                                  <input type="radio"
-                                         ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
-                                         name="limit"
-                                         value="100"
-                                         id="oneHundredOneTime">
-                                  <label for="oneHundredOneTime"><span></span>$100</label>
+                          <input type="radio"
+                                 ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
+                                 name="limit"
+                                 value="100"
+                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                                 id="oneHundredOneTime">
+                          <label for="oneHundredOneTime"><span></span>$100</label>
 
                         </div>   
 
@@ -80,27 +81,37 @@
                                          ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
                                          name="limit"
                                          value="250"
+                                         ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                                          id="twoHundredAndFiftty">
                                   <label for="twoHundredAndFiftty"><span></span>$250</label>
                         </div>
 
                         <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
 
+                          <div class="">
                             <input type="checkbox"
-                                   ng-model="sponseeSponsorship.customLimit"
-                                   name="limit"
-                                   id="custom">
-                              
+                                   ng-model="sponseeSponsorship.customAmount.active"
+                                   name="customAmount"
+                                   id="custom"
+                                   class="styled  mr5"
+                                   ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customAmount.active, 'one-time')"
+                                   value="sponseeSponsorship.customAmount.active">
+
                             <label for="custom">
                               <span></span>
-                              <div class="display-inline" ng-if="!sponseeSponsorship.customLimit">Custom</div>
-                            </label>
                               
-                            <input type="text"
-                                   id="customValue"
-                                   name="custom"
-                                   class="input--medium  input--primary"
-                                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount">
+                              <input type="number"
+                               id="customValue"
+                               name="custom"
+                               class="input--small"
+                               ng-model="sponseeSponsorship.customAmount.amount"
+                              placeholder="custom"
+                               >
+
+                            </label>
+
+                          </div>
+
                         </div>
 
                         </div>

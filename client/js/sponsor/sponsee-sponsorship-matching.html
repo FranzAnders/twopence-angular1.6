@@ -18,7 +18,7 @@
           </h1>  
 
           <p>
-            Match your sponsee's payments towards their student loans. You can only have 1 matching plan per sponsee. <br> <br> Your bank account will be charged $4.99/month while this account is active.
+            Match your sponsee's payments towards their student loans.<br> <br> Your bank account will be charged $4.99/month while this plan is active.
           </p>
 
         </div>
@@ -52,6 +52,7 @@
                    value="100"
                    id="oneHundredLimit"
                    checked="checked"
+                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                    class="radio--large">
                       <label for="oneHundredLimit"> <span></span>$100</label>
                     </div>
@@ -62,6 +63,7 @@
                    name="limit"
                    value="300"
                    id="threeHundredLimit"
+                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                    class="radio--large">
                       <label for="threeHundredLimit"><span></span>$300</label>
                     </div>
@@ -72,47 +74,34 @@
                    name="limit"
                    value="500"
                    id="fivehundredLimit"
+                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                    class="radio--large">
                       <label for="fivehundredLimit"><span></span>$500</label>
                     </div>
                 
-                    <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft grid--flexNoWrap">
-                
-                        <input type="radio"
-                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                             name="limit"
-                             value="unlimited"
-                             id="unlimitedLimit"
-                             >
-
-                      <label for="unlimitedLimit">
-                        <span></span>Unlimited
-                      </label>
-                
-                    </div>
-                                        
                     <div class="grid-cell radio-group">
         
                       <div class="grid grid--flexDirectionRow  grid--justifyLeft">
 
-                        <div class="grid-cell grid-cell--autoSize">
-                          <input type="radio"
-                                 ng-model="sponseeSponsorship.customLimit"
-                                 name="limit"
+                        <div class="">
+                          <input type="checkbox"
+                                 ng-model="sponseeSponsorship.customLimit.active"
+                                 name="customLimit"
                                  id="custom"
-                                 class="mr5"
-                                 value="sponseeSponsorship.sponsorshipInfo.plan.limit">
+                                 class="styled  mr5"
+                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
+                                 value="sponseeSponsorship.customLimit.active">
 
                           <label for="custom">
-                            <span></span><div class="display-inline"
-                                 ng-if="!sponseeSponsorship.customLimit">Custom</div>
-
-                                                    <input type="text"
+                            <span></span>
+                            
+                            <input type="number"
                              id="customValue"
                              name="custom"
-                             class="input--medium  input--primary"
-                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                             ng-if="sponseeSponsorship.customLimit">
+                             class="input--small"
+                             ng-model="sponseeSponsorship.customLimit.amount"
+                            placeholder="custom"
+                             >
 
                           </label>
 
@@ -156,6 +145,10 @@
                           <span ng-if="sponseeSponsorship.linkedBank">Bank Account Linked</span>
                                     
                         </a>
+
+                        <p class="text-mini text-center">
+                          One-time authentication of a checking account used to fund all sponsorship contributions.
+                        </p>
                                     
                       </div>
                                     
