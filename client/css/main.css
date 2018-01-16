@@ -5900,7 +5900,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
     #Text Alignments 
 \*------------------------------------*/
 /* line 82, ../scss/abstracts/_typography.scss */
-.text-center, .card--sponsorship .card-inactiveActions, .pageHeader .pageHeader-headlineContainer {
+.text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy {
   text-align: center;
 }
 
@@ -6214,7 +6214,7 @@ label {
     #Position Types 
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
-.relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--primary .fancymodal-content, .pageHeader, .pageHeader .pageHeader-content {
+.relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--primary .fancymodal-content {
   position: relative;
 }
 
@@ -6260,7 +6260,7 @@ label {
     #Text Alignment  
 \*------------------------------------*/
 /* line 272, ../scss/abstracts/_utility.scss */
-.text-center, .card--sponsorship .card-inactiveActions, .pageHeader .pageHeader-headlineContainer {
+.text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy {
   text-align: center;
 }
 
@@ -17432,6 +17432,54 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
+    #Empty State
+\*------------------------------------*/
+@media only screen and (min-width: 64.0625em) {
+  /* line 8, ../scss/components/_emptyStates.scss */
+  .emptyState {
+    margin-top: 3rem;
+  }
+}
+/* line 15, ../scss/components/_emptyStates.scss */
+.emptyState .emptyState-illustr {
+  margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 15, ../scss/components/_emptyStates.scss */
+  .emptyState .emptyState-illustr {
+    margin-bottom: 1.875rem;
+  }
+}
+/* line 24, ../scss/components/_emptyStates.scss */
+.emptyState .emptyState-illustr.emptyState-illustr--emptyWallet {
+  width: 10rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 24, ../scss/components/_emptyStates.scss */
+  .emptyState .emptyState-illustr.emptyState-illustr--emptyWallet {
+    width: 9.375rem;
+  }
+}
+/* line 34, ../scss/components/_emptyStates.scss */
+.emptyState .emptyState-illustr.emptyState-illustr--magnifyingGlass {
+  width: 11.25rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 34, ../scss/components/_emptyStates.scss */
+  .emptyState .emptyState-illustr.emptyState-illustr--magnifyingGlass {
+    width: 11.875rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 46, ../scss/components/_emptyStates.scss */
+  .emptyState .emptyState-copy {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 37.5rem;
+  }
+}
+
+/*------------------------------------*\
     #Headlines
 \*------------------------------------*/
 /* line 8, ../scss/components/_headlines.scss */
@@ -18224,235 +18272,6 @@ body.fancymodal-open {
     transform: translateY(200px);
   }
 }
-/*------------------------------------*\
-    #Page Headers
-\*------------------------------------*/
-/* line 7, ../scss/components/_pageHeaders.scss */
-.pageHeader {
-  height: 20rem;
-  overflow: hidden;
-  border-bottom: 4px solid black;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 7, ../scss/components/_pageHeaders.scss */
-  .pageHeader {
-    height: 26rem;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 7, ../scss/components/_pageHeaders.scss */
-  .pageHeader {
-    height: 24rem;
-  }
-}
-/* line 27, ../scss/components/_pageHeaders.scss */
-.pageHeader .pageHeader-content {
-  height: 100%;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 27, ../scss/components/_pageHeaders.scss */
-  .pageHeader .pageHeader-content {
-    width: 31.25rem;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 27, ../scss/components/_pageHeaders.scss */
-  .pageHeader .pageHeader-content {
-    width: 36.25rem;
-  }
-}
-/* line 47, ../scss/components/_pageHeaders.scss */
-.pageHeader .pageHeader-characterContainer {
-  position: absolute;
-  width: 15.75rem;
-  bottom: -10px;
-  z-index: 3;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 47, ../scss/components/_pageHeaders.scss */
-  .pageHeader .pageHeader-characterContainer {
-    width: 20.75rem;
-  }
-}
-/* line 60, ../scss/components/_pageHeaders.scss */
-.pageHeader .pageHeader-characterContainer .pageHeader-character {
-  width: 100%;
-}
-/* line 99, ../scss/components/_pageHeaders.scss */
-.pageHeader .pageHeader-headlineContainer {
-  background-color: #fff;
-  min-width: 16.25rem;
-  border: 8px solid black;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  z-index: 3;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 99, ../scss/components/_pageHeaders.scss */
-  .pageHeader .pageHeader-headlineContainer {
-    min-width: 20rem;
-    padding-right: 2.25rem;
-    padding-left: 2.25rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    z-index: 2;
-  }
-  /* line 119, ../scss/components/_pageHeaders.scss */
-  .pageHeader .pageHeader-headlineContainer .pageHeader-headline {
-    font-size: 6rem;
-    line-height: 1.2;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 99, ../scss/components/_pageHeaders.scss */
-  .pageHeader .pageHeader-headlineContainer {
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
-}
-
-/* line 141, ../scss/components/_pageHeaders.scss */
-.pageHeader--primary {
-  background-color: #231F20;
-}
-/* line 145, ../scss/components/_pageHeaders.scss */
-.pageHeader--primary .pageHeader-characterContainer {
-  left: -140px;
-  z-index: 4;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 145, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer {
-    left: -126px;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 145, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer {
-    left: -100px;
-  }
-}
-/* line 161, ../scss/components/_pageHeaders.scss */
-.pageHeader--primary .pageHeader-characterContainer.mandolinGuy {
-  left: -74px;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 161, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer.mandolinGuy {
-    left: -72px;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 161, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer.mandolinGuy {
-    left: -120px;
-  }
-}
-/* line 179, ../scss/components/_pageHeaders.scss */
-.pageHeader--primary .pageHeader-characterContainer.oldLady {
-  right: -121px;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 179, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer.oldLady {
-    right: -25px;
-  }
-}
-/* line 190, ../scss/components/_pageHeaders.scss */
-.pageHeader--primary .pageHeader-characterContainer.russianGuy {
-  right: -74px;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 190, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer.russianGuy {
-    right: 98px;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 190, ../scss/components/_pageHeaders.scss */
-  .pageHeader--primary .pageHeader-characterContainer.russianGuy {
-    right: -14px;
-  }
-}
-
-/* line 232, ../scss/components/_pageHeaders.scss */
-.pageHeader--secondary {
-  background-color: #6AC6C5;
-}
-/* line 236, ../scss/components/_pageHeaders.scss */
-.pageHeader--secondary .pageHeader-characterContainer {
-  right: -140px;
-  z-index: 4;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 236, ../scss/components/_pageHeaders.scss */
-  .pageHeader--secondary .pageHeader-characterContainer {
-    right: -138px;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 255, ../scss/components/_pageHeaders.scss */
-  .pageHeader--alt {
-    height: 32rem;
-  }
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 263, ../scss/components/_pageHeaders.scss */
-  .pageHeader--alt .pageHeader-content {
-    width: auto;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 263, ../scss/components/_pageHeaders.scss */
-  .pageHeader--alt .pageHeader-content {
-    width: auto;
-  }
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 279, ../scss/components/_pageHeaders.scss */
-  .pageHeader--alt .pageHeader-characterContainer {
-    width: 29rem;
-    left: 4.5rem;
-    bottom: 1.25rem;
-  }
-}
-/* line 291, ../scss/components/_pageHeaders.scss */
-.pageHeader--alt .pageHeader-headlineContainer {
-  width: auto;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 291, ../scss/components/_pageHeaders.scss */
-  .pageHeader--alt .pageHeader-headlineContainer {
-    width: auto;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 291, ../scss/components/_pageHeaders.scss */
-  .pageHeader--alt .pageHeader-headlineContainer {
-    margin-bottom: 10rem;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 314, ../scss/components/_pageHeaders.scss */
-  .mainContent {
-    z-index: 4;
-    width: 80%;
-    margin-top: -10rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 314, ../scss/components/_pageHeaders.scss */
-  .mainContent {
-    width: 70%;
-    left: 0;
-    right: 0;
-  }
-}
-
 /*------------------------------------*\
     #Stats
 \*------------------------------------*/

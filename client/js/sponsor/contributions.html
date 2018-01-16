@@ -142,26 +142,88 @@
 
     </div>
 
-    <div class="small-12 medium-8  large-6  large-pull-1  columns text-center" ng-if="contributions.totalContributions === 0">
+    <div class="small-12 medium-8  large-7  large-pull-1  columns text-center" 
+         ng-if="contributions.totalContributions === 0 && contributions.sponsees.length !== 0">
       
-      <img src="assets/images/illustr--nothingHere.svg" alt="" width="200" class="mtb4">
+      <div class="emptyState">
 
-      <p>You haven’t made any contributions to your sponsees yet. This is where your contribution history will be once you start making payments. Why not start now?</p>
+        <div class="row">
 
-      <div class="row">
-        <div class="small-12 columns medium-8  medium-centered large-9 large-centered">
-          <a ui-sref="sponsor.dashboard" class="button button--tertiary  button--small  button--expanded">
-          Contribute to a Sponsorship</a>
-        
-         <p>
-              <a ui-sref="sponsor.sponseeAdd" class="">
-           Create a Sponsorship</a>
-         </p>
+          <div class="small-12 columns  text-center">
+
+            <img src="assets/images/illustr--emptyWallet.svg" 
+                 alt="Hand with empty wallet" 
+                 width="180" class="emptyState-illustr  emptyState-illustr--emptyWallet">
+
+          </div>
 
         </div>
+        
+        <div class="emptyState-copy">
+          <p>
+            You haven’t made any contributions to your Graduates yet. This is where your contribution history will be once you start making payments.
+          </p>
+          
+          <div class="row">
+          
+            <div class="small-12 columns medium-10  medium-centered large-11 large-centered">
+          
+             <p>
+              <a ui-sref="sponsor.dashboard" rel="internal">
+              Why not start now?</a>
+             </p>
+          
+            </div>
+          
+          </div>
+
+        </div>
+
       </div>
 
     </div>
+
+
+    <div class="small-12 medium-8  large-7  large-pull-1  columns text-center" 
+         ng-if="contributions.totalContributions === 0 && contributions.sponsees.length === 0">
+      
+      <div class="emptyState">
+
+        <div class="row">
+
+          <div class="small-12 columns  text-center">
+
+            <img src="assets/images/illustr--magnifyingGlass.svg" 
+                 alt="Hand holding magnifying glass" 
+                 width="180" class="emptyState-illustr  emptyState-illustr--magnifyingGlass">
+
+          </div>
+
+        </div>
+        
+        <div class="emptyState-copy">
+          <p>
+            Hm. Looks like you don’t have any Graduates yet. Add a Graduate to get started. Once you start making contributions, your history will be on this page.
+          </p>
+          
+          <div class="row">
+          
+            <div class="small-12 columns medium-10  medium-centered large-11 large-centered">
+          
+             <p>
+              <a ui-sref="sponsor.sponseeAdd" rel="internal">
+              Begin sponsoring a Graduate</a>
+             </p>
+          
+            </div>
+          
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
 
   </div>
 

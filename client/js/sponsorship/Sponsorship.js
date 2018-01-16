@@ -152,6 +152,7 @@ twopence.factory('Sponsorship', [
 
         }).catch(function(err) {
 
+          console.log(err); 
           reject(err);
 
         });
