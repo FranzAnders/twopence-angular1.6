@@ -52,6 +52,7 @@
                    value="100"
                    id="oneHundredLimit"
                    checked="checked"
+                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                    class="radio--large">
                       <label for="oneHundredLimit"> <span></span>$100</label>
                     </div>
@@ -62,6 +63,7 @@
                    name="limit"
                    value="300"
                    id="threeHundredLimit"
+                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                    class="radio--large">
                       <label for="threeHundredLimit"><span></span>$300</label>
                     </div>
@@ -72,6 +74,7 @@
                    name="limit"
                    value="500"
                    id="fivehundredLimit"
+                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                    class="radio--large">
                       <label for="fivehundredLimit"><span></span>$500</label>
                     </div>
@@ -81,21 +84,22 @@
                       <div class="grid grid--flexDirectionRow  grid--justifyLeft">
 
                         <div class="">
-                          <input type="radio"
-                                 ng-model="sponseeSponsorship.customLimit"
-                                 name="limit"
+                          <input type="checkbox"
+                                 ng-model="sponseeSponsorship.customLimit.active"
+                                 name="customLimit"
                                  id="custom"
-                                 class="mr5"
-                                 value="sponseeSponsorship.sponsorshipInfo.plan.limit">
+                                 class="styled  mr5"
+                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
+                                 value="sponseeSponsorship.customLimit.active">
 
                           <label for="custom">
                             <span></span>
                             
-                            <input type="text"
+                            <input type="number"
                              id="customValue"
                              name="custom"
                              class="input--small"
-                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                             ng-model="sponseeSponsorship.customLimit.amount"
                             placeholder="custom"
                              >
 
@@ -141,6 +145,10 @@
                           <span ng-if="sponseeSponsorship.linkedBank">Bank Account Linked</span>
                                     
                         </a>
+
+                        <p class="text-mini text-center">
+                          One-time authentication of a checking account used to fund all sponsorship contributions.
+                        </p>
                                     
                       </div>
                                     

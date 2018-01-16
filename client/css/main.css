@@ -15466,8 +15466,13 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Checkboxes
 \*------------------------------------*/
+/* line 579, ../scss/layout/_forms.scss */
+input[type="checkbox"].styled {
+  display: none;
+}
+
 /* line 583, ../scss/layout/_forms.scss */
-input[type="checkbox"] + label {
+input[type="checkbox"].styled + label {
   color: #231F20;
   margin-bottom: 1.5rem;
   white-space: nowrap;
@@ -15476,7 +15481,7 @@ input[type="checkbox"] + label {
 }
 
 /* line 590, ../scss/layout/_forms.scss */
-input[type="checkbox"] + label span {
+input[type="checkbox"].styled + label span {
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
@@ -15489,27 +15494,27 @@ input[type="checkbox"] + label span {
 }
 
 /* line 600, ../scss/layout/_forms.scss */
-input[type="checkbox"] + label span {
+input[type="checkbox"].styled + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
   position: relative;
 }
 
 /* line 608, ../scss/layout/_forms.scss */
-input[type="checkbox"]:hover + label span,
-input[type="checkbox"]:focus + label span {
+input[type="checkbox"].styled:hover + label span,
+input[type="checkbox"].styled:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
 /* line 615, ../scss/layout/_forms.scss */
-input[type="checkbox"]:checked + label span {
+input[type="checkbox"].styled:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
 /* line 628, ../scss/layout/_forms.scss */
-input[type="checkbox"].radio--large + label {
+input[type="checkbox"].styled.radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
 }

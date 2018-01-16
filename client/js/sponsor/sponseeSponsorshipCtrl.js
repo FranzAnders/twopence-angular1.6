@@ -33,6 +33,19 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     vm.linkedBank = false; 
 
+    vm.customLimit = {
+      'active': false, 
+      'limit': ''
+
+    }; 
+
+
+    vm.customAmount = {
+      'active': false, 
+      'amount': ''
+
+    }; 
+
     var sandboxHandler = Plaid.create({
       apiVersion: 'v2',
       clientName: 'TwoPence',
@@ -106,11 +119,50 @@ twopence.controller('sponseeSponsorshipCtrl', [
     }
 
 
+    //
+    // Clears the custom limit selection or the normal limit selection depending on what is active
+    //
+    vm.clearSelection = function(pLimitType, pPlanType) {
+
+      if(typeof(pLimitType) === "boolean")  {
+
+        if(pPlanType === 'matching') {
+
+          vm.sponsorshipInfo.plan.limit = 0;
+
+        } 
+
+        if(pPlanType === 'one-time') {
+
+          vm.sponsorshipInfo.plan.amount = 0;
+
+        }
+
+
+      } else {
+
+        vm.customLimit.active = false;
+        vm.customLimit.limit = '';
+        vm.customAmount.active = false;
+        vm.customAmount.amount = '';
+
+      }
+
+    }; 
 
     //
-    // Creates a sponsorship and a plan right after 
+    // Creates a sponsorship and a plan right after. If vm.customLimit.active, we apply that as the 
+    // limit/amount of the sponsorship 
     //
     vm.createPlan = function(pSponsorshipDetailsForm) {
+
+
+      if(vm.customLimit.active) {
+
+        vm.sponsorshipInfo.plan.limit = vm.customLimit.amount;
+
+      } 
+
 
       if (pSponsorshipDetailsForm.$valid) {
 
