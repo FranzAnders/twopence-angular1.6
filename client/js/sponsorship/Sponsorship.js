@@ -302,8 +302,6 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.getPlanStatus = function(pPlan, pSponseeInfo) {
 
-    console.log(pSponseeInfo); 
-
       var status = '';
       var planEndsToday = false; 
       var planStartsToday = false; 

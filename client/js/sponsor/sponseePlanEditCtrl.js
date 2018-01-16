@@ -1,3 +1,4 @@
+
 'use strict';
 
 /*------------------------------------*\
@@ -10,12 +11,14 @@ twopence.controller('sponseePlanEditCtrl', [
   '$state',
   '$timeout',
   '$fancyModal',
+  '$rootScope', 
   'Sponsorship',
   function(
     $stateParams,
     $state,
     $timeout,
     $fancyModal,
+    $rootScope, 
     Sponsorship) {
 
     var vm = this;
@@ -125,9 +128,6 @@ twopence.controller('sponseePlanEditCtrl', [
     };
 
 
-    console.log(getTomorrowsDate()); 
-
-
     // To Do
     // Send Object To Sponsorship Edit Control via Route
     // Save into Sponsee
@@ -145,17 +145,24 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     vm.getPlan = function(pSponsorshipId) {
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
-        vm.sponsee = sponsorship.sponsee; 
-        vm.latestPlan = vm.getLatestPlan(sponsorship);
-        vm.customAmount = parseInt(vm.latestPlan.limit);
-        vm.isActive = vm.checkIfPaused(vm.latestPlan, getTodaysDate()); 
 
-        //
-        // Finds out the status of the plan 
-        //
-        vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
-        
-        console.log(vm.planStatus); 
+        $timeout(function() {
+
+          vm.sponsee = sponsorship.sponsee; 
+          vm.latestPlan = vm.getLatestPlan(sponsorship);
+          vm.customAmount = parseInt(vm.latestPlan.limit);
+          vm.isActive = vm.checkIfPaused(vm.latestPlan, getTodaysDate()); 
+
+          //
+          // Finds out the status of the plan 
+          //
+          vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
+          
+          console.log(vm.planStatus); 
+
+
+        }, 100); 
+
 
       })
       .catch(function(err) {
@@ -220,7 +227,7 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     // Pauses the plan 
     //
-    vm.pausePlan = function(pPlan, pSponsorshipId) {
+    vm.pausePlan = function(pPlan, pSponsorshipId, pSponsee) {
 
       var planId = pPlan.id; 
 
@@ -255,37 +262,7 @@ twopence.controller('sponseePlanEditCtrl', [
         if (pPlan.active === true) {
 
           $fancyModal.open({
-            controller: ['sponseePlanPatchInfo', 
-                         'Sponsorship', function(
-                          sponseePlanPatchInfo, 
-                          Sponsorship) {
-
-              vm.patchPlan = function() {
-
-                Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
-                .then(function() {
-                  alert('You’ve successfully paused your plan. Your changes will take 24 hours to go into effect.');
-                  vm.isActive = vm.checkIfPaused(pPlan, getTodaysDate()); 
-
-                }).catch(
-                  function(error) {
-                    console.log(error); 
-                    vm.errorMsg = error.data.message;
-                    $fancyModal.open({
-                      template: '<div>This matching plan is already paused, please wait 24 hrs for changes to take effect.</div>',
-                      themeClass: 'fancymodal--secondary',
-                      openingClass: 'is-open',
-                      closingClass: 'is-closed'
-
-                    })
-
-                  }
-
-                );
-
-              }
-
-            }],
+            controller: 'planEditConfirmationCtrl as planEditConfirmation',
             templateUrl: 'js/modals/plan-edit-pausing-confirmation.html',
             themeClass: 'fancymodal--primary  fancymodal--small',
             openingClass: 'is-open',
@@ -301,6 +278,11 @@ twopence.controller('sponseePlanEditCtrl', [
               Sponsorship: function() {
 
                 return Sponsorship
+
+              },
+              sponsee: function() {
+
+                return pSponsee
 
               }
 
@@ -439,5 +421,17 @@ twopence.controller('sponseePlanEditCtrl', [
 
     }
 
+
+
+    //
+    // Listeners set up to listen for successes of plan being edited 
+    //
+    $rootScope.$on('plan-updated', function(event, pChangeData) {
+
+      vm.getPlan(vm.sponsorshipId);
+
+    });
+
   }
+  
 ]);
