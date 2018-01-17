@@ -1,68 +1,103 @@
 
-<div class="vh100  grid  grid--center">
 
-  <div class="row">
+<div class="row">
 
-    <div class="small-11 medium-8  large-6  small-centered columns text-center">
+  <div class="small-12  columns">
 
-      <div ng-hide="verify.emailVerificationSent">
-        <div ng-hide="verify.isTokenExpired">
+    <div ng-hide="verify.emailVerificationSent">
+
+      <div ng-switch on="verify.tokenStatus">
+
+        <div ng-switch-when="true">
           <div class="row">
             <div class="small-12 columns text-center">
               <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
             </div>
           </div>
-          <h1 class="h2  ff2 txtc2">Thanks for verifying your account!</h1>
-          <p>You will now be redirected to the Pickpocket login screen. If it doesn't automatically redirect you, click below.</p>
+          <h1 class="h2  ff2 txtc2 text-center">High Five!</h1>
+          <p class="text-center">Thanks for verifying your email! You will now be redirected to the Pickpocket Login screen. If that doesn’t work, click below. </p>
 
           <div class="row">
-            <div class="small-10 columns medium-6 small-centered large-3">
-        
-              <a ui-sref="main.login" class="button  button--primary  button--small button--expanded ">
-                <span class="button-inner">Login</span>
-              </a>
-            
+            <div class="small-12 columns">
+              <p class="text-center">      
+                <a ui-sref="main.account.login" rel="internal">
+                  <span class="button-inner">Back to login screen</span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
         
-        <div ng-show="verify.isTokenExpired">
+        <div ng-switch-when="expired">
+
+          <h1 class="h2 txtc2 ff2 text-center">Whoops, expired token!</h1>
+          <p class="text-center">The verification token used is no longer valid to confirm your email. Send yourself a new verification link to your email to try again. <p>
+
           <div class="row">
-            <div class="small-12 columns text-center">
-              <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
-            </div>
-          </div>
-          
-          <h1 class="h2 txtc2 ff2">Email verification token is expired!</h1>
-          <p>The verification code sent is no longer valid. <br class="show-for-medium-up">Try send yourself a new code below!<p>
-          
-          <div class="row">
-            <div class="small-10 columns medium-6 small-centered large-3">
+            <div class="small-12">
         
               <button ng-click="verify.resendVerificationEmail()" 
                       ng-hide="verify.emailVerificationSent"
-                      class="button--primary  button--small button--expanded ">
-                <span class="button-inner">Resend  Code</span>
+                      class="h6  button--link center mb0">
+                Resend  Verification Token
               </button>
         
             </div>
           </div>
         
-        
         </div>
-      </div>
 
-      <div class="row" ng-show="verify.emailVerificationSent">
-        <div class="small-12 columns text-center">
-          <img src="assets/images/badge--success.png" alt="" width="130" class="mb5">
-        </div>
+        <div ng-switch-when="invalid">
+
+          <h1 class="h2 txtc2 ff2  text-center">Whoops, invalid token!</h1>
+          <p class="text-center"> The verification token used is no longer valid to confirm your email. Send yourself a new verification link to your email to try again.<p>
+          
+          <div class="row">
+            <div class="small-12">
         
-        <p >Redirecting you to the login screen...</p>
+              <button ng-click="verify.resendVerificationEmail()" 
+                      ng-hide="verify.emailVerificationSent"
+                      class="h6  button--link center mb0">
+                Resend  Verification Token
+              </button>
+        
+            </div>
+          </div>
+        
+        </div>
 
       </div>
 
     </div>
 
+    <div class="row"
+         ng-show="verify.emailVerificationSent">
+
+      <div class="small-12  columns">
+      
+        <h1 class="h2  ff2 txtc2 text-center ">
+          Almost done!
+        </h1>
+
+        <p class="text-center">
+          We just sent you an email. Click the link in the email to confirm your address.
+           See you back here soon!
+        </p>
+        
+        <p class="text-center">
+
+          <a ui-sref="main.account.login" rel="internal">
+            <span class="button-inner">Back to Login Screen </span>
+          </a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+
   </div>
 
 </div>
+

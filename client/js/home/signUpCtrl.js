@@ -26,13 +26,11 @@ twopence.controller('signUpCtrl', [
 
     var vm = this;
 
-    vm.formUnsubmitted = true;
+    vm.accountCreated = false;
 
     $scope.$state = $state;
 
     vm.loadingScreen = false; 
-
-
 
     //
     // We store the user info and user info as objects to then
@@ -47,14 +45,14 @@ twopence.controller('signUpCtrl', [
     //
     // Checks if there is already a token in session from users
     //
-    if (Auth.getToken()) {
+    if (Auth.getToken()  && !$state.is('main.signUp.verify')) {
       $state.go('main.signUp.identity');
-    } else {
-      $state.go('main.signUp.account');
     }
 
 
-    if(!vm.userInfo.email) {
+
+
+    if(!vm.userInfo.email  && !$state.is('main.signUp.verify')) {
       $state.go('main.signUp.account');
     }
 
@@ -89,6 +87,9 @@ twopence.controller('signUpCtrl', [
         vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
 
           User.create(vm.userInfo).then(function(res) {
+
+            vm.accountCreated = true; 
+
             $state.go('main.signUp.confirmation');
 
           }).catch(function(err) {

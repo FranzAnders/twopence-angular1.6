@@ -146,15 +146,43 @@ button,
 
 
 .button--link {
-  background: transparent; 
-  color: $primaryColor; 
+    color: $tertiaryColor;
+    position: relative; 
+    text-transform: capitalize; 
+    @extend %fwn; 
+    @include transition(all .2s ceaser($easeInOutQuint)); 
 
-  &:hover, 
-  &:focus {
-    color: $secondaryColor; 
-    text-decoration: underline; 
+    &:before {
+      content: " "; 
+      left: 0; 
+      bottom: -2px; 
+      width: 100%; 
+      height: 2px; 
+      background-color: $primaryColor; 
+      position: absolute; 
+      opacity: 0; 
+      @include transform(translateY(3px)); 
+      @include transition(all .2s ceaser($easeInOutQuint)); 
 
-  }
+    }
+
+    &:hover,
+    &:focus {
+      color: $primaryColor;
+      
+      &:after {
+        opacity: 0; 
+        @include transform(translateY(-4px)); 
+
+      }
+
+      &:before {
+        opacity: 1; 
+        @include transform(translateY(0)); 
+
+      }
+
+    }
 
 }
 

@@ -33,8 +33,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -202,18 +202,18 @@ twopence.config(
           url: "/confirmation",
           views: {
 
-            'main@main' : {
+            'form' : {
               templateUrl: "js/home/signUp-confirmation.html"
             }
 
           }
 
         })
-        .state('main.verify', {
-          url: 'verify/:verifyToken',
+        .state('main.signUp.verify', {
+        url: '^/verify/:verifyToken',
           views: {
 
-            'main': {
+            'verify': {
               templateUrl: "js/verify/verify.html",
               controller: "verifyCtrl",
               controllerAs: "verify"
