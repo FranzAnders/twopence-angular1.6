@@ -9,58 +9,92 @@ twopence.controller('verifyCtrl', [
   '$state',
   '$scope',
   '$timeout',
+  'Auth', 
   'User',
   'verify',  
   function($stateParams,
     $state,
     $scope, 
     $timeout,
+    Auth, 
     User,
     verify) {
 
     var vm = this;
 
+
     vm.$onInit = function() {
-      vm.isTokenExpired = false; 
       vm.emailVerificationSent = false; 
+      vm.tokenStatus = vm.checkTokenStatus(verify); 
+
+    }
+
+
+
+
+    //
+    // Checks if the token is expired, working, or invalid
+    //
+    vm.checkTokenStatus = function(pVerifyStatus) {
+
+      console.log(pVerifyStatus); 
 
       if(verify !== true && verify.data.message === "Sorry, that token is expired.") {
-        vm.isTokenExpired = true; 
-
-      } else {
-        $timeout(function() {
-          $state.go("main.login", {camefromemail: true});
-
-        }, 4500); 
+          
+        return 'expired'
 
       }
 
-    }
+      if(verify !== true && verify.data.message === "Sorry, that token is invalid.") {
+
+        return 'invalid'
+
+      }
+
+      if(verify === true) {
+
+        $timeout(function() {
+          $state.go('main.account.login'); 
+
+        }, 5000); 
+
+      }
+
+    }; 
 
     vm.resendVerificationEmail = function() {
 
       vm.emailVerificationSent = false; 
 
-      User.verify().then(function() {
+      if(Auth.getToken()) {
 
-        vm.emailVerificationSent = true; 
+        console.log(Auth.getToken())
 
-        console.log('sent');
+        User.verify().then(function(success) {
 
-        $timeout(function() {
+          vm.emailVerificationSent = true; 
 
-          $state.go("main.login", {camefromemail: true});
+          $timeout(function() {
 
-        }, 2000); 
+            $state.go("main.login", {camefromemail: true});
 
-      }).catch(function(err) {
-        
-          console.log(err); 
+          }, 2000); 
 
-      });
+        }).catch(function(err) {
+          
+            console.log(err); 
+
+        });
+
+      } else {
+
+        $state.go('main.account.login'); 
+
+      }
 
     }
 
   }
 
 ]);
+  

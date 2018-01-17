@@ -51,7 +51,7 @@ twopence.factory('User', [
         .then(function(res) {
           resolve(res); 
         }).catch(function(err) {
-           reject(error); 
+           reject(err); 
         });
       });
     };
