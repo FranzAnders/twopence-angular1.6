@@ -104,7 +104,7 @@ twopence.config(
 
             'account': {
 
-              templateUrl: "js/login/onboarding.html",
+              templateUrl: "js/login/login-onboarding.html",
               controller: "onboardingCtrl",
               controllerAs: "onboarding"
 

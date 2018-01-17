@@ -25,7 +25,7 @@ twopence.controller('verifyCtrl', [
 
     vm.$onInit = function() {
       vm.emailVerificationSent = false; 
-      vm.tokenStatus = vm.checkTokenStatus(verify); 
+      vm.tokenStatus = vm.checkTok enStatus(verify); 
 
     }
 
@@ -37,16 +37,8 @@ twopence.controller('verifyCtrl', [
     //
     vm.checkTokenStatus = function(pVerifyStatus) {
 
-      console.log(pVerifyStatus); 
-
-      if(verify !== true && verify.data.message === "Sorry, that token is expired.") {
+      if(verify !== true) {
           
-        return 'expired'
-
-      }
-
-      if(verify !== true && verify.data.message === "Sorry, that token is invalid.") {
-
         return 'invalid'
 
       }

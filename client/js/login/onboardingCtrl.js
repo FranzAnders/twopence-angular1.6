@@ -2,7 +2,7 @@
 'use strict';
 
 /*------------------------------------*\
-    Reset Password Controller
+    Onboarding Controller
 \*------------------------------------*/
 
 twopence.controller('onboardingCtrl', [
@@ -22,7 +22,7 @@ twopence.controller('onboardingCtrl', [
 
     var vm = this;
 
-    vm.form = {};
+    vm.confirmationEmailSent = false; 
 
 
     //
@@ -30,7 +30,15 @@ twopence.controller('onboardingCtrl', [
     //
     vm.sendEmailVerification = function() {
 
-      User.verify(); 
+      User.verify().then(function(success) {
+        vm.confirmationEmailSent = true; 
+        console.log('success'); 
+
+      }).catch(function(err) {
+
+        console.log('error'); 
+
+      }); 
 
     }
 

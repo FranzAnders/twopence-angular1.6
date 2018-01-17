@@ -1,19 +1,44 @@
 
 <div>
 
-  <div class="card-content">
+  <div class="card-content"
+       ng-if="!onboarding.confirmationEmailSent">
     
-    <h1 class="h3 text-center txtc2 mb2">Email Must be Verified</h1>
-    <p class="mb0 text-center">It appears this account has yet to be verified. We've sent an email for you to verify it, you can also send another verification below. </p>
+    <h1 class="ff2 h2 text-center txtc2 ">Almost done!</h1>
+
+    <p class="text-center">It appears this account has yet to be verified. We've sent an email for you to verify it, you can also send another verification below. </p>
     
-    <button class="button--medium  button--primary">
-      Re-send Verifiction Email
+    <button class="button--small  button--secondary button--extended center"
+            ng-click="onboarding.sendEmailVerification()">
+      Re-send Verification Email
     </button>
 
      <p class="text-center mb0">
 
-       <a ui-sref="main.account.login" class="text-micro"> Back to login screen </a>
+       <a ui-sref="main.account.login" class="text-micro" rel="internal"> Back to login screen </a>
+
      </p>
+
+  </div>
+
+  <div class="card-content"
+       ng-if="onboarding.confirmationEmailSent">
+    
+    <h1 class="h2  ff2 txtc2 text-center ">
+      There it goes!
+    </h1>
+
+    <p class="text-center">
+     We just sent you an email. Click the link in the email to confirm your address. For added security, the link will expire within x amount of time. See you back here soon!
+    </p>
+    
+    <p class="text-center">
+
+      <a ui-sref="main.account.login">
+        <span class="button-inner">Back to Login Screen </span>
+      </a>
+
+    </p>
 
   </div>
 
