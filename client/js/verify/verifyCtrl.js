@@ -62,6 +62,10 @@ twopence.controller('verifyCtrl', [
 
     }; 
 
+
+    //
+    // Resends the verification email and updates the UI 
+    //
     vm.resendVerificationEmail = function() {
 
       vm.emailVerificationSent = false; 
@@ -73,12 +77,6 @@ twopence.controller('verifyCtrl', [
         User.verify().then(function(success) {
 
           vm.emailVerificationSent = true; 
-
-          $timeout(function() {
-
-            $state.go("main.login", {camefromemail: true});
-
-          }, 2000); 
 
         }).catch(function(err) {
           
