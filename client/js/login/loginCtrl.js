@@ -67,7 +67,7 @@ twopence.controller('loginCtrl', [
 
             if(userInfo.status === "onboarding") {
 
-              $state.go('main.signUp.confirmation');
+              $state.go('main.account.onboarding');
 
             } else {
 

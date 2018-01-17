@@ -33,8 +33,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -74,7 +74,7 @@ twopence.config(
           views: {
 
             'main' : {
-              templateUrl: "js/home/account.html"
+              templateUrl: "js/login/account.html"
             }
           },
           params: {
@@ -89,7 +89,7 @@ twopence.config(
 
             'account': {
 
-              templateUrl: "js/home/login.html",
+              templateUrl: "js/login/login.html",
               controller: "loginCtrl",
               controllerAs: "login"
 
@@ -104,7 +104,7 @@ twopence.config(
 
             'account': {
 
-              templateUrl: "js/home/onboarding.html",
+              templateUrl: "js/login/onboarding.html",
               controller: "onboardingCtrl",
               controllerAs: "onboarding"
 
@@ -165,7 +165,7 @@ twopence.config(
           views: {
 
             'main' : {
-              templateUrl: "js/home/signUp.html",
+              templateUrl: "js/signUp/signUp.html",
               controller: "signUpCtrl",
               controllerAs: "signUp"
             }
@@ -179,7 +179,7 @@ twopence.config(
           views: {
 
             'form' : {
-              templateUrl: "js/home/signUp-account.html",
+              templateUrl: "js/signUp/signUp-account.html",
             }
 
           }
@@ -191,7 +191,7 @@ twopence.config(
           views: {
 
             'form' : {
-              templateUrl: "js/home/signUp-identity.html"
+              templateUrl: "js/signUp/signUp-identity.html"
             }
 
           }
@@ -203,7 +203,7 @@ twopence.config(
           views: {
 
             'form' : {
-              templateUrl: "js/home/signUp-confirmation.html"
+              templateUrl: "js/signUp/signUp-confirmation.html"
             }
 
           }
@@ -214,7 +214,7 @@ twopence.config(
           views: {
 
             'verify': {
-              templateUrl: "js/verify/verify.html",
+              templateUrl: "js/signUp/verify.html",
               controller: "verifyCtrl",
               controllerAs: "verify"
 
