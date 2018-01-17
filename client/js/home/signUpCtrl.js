@@ -45,15 +45,22 @@ twopence.controller('signUpCtrl', [
     //
     // Checks if there is already a token in session from users
     //
-    if (Auth.getToken()  && !$state.is('main.signUp.verify')) {
+    if (Auth.getToken()  && !$state.is('main.signUp.verify')  && !$state.is('main.signUp.confirmation')) {
       $state.go('main.signUp.identity');
     }
 
 
 
 
-    if(!vm.userInfo.email  && !$state.is('main.signUp.verify')) {
+    if(!vm.userInfo.email  && !$state.is('main.signUp.verify') && !$state.is('main.signUp.confirmation')) {
       $state.go('main.signUp.account');
+    }
+
+
+    if($state.is('main.signUp.confirmation') ||  $state.is('main.signUp.verify')) {
+
+      vm.accountCreated = true;
+
     }
 
 

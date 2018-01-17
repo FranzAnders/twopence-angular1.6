@@ -54,6 +54,7 @@ twopence.controller('loginCtrl', [
 
     //
     // Logs in a user if the form is valid and there are no errors with the information provided 
+    // If the user is still onboarding, they get taken to the signUp confirmation screen 
     //
     vm.logInUser = function(pLoginForm) {
       resetFormSubmissionErrors(); 
@@ -62,13 +63,9 @@ twopence.controller('loginCtrl', [
 
         Auth.login(vm.form).then(function(res) {
 
-          console.log(res); 
-
           User.getUserInfo().then(function(userInfo) {
 
-            console.log(userInfo); 
-
-            if(userInfo.sponsor.status === "onboarding") {
+            if(userInfo.status === "onboarding") {
 
               $state.go('main.signUp.confirmation');
 
