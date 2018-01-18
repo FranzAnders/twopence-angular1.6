@@ -12,12 +12,14 @@ twopence.factory('Sponsorship', [
     '$http',
     'Auth',
     'BASE_URL',
+    'moment',
     function(
       $filter,
       $q,
       $http,
       Auth,
-      BASE_URL) {
+      BASE_URL,
+      moment) {
 
 
    var sponsorship = {};
