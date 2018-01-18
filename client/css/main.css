@@ -15217,10 +15217,10 @@ input.input--alt {
   margin-right: auto;
   margin-left: auto;
   width: 0;
-  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 /* line 246, ../scss/layout/_forms.scss */
 .input-group input {
@@ -15229,27 +15229,31 @@ input.input--alt {
   margin-bottom: 0;
   background-color: transparent;
   border-bottom: 2px solid #dae0e0;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-/* line 253, ../scss/layout/_forms.scss */
+/* line 254, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
   background-color: rgba(35, 142, 178, 0.9);
 }
-/* line 259, ../scss/layout/_forms.scss */
+/* line 260, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
   color: #231F20;
 }
-/* line 267, ../scss/layout/_forms.scss */
+/* line 268, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
   bottom: 0.1875rem;
   left: 0;
   margin-bottom: 0;
-  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-/* line 279, ../scss/layout/_forms.scss */
+/* line 280, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
   font-size: 0.6rem;
   line-height: 1.5;
@@ -15258,19 +15262,19 @@ input.input--alt {
   -webkit-transform: translateY(-28px);
   transform: translateY(-28px);
 }
-/* line 287, ../scss/layout/_forms.scss */
+/* line 288, ../scss/layout/_forms.scss */
 .input-group.is-focused {
   color: #238EB2;
 }
-/* line 290, ../scss/layout/_forms.scss */
+/* line 291, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
   color: #231F20;
 }
-/* line 295, ../scss/layout/_forms.scss */
+/* line 296, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
   width: 100%;
 }
-/* line 303, ../scss/layout/_forms.scss */
+/* line 304, ../scss/layout/_forms.scss */
 .input-group .alerts {
   position: absolute;
   left: 0;
@@ -15284,16 +15288,16 @@ input.input--alt {
 /*------------------------------------*\
     #Input With Button
 \*------------------------------------*/
-/* line 326, ../scss/layout/_forms.scss */
+/* line 327, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
   width: 100%;
 }
-/* line 332, ../scss/layout/_forms.scss */
+/* line 333, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-button {
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 332, ../scss/layout/_forms.scss */
+  /* line 333, ../scss/layout/_forms.scss */
   .inputWithButton .inputWithButton-button {
     width: 80%;
     padding-left: 0.75rem;
@@ -15301,39 +15305,44 @@ input.input--alt {
 }
 
 /*------------------------------------*\
-    #Altm Input Group Sizes
+    #Alt Input Group Sizes
 \*------------------------------------*/
-/* line 358, ../scss/layout/_forms.scss */
+/* line 359, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small label {
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 364, ../scss/layout/_forms.scss */
+/* line 365, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small input {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 376, ../scss/layout/_forms.scss */
+/* line 377, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium label {
   bottom: 1.125rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 382, ../scss/layout/_forms.scss */
+/* line 383, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium input {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 394, ../scss/layout/_forms.scss */
+/* line 393, ../scss/layout/_forms.scss */
+.inputGroup--alt.input--medium.is-focused input, .inputGroup--alt.input--medium.is-filled input {
+  padding-top: 1.3125rem;
+  padding-bottom: 0.5625rem;
+}
+/* line 407, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--large label {
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 400, ../scss/layout/_forms.scss */
+/* line 413, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--large input {
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
@@ -15344,61 +15353,65 @@ input.input--alt {
 /*------------------------------------*\
     #Alt input Group Styles
 \*------------------------------------*/
-/* line 422, ../scss/layout/_forms.scss */
+/* line 435, ../scss/layout/_forms.scss */
 .inputGroup--alt {
   position: relative;
   background-color: #FFF;
   margin-bottom: 1.5rem;
 }
-/* line 427, ../scss/layout/_forms.scss */
+/* line 440, ../scss/layout/_forms.scss */
 .inputGroup--alt:after {
   display: none;
 }
-/* line 432, ../scss/layout/_forms.scss */
+/* line 445, ../scss/layout/_forms.scss */
 .inputGroup--alt input {
   background-color: transparent;
-  padding: 0.375rem;
+  padding: 0.75rem;
   border: 2px solid #6d6c6c;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 444, ../scss/layout/_forms.scss */
+/* line 453, ../scss/layout/_forms.scss */
+.inputGroup--alt label {
+  left: 0.75rem;
+}
+/* line 461, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused label, .inputGroup--alt.is-filled label {
   color: #6d6c6c;
   font-size: 0.6rem;
   line-height: 1.5;
-  -moz-transform: translateY(-24px);
-  -ms-transform: translateY(-24px);
-  -webkit-transform: translateY(-24px);
-  transform: translateY(-24px);
+  -moz-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  -webkit-transform: translateY(-20px);
+  transform: translateY(-20px);
 }
-/* line 453, ../scss/layout/_forms.scss */
+/* line 470, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused {
   color: #238EB2;
 }
-/* line 456, ../scss/layout/_forms.scss */
+/* line 473, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused input {
   color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 470, ../scss/layout/_forms.scss */
+/* line 487, ../scss/layout/_forms.scss */
 .inputGroup--withIcon input {
   padding-left: 3.375rem;
 }
-/* line 475, ../scss/layout/_forms.scss */
+/* line 492, ../scss/layout/_forms.scss */
 .inputGroup--withIcon label {
   left: 3.375rem;
 }
-/* line 480, ../scss/layout/_forms.scss */
+/* line 497, ../scss/layout/_forms.scss */
 .inputGroup--withIcon .inputGroup-iconContainer {
   border-right: #6d6c6c 2px solid;
   width: 3rem;
   height: 100%;
   position: absolute;
 }
-/* line 486, ../scss/layout/_forms.scss */
+/* line 503, ../scss/layout/_forms.scss */
 .inputGroup--withIcon .inputGroup-iconContainer .inputGroup-icon {
   fill: #6d6c6c;
   top: 0;
@@ -15410,7 +15423,7 @@ input.input--alt {
   width: 1.375rem;
   height: 1.375rem;
 }
-/* line 505, ../scss/layout/_forms.scss */
+/* line 522, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused label, .inputGroup--withIcon.is-filled label {
   opacity: 0;
   font-size: 1rem;
@@ -15420,15 +15433,15 @@ input.input--alt {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 515, ../scss/layout/_forms.scss */
+/* line 531, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused {
   color: #238EB2;
 }
-/* line 518, ../scss/layout/_forms.scss */
+/* line 534, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused .inputGroup-iconContainer {
   border-color: #231F20;
 }
-/* line 521, ../scss/layout/_forms.scss */
+/* line 537, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused .inputGroup-iconContainer .inputGroup-icon {
   fill: #231F20;
 }
@@ -15436,7 +15449,7 @@ input.input--alt {
 /*------------------------------------*\
     #Labels
 \*------------------------------------*/
-/* line 541, ../scss/layout/_forms.scss */
+/* line 557, ../scss/layout/_forms.scss */
 label {
   margin-bottom: 0.25rem;
 }
@@ -15444,7 +15457,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 556, ../scss/layout/_forms.scss */
+/* line 572, ../scss/layout/_forms.scss */
 select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -15459,11 +15472,11 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 576, ../scss/layout/_forms.scss */
+/* line 592, ../scss/layout/_forms.scss */
 .select-customWrapper {
   position: relative;
 }
-/* line 579, ../scss/layout/_forms.scss */
+/* line 595, ../scss/layout/_forms.scss */
 .select-customWrapper:after {
   content: " ";
   width: 0;
@@ -15478,7 +15491,7 @@ select {
   pointer-events: none;
 }
 
-/* line 597, ../scss/layout/_forms.scss */
+/* line 613, ../scss/layout/_forms.scss */
 .select--primary {
   background-color: #fff;
   outline: 0;
@@ -15488,7 +15501,7 @@ select {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 604, ../scss/layout/_forms.scss */
+/* line 620, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
   border: 0;
@@ -15497,32 +15510,32 @@ select {
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.2);
 }
 
-/* line 615, ../scss/layout/_forms.scss */
+/* line 631, ../scss/layout/_forms.scss */
 .select--quantity {
   min-width: 5rem;
   text-align-last: center;
 }
 
-/* line 622, ../scss/layout/_forms.scss */
+/* line 638, ../scss/layout/_forms.scss */
 .select--small {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 630, ../scss/layout/_forms.scss */
+/* line 646, ../scss/layout/_forms.scss */
 .select--medium {
   padding: 0.5rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 637, ../scss/layout/_forms.scss */
+/* line 653, ../scss/layout/_forms.scss */
 .select--quantity {
   width: 2.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 637, ../scss/layout/_forms.scss */
+  /* line 653, ../scss/layout/_forms.scss */
   .select--quantity {
     width: 3.75rem;
   }
@@ -15534,7 +15547,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 677, ../scss/layout/_forms.scss */
+/* line 693, ../scss/layout/_forms.scss */
 .fieldset,
 fieldset {
   margin-bottom: 1.875rem;
@@ -15543,7 +15556,7 @@ fieldset {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 692, ../scss/layout/_forms.scss */
+/* line 708, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -15551,7 +15564,7 @@ fieldset {
 /*------------------------------------*\
     #Clear Field
 \*------------------------------------*/
-/* line 704, ../scss/layout/_forms.scss */
+/* line 720, ../scss/layout/_forms.scss */
 input.clearField {
   background-color: transparent;
   text-align: center;
@@ -15559,7 +15572,7 @@ input.clearField {
   font-size: 6rem;
   line-height: 1.2;
 }
-/* line 710, ../scss/layout/_forms.scss */
+/* line 726, ../scss/layout/_forms.scss */
 input.clearField:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15571,25 +15584,25 @@ input.clearField:after {
   margin-right: auto;
   margin-left: auto;
   width: 0;
-  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 725, ../scss/layout/_forms.scss */
+/* line 741, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #231F20;
 }
-/* line 729, ../scss/layout/_forms.scss */
+/* line 745, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
   width: 100%;
 }
 
-/* line 739, ../scss/layout/_forms.scss */
+/* line 755, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 744, ../scss/layout/_forms.scss */
+/* line 760, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15600,12 +15613,12 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Checkboxes
 \*------------------------------------*/
-/* line 765, ../scss/layout/_forms.scss */
+/* line 781, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled {
   display: none;
 }
 
-/* line 769, ../scss/layout/_forms.scss */
+/* line 785, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label {
   color: #231F20;
   margin-bottom: 1.5rem;
@@ -15614,7 +15627,7 @@ input[type="checkbox"].styled + label {
   line-height: 1.5;
 }
 
-/* line 776, ../scss/layout/_forms.scss */
+/* line 792, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label span {
   display: inline-block;
   width: 1.25rem;
@@ -15627,27 +15640,27 @@ input[type="checkbox"].styled + label span {
   border-radius: 100%;
 }
 
-/* line 786, ../scss/layout/_forms.scss */
+/* line 802, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
   position: relative;
 }
 
-/* line 794, ../scss/layout/_forms.scss */
+/* line 810, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled:hover + label span,
 input[type="checkbox"].styled:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 801, ../scss/layout/_forms.scss */
+/* line 817, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 814, ../scss/layout/_forms.scss */
+/* line 830, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled.radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -15656,12 +15669,12 @@ input[type="checkbox"].styled.radio--large + label {
 /*------------------------------------*\
     #Radio Buttons
 \*------------------------------------*/
-/* line 829, ../scss/layout/_forms.scss */
+/* line 845, ../scss/layout/_forms.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 833, ../scss/layout/_forms.scss */
+/* line 849, ../scss/layout/_forms.scss */
 input[type="radio"] + label {
   color: #231F20;
   margin-bottom: 1.5rem;
@@ -15670,7 +15683,7 @@ input[type="radio"] + label {
   line-height: 1.5;
 }
 
-/* line 840, ../scss/layout/_forms.scss */
+/* line 856, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   display: inline-block;
   width: 1.25rem;
@@ -15683,26 +15696,26 @@ input[type="radio"] + label span {
   border-radius: 100%;
 }
 
-/* line 850, ../scss/layout/_forms.scss */
+/* line 866, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
 }
 
-/* line 856, ../scss/layout/_forms.scss */
+/* line 872, ../scss/layout/_forms.scss */
 input[type="radio"]:hover + label span,
 input[type="radio"]:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 863, ../scss/layout/_forms.scss */
+/* line 879, ../scss/layout/_forms.scss */
 input[type="radio"]:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
   position: relative;
 }
-/* line 868, ../scss/layout/_forms.scss */
+/* line 884, ../scss/layout/_forms.scss */
 input[type="radio"]:checked + label span:after {
   content: " ";
   background-image: url("data:image/svg+xml;utf8,<svg xmlns:xlink='http://www.w3.org/2000/svg' viewBox='0 0 100 100'  width='24' height='24'><path fill='%23ff69b4' d='M41.373 86a7.839 7.839 0 0 1-5.518-2.287l-19.572-19.59c-3.044-3.043-3.044-7.977 0-11.027a7.796 7.796 0 0 1 11.033 0l12.88 12.875 33.39-49.645a7.804 7.804 0 0 1 10.832-2.113c3.576 2.396 4.52 7.248 2.129 10.826L47.848 82.547a7.791 7.791 0 0 1-5.72 3.41c-.25.022-.5.043-.755.043'/></svg>");
@@ -15716,7 +15729,7 @@ input[type="radio"]:checked + label span:after {
   left: 0;
 }
 
-/* line 890, ../scss/layout/_forms.scss */
+/* line 906, ../scss/layout/_forms.scss */
 input[type="radio"].radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -17347,7 +17360,7 @@ button.is-inactive,
 
 /* line 356, ../scss/components/_buttons.scss */
 .button--large {
-  padding: 1.125rem;
+  padding: 0.9375rem;
   padding-right: 1.125rem;
   padding-left: 1.125rem;
   font-size: 1.125rem;

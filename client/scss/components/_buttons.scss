@@ -354,7 +354,7 @@ button,
 }
 
 .button--large {
-    padding: rem-calc($level3);
+    padding: rem-calc(15px);
     padding-right: rem-calc($level3);
     padding-left: rem-calc($level3);
     @include type-setting(1);

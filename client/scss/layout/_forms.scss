@@ -145,7 +145,7 @@ input {
 \*------------------------------------*/
 
 
- $formGroupSpeed: .4s;
+ $formGroupSpeed: .2s;
 
 
 /*------------------------------------*\
@@ -239,7 +239,7 @@ input {
       margin-right: auto;
       margin-left: auto;
       width: 0;
-      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @include transition(all $formGroupSpeed ease-in-out);
       @extend %position-absolute;
     }
 
@@ -249,6 +249,7 @@ input {
       margin-bottom: 0;
       background-color: transparent;
       border-bottom: 2px solid $grey--light;
+      @include transition(all $formGroupSpeed ease-in-out);
 
       &:-webkit-autofill {
         background-color: $tertiaryColor--translucent; 
@@ -269,7 +270,7 @@ input {
       bottom: rem-calc(3px);
       left: 0;
       margin-bottom: 0;
-      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @include transition(all $formGroupSpeed ease-in-out);
       @extend %position-absolute;
     }
 
@@ -347,7 +348,7 @@ input {
 
 
 /*------------------------------------*\
-    #Altm Input Group Sizes
+    #Alt Input Group Sizes
 \*------------------------------------*/
 
 
@@ -383,6 +384,18 @@ input {
       padding-top: rem-calc(15px);
       padding-bottom: rem-calc(15px);
       @include type-setting(0);
+
+    }
+
+    &.is-focused,
+    &.is-filled {
+
+      input {
+
+        padding-top: rem-calc(21px);
+        padding-bottom: rem-calc(9px);
+
+      }
 
     }
 
@@ -431,12 +444,16 @@ input {
   
   input {
     background-color: transparent; 
-    padding: rem-calc($level1);
+    padding: rem-calc($level2);
     border: 2px solid $grey--med; 
     @include border-radius(6px); 
     
   }
   
+  label {
+    left: rem-calc($level2); 
+
+  }
 
   &.is-focused,
   &.is-filled {
@@ -444,20 +461,20 @@ input {
     label {
       color: $grey--med; 
       @include type-setting(-2); 
-      @include transform(translateY(-24px));
+      @include transform(translateY(-20px));
 
     }
 
   }
 
   &.is-focused {
-      color: $tertiaryColor; 
+    color: $tertiaryColor; 
 
-      input {
-       color: $secondaryColor;
-       border: 2px solid $secondaryColor; 
+    input {
+     color: $secondaryColor;
+     border: 2px solid $secondaryColor; 
 
-      }
+    }
 
   }
 
@@ -503,7 +520,6 @@ input {
   &.is-filled {
     
     label {
-
       opacity: 0; 
       @include type-setting(0); 
       @include transform(translateY(0));
