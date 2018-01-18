@@ -120,7 +120,7 @@ twopence.config(
           views:  {
 
             'account': {
-              templateUrl: "js/home/login-resetPasswordEmail.html",
+              templateUrl: "js/login/login-resetPasswordEmail.html",
               controller: "resetPasswordCtrl",
               controllerAs: "resetPassword"
 
@@ -135,7 +135,7 @@ twopence.config(
           views:  {
 
             'account': {
-              templateUrl: "js/home/login-resetPassword.html",
+              templateUrl: "js/login/login-resetPassword.html",
               controller: "resetPasswordCtrl",
               controllerAs: "resetPassword"
 
@@ -153,7 +153,7 @@ twopence.config(
           url: '/logout',
           views: {
             'sponsor' : {
-              templateUrl: "js/home/logOut.html",
+              templateUrl: "js/login/logOut.html",
               controller: "logOutCtrl",
               controllerAs: "logOut"
             }

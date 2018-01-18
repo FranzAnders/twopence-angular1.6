@@ -5,7 +5,7 @@
 \*------------------------------------*/
 
 .card {
-  margin-bottom: rem-calc($base-magic-number);
+  margin-bottom: rem-calc($level3);
   background-color: #FFF; 
   color: $body-color; 
   width: 100%; 
@@ -227,22 +227,6 @@
 
 
 /*------------------------------------*\
-    #A login card
-\*------------------------------------*/
-
-.card--form {
-
-  @media #{$large-up} {
-    padding: rem-calc($level4); 
-
-  }
-
-}
-
-
-
-
-/*------------------------------------*\
     #A Plan card
 \*------------------------------------*/
 
@@ -254,6 +238,63 @@
   &:focus {
    @include box-shadow(0 1px 20px rgba(30,30,30, .1));
    @include transform(translateY(-2px)); 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #A Card Containing Account Login UX
+\*------------------------------------*/
+
+.card--login {
+  width: 100%; 
+  padding: rem-calc($level3); 
+  
+  .card-header {
+    padding-bottom: 0; 
+    border-bottom: none; 
+
+  }
+
+  @media #{$medium-up} {
+    margin-right: auto; 
+    margin-left: auto; 
+    width: rem-calc(372px); 
+    padding: rem-calc($level2); 
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #A Card Containing Signup UX
+\*------------------------------------*/
+
+.card--signUp {
+  width: 100%; 
+  padding-bottom: rem-calc($level1); 
+  
+  .card-header {
+    padding-bottom: 0; 
+    border-bottom: none; 
+
+  }
+
+  @media #{$medium-up} {
+    margin-right: auto; 
+    margin-left: auto; 
+    width: rem-calc(400px); 
+    padding-right: rem-calc($level1); 
+    padding-left: rem-calc($level1); 
 
   }
 

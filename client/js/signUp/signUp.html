@@ -1,17 +1,17 @@
   
 <div class="loginView  section--alt  grid  grid--center">
       
-  <div class="row grid-cell">
+  <div class="row">
 
-    <div class="small-12  medium-8 large-5  medium-centered columns">
+    <div class="small-12   columns">
 
       <div class="row">
         <div class="small-8 large-12  small-centered columns text-center">
-          <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="260" class="mb5"></a>
+          <a ui-sref="main.home"><img src="assets/images/pickpocket-logo-name--white.svg" alt="Pickpocket Logo" width="200" class="mb3"></a>
         </div>
       </div>
 
-      <div class="card card--form">
+      <div class="card card--signUp">
 
         <div class="card-content">
 
@@ -21,7 +21,7 @@
                 
                 <ul class="formTabs  grid  grid--center grid--justifySpaceAround">
                     
-                  <li class="formTabs-tab"
+                  <li class="formTabs-tab  grid-cell  text-center"
                       ng-class="{'is-active' : $state.is('main.signUp.account')}">
                     
                     <span class="tab-title">
@@ -30,7 +30,7 @@
           
                   </li>
           
-                  <li class="formTabs-tab"
+                  <li class="formTabs-tab  grid-cell  text-center"
                       ng-class="{'is-active' : $state.is('main.signUp.identity')}">
                     
                     <span class="tab-title">
@@ -40,8 +40,6 @@
                   </li>
           
                 </ul>
-          
-                <hr class="hr--secondary mb3">
           
             </div>
           
@@ -53,26 +51,18 @@
                   
               
                 </div>
+
                 <div ui-view="verify">
                   
               
-                </div>       
+                </div>
+
               </div>
           
             </div>
           
           </div>
           
-<!--           <div class="row" ng-if="signUp.accountCreated">
-            
-            <div class="small-12 columns  text-center pt7 pb7">
-                
-                <h1>Creating Account...</h1>
-          
-            </div>
-            
-          </div>
- -->
         </div>
 
       </div>

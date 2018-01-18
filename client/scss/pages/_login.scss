@@ -6,7 +6,11 @@
 
 .loginView {
   min-height: 100vh; 
-  padding-top: rem-calc($level7);
+
+  @media #{$medium-up} {
+    padding-top: rem-calc($level5); 
+
+  }
 
 }
 

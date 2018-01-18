@@ -347,6 +347,7 @@ input {
 
 
 
+
 /*------------------------------------*\
     #Alt Input Group Sizes
 \*------------------------------------*/
@@ -375,14 +376,14 @@ input {
   &.input--medium {
 
     label {
-      bottom: rem-calc($level3); 
+      bottom: rem-calc(14px); 
       @include type-setting(0);
 
     }
 
     input {
-      padding-top: rem-calc(15px);
-      padding-bottom: rem-calc(15px);
+      padding-top: rem-calc($level2);
+      padding-bottom: rem-calc($level2);
       @include type-setting(0);
 
     }
@@ -392,8 +393,18 @@ input {
 
       input {
 
-        padding-top: rem-calc(21px);
-        padding-bottom: rem-calc(9px);
+        padding-top: rem-calc($level3);
+        padding-bottom: rem-calc($level1);
+
+      }
+
+      &.inputGroup--withIcon {
+        
+        input {
+          padding-top: rem-calc($level2);
+          padding-bottom: rem-calc($level2);
+      
+        }
 
       }
 
@@ -445,7 +456,7 @@ input {
   input {
     background-color: transparent; 
     padding: rem-calc($level2);
-    border: 2px solid $grey--med; 
+    border: 1px solid $grey--light; 
     @include border-radius(6px); 
     
   }
@@ -461,7 +472,7 @@ input {
     label {
       color: $grey--med; 
       @include type-setting(-2); 
-      @include transform(translateY(-20px));
+      @include transform(translateY(-19px));
 
     }
 
@@ -472,7 +483,7 @@ input {
 
     input {
      color: $secondaryColor;
-     border: 2px solid $secondaryColor; 
+     border: 1px solid $secondaryColor; 
 
     }
 
@@ -485,18 +496,18 @@ input {
 .inputGroup--withIcon {
 
   input {
-    padding-left: rem-calc(54px); 
+    padding-left: rem-calc(50px); 
 
   }
    
   label {
-    left: rem-calc(54px); 
+    left: rem-calc(50px); 
 
   }
 
   .inputGroup-iconContainer {
-    border-right: $grey--med 2px solid ; 
-    width: rem-calc(48px); 
+    border-right: $grey--light 1px solid; 
+    width: rem-calc(42px); 
     height: 100%; 
     position: absolute; 
 

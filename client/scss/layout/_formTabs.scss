@@ -8,20 +8,24 @@
   margin-bottom: rem-calc($level2); 
 
   .formTabs-tab {
+    border-bottom: 3px solid $grey--light; 
+    padding-bottom: rem-calc($level2); 
+    width: 100%; 
 
     .tab-title {
-      color: $grey--med; 
+      color: $grey--light; 
       @include type-setting(0); 
 
     }
 
     &.is-active {
+      border-bottom: 3px solid $secondaryColor; 
 
       .tab-title {
         color: $secondaryColor; 
-        @extend %fwb; 
 
       }
+
     }
   }
 }
