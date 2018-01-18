@@ -5,13 +5,13 @@
    Sponsee Plan Edit Controller
 \*------------------------------------*/
 
-
 twopence.controller('sponseePlanEditCtrl', [
   '$stateParams',
   '$state',
   '$timeout',
   '$fancyModal',
   '$rootScope', 
+  '$filter',
   'moment', 
   'Sponsorship',
   function(
@@ -20,14 +20,12 @@ twopence.controller('sponseePlanEditCtrl', [
     $timeout,
     $fancyModal,
     $rootScope, 
+    $filter,
     moment,
     Sponsorship) {
 
     var vm = this;
 
-
-    console.log(moment().format());
-    console.log(moment().day(1));
 
 
     //
@@ -37,7 +35,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
       vm.sponsorshipId = $stateParams.plan;
 
-      vm.sponsee = null;
+      vm.sponseeInfo = null;
 
       vm.customAmount = null
 
@@ -45,8 +43,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
       vm.getPlan(vm.sponsorshipId);
 
-      vm.planStatus = 'active';
-
+      vm.planStatus = null;
 
     }
 
@@ -70,105 +67,58 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Cacluating today's date to compare to termination Date in Pause / Unpause
+    // Returns todays date in converted format "yyyy-MM-dd"
     //
     var getTodaysDate = function() {
+      
+      var dateISO = moment().format();
+      var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+      var today = convertedDate; 
 
-      var today = new Date();
-
-      var dd = today.getDate();
-
-      var mm = today.getMonth() + 1; 
-
-      var yyyy = today.getFullYear();
-
-      if (dd < 10) {
-
-        dd = '0' + dd
-
-      }
-
-      if (mm < 10) {
-
-        mm = '0' + mm
-
-      }
-
-      today = yyyy + '-' + mm + '-' + dd;
-
-      return today; 
+      return today 
 
     };
 
 
 
     //
-    // Cacluating today's date to compare to termination Date in Pause / Unpause
+    // Returns tomorrows date in converted format "yyyy-MM-dd"
     //
     var getTomorrowsDate = function() {
 
-      var today = new Date();
-
-      var dd = today.getDate() + 1;
-
-      var mm = today.getMonth() + 1; 
-
-      var yyyy = today.getFullYear();
-
-      if (dd < 10) {
-
-        dd = '0' + dd
-
-      }
-
-      if (mm < 10) {
-
-        mm = '0' + mm
-
-      }
-
-      today = yyyy + '-' + mm + '-' + dd;
-
-      return today; 
+      var dateISO = moment().add(1, 'days').format();
+      var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+      var tomorrow = convertedDate; 
+      
+      return tomorrow 
 
     };
 
 
-    // To Do
-    // Send Object To Sponsorship Edit Control via Route
-    // Save into Sponsee
-
-
-    // if (!$stateParams.sponsee) {
-    //
-    //   $state.go('sponsor.dashboard');
-    //
-    // }
 
     //
     // Gets a sponsorship's information and then gets the latest plan and sponsee data  
-    // also sets the customAmount in the matching limit field
+    // also sets the customAmount in the matching limit field. It also gets the current
+    // plan status using the Sponsorship service
     //
     vm.getPlan = function(pSponsorshipId) {
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
 
+        console.log(sponsorship); 
+
         $timeout(function() {
 
-          vm.sponsee = sponsorship.sponsee; 
+          vm.sponseeInfo = sponsorship; 
           vm.latestPlan = vm.getLatestPlan(sponsorship);
           vm.customAmount = parseInt(vm.latestPlan.limit);
-          vm.isActive = vm.checkIfPaused(vm.latestPlan, getTodaysDate()); 
 
           //
           // Finds out the status of the plan 
           //
           vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
-          
-          console.log(vm.planStatus); 
 
 
-        }, 100); 
-
+        }, 0); 
 
       })
       .catch(function(err) {
@@ -181,28 +131,18 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Check if plan ends today 
+    // Check if plan ends today by checking if it ends today
     //
-    vm.checkIfPaused = function(pPlan, pTodaysDate) {
+    vm.checkIfPaused = function(pPlan, pSponseeInfo) {
 
-        $timeout(function() {
+      var planStatus = Sponsorship.getPlanStatus(pPlan, pSponseeInfo);
 
-        // var today = pTodaysDate; 
+      if(planStatus === 'paused') {
+        return true; 
 
-        // vm.isActive = (pPlan.schedules[0].date_termination == today); 
-
-        // return pPlan.schedules[0].date_termination == today; 
-
-        console.log('existing plan is: '); 
-        console.log(pPlan); 
-
-        var today = pTodaysDate; 
-
-        return pPlan.schedules[0].date_termination == today; 
-
-
-        }, 0); 
-
+      } else {
+        return false
+      }
 
     };
 
@@ -306,14 +246,33 @@ twopence.controller('sponseePlanEditCtrl', [
           payLoad.pause = false;
 
           Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
-            alert("Succes!! Your matching plan will be resumed tomorrow.");
-            vm.checkIfPaused(); 
-
-          }).catch(function(error) {
-
-              console.log("ERROR " + error.data.message);
+           
+            $fancyModal.open({
+              templateUrl: 'js/modals/plan-edit-success.html',
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open',
+              closingClass: 'is-closed',
+              showCloseButton: false
 
             });
+
+            $rootScope.$emit('plan-updated'); 
+
+
+          }).catch(function(error) {
+            
+            console.log(err);
+
+            $fancyModal.open({
+              templateUrl: 'js/modals/plan-edit-error.html',
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open',
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+            });
+
+          });
 
         }
 
@@ -323,8 +282,8 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Creates a plan, checks if it's paused already first if not, pauses existing one and makes
-    // a new one
+    // Creates a plan, checks if it's paused already first if not,
+    // pauses existing one and makes
     //
     vm.createPlan = function(pPlanEditForm, pSponsorshipId, pSponseeInfo, pLatestPlan) {
 
@@ -365,24 +324,35 @@ twopence.controller('sponseePlanEditCtrl', [
         // We check if plan ends today, if so, it's paused or in the process of being paused 
         // so we just make a new one. If not, we pause it and make a new one. 
         //
-        if(vm.checkIfPaused(pLatestPlan, getTodaysDate())) {    
+        if(vm.checkIfPaused(pLatestPlan, pSponseeInfo)) {    
           
-        console.log(newPlanInfo); 
-          console.log('plan is paused or ends today, making a new one'); 
-
           Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
           .then(function(success){
-            alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
-            vm.getPlan(vm.sponsorshipId);  
+
+           $fancyModal.open({
+              templateUrl: 'js/modals/plan-edit-success.html',
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open',
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+            });
+
+            $rootScope.$emit('plan-updated'); 
 
           })
-          .catch(function(error){
-            console.log(error);
+          .catch(function(err){
 
-            if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
-              alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+            console.log(err);
 
-            }
+            $fancyModal.open({
+              templateUrl: 'js/modals/plan-edit-error.html',
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open',
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+            });
 
           });
 
@@ -393,25 +363,46 @@ twopence.controller('sponseePlanEditCtrl', [
 
             Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
             .then(function(success){
-              alert("Your changes have been saved! Just note they will take effect in about 24 hours.");
-              vm.getPlan(vm.sponsorshipId);  
+
+             $fancyModal.open({
+                templateUrl: 'js/modals/plan-edit-success.html',
+                themeClass: 'fancymodal--primary  fancymodal--small',
+                openingClass: 'is-open',
+                closingClass: 'is-closed',
+                showCloseButton: false
+
+              });
+
+              $rootScope.$emit('plan-updated'); 
 
             })
-            .catch(function(error){
-              console.log(error);
+            .catch(function(err){
 
-              if(error.data.message ===  "User sponsor plan schedule dates cannot overlap.") {
-                alert("There is a recently paused plan running with a limit of " + "$" + planInfo.plan.limit + ", please wait 24 for plans to pause.")
+              console.log(err);
 
-              }
+              $fancyModal.open({
+                templateUrl: 'js/modals/plan-edit-error.html',
+                themeClass: 'fancymodal--primary  fancymodal--small',
+                openingClass: 'is-open',
+                closingClass: 'is-closed',
+                showCloseButton: false
+
+              });
 
             });
 
           })
           .catch(function(err) {
 
-            console.log(err);
-            alert('wrong'); 
+            console.log(err)
+           $fancyModal.open({
+              templateUrl: 'js/modals/plan-edit-error.html',
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open',
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+            });
 
           })
 

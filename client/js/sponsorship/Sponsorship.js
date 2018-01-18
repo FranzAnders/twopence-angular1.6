@@ -273,7 +273,9 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.checkIfStartsToday = function(pPlan) {
 
-    var todaysDate = $filter('date')(new Date(), 'yyyy-MM-dd')
+    var dateISO = moment().format();
+    var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+    var todaysDate = convertedDate; 
     var lastPlan = getLastSchedule(pPlan.schedules);
     
     return todaysDate === lastPlan.date_effective;
@@ -286,10 +288,9 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.checkIfStartsTomorrow = function(pPlan) {
 
-    var tomorrowsDate = new Date();
-    tomorrowsDate.setDate(tomorrowsDate.getDate() + 1);
-    tomorrowsDate = $filter('date')(tomorrowsDate, 'yyyy-MM-dd'); 
-
+    var dateISO = moment().add(1, 'days').format();
+    var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+    var tomorrowsDate = convertedDate; 
     var lastPlan = getLastSchedule(pPlan.schedules);
 
     return tomorrowsDate === lastPlan.date_effective; 
