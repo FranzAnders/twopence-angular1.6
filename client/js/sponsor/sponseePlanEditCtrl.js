@@ -12,6 +12,7 @@ twopence.controller('sponseePlanEditCtrl', [
   '$timeout',
   '$fancyModal',
   '$rootScope', 
+  'moment', 
   'Sponsorship',
   function(
     $stateParams,
@@ -19,9 +20,14 @@ twopence.controller('sponseePlanEditCtrl', [
     $timeout,
     $fancyModal,
     $rootScope, 
+    moment,
     Sponsorship) {
 
     var vm = this;
+
+
+    console.log(moment().format());
+    console.log(moment().day(1));
 
 
     //

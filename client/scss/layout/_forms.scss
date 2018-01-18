@@ -343,7 +343,193 @@ input {
 
 }
 
-m
+
+
+
+/*------------------------------------*\
+    #Altm Input Group Sizes
+\*------------------------------------*/
+
+
+.inputGroup--alt {
+
+   &.input--small {
+
+    label {
+
+      @include type-setting(-1);
+
+    }
+
+    input {
+
+      padding-top: rem-calc($level1);
+      padding-bottom: rem-calc($level1);
+      @include type-setting(-1);
+
+    }
+
+  }
+
+  &.input--medium {
+
+    label {
+      bottom: rem-calc($level3); 
+      @include type-setting(0);
+
+    }
+
+    input {
+      padding-top: rem-calc(15px);
+      padding-bottom: rem-calc(15px);
+      @include type-setting(0);
+
+    }
+
+  }
+
+
+  &.input--large {
+
+    label {
+
+      @include type-setting(1);
+
+    }
+
+    input {
+
+      padding-top: rem-calc($level3);
+      padding-bottom: rem-calc($level3);
+      @include type-setting(1);
+
+    }
+
+  }
+
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Alt input Group Styles
+\*------------------------------------*/
+
+
+.inputGroup--alt {
+  position: relative; 
+  background-color: #FFF;  
+  margin-bottom: rem-calc($base-magic-number);
+
+  &:after {
+    display: none; 
+
+  }
+  
+  input {
+    background-color: transparent; 
+    padding: rem-calc($level1);
+    border: 2px solid $grey--med; 
+    @include border-radius(6px); 
+    
+  }
+  
+
+  &.is-focused,
+  &.is-filled {
+
+    label {
+      color: $grey--med; 
+      @include type-setting(-2); 
+      @include transform(translateY(-24px));
+
+    }
+
+  }
+
+  &.is-focused {
+      color: $tertiaryColor; 
+
+      input {
+       color: $secondaryColor;
+       border: 2px solid $secondaryColor; 
+
+      }
+
+  }
+
+
+}
+
+
+.inputGroup--withIcon {
+
+  input {
+    padding-left: rem-calc(54px); 
+
+  }
+   
+  label {
+    left: rem-calc(54px); 
+
+  }
+
+  .inputGroup-iconContainer {
+    border-right: $grey--med 2px solid ; 
+    width: rem-calc(48px); 
+    height: 100%; 
+    position: absolute; 
+
+    .inputGroup-icon {
+      fill: $grey--med; 
+      top: 0; 
+      bottom: 0; 
+      right: 0; 
+      left: 0; 
+      margin: auto; 
+      position: absolute; 
+      width: rem-calc(22px);
+      height: rem-calc(22px);
+
+    }
+  }
+ 
+
+
+  &.is-focused,
+  &.is-filled {
+    
+    label {
+
+      opacity: 0; 
+      @include type-setting(0); 
+      @include transform(translateY(0));
+
+    }
+
+  }
+
+  &.is-focused {
+    color: $tertiaryColor; 
+
+    .inputGroup-iconContainer { 
+      border-color: $secondaryColor; 
+        
+      .inputGroup-icon {
+        fill: $secondaryColor; 
+
+      }
+
+    }
+
+  }
+
+}
+
+
 
 
 
