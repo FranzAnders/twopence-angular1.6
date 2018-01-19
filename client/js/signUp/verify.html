@@ -27,30 +27,11 @@
             </div>
           </div>
         </div>
-        
-        <div ng-switch-when="expired">
-
-          <h1 class="h2 txtc2 ff2 text-center">Whoops, expired token!</h1>
-          <p class="text-center">The verification token used is no longer valid to confirm your email. Send yourself a new verification link to your email to try again. <p>
-
-          <div class="row">
-            <div class="small-12">
-        
-              <button ng-click="verify.resendVerificationEmail()" 
-                      ng-hide="verify.emailVerificationSent"
-                      class="h6  button--link center mb0">
-                Resend  Verification Token
-              </button>
-        
-            </div>
-          </div>
-        
-        </div>
 
         <div ng-switch-when="invalid">
 
-          <h1 class="h2 txtc2 ff2  text-center">Whoops, invalid token!</h1>
-          <p class="text-center"> The verification token used is no longer valid to confirm your email. Send yourself a new verification link to your email to try again.<p>
+          <h1 class="h2 txtc2 ff2  text-center">Whoops!</h1>
+          <p class="text-center">The verification link you followed to get here has expired or is invalid, so we can’t confirm your email yet. Send another verification link to your email to verify to your account.<p>
           
           <div class="row">
             <div class="small-12">

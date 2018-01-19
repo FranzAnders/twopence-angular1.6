@@ -17,7 +17,7 @@ function(
 
       restrict: 'E', 
       scope: {}, 
-      templateUrl: 'js/home/passwordRequirements.html', 
+      templateUrl: 'js/general/passwordRequirements.html', 
       controller: ['EfficientWatch', '$scope',  function(EfficientWatch, $scope) {
 
         var vm = this; 

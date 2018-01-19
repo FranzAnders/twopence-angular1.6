@@ -7,10 +7,12 @@
 
 twopence = angular.module('twopence', [
      'ui.router',
+     'ngAnimate',
      'vesparny.fancyModal',
      'ngCookies',
      'xeditable',
      'ngMessages',
+     'angularMoment'
       ]);
 
 
@@ -74,7 +76,7 @@ twopence.config(
           views: {
 
             'main' : {
-              templateUrl: "js/home/account.html"
+              templateUrl: "js/login/account.html"
             }
           },
           params: {
@@ -89,7 +91,7 @@ twopence.config(
 
             'account': {
 
-              templateUrl: "js/home/login.html",
+              templateUrl: "js/login/login.html",
               controller: "loginCtrl",
               controllerAs: "login"
 
@@ -104,7 +106,7 @@ twopence.config(
 
             'account': {
 
-              templateUrl: "js/home/onboarding.html",
+              templateUrl: "js/login/login-onboarding.html",
               controller: "onboardingCtrl",
               controllerAs: "onboarding"
 
@@ -119,7 +121,7 @@ twopence.config(
           views:  {
 
             'account': {
-              templateUrl: "js/home/login-resetPasswordEmail.html",
+              templateUrl: "js/login/login-resetPasswordEmail.html",
               controller: "resetPasswordCtrl",
               controllerAs: "resetPassword"
 
@@ -134,7 +136,7 @@ twopence.config(
           views:  {
 
             'account': {
-              templateUrl: "js/home/login-resetPassword.html",
+              templateUrl: "js/login/login-resetPassword.html",
               controller: "resetPasswordCtrl",
               controllerAs: "resetPassword"
 
@@ -152,7 +154,7 @@ twopence.config(
           url: '/logout',
           views: {
             'sponsor' : {
-              templateUrl: "js/home/logOut.html",
+              templateUrl: "js/login/logOut.html",
               controller: "logOutCtrl",
               controllerAs: "logOut"
             }
@@ -165,7 +167,7 @@ twopence.config(
           views: {
 
             'main' : {
-              templateUrl: "js/home/signUp.html",
+              templateUrl: "js/signUp/signUp.html",
               controller: "signUpCtrl",
               controllerAs: "signUp"
             }
@@ -179,7 +181,7 @@ twopence.config(
           views: {
 
             'form' : {
-              templateUrl: "js/home/signUp-account.html",
+              templateUrl: "js/signUp/signUp-account.html",
             }
 
           }
@@ -191,7 +193,7 @@ twopence.config(
           views: {
 
             'form' : {
-              templateUrl: "js/home/signUp-identity.html"
+              templateUrl: "js/signUp/signUp-identity.html"
             }
 
           }
@@ -203,7 +205,7 @@ twopence.config(
           views: {
 
             'form' : {
-              templateUrl: "js/home/signUp-confirmation.html"
+              templateUrl: "js/signUp/signUp-confirmation.html"
             }
 
           }
@@ -214,7 +216,7 @@ twopence.config(
           views: {
 
             'verify': {
-              templateUrl: "js/verify/verify.html",
+              templateUrl: "js/signUp/verify.html",
               controller: "verifyCtrl",
               controllerAs: "verify"
 

@@ -12,12 +12,14 @@ twopence.factory('Sponsorship', [
     '$http',
     'Auth',
     'BASE_URL',
+    'moment',
     function(
       $filter,
       $q,
       $http,
       Auth,
-      BASE_URL) {
+      BASE_URL,
+      moment) {
 
 
    var sponsorship = {};
@@ -28,29 +30,11 @@ twopence.factory('Sponsorship', [
   //
   var getTodaysDate = function() {
 
-    var today = new Date();
+    var dateISO = moment().format();
+    var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+    var today = convertedDate; 
 
-    var dd = today.getDate();
-
-    var mm = today.getMonth() + 1; 
-
-    var yyyy = today.getFullYear();
-
-    if (dd < 10) {
-
-      dd = '0' + dd
-
-    }
-
-    if (mm < 10) {
-
-      mm = '0' + mm
-
-    }
-
-    today = yyyy + '-' + mm + '-' + dd;
-
-    return today; 
+    return today 
 
   };
 
@@ -273,7 +257,9 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.checkIfStartsToday = function(pPlan) {
 
-    var todaysDate = $filter('date')(new Date(), 'yyyy-MM-dd')
+    var dateISO = moment().format();
+    var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+    var todaysDate = convertedDate; 
     var lastPlan = getLastSchedule(pPlan.schedules);
     
     return todaysDate === lastPlan.date_effective;
@@ -286,10 +272,9 @@ twopence.factory('Sponsorship', [
   //
   sponsorship.checkIfStartsTomorrow = function(pPlan) {
 
-    var tomorrowsDate = new Date();
-    tomorrowsDate.setDate(tomorrowsDate.getDate() + 1);
-    tomorrowsDate = $filter('date')(tomorrowsDate, 'yyyy-MM-dd'); 
-
+    var dateISO = moment().add(1, 'days').format();
+    var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
+    var tomorrowsDate = convertedDate; 
     var lastPlan = getLastSchedule(pPlan.schedules);
 
     return tomorrowsDate === lastPlan.date_effective; 

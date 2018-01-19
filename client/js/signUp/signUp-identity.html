@@ -1,15 +1,15 @@
 <div>
   
     <p class="text-center">
-     Enter your personal information and contact preferences. 
+     Enter your personal information and <br class="show-for-medium-up">  contact preferences. 
     </p>
   
-    <form ng-submit="signUp.createUser(signUp.userIdentityForm)"
+    <form ng-submit="signUp.createUser(signUp.userIdentityForm, signUp.userInfo)"
           name="signUp.userIdentityForm"
           ng-model-options="{ getterSetter: true }"
           novalidate>
   
-      <div class="input-group input--medium">
+      <div class="input-group inputGroup--alt input--medium">
   
           <label for="first name">
         First Name
@@ -40,7 +40,7 @@
   
       </div>
   
-      <div class="input-group input--medium">
+      <div class="input-group inputGroup--alt input--medium">
   
         <label for="full name">
           Last Name
@@ -72,8 +72,9 @@
   
       </div>
   
-      
-      <div class="input-group  input--medium mb1">
+
+
+      <div class="input-group inputGroup--alt input--medium mb1">
   
         <label for="phone number">
           Cell Phone Number
@@ -132,9 +133,9 @@
   
       <div class="row  grid  grid--center grid--flexWrap">
         
-        <div class="small-12 medium-7  large-8  columns">
+        <div class="small-12   columns">
           
-          <div class="input-group input--medium">
+          <div class="input-group inputGroup--alt input--medium">
   
             <label for="dob">
             Date of birth
@@ -143,7 +144,6 @@
             <input type="date"
                 id="dob"
                 name="dob"
-                class="input--medium  input--primary mb0"
                 ng-model="signUp.userInfo.dob"
                 required
                 floating-label
@@ -183,10 +183,11 @@
                >
             </div>
         
-            <label class="text-micro mb0 grid-cell  " for="accepted_tc">
+            <label class="text-micro mb0" for="accepted_tc">
                By continuing, I agree to Pickpocket's <a href="#" ng-click="signUp.openTermsModal()" rel="internal">Terms of Use</a> and I accept its payment partner Dwolla's <a href=" https://www.dwolla.com/legal/tos" target="_blank" rel="external">Terms of Service</a> &<a href="https://www.dwolla.com/legal/privacy" rel="external" target="_blank"> Privacy Policy</a>
 
             </label>
+
           </div>
   
         </div>

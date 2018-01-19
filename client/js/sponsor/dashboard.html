@@ -41,7 +41,8 @@
 
         <li class="grid-cell" ng-repeat="sponsorship in dashboard.sponsorships | orderBy: 'contributions_to_date':true track by $index">
 
-         <sponsorship-card-dir sponsorship-info="sponsorship"  boost-sponsorship="dashboard.openBoostModal(sponsorship)">
+         <sponsorship-card-dir sponsorship-info="sponsorship"  
+                               boost-sponsorship="dashboard.openBoostModal(sponsorship)">
 
          </sponsorship-card-dir>
 

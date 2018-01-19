@@ -1,6 +1,6 @@
 <div>
     
-    <p class="text-center">
+    <p class="text-center  mb3">
        Create you Pickpocket Sponsor Account.
     </p>
   
@@ -9,7 +9,7 @@
           ng-model-options="{ getterSetter: true }"
           novalidate>
   
-      <div class="input-group  input--medium">
+      <div class="input-group inputGroup--alt input--medium">
   
         <label for="email">
           Email
@@ -18,7 +18,6 @@
         <input type="email" 
                id="email"
                name="email"
-              class="input--primary input--medium"
               ng-model="signUp.userInfo.email"
               ng-minlength = "8"
               required
@@ -43,7 +42,7 @@
       </div>
   
 
-      <div class="input-group  input--medium">
+      <div class="input-group inputGroup--alt input--medium">
   
         <label for="password">
           Password
@@ -52,7 +51,6 @@
         <input type="password" 
                id="password"
                name="password"
-               class="input--primary input--medium"
                required
                ng-model="signUp.userInfo.password"
                ng-minlength = "8"
@@ -75,7 +73,7 @@
       </div>
 
 
-      <div class="input-group  input--medium">
+      <div class="input-group  inputGroup--alt input--medium">
   
         <label for="confirmPassword">
           Confirm Password
@@ -84,7 +82,6 @@
         <input type="password" 
                id="confirmPassword"
                name="confirmPassword"
-               class="input--primary input--medium"
                ng-minlength="8"
                ng-model="signUp.userInfo.confirmPassword"
                compare-to="signUp.userInfo.password"
@@ -108,7 +105,7 @@
 
       </password-requirements-dir>
   
-      <button class="button--secondary  button--medium button--expanded mb0"
+      <button class="button--primary  button--medium button--expanded mb0"
               type="submit">
         <span ng-if="!signUp.loadingScreen" >Next Step </span>
         <span ng-if="signUp.loadingScreen">Nicely done, setting up...</span>

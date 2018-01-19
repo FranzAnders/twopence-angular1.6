@@ -145,7 +145,7 @@ input {
 \*------------------------------------*/
 
 
- $formGroupSpeed: .4s;
+ $formGroupSpeed: .2s;
 
 
 /*------------------------------------*\
@@ -239,7 +239,7 @@ input {
       margin-right: auto;
       margin-left: auto;
       width: 0;
-      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @include transition(all $formGroupSpeed ease-in-out);
       @extend %position-absolute;
     }
 
@@ -249,6 +249,7 @@ input {
       margin-bottom: 0;
       background-color: transparent;
       border-bottom: 2px solid $grey--light;
+      @include transition(all $formGroupSpeed ease-in-out);
 
       &:-webkit-autofill {
         background-color: $tertiaryColor--translucent; 
@@ -269,7 +270,7 @@ input {
       bottom: rem-calc(3px);
       left: 0;
       margin-bottom: 0;
-      @include transition(all $formGroupSpeed ceaser($easeInOutQuint));
+      @include transition(all $formGroupSpeed ease-in-out);
       @extend %position-absolute;
     }
 
@@ -343,7 +344,219 @@ input {
 
 }
 
-m
+
+
+
+
+/*------------------------------------*\
+    #Alt Input Group Sizes
+\*------------------------------------*/
+
+
+.inputGroup--alt {
+
+   &.input--small {
+
+    label {
+
+      @include type-setting(-1);
+
+    }
+
+    input {
+
+      padding-top: rem-calc($level1);
+      padding-bottom: rem-calc($level1);
+      @include type-setting(-1);
+
+    }
+
+  }
+
+  &.input--medium {
+
+    label {
+      bottom: rem-calc(14px); 
+      @include type-setting(0);
+
+    }
+
+    input {
+      padding-top: rem-calc($level2);
+      padding-bottom: rem-calc($level2);
+      @include type-setting(0);
+
+    }
+
+    &.is-focused,
+    &.is-filled {
+
+      input {
+
+        padding-top: rem-calc($level3);
+        padding-bottom: rem-calc($level1);
+
+      }
+
+      &.inputGroup--withIcon {
+        
+        input {
+          padding-top: rem-calc($level2);
+          padding-bottom: rem-calc($level2);
+      
+        }
+
+      }
+
+    }
+
+  }
+
+
+  &.input--large {
+
+    label {
+
+      @include type-setting(1);
+
+    }
+
+    input {
+
+      padding-top: rem-calc($level3);
+      padding-bottom: rem-calc($level3);
+      @include type-setting(1);
+
+    }
+
+  }
+
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Alt input Group Styles
+\*------------------------------------*/
+
+
+.inputGroup--alt {
+  position: relative; 
+  background-color: #FFF;  
+  margin-bottom: rem-calc($base-magic-number);
+
+  &:after {
+    display: none; 
+
+  }
+  
+  input {
+    background-color: transparent; 
+    padding: rem-calc($level2);
+    border: 1px solid $grey--light; 
+    @include border-radius(6px); 
+    
+  }
+  
+  label {
+    left: rem-calc($level2); 
+
+  }
+
+  &.is-focused,
+  &.is-filled {
+
+    label {
+      color: $grey--med; 
+      @include type-setting(-2); 
+      @include transform(translateY(-19px));
+
+    }
+
+  }
+
+  &.is-focused {
+    color: $tertiaryColor; 
+
+    input {
+     color: $secondaryColor;
+     border: 1px solid $secondaryColor; 
+
+    }
+
+  }
+
+
+}
+
+
+.inputGroup--withIcon {
+
+  input {
+    padding-left: rem-calc(50px); 
+
+  }
+   
+  label {
+    left: rem-calc(50px); 
+
+  }
+
+  .inputGroup-iconContainer {
+    border-right: $grey--light 1px solid; 
+    width: rem-calc(42px); 
+    height: 100%; 
+    position: absolute; 
+
+    .inputGroup-icon {
+      fill: $grey--med; 
+      top: 0; 
+      bottom: 0; 
+      right: 0; 
+      left: 0; 
+      margin: auto; 
+      position: absolute; 
+      width: rem-calc(18px);
+      height: rem-calc(18px);
+
+    }
+  }
+ 
+
+
+  &.is-focused,
+  &.is-filled {
+    
+    label {
+      opacity: 0; 
+      @include type-setting(0); 
+      @include transform(translateY(0));
+
+    }
+
+  }
+
+  &.is-focused {
+    color: $tertiaryColor; 
+
+    .inputGroup-iconContainer { 
+      border-color: $secondaryColor; 
+        
+      .inputGroup-icon {
+        fill: $secondaryColor; 
+
+      }
+
+    }
+
+  }
+
+}
+
+
 
 
 

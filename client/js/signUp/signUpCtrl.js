@@ -51,7 +51,6 @@ twopence.controller('signUpCtrl', [
 
 
 
-
     if(!vm.userInfo.email  && !$state.is('main.signUp.verify') && !$state.is('main.signUp.confirmation')) {
       $state.go('main.signUp.account');
     }
@@ -83,17 +82,21 @@ twopence.controller('signUpCtrl', [
     };
 
 
+
     //
     // Creates the sponsor fom the information provided and the logged in account
     //
-    vm.createUser = function(pSponsorForm) {
+    vm.createUser = function(pSponsorForm, pUserInfo) {
 
-      console.log(pSponsorForm); 
+      var userInfo = pUserInfo; 
 
       if(pSponsorForm.$valid) {
-        vm.userInfo.dob = $filter('date')(vm.sponsorDob, 'yyyy-MM-dd');
 
-          User.create(vm.userInfo).then(function(res) {
+          var date = userInfo.dob;
+
+          userInfo.dob = $filter('date')(date, 'yyyy-MM-dd')
+
+          User.create(userInfo).then(function(res) {
 
             vm.accountCreated = true; 
 
@@ -114,7 +117,6 @@ twopence.controller('signUpCtrl', [
       } else {
 
         console.log("ERROR: Form is not valid");
-        console.log(pSponsorForm); 
 
       }
 
