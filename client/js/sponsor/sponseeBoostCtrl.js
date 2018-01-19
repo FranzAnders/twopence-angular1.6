@@ -6,7 +6,7 @@
    Sponsee Jolt Controller
 \*------------------------------------*/
 
-twopence.controller('sponseeJoltCtrl', [
+twopence.controller('sponseeBoostCtrl', [
     'Sponsee',
     'Sponsor',
     'SponseeInformation',
@@ -26,19 +26,19 @@ twopence.controller('sponseeJoltCtrl', [
 
     vm.sponsorshipInfo = SponseeInformation;
 
-    console.log(vm.sponsorshipInfo); 
+    vm.sponseeInfo = vm.sponsorshipInfo.sponsee; 
 
-    vm.joltSuccessfull = false; 
+    vm.boostSuccessfull = false; 
 
 
-    vm.joltInfo = {
+    vm.boostInfo = {
       "user": {
           "id" : vm.sponsorshipInfo.id
       }, 
       "plan": {
         "type": 'fixed',
         "frequency": 'one-time', 
-        "amount": 0
+        "amount": null
       }
     };
 
@@ -47,13 +47,13 @@ twopence.controller('sponseeJoltCtrl', [
     //
     // Boosts the sponsee if the form is valid
     //
-    vm.boostSponsee = function(pJoltForm) {
+    vm.boostSponsee = function(pBoostForm) {
 
-      if(pJoltForm.$valid) {
+      if(pBoostForm.$valid) {
 
-        vm.joltInfo.plan.amount  = parseInt(vm.joltInfo.plan.amount);
+        vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
 
-        Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.joltInfo).then(function(success) {
+        Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
 
         alert('Success boosting!');
           
@@ -81,5 +81,26 @@ twopence.controller('sponseeJoltCtrl', [
       $fancyModal.close(); 
 
     };
+
+
+    //
+    // Increases the Boost amount by 5 
+    //
+    vm.increaseBoostAmount = function(pIncrease) {
+
+      vm.boostInfo.plan.amount = vm.boostInfo.plan.amount + pIncrease; 
+
+    };
+
+
+    //
+    // Decreases the Boost amount by a specified amount
+    //
+    vm.decreaseBoostAmount = function(pDecrease) {
+
+      vm.boostInfo.plan.amount = vm.boostInfo.plan.amount - pDecrease; 
+
+    };
+
 
 }]);

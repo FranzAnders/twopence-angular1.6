@@ -224,7 +224,6 @@ input {
 
 .input-group {
     width: 100%;
-    margin-top: rem-calc($level1); 
     margin-bottom: rem-calc($level5);
     @extend %position-relative;
 
@@ -398,7 +397,7 @@ input {
 
       }
 
-      &.inputGroup--withIcon {
+      &.inputGroup--withIcon  {
         
         input {
           padding-top: rem-calc($level2);
@@ -409,15 +408,15 @@ input {
       }
 
     }
-
+  
   }
 
 
   &.input--large {
 
     label {
-
-      @include type-setting(1);
+      bottom: rem-calc(20px); 
+      @include type-setting(0);
 
     }
 
@@ -426,6 +425,28 @@ input {
       padding-top: rem-calc($level3);
       padding-bottom: rem-calc($level3);
       @include type-setting(1);
+
+    }
+
+    &.is-focused,
+    &.is-filled {
+
+      input {
+
+        padding-top: rem-calc($level4);
+        padding-bottom: rem-calc($level2);
+
+      }
+
+      &.inputGroup--withIcon {
+        
+        input {
+          padding-top: rem-calc($level3);
+          padding-bottom: rem-calc($level3);
+      
+        }
+
+      }
 
     }
 
@@ -555,6 +576,74 @@ input {
   }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Boost Input
+\*------------------------------------*/
+
+//Uses this to hide the default increase up and down arrows 
+
+.inputGroup--boost  {
+
+  &.is-focused,
+  &.is-filled {
+    
+    label {
+      opacity: 0; 
+      @include type-setting(0); 
+      @include transform(translateY(0));
+
+    }
+
+    input {
+
+      color: $primaryColor; 
+
+    }
+
+  }
+  
+  input {
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+    font-weight: bold; 
+    text-align: center; 
+    color: $secondaryColor; 
+    @include type-setting(6); 
+
+  }
+
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+
+  }
+
+  .inputGroup--boost-controls {
+    position: absolute; 
+    right: 0; 
+    width: rem-calc(36px); 
+    top: 0; 
+    bottom: 0; 
+    height: 100%; 
+    border-left: 1px solid $grey--light; 
+    @include type-setting(2); 
+    
+    .control {
+      height: 50%; 
+
+    }
+
+  }
+
+}
+
 
 
 

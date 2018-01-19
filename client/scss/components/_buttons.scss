@@ -10,7 +10,7 @@ button,
   background-color: transparent; 
   @extend %fwb; 
   @extend %button;
-  @include border-radius(4px); 
+  @include border-radius(6px); 
 
   .button-inner {
     position: relative; 
@@ -357,7 +357,7 @@ button,
     padding: rem-calc(15px);
     padding-right: rem-calc($level3);
     padding-left: rem-calc($level3);
-    @include type-setting(1);
+    @include type-setting(0);
 }
 
 .button--kilo {
