@@ -67,6 +67,8 @@ twopence.controller('loginCtrl', [
 
           User.getUserInfo().then(function(userInfo) {
 
+            console.log(userInfo); 
+
             if(userInfo.status === "onboarding") {
 
               $state.go('main.account.onboarding');
