@@ -270,7 +270,18 @@ body.fancymodal-open {
 
 
 
+.fancymodal--boost {
+  
+  .fancymodal-innerContent {
+    
+    @media #{$medium-up} {
+      padding: rem-calc($level6); 
 
+    }
+
+  }
+
+}
 
 
 
@@ -282,58 +293,54 @@ body.fancymodal-open {
 .fancyModal--fullScreen {
 
     .fancymodal-content {
-
         background-color: transparent; 
     }
 }
 
 .fancymodal--large {
-
     @extend %pt7; 
 
     .fancymodal-content {
-    
-        max-width: rem-calc(1100px); 
+      max-width: rem-calc(1100px); 
 
     }
 }
 
 .fancymodal--medium {
-
     @extend %pt7; 
 
     @media #{$medium-up} {
+      padding-top: 6rem !important; 
+    }
 
-        padding-top: 6rem !important; 
+    @media #{$large-up} {
+      padding-top: 10rem !important; 
     }
 
     .fancymodal-content {
-    
-        max-width: rem-calc(660px); 
+      max-width: 28rem; 
 
     }
 }
 
 
 .fancymodal--small {
-    @extend %pt7; 
+  @extend %pt7; 
 
-    @media #{$medium-up} {
+  @media #{$medium-up} {
+    padding-top: 6rem !important; 
+  }
 
-        padding-top: 6rem !important; 
-    }
-
-    @media #{$large-up} {
-
-        padding-top: 10rem !important; 
-    }
+  @media #{$large-up} {
+    padding-top: 10rem !important; 
+  }
 
 
-    .fancymodal-content {
-        width: 23.5rem;
-        min-height: rem-calc(120px); 
+  .fancymodal-content {
+    max-width: 23.5rem;
+    min-height: rem-calc(120px); 
 
-    }
+  }
 }
 
 
