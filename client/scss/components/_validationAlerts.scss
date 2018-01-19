@@ -6,32 +6,28 @@
 
 
 .validationAlertsContainer {
-  position:  absolute; 
-  right: rem-calc($level2); 
+  position:  fixed; 
+  right: rem-calc($level4);
   top: rem-calc($level2); 
   width: 80%; 
   z-index: 100; 
+  @include transition(all .4s ceaser($easeInOutQuint)); 
 
   @media #{$medium-up} {
-    width: rem-calc(300px); 
-
+    width: 21rem; 
+    right: rem-calc($level3 ); 
+    top: rem-calc($level3 ); 
   }
-
-  &.ng-enter, 
-  &.ng-leave {
-    @include transition(all .4s ceaser($easeInOutQuint)); 
-
-  }
-
+  
   &.ng-enter,
   &.ng-leave.ng-leave-active {
-    @include transform(translateX(0)); 
+    opacity: 0; 
 
   }
 
   &.ng-leave,
   &.ng-enter.ng-enter-active {
-    @include transform(translateX(150%)); 
+    opacity: 1; 
 
   }
   
@@ -41,17 +37,21 @@
 
 .validationAlert {
   position: relative; 
-  background-color: $secondaryColor; 
+  background-color: $tertiaryColor; 
   padding: rem-calc($level2); 
   @include border-radius(4px); 
 
-  @media #{$medium-up} {
-    padding: rem-calc($level3); 
+  
+  .validationAlert-icon {
+    fill: $softWarningColor;
+    width: rem-calc(20px); 
+    margin-bottom: rem-calc($level1); 
+    margin-right: rem-calc($level1); 
 
   }
 
   .validationAlert-title {
-    margin-bottom: 0; 
+    margin-bottom: rem-calc($level1); 
     color: #fff;
     @include type-setting(0); 
 
@@ -61,11 +61,6 @@
     margin-bottom: 0; 
     color: #fff; 
     @include type-setting(-1); 
-
-    @media #{$large-up} {
-      @include type-setting(-2); 
-
-    }
 
   }
 

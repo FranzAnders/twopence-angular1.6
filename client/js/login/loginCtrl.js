@@ -7,6 +7,7 @@
 twopence.controller('loginCtrl', [
   '$state',
   '$timeout',
+  '$rootScope',
   '$stateParams',
   'Auth',
   'AUTH_EVENTS',
@@ -14,6 +15,7 @@ twopence.controller('loginCtrl', [
   function(
     $state,
     $timeout,
+    $rootScope, 
     $stateParams,
     Auth,
     AUTH_EVENTS,
@@ -42,7 +44,7 @@ twopence.controller('loginCtrl', [
 
 
     //
-    // Resets the form submission erros object 
+    // Resets the form submission errors object 
     //
     var resetFormSubmissionErrors = function() {
       vm.formSubmissionErrors.invalidCombination = false; 
@@ -89,21 +91,19 @@ twopence.controller('loginCtrl', [
 
 
         }).catch(function(err) {
-          vm.errData = err.data; 
-          vm.formSubmissionErrors.error = true;
-          
-          if(vm.errData.message === "Sorry, that\'s an invalid email/password combination.") {
-              vm.formSubmissionErrors.invalidCombination = true; 
-          }
 
-          if(vm.errData.code === "rate_limit_error") {
-            vm.formSubmissionErrors.rateLimitError = true; 
+          //
+          // Emits an event with the error data for validationAlertsDir to listen to
+          //
+          $timeout(function() {
+            $rootScope.$emit('login-validation-error', {error: err}); 
 
-          }
+          }, 100);
 
         });
 
       } else {
+
         console.log('ERROR: form is not valid'); 
 
       }
