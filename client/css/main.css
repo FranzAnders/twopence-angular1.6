@@ -18777,6 +18777,11 @@ body.fancymodal-open {
   margin-bottom: 3rem;
 }
 
+/* line 12, ../scss/pages/_home.scss */
+.terms {
+  white-space: pre-wrap;
+}
+
 /*------------------------------------*\
     #Styles specific to login and account sign up page 
 \*------------------------------------*/
