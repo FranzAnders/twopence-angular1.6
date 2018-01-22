@@ -608,7 +608,7 @@ $controlsActiveInputColor: $secondaryColor;
 
 .inputGroup--boost  {
 
-  
+    
     &:before {
     content: "$";
     position: absolute; 
@@ -729,6 +729,7 @@ $controlsActiveInputColor: $secondaryColor;
 
 
 
+
   &.is-focused,
   &.is-filled {
     
@@ -760,8 +761,35 @@ $controlsActiveInputColor: $secondaryColor;
 
   }
 
-}
+  &.is-locked {
+    
+    &:before {
 
+      color: #fff; 
+
+    }
+
+    input {
+      border-color: $primaryColor; 
+      background-color: $primaryColor; 
+      color: #fff; 
+
+    }
+
+    .inputGroup--boost-controls {
+      border-left-color: #fff; 
+
+      .control-icon {
+        fill: #fff; 
+
+      }
+
+    }
+      
+  }
+
+
+}
 
 
 

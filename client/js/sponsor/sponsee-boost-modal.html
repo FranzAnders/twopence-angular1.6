@@ -17,17 +17,24 @@
 
     </div>
   
-    <div class="fancymodal-innerContent"  
-         ng-if="!sponseeBoost.joltSuccessfull">
-        
-      <p class="p3">How much would you like to Boost towards <span class="fwb" ng-bind="sponseeBoost.sponseeInfo.first_name + '’s'"></span> student loans today?</p>
-  
-        <form
-              ng-submit="sponseeBoost.boostSponsee(sponseeBoost.boostForm)"
+    <div class="fancymodal-innerContent"
+         ng-show="!sponseeBoost.boostSuccessfull">
+          
+        <p class="p3" ng-show="!sponseeBoost.boostSuccessfull && !sponseeBoost.confirmingBoost">
+            How much would you like to Boost towards <span class="fwb" ng-bind="::sponseeBoost.sponseeInfo.first_name + '’s'"></span> student loans today?
+        </p>
+
+         <p class="p3" ng-show="sponseeBoost.confirmingBoost">
+          Are you sure you wish to boost {{::sponseeBoost.sponseeInfo.first_name}} <span class="fwb">$<span>{{sponseeBoost.boostInfo.plan.amount}}</span></span> from your withdrawal account?
+         </p>
+
+
+        <form  ng-submit="sponseeBoost.boostSponsee(sponseeBoost.boostForm)"
               name="sponseeBoost.boostForm" 
               novalidate>
           
-        <div class="input-group  inputGroup--alt inputGroup--boost">
+        <div class="input-group  inputGroup--alt inputGroup--boost"
+             ng-class="{'is-locked' : sponseeBoost.confirmingBoost}">
 
           <div class="inputGroup--boost-controls">
               
@@ -50,63 +57,55 @@
                  min="1"
                  placeholder="0.00"
                  floating-label
+                 ng-click="sponseeBoost.resetBoostingView()"
+                 ng-change="sponseeBoost.resetBoostingView()"
                  required>
 
           </div>
 
-          <button class="button--secondary  button--large  button--expanded"
+          <button class="button--secondary  button--large  button--expanded  button--boost"
+                  ng-class="{'is-locked' : sponseeBoost.confirmingBoost}"
                   type="submit">
               
-              Boost {{sponseeBoost.sponseeInfo.first_name}}
+              <span ng-show="!sponseeBoost.confirmingBoost">Make a One-Time Boost</span>
+              <span ng-show="sponseeBoost.confirmingBoost">Boost {{::sponseeBoost.sponseeInfo.first_name}}</span>
           
           </button>
 
           <p class="text-center mb0">
+
             <a ng-click="$modal.close()" role="button" class="fancymodal-options-option">Cancel</a>
+
           </p>
 
         </form>
   
     </div>
 
-
-    <div ng-if="sponseeBoost.confirmingBoost">
-       <p class="p2"> Are you sure you wish to boost Peter Parker $300 from your withdrawal account?</p>
-    </div>
   
-    <div class="fancymodal-innerContent" ng-if="sponseeBoost.boostSuccessfull">
+    <div class="fancymodal-innerContent" 
+         ng-show="sponseeBoost.boostSuccessfull">
         
   
       <div class="text-center">
-  
-        <h1 class="fwb">Success!</h1>
         
-        <p class="text-left">
-          You’ve just saved {{sponseeBoost.SponseeInformation.name}} 3 days in student loan payments. 
-        <br><br>
-        Why not keep it going? You can also create a monthly matching plan of ${{sponseeBoost.joltAmount}} or more.
+        <img src="assets/images/illustr--success.svg" 
+             alt="Hands doing a high-five" 
+             class="fancymodal-innerContent-illustr">
+
+        <h1 class="fwb  ff2 txtc2">Success!</h1>
+        
+        <p class="text-center p2">
+
+          You just boosted {{sponseeBoost.sponseeInfo.first_name}} ${{sponseeBoost.boostInfo.plan.amount}}! <br> We’re sure they appreciate it.
         </p>
-  
-        <div class="row  small-collapse">
-          
-          <div class="small-12 columns">
-            
-            <a ui-sref="sponsor.edit({sponseeEmail: sponseeBoost.SponseeInformation.email})"  
-               ng-click="sponseeBoost.closeJoltModal()"
-               class="button  button--primary  button--small  button--expanded">
-                Set Up Matching Plan
-            </a>
-  
-            <a ng-click="sponseeBoost.closeJoltModal()"  class="button  button--primary  button--small  button--expanded">
-              
-              No thanks, a jolt is fine for now.  
-        
-            </a>  
-  
-          </div>
-  
-        </div>
-  
+
+        <p class="text-center mb0">
+
+          <a ng-click="$modal.close()" role="button" class="fancymodal-options-option">Close</a>
+
+        </p>
+
       </div>
   
     </div>

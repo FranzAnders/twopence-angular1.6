@@ -76,38 +76,39 @@ body.fancymodal-open {
 
 
 .fancymodal {
+  padding-left: rem-calc($level2);
+  padding-right: rem-calc($level2);
 
-    .fancymodal-content {
-        max-width: 500px;
-        background: transparent;
-        -webkit-backface-visibility: hidden;
-        margin: 0 auto;
-        @include border-radius(4px); 
-        @extend %position-relative; 
+  .fancymodal-content {
+      max-width: 500px;
+      background: transparent;
+      -webkit-backface-visibility: hidden;
+      margin: 0 auto;
+      @include border-radius(4px); 
+      @extend %position-relative; 
 
-        &.is-open {
+      &.is-open {
+          @include animation(fancymodal-in .6s forwards);
 
-            @include animation(fancymodal-in .6s forwards);
+      }
 
-        }
+      &.is-closed {
+          @include animation(fancymodal-out .6s forwards);
 
-        &.is-closed {
-    
-            @include animation(fancymodal-out .6s forwards);
+      }
 
-        }
+  }
 
-    }
+  .fancymodal-data {
+    height: 100%; 
 
-    .fancymodal-data {
+     & > div {
       height: 100%; 
 
-       & > div {
+     }
 
-        height: 100%; 
-       }
+  }
 
-    }
 }
 
 
@@ -161,11 +162,6 @@ body.fancymodal-open {
 .fancymodal--primary {
     padding: 0; 
 
-    @media #{$medium-up} {
-      overflow: hidden; 
-
-    } 
-
     .fancymodal-badge {
       position: absolute; 
       top: -30px; 
@@ -209,7 +205,7 @@ body.fancymodal-open {
 
 
     .fancymodal-innerContent {
-      padding: rem-calc($level4); 
+      padding: rem-calc($base-magic-number); 
 
     }
 
@@ -283,6 +279,28 @@ body.fancymodal-open {
   }
 
 }
+
+
+
+
+/*------------------------------------*\
+    #Modal Illustrations
+\*------------------------------------*/
+
+
+.fancymodal-innerContent-illustr {
+  margin-top: rem-calc($level3);
+  margin-bottom: rem-calc($level3);
+  width: rem-calc(170px);
+
+  @media #{$medium-up} {
+    width: rem-calc(190px);
+
+  }
+
+}
+
+
 
 
 
