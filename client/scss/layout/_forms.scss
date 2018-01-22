@@ -601,17 +601,21 @@ input {
     #Boost Input
 \*------------------------------------*/
 
-//Uses this to hide the default increase up and down arrows 
+
+$controlsNormalColor: $grey--light; 
+$controlsActiveColor: $primaryColor; 
+$controlsActiveInputColor: $secondaryColor; 
 
 .inputGroup--boost  {
 
-  &:before {
+  
+    &:before {
     content: "$";
     position: absolute; 
     height: 100%; 
     top: 0; 
     bottom: 0; 
-    left: 8.5rem;
+    left: 1rem;
     color: $grey--light;
     height: 70px;
     font-weight: bold;
@@ -621,63 +625,19 @@ input {
 
   }
 
-  &.is-focused,
-  &.is-filled {
-    
-    label {
-      opacity: 0; 
-      @include type-setting(0); 
-      @include transform(translateY(0));
 
-    }
-
-    input {
-      color: $primaryColor; 
-
-    }
-
-    &:before {
-      color: $primaryColor;
-      
-    }
-
-  }
-
-  &.is-focused {
-
-    &:before {
-      color: $primaryColor;
-      left: rem-calc(20px); 
-    }
-  
-    input {
-      padding-left: rem-calc(30px); 
-
-    }
-
-    .inputGroup--boost-controls {
-      border-left-color: $secondaryColor; 
-
-      .control:first-child {
-        border-bottom-color: $secondaryColor; 
-
-      }
-
-    }
-
-  }
-  
   input {
     padding-top: rem-calc($level2);
     padding-bottom: rem-calc($level2);
     font-weight: bold; 
-    text-align: left; 
+    text-align: center; 
     color: $secondaryColor; 
-    padding-left: 11rem; 
+    padding-right: .5rem;
     @include type-setting(6); 
 
   }
-
+  
+  //Uses this to hide the default increase up and down arrows 
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     -moz-appearance: textfield;
@@ -704,6 +664,8 @@ input {
       text-align: center; 
       cursor: pointer; 
       vertical-align: middle; 
+      position: relative; 
+      width: 100%; 
       @include type-setting(5); 
 
       &:active {
@@ -716,12 +678,83 @@ input {
 
       }
 
+      .control-icon {
+        position: absolute; 
+        width: rem-calc(18px);
+        height: rem-calc(18px);
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        margin: auto; 
+        fill: $grey--light; 
+
+      }
+
     }
 
-    .control:first-child {
+    
+    .control--up {
       border-bottom: 1px solid $grey--light;
       @include transition(all $formGroupSpeed ease-in-out);
 
+      &:hover, 
+      &:active {
+        
+        .control-icon {
+          fill: $primaryColor; 
+
+        }
+
+      }
+
+    }
+
+
+    .control--down {
+      
+      &:hover, 
+      &:active {
+      
+        .control-icon {
+          fill: $primaryColor; 
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+  &.is-focused,
+  &.is-filled {
+    
+    label {
+      opacity: 0; 
+      @include type-setting(0); 
+      @include transform(translateY(0));
+
+    }
+
+    input {
+      color: $primaryColor; 
+
+    }
+
+  }
+
+  &.is-focused {
+
+    .inputGroup--boost-controls {
+      border-left-color: $secondaryColor; 
+
+      .control:first-child {
+        border-bottom-color: $secondaryColor; 
+
+      }
 
     }
 
