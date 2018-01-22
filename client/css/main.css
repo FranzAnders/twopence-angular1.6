@@ -13716,10 +13716,17 @@ hr {
   line-height: 1.5;
 }
 
+/* line 549, ../scss/base/_typography.scss */
+.p3 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  line-height: 1.5;
+}
+
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 556, ../scss/base/_typography.scss */
+/* line 565, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -13727,7 +13734,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 577, ../scss/base/_typography.scss */
+/* line 586, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -13736,63 +13743,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 595, ../scss/base/_typography.scss */
+  /* line 604, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 603, ../scss/base/_typography.scss */
+  /* line 612, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 611, ../scss/base/_typography.scss */
+  /* line 620, ../scss/base/_typography.scss */
   .small-text-right {
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 621, ../scss/base/_typography.scss */
-  .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
   /* line 630, ../scss/base/_typography.scss */
+  .medium-text-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  /* line 639, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 638, ../scss/base/_typography.scss */
+  /* line 647, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 647, ../scss/base/_typography.scss */
+  /* line 656, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 655, ../scss/base/_typography.scss */
+  /* line 664, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 664, ../scss/base/_typography.scss */
+  /* line 673, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
@@ -15089,17 +15096,40 @@ input[type="color"]:active {
   color: #231F20;
 }
 
-/* Change the white to any color ;) */
+/* Changes the white of auto-filled inputs*/
 /* line 61, ../scss/layout/_forms.scss */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   -webkit-text-fill-color: #231F20 !important;
 }
 
+/* Changes default input placeholder color for al browsers*/
+/* line 68, ../scss/layout/_forms.scss */
+input::-webkit-input-placeholder {
+  color: #dae0e0 !important;
+}
+
+/* line 72, ../scss/layout/_forms.scss */
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #dae0e0 !important;
+}
+
+/* line 76, ../scss/layout/_forms.scss */
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #dae0e0 !important;
+}
+
+/* line 80, ../scss/layout/_forms.scss */
+input:-ms-input-placeholder {
+  color: #dae0e0 !important;
+}
+
 /*------------------------------------*\
     #Input Properties
 \*------------------------------------*/
-/* line 74, ../scss/layout/_forms.scss */
+/* line 90, ../scss/layout/_forms.scss */
 input,
 textarea {
   width: 100%;
@@ -15110,19 +15140,19 @@ textarea {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 82, ../scss/layout/_forms.scss */
+/* line 98, ../scss/layout/_forms.scss */
 input:active, input:focus,
 textarea:active,
 textarea:focus {
   color: #6d6c6c;
 }
-/* line 89, ../scss/layout/_forms.scss */
+/* line 105, ../scss/layout/_forms.scss */
 input.input--expanded,
 textarea.input--expanded {
   width: 100%;
 }
 
-/* line 97, ../scss/layout/_forms.scss */
+/* line 113, ../scss/layout/_forms.scss */
 input.input--alt {
   min-height: 3.2rem;
   border: 2px solid #6AC6C5;
@@ -15131,21 +15161,21 @@ input.input--alt {
 /*------------------------------------*\
     #Input Sizes
 \*------------------------------------*/
-/* line 113, ../scss/layout/_forms.scss */
+/* line 129, ../scss/layout/_forms.scss */
 .input.input--small {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 121, ../scss/layout/_forms.scss */
+/* line 137, ../scss/layout/_forms.scss */
 .input.input--medium {
   padding-top: 0.375rem;
   padding-bottom: 0.0625rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 130, ../scss/layout/_forms.scss */
+/* line 146, ../scss/layout/_forms.scss */
 .input.input--large {
   padding-top: 0.75rem;
   padding-bottom: 0.375rem;
@@ -15159,36 +15189,36 @@ input.input--alt {
 /*------------------------------------*\
     #Input Group Sizes
 \*------------------------------------*/
-/* line 160, ../scss/layout/_forms.scss */
+/* line 176, ../scss/layout/_forms.scss */
 .input-group.input--small label {
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 166, ../scss/layout/_forms.scss */
+/* line 182, ../scss/layout/_forms.scss */
 .input-group.input--small input {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 178, ../scss/layout/_forms.scss */
+/* line 194, ../scss/layout/_forms.scss */
 .input-group.input--medium label {
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 184, ../scss/layout/_forms.scss */
+/* line 200, ../scss/layout/_forms.scss */
 .input-group.input--medium input {
   padding-top: 0.375rem;
   padding-bottom: 0.0625rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 197, ../scss/layout/_forms.scss */
+/* line 213, ../scss/layout/_forms.scss */
 .input-group.input--large label {
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 203, ../scss/layout/_forms.scss */
+/* line 219, ../scss/layout/_forms.scss */
 .input-group.input--large input {
   padding-top: 0.75rem;
   padding-bottom: 0.375rem;
@@ -15199,12 +15229,12 @@ input.input--alt {
 /*------------------------------------*\
     #Input Group Styles
 \*------------------------------------*/
-/* line 225, ../scss/layout/_forms.scss */
+/* line 241, ../scss/layout/_forms.scss */
 .input-group {
   width: 100%;
   margin-bottom: 1.875rem;
 }
-/* line 230, ../scss/layout/_forms.scss */
+/* line 246, ../scss/layout/_forms.scss */
 .input-group:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15221,7 +15251,7 @@ input.input--alt {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 245, ../scss/layout/_forms.scss */
+/* line 261, ../scss/layout/_forms.scss */
 .input-group input {
   z-index: 1;
   width: 100%;
@@ -15233,15 +15263,15 @@ input.input--alt {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 253, ../scss/layout/_forms.scss */
+/* line 269, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
   background-color: rgba(35, 142, 178, 0.9);
 }
-/* line 259, ../scss/layout/_forms.scss */
+/* line 275, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
   color: #231F20;
 }
-/* line 267, ../scss/layout/_forms.scss */
+/* line 283, ../scss/layout/_forms.scss */
 .input-group label {
   z-index: 0;
   bottom: 0.1875rem;
@@ -15252,7 +15282,7 @@ input.input--alt {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 279, ../scss/layout/_forms.scss */
+/* line 295, ../scss/layout/_forms.scss */
 .input-group.is-focused label, .input-group.is-filled label {
   font-size: 0.6rem;
   line-height: 1.5;
@@ -15261,19 +15291,19 @@ input.input--alt {
   -webkit-transform: translateY(-28px);
   transform: translateY(-28px);
 }
-/* line 287, ../scss/layout/_forms.scss */
+/* line 303, ../scss/layout/_forms.scss */
 .input-group.is-focused {
   color: #238EB2;
 }
-/* line 290, ../scss/layout/_forms.scss */
+/* line 306, ../scss/layout/_forms.scss */
 .input-group.is-focused input {
   color: #231F20;
 }
-/* line 295, ../scss/layout/_forms.scss */
+/* line 311, ../scss/layout/_forms.scss */
 .input-group.is-focused:after {
   width: 100%;
 }
-/* line 303, ../scss/layout/_forms.scss */
+/* line 319, ../scss/layout/_forms.scss */
 .input-group .alerts {
   position: absolute;
   left: 0;
@@ -15287,16 +15317,16 @@ input.input--alt {
 /*------------------------------------*\
     #Input With Button
 \*------------------------------------*/
-/* line 326, ../scss/layout/_forms.scss */
+/* line 342, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-input {
   width: 100%;
 }
-/* line 332, ../scss/layout/_forms.scss */
+/* line 348, ../scss/layout/_forms.scss */
 .inputWithButton .inputWithButton-button {
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 332, ../scss/layout/_forms.scss */
+  /* line 348, ../scss/layout/_forms.scss */
   .inputWithButton .inputWithButton-button {
     width: 80%;
     padding-left: 0.75rem;
@@ -15306,60 +15336,60 @@ input.input--alt {
 /*------------------------------------*\
     #Alt Input Group Sizes
 \*------------------------------------*/
-/* line 359, ../scss/layout/_forms.scss */
+/* line 375, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small label {
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 365, ../scss/layout/_forms.scss */
+/* line 381, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small input {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.5;
 }
-/* line 377, ../scss/layout/_forms.scss */
+/* line 393, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium label {
   bottom: 0.875rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 383, ../scss/layout/_forms.scss */
+/* line 399, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium input {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 393, ../scss/layout/_forms.scss */
+/* line 409, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium.is-focused input, .inputGroup--alt.input--medium.is-filled input {
   padding-top: 1.125rem;
   padding-bottom: 0.375rem;
 }
-/* line 402, ../scss/layout/_forms.scss */
+/* line 418, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium.is-focused.inputGroup--withIcon input, .inputGroup--alt.input--medium.is-filled.inputGroup--withIcon input {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-/* line 417, ../scss/layout/_forms.scss */
+/* line 433, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--large label {
   bottom: 1.25rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 423, ../scss/layout/_forms.scss */
+/* line 439, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--large input {
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-/* line 434, ../scss/layout/_forms.scss */
+/* line 450, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--large.is-focused input, .inputGroup--alt.input--large.is-filled input {
   padding-top: 1.5rem;
   padding-bottom: 0.75rem;
 }
-/* line 443, ../scss/layout/_forms.scss */
+/* line 459, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--large.is-focused.inputGroup--withIcon input, .inputGroup--alt.input--large.is-filled.inputGroup--withIcon input {
   padding-top: 1.125rem;
   padding-bottom: 1.125rem;
@@ -15368,17 +15398,17 @@ input.input--alt {
 /*------------------------------------*\
     #Alt input Group Styles
 \*------------------------------------*/
-/* line 467, ../scss/layout/_forms.scss */
+/* line 483, ../scss/layout/_forms.scss */
 .inputGroup--alt {
   position: relative;
   background-color: #FFF;
   margin-bottom: 1.5rem;
 }
-/* line 472, ../scss/layout/_forms.scss */
+/* line 488, ../scss/layout/_forms.scss */
 .inputGroup--alt:after {
   display: none;
 }
-/* line 477, ../scss/layout/_forms.scss */
+/* line 493, ../scss/layout/_forms.scss */
 .inputGroup--alt input {
   background-color: transparent;
   padding: 0.75rem;
@@ -15387,11 +15417,11 @@ input.input--alt {
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 485, ../scss/layout/_forms.scss */
+/* line 501, ../scss/layout/_forms.scss */
 .inputGroup--alt label {
   left: 0.75rem;
 }
-/* line 493, ../scss/layout/_forms.scss */
+/* line 509, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused label, .inputGroup--alt.is-filled label {
   color: #6d6c6c;
   font-size: 0.6rem;
@@ -15401,32 +15431,32 @@ input.input--alt {
   -webkit-transform: translateY(-19px);
   transform: translateY(-19px);
 }
-/* line 502, ../scss/layout/_forms.scss */
+/* line 518, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused {
   color: #238EB2;
 }
-/* line 505, ../scss/layout/_forms.scss */
+/* line 521, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused input {
   color: #231F20;
   border: 1px solid #231F20;
 }
 
-/* line 519, ../scss/layout/_forms.scss */
+/* line 535, ../scss/layout/_forms.scss */
 .inputGroup--withIcon input {
   padding-left: 3.125rem;
 }
-/* line 524, ../scss/layout/_forms.scss */
+/* line 540, ../scss/layout/_forms.scss */
 .inputGroup--withIcon label {
   left: 3.125rem;
 }
-/* line 529, ../scss/layout/_forms.scss */
+/* line 545, ../scss/layout/_forms.scss */
 .inputGroup--withIcon .inputGroup-iconContainer {
   border-right: #dae0e0 1px solid;
   width: 2.625rem;
   height: 100%;
   position: absolute;
 }
-/* line 535, ../scss/layout/_forms.scss */
+/* line 551, ../scss/layout/_forms.scss */
 .inputGroup--withIcon .inputGroup-iconContainer .inputGroup-icon {
   fill: #6d6c6c;
   top: 0;
@@ -15438,7 +15468,7 @@ input.input--alt {
   width: 1.125rem;
   height: 1.125rem;
 }
-/* line 554, ../scss/layout/_forms.scss */
+/* line 570, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused label, .inputGroup--withIcon.is-filled label {
   opacity: 0;
   font-size: 1rem;
@@ -15448,15 +15478,15 @@ input.input--alt {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 563, ../scss/layout/_forms.scss */
+/* line 579, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused {
   color: #238EB2;
 }
-/* line 566, ../scss/layout/_forms.scss */
+/* line 582, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused .inputGroup-iconContainer {
   border-color: #231F20;
 }
-/* line 569, ../scss/layout/_forms.scss */
+/* line 585, ../scss/layout/_forms.scss */
 .inputGroup--withIcon.is-focused .inputGroup-iconContainer .inputGroup-icon {
   fill: #231F20;
 }
@@ -15464,7 +15494,26 @@ input.input--alt {
 /*------------------------------------*\
     #Boost Input
 \*------------------------------------*/
-/* line 595, ../scss/layout/_forms.scss */
+/* line 608, ../scss/layout/_forms.scss */
+.inputGroup--boost:before {
+  content: "$";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 8.5rem;
+  color: #dae0e0;
+  height: 70px;
+  font-weight: bold;
+  margin: auto;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 3rem;
+  line-height: 1.33333;
+}
+/* line 627, ../scss/layout/_forms.scss */
 .inputGroup--boost.is-focused label, .inputGroup--boost.is-filled label {
   opacity: 0;
   font-size: 1rem;
@@ -15474,48 +15523,95 @@ input.input--alt {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 602, ../scss/layout/_forms.scss */
+/* line 634, ../scss/layout/_forms.scss */
 .inputGroup--boost.is-focused input, .inputGroup--boost.is-filled input {
   color: #6AC6C5;
 }
-/* line 610, ../scss/layout/_forms.scss */
+/* line 639, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-focused:before, .inputGroup--boost.is-filled:before {
+  color: #6AC6C5;
+}
+/* line 648, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-focused:before {
+  color: #6AC6C5;
+  left: 1.25rem;
+}
+/* line 653, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-focused input {
+  padding-left: 1.875rem;
+}
+/* line 658, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-focused .inputGroup--boost-controls {
+  border-left-color: #231F20;
+}
+/* line 661, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-focused .inputGroup--boost-controls .control:first-child {
+  border-bottom-color: #231F20;
+}
+/* line 670, ../scss/layout/_forms.scss */
 .inputGroup--boost input {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   color: #231F20;
+  padding-left: 11rem;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 620, ../scss/layout/_forms.scss */
+/* line 681, ../scss/layout/_forms.scss */
 .inputGroup--boost input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: textfield;
   margin: 0;
 }
-/* line 628, ../scss/layout/_forms.scss */
+/* line 689, ../scss/layout/_forms.scss */
 .inputGroup--boost .inputGroup--boost-controls {
   position: absolute;
   right: 0;
-  width: 2.25rem;
+  width: 2.5rem;
   top: 0;
   bottom: 0;
   height: 100%;
   border-left: 1px solid #dae0e0;
-  font-size: 1.25rem;
-  line-height: 1.2;
+  color: #dae0e0;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-/* line 638, ../scss/layout/_forms.scss */
+/* line 701, ../scss/layout/_forms.scss */
 .inputGroup--boost .inputGroup--boost-controls .control {
   height: 50%;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+/* line 711, ../scss/layout/_forms.scss */
+.inputGroup--boost .inputGroup--boost-controls .control:active span {
+  color: #6d6c6c;
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+/* line 721, ../scss/layout/_forms.scss */
+.inputGroup--boost .inputGroup--boost-controls .control:first-child {
+  border-bottom: 1px solid #dae0e0;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /*------------------------------------*\
     #Labels
 \*------------------------------------*/
-/* line 657, ../scss/layout/_forms.scss */
+/* line 742, ../scss/layout/_forms.scss */
 label {
   margin-bottom: 0.25rem;
 }
@@ -15523,7 +15619,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 672, ../scss/layout/_forms.scss */
+/* line 757, ../scss/layout/_forms.scss */
 select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -15538,11 +15634,11 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 692, ../scss/layout/_forms.scss */
+/* line 777, ../scss/layout/_forms.scss */
 .select-customWrapper {
   position: relative;
 }
-/* line 695, ../scss/layout/_forms.scss */
+/* line 780, ../scss/layout/_forms.scss */
 .select-customWrapper:after {
   content: " ";
   width: 0;
@@ -15557,7 +15653,7 @@ select {
   pointer-events: none;
 }
 
-/* line 713, ../scss/layout/_forms.scss */
+/* line 798, ../scss/layout/_forms.scss */
 .select--primary {
   background-color: #fff;
   outline: 0;
@@ -15567,7 +15663,7 @@ select {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 720, ../scss/layout/_forms.scss */
+/* line 805, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
   border: 0;
@@ -15576,32 +15672,32 @@ select {
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.2);
 }
 
-/* line 731, ../scss/layout/_forms.scss */
+/* line 816, ../scss/layout/_forms.scss */
 .select--quantity {
   min-width: 5rem;
   text-align-last: center;
 }
 
-/* line 738, ../scss/layout/_forms.scss */
+/* line 823, ../scss/layout/_forms.scss */
 .select--small {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 746, ../scss/layout/_forms.scss */
+/* line 831, ../scss/layout/_forms.scss */
 .select--medium {
   padding: 0.5rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 753, ../scss/layout/_forms.scss */
+/* line 838, ../scss/layout/_forms.scss */
 .select--quantity {
   width: 2.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 753, ../scss/layout/_forms.scss */
+  /* line 838, ../scss/layout/_forms.scss */
   .select--quantity {
     width: 3.75rem;
   }
@@ -15613,7 +15709,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 793, ../scss/layout/_forms.scss */
+/* line 878, ../scss/layout/_forms.scss */
 .fieldset,
 fieldset {
   margin-bottom: 1.875rem;
@@ -15622,7 +15718,7 @@ fieldset {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 808, ../scss/layout/_forms.scss */
+/* line 893, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -15630,7 +15726,7 @@ fieldset {
 /*------------------------------------*\
     #Clear Field
 \*------------------------------------*/
-/* line 820, ../scss/layout/_forms.scss */
+/* line 905, ../scss/layout/_forms.scss */
 input.clearField {
   background-color: transparent;
   text-align: center;
@@ -15638,7 +15734,7 @@ input.clearField {
   font-size: 6rem;
   line-height: 1.2;
 }
-/* line 826, ../scss/layout/_forms.scss */
+/* line 911, ../scss/layout/_forms.scss */
 input.clearField:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15655,20 +15751,20 @@ input.clearField:after {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 841, ../scss/layout/_forms.scss */
+/* line 926, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #231F20;
 }
-/* line 845, ../scss/layout/_forms.scss */
+/* line 930, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
   width: 100%;
 }
 
-/* line 855, ../scss/layout/_forms.scss */
+/* line 940, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 860, ../scss/layout/_forms.scss */
+/* line 945, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15679,12 +15775,12 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Checkboxes
 \*------------------------------------*/
-/* line 881, ../scss/layout/_forms.scss */
+/* line 966, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled {
   display: none;
 }
 
-/* line 885, ../scss/layout/_forms.scss */
+/* line 970, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label {
   color: #231F20;
   margin-bottom: 1.5rem;
@@ -15693,7 +15789,7 @@ input[type="checkbox"].styled + label {
   line-height: 1.5;
 }
 
-/* line 892, ../scss/layout/_forms.scss */
+/* line 977, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label span {
   display: inline-block;
   width: 1.25rem;
@@ -15706,27 +15802,27 @@ input[type="checkbox"].styled + label span {
   border-radius: 100%;
 }
 
-/* line 902, ../scss/layout/_forms.scss */
+/* line 987, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
   position: relative;
 }
 
-/* line 910, ../scss/layout/_forms.scss */
+/* line 995, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled:hover + label span,
 input[type="checkbox"].styled:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 917, ../scss/layout/_forms.scss */
+/* line 1002, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 930, ../scss/layout/_forms.scss */
+/* line 1015, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled.radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -15735,12 +15831,12 @@ input[type="checkbox"].styled.radio--large + label {
 /*------------------------------------*\
     #Radio Buttons
 \*------------------------------------*/
-/* line 945, ../scss/layout/_forms.scss */
+/* line 1030, ../scss/layout/_forms.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 949, ../scss/layout/_forms.scss */
+/* line 1034, ../scss/layout/_forms.scss */
 input[type="radio"] + label {
   color: #231F20;
   margin-bottom: 1.5rem;
@@ -15749,7 +15845,7 @@ input[type="radio"] + label {
   line-height: 1.5;
 }
 
-/* line 956, ../scss/layout/_forms.scss */
+/* line 1041, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   display: inline-block;
   width: 1.25rem;
@@ -15762,26 +15858,26 @@ input[type="radio"] + label span {
   border-radius: 100%;
 }
 
-/* line 966, ../scss/layout/_forms.scss */
+/* line 1051, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
 }
 
-/* line 972, ../scss/layout/_forms.scss */
+/* line 1057, ../scss/layout/_forms.scss */
 input[type="radio"]:hover + label span,
 input[type="radio"]:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 979, ../scss/layout/_forms.scss */
+/* line 1064, ../scss/layout/_forms.scss */
 input[type="radio"]:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
   position: relative;
 }
-/* line 984, ../scss/layout/_forms.scss */
+/* line 1069, ../scss/layout/_forms.scss */
 input[type="radio"]:checked + label span:after {
   content: " ";
   background-image: url("data:image/svg+xml;utf8,<svg xmlns:xlink='http://www.w3.org/2000/svg' viewBox='0 0 100 100'  width='24' height='24'><path fill='%23ff69b4' d='M41.373 86a7.839 7.839 0 0 1-5.518-2.287l-19.572-19.59c-3.044-3.043-3.044-7.977 0-11.027a7.796 7.796 0 0 1 11.033 0l12.88 12.875 33.39-49.645a7.804 7.804 0 0 1 10.832-2.113c3.576 2.396 4.52 7.248 2.129 10.826L47.848 82.547a7.791 7.791 0 0 1-5.72 3.41c-.25.022-.5.043-.755.043'/></svg>");
@@ -15795,7 +15891,7 @@ input[type="radio"]:checked + label span:after {
   left: 0;
 }
 
-/* line 1006, ../scss/layout/_forms.scss */
+/* line 1091, ../scss/layout/_forms.scss */
 input[type="radio"].radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -18431,53 +18527,54 @@ body.fancymodal-open {
 @media only screen and (min-width: 40.0625em) {
   /* line 275, ../scss/components/_modals.scss */
   .fancymodal--boost .fancymodal-innerContent {
-    padding: 2.25rem;
+    padding-right: 2.25rem;
+    padding-left: 2.25rem;
   }
 }
 
 /*------------------------------------*\
     #Modal Sizes
 \*------------------------------------*/
-/* line 295, ../scss/components/_modals.scss */
+/* line 296, ../scss/components/_modals.scss */
 .fancyModal--fullScreen .fancymodal-content {
   background-color: transparent;
 }
 
-/* line 303, ../scss/components/_modals.scss */
+/* line 304, ../scss/components/_modals.scss */
 .fancymodal--large .fancymodal-content {
   max-width: 68.75rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 309, ../scss/components/_modals.scss */
+  /* line 310, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 309, ../scss/components/_modals.scss */
+  /* line 310, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 10rem !important;
   }
 }
-/* line 320, ../scss/components/_modals.scss */
+/* line 321, ../scss/components/_modals.scss */
 .fancymodal--medium .fancymodal-content {
-  max-width: 28rem;
+  max-width: 30rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 327, ../scss/components/_modals.scss */
+  /* line 328, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 327, ../scss/components/_modals.scss */
+  /* line 328, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 10rem !important;
   }
 }
-/* line 339, ../scss/components/_modals.scss */
+/* line 340, ../scss/components/_modals.scss */
 .fancymodal--small .fancymodal-content {
   max-width: 23.5rem;
   min-height: 7.5rem;

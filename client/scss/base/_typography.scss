@@ -546,6 +546,15 @@ hr {
 
 }
 
+.p3 {
+
+  @include type-setting(2); 
+  @include line-height(0); 
+
+}
+
+
+
 
 
 

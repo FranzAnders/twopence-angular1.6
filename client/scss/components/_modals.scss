@@ -275,7 +275,8 @@ body.fancymodal-open {
   .fancymodal-innerContent {
     
     @media #{$medium-up} {
-      padding: rem-calc($level6); 
+      padding-right: rem-calc($level6); 
+      padding-left: rem-calc($level6); 
 
     }
 
@@ -318,7 +319,7 @@ body.fancymodal-open {
     }
 
     .fancymodal-content {
-      max-width: 28rem; 
+      max-width: 30rem; 
 
     }
 }

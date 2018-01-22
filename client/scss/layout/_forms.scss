@@ -57,13 +57,29 @@ input[type="color"], {
 
 }
 
-/* Change the white to any color ;) */
+/* Changes the white of auto-filled inputs*/
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     -webkit-text-fill-color: $secondaryColor !important;
 }
 
 
+/* Changes default input placeholder color for al browsers*/
+input::-webkit-input-placeholder {
+color: $grey--light !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: $grey--light !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: $grey--light !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: $grey--light !important;  
+}
 
 
 /*------------------------------------*\
@@ -589,6 +605,22 @@ input {
 
 .inputGroup--boost  {
 
+  &:before {
+    content: "$";
+    position: absolute; 
+    height: 100%; 
+    top: 0; 
+    bottom: 0; 
+    left: 8.5rem;
+    color: $grey--light;
+    height: 70px;
+    font-weight: bold;
+    margin: auto; 
+    @include transition(all $formGroupSpeed ease-in-out);
+    @include type-setting(6); 
+
+  }
+
   &.is-focused,
   &.is-filled {
     
@@ -600,8 +632,36 @@ input {
     }
 
     input {
-
       color: $primaryColor; 
+
+    }
+
+    &:before {
+      color: $primaryColor;
+      
+    }
+
+  }
+
+  &.is-focused {
+
+    &:before {
+      color: $primaryColor;
+      left: rem-calc(20px); 
+    }
+  
+    input {
+      padding-left: rem-calc(30px); 
+
+    }
+
+    .inputGroup--boost-controls {
+      border-left-color: $secondaryColor; 
+
+      .control:first-child {
+        border-bottom-color: $secondaryColor; 
+
+      }
 
     }
 
@@ -611,8 +671,9 @@ input {
     padding-top: rem-calc($level2);
     padding-bottom: rem-calc($level2);
     font-weight: bold; 
-    text-align: center; 
+    text-align: left; 
     color: $secondaryColor; 
+    padding-left: 11rem; 
     @include type-setting(6); 
 
   }
@@ -628,15 +689,39 @@ input {
   .inputGroup--boost-controls {
     position: absolute; 
     right: 0; 
-    width: rem-calc(36px); 
+    width: rem-calc(40px); 
     top: 0; 
     bottom: 0; 
     height: 100%; 
     border-left: 1px solid $grey--light; 
-    @include type-setting(2); 
+    color: $grey--light;
+    @include transition(all $formGroupSpeed ease-in-out);
+
     
     .control {
       height: 50%; 
+      display: block; 
+      text-align: center; 
+      cursor: pointer; 
+      vertical-align: middle; 
+      @include type-setting(5); 
+
+      &:active {
+
+        span {
+          color: $grey--med; 
+          @include transform(scale(.8));
+
+        }
+
+      }
+
+    }
+
+    .control:first-child {
+      border-bottom: 1px solid $grey--light;
+      @include transition(all $formGroupSpeed ease-in-out);
+
 
     }
 

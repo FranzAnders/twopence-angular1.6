@@ -8,13 +8,12 @@
   
     </div>
   
-    <div class="fancymodal-innerContent"  ng-if="!sponseeBoost.joltSuccessfull">
+    <div class="fancymodal-innerContent"  
+         ng-if="!sponseeBoost.joltSuccessfull">
         
-        <div class="mb4">
-  
-          <p class="p2">How much would you like to Boost towards <span ng-bind="sponseeBoost.sponseeInfo.first_name + ' ' + sponseeBoost.sponseeInfo.last_name"></span>’s student loans today?</p>
-          
-        </div>
+
+        <p class="p3">How much would you like to Boost towards <span class="fwb" ng-bind="sponseeBoost.sponseeInfo.first_name + '’s'"></span> student loans today?</p>
+        
   
         <form
               ng-submit="sponseeBoost.boostSponsee(sponseeBoost.boostForm)"
@@ -25,14 +24,14 @@
 
           <div class="inputGroup--boost-controls">
               
-            <div role="button"  class="control control--up"
+            <div role="button"  class="control control--up grid  grid--center grid--justifyCenter"
                  ng-click="sponseeBoost.increaseBoostAmount(5)">
-                +
+                <span>+</span>
             </div>
             
             <div role="button" class="control control--down"
                  ng-click="sponseeBoost.decreaseBoostAmount(5)">
-                -
+                <span>-</span>
             </div>
 
           </div>
@@ -51,10 +50,14 @@
           <button class="button--secondary  button--large  button--expanded"
                   type="submit">
               
-              Boost
+              Boost {{sponseeBoost.sponseeInfo.first_name}}
           
           </button>
-  
+
+          <p class="text-center mb0">
+            <a ng-click="$modal.close()" role="button" class="fancymodal-options-option">Cancel</a>
+          </p>
+
         </form>
   
     </div>
