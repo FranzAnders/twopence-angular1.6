@@ -467,8 +467,23 @@ twopence.config(
 
             }
 
+        })
+        .state('main.terms', {
+            url: "terms/",
+            views: {
+               'main' : {
+                  templateUrl: "js/content/terms.html"
+               }
+            }
+        })
+        .state('main.privacy', {
+            url: "privacy/",
+            views: {
+               'main' : {
+                  templateUrl: "js/content/privacy.html"
+               }
+            }
         });
-
 
 }]).constant("BASE_URL", "https://api.onepence.co");
 
