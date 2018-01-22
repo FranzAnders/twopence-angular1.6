@@ -57,13 +57,29 @@ input[type="color"], {
 
 }
 
-/* Change the white to any color ;) */
+/* Changes the white of auto-filled inputs*/
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px transparent inset;
     -webkit-text-fill-color: $secondaryColor !important;
 }
 
 
+/* Changes default input placeholder color for al browsers*/
+input::-webkit-input-placeholder {
+color: $grey--light !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: $grey--light !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: $grey--light !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: $grey--light !important;  
+}
 
 
 /*------------------------------------*\
@@ -585,9 +601,133 @@ input {
     #Boost Input
 \*------------------------------------*/
 
-//Uses this to hide the default increase up and down arrows 
+
+$controlsNormalColor: $grey--light; 
+$controlsActiveColor: $primaryColor; 
+$controlsActiveInputColor: $secondaryColor; 
 
 .inputGroup--boost  {
+
+  
+    &:before {
+    content: "$";
+    position: absolute; 
+    height: 100%; 
+    top: 0; 
+    bottom: 0; 
+    left: 1rem;
+    color: $grey--light;
+    height: 70px;
+    font-weight: bold;
+    margin: auto; 
+    @include transition(all $formGroupSpeed ease-in-out);
+    @include type-setting(6); 
+
+  }
+
+
+  input {
+    padding-top: rem-calc($level2);
+    padding-bottom: rem-calc($level2);
+    font-weight: bold; 
+    text-align: center; 
+    color: $secondaryColor; 
+    padding-right: .5rem;
+    @include type-setting(6); 
+
+  }
+  
+  //Uses this to hide the default increase up and down arrows 
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+
+  }
+
+  .inputGroup--boost-controls {
+    position: absolute; 
+    right: 0; 
+    width: rem-calc(40px); 
+    top: 0; 
+    bottom: 0; 
+    height: 100%; 
+    border-left: 1px solid $grey--light; 
+    color: $grey--light;
+    @include transition(all $formGroupSpeed ease-in-out);
+
+    
+    .control {
+      height: 50%; 
+      display: block; 
+      text-align: center; 
+      cursor: pointer; 
+      vertical-align: middle; 
+      position: relative; 
+      width: 100%; 
+      @include type-setting(5); 
+
+      &:active {
+
+        span {
+          color: $grey--med; 
+          @include transform(scale(.8));
+
+        }
+
+      }
+
+      .control-icon {
+        position: absolute; 
+        width: rem-calc(18px);
+        height: rem-calc(18px);
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        margin: auto; 
+        fill: $grey--light; 
+
+      }
+
+    }
+
+    
+    .control--up {
+      border-bottom: 1px solid $grey--light;
+      @include transition(all $formGroupSpeed ease-in-out);
+
+      &:hover, 
+      &:active {
+        
+        .control-icon {
+          fill: $primaryColor; 
+
+        }
+
+      }
+
+    }
+
+
+    .control--down {
+      
+      &:hover, 
+      &:active {
+      
+        .control-icon {
+          fill: $primaryColor; 
+
+        }
+
+      }
+
+    }
+
+  }
+
+
 
   &.is-focused,
   &.is-filled {
@@ -600,43 +740,21 @@ input {
     }
 
     input {
-
       color: $primaryColor; 
 
     }
 
   }
-  
-  input {
-    padding-top: rem-calc($level2);
-    padding-bottom: rem-calc($level2);
-    font-weight: bold; 
-    text-align: center; 
-    color: $secondaryColor; 
-    @include type-setting(6); 
 
-  }
+  &.is-focused {
 
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    appearance: textfield;
-    margin: 0; 
+    .inputGroup--boost-controls {
+      border-left-color: $secondaryColor; 
 
-  }
+      .control:first-child {
+        border-bottom-color: $secondaryColor; 
 
-  .inputGroup--boost-controls {
-    position: absolute; 
-    right: 0; 
-    width: rem-calc(36px); 
-    top: 0; 
-    bottom: 0; 
-    height: 100%; 
-    border-left: 1px solid $grey--light; 
-    @include type-setting(2); 
-    
-    .control {
-      height: 50%; 
+      }
 
     }
 

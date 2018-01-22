@@ -15,25 +15,6 @@ twopence.factory('Sponsor', [
 
   var Sponsor = {};
 
-  Sponsor.addSponsee = function(pSponseeToAdd) {
-
-    sponsorSponsees.push(pSponseeToAdd);
-
-  };
-
-  Sponsor.addContribution = function(pContribution) {
-
-    var deferred = $q.defer();
-
-    sponsorContributions.push(pContribution);
-
-    deferred.resolve(pContribution);
-
-    return deferred.promise;
-
-  };
-
-
   //
   // Gets all the sponsees for a sponsor
   //
@@ -130,8 +111,11 @@ twopence.factory('Sponsor', [
     });
 
   };
-  // Attempt At v2 Call for Creating new users
 
+
+  //
+  // Creates a new sponsor-type of user 
+  //
   Sponsor.new = function(pSponsorInfo) {
 
     return $q(function(resolve, reject) {
@@ -148,6 +132,9 @@ twopence.factory('Sponsor', [
   };
 
 
+  //
+  // Verifies a user's email via a token
+  //
   Sponsor.verifyEmail = function(emailToken) {
 
     return $q(function(resolve, reject) {
@@ -166,7 +153,6 @@ twopence.factory('Sponsor', [
     });
 
   };
-
 
 
   return Sponsor

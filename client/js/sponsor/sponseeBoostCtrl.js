@@ -98,7 +98,15 @@ twopence.controller('sponseeBoostCtrl', [
     //
     vm.decreaseBoostAmount = function(pDecrease) {
 
-      vm.boostInfo.plan.amount = vm.boostInfo.plan.amount - pDecrease; 
+      if(vm.boostInfo.plan.amount <0 || !vm.boostInfo.plan.amount) {
+
+        return false
+
+      } else {
+
+        vm.boostInfo.plan.amount = vm.boostInfo.plan.amount - pDecrease; 
+
+      }
 
     };
 
