@@ -30,6 +30,7 @@ twopence.controller('sponseeBoostCtrl', [
 
     vm.boostSuccessfull = false; 
 
+    vm.confirmingBoost = false; 
 
     vm.boostInfo = {
       "user": {
@@ -50,19 +51,28 @@ twopence.controller('sponseeBoostCtrl', [
     vm.boostSponsee = function(pBoostForm) {
 
       if(pBoostForm.$valid) {
-
-        vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
-
-        Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
-
-        alert('Success boosting!');
+        
+        if(vm.confirmingBoost) {
           
+          vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
 
-        }).catch(function(err) {
+          Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
+            vm.confirmingBoost = false; 
 
-          alert("Repeat payments of the same amount can not be made on the same day. Wait ")
+            vm.boostSuccessfull = true; 
 
-        }); 
+          }).catch(function(err) {
+
+            alert("Repeat payments of the same amount can not be made on the same day. Wait ")
+
+          }); 
+
+        } else {
+
+           vm.confirmingBoost = true; 
+
+        }
+
 
       } else {
 
@@ -72,6 +82,33 @@ twopence.controller('sponseeBoostCtrl', [
 
     };
 
+
+
+    //
+    // Show boost view 
+    //
+    vm.confirmBoost = function(pBoostForm) {
+      if(pBoostForm.$valid) {
+
+        vm.confirmingBoost = true; 
+
+      } else {
+
+        alert('An amount must be entered!');
+
+      }
+
+    };
+
+
+    //
+    // Resets the boost view to normal edit mode 
+    //
+    vm.resetBoostingView = function() {
+
+        vm.confirmingBoost = false; 
+
+    }; 
 
     //
     // Closes the sponsee jolt modal
@@ -87,7 +124,7 @@ twopence.controller('sponseeBoostCtrl', [
     // Increases the Boost amount by 5 
     //
     vm.increaseBoostAmount = function(pIncrease) {
-
+      vm.resetBoostingView()
       vm.boostInfo.plan.amount = vm.boostInfo.plan.amount + pIncrease; 
 
     };
@@ -97,6 +134,7 @@ twopence.controller('sponseeBoostCtrl', [
     // Decreases the Boost amount by a specified amount
     //
     vm.decreaseBoostAmount = function(pDecrease) {
+      vm.resetBoostingView()
 
       if(vm.boostInfo.plan.amount <0 || !vm.boostInfo.plan.amount) {
 

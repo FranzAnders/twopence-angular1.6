@@ -1,0 +1,44 @@
+
+/*------------------------------------*\
+    #Styles specific to sponsorship creation page 
+\*------------------------------------*/
+
+
+.plans {
+  
+  .plan {
+    margin-bottom: rem-calc($level7); 
+
+  }
+
+  .plan:first-child {
+    position: relative; 
+
+    &:after {
+      content: "or";
+      color: $secondaryColor; 
+      font-weight: bold; 
+      position: absolute; 
+      bottom: rem-calc(-28px); 
+      right: 0; 
+      left: 0; 
+      text-align: center; 
+      font-family: $secondary-font-family; 
+      @include type-setting(1);
+      
+
+      @media #{$large-up} {
+        bottom: 0; 
+        left: auto; 
+        top: 44%;
+        left: auto;
+        right: rem-calc(-10px);
+        @include type-setting(1);
+
+      }
+
+    }
+
+  }
+
+}

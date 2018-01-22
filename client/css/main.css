@@ -15594,7 +15594,7 @@ input.input--alt {
 .inputGroup--boost .inputGroup--boost-controls .control--down:hover .control-icon, .inputGroup--boost .inputGroup--boost-controls .control--down:active .control-icon {
   fill: #6AC6C5;
 }
-/* line 735, ../scss/layout/_forms.scss */
+/* line 736, ../scss/layout/_forms.scss */
 .inputGroup--boost.is-focused label, .inputGroup--boost.is-filled label {
   opacity: 0;
   font-size: 1rem;
@@ -15604,23 +15604,41 @@ input.input--alt {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 742, ../scss/layout/_forms.scss */
+/* line 743, ../scss/layout/_forms.scss */
 .inputGroup--boost.is-focused input, .inputGroup--boost.is-filled input {
   color: #6AC6C5;
 }
-/* line 751, ../scss/layout/_forms.scss */
+/* line 752, ../scss/layout/_forms.scss */
 .inputGroup--boost.is-focused .inputGroup--boost-controls {
   border-left-color: #231F20;
 }
-/* line 754, ../scss/layout/_forms.scss */
+/* line 755, ../scss/layout/_forms.scss */
 .inputGroup--boost.is-focused .inputGroup--boost-controls .control:first-child {
   border-bottom-color: #231F20;
+}
+/* line 766, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-locked:before {
+  color: #fff;
+}
+/* line 772, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-locked input {
+  border-color: #6AC6C5;
+  background-color: #6AC6C5;
+  color: #fff;
+}
+/* line 779, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-locked .inputGroup--boost-controls {
+  border-left-color: #fff;
+}
+/* line 782, ../scss/layout/_forms.scss */
+.inputGroup--boost.is-locked .inputGroup--boost-controls .control-icon {
+  fill: #fff;
 }
 
 /*------------------------------------*\
     #Labels
 \*------------------------------------*/
-/* line 775, ../scss/layout/_forms.scss */
+/* line 803, ../scss/layout/_forms.scss */
 label {
   margin-bottom: 0.25rem;
 }
@@ -15628,7 +15646,7 @@ label {
 /*------------------------------------*\
     #Select Global Properties
 \*------------------------------------*/
-/* line 790, ../scss/layout/_forms.scss */
+/* line 818, ../scss/layout/_forms.scss */
 select {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
@@ -15643,11 +15661,11 @@ select {
 /*------------------------------------*\
     #Select Types
 \*------------------------------------*/
-/* line 810, ../scss/layout/_forms.scss */
+/* line 838, ../scss/layout/_forms.scss */
 .select-customWrapper {
   position: relative;
 }
-/* line 813, ../scss/layout/_forms.scss */
+/* line 841, ../scss/layout/_forms.scss */
 .select-customWrapper:after {
   content: " ";
   width: 0;
@@ -15662,7 +15680,7 @@ select {
   pointer-events: none;
 }
 
-/* line 831, ../scss/layout/_forms.scss */
+/* line 859, ../scss/layout/_forms.scss */
 .select--primary {
   background-color: #fff;
   outline: 0;
@@ -15672,7 +15690,7 @@ select {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 838, ../scss/layout/_forms.scss */
+/* line 866, ../scss/layout/_forms.scss */
 .select--primary:active, .select--primary:focus {
   background-color: #fff;
   border: 0;
@@ -15681,32 +15699,32 @@ select {
   box-shadow: 0 1px 20px rgba(30, 30, 30, 0.2);
 }
 
-/* line 849, ../scss/layout/_forms.scss */
+/* line 877, ../scss/layout/_forms.scss */
 .select--quantity {
   min-width: 5rem;
   text-align-last: center;
 }
 
-/* line 856, ../scss/layout/_forms.scss */
+/* line 884, ../scss/layout/_forms.scss */
 .select--small {
   padding: 0.375rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 864, ../scss/layout/_forms.scss */
+/* line 892, ../scss/layout/_forms.scss */
 .select--medium {
   padding: 0.5rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 871, ../scss/layout/_forms.scss */
+/* line 899, ../scss/layout/_forms.scss */
 .select--quantity {
   width: 2.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 871, ../scss/layout/_forms.scss */
+  /* line 899, ../scss/layout/_forms.scss */
   .select--quantity {
     width: 3.75rem;
   }
@@ -15718,7 +15736,7 @@ select {
 /*------------------------------------*\
     #Field Sets
 \*------------------------------------*/
-/* line 911, ../scss/layout/_forms.scss */
+/* line 939, ../scss/layout/_forms.scss */
 .fieldset,
 fieldset {
   margin-bottom: 1.875rem;
@@ -15727,7 +15745,7 @@ fieldset {
 /*------------------------------------*\
     #Form Alerts
 \*------------------------------------*/
-/* line 926, ../scss/layout/_forms.scss */
+/* line 954, ../scss/layout/_forms.scss */
 .alert--warning {
   color: #FD7272;
 }
@@ -15735,7 +15753,7 @@ fieldset {
 /*------------------------------------*\
     #Clear Field
 \*------------------------------------*/
-/* line 938, ../scss/layout/_forms.scss */
+/* line 966, ../scss/layout/_forms.scss */
 input.clearField {
   background-color: transparent;
   text-align: center;
@@ -15743,7 +15761,7 @@ input.clearField {
   font-size: 6rem;
   line-height: 1.2;
 }
-/* line 944, ../scss/layout/_forms.scss */
+/* line 972, ../scss/layout/_forms.scss */
 input.clearField:after {
   content: "";
   background: -webkit-linear-gradient(left, #1e5799 0%, #238eb2 0%, #63decb 150%);
@@ -15760,20 +15778,20 @@ input.clearField:after {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 959, ../scss/layout/_forms.scss */
+/* line 987, ../scss/layout/_forms.scss */
 input.clearField:active, input.clearField:focus {
   color: #231F20;
 }
-/* line 963, ../scss/layout/_forms.scss */
+/* line 991, ../scss/layout/_forms.scss */
 input.clearField:active:after, input.clearField:focus:after {
   width: 100%;
 }
 
-/* line 973, ../scss/layout/_forms.scss */
+/* line 1001, ../scss/layout/_forms.scss */
 .clearField-container {
   position: relative;
 }
-/* line 978, ../scss/layout/_forms.scss */
+/* line 1006, ../scss/layout/_forms.scss */
 .clearField-container.clearField--money:before {
   content: "$";
   position: absolute;
@@ -15784,12 +15802,12 @@ input.clearField:active:after, input.clearField:focus:after {
 /*------------------------------------*\
     #Checkboxes
 \*------------------------------------*/
-/* line 999, ../scss/layout/_forms.scss */
+/* line 1027, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled {
   display: none;
 }
 
-/* line 1003, ../scss/layout/_forms.scss */
+/* line 1031, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label {
   color: #231F20;
   margin-bottom: 1.5rem;
@@ -15798,7 +15816,7 @@ input[type="checkbox"].styled + label {
   line-height: 1.5;
 }
 
-/* line 1010, ../scss/layout/_forms.scss */
+/* line 1038, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label span {
   display: inline-block;
   width: 1.25rem;
@@ -15811,27 +15829,27 @@ input[type="checkbox"].styled + label span {
   border-radius: 100%;
 }
 
-/* line 1020, ../scss/layout/_forms.scss */
+/* line 1048, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
   position: relative;
 }
 
-/* line 1028, ../scss/layout/_forms.scss */
+/* line 1056, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled:hover + label span,
 input[type="checkbox"].styled:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 1035, ../scss/layout/_forms.scss */
+/* line 1063, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 1048, ../scss/layout/_forms.scss */
+/* line 1076, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled.radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -15840,12 +15858,12 @@ input[type="checkbox"].styled.radio--large + label {
 /*------------------------------------*\
     #Radio Buttons
 \*------------------------------------*/
-/* line 1063, ../scss/layout/_forms.scss */
+/* line 1091, ../scss/layout/_forms.scss */
 input[type="radio"] {
   display: none;
 }
 
-/* line 1067, ../scss/layout/_forms.scss */
+/* line 1095, ../scss/layout/_forms.scss */
 input[type="radio"] + label {
   color: #231F20;
   margin-bottom: 1.5rem;
@@ -15854,7 +15872,7 @@ input[type="radio"] + label {
   line-height: 1.5;
 }
 
-/* line 1074, ../scss/layout/_forms.scss */
+/* line 1102, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   display: inline-block;
   width: 1.25rem;
@@ -15867,26 +15885,26 @@ input[type="radio"] + label span {
   border-radius: 100%;
 }
 
-/* line 1084, ../scss/layout/_forms.scss */
+/* line 1112, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   background-color: transparent;
   border: 2px solid #6d6c6c;
 }
 
-/* line 1090, ../scss/layout/_forms.scss */
+/* line 1118, ../scss/layout/_forms.scss */
 input[type="radio"]:hover + label span,
 input[type="radio"]:focus + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
 }
 
-/* line 1097, ../scss/layout/_forms.scss */
+/* line 1125, ../scss/layout/_forms.scss */
 input[type="radio"]:checked + label span {
   background-color: #231F20;
   border: 2px solid #231F20;
   position: relative;
 }
-/* line 1102, ../scss/layout/_forms.scss */
+/* line 1130, ../scss/layout/_forms.scss */
 input[type="radio"]:checked + label span:after {
   content: " ";
   background-image: url("data:image/svg+xml;utf8,<svg xmlns:xlink='http://www.w3.org/2000/svg' viewBox='0 0 100 100'  width='24' height='24'><path fill='%23ff69b4' d='M41.373 86a7.839 7.839 0 0 1-5.518-2.287l-19.572-19.59c-3.044-3.043-3.044-7.977 0-11.027a7.796 7.796 0 0 1 11.033 0l12.88 12.875 33.39-49.645a7.804 7.804 0 0 1 10.832-2.113c3.576 2.396 4.52 7.248 2.129 10.826L47.848 82.547a7.791 7.791 0 0 1-5.72 3.41c-.25.022-.5.043-.755.043'/></svg>");
@@ -15900,7 +15918,7 @@ input[type="radio"]:checked + label span:after {
   left: 0;
 }
 
-/* line 1124, ../scss/layout/_forms.scss */
+/* line 1152, ../scss/layout/_forms.scss */
 input[type="radio"].radio--large + label {
   font-size: 1.125rem;
   line-height: 1.33333;
@@ -16929,7 +16947,7 @@ table th,
 .appHeader-userInfo .userActions-avatar {
   width: 2rem;
   height: 2rem;
-  background-color: #231F20;
+  background-color: #238EB2;
   margin-right: 0.375rem;
   color: #fff;
   font-size: 0.8rem;
@@ -17398,10 +17416,16 @@ button.is-inactive,
   transform: translateY(0);
 }
 
+/* line 194, ../scss/components/_buttons.scss */
+.button--boost.is-locked:hover, .button--boost.is-locked:focus, .button--boost.is-locked:active {
+  background-color: #231F20 !important;
+  color: #fff !important;
+}
+
 /*------------------------------------*\
     #Play Button
 \*------------------------------------*/
-/* line 198, ../scss/components/_buttons.scss */
+/* line 216, ../scss/components/_buttons.scss */
 .playButton {
   background-color: #231F20;
   height: 2.5rem;
@@ -17419,14 +17443,14 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 211, ../scss/components/_buttons.scss */
+/* line 229, ../scss/components/_buttons.scss */
 .playButton:after, .playButton:before {
   -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 218, ../scss/components/_buttons.scss */
+/* line 236, ../scss/components/_buttons.scss */
 .playButton:after {
   content: " ";
   position: absolute;
@@ -17442,7 +17466,7 @@ button.is-inactive,
   border-left: 17px solid #fff;
   z-index: 2;
 }
-/* line 236, ../scss/components/_buttons.scss */
+/* line 254, ../scss/components/_buttons.scss */
 .playButton:before {
   content: " ";
   height: 100%;
@@ -17459,7 +17483,7 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 253, ../scss/components/_buttons.scss */
+/* line 271, ../scss/components/_buttons.scss */
 .playButton .playButton-inner {
   position: absolute;
   font-weight: bold;
@@ -17474,7 +17498,7 @@ button.is-inactive,
   -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 269, ../scss/components/_buttons.scss */
+/* line 287, ../scss/components/_buttons.scss */
 .playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
   opacity: 1;
   color: #fff;
@@ -17483,7 +17507,7 @@ button.is-inactive,
   -webkit-transform: translateX(55px);
   transform: translateX(55px);
 }
-/* line 278, ../scss/components/_buttons.scss */
+/* line 296, ../scss/components/_buttons.scss */
 .playButton:hover:before, .playButton:focus:before {
   background-color: transparent;
   border: 2px solid #231F20;
@@ -17493,20 +17517,20 @@ button.is-inactive,
   transform: scale(1.2);
 }
 
-/* line 292, ../scss/components/_buttons.scss */
+/* line 310, ../scss/components/_buttons.scss */
 .playButton--primary .playButton-inner {
   color: #FBC510;
 }
-/* line 298, ../scss/components/_buttons.scss */
+/* line 316, ../scss/components/_buttons.scss */
 .playButton--primary:hover, .playButton--primary:focus {
   color: #FBC510;
 }
 
-/* line 309, ../scss/components/_buttons.scss */
+/* line 327, ../scss/components/_buttons.scss */
 .playButton--secondary .playButton-inner {
   color: #fff;
 }
-/* line 315, ../scss/components/_buttons.scss */
+/* line 333, ../scss/components/_buttons.scss */
 .playButton--secondary:hover, .playButton--secondary:focus {
   color: #fff;
 }
@@ -17514,14 +17538,14 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Sizes (Extends _generics.scss Margins and padding values)
 \*------------------------------------*/
-/* line 332, ../scss/components/_buttons.scss */
+/* line 350, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.375rem;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
-/* line 339, ../scss/components/_buttons.scss */
+/* line 357, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -17530,7 +17554,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 348, ../scss/components/_buttons.scss */
+/* line 366, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -17539,7 +17563,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 356, ../scss/components/_buttons.scss */
+/* line 374, ../scss/components/_buttons.scss */
 .button--large {
   padding: 0.9375rem;
   padding-right: 1.125rem;
@@ -17548,21 +17572,21 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 363, ../scss/components/_buttons.scss */
+/* line 381, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
 }
 
-/* line 370, ../scss/components/_buttons.scss */
+/* line 388, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 377, ../scss/components/_buttons.scss */
+/* line 395, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -17572,7 +17596,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 393, ../scss/components/_buttons.scss */
+/* line 411, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
@@ -18352,7 +18376,12 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Modal Content
 \*------------------------------------*/
-/* line 80, ../scss/components/_modals.scss */
+/* line 78, ../scss/components/_modals.scss */
+.fancymodal {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+/* line 82, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-content {
   max-width: 500px;
   background: transparent;
@@ -18362,13 +18391,13 @@ body.fancymodal-open {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 88, ../scss/components/_modals.scss */
+/* line 90, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-content.is-open {
   -moz-animation: fancymodal-in 0.6s forwards;
   -webkit-animation: fancymodal-in 0.6s forwards;
   animation: fancymodal-in 0.6s forwards;
 }
-/* line 94, ../scss/components/_modals.scss */
+/* line 95, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-content.is-closed {
   -moz-animation: fancymodal-out 0.6s forwards;
   -webkit-animation: fancymodal-out 0.6s forwards;
@@ -18383,7 +18412,7 @@ body.fancymodal-open {
   height: 100%;
 }
 
-/* line 114, ../scss/components/_modals.scss */
+/* line 115, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close {
   border-radius: 3px;
   top: 0;
@@ -18391,7 +18420,7 @@ body.fancymodal-open {
   cursor: pointer;
 }
 
-/* line 124, ../scss/components/_modals.scss */
+/* line 125, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close:before {
   border-radius: 3px;
   position: absolute;
@@ -18406,7 +18435,7 @@ body.fancymodal-open {
   color: #ccc;
 }
 
-/* line 141, ../scss/components/_modals.scss */
+/* line 142, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close:hover:before,
 .fancymodal .fancymodal-close:active:before {
   color: #777;
@@ -18416,17 +18445,11 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Modal Types
 \*------------------------------------*/
-/* line 161, ../scss/components/_modals.scss */
+/* line 162, ../scss/components/_modals.scss */
 .fancymodal--primary {
   padding: 0;
 }
-@media only screen and (min-width: 40.0625em) {
-  /* line 161, ../scss/components/_modals.scss */
-  .fancymodal--primary {
-    overflow: hidden;
-  }
-}
-/* line 169, ../scss/components/_modals.scss */
+/* line 165, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-badge {
   position: absolute;
   top: -30px;
@@ -18441,12 +18464,12 @@ body.fancymodal-open {
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 181, ../scss/components/_modals.scss */
+/* line 177, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-badge .fancymodal-badge-icon {
   fill: #6AC6C5;
   width: 56%;
 }
-/* line 189, ../scss/components/_modals.scss */
+/* line 185, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-content {
   background: #fff;
   -webkit-backface-visibility: hidden;
@@ -18455,28 +18478,28 @@ body.fancymodal-open {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 196, ../scss/components/_modals.scss */
+/* line 192, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-content.is-open {
   -moz-animation: fancymodal-in 0.6s forwards;
   -webkit-animation: fancymodal-in 0.6s forwards;
   animation: fancymodal-in 0.6s forwards;
 }
-/* line 202, ../scss/components/_modals.scss */
+/* line 198, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-content.is-closed {
   -moz-animation: fancymodal-out 0.6s forwards;
   -webkit-animation: fancymodal-out 0.6s forwards;
   animation: fancymodal-out 0.6s forwards;
 }
-/* line 211, ../scss/components/_modals.scss */
+/* line 207, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-innerContent {
   padding: 1.5rem;
 }
-/* line 217, ../scss/components/_modals.scss */
+/* line 213, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-options {
   background-color: transparent;
   border-top: 1px solid #dae0e0;
 }
-/* line 221, ../scss/components/_modals.scss */
+/* line 217, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-options .fancymodal-options-option {
   background-color: transparent;
   padding-top: 0.75rem;
@@ -18493,7 +18516,7 @@ body.fancymodal-open {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 233, ../scss/components/_modals.scss */
+/* line 229, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-options .fancymodal-options-option:before {
   content: " ";
   left: 0;
@@ -18512,11 +18535,11 @@ body.fancymodal-open {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 247, ../scss/components/_modals.scss */
+/* line 243, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-options .fancymodal-options-option:hover, .fancymodal--primary .fancymodal-options .fancymodal-options-option:focus {
   color: #6AC6C5;
 }
-/* line 251, ../scss/components/_modals.scss */
+/* line 247, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-options .fancymodal-options-option:hover:after, .fancymodal--primary .fancymodal-options .fancymodal-options-option:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -18524,7 +18547,7 @@ body.fancymodal-open {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 257, ../scss/components/_modals.scss */
+/* line 253, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-options .fancymodal-options-option:hover:before, .fancymodal--primary .fancymodal-options .fancymodal-options-option:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -18534,7 +18557,7 @@ body.fancymodal-open {
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 275, ../scss/components/_modals.scss */
+  /* line 271, ../scss/components/_modals.scss */
   .fancymodal--boost .fancymodal-innerContent {
     padding-right: 2.25rem;
     padding-left: 2.25rem;
@@ -18542,48 +18565,64 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
+    #Modal Illustrations
+\*------------------------------------*/
+/* line 291, ../scss/components/_modals.scss */
+.fancymodal-innerContent-illustr {
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+  width: 10.625rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 291, ../scss/components/_modals.scss */
+  .fancymodal-innerContent-illustr {
+    width: 11.875rem;
+  }
+}
+
+/*------------------------------------*\
     #Modal Sizes
 \*------------------------------------*/
-/* line 296, ../scss/components/_modals.scss */
+/* line 314, ../scss/components/_modals.scss */
 .fancyModal--fullScreen .fancymodal-content {
   background-color: transparent;
 }
 
-/* line 304, ../scss/components/_modals.scss */
+/* line 322, ../scss/components/_modals.scss */
 .fancymodal--large .fancymodal-content {
   max-width: 68.75rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 310, ../scss/components/_modals.scss */
+  /* line 328, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 310, ../scss/components/_modals.scss */
+  /* line 328, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 10rem !important;
   }
 }
-/* line 321, ../scss/components/_modals.scss */
+/* line 339, ../scss/components/_modals.scss */
 .fancymodal--medium .fancymodal-content {
   max-width: 30rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 328, ../scss/components/_modals.scss */
+  /* line 346, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 328, ../scss/components/_modals.scss */
+  /* line 346, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 10rem !important;
   }
 }
-/* line 340, ../scss/components/_modals.scss */
+/* line 358, ../scss/components/_modals.scss */
 .fancymodal--small .fancymodal-content {
   max-width: 23.5rem;
   min-height: 7.5rem;
@@ -18923,6 +18962,44 @@ body.fancymodal-open {
 .passRequirementCheck.is-checked {
   background-color: #33d28a;
   border-color: #33d28a;
+}
+
+/*------------------------------------*\
+    #Styles specific to sponsorship creation page 
+\*------------------------------------*/
+/* line 9, ../scss/pages/_sponsorshipCreation.scss */
+.plans .plan {
+  margin-bottom: 3rem;
+}
+/* line 14, ../scss/pages/_sponsorshipCreation.scss */
+.plans .plan:first-child {
+  position: relative;
+}
+/* line 17, ../scss/pages/_sponsorshipCreation.scss */
+.plans .plan:first-child:after {
+  content: "or";
+  color: #231F20;
+  font-weight: bold;
+  position: absolute;
+  bottom: -1.75rem;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-family: "itc_souvenirmedium", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 17, ../scss/pages/_sponsorshipCreation.scss */
+  .plans .plan:first-child:after {
+    bottom: 0;
+    left: auto;
+    top: 44%;
+    left: auto;
+    right: -0.625rem;
+    font-size: 1.125rem;
+    line-height: 1.33333;
+  }
 }
 
 /*------------------------------------*\
