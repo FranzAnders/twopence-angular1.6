@@ -33,7 +33,7 @@
   }
   
   .card-content {
-    padding: rem-calc($level3);
+    padding: rem-calc($base-magic-number);
 
     .card-subTitle {
       color: $body-color;
@@ -282,6 +282,7 @@
 .card--signUp {
   width: 100%; 
   padding-bottom: rem-calc($level1); 
+  min-height: rem-calc(300px); 
   
   .card-header {
     padding-bottom: 0; 

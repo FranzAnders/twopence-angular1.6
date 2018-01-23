@@ -47,8 +47,9 @@ twopence.controller('verifyCtrl', [
 
         $timeout(function() {
           $state.go('main.account.login'); 
-
         }, 5000); 
+
+        return 'valid'
 
       }
 
