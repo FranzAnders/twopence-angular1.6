@@ -120,7 +120,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
     //
-    // Clears the custom limit selection or the normal limit selection depending on what is active
+    // Clears the custom limit/amount selection or the normal limit/amount 
+    // selections depending on what is selected
     //
     vm.clearSelection = function(pLimitType, pPlanType) {
 
@@ -154,15 +155,17 @@ twopence.controller('sponseeSponsorshipCtrl', [
     // Creates a sponsorship and a plan right after. If vm.customLimit.active, we apply that as the 
     // limit/amount of the sponsorship 
     //
-    vm.createPlan = function(pSponsorshipDetailsForm) {
-
+    vm.createPlan = function(pSponsorshipDetailsForm, pSponsorshipInfo) {
 
       if(vm.customLimit.active) {
-
-        vm.sponsorshipInfo.plan.limit = vm.customLimit.amount;
+        pSponsorshipInfo.plan.limit = vm.customLimit.limit;
 
       } 
 
+      if(vm.customAmount.active) {
+        pSponsorshipInfo.plan.amount = vm.customAmount.amount;
+
+      }
 
       if (pSponsorshipDetailsForm.$valid) {
 
@@ -174,15 +177,15 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
             var sponseeInfo = res; 
 
-            console.log(vm.sponsorshipInfo);
-
             Sponsorship.createNewPlan(sponseeInfo.id, vm.sponsorshipInfo).then(function(sponsorship) {
 
               vm.formNotSubmited = false;
               vm.formSubmittedSuccesfully = true;
              
             }).catch(function(err) {
-
+              
+              console.log(err); 
+              console.log('ERROR: rejected, something went wrong')
 
             }); 
 

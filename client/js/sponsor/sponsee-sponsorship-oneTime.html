@@ -4,7 +4,7 @@
 
   <div class="small-12 columns" ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
-    <form  ng-submit="sponseeSponsorship.createPlan(sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponseeId)"
+    <form  ng-submit="sponseeSponsorship.createPlan(sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponsorshipInfo)"
           name="sponseeSponsorship.sponsorshipDetailsForm">
 
       <div ng-if="sponseeSponsorship.formNotSubmited">
@@ -46,7 +46,93 @@
                   Amount
                   </h2>
 
-                  <div class="row">
+                  <div class="grid-cell  ">
+                  
+                    <div class="row">
+
+                      <div class="small-12 columns">
+
+                        <div class="grid  small-grid--full  med-grid--1of2 grid--flexWrap">
+                          <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
+                          
+                            <input type="radio"
+                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
+                             name="amount"
+                             value="50"
+                             id="fifty"
+                             checked="checked"
+                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                             class="radio--large">
+                            <label for="fifty"> <span></span>$50</label>
+                          
+                          </div>
+                          
+                          <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft">
+                          
+                            <input type="radio"
+                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
+                             name="amount"
+                             value="100"
+                             id="oneHundred"
+                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                             class="radio--large">
+                            <label for="oneHundred"><span></span>$100</label>
+                          
+                          </div>
+                                          
+                          <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
+                          
+                            <input type="radio"
+                               ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount"
+                               name="amount"
+                               value="250"
+                               id="twoHundredAndFiftty"
+                                ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                               class="radio--large">
+                            <label for="twoHundredAndFiftty"><span></span>$250</label>
+                          
+                          </div>
+                                          
+                          <div class="grid-cell radio-group">
+                                  
+                            <div class="grid grid--flexDirectionRow  grid--justifyLeft">
+                          
+                                <input type="checkbox"
+                                       ng-model="sponseeSponsorship.customAmount.active"
+                                       name="customLimit"
+                                       id="custom"
+                                       class="styled-as-radio  radio--large"
+                                       ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customAmount.active, 'one-time')"
+                                       value="sponseeSponsorship.customAmount.active">
+                          
+                                <label for="custom">
+                                  <span></span>
+                                  <i class="hide-elem">custom</i>
+                                  
+                                  <div class="input--customAmount">
+                                    <input type="number"
+                                     id="customValue"
+                                     name="custom"
+                                     class="input--small   mb0"
+                                     ng-model="sponseeSponsorship.customAmount.amount"
+                                     placeholder="custom"
+                                     >
+                                  </div>
+                          
+                                </label>
+                          
+                            </div>
+                          
+                          </div>
+                          
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+<!--                   <div class="row">
 
                     <div class="small-12 columns">
                       
@@ -119,7 +205,7 @@
                       </div>
 
                   </div>
-                
+                 -->
                 </div>
 
               </fieldset>
