@@ -6,7 +6,7 @@
 .loginHeader {
   width: 100%; 
   position: fixed; 
-  height: rem-calc(50px);
+  height: rem-calc(60px);
   top: 0; 
   right: 0; 
   left: 0; 
@@ -23,7 +23,9 @@
     display: block; 
     padding-right: rem-calc(7px);
     padding-left: rem-calc(9px);
-    padding-top: rem-calc(9px);
+    padding-top: rem-calc(8px);
+    background-color: transparent; 
+    border: 1px solid $secondaryColor; 
     @include transition(all .2s ceaser($easeInOutQuint));
     @include border-radius(100%); 
 
@@ -32,11 +34,17 @@
     &:active {
       background-color: $secondaryColor;
 
+      .loginHeader-backBtn-icon {
+        fill: #fff; 
+
+      }
+
     }
 
     .loginHeader-backBtn-icon {
-      fill: #fff; 
+      fill: $secondaryColor; 
       width: rem-calc(18px);
+      @include transition(all .2s ceaser($easeInOutQuint));
 
     }
 

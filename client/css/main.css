@@ -18050,7 +18050,7 @@ button.is-inactive,
 .loginHeader {
   width: 100%;
   position: fixed;
-  height: 3.125rem;
+  height: 3.75rem;
   top: 0;
   right: 0;
   left: 0;
@@ -18068,7 +18068,9 @@ button.is-inactive,
   display: block;
   padding-right: 0.4375rem;
   padding-left: 0.5625rem;
-  padding-top: 0.5625rem;
+  padding-top: 0.5rem;
+  background-color: transparent;
+  border: 1px solid #231F20;
   -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -18077,14 +18079,22 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 30, ../scss/components/_loginHeader.scss */
+/* line 32, ../scss/components/_loginHeader.scss */
 .loginHeader .loginHeader-backBtn:hover, .loginHeader .loginHeader-backBtn:focus, .loginHeader .loginHeader-backBtn:active {
   background-color: #231F20;
 }
 /* line 37, ../scss/components/_loginHeader.scss */
-.loginHeader .loginHeader-backBtn .loginHeader-backBtn-icon {
+.loginHeader .loginHeader-backBtn:hover .loginHeader-backBtn-icon, .loginHeader .loginHeader-backBtn:focus .loginHeader-backBtn-icon, .loginHeader .loginHeader-backBtn:active .loginHeader-backBtn-icon {
   fill: #fff;
+}
+/* line 44, ../scss/components/_loginHeader.scss */
+.loginHeader .loginHeader-backBtn .loginHeader-backBtn-icon {
+  fill: #231F20;
   width: 1.125rem;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
 
 /*------------------------------------*\
