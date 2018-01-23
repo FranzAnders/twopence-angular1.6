@@ -26,7 +26,6 @@ twopence.controller('verifyCtrl', [
     vm.$onInit = function() {
       vm.emailVerificationSent = false; 
       vm.tokenStatus = vm.checkTokenStatus(verify); 
-      console.log(vm.tokenStatus);
     }
 
 
@@ -48,7 +47,7 @@ twopence.controller('verifyCtrl', [
         $timeout(function() {
           $state.go('main.account.login'); 
         }, 5000); 
-
+        
         return 'valid'
 
       }
