@@ -26,7 +26,7 @@ twopence.controller('verifyCtrl', [
     vm.$onInit = function() {
       vm.emailVerificationSent = false; 
       vm.tokenStatus = vm.checkTokenStatus(verify); 
-
+      console.log(vm.tokenStatus);
     }
 
 
