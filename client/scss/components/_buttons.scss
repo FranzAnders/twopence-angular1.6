@@ -102,26 +102,6 @@ button,
 }
 
 
-.button--quintenary {
-
-  background-color: $tertiaryColor;
-  position: relative; 
-  color: #fff; 
-  border: 1px solid $tertiaryColor; 
-  @include transition(all .2s ease); 
-  @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
-
-  &:hover,
-  &:focus {
-    color: $tertiaryColor;
-    background-color: transparent; 
-    border: 1px solid $tertiaryColor; 
-    @include box-shadow(0 1px 16px rgba(30,30,30, .2)); 
-
-  }
-
-}
-
 .button--withIcon {
 
   .button-icon, 
@@ -205,6 +185,46 @@ button,
 
 
 
+
+
+/*------------------------------------*\
+    #Bank Linking Button
+\*------------------------------------*/
+
+
+.button--bankLinking {
+  background-color: $tertiaryColor;
+  position: relative; 
+  color: #fff; 
+  border: 1px solid $tertiaryColor; 
+  @include transition(all .2s ease); 
+  @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+
+  &:hover,
+  &:focus {
+    color: $tertiaryColor;
+    background-color: transparent; 
+    border: 1px solid $tertiaryColor; 
+    @include box-shadow(0 1px 16px rgba(30,30,30, .2)); 
+
+  }
+
+  &.is-linked {
+    border-color: $activeColor; 
+    background-color: $activeColor;
+
+    &:hover,
+    &:focus {
+      border-color: $activeColor; 
+      background-color: $activeColor;
+      color: #fff; 
+      pointer-events: none; 
+
+    }
+
+  }
+
+}
 
 
 

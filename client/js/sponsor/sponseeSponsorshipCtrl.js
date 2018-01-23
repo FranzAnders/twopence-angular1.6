@@ -5,6 +5,7 @@
 \*------------------------------------*/
 
 twopence.controller('sponseeSponsorshipCtrl', [
+  '$fancyModal', 
   '$scope',
   '$state',
   '$stateParams',
@@ -13,6 +14,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
   'Sponsorship',
   'PlaidAuth',
     function(
+    $fancyModal,
     $scope,
     $state,
     $stateParams,
@@ -80,13 +82,18 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       },
       onExit: function(error, metadata) {
-        if (error != null) {
-          console.log(error);
-        }
 
-        alert("ERROR: Something went wrong please try linked your bank account again.");
+         $fancyModal.open({
+            templateUrl: 'js/modals/bank-link-error.html', 
+            themeClass: 'fancymodal--primary  fancymodal--small',
+            openingClass: 'is-open', 
+            closingClass: 'is-closed',
+            showCloseButton: false
+
+        });
 
       }
+
     });
 
     //
@@ -184,15 +191,27 @@ twopence.controller('sponseeSponsorshipCtrl', [
              
             }).catch(function(err) {
               
-              console.log(err); 
-              console.log('ERROR: rejected, something went wrong')
+               $fancyModal.open({
+                  templateUrl: 'js/modals/sponsorship-creation-error.html', 
+                  themeClass: 'fancymodal--primary  fancymodal--small',
+                  openingClass: 'is-open', 
+                  closingClass: 'is-closed',
+                  showCloseButton: false
+
+              });
 
             }); 
 
           }).catch(function(err) {
 
-            console.log(err); 
-            console.log('ERROR: rejected, something went wrong')
+             $fancyModal.open({
+                templateUrl: 'js/modals/sponsorship-creation-error.html', 
+                themeClass: 'fancymodal--primary  fancymodal--small',
+                openingClass: 'is-open', 
+                closingClass: 'is-closed',
+                showCloseButton: false
+
+            });
 
           });
 
