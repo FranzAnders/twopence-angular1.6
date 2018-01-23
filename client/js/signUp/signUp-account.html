@@ -58,17 +58,17 @@
                ng-model-options="{allowInvalid: true, debounce: 200}"
                floating-label>
     
-<!--           <div ng-messages="signUp.userAccountForm.password.$error"
+          <div ng-messages="signUp.userAccountForm.password.$error"
                ng-show="signUp.userAccountForm.$submitted &&  signUp.userAccountForm.password.$error"
                role="alert"
                class="alerts  alert--warning"
                >
     
               <div ng-message="required">
-                  Oops! A password is required
+                 A valid password is required.
               </div>
 
-          </div> -->
+          </div>
 
       </div>
 
@@ -87,17 +87,21 @@
                compare-to="signUp.userInfo.password"
                ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
                floating-label>
-  <!-- 
-        <div ng-messages="signUp.userAccountForm.password.$error"
-             ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.password.$error"
+  
+        <div ng-messages="signUp.userAccountForm.confirmPassword.$error"
+             ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.confirmPassword.$error"
              role="alert"
              class="alerts  alert--warning">
   
+            <div ng-message="compareTo">
+              The passwords must match.
+            </div>
+
             <div ng-message="required">
                 The password must be confirmed.
             </div>
   
-        </div> -->
+        </div>
   
       </div>
 
