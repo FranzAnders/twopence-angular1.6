@@ -8,23 +8,23 @@
 twopence.controller('planEditConfirmationCtrl', 
         ['sponseePlanPatchInfo', 
          'Sponsorship',
-         'sponsee',
+         'sponsorshipInfo',
          '$fancyModal',
          '$rootScope', 
          '$scope', function(
                           sponseePlanPatchInfo, 
                           Sponsorship,
-                          sponsee,
+                          sponsorshipInfo,
                           $fancyModal,
                           $rootScope, 
                           $scope) {
 
     var vm = this; 
 
-    vm.sponsee = sponsee; 
+
+    vm.sponsee = sponsorshipInfo.sponsee; 
 
     vm.succesfullyEdited = false; 
-
 
     vm.patchPlan = function() {
 
