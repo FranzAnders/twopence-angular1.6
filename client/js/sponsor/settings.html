@@ -117,17 +117,17 @@
                        ng-model-options="{allowInvalid: true, debounce: 200}"
                        floating-label>
               
-                <!-- <div ng-messages="settings.userSettingsForm.password.$error"
+                <div ng-messages="settings.userSettingsForm.password.$error"
                      ng-show="settings.userSettingsForm.$submitted &&  settings.userSettingsForm.password.$error"
                      role="alert"
                      class="alerts  alert--warning"
                      >
               
-                    <div ng-message="ng-minlength">
-                        Your password must be atleast 8 characters in length
+                    <div ng-message="required">
+                       A valid password is required.
                     </div>
               
-                </div> -->
+                </div>
               
               </div>
 
