@@ -230,13 +230,18 @@
                                     
                       <div class="small-12 large-11  columns">
                                     
-                        <a class="button  button--medium button--bankLinking button--expanded mb1" 
-                                ng-click="sponseeSponsorship.link()">
+                        <a class="button  button--medium button--bankLinking button--expanded mb1"
+                           ng-class="{'is-linked' : sponseeSponsorship.linkedBank }" 
+                           ng-click="sponseeSponsorship.link()">
                                     
-                          <span ng-if="!sponseeSponsorship.linkedBank">Link Your Bank Account</span>
-                          <span ng-if="sponseeSponsorship.linkedBank">Bank Account Linked</span>
+                          <span ng-if="!sponseeSponsorship.linkedBank">Link your Funding Account</span>
+                          <span ng-if="sponseeSponsorship.linkedBank">Funding Account Linked</span>
                                     
                         </a>
+
+                        <p class="text-mini text-center">
+                          One-time authentication of the bank account used to fund your sponsorship contributions.
+                        </p>
                                     
                       </div>
                                     
