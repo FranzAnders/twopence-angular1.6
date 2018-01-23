@@ -18022,6 +18022,50 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
+    #Login Header
+\*------------------------------------*/
+/* line 6, ../scss/components/_loginHeader.scss */
+.loginHeader {
+  width: 100%;
+  position: fixed;
+  height: 3.125rem;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+}
+/* line 17, ../scss/components/_loginHeader.scss */
+.loginHeader .loginHeader-backBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  position: relative;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  display: block;
+  padding-right: 0.4375rem;
+  padding-left: 0.5625rem;
+  padding-top: 0.5625rem;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 30, ../scss/components/_loginHeader.scss */
+.loginHeader .loginHeader-backBtn:hover, .loginHeader .loginHeader-backBtn:focus, .loginHeader .loginHeader-backBtn:active {
+  background-color: #231F20;
+}
+/* line 37, ../scss/components/_loginHeader.scss */
+.loginHeader .loginHeader-backBtn .loginHeader-backBtn-icon {
+  fill: #fff;
+  width: 1.125rem;
+}
+
+/*------------------------------------*\
     #List
 \*------------------------------------*/
 /* line 15, ../scss/components/_lists.scss */

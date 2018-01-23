@@ -1,0 +1,45 @@
+
+/*------------------------------------*\
+    #Login Header
+\*------------------------------------*/
+
+.loginHeader {
+  width: 100%; 
+  position: fixed; 
+  height: rem-calc(50px);
+  top: 0; 
+  right: 0; 
+  left: 0; 
+  z-index: 50; 
+  padding-left: rem-calc($level3); 
+  padding-right: rem-calc($level3); 
+
+  .loginHeader-backBtn {
+    width: rem-calc(36px); 
+    height: rem-calc(36px); 
+    position: relative; 
+    margin-bottom: 0; 
+    padding-bottom: 0;
+    display: block; 
+    padding-right: rem-calc(7px);
+    padding-left: rem-calc(9px);
+    padding-top: rem-calc(9px);
+    @include transition(all .2s ceaser($easeInOutQuint));
+    @include border-radius(100%); 
+
+    &:hover, 
+    &:focus,
+    &:active {
+      background-color: $secondaryColor;
+
+    }
+
+    .loginHeader-backBtn-icon {
+      fill: #fff; 
+      width: rem-calc(18px);
+
+    }
+
+  }
+
+}
