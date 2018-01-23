@@ -226,7 +226,7 @@ twopence.controller('sponseePlanEditCtrl', [
                 return Sponsorship
 
               },
-              sponsee: function() {
+              sponsorshipInfo: function() {
 
                 return pSponsee
 
