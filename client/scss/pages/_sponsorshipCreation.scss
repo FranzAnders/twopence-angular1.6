@@ -4,6 +4,11 @@
 \*------------------------------------*/
 
 
+/*------------------------------------*\
+    #Plans  
+\*------------------------------------*/
+
+
 .plans {
   
   .plan {
@@ -42,3 +47,55 @@
   }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Custom Amount Input  
+\*------------------------------------*/
+
+
+.input--customAmount {
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: "$";
+      left: rem-calc($level1); 
+      top: 0;
+      bottom: 0;
+      color: $grey--light;  
+      position: absolute; 
+      height: rem-calc($level4);
+      margin: auto;  
+
+    }
+
+    input {
+
+      border: 1px solid $grey--light; 
+      padding: rem-calc($level1);
+      padding-left: rem-calc($level3);
+      width: rem-calc(88px);
+      @include border-radius(6px);
+
+      //Uses this to hide the default increase up and down arrows 
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        appearance: textfield;
+        margin: 0; 
+
+      }
+
+    &:active, 
+    &:focus {
+      border: 1px solid $secondaryColor; 
+    }
+
+  }
+
+}
+

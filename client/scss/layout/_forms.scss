@@ -29,9 +29,10 @@ input[type="color"], {
 
     margin-bottom: rem-calc($base-magic-number);
     margin-right: rem-calc($level2);
-    font-family: $primary-font-family; 
+    font-family: $primary-font-family;
+    @include transition(all .2s ease-in-out);
     @include type-setting(0);
-    @include border-radius(0);
+    @include border-radius(6px);
 
     &:focus,
     &:active {
@@ -116,6 +117,7 @@ input {
 
     }
 }
+
 
 
 
@@ -264,6 +266,7 @@ input {
       margin-bottom: 0;
       background-color: transparent;
       border-bottom: 2px solid $grey--light;
+      @include border-radius(0); 
       @include transition(all $formGroupSpeed ease-in-out);
 
       &:-webkit-autofill {
@@ -327,6 +330,7 @@ input {
     }
 
 }
+
 
 
 
@@ -1024,56 +1028,68 @@ input.clearField {
 \*------------------------------------*/
 
 
-input[type="checkbox"].styled {
+/*------------------------------------*\
+    #Checkboxes syled as radio button
+\*------------------------------------*/
+
+
+input[type="checkbox"].styled-as-radio {
    display:none;
+
+  & + label {
+      color: $secondaryColor;
+      margin-bottom: rem-calc($base-magic-number); 
+      white-space: nowrap; 
+      @include type-setting(0); 
+  }
+
+  & + label span {
+      display:inline-block;
+      width:rem-calc(20px);
+      height:rem-calc(20px);
+      margin-right: rem-calc($level1); 
+      vertical-align:middle;
+      cursor:pointer;
+      @include border-radius(100%); 
+  }
+
+  & + label span {
+     background-color: transparent; 
+     border: 2px solid $grey--med; 
+     position: relative; 
+
+  }
+
+
+  &:hover + label span,
+  &:focus + label span {
+       background-color: $secondaryColor;
+       border: 2px solid $secondaryColor; 
+
+  }
+
+  &:checked + label span{
+       background-color: $secondaryColor;
+       border: 2px solid $secondaryColor; 
+   
+  }
+
+
+  & + label span,
+  &:checked + label span {
+    
+  }
 }
 
-input[type="checkbox"].styled + label {
-    color: $secondaryColor;
-    margin-bottom: rem-calc($base-magic-number); 
-    white-space: nowrap; 
-    @include type-setting(0); 
-}
-
-input[type="checkbox"].styled + label span {
-    display:inline-block;
-    width:rem-calc(20px);
-    height:rem-calc(20px);
-    margin-right: rem-calc($level1); 
-    vertical-align:middle;
-    cursor:pointer;
-    @include border-radius(100%); 
-}
-
-input[type="checkbox"].styled + label span {
-   background-color: transparent; 
-   border: 2px solid $grey--med; 
-   position: relative; 
-
-}
 
 
-input[type="checkbox"].styled:hover + label span,
-input[type="checkbox"].styled:focus + label span {
-     background-color: $secondaryColor;
-     border: 2px solid $secondaryColor; 
-
-}
-
-input[type="checkbox"].styled:checked + label span{
-     background-color: $secondaryColor;
-     border: 2px solid $secondaryColor; 
- 
-}
 
 
-input[type="checkbox"].styled + label span,
-input[type="checkbox"].styled:checked + label span {
-  
-}
+/*------------------------------------*\
+    #Radio Label Sizes
+\*------------------------------------*/
 
-
-input[type="checkbox"].styled.radio--large + label {
+.radio--large + label {
   @include type-setting(1); 
 
 }

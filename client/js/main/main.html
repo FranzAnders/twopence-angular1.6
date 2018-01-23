@@ -5,7 +5,12 @@
 <main-nav-dir  ng-hide="$state.includes('main.kitchenSink') || $state.includes('main.account') || $state.includes('main.signUp')">
 
 </main-nav-dir>
-    
+
+<login-header-dir ng-show="$state.includes('main.account') || $state.includes('main.signUp')">
+
+</login-header-dir>
+
+
 <div class=" grid grid--flexDirectionColumn grid--stretch">
   
   <div ui-view="main" class="grid-cell">

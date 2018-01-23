@@ -5,7 +5,7 @@
   <div class="small-12 columns"
        ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
-    <form ng-submit="sponseeSponsorship.createPlan(     sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponseeId)"
+    <form ng-submit="sponseeSponsorship.createPlan(     sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponsorshipInfo)"
           name="sponseeSponsorship.sponsorshipDetailsForm">
 
       <div ng-if="sponseeSponsorship.formNotSubmited">
@@ -28,9 +28,9 @@
           <div class="card">
 
             <div class="card-header">
-              <h2 class="card-title txtc2 h3">
+              <h1 class="card-title txtc2 h3">
                 Plan Information
-              </h2>
+              </h1>
             </div>
             
             <div class="card-content pb0">
@@ -43,72 +43,88 @@
                     Monthly Limit
                   </h2>
                                   
-                  <div class="grid  grid--center grid--1of2  grid--flexWrap grid--gutters">
+                  <div class="grid-cell  ">
                   
-                    <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
-                      <input type="radio"
-                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                   name="limit"
-                   value="100"
-                   id="oneHundredLimit"
-                   checked="checked"
-                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
-                   class="radio--large">
-                      <label for="oneHundredLimit"> <span></span>$100</label>
-                    </div>
-                    
-                    <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft">
-                      <input type="radio"
-                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                   name="limit"
-                   value="300"
-                   id="threeHundredLimit"
-                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
-                   class="radio--large">
-                      <label for="threeHundredLimit"><span></span>$300</label>
-                    </div>
-                
-                    <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
-                      <input type="radio"
-                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
-                   name="limit"
-                   value="500"
-                   id="fivehundredLimit"
-                    ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
-                   class="radio--large">
-                      <label for="fivehundredLimit"><span></span>$500</label>
-                    </div>
-                
-                    <div class="grid-cell radio-group">
-        
-                      <div class="grid grid--flexDirectionRow  grid--justifyLeft">
+                    <div class="row">
 
-                        <div class="">
-                          <input type="checkbox"
-                                 ng-model="sponseeSponsorship.customLimit.active"
-                                 name="customLimit"
-                                 id="custom"
-                                 class="styled  mr5"
-                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
-                                 value="sponseeSponsorship.customLimit.active">
+                      <div class="small-12 columns">
 
-                          <label for="custom">
-                            <span></span>
-                            
-                            <input type="number"
-                             id="customValue"
-                             name="custom"
-                             class="input--small"
-                             ng-model="sponseeSponsorship.customLimit.amount"
-                            placeholder="custom"
-                             >
-
-                          </label>
+                        <div class="grid  small-grid--full  med-grid--1of2 grid--flexWrap">
+                          <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
+                          
+                            <input type="radio"
+                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                             name="limit"
+                             value="100"
+                             id="oneHundredLimit"
+                             checked="checked"
+                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
+                             class="radio--large">
+                            <label for="oneHundredLimit"> <span></span>$100</label>
+                          
+                          </div>
+                          
+                          <div class="grid-cell radio-group  grid  grid--center grid--justifyLeft">
+                          
+                            <input type="radio"
+                             ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                             name="limit"
+                             value="300"
+                             id="threeHundredLimit"
+                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
+                             class="radio--large">
+                            <label for="threeHundredLimit"><span></span>$300</label>
+                          
+                          </div>
+                                          
+                          <div class="grid-cell radio-group grid  grid--center grid--justifyLeft">
+                          
+                            <input type="radio"
+                               ng-model="sponseeSponsorship.sponsorshipInfo.plan.limit"
+                               name="limit"
+                               value="500"
+                               id="fivehundredLimit"
+                                ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
+                               class="radio--large">
+                            <label for="fivehundredLimit"><span></span>$500</label>
+                          
+                          </div>
+                                          
+                          <div class="grid-cell radio-group">
+                                  
+                            <div class="grid grid--flexDirectionRow  grid--justifyLeft">
+                          
+                                <input type="checkbox"
+                                       ng-model="sponseeSponsorship.customLimit.active"
+                                       name="customLimit"
+                                       id="custom"
+                                       class="styled-as-radio  radio--large"
+                                       ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
+                                       value="sponseeSponsorship.customLimit.active">
+                          
+                                <label for="custom">
+                                  <span></span>
+                                  <i class="hide-elem">custom</i>
+                                  
+                                  <div class="input--customAmount">
+                                    <input type="number"
+                                     id="customValue"
+                                     name="custom"
+                                     class="input--small   mb0"
+                                     ng-model="sponseeSponsorship.customLimit.limit"
+                                    placeholder="custom"
+                                     >
+                                  </div>
+                          
+                                </label>
+                          
+                            </div>
+                          
+                          </div>
 
                         </div>
 
                       </div>
-                        
 
                     </div>
 
