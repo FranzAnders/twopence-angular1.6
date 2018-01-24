@@ -78,16 +78,14 @@
     <!-- endbuild -->
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
 
-    <!-- Sentry Error logging -->
-    <script src="/bower_components/raven-js/dist/raven.js"></script>
-    <script src="/bower_components/raven-js/dist/plugins/angular.js"></script>
+    <!-- Sentry -->
+    <script src="bower_components/raven-js/dist/plugins/angular.js"></script>
     <script>
       Raven
         .config('https://b28d76b8fc1e4e56b2f7cc1bd1df9675@sentry.io/277099')
         .addPlugin(Raven.Plugins.Angular)
         .install();
     </script>
-
 
     <!-- CDNJS Vendor Scripts -->
 

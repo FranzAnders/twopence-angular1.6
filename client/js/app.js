@@ -12,7 +12,7 @@ twopence = angular.module('twopence', [
      'ngCookies',
      'xeditable',
      'ngMessages',
-     'angularMoment'
+     'angularMoment',
      'ngRaven'
 ]);
 
