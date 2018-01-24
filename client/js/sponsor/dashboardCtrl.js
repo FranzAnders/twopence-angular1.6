@@ -27,9 +27,8 @@ twopence.controller('dashboardCtrl', [
     vm.sponsorInfo = {};
 
     //
-    // Gets user's info
+    // Gets user's info and name vm.sponsorInfo, vm.sponsorInfo.name
     //
-    
     User.getUserInfo().then(function(dashboard) {
       vm.sponsorInfo = dashboard;
 
@@ -39,13 +38,11 @@ twopence.controller('dashboardCtrl', [
 
       console.log(err); 
 
-      // $state.go('main.signUp.identity');
-
     });
 
 
     //
-    // Gets a sponsors' sponsorships and total contributions made 
+    // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
     //
     Sponsorship.getAll().then(function(sponsorships) {
       vm.sponsorships = sponsorships.data;
@@ -59,7 +56,9 @@ twopence.controller('dashboardCtrl', [
     });
 
 
-
+    //
+    // Gets total Contributions and returns the total given
+    //
     vm.getTotalContributions = function(sponsorships) {
 
       var total = 0; 
@@ -78,6 +77,7 @@ twopence.controller('dashboardCtrl', [
 
     };
 
+
     //
     // Logs a user out
     //
@@ -87,17 +87,6 @@ twopence.controller('dashboardCtrl', [
 
     };
 
-    vm.sendReminder = function(sponseeId) {
-
-      var remindLoad = {
-        "user": {
-          "id": sponseeId
-        }
-      };
-
-      Sponsee.remind(remindLoad);
-
-    }
 
 
     //
