@@ -73,9 +73,20 @@
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/raven-js/dist/raven.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+
+    <!-- Sentry Error logging -->
+    <script src="/bower_components/raven-js/dist/raven.js"></script>
+    <script src="/bower_components/raven-js/dist/plugins/angular.js"></script>
+    <script>
+      Raven
+        .config('https://b28d76b8fc1e4e56b2f7cc1bd1df9675@sentry.io/277099')
+        .addPlugin(Raven.Plugins.Angular)
+        .install();
+    </script>
 
 
     <!-- CDNJS Vendor Scripts -->
@@ -94,22 +105,22 @@
 
     <!-- Plaid Auth -->
     <script src="js/plaid/plaid.js"></script>
-  
+
     <!--Home-->
     <script src="js/home/homeCtrl.js"></script>
     <script src="js/home/footerDir.js"></script>
 
-    
-    <!--Main--> 
+
+    <!--Main-->
     <script src="js/main/mainCtrl.js"></script>
 
 
-    <!--Modals--> 
+    <!--Modals-->
     <script src="js/modals/planEditConfirmationCtrl.js"></script>
 
 
 
-    <!--Navigation--> 
+    <!--Navigation-->
     <script src="js/navigation/appNavDir.js"></script>
     <script src="js/navigation/appHeaderDir.js"></script>
     <script src="js/navigation/mainNavDir.js"></script>
@@ -128,13 +139,13 @@
     <script src="js/sponsor/sponseePlanEditCtrl.js"></script>
     <script src="js/sponsor/settingsCtrl.js"></script>
     <script src="js/sponsor/sponsorshipCardDir.js"></script>
-      
-    <!--Sign Up--> 
+
+    <!--Sign Up-->
     <script src="js/signUp/signUpCtrl.js"></script>
     <script src="js/signUp/verifyCtrl.js"></script>
 
 
-    <!--Log in--> 
+    <!--Log in-->
     <script src="js/login/loginCtrl.js"></script>
     <script src="js/login/loginHeaderDir.js"></script>
     <script src="js/login/logOutCtrl.js"></script>
