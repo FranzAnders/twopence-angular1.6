@@ -102,7 +102,7 @@ twopence.controller('signUpCtrl', [
             console.log(alias)
             mixpanel.alias(alias);
             mixpanel.people.set_once({
-              'User Type' : 'Sponsor'
+              'User Type' : 'Sponsor',
               'Invited' : res.data.invited,
               '$email' : userInfo.email,
               'Date Signup' : new Date(),

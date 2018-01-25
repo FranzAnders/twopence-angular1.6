@@ -5,7 +5,7 @@
 \*------------------------------------*/
 
 twopence.controller('sponseeSponsorshipCtrl', [
-  '$fancyModal', 
+  '$fancyModal',
   '$scope',
   '$state',
   '$stateParams',
@@ -29,24 +29,24 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     vm.formSubmittedSuccesfully = false;
 
-    vm.sponsee = $stateParams.data; 
+    vm.sponsee = $stateParams.data;
 
-    vm.email = $stateParams.email; 
+    vm.email = $stateParams.email;
 
-    vm.linkedBank = false; 
+    vm.linkedBank = false;
 
     vm.customLimit = {
-      'active': false, 
+      'active': false,
       'limit': ''
 
-    }; 
+    };
 
 
     vm.customAmount = {
-      'active': false, 
+      'active': false,
       'amount': ''
 
-    }; 
+    };
 
     var sandboxHandler = Plaid.create({
       apiVersion: 'v2',
@@ -76,7 +76,9 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           alert("Yay! You’ve successfully linked your bank account! We will not disclose your bank account information with any third parties.");
 
-          vm.linkedBank = true; 
+          vm.linkedBank = true;
+
+          mixpanel.track('Linked Bank Account');
 
         }, 0);
 
@@ -84,9 +86,9 @@ twopence.controller('sponseeSponsorshipCtrl', [
       onExit: function(error, metadata) {
 
          $fancyModal.open({
-            templateUrl: 'js/modals/bank-link-error.html', 
+            templateUrl: 'js/modals/bank-link-error.html',
             themeClass: 'fancymodal--primary  fancymodal--small',
-            openingClass: 'is-open', 
+            openingClass: 'is-open',
             closingClass: 'is-closed',
             showCloseButton: false
 
@@ -127,7 +129,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
     //
-    // Clears the custom limit/amount selection or the normal limit/amount 
+    // Clears the custom limit/amount selection or the normal limit/amount
     // selections depending on what is selected
     //
     vm.clearSelection = function(pLimitType, pPlanType) {
@@ -138,7 +140,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           vm.sponsorshipInfo.plan.limit = 0;
 
-        } 
+        }
 
         if(pPlanType === 'one-time') {
 
@@ -156,58 +158,76 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       }
 
-    }; 
+    };
 
     //
-    // Creates a sponsorship and a plan right after. If vm.customLimit.active, we apply that as the 
-    // limit/amount of the sponsorship 
+    // Creates a sponsorship and a plan right after. If vm.customLimit.active, we apply that as the
+    // limit/amount of the sponsorship
     //
     vm.createPlan = function(pSponsorshipDetailsForm, pSponsorshipInfo) {
 
+      // Mixpanel properties.
+      var custom = false;
+      var type = 'Match';
+      var value = pSponsorshipInfo.plan.limit;
+
       if(vm.customLimit.active) {
         pSponsorshipInfo.plan.limit = vm.customLimit.limit;
-
-      } 
+        custom = true;
+        value = vm.customLimit.limit;
+      }
 
       if(vm.customAmount.active) {
         pSponsorshipInfo.plan.amount = vm.customAmount.amount;
+        custom = true;
+        value = vm.customAmount.amount;
+      }
 
+      if(vm.sponsorshipInfo.plan.type === 'Fixed') {
+        type = 'Fixed';
+        value = pSponsorshipInfo.plan.amount;
       }
 
       if (pSponsorshipDetailsForm.$valid) {
 
-          var sponsee = {}; 
+          var sponsee = {};
 
-          sponsee.user = vm.sponsee; 
+          sponsee.user = vm.sponsee;
 
          Sponsorship.create(sponsee).then(function(res) {
 
-            var sponseeInfo = res; 
+            var sponseeInfo = res;
 
             Sponsorship.createNewPlan(sponseeInfo.id, vm.sponsorshipInfo).then(function(sponsorship) {
 
               vm.formNotSubmited = false;
               vm.formSubmittedSuccesfully = true;
-             
+
+              mixpanel.track('Completed Sponsorship Setup', {
+                'Type': type,
+                'Value': value,
+                'Is Custom': custom
+              });
+
             }).catch(function(err) {
-              
+
                $fancyModal.open({
-                  templateUrl: 'js/modals/sponsorship-creation-error.html', 
+                  templateUrl: 'js/modals/sponsorship-creation-error.html',
                   themeClass: 'fancymodal--primary  fancymodal--small',
-                  openingClass: 'is-open', 
+                  openingClass: 'is-open',
                   closingClass: 'is-closed',
                   showCloseButton: false
 
               });
 
-            }); 
+            });
 
           }).catch(function(err) {
 
              $fancyModal.open({
-                templateUrl: 'js/modals/sponsorship-creation-error.html', 
+                templateUrl: 'js/modals/sponsorship-creation-error.html',
                 themeClass: 'fancymodal--primary  fancymodal--small',
-                openingClass: 'is-open', 
+                openingClass: 'is-open',
                 closingClass: 'is-closed',
                 showCloseButton: false
 
@@ -225,20 +245,26 @@ twopence.controller('sponseeSponsorshipCtrl', [
     //
     vm.setType = function(pType) {
 
+      // Mixpanel property.
+      var type = "Match";
+
       if (pType === 'one-time') {
 
         vm.sponsorshipInfo.plan.type = 'fixed';
         vm.sponsorshipInfo.plan.frequency = 'one-time';
         vm.sponsorshipInfo.plan.amount = 0;
+        type = "Fixed";
 
       }
 
       if (pType === 'matching') {
 
-        vm.sponsorshipInfo.plan.type = 'match'
+        vm.sponsorshipInfo.plan.type = 'match';
         vm.sponsorshipInfo.plan.frequency = 'monthly';
         vm.sponsorshipInfo.plan.limit = 0;
       }
+
+      mixpanel.track('Selected Plan', {'Plan Type': type});
 
       console.log(vm.sponsorshipInfo);
 
