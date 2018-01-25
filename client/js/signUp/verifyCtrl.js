@@ -44,8 +44,8 @@ twopence.controller('verifyCtrl', [
 
       if(verify === true) {
 
-        mixpanel.identify(Auth.getMixpanelDistinctId())
-        mixpanel.track('Verified Identity')
+        mixpanel.identify(Auth.getMixpanelDistinctId());
+        mixpanel.track('Verified Identity');
 
         $timeout(function() {
           $state.go('main.account.login');
