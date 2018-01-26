@@ -21,24 +21,24 @@ twopence.controller('sponseeBoostCtrl', [
         $fancyModal,
         $scope) {
 
-    var vm = this; 
+    var vm = this;
 
 
     vm.sponsorshipInfo = SponseeInformation;
 
-    vm.sponseeInfo = vm.sponsorshipInfo.sponsee; 
+    vm.sponseeInfo = vm.sponsorshipInfo.sponsee;
 
-    vm.boostSuccessfull = false; 
+    vm.boostSuccessfull = false;
 
-    vm.confirmingBoost = false; 
+    vm.confirmingBoost = false;
 
     vm.boostInfo = {
       "user": {
           "id" : vm.sponsorshipInfo.id
-      }, 
+      },
       "plan": {
         "type": 'fixed',
-        "frequency": 'one-time', 
+        "frequency": 'one-time',
         "amount": null
       }
     };
@@ -50,33 +50,25 @@ twopence.controller('sponseeBoostCtrl', [
     //
     vm.boostSponsee = function(pBoostForm) {
 
-      if(pBoostForm.$valid) {
-        
-        if(vm.confirmingBoost) {
-          
-          vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
+      if (vm.confirmingBoost) {
 
-          Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
-            vm.confirmingBoost = false; 
+        vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
 
-            vm.boostSuccessfull = true; 
+        Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
+          vm.confirmingBoost = false;
+          vm.boostSuccessfull = true;
 
-          }).catch(function(err) {
+          mixpanel.track('Confirmed Boost', {'Recipient': 'User:' + vm.sponsorshipInfo.id});
 
-            alert("Repeat payments of the same amount can not be made on the same day. Wait ")
+        }).catch(function(err) {
 
-          }); 
+          alert("Repeat payments of the same amount can not be made on the same day. Wait ")
 
-        } else {
-
-           vm.confirmingBoost = true; 
-
-        }
-
+        });
 
       } else {
 
-        alert('An amount must be entered!');
+         vm.confirmBoost(pBoostForm);
 
       }
 
@@ -85,12 +77,30 @@ twopence.controller('sponseeBoostCtrl', [
 
 
     //
-    // Show boost view 
+    // Show boost view
     //
     vm.confirmBoost = function(pBoostForm) {
       if(pBoostForm.$valid) {
 
-        vm.confirmingBoost = true; 
+        var amount = parseInt(vm.boostInfo.plan.amount);
+        var changedDefault = false;
+        var change = 'Default';
+
+        if (amount > 20) {
+          changedDefault = true;
+          change = 'Increase';
+        } else if (amount < 20) {
+          changedDefault = true;
+          change = 'Decrease';
+        }
+
+        mixpanel.track('Set Boost Amount', {
+          'Changed Default': changedDefault,
+          'Amount': amount,
+          'Change': change
+        });
+
+        vm.confirmingBoost = true;
 
       } else {
 
@@ -102,30 +112,30 @@ twopence.controller('sponseeBoostCtrl', [
 
 
     //
-    // Resets the boost view to normal edit mode 
+    // Resets the boost view to normal edit mode
     //
     vm.resetBoostingView = function() {
 
-        vm.confirmingBoost = false; 
+        vm.confirmingBoost = false;
 
-    }; 
+    };
 
     //
     // Closes the sponsee jolt modal
     //
     vm.closeJoltModal = function() {
 
-      $fancyModal.close(); 
+      $fancyModal.close();
 
     };
 
 
     //
-    // Increases the Boost amount by 5 
+    // Increases the Boost amount by 5
     //
     vm.increaseBoostAmount = function(pIncrease) {
       vm.resetBoostingView()
-      vm.boostInfo.plan.amount = vm.boostInfo.plan.amount + pIncrease; 
+      vm.boostInfo.plan.amount = vm.boostInfo.plan.amount + pIncrease;
 
     };
 
@@ -142,7 +152,7 @@ twopence.controller('sponseeBoostCtrl', [
 
       } else {
 
-        vm.boostInfo.plan.amount = vm.boostInfo.plan.amount - pDecrease; 
+        vm.boostInfo.plan.amount = vm.boostInfo.plan.amount - pDecrease;
 
       }
 
