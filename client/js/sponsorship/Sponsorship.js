@@ -32,20 +32,20 @@ twopence.factory('Sponsorship', [
 
     var dateISO = moment().format();
     var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
-    var today = convertedDate; 
+    var today = convertedDate;
 
-    return today 
+    return today
 
   };
 
 
 
   //
-  // Gets the last schedule of a matching plan 
+  // Gets the last schedule of a matching plan
   //
   var getLastSchedule = function(pSchedules) {
 
-    return pSchedules[0]; 
+    return pSchedules[0];
 
   }
 
@@ -134,7 +134,7 @@ twopence.factory('Sponsorship', [
 
         }).catch(function(err) {
 
-          console.log(err); 
+          console.log(err);
           reject(err);
 
         });
@@ -237,59 +237,59 @@ twopence.factory('Sponsorship', [
 
 
   //
-  // Checks if a plan terminates today 
+  // Checks if a plan terminates today
   //
   sponsorship.checkIfTerminatesToday = function(pPlan) {
 
-    var todaysDate = getTodaysDate(); 
+    var todaysDate = getTodaysDate();
 
     var lastPlan = getLastSchedule(pPlan.schedules);
 
-    var planEndDate = lastPlan.date_termination; 
+    var planEndDate = lastPlan.date_termination;
 
-    return planEndDate === todaysDate; 
+    return planEndDate === todaysDate;
 
-  }; 
+  };
 
 
   //
-  // Checks if plan starts today 
+  // Checks if plan starts today
   //
   sponsorship.checkIfStartsToday = function(pPlan) {
 
     var dateISO = moment().format();
     var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
-    var todaysDate = convertedDate; 
+    var todaysDate = convertedDate;
     var lastPlan = getLastSchedule(pPlan.schedules);
-    
+
     return todaysDate === lastPlan.date_effective;
 
   };
 
 
   //
-  // Checks if plan starts tomorrow 
+  // Checks if plan starts tomorrow
   //
   sponsorship.checkIfStartsTomorrow = function(pPlan) {
 
     var dateISO = moment().add(1, 'days').format();
     var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
-    var tomorrowsDate = convertedDate; 
+    var tomorrowsDate = convertedDate;
     var lastPlan = getLastSchedule(pPlan.schedules);
 
-    return tomorrowsDate === lastPlan.date_effective; 
+    return tomorrowsDate === lastPlan.date_effective;
 
-  }; 
+  };
 
   //
-  // Returns the status of a plan based on sponsee info and a plan 
+  // Returns the status of a plan based on sponsee info and a plan
   //
   sponsorship.getPlanStatus = function(pPlan, pSponseeInfo) {
 
       var status = '';
-      var planEndsToday = false; 
-      var planStartsToday = false; 
-      var planStartsTomorrow = false; 
+      var planEndsToday = false;
+      var planStartsToday = false;
+      var planStartsTomorrow = false;
 
       if(pPlan) {
 
@@ -317,7 +317,7 @@ twopence.factory('Sponsorship', [
 
         if((pPlan.active || planStartsToday) &&  !planEndsToday) {
 
-          status = 'active'; 
+          status = 'active';
 
         }
 
@@ -328,7 +328,7 @@ twopence.factory('Sponsorship', [
         }
 
       }
-      
+
 
       if(pSponseeInfo.sponsee.status !== 'active') {
 
@@ -336,7 +336,7 @@ twopence.factory('Sponsorship', [
 
       }
 
-      return status; 
+      return status;
 
   };
 

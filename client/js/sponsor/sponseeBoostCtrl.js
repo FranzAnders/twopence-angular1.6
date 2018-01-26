@@ -58,7 +58,7 @@ twopence.controller('sponseeBoostCtrl', [
           vm.confirmingBoost = false;
           vm.boostSuccessfull = true;
 
-          mixpanel.track('Confirmed Boost', {'Recipient': 'User:' + vm.sponsorshipInfo.id});
+          mixpanel.track('Confirmed Boost', {'Recipient': 'User:' + vm.sponsorshipInfo.sponsee.id});
 
         }).catch(function(err) {
 
