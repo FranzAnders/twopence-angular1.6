@@ -92,7 +92,7 @@ twopence.controller('sponsorshipCtrl', [
     //
     vm.openBoostModal = function(sponsee) {
 
-      mixpanel.track('Launched Boost', {'Origin': 'Progress Screen', 'Recipient': 'User:' + sponsee.sponsee.id})
+      mixpanel.track('Launched Boost', {'Origin': 'Progress Screen', 'Graduate': 'User:' + sponsee.sponsee.id})
 
       $fancyModal.open({
         templateUrl: 'js/sponsor/sponsee-boost-modal.html',

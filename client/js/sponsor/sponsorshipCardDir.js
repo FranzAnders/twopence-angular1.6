@@ -76,7 +76,7 @@ twopence.directive('sponsorshipCardDir',
 
             User.remind(pUserId).then(function() {
 
-                mixpanel.track('Sent Reminder', {'Recipient': 'User:' + pUserId})
+                mixpanel.track('Sent Reminder', {'Graduate': 'User:' + pUserId})
 
                 $fancyModal.open({
                     controller: ['sponsee', '$scope', function(sponsee, $scope) {

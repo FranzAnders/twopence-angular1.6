@@ -3,7 +3,7 @@
 
   <div class="sponsorSection-illustrContainer">
     <div class="sponsorSection-illustr  sponsorSection-illustr--managePlan  show-for-medium-up">
-      
+
     </div>
   </div>
 
@@ -19,10 +19,10 @@
           <h1 class="txtc2  ff2">
             Manage <br> Matching Plan
           </h1>
-          
+
           <p>
-            Edit 
-            <span class="fwb" ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s monthly matching limit or pause their existing active matching plan. 
+            Edit
+            <span class="fwb" ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s monthly matching limit or pause their existing active matching plan.
           </p>
 
         </div>
@@ -34,43 +34,43 @@
     <div class="small-12 columns medium-8 large-7 large-pull-1">
 
       <div class="card">
-        
+
         <div class="card-header">
-              
+
           <h1 class="card-title">
             Plan Settings
-          </h1>  
+          </h1>
 
         </div>
 
-  
-          
+
+
           <div class="card-content">
-                      
+
             <label class="grid med-grid--flexDirectionRow grid--flexDirectionColumn grid--justifyCenter med-grid--justifySpaceAround"
                    for="plan_limit">
-                      
+
               <div  class="grid-cell grid-cell--autoSize">
 
                 <h2 class="text-center  medium-text-left   card-subTitle">Monthly Limit</h2>
 
               </div>
-          
+
               <div class="grid-cell text-center">
-                
+
                 <form ng-submit="sponseePlanEdit.createPlan(sponseePlanEdit.planEditForm, sponseePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo, sponseePlanEdit.latestPlan)"
               name="sponseePlanEdit.planEditForm"
               novalidate>
-                     <input class="clearField clearField--money mb0" 
-                           type="number" 
-                           step="0.01" 
+                     <input class="clearField clearField--money mb0"
+                           type="number"
+                           step="0.01"
                            id="plan_limit"
                            name="planLimit"
                            required
-                           ng-model="sponseePlanEdit.customAmount" 
-                           ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" 
+                           ng-model="sponseePlanEdit.customAmount"
+                           ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
                            ng-class="{'is-inactive' : sponseePlanEdit.sponseePlan}"/>
-                  
+
                   <span class="text-mini  uc"
                         ng-hide="sponseePlanEdit.planEditForm.planLimit.$dirty">Click to edit limit amount</span>
 
@@ -78,40 +78,40 @@
 
                       <button type="submit"
                               ng-show="sponseePlanEdit.planEditForm.planLimit.$dirty"
-                              
+
                               class="button--primary  button--secondary mb0 ">
                         Update Limit
                       </button>
 
                   </span>
-                
+
                 </form>
 
               </div>
-                      
+
             </label>
-          
+
           </div>
 
           <hr class="hr--faded mb0">
 
           <div class="card-content">
-      
+
             <div class="grid med-grid--flexDirectionRow grid--flexDirectionColumn grid--justifyCenter med-grid--justifySpaceBetween med-grid--top">
 
               <div class="grid-cell grid-cell--autoSize">
                   <h2 class="text-center  medium-text-left   card-subTitle">Plan Status</h2>
               </div>
-              
+
 
               <div class="grid-cell  grid grid--center grid--justifyCenter grid--flexDirectionColumn text-center med-grid--justifyCenter">
 
                 <span ng-switch="sponseePlanEdit.planStatus" class="pb2">
-              
+
                   <span ng-switch-when="active" class="tag  tag--large tag--active">
                     Active
                   </span>
-              
+
                   <span ng-switch-when="paused" class="tag  tag--large  tag--inactive">
                       Paused
                   </span>
@@ -119,19 +119,19 @@
                   <span ng-switch-when="activating" class="tag tag--large tag--pending">
                   Activating
                   </span>
-            
+
                   <span  ng-switch-when="invite pending" class="tag  tag--large  tag--pending">Invite Pending</span>
 
                 </span>
-                
+
                 <span class="text-mini" ng-if="sponseePlanEdit.planStatus === 'activating'">
-                 Plan will be effective starting tomorrow. 
+                 Plan will be effective starting tomorrow.
                 </span>
 
-                <a class="text-micro button--withIcon" 
+                <a class="text-micro button--withIcon"
                   ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo)"
                   ng-if="sponseePlanEdit.planStatus === 'active'">
-                   
+
 
                     <span class="icon--center" width=><svg version="1.1" id="Layer_1"  width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
@@ -150,11 +150,11 @@
                 </a>
 
 
-                <a class="text-micro button--withIcon" 
-                   ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId)"
+                <a class="text-micro button--withIcon"
+                   ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo)"
                    ng-if="sponseePlanEdit.planStatus === 'paused'">
-                   
-<!-- 
+
+<!--
 <span class="icon--center" width=><svg version="1.1" id="Layer_1"  width="16px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 20.7 20.7" style="enable-background:new 0 0 20.7 20.7;" xml:space="preserve">
     <g>
@@ -171,15 +171,15 @@
 
                 </div>
 
-           
+
              </div>
 
             </div>
 
           </div>
 
-          
-          
+
+
 
 
 
