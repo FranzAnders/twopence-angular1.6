@@ -98,8 +98,7 @@ twopence.controller('signUpCtrl', [
 
             vm.accountCreated = true;
 
-            const alias = 'Sponsor:' + res.data.sponsor_id.toString()
-            console.log(alias)
+            var alias = 'Sponsor:' + res.data.sponsor_id;
             mixpanel.alias(alias);
             mixpanel.people.set_once({
               'User Type' : 'Sponsor',
