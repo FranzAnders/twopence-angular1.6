@@ -15,7 +15,7 @@ twopence.controller('loginCtrl', [
   function(
     $state,
     $timeout,
-    $rootScope, 
+    $rootScope,
     $stateParams,
     Auth,
     AUTH_EVENTS,
@@ -36,7 +36,7 @@ twopence.controller('loginCtrl', [
 
 
     vm.formSubmissionErrors = {
-      invalidCombination : false, 
+      invalidCombination : false,
       rateLimitError: false,
       error: false
 
@@ -44,26 +44,28 @@ twopence.controller('loginCtrl', [
 
 
     //
-    // Resets the form submission errors object 
+    // Resets the form submission errors object
     //
     var resetFormSubmissionErrors = function() {
-      vm.formSubmissionErrors.invalidCombination = false; 
-      vm.formSubmissionErrors.rateLimitError = false; 
-      vm.formSubmissionErrors.error = false; 
+      vm.formSubmissionErrors.invalidCombination = false;
+      vm.formSubmissionErrors.rateLimitError = false;
+      vm.formSubmissionErrors.error = false;
 
     }
 
 
     //
-    // Logs in a user if the form is valid and there are no errors with the information provided 
-    // If the user is still onboarding, they get taken to the signUp confirmation screen 
+    // Logs in a user if the form is valid and there are no errors with the information provided
+    // If the user is still onboarding, they get taken to the signUp confirmation screen
     //
     vm.logInUser = function(pLoginForm) {
-      resetFormSubmissionErrors(); 
+      resetFormSubmissionErrors();
 
       if(pLoginForm.$valid) {
 
         Auth.login(vm.form).then(function(res) {
+
+          mixpanel.people.increment('Number of Sessions')
 
           User.getUserInfo().then(function(userInfo) {
 
@@ -79,7 +81,7 @@ twopence.controller('loginCtrl', [
 
               } else {
 
-                $state.go('sponsor.dashboard'); 
+                $state.go('sponsor.dashboard');
               }
 
             }
@@ -96,7 +98,7 @@ twopence.controller('loginCtrl', [
           // Emits an event with the error data for validationAlertsDir to listen to
           //
           $timeout(function() {
-            $rootScope.$emit('login-validation-error', {error: err}); 
+            $rootScope.$emit('login-validation-error', {error: err});
 
           }, 100);
 
@@ -104,7 +106,7 @@ twopence.controller('loginCtrl', [
 
       } else {
 
-        console.log('ERROR: form is not valid'); 
+        console.log('ERROR: form is not valid');
 
       }
 

@@ -55,6 +55,8 @@ twopence.controller('sponseeCreationCtrl', [
 
         if(pSponseeSearchForm.$valid) {
 
+            mixpanel.track('Selected Graduate');
+
             $state.go('sponsor.sponsorshipSetup.options', {data: vm.sponseeInfo.user , email: vm.sponseeInfo.user.email});
 
         } else {

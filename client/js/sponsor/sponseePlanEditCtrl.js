@@ -10,16 +10,16 @@ twopence.controller('sponseePlanEditCtrl', [
   '$state',
   '$timeout',
   '$fancyModal',
-  '$rootScope', 
+  '$rootScope',
   '$filter',
-  'moment', 
+  'moment',
   'Sponsorship',
   function(
     $stateParams,
     $state,
     $timeout,
     $fancyModal,
-    $rootScope, 
+    $rootScope,
     $filter,
     moment,
     Sponsorship) {
@@ -50,7 +50,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Rounds numbers to prevent decimals and keep numbers whole 
+    // Rounds numbers to prevent decimals and keep numbers whole
     //
     var numRound = function(number, precision) {
 
@@ -70,12 +70,12 @@ twopence.controller('sponseePlanEditCtrl', [
     // Returns todays date in converted format "yyyy-MM-dd"
     //
     var getTodaysDate = function() {
-      
+
       var dateISO = moment().format();
       var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
-      var today = convertedDate; 
+      var today = convertedDate;
 
-      return today 
+      return today
 
     };
 
@@ -88,37 +88,37 @@ twopence.controller('sponseePlanEditCtrl', [
 
       var dateISO = moment().add(1, 'days').format();
       var convertedDate = $filter('date')(dateISO, 'yyyy-MM-dd');
-      var tomorrow = convertedDate; 
-      
-      return tomorrow 
+      var tomorrow = convertedDate;
+
+      return tomorrow
 
     };
 
 
 
     //
-    // Gets a sponsorship's information and then gets the latest plan and sponsee data  
+    // Gets a sponsorship's information and then gets the latest plan and sponsee data
     // also sets the customAmount in the matching limit field. It also gets the current
     // plan status using the Sponsorship service
     //
     vm.getPlan = function(pSponsorshipId) {
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
 
-        console.log(sponsorship); 
+        console.log(sponsorship);
 
         $timeout(function() {
 
-          vm.sponseeInfo = sponsorship; 
+          vm.sponseeInfo = sponsorship;
           vm.latestPlan = vm.getLatestPlan(sponsorship);
           vm.customAmount = parseInt(vm.latestPlan.limit);
 
           //
-          // Finds out the status of the plan 
+          // Finds out the status of the plan
           //
           vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
 
 
-        }, 0); 
+        }, 0);
 
       })
       .catch(function(err) {
@@ -138,7 +138,7 @@ twopence.controller('sponseePlanEditCtrl', [
       var planStatus = Sponsorship.getPlanStatus(pPlan, pSponseeInfo);
 
       if(planStatus === 'paused') {
-        return true; 
+        return true;
 
       } else {
         return false
@@ -151,49 +151,49 @@ twopence.controller('sponseePlanEditCtrl', [
     // Gets the latest plan for a sponsorship
     //
     vm.getLatestPlan = function(pSponsorship) {
-      var plan = null; 
-      var plansLength = pSponsorship.plans.length - 1;  
+      var plan = null;
+      var plansLength = pSponsorship.plans.length - 1;
 
       for(var i = 0; i <= plansLength; i++) {
 
         if(pSponsorship.plans[i].type == 'Match') {
 
-            return pSponsorship.plans[i]; 
+            return pSponsorship.plans[i];
 
-        } 
+        }
 
       }
 
       return false;
-      
+
     };
 
 
 
     //
-    // Pauses the plan 
+    // Pauses the plan
     //
     vm.pausePlan = function(pPlan, pSponsorshipId, pSponsee) {
 
-      var planId = pPlan.id; 
+      var planId = pPlan.id;
 
       var payLoad = {
         "pause": true
-      }; 
+      };
 
 
       //
       // We create an object with the required info to patch the plan for $fancyModal ctrl
       //
-      var sponseePlanPatchInfo = {}; 
+      var sponseePlanPatchInfo = {};
 
       sponseePlanPatchInfo.planId  = planId;
-      sponseePlanPatchInfo.payLoad = payLoad; 
-      sponseePlanPatchInfo.sponsorshipId = pSponsorshipId; 
+      sponseePlanPatchInfo.payLoad = payLoad;
+      sponseePlanPatchInfo.sponsorshipId = pSponsorshipId;
 
 
       if (pPlan.schedules[0].date_termination === getTodaysDate()) {
-          
+
         $fancyModal.open({
           templateUrl: 'js/modals/plan-edit-already-paused.html',
           themeClass: 'fancymodal--primary  fancymodal--small',
@@ -241,12 +241,12 @@ twopence.controller('sponseePlanEditCtrl', [
         } else {
 
           //
-          // Sets pause prop to false to resume plan 
+          // Sets pause prop to false to resume plan
           //
           payLoad.pause = false;
 
           Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
-           
+
             $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-success.html',
               themeClass: 'fancymodal--primary  fancymodal--small',
@@ -256,12 +256,13 @@ twopence.controller('sponseePlanEditCtrl', [
 
             });
 
-            $rootScope.$emit('plan-updated'); 
+            mixpanel.track('Resumed Plan', {'Graduate': 'User:' + pSponsee.sponsee.id})
+            $rootScope.$emit('plan-updated');
 
 
           }).catch(function(error) {
-            
-            console.log(err);
+
+            console.log(error);
 
             $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-error.html',
@@ -290,20 +291,20 @@ twopence.controller('sponseePlanEditCtrl', [
       if(pPlanEditForm.$valid) {
 
         //
-        // Payload to pause the existing plan 
+        // Payload to pause the existing plan
         //
         var payLoad = {
           "pause": true
-        }; 
+        };
 
         //
-        // We create an object with the required info to patch the plan 
+        // We create an object with the required info to patch the plan
         //
-        var sponseePlanPatchInfo = {}; 
+        var sponseePlanPatchInfo = {};
 
         sponseePlanPatchInfo.planId  = pLatestPlan.id;
-        sponseePlanPatchInfo.payLoad = payLoad; 
-        sponseePlanPatchInfo.sponsorshipId = pSponsorshipId; 
+        sponseePlanPatchInfo.payLoad = payLoad;
+        sponseePlanPatchInfo.sponsorshipId = pSponsorshipId;
 
 
         //
@@ -318,16 +319,36 @@ twopence.controller('sponseePlanEditCtrl', [
           "schedule": {
               "date_effective" : getTomorrowsDate()
           }
-        }  
+        }
+
+        // Mixpanel event properties.
+        var oldLimit = pLatestPlan.limit;
+        var newLimit = vm.customAmount;
+        var diff = newLimit - oldLimit;
+        var change = 'Default';
+        if (diff > 0) {
+          change = 'Increase'
+        };
+        if (diff < 0) {
+          change = 'Decrease'
+        };
+        var properties = {
+          'Graduate' : 'User:' + pSponseeInfo.sponsee.id,
+          'New Limit': newLimit,
+          'Change': change,
+          'Change Amount': diff
+        };
 
         //
-        // We check if plan ends today, if so, it's paused or in the process of being paused 
-        // so we just make a new one. If not, we pause it and make a new one. 
+        // We check if plan ends today, if so, it's paused or in the process of being paused
+        // so we just make a new one. If not, we pause it and make a new one.
         //
-        if(vm.checkIfPaused(pLatestPlan, pSponseeInfo)) {    
-          
+        if(vm.checkIfPaused(pLatestPlan, pSponseeInfo)) {
+
           Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
           .then(function(success){
+
+          mixpanel.track('Changed Plan Limit', properties);
 
            $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-success.html',
@@ -338,7 +359,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
             });
 
-            $rootScope.$emit('plan-updated'); 
+            $rootScope.$emit('plan-updated');
 
           })
           .catch(function(err){
@@ -364,6 +385,8 @@ twopence.controller('sponseePlanEditCtrl', [
             Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
             .then(function(success){
 
+            mixpanel.track('Changed Plan Limit', properties);
+
              $fancyModal.open({
                 templateUrl: 'js/modals/plan-edit-success.html',
                 themeClass: 'fancymodal--primary  fancymodal--small',
@@ -373,7 +396,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
               });
 
-              $rootScope.$emit('plan-updated'); 
+              $rootScope.$emit('plan-updated');
 
             })
             .catch(function(err){
@@ -410,8 +433,8 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
       } else {
-        
-        console.log('ERROR: form is not valid'); 
+
+        console.log('ERROR: form is not valid');
 
       }
 
@@ -421,7 +444,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Listeners set up to listen for successes of plan being edited 
+    // Listeners set up to listen for successes of plan being edited
     //
     $rootScope.$on('plan-updated', function(event, pChangeData) {
 
@@ -430,5 +453,5 @@ twopence.controller('sponseePlanEditCtrl', [
     });
 
   }
-  
+
 ]);

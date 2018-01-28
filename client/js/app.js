@@ -12,8 +12,9 @@ twopence = angular.module('twopence', [
      'ngCookies',
      'xeditable',
      'ngMessages',
-     'angularMoment'
-      ]);
+     'angularMoment',
+     'ngRaven'
+]);
 
 
 twopence.config(
@@ -72,7 +73,7 @@ twopence.config(
             },
         })
         .state('main.account', {
-          abstract: true, 
+          abstract: true,
           views: {
 
             'main' : {
@@ -86,7 +87,7 @@ twopence.config(
         })
         .state('main.account.login', {
 
-          url: "login", 
+          url: "login",
           views:  {
 
             'account': {
@@ -101,7 +102,7 @@ twopence.config(
         })
         .state('main.account.onboarding', {
 
-          url: "login/onboarding", 
+          url: "login/onboarding",
           views:  {
 
             'account': {
@@ -117,7 +118,7 @@ twopence.config(
         })
         .state('main.account.resetPasswordEmail', {
 
-          url: "account/password/reset", 
+          url: "account/password/reset",
           views:  {
 
             'account': {
@@ -132,7 +133,7 @@ twopence.config(
         })
         .state('main.account.resetPassword', {
 
-          url: "reset/:token", 
+          url: "reset/:token",
           views:  {
 
             'account': {
@@ -142,7 +143,7 @@ twopence.config(
 
             }
 
-          }, 
+          },
           params: {
 
             token: null
@@ -239,12 +240,12 @@ twopence.config(
 
               return Sponsor.verifyEmail(tokenObj).then(function(success) {
                   console.log(tokenObj);
-                  console.log('verified'); 
+                  console.log('verified');
                   return true;
                 }
               ).catch(function(err) {
 
-                  console.log(err); 
+                  console.log(err);
                   return err
 
               });
@@ -257,8 +258,8 @@ twopence.config(
         .state('sponsor', {
           abstract: true,
           url: "/sponsor/",
-          controller: 'sponsorCtrl', 
-          controllerAs: 'sponsor', 
+          controller: 'sponsorCtrl',
+          controllerAs: 'sponsor',
           templateUrl: "js/sponsor/sponsor.html"
 
         })

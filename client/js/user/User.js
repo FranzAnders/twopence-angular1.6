@@ -29,7 +29,8 @@ twopence.factory('User', [
         $http.post(BASE_URL +  '/v1/users', pLoginInfo)
           .then(function(res) {
             Auth.setToken(res.data.token, res.data.username);
-            resolve(res); 
+            Auth.setMixpanelDistinctId(res.data.sponsor_id);
+            resolve(res);
           }).catch(function(err) {
             reject(err);
           });
@@ -49,16 +50,16 @@ twopence.factory('User', [
             }
         })
         .then(function(res) {
-          resolve(res); 
+          resolve(res);
         }).catch(function(err) {
-           reject(err); 
+           reject(err);
         });
       });
     };
 
 
     //
-    // Updates a user's information object 
+    // Updates a user's information object
     //
     User.updateSettings = function(pSettingsToChange) {
 
@@ -98,13 +99,13 @@ twopence.factory('User', [
 
 
     //
-    // Reminds a sponsee to sign up 
+    // Reminds a sponsee to sign up
     //
     User.remind = function(pUserId) {
 
-      var payload = { user: {} }; 
+      var payload = { user: {} };
 
-      payload.user.id = pUserId; 
+      payload.user.id = pUserId;
 
       return $q(function(resolve, reject) {
 
@@ -147,22 +148,22 @@ twopence.factory('User', [
 
           }).then(function(res) {
 
-            resolve(res.data); 
+            resolve(res.data);
 
           }).catch(function(err) {
 
             resolve(err);
 
-          }); 
+          });
 
-      }); 
+      });
 
     };
 
 
     //
     // Submits the new password with a token
-    // 
+    //
     User.submitResetPass = function(pPassResetInfo) {
 
       return $q(function(resolve, reject) {
@@ -176,22 +177,22 @@ twopence.factory('User', [
 
           }).then(function(res) {
 
-            resolve(res.data); 
+            resolve(res.data);
 
           }).catch(function(err) {
 
             resolve(err);
 
-          }); 
+          });
 
-      }); 
+      });
 
     }
 
 
     //
     // Verified a user email
-    // 
+    //
     User.verifyEmail = function(emailToken) {
 
       return $q(function(resolve, reject) {
@@ -206,7 +207,7 @@ twopence.factory('User', [
           }).catch(function(err) {
             reject(err);
           });
-          
+
       });
 
     };
