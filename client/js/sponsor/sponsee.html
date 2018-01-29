@@ -55,7 +55,7 @@
             
               <h3  ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})" 
                   class="stat  txtc1  text-kilo  fwb">
-                <span class="">$</span>{{sponsorship.sponsorshipInfo.contributions_to_date}}
+                {{sponsorship.sponsorshipInfo.contributions_to_date | currency:"$":0}}
               </h3>
             
             </div>
@@ -124,7 +124,7 @@
 
               </td>
 
-              <td class="table-contribution text-right" >${{contribution.amount}}</td>
+              <td class="table-contribution text-right" >{{contribution.amount | currency:"$"}}</td>
 
             </tr>
           
