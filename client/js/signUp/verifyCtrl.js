@@ -9,14 +9,14 @@ twopence.controller('verifyCtrl', [
   '$state',
   '$scope',
   '$timeout',
-  'Auth', 
+  'Auth',
   'User',
-  'verify',  
+  'verify',
   function($stateParams,
     $state,
-    $scope, 
+    $scope,
     $timeout,
-    Auth, 
+    Auth,
     User,
     verify) {
 
@@ -24,43 +24,55 @@ twopence.controller('verifyCtrl', [
 
 
     vm.$onInit = function() {
-      vm.emailVerificationSent = false; 
-      vm.tokenStatus = vm.checkTokenStatus(verify); 
+      vm.emailVerificationSent = false;
+      vm.tokenStatus = vm.checkTokenStatus(verify);
     }
 
 
 
 
     //
-    // Checks if the token is expired, working, or invalid
+    // Checks if the token is expired, working, invalid, or if the user already verified
     //
     vm.checkTokenStatus = function(pVerifyStatus) {
 
-      if(verify !== true) {
-          
-        return 'invalid'
+      if(pVerifyStatus !== true) {
+        
+        if(pVerifyStatus.data.message === "Sponsor cannot be verified in its current state") {
+
+          return 'already-verified'
+        }
+
+        if(pVerifyStatus.data.code === "validation_error") {
+
+          return 'invalid'
+        
+        }
 
       }
 
-      if(verify === true) {
+      if(pVerifyStatus === true) {
+
+        mixpanel.identify(Auth.getMixpanelDistinctId());
+        mixpanel.track('Verified Identity');
 
         $timeout(function() {
-          $state.go('main.account.login'); 
-        }, 5000); 
-        
+          $state.go('main.account.login');
+        }, 5000);
+
         return 'valid'
 
       }
 
-    }; 
+    };
 
 
     //
-    // Resends the verification email and updates the UI 
+    // Resends the verification email and updates the UI
     //
     vm.resendVerificationEmail = function() {
 
-      vm.emailVerificationSent = false; 
+      vm.emailVerificationSent = false;
 
       if(Auth.getToken()) {
 
@@ -68,17 +80,17 @@ twopence.controller('verifyCtrl', [
 
         User.verify().then(function(success) {
 
-          vm.emailVerificationSent = true; 
+          vm.emailVerificationSent = true;
 
         }).catch(function(err) {
-          
-            console.log(err); 
+
+            console.log(err);
 
         });
 
       } else {
 
-        $state.go('main.account.login'); 
+        $state.go('main.account.login');
 
       }
 
@@ -87,4 +99,3 @@ twopence.controller('verifyCtrl', [
   }
 
 ]);
-  

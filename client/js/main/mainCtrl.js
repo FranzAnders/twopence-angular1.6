@@ -10,6 +10,6 @@ twopence.controller('mainCtrl', ['$scope', '$state',
 
     var vm = this;
 
-    $scope.$state = $state; 
+    $scope.$state = $state;
 
 }]);

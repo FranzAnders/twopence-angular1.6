@@ -1,18 +1,18 @@
 
 <div class="section--main">
-  
+
   <div class="row">
-    
+
     <div class="small-12 medium-7   large-6 medium-centered columns">
 
       <div class="card  card--form">
         <div class="card-content pb0 ">
-          
+
           <h1 class="ff2  headline txtc2">
             Who would you like to sponsor today?
           </h1>
-          
-          <p class="mb0"> 
+
+          <p class="mb0">
             First, we need some information about the person you’d like to sponsor.
           </p>
         </div>
@@ -22,76 +22,76 @@
         <form ng-submit="sponseeCreation.searchSponsee(sponseeCreation.sponseeSearchForm)"
               name="sponseeCreation.sponseeSearchForm"
               novalidate>
-                    
+
           <div class="row">
             <div class="small-12  columns">
               <div class="input-group input--large">
                 <label for="first name">
                 First Name
                 </label>
-              
-                <input type="text" 
+
+                <input type="text"
                 id="first name"
                 ng-model="sponseeCreation.searchData.first_name"
                 name="first_name"
                 required
                 ng-minlength="3"
                 floating-label>
-              
+
                 <div ng-messages="sponseeCreation.sponseeSearchForm.first_name.$error"
                 ng-show="sponseeCreation.sponseeSearchForm.$submitted && sponseeCreation.sponseeSearchForm.$error"
                 role="alert"
                 class="alerts  alert--warning">
-              
+
                   <div ng-message="required">
                   A first name is needed to identity our sponsee.
                   </div>
-              
+
                   <div ng-message="minlength">
-                  Name must be atleast 2 characters in length.
+                  Name must be at least 2 characters in length.
                   </div>
-              
+
                 </div>
-              
+
               </div>
             </div>
-        
+
             <div class="small-12  columns">
               <div class="input-group input--large">
-              
+
                 <label for="full name">
                   Last Name
                 </label>
-                  
-                <input type="text" id="full name" 
+
+                <input type="text" id="full name"
                        class="input--primary "
                        ng-model="sponseeCreation.searchData.last_name"
                        required
                        floating-label>
-                       
+
               </div>
 
             </div>
 
           </div>
-          
+
           <div class="input-group input--large">
-          
+
             <label for="email">
               Email
             </label>
-          
-            <input type="text" 
-                   id="email" 
-                   class="input--primary input--large" 
+
+            <input type="text"
+                   id="email"
+                   class="input--primary input--large"
                    ng-model="sponseeCreation.searchData.email"
                    floating-label
                    required>
-          
+
           </div>
 
           <div class="row">
-            <div class="small-12 columns ">    
+            <div class="small-12 columns ">
 
               <button type="submit" class="button--small  button--secondary   button--expanded  mb0">
                 Setup Sponsorship

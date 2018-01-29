@@ -36,7 +36,7 @@ twopence.controller('dashboardCtrl', [
 
     }).catch(function(err){
 
-      console.log(err); 
+      console.log(err);
 
     });
 
@@ -47,11 +47,11 @@ twopence.controller('dashboardCtrl', [
     Sponsorship.getAll().then(function(sponsorships) {
       vm.sponsorships = sponsorships.data;
 
-      vm.totalContributions = vm.getTotalContributions(sponsorships.data); 
+      vm.totalContributions = vm.getTotalContributions(sponsorships.data);
 
     }).catch(function(err){
 
-      console.log(err); 
+      console.log(err);
 
     });
 
@@ -61,12 +61,12 @@ twopence.controller('dashboardCtrl', [
     //
     vm.getTotalContributions = function(sponsorships) {
 
-      var total = 0; 
+      var total = 0;
 
       for(var i = 0; i <= sponsorships.length; i++) {
 
         if(sponsorships[i]) {
-        
+
          total = total + parseInt(sponsorships[i].contributions_to_date);
 
         }
@@ -93,6 +93,8 @@ twopence.controller('dashboardCtrl', [
     // Opens the jolt modal using the $fancyModal service
     //
     vm.openBoostModal = function(sponsee) {
+
+      mixpanel.track('Launched Boost', {'Origin': 'Home Screen', 'Graduate': 'User:' + sponsee.sponsee.id})
 
       $fancyModal.open({
         templateUrl: 'js/sponsor/sponsee-boost-modal.html',

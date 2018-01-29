@@ -1,4 +1,4 @@
-  
+
 'use strict';
 
 /*------------------------------------*\
@@ -30,7 +30,7 @@ twopence.controller('signUpCtrl', [
 
     $scope.$state = $state;
 
-    vm.loadingScreen = false; 
+    vm.loadingScreen = false;
 
     //
     // We store the user info and user info as objects to then
@@ -41,7 +41,7 @@ twopence.controller('signUpCtrl', [
     };
 
 
-    
+
     //
     // Checks if there is already a token in session from users
     //
@@ -70,11 +70,11 @@ twopence.controller('signUpCtrl', [
     vm.submitAccountInfo = function(form) {
       if (form.$valid) {
         delete vm.userInfo.confirmPassword;
-        vm.loadingScreen = true; 
+        vm.loadingScreen = true;
         $timeout(function() {
           $state.go('main.signUp.identity');
-          vm.loadingScreen = false; 
-        }, 800); 
+          vm.loadingScreen = false;
+        }, 800);
       } else {
         console.log('ERROR: Form is not valid.');
       }
@@ -88,23 +88,35 @@ twopence.controller('signUpCtrl', [
     //
     vm.createUser = function(pSponsorForm, pUserInfo) {
 
-      var userInfo = pUserInfo; 
+      var userInfo = pUserInfo;
 
       if(pSponsorForm.$valid) {
 
           var date = userInfo.dob;
 
-          userInfo.dob = $filter('date')(date, 'yyyy-MM-dd')
-
           User.create(userInfo).then(function(res) {
 
-            vm.accountCreated = true; 
+            vm.accountCreated = true;
+
+            var alias = 'Sponsor:' + res.data.sponsor_id;
+            mixpanel.alias(alias);
+            mixpanel.people.set_once({
+              'User Type' : 'Sponsor',
+              'Invited' : res.data.invited,
+              '$email' : userInfo.email,
+              'Date Signup' : new Date(),
+              '$first_name' : userInfo.first_name,
+              '$last_name' : userInfo.last_name,
+              '$name' : userInfo.first_name + ' ' + userInfo.last_name,
+              'DOB' : userInfo.dob
+            });
+            mixpanel.track('Signed Up')
 
             $state.go('main.signUp.confirmation');
 
           }).catch(function(err) {
             vm.statusText = err.data.message;
-            console.log(err); 
+            console.log(err);
 
             if(vm.statusText === 'Email has already been taken.') {
 
@@ -124,8 +136,8 @@ twopence.controller('signUpCtrl', [
 
 
     //
-    // Opens the terms of agreement for the app 
-    // 
+    // Opens the terms of agreement for the app
+    //
     vm.openTermsModal = function() {
 
       $fancyModal.open({
