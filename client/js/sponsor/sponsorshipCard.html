@@ -42,7 +42,7 @@
 
     <a class="stat sponsorship-contributions"
           ui-sref="sponsor.sponsee({sponseeId: sponsorship.sponsorshipInfo.id})">
-     ${{sponsorship.sponsorshipInfo.contributions_to_date}}
+     {{sponsorship.sponsorshipInfo.contributions_to_date | currency:"$":0}}
     </a>
 
   </div>
