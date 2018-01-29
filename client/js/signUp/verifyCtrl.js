@@ -32,17 +32,26 @@ twopence.controller('verifyCtrl', [
 
 
     //
-    // Checks if the token is expired, working, or invalid
+    // Checks if the token is expired, working, invalid, or if the user already verified
     //
     vm.checkTokenStatus = function(pVerifyStatus) {
 
-      if(verify !== true) {
+      if(pVerifyStatus !== true) {
+        
+        if(pVerifyStatus.data.message === "Sponsor cannot be verified in its current state") {
 
-        return 'invalid'
+          return 'already-verified'
+        }
+
+        if(pVerifyStatus.data.code === "validation_error") {
+
+          return 'invalid'
+        
+        }
 
       }
 
-      if(verify === true) {
+      if(pVerifyStatus === true) {
 
         mixpanel.identify(Auth.getMixpanelDistinctId());
         mixpanel.track('Verified Identity');
