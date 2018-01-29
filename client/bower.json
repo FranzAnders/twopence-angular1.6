@@ -15,6 +15,17 @@
     "angular-animate": "~1.6.6",
     "raven-js": "^3.22.1"
   },
+  "overrides" :{
+
+    "raven-js": {
+
+      "main" :[ 
+        "dist/raven.js",
+        "dist/plugins/angular.js"
+
+      ]
+    }
+  },
   "resolutions": {
     "angular": "1.6.6"
   }
