@@ -38,12 +38,13 @@ twopence.controller('verifyCtrl', [
 
       if(pVerifyStatus !== true) {
         
-        if(pVerifyStatus.data.message === "Sponsor cannot be verified in its current state") {
+        if(pVerifyStatus.status === 422) {
 
           return 'already-verified'
+
         }
 
-        if(pVerifyStatus.data.code === "validation_error") {
+        if(pVerifyStatus.status === 400) {
 
           return 'invalid'
         
