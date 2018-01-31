@@ -1,63 +1,52 @@
 
-<div class="section--main">
+<div class="card">
+  
+  <div class="card-content">
 
-  <div class="row">
+    <h1 class="ff2  headline txtc2 text-center">
+      Sponsor Graduates <br class="show-for-large-up">that Invited You
+    </h1>
 
-    <div class="small-12 medium-7   large-6 medium-centered columns">
+    <p class="text-center">
+      Select a Graduate below to get started.
+    </p>
 
-      <div class="card">
-        <div class="card-content">
+    <div class="ptb2">
 
-          <h1 class="ff2  headline txtc2 text-center">
-            Sponsor Graduates <br class="show-for-large-up">that Invited You
-          </h1>
-
-          <p class="text-center">
-            Select a Graduate below to get started.
-          </p>
-
-          <div class="ptb2">
-
-            <ul class="list list--large  list--bordered  list--paddedItems">
-            
-              <li class="list-item" ng-repeat="sponsorship in sponseeCreation.sponsorshipsMissingPlans">
-              
-                <div class="grid grid--center grid--justifySpaceBetween">
-            
-                  <div>
-                    <div  class="h4 mb0" ng-bind="sponsorship.sponsee.first_name + ' ' + sponsorship.sponsee.last_name">
-                      
-                    </div>
-                    <span class="text-micro  txtc5">
-                      {{sponsorship.sponsee.email}}
-                    </span>
-                  </div>
-            
-                  <a ui-sref="sponsor.sponsorshipSetup.options({data: sponsorship.sponsee , email: sponsorship.sponsee.email})" class="button  button--primary  button--small mb0">
-                    Start Plan
-                  </a>
-                    
-                  </div>
-            
-              </li>
-            
-            </ul>
-
-          </div>
-
-          <p class="text-center mb0">
-            Don’t see your Grad on the list?<br>
-            <a ui-sref="sponsor.sponseeAdd">
-              Sponsor a new Graduate
-            </a>
-          </p>
+      <ul class="list list--large  list--bordered  list--paddedItems">
+      
+        <li class="list-item" ng-repeat="sponsorship in sponseeCreation.sponsorshipsMissingPlans">
         
-          </div>
+          <div class="grid grid--center grid--justifySpaceBetween">
+      
+            <div>
+              <div  class="h4 mb0" ng-bind="sponsorship.sponsee.first_name + ' ' + sponsorship.sponsee.last_name">
+                
+              </div>
+              <span class="text-micro  txtc5">
+                {{sponsorship.sponsee.email}}
+              </span>
+            </div>
+      
+            <a ui-sref="sponsor.sponsorshipSetup.options({data: sponsorship.sponsee , email: sponsorship.sponsee.email})" class="button  button--primary  button--small mb0">
+              Start Plan
+            </a>
+              
+            </div>
+      
+        </li>
+      
+      </ul>
 
-        </div>
+    </div>
 
-      </div>
-
+    <p class="text-center mb0">
+      Don’t see your Grad on the list?<br>
+      <a ui-sref="sponsor.sponseeAdd.single">
+        Sponsor a new Graduate
+      </a>
+    </p>
+  
     </div>
 
   </div>

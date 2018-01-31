@@ -343,31 +343,82 @@ twopence.config(
               controllerAs: "sponseeCreation"
 
             }
-          },
-          params: {
+          }, 
+          resolve: {
 
-            cameFromEmail: null
+            checkForMissingPlans: ['Sponsorship', function(Sponsorship) {
+
+              var vm = this; 
+
+
+              //
+              // Checks if the sponsor has sponsorships with missing plans 
+              //
+              vm.checkForMissingPlans = function(pUserSponsorships) {
+
+                if(Sponsorship.getSponsorshipsMissingPlans(pUserSponsorships).length > 0) {
+                  
+                  return true
+
+                } else {
+
+                  return false 
+                }
+
+              };
+
+
+              //
+              // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+              //
+              return Sponsorship.getAll().then(function(sponsorships) {
+
+                  if(vm.checkForMissingPlans(sponsorships.data)) {
+
+                    vm.sponsorshipsMissingPlans = sponsorships.data;
+
+                    return {'plans': vm.sponsorshipsMissingPlans }
+                    
+                  } else {
+                    
+                    return false;  
+
+                  }
+
+                }).catch(function(err){
+
+                  console.log(err);
+
+                }); 
+
+            }]
 
           }
 
         })
-        .state('sponsor.inviterSponseeAdd', {
+        .state('sponsor.sponseeAdd.single', {
 
-         url: "dashboard/sponsor-inviter-graduates",
+         url: "/single",
           views: {
 
-            'sponsor': {
+            'form': {
 
-              templateUrl: "js/sponsor/inviter-sponsee-creation.html",
-              controller: "sponseeCreationCtrl",
-              controllerAs: "sponseeCreation"
+              templateUrl: "js/sponsor/single-sponsee-creation.html"
 
             }
-          },
-          params: {
+          }
 
-            cameFromEmail: null
+        })
+        .state('sponsor.sponseeAdd.inviters', {
 
+         url: "/inviters",
+          views: {
+
+            'form': {
+
+              templateUrl: "js/sponsor/inviter-sponsee-creation.html"
+
+            }
           }
 
         })

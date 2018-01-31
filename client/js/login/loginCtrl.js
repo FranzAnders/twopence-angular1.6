@@ -85,7 +85,7 @@ twopence.controller('loginCtrl', [
 
               if(Sponsorship.getSponsorshipsMissingPlans(userInfo.sponsorships).length > 0) {
                 
-                $state.go('sponsor.inviterSponseeAdd');
+                $state.go('sponsor.sponseeAdd.inviters');
 
 
               } else {

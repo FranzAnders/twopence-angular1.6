@@ -6,6 +6,7 @@
 \*------------------------------------*/
 
 twopence.controller('sponseeCreationCtrl', [
+    '$rootScope',
     '$scope',
     '$state',
     '$stateParams',
@@ -14,7 +15,9 @@ twopence.controller('sponseeCreationCtrl', [
     'Sponsee',
     'Sponsorship',
     'User', 
+    'checkForMissingPlans', 
     function(
+        $rootScope,
         $scope,
         $state,
         $stateParams,
@@ -22,7 +25,8 @@ twopence.controller('sponseeCreationCtrl', [
         Sponsor,
         Sponsee,
         Sponsorship, 
-        User) {
+        User,
+        checkForMissingPlans) {
 
       var vm = this;
 
@@ -37,80 +41,42 @@ twopence.controller('sponseeCreationCtrl', [
       vm.cameFromEmail = $stateParams.cameFromEmail;
 
 
+      //
+      // Checks if the resolve for the sponseeCreation state has any sponsorships
+      // with missing plans, if so, we take the user to the 'sponsor.sponseeAdd.inviters' view
+      //
+      if(checkForMissingPlans) {
+        vm.sponsorshipsMissingPlans = checkForMissingPlans.plans;
 
-      // User.getUserInfo().then(function(userInfo) {
+        $state.go('sponsor.sponseeAdd.inviters');
 
+      } else {
 
+        $state.go('sponsor.sponseeAdd.single');
 
-      // }); 
-
-
-    //
-    // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
-    //
-    Sponsorship.getAll().then(function(sponsorships) {
-
-        if(vm.checkForMissingPlans(sponsorships.data)) {
-
-          vm.sponsorshipsMissingPlans = sponsorships.data;
-
-          console.log(vm.sponsorshipsMissingPlans); 
-          
-        }
-
-      }).catch(function(err){
-
-        console.log(err);
-
-      }); 
+      }
 
 
       //
-      // Checks if the sponsor has sponsorships with missing plans 
-      //
-      vm.checkForMissingPlans = function(pUserSponsorships) {
-
-        var missingPlans = [];
-
-        missingPlans = Sponsorship.getSponsorshipsMissingPlans(pUserSponsorships);
-
-        if(missingPlans.length > 0) {
-
-          return true
-
-        }
-
-      };
-
-
-
-      //
-      // Searches a sponsee and sets the sponsee id in the controller
-      // so sponsor can then set a plan based on the id returned.
-      // If succesful, we take the sponsor to the sponsorship setup state and
-      // use parameters to give id of sponsor
+      // Sets the name, last name, and email to use for the sponsorship that
+      // is about to be setup
       //
       vm.searchSponsee = function(pSponseeSearchForm) {
 
         vm.unsubmittedForm = false;
 
-        console.log(vm.searchData);
-
         vm.sponseeInfo = {
           "user": vm.searchData
         };
 
-        console.log(vm.sponseeInfo);
-
         if(pSponseeSearchForm.$valid) {
 
             mixpanel.track('Selected Graduate');
-
             $state.go('sponsor.sponsorshipSetup.options', {data: vm.sponseeInfo.user , email: vm.sponseeInfo.user.email});
 
         } else {
 
-          console.log('nope, the form is not right');
+          alert("Form Is not Valid"); 
 
         }
 

@@ -134,10 +134,11 @@
 
           </ul>
 
-          <ul class="appNav-actions mb0">
+          <ul class="appNav-actions mb0"
+              ng-if="!$state.is('sponsor.sponseeAdd.single') && !$state.is('sponsor.sponseeAdd.inviters')">
             <li>
               
-               <a  class="button button--micro   button--tertiary     button--withIcon   mb0 grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center  large-grid--justifyLeft"  ui-sref="sponsor.sponseeAdd">
+               <a  class="button button--small   button--tertiary     button--withIcon   mb0 grid  grid--flexDirectionColumn  large-grid--flexDirectionRow grid--center  large-grid--justifyLeft"  ui-sref="sponsor.sponseeAdd">
                 
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.7 20.7"  class="button-icon" >
                   
