@@ -85,7 +85,7 @@ hr{
 }
 
 h1,h2,h3,h4,h5,h6 {
-  margin-bottom: rem-calc($base-magic-number);
+  margin-bottom: rem-calc($level2);
 
 }
 
@@ -281,6 +281,10 @@ p {
 .txtc4 {
 
     color: $accentColor; 
+}
+
+.txtc5 {
+    color: $grey--med; 
 }
 
 .txtc--warning {

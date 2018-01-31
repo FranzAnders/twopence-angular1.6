@@ -13,6 +13,7 @@ twopence.controller('sponseeCreationCtrl', [
     'Sponsor',
     'Sponsee',
     'Sponsorship',
+    'User', 
     function(
         $scope,
         $state,
@@ -20,7 +21,8 @@ twopence.controller('sponseeCreationCtrl', [
         $timeout,
         Sponsor,
         Sponsee,
-        Sponsorship) {
+        Sponsorship, 
+        User) {
 
       var vm = this;
 
@@ -33,6 +35,53 @@ twopence.controller('sponseeCreationCtrl', [
       vm.sponseeId = null;
 
       vm.cameFromEmail = $stateParams.cameFromEmail;
+
+
+
+      // User.getUserInfo().then(function(userInfo) {
+
+
+
+      // }); 
+
+
+    //
+    // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+    //
+    Sponsorship.getAll().then(function(sponsorships) {
+
+        if(vm.checkForMissingPlans(sponsorships.data)) {
+
+          vm.sponsorshipsMissingPlans = sponsorships.data;
+
+          console.log(vm.sponsorshipsMissingPlans); 
+          
+        }
+
+      }).catch(function(err){
+
+        console.log(err);
+
+      }); 
+
+
+      //
+      // Checks if the sponsor has sponsorships with missing plans 
+      //
+      vm.checkForMissingPlans = function(pUserSponsorships) {
+
+        var missingPlans = [];
+
+        missingPlans = Sponsorship.getSponsorshipsMissingPlans(pUserSponsorships);
+
+        if(missingPlans.length > 0) {
+
+          return true
+
+        }
+
+      };
+
 
 
       //

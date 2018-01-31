@@ -36,8 +36,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -333,12 +333,32 @@ twopence.config(
         })
         .state('sponsor.sponseeAdd', {
 
-         url: "dashboard/add-sponsee",
+         url: "dashboard/sponsor-graduates",
           views: {
 
             'sponsor': {
 
               templateUrl: "js/sponsor/sponsee-creation.html",
+              controller: "sponseeCreationCtrl",
+              controllerAs: "sponseeCreation"
+
+            }
+          },
+          params: {
+
+            cameFromEmail: null
+
+          }
+
+        })
+        .state('sponsor.inviterSponseeAdd', {
+
+         url: "dashboard/sponsor-inviter-graduates",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/inviter-sponsee-creation.html",
               controller: "sponseeCreationCtrl",
               controllerAs: "sponseeCreation"
 
