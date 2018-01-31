@@ -46,6 +46,7 @@ twopence.controller('sponseeCreationCtrl', [
       // with missing plans, if so, we take the user to the 'sponsor.sponseeAdd.inviters' view
       //
       if(checkForMissingPlans) {
+
         vm.sponsorshipsMissingPlans = checkForMissingPlans.plans;
 
         $state.go('sponsor.sponseeAdd.inviters');
