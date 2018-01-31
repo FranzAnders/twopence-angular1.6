@@ -19,6 +19,8 @@ twopence.directive('appNavDir', function() {
 
         vm.secondaryMenuActive = false; 
 
+        $scope.$state = $state; 
+
         vm.isActive = function(pState) {
 
           return $state.is(pState); 
@@ -55,6 +57,7 @@ twopence.directive('appNavDir', function() {
            confirm('Are you sure you wanna logout?');
 
         }; 
+
 
     }], 
     controllerAs: 'nav', 

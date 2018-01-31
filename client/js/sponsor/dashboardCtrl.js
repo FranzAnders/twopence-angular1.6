@@ -49,6 +49,8 @@ twopence.controller('dashboardCtrl', [
 
       vm.totalContributions = vm.getTotalContributions(sponsorships.data);
 
+      console.log(vm.sponsorships); 
+      
     }).catch(function(err){
 
       console.log(err);

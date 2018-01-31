@@ -340,6 +340,27 @@ twopence.factory('Sponsorship', [
 
   };
 
+
+  //
+  // Checks if user has any sponsorships with plans active, if no, it returns false 
+  //
+  sponsorship.getSponsorshipsMissingPlans = function(pSponsorships) {
+
+      var sponsorshipsMissingPlans = []; 
+
+      for(var i = 0; i < pSponsorships.length; i++) {
+        
+        if(pSponsorships[i] && pSponsorships[i].plans.length === 0) {
+          sponsorshipsMissingPlans.push(pSponsorships[i])
+        }
+
+      }   
+
+      return sponsorshipsMissingPlans
+
+    }
+
+
   return sponsorship;
 
 }]);

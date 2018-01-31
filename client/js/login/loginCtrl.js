@@ -11,6 +11,7 @@ twopence.controller('loginCtrl', [
   '$stateParams',
   'Auth',
   'AUTH_EVENTS',
+  'Sponsorship',
   'User',
   function(
     $state,
@@ -19,6 +20,7 @@ twopence.controller('loginCtrl', [
     $stateParams,
     Auth,
     AUTH_EVENTS,
+    Sponsorship,
     User) {
 
     var vm = this;
@@ -73,15 +75,23 @@ twopence.controller('loginCtrl', [
 
               $state.go('main.account.onboarding');
 
-            } else {
+            } 
 
-              if(userInfo.sponsorships.length == 0) {
+            if(userInfo.sponsorships.length === 0) {
 
-                $state.go('sponsor.sponseeAdd');
+              $state.go('sponsor.sponseeAdd');
+
+            } else {  
+
+              if(Sponsorship.getSponsorshipsMissingPlans(userInfo.sponsorships).length > 0) {
+                
+                $state.go('sponsor.sponseeAdd.inviters');
+
 
               } else {
-
+                
                 $state.go('sponsor.dashboard');
+
               }
 
             }

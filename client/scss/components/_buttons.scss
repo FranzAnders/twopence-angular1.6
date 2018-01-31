@@ -8,6 +8,7 @@ button,
   white-space: nowrap; 
   margin-bottom: rem-calc($base-magic-number);
   background-color: transparent; 
+  letter-spacing: .5px; 
   @extend %fwb; 
   @extend %button;
   @include border-radius(6px); 
@@ -47,7 +48,6 @@ button,
   }
 
 }
-
 
 .button--secondary {
   background-color: $secondaryColor;
@@ -100,6 +100,25 @@ button,
 
   }
 }
+
+.button--quintenary {
+  background-color: $accentColor;
+  position: relative; 
+  color: #fff; 
+  fill: #fff; 
+  border: 1px solid $accentColor; 
+  @include transition(all .1s ease .1s); 
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    fill: #fff; 
+    border: 1px solid $accentColor;
+    background-color: transparent;  
+
+  }
+}
+
 
 
 .button--withIcon {
@@ -368,14 +387,14 @@ button,
 
 
 .button--micro {
-    padding: rem-calc($level1);
-    padding-right: rem-calc($level2);
-    padding-left: rem-calc($level2);
+    padding: rem-calc(3px);
+    padding-right: rem-calc($level1);
+    padding-left: rem-calc($level1);
     @extend %text-micro; 
 }
 
 .button--small {
-    padding: rem-calc($level2);
+    padding: rem-calc($level1);
     padding-right: rem-calc($level2);
     padding-left: rem-calc($level2);
     @include type-setting(-1);

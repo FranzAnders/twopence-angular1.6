@@ -333,7 +333,7 @@ twopence.config(
         })
         .state('sponsor.sponseeAdd', {
 
-         url: "dashboard/add-sponsee",
+         url: "dashboard/sponsor-graduates",
           views: {
 
             'sponsor': {
@@ -343,11 +343,82 @@ twopence.config(
               controllerAs: "sponseeCreation"
 
             }
-          },
-          params: {
+          }, 
+          resolve: {
 
-            cameFromEmail: null
+            checkForMissingPlans: ['Sponsorship', function(Sponsorship) {
 
+              var vm = this; 
+
+
+              //
+              // Checks if the sponsor has sponsorships with missing plans 
+              //
+              vm.checkForMissingPlans = function(pUserSponsorships) {
+
+                if(Sponsorship.getSponsorshipsMissingPlans(pUserSponsorships).length > 0) {
+                  
+                  return true
+
+                } else {
+
+                  return false 
+                }
+
+              };
+
+
+              //
+              // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+              //
+              return Sponsorship.getAll().then(function(sponsorships) {
+
+                  if(vm.checkForMissingPlans(sponsorships.data)) {
+
+                    vm.sponsorshipsMissingPlans = sponsorships.data;
+
+                    return {'plans': vm.sponsorshipsMissingPlans }
+                    
+                  } else {
+                    
+                    return false;  
+
+                  }
+
+                }).catch(function(err){
+
+                  console.log(err);
+
+                }); 
+
+            }]
+
+          }
+
+        })
+        .state('sponsor.sponseeAdd.single', {
+
+         url: "/single",
+          views: {
+
+            'form': {
+
+              templateUrl: "js/sponsor/single-sponsee-creation.html"
+
+            }
+          }
+
+        })
+        .state('sponsor.sponseeAdd.inviters', {
+
+         url: "/inviters",
+          views: {
+
+            'form': {
+
+              templateUrl: "js/sponsor/inviter-sponsee-creation.html"
+
+            }
           }
 
         })

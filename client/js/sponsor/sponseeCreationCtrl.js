@@ -6,6 +6,7 @@
 \*------------------------------------*/
 
 twopence.controller('sponseeCreationCtrl', [
+    '$rootScope',
     '$scope',
     '$state',
     '$stateParams',
@@ -13,14 +14,19 @@ twopence.controller('sponseeCreationCtrl', [
     'Sponsor',
     'Sponsee',
     'Sponsorship',
+    'User', 
+    'checkForMissingPlans', 
     function(
+        $rootScope,
         $scope,
         $state,
         $stateParams,
         $timeout,
         Sponsor,
         Sponsee,
-        Sponsorship) {
+        Sponsorship, 
+        User,
+        checkForMissingPlans) {
 
       var vm = this;
 
@@ -36,32 +42,41 @@ twopence.controller('sponseeCreationCtrl', [
 
 
       //
-      // Searches a sponsee and sets the sponsee id in the controller
-      // so sponsor can then set a plan based on the id returned.
-      // If succesful, we take the sponsor to the sponsorship setup state and
-      // use parameters to give id of sponsor
+      // Checks if the resolve for the sponseeCreation state has any sponsorships
+      // with missing plans, if so, we take the user to the 'sponsor.sponseeAdd.inviters' view
+      //
+      if(checkForMissingPlans) {
+        vm.sponsorshipsMissingPlans = checkForMissingPlans.plans;
+
+        $state.go('sponsor.sponseeAdd.inviters');
+
+      } else {
+
+        $state.go('sponsor.sponseeAdd.single');
+
+      }
+
+
+      //
+      // Sets the name, last name, and email to use for the sponsorship that
+      // is about to be setup
       //
       vm.searchSponsee = function(pSponseeSearchForm) {
 
         vm.unsubmittedForm = false;
 
-        console.log(vm.searchData);
-
         vm.sponseeInfo = {
           "user": vm.searchData
         };
 
-        console.log(vm.sponseeInfo);
-
         if(pSponseeSearchForm.$valid) {
 
             mixpanel.track('Selected Graduate');
-
             $state.go('sponsor.sponsorshipSetup.options', {data: vm.sponseeInfo.user , email: vm.sponseeInfo.user.email});
 
         } else {
 
-          console.log('nope, the form is not right');
+          alert("Form Is not Valid"); 
 
         }
 

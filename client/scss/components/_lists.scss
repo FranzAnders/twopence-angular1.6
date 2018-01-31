@@ -4,16 +4,33 @@
 \*------------------------------------*/
 
 
-.list {
 
+/*------------------------------------*\
+    #List Styles
+\*------------------------------------*/
+
+
+.list--bordered {
+
+  .list-item {
+    border-bottom: 1px solid $grey--light; 
+
+  }
 
 }
+
+
+
+
+
+/*------------------------------------*\
+    #List Sizes
+\*------------------------------------*/
 
 
 .list--small {
     
   .list-item {
-    
     margin-bottom: rem-calc($level1); 
     @include type-setting(-1);
 
@@ -27,12 +44,21 @@
     
   }
 
+  &.list--paddedItems {
+
+    .list-item {
+      padding-bottom: rem-calc($level1); 
+      padding-right: rem-calc($level1); 
+      padding-left: rem-calc($level1); 
+
+    }
+  }
+
 }
 
 .list--medium {
 
   .list-item {
-    
     margin-bottom: rem-calc($level2); 
 
     &.list-item--title {
@@ -46,6 +72,35 @@
     
   }
 
+  &.list--paddedItems {
+
+    .list-item {
+      padding-bottom: rem-calc($level2); 
+      padding-right: rem-calc($level3); 
+      padding-left: rem-calc($level3); 
+
+    }
+  }
+
 }
 
-.list--large {}
+
+.list--large {
+
+  .list-item {
+    margin-bottom: rem-calc($level3); 
+
+  }
+
+  &.list--paddedItems {
+
+    .list-item {
+      padding-bottom: rem-calc($level3); 
+      padding-right: rem-calc($level2); 
+      padding-left: rem-calc($level2); 
+    }
+  }
+
+}
+
+
