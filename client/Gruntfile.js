@@ -60,6 +60,23 @@ module.exports = function(grunt) {
 			}
 		},
 
+    svgstore: {
+      options: {
+        prefix : 'icon-',
+        cleanup: true, 
+        formatting: true, 
+        includeTitleElement: true, 
+        svg: {
+          style: "display: none"
+        }
+      },
+      default : {
+          files: {
+            '<%= app %>/assets/images/svg-icon-defs.svg': ['<%= app %>/assets/images/icons/*.svg'],
+          }
+        }
+      },
+
     toggleComments: {
       file: {'<%= dist %>/app.min.js' : '<%= dist %>/app.min.js'}
     },
@@ -145,10 +162,11 @@ module.exports = function(grunt) {
     //
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-json-minify');
+    grunt.loadNpmTasks('grunt-svgstore');
 
     grunt.registerTask('bower-install', ['wiredep']);
 
-    grunt.registerTask('default', ['bower-install', 'compass:dist', 'connect:app', 'watch']);
+    grunt.registerTask('default', ['bower-install', 'svgstore', 'compass:dist', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
     grunt.registerTask('server-dist', ['connect:dist']);
 
