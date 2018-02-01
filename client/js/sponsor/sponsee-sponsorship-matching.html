@@ -138,7 +138,8 @@
 
             <hr class="hr--faded">
 
-            <div class="card-content">
+            <div class="card-content"
+                 ng-if="!sponseeSponsorship.userInfo.linked_bank">
 
               <fieldset>
               
@@ -182,10 +183,10 @@
               
           <div class="row">
 
-            <div class="small-12 large-6 large-push-6">
+            <div class="small-12 large-5 large-push-7">
 
               <button type="submit"
-                      class="button--expanded  button--secondary  button--small"
+                      class="button--expanded  button--secondary  button--medium"
                       ng-class="{'is-inactive' : !sponseeSponsorship.linkedBank || sponseeSponsorship.sponsorshipDetailsForm.$invalid}">
               
                 Complete Sponsorship

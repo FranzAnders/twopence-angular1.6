@@ -13,6 +13,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
   'Sponsee',
   'Sponsorship',
   'PlaidAuth',
+  'User', 
     function(
     $fancyModal,
     $scope,
@@ -21,7 +22,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
     $timeout,
     Sponsee,
     Sponsorship,
-    PlaidAuth) {
+    PlaidAuth, 
+    User) {
 
     var vm = this;
 
@@ -34,6 +36,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
     vm.email = $stateParams.email;
 
     vm.linkedBank = false;
+
+    vm.userInfo = null; 
 
     vm.customLimit = {
       'active': false,
@@ -48,6 +52,21 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     };
 
+
+    //
+    // Gets User info and sets it on the controller
+    //
+    User.getUserInfo().then(function(userInfo) {
+
+      vm.userInfo = userInfo; 
+      vm.linkedBank = vm.userInfo.linked_bank;
+
+    });   
+
+
+    //
+    // Handles Plaid Sandbox for bank account linking
+    //
     var sandboxHandler = Plaid.create({
       apiVersion: 'v2',
       clientName: 'TwoPence',
@@ -74,7 +93,14 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           PlaidAuth.login(vm.plaidInfo);
 
-          alert("Yay! You’ve successfully linked your bank account! We will not disclose your bank account information with any third parties.");
+          $fancyModal.open({
+                  templateUrl: 'js/modals/bank-link-success.html',
+                  themeClass: 'fancymodal--primary  fancymodal--small',
+                  openingClass: 'is-open',
+                  closingClass: 'is-closed',
+                  showCloseButton: false
+
+              });
 
           vm.linkedBank = true;
 
@@ -194,7 +220,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           sponsee.user = vm.sponsee;
 
-         Sponsorship.create(sponsee).then(function(res) {
+          Sponsorship.create(sponsee).then(function(res) {
 
             var sponseeInfo = res;
 
@@ -275,28 +301,28 @@ twopence.controller('sponseeSponsorshipCtrl', [
     // Resets the form if the user goes back to the options state
     // of the sponsorshipSetup UX
     //
-    // $scope.$on('$stateChangeSuccess', function() {
+    $scope.$on('$stateChangeSuccess', function() {
 
-    //   if ($state.is('sponsor.sponsorshipSetup.options')) {
+      if ($state.is('sponsor.sponsorshipSetup.options')) {
 
-    //     vm.sponsorshipInfo = {
-    //       "user": {
-    //         "id": vm.sponseeId
-    //       },
-    //       "plan": {
-    //         "type": null,
-    //         "frequency": null
-    //       }
-    //     };
+        vm.sponsorshipInfo = {
+          "user": {
+            "id": vm.sponseeId
+          },
+          "plan": {
+            "type": null,
+            "frequency": null
+          }
+        };
 
-    //     vm.formNotSubmited = true;
+        vm.formNotSubmited = true;
 
-    //     vm.formSubmittedSuccesfully = false;
-    //     console.log('clear form');
+        vm.formSubmittedSuccesfully = false;
+        console.log('clear form');
 
-    //   }
+      }
 
-    // });
+    });
 
     vm.link = function() {
       sandboxHandler.open();
