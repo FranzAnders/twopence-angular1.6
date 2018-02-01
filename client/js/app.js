@@ -375,7 +375,7 @@ twopence.config(
 
                   if(vm.checkForMissingPlans(sponsorships.data)) {
 
-                    vm.sponsorshipsMissingPlans = sponsorships.data;
+                    vm.sponsorshipsMissingPlans = Sponsorship.getSponsorshipsMissingPlans(sponsorships.data);
 
                     return {'plans': vm.sponsorshipsMissingPlans }
                     

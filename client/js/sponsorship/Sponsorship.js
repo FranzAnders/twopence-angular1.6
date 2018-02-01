@@ -351,6 +351,7 @@ twopence.factory('Sponsorship', [
       for(var i = 0; i < pSponsorships.length; i++) {
         
         if(pSponsorships[i] && pSponsorships[i].plans.length === 0) {
+
           sponsorshipsMissingPlans.push(pSponsorships[i])
         }
 
