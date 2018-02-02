@@ -6,7 +6,7 @@
 	.st0{fill:#66C8C7;}
 	.st1{fill:#FFFFFF;}
 	.st2{fill:#CCCCCC;}
-	.st3{fill:#333031;}
+	.st3{fill:#231F20;}
 </style>
 <g>
 	<g>
@@ -30,7 +30,8 @@
 		</g>
 		<g>
 			<g>
-				<ellipse transform="matrix(0.8466 -0.5322 0.5322 0.8466 4.996 89.1572)" class="st3" cx="157.2" cy="35.9" rx="2.7" ry="1.2"/>
+				
+					<ellipse transform="matrix(0.8466 -0.5322 0.5322 0.8466 5.0104 89.1613)" class="st3" cx="157.2" cy="35.9" rx="2.7" ry="1.2"/>
 			</g>
 			<g>
 				<g>
