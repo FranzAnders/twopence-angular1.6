@@ -75,7 +75,7 @@ module.exports = function(grunt) {
       },
       sandbox: {
         options: {
-          dest: '<%= app %>/js/constants/sandbox.js'
+          dest: '<%= app %>/js/constants/env.js'
         },
         constants: {
           ENV: grunt.file.readJSON('env-config/sandbox.json')
@@ -189,20 +189,20 @@ module.exports = function(grunt) {
     //
     // For Development
     //
-    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'ngconstant:development', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
 
 
     //
     // For Sandbox
     //
-    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'ngconstant:sandbox', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
 
 
 
     //
     // For Production
     //
-    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'ngconstant:production', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
 
 };
 
