@@ -9,8 +9,8 @@ twopence.factory('Sponsor', [
     '$q',
     '$http',
     'Auth',
-    'BASE_URL',
-    function($q, $http, Auth, BASE_URL) {
+    'ENV',
+    function($q, $http, Auth, ENV) {
 
 
   var Sponsor = {};
@@ -21,7 +21,7 @@ twopence.factory('Sponsor', [
   Sponsor.getSponsees = function() {
 
     return $q(function(resolve, reject) {
-      $http.get(BASE_URL + '/v1/sponsees ', {
+      $http.get(ENV.BASE_URL + '/v1/sponsees ', {
         headers: {
 
           "Authorization": 'Bearer ' + Auth.getToken()
@@ -45,7 +45,7 @@ twopence.factory('Sponsor', [
   Sponsor.getAllContributions = function() {
 
     return $q(function(resolve, reject) {
-      $http.get(BASE_URL + '/v1/contributions ', {
+      $http.get(ENV.BASE_URL + '/v1/contributions ', {
         headers: {
 
           "Authorization": 'Bearer ' + Auth.getToken()
@@ -72,7 +72,7 @@ twopence.factory('Sponsor', [
       console.log("Your JWT is: " + jwtToken);
 
       return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/sponsors/dashboard', {
+        $http.get(ENV.BASE_URL + '/v1/sponsors/dashboard', {
           headers: {
 
             "Authorization": 'bearer ' + jwtToken
@@ -94,7 +94,7 @@ twopence.factory('Sponsor', [
   Sponsor.create = function(pSponsorInfo) {
 
     return $q(function(resolve, reject) {
-      $http.post(BASE_URL +  '/v1/sponsors', pSponsorInfo, {
+      $http.post(ENV.BASE_URL +  '/v1/sponsors', pSponsorInfo, {
 
         headers: {
 
@@ -119,7 +119,7 @@ twopence.factory('Sponsor', [
   Sponsor.new = function(pSponsorInfo) {
 
     return $q(function(resolve, reject) {
-      $http.post(BASE_URL +  '/v1/users', pSponsorInfo, {
+      $http.post(ENV.BASE_URL +  '/v1/users', pSponsorInfo, {
 
       }).then(function(res) {
           console.log(res);
@@ -138,7 +138,7 @@ twopence.factory('Sponsor', [
   Sponsor.verifyEmail = function(emailToken) {
 
     return $q(function(resolve, reject) {
-      $http.post(BASE_URL +  '/v1/verification/token', emailToken, {
+      $http.post(ENV.BASE_URL +  '/v1/verification/token', emailToken, {
         headers: {
           "Authorization": "Bearer " + Auth.getToken()
         }

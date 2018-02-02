@@ -6,9 +6,9 @@
 \*------------------------------------*/
 
 twopence.factory('Auth', [
-  '$q', 'BASE_URL', '$http', '$cookies', '$rootScope', 'Session',
+  '$q', 'ENV', '$http', '$cookies', '$rootScope', 'Session',
   function(
-    $q, BASE_URL, $http, $cookies, $rootScope, Session) {
+    $q, ENV, $http, $cookies, $rootScope, Session) {
 
 
     var auth = {};
@@ -21,7 +21,7 @@ twopence.factory('Auth', [
     //
     auth.login = function(pLoginInfo) {
       return $q(function(resolve, reject) {
-        $http.post(BASE_URL +  '/v1/login', pLoginInfo)
+        $http.post(ENV.BASE_URL +  '/v1/login', pLoginInfo)
           .then(function(res) {
             token = (res.data.token);
             $cookies.put('loggedIn', true);

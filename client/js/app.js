@@ -4,12 +4,6 @@
     #App Init Code
 \*------------------------------------*/
 
-var env = {};
-
-if(window){
-  Object.assign(env, window.__env);
-}
-
 twopence = angular.module('twopence', [
      'ui.router',
      'ngAnimate',
@@ -18,10 +12,9 @@ twopence = angular.module('twopence', [
      'xeditable',
      'ngMessages',
      'angularMoment',
-     'ngRaven'
+     'ngRaven',
+     'constants'
 ]);
-
-twopence.constant('__env', env);
 
 twopence.config(
         ['$stateProvider',
@@ -42,8 +35,8 @@ twopence.config(
 
     // Pretty URLs
     //
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
 
 
@@ -563,7 +556,7 @@ twopence.config(
             }
         });
 
-}]).constant("BASE_URL", 'https://api.' + __env.domain);
+}]);
 
 twopence.run(
     ['$rootScope',

@@ -10,13 +10,13 @@ twopence.factory('Sponsee', [
     '$http',
     '$q',
     'Auth',
-    'BASE_URL',
+    'ENV',
     function(
       Sponsor,
       $http,
       $q,
       Auth,
-      BASE_URL) {
+      ENV) {
 
 
   var Sponsee = {};
@@ -28,7 +28,7 @@ twopence.factory('Sponsee', [
 
     return $q(function(resolve, reject) {
 
-      $http.post(BASE_URL + '/v1/users/action/find', pSponseeInfo, {
+      $http.post(ENV.BASE_URL + '/v1/users/action/find', pSponseeInfo, {
 
         headers: {
 
@@ -58,7 +58,7 @@ twopence.factory('Sponsee', [
 
     return $q(function(resolve, reject) {
 
-      $http.get(BASE_URL + '/v1/sponsorships/' + pId, {
+      $http.get(ENV.BASE_URL + '/v1/sponsorships/' + pId, {
 
         headers: {
 
