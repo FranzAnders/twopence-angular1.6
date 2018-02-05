@@ -8,12 +8,12 @@
 twopence.factory('User', [
     '$q',
     '$http',
-    'BASE_URL',
+    'ENV',
     'Auth',
   function(
     $q,
     $http,
-    BASE_URL,
+    ENV,
     Auth) {
 
 
@@ -26,7 +26,7 @@ twopence.factory('User', [
     User.create = function(pLoginInfo) {
 
       return $q(function(resolve, reject) {
-        $http.post(BASE_URL +  '/v1/users', pLoginInfo)
+        $http.post(ENV.BASE_URL +  '/v1/users', pLoginInfo)
           .then(function(res) {
             Auth.setToken(res.data.token, res.data.username);
             Auth.setMixpanelDistinctId(res.data.sponsor_id);
@@ -44,7 +44,7 @@ twopence.factory('User', [
     User.verify = function() {
 
       return $q(function(resolve, reject) {
-        $http.post(BASE_URL + '/v1/verification', {"type": "email"}, {
+        $http.post(ENV.BASE_URL + '/v1/verification', {"type": "email"}, {
             headers: {
               "Authorization": "Bearer " + Auth.getToken()
             }
@@ -65,7 +65,7 @@ twopence.factory('User', [
 
       return $q(function(resolve, reject) {
 
-        $http.patch(BASE_URL + '/v1/users', pSettingsToChange, {
+        $http.patch(ENV.BASE_URL + '/v1/users', pSettingsToChange, {
           headers: {
             "Authorization" : "Bearer " + Auth.getToken()
           }
@@ -84,7 +84,7 @@ twopence.factory('User', [
     //
     User.getUserInfo = function() {
       return $q(function(resolve, reject) {
-        $http.get(BASE_URL + '/v1/users', {
+        $http.get(ENV.BASE_URL + '/v1/users', {
           headers: {
             "Authorization" : "Bearer " + Auth.getToken()
           }
@@ -109,7 +109,7 @@ twopence.factory('User', [
 
       return $q(function(resolve, reject) {
 
-        $http.post(BASE_URL + '/v1/users/action/remind', payload, {
+        $http.post(ENV.BASE_URL + '/v1/users/action/remind', payload, {
 
           headers: {
 
@@ -139,7 +139,7 @@ twopence.factory('User', [
 
       return $q(function(resolve, reject) {
 
-          $http.post(BASE_URL + '/v1/reset', pEmail, {
+          $http.post(ENV.BASE_URL + '/v1/reset', pEmail, {
 
             headers: {
 
@@ -168,7 +168,7 @@ twopence.factory('User', [
 
       return $q(function(resolve, reject) {
 
-          $http.patch(BASE_URL + '/v1/reset', pPassResetInfo, {
+          $http.patch(ENV.BASE_URL + '/v1/reset', pPassResetInfo, {
 
             headers: {
 
@@ -196,7 +196,7 @@ twopence.factory('User', [
     User.verifyEmail = function(emailToken) {
 
       return $q(function(resolve, reject) {
-        $http.post(BASE_URL +  '/v1/verification/token', emailToken, {
+        $http.post(ENV.BASE_URL +  '/v1/verification/token', emailToken, {
           headers: {
             "Authorization": "Bearer " + Auth.getToken()
           }

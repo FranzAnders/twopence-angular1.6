@@ -4,7 +4,6 @@
     #App Init Code
 \*------------------------------------*/
 
-
 twopence = angular.module('twopence', [
      'ui.router',
      'ngAnimate',
@@ -13,9 +12,9 @@ twopence = angular.module('twopence', [
      'xeditable',
      'ngMessages',
      'angularMoment',
-     'ngRaven'
+     'ngRaven',
+     'constants'
 ]);
-
 
 twopence.config(
         ['$stateProvider',
@@ -343,26 +342,26 @@ twopence.config(
               controllerAs: "sponseeCreation"
 
             }
-          }, 
+          },
           resolve: {
 
             checkForMissingPlans: ['Sponsorship', function(Sponsorship) {
 
-              var vm = this; 
+              var vm = this;
 
 
               //
-              // Checks if the sponsor has sponsorships with missing plans 
+              // Checks if the sponsor has sponsorships with missing plans
               //
               vm.checkForMissingPlans = function(pUserSponsorships) {
 
                 if(Sponsorship.getSponsorshipsMissingPlans(pUserSponsorships).length > 0) {
-                  
+
                   return true
 
                 } else {
 
-                  return false 
+                  return false
                 }
 
               };
@@ -378,10 +377,10 @@ twopence.config(
                     vm.sponsorshipsMissingPlans = Sponsorship.getSponsorshipsMissingPlans(sponsorships.data);
 
                     return {'plans': vm.sponsorshipsMissingPlans }
-                    
+
                   } else {
-                    
-                    return false;  
+
+                    return false;
 
                   }
 
@@ -389,7 +388,7 @@ twopence.config(
 
                   console.log(err);
 
-                }); 
+                });
 
             }]
 
@@ -557,7 +556,7 @@ twopence.config(
             }
         });
 
-}]).constant("BASE_URL", "https://api.onepence.co");
+}]);
 
 twopence.run(
     ['$rootScope',

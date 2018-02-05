@@ -14,6 +14,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
   'Sponsorship',
   'PlaidAuth',
   'User', 
+  'ENV',
     function(
     $fancyModal,
     $scope,
@@ -23,7 +24,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
     Sponsee,
     Sponsorship,
     PlaidAuth, 
-    User) {
+    User,
+    ENV) {
 
     var vm = this;
 
@@ -70,10 +72,10 @@ twopence.controller('sponseeSponsorshipCtrl', [
     var sandboxHandler = Plaid.create({
       apiVersion: 'v2',
       clientName: 'TwoPence',
-      env: 'sandbox',
+      env: ENV.plaidEnv,
       product: ['auth'],
-      key: 'ee1d216ec4313d5efb386b0a97a06d',
-      webhook: 'https://api.onepence.co/v1/plaid/webhooks',
+      key: ENV.plaidPublicKey,
+      webhook: ENV.BASE_URL + '/v1/plaid/webhooks',
       selectAccount: true,
       forceIframe: true, // required
       onSuccess: function(public_token, metadata) {
@@ -220,7 +222,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           sponsee.user = vm.sponsee;
 
-          Sponsorship.create(sponsee).then(function(res) {
+         Sponsorship.create(sponsee).then(function(res) {
 
             var sponseeInfo = res;
 
@@ -237,6 +239,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
             }).catch(function(err) {
 
+              console.log(err); 
+
                $fancyModal.open({
                   templateUrl: 'js/modals/sponsorship-creation-error.html',
                   themeClass: 'fancymodal--primary  fancymodal--small',
@@ -249,6 +253,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
             });
 
           }).catch(function(err) {
+              console.log(err); 
 
              $fancyModal.open({
                 templateUrl: 'js/modals/sponsorship-creation-error.html',

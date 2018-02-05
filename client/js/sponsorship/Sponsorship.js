@@ -11,14 +11,14 @@ twopence.factory('Sponsorship', [
     '$q',
     '$http',
     'Auth',
-    'BASE_URL',
+    'ENV',
     'moment',
     function(
       $filter,
       $q,
       $http,
       Auth,
-      BASE_URL,
+      ENV,
       moment) {
 
 
@@ -59,7 +59,7 @@ twopence.factory('Sponsorship', [
 
     return $q(function(resolve, reject) {
 
-      $http.post(BASE_URL + '/v1/sponsorships', pSponsorshipInfo, {
+      $http.post(ENV.BASE_URL + '/v1/sponsorships', pSponsorshipInfo, {
 
         headers: {
 
@@ -89,7 +89,7 @@ twopence.factory('Sponsorship', [
 
     return $q(function(resolve, reject) {
 
-        $http.get(BASE_URL + '/v1/sponsorships/' + pPlanId, {
+        $http.get(ENV.BASE_URL + '/v1/sponsorships/' + pPlanId, {
 
           headers: {
 
@@ -120,7 +120,7 @@ twopence.factory('Sponsorship', [
 
     return $q(function(resolve, reject) {
 
-        $http.post(BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans', pSponseeInfo, {
+        $http.post(ENV.BASE_URL + '/v1/sponsorships/' + pSponseeId + '/plans', pSponseeInfo, {
 
           headers: {
 
@@ -152,7 +152,7 @@ twopence.factory('Sponsorship', [
 
     return $q(function(resolve, reject) {
 
-        $http.get(BASE_URL + '/v1/sponsorships/', {
+        $http.get(ENV.BASE_URL + '/v1/sponsorships/', {
 
           headers: {
 
@@ -183,7 +183,7 @@ twopence.factory('Sponsorship', [
 
     return $q(function(resolve, reject) {
 
-      $http.patch(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
+      $http.patch(ENV.BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/plans/' + pPlanId, load, {
 
         headers: {
 
@@ -213,7 +213,7 @@ twopence.factory('Sponsorship', [
 
     return $q(function(resolve, reject) {
 
-        $http.get(BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/contributions', {
+        $http.get(ENV.BASE_URL + '/v1/sponsorships/' + pSponsorshipId + '/contributions', {
 
           headers: {
 
