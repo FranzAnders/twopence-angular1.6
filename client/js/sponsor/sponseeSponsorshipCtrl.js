@@ -24,7 +24,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
     Sponsee,
     Sponsorship,
     PlaidAuth, 
-    User) {
+    User,
+    ENV) {
 
     var vm = this;
 
