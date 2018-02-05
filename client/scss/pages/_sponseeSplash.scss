@@ -220,7 +220,7 @@
 
 
 /*------------------------------------*\
-    #Hang Holding Bills
+    #Hand Holding Bills
 \*------------------------------------*/
 
 
@@ -325,3 +325,76 @@
 }
 
 
+
+
+/*------------------------------------*\
+    #Hands Fist Bumping
+\*------------------------------------*/
+
+
+.hands-fist-bumping {
+    
+  .left-fist {
+    
+    @include animation(left-fist-bumping .6s ease-in-out infinite alternate); 
+
+  }
+
+  .right-fist {
+    
+    @include animation(right-fist-bumping .6s ease-in-out infinite alternate); 
+
+  }
+
+  .strokes {
+    stroke-dasharray: 30;
+    @include animation(show-accents 1.2s ease-in-out infinite forwards .6s);
+
+  }
+
+}
+
+
+
+@include keyframes(left-fist-bumping) {
+  
+  0% {
+
+    @include transform(translateX(-2px)); 
+
+  }
+
+  60% {
+    
+    @include transform(translateX(12px)); 
+
+  }
+
+  100% {
+    @include transform(translateX(12px)); 
+    
+  }
+
+}
+
+
+@include keyframes(right-fist-bumping) {
+  
+  0% {
+
+    @include transform(translateX(2px)); 
+
+  }
+
+  60% {
+    
+    @include transform(translateX(-12px)); 
+
+  }
+
+  100% {
+    @include transform(translateX(-12px)); 
+
+  }
+
+}
