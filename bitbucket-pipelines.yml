@@ -11,5 +11,16 @@ pipelines:
                   - gem install compass
                   - npm install
                   - bower install --allow-root
-                  - grunt publish
-                  - s3_website push --site=dist
+                  - grunt publish-prod
+                  - export BUCKET_NAME=pickpocket.me && s3_website push --site=dist
+      develop:
+          - step:
+              script:
+                  - cd client
+                  - apk update
+                  - apk add git
+                  - gem install compass
+                  - npm install
+                  - bower install --allow-root
+                  - grunt publish-sandbox
+                  - export BUCKET_NAME=onepence.co && s3_website push --site=dist

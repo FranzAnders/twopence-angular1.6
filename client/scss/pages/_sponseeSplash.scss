@@ -1,0 +1,80 @@
+
+
+
+
+.hand-pulling-dollar {
+
+  .hand-right {
+    @include animation(hand-goes-right .6s ease-in-out infinite alternate);
+
+  }
+
+  .hand-left {
+
+    @include animation(hand-goes-left .6s ease-in-out infinite alternate);
+
+
+  }
+
+
+  .dollar {
+    @include animation(dollar-stretches .6s ease-in-out infinite alternate);
+  
+
+  }
+
+  .strokes {
+
+
+  }
+
+}
+
+
+@include keyframes(hand-goes-right) {
+  
+  0% {
+
+    @include transform(translateX(0)); 
+
+  }
+
+  100% {
+    
+    @include transform(translateX(20px)); 
+
+  }
+}
+
+
+@include keyframes(hand-goes-left) {
+  
+  0% {
+
+    @include transform(translateX(0)); 
+
+  }
+
+  100% {
+    
+    @include transform(translateX(-20px)); 
+
+  }
+}
+
+
+
+@include keyframes(dollar-stretches) {
+  
+  0% {
+
+    @include transform(scaleX(0)); 
+
+  }
+
+  100% {
+    
+    @include transform(scaleX(1.2)); 
+
+  }
+}

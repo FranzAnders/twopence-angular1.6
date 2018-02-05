@@ -193,9 +193,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-json-minify');
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-ng-constant');
-
     grunt.registerTask('default', ['bower-install', 'svgstore', 'compass:dist', 'connect:app', 'watch']);
     
+
     //
     // Register Combinations into single tasks and rename a few
     //
