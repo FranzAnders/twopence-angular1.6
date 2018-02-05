@@ -23,10 +23,7 @@
   @media #{$large-up} {
     padding-left: rem-calc($level1);
     padding-right: rem-calc($level1);
-    //background-image: url('../assets/images/sponsorBg.svg');
-    // background-repeat: no-repeat;
-    // background-size: 30% 30%;
-    // background-position: -5% 95%;
+
   }
 
 }
@@ -41,40 +38,70 @@
 
 
 .sponsorSection-illustrContainer {
-  top: 0; 
-  bottom:0; 
-  height: 100vh; 
-  width: 10px; 
+  top: 0;
+  bottom: -17%;
   position: absolute;
+  overflow: hidden;
+  width: 13rem;
+  left: -5%; 
+  max-height: 95vh; 
+
+  @media #{$large-up} {
+   left: -5%;
+    width: rem-calc(290px);
+    max-height: 100vh; 
+
+  }
+
+}
+
+.sponsorSection--illustrContainer--right {
+  right: 0; 
+  left: auto; 
+
+  @media #{$large-up} {
+
+    right: -5%; 
+
+  }
+
 }
 
 .sponsorSection-illustr {
   position: absolute; 
   left: 0; 
   bottom: 0; 
-  width: rem-calc(400px); 
-  height: rem-calc(300px);
-  left: -130px;
-  bottom: 20%;
-  width: 23rem;
+  width: 100%;
   height: 15rem;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: left bottom;
 
   @media #{$large-up} {
-  left: -180px;
-  width: 25rem;
-  height: 18.75rem;
+    height: 18.75rem;
+
   }
 
 } 
 
+.sponsorSection-illustr--right {
+  right: 0; 
+  left: auto; 
+
+  @media #{$medium-up} {
+  
+  left: auto; 
+  right: 0; 
+
+  }
+}
+
 .sponsorSection-illustr--dashboard {
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg.svg');
-    background-size: 80% 80%;
+    background-size: 90% 100%;
     bottom: 18%;
+    left: 0; 
 
   }
 
@@ -83,6 +110,9 @@
 .sponsorSection-illustr--settings {
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg--settings.svg');
+    bottom: 15%; 
+    width: 110%; 
+    left: -5%; 
 
   }
 
@@ -90,8 +120,7 @@
 
 .sponsorSection-illustr--contributions {
   @media #{$medium-up} {
-    bottom: 16%; 
-    left: -160px; 
+    bottom: 18%; 
     background-image: url('../assets/images/sponsorBg--contributions.svg');
 
   }
@@ -101,8 +130,45 @@
 .sponsorSection-illustr--managePlan {
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg--managePlan.svg');
-    bottom: 24%; 
-    left: -160px; 
+    bottom:  0; 
+    left: -24%; 
+    width: 120%; 
+
+  }
+
+}
+
+
+.sponsorSection-illustr--sponsorshipCreationLeft {
+  
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--sponsorshipCreation1.svg');
+    bottom: -4%; 
+
+  }
+
+  @media #{$large-up} {
+    bottom: -4%; 
+    left: -5%;
+
+  }
+
+}
+
+
+.sponsorSection-illustr--sponsorshipCreationRight {
+  
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--sponsorshipCreation2.svg');
+    bottom: -4%; 
+    left: auto; 
+    right: 0; 
+
+  }
+
+  @media #{$large-up} {
+    bottom: -4%; 
+    right: -5%; 
 
   }
 
