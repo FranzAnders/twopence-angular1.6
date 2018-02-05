@@ -1,0 +1,8 @@
+{
+  "BASE_URL": "https://pickpocket.me",
+  "domain": "pickpocket.me",
+  "mixpanelToken": "8e3ed97d55d5b6ae0e17f190c9f8e100",
+  "plaidEnv": "prod",
+  "plaidPublicKey": "ee1d216ec4313d5efb386b0a97a06d",
+  "enableDebug": false
+}

@@ -59,7 +59,6 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
-
     svgstore: {
       options: {
         prefix : 'icon-',
@@ -77,6 +76,37 @@ module.exports = function(grunt) {
         }
       },
 
+    ngconstant: {
+      options: {
+        name: 'constants',
+        space: ' ',
+        wrap: true
+      },
+      development:{
+        options: {
+          dest: '<%= app %>/js/constants/env.js'
+        },
+        constants: {
+          ENV: grunt.file.readJSON('env-config/dev.json')
+        }
+      },
+      sandbox: {
+        options: {
+          dest: '<%= app %>/js/constants/env.js'
+        },
+        constants: {
+          ENV: grunt.file.readJSON('env-config/sandbox.json')
+        }
+      },
+      production: {
+        options: {
+          dest: '<%= app %>/js/constants/env.js'
+        },
+        constants: {
+          ENV: grunt.file.readJSON('env-config/prod.json')
+        }
+      }
+    },
     toggleComments: {
       file: {'<%= dist %>/app.min.js' : '<%= dist %>/app.min.js'}
     },
@@ -106,7 +136,7 @@ module.exports = function(grunt) {
 		watch: {
 			grunt: {
 				files: ['Gruntfile.js'],
-				tasks: ['compass:dist']
+				tasks: ['compass:dist', 'ngconstant:development']
 			},
 			sass: {
 				files: '<%= app %>/scss/**/*.scss',
@@ -163,17 +193,34 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-json-minify');
     grunt.loadNpmTasks('grunt-svgstore');
-
-    grunt.registerTask('bower-install', ['wiredep']);
-
+    grunt.loadNpmTasks('grunt-ng-constant');
     grunt.registerTask('default', ['bower-install', 'svgstore', 'compass:dist', 'connect:app', 'watch']);
+
+    //
+    // Register Combinations into single tasks and rename a few
+    //
+    grunt.registerTask('bower-install', ['wiredep']);
+    grunt.registerTask('default', ['bower-install', 'compass:dist', 'ngconstant:development', 'connect:app', 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
-    grunt.registerTask('server-dist', ['connect:dist']);
 
 
     //
-    // Publish tasks
+    // For Development
     //
-    grunt.registerTask('publish', ['bower-install', 'compass', 'clean:dist', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'ngconstant:development', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+
+
+    //
+    // For Sandbox
+    //
+    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'ngconstant:sandbox', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+
+
+
+    //
+    // For Production
+    //
+    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'ngconstant:production', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
 
 };
+

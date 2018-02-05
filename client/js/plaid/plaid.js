@@ -6,9 +6,9 @@
 \*------------------------------------*/
 
 twopence.factory('PlaidAuth', [
-  '$q', 'BASE_URL', 'Auth', '$http', '$cookies', '$rootScope',
+  '$q', 'ENV', 'Auth', '$http', '$cookies', '$rootScope',
   function(
-    $q, BASE_URL, Auth, $http, $cookies, $rootScope) {
+    $q, ENV, Auth, $http, $cookies, $rootScope) {
 
     var plaidAuth = {};
     var loggedIn = false;
@@ -20,7 +20,7 @@ twopence.factory('PlaidAuth', [
     plaidAuth.login = function(plaidInfo) {
       console.log("Here is the call")
       return $q(function(resolve, reject) {
-        $http.post(BASE_URL +  '/v1/plaid/token', plaidInfo, {
+        $http.post(ENV.BASE_URL +  '/v1/plaid/token', plaidInfo, {
           headers: {
               'Authorization': 'bearer ' + Auth.getToken()
                 }})
