@@ -40,7 +40,6 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
                 easing: easing,
                 duration: 400
 
-
             })
             .add({
 
@@ -49,7 +48,6 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
                 easing: easing,
                 duration: 400,
                 offset: '-=100'
-
             })
 
           }, 100);

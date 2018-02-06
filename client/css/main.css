@@ -1,3 +1,6 @@
+/*------------------------------------*\
+    #Globals - Padding + Margin Levels  
+\*------------------------------------*/
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1
@@ -5973,16 +5976,17 @@ h3,
 .h3 {
   font-size: 1.25rem;
   line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
-/* line 291, ../scss/abstracts/_typography.scss */
+/* line 292, ../scss/abstracts/_typography.scss */
 h2,
 .h2, .button--kilo {
   font-size: 1.25rem;
   line-height: 1.2;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 291, ../scss/abstracts/_typography.scss */
+  /* line 292, ../scss/abstracts/_typography.scss */
   h2,
   .h2, .button--kilo {
     font-size: 1.5rem;
@@ -5990,60 +5994,60 @@ h2,
   }
 }
 
-/* line 302, ../scss/abstracts/_typography.scss */
+/* line 303, ../scss/abstracts/_typography.scss */
 h1,
 .h1, .button--mega, .button--giga {
   font-size: 2rem;
   line-height: 1.33333;
 }
 
-/* line 309, ../scss/abstracts/_typography.scss */
+/* line 310, ../scss/abstracts/_typography.scss */
 .text-kilo {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 309, ../scss/abstracts/_typography.scss */
+  /* line 310, ../scss/abstracts/_typography.scss */
   .text-kilo {
     font-size: 2.75rem;
     line-height: 1.2;
   }
 }
 
-/* line 320, ../scss/abstracts/_typography.scss */
+/* line 321, ../scss/abstracts/_typography.scss */
 .text-mega {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 320, ../scss/abstracts/_typography.scss */
+  /* line 321, ../scss/abstracts/_typography.scss */
   .text-mega {
     font-size: 2.75rem;
     line-height: 1.2;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 320, ../scss/abstracts/_typography.scss */
+  /* line 321, ../scss/abstracts/_typography.scss */
   .text-mega {
     font-size: 3rem;
     line-height: 1.33333;
   }
 }
 
-/* line 336, ../scss/abstracts/_typography.scss */
+/* line 337, ../scss/abstracts/_typography.scss */
 .text-giga {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 336, ../scss/abstracts/_typography.scss */
+  /* line 337, ../scss/abstracts/_typography.scss */
   .text-giga {
     font-size: 3rem;
     line-height: 1.33333;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 336, ../scss/abstracts/_typography.scss */
+  /* line 337, ../scss/abstracts/_typography.scss */
   .text-giga {
     font-size: 6rem;
     line-height: 1.2;
@@ -6053,27 +6057,27 @@ h1,
 /*------------------------------------*\
     #Line Heights  
 \*------------------------------------*/
-/* line 358, ../scss/abstracts/_typography.scss */
+/* line 359, ../scss/abstracts/_typography.scss */
 .lh0 {
   line-height: 1.5;
 }
 
-/* line 362, ../scss/abstracts/_typography.scss */
+/* line 363, ../scss/abstracts/_typography.scss */
 .lh1 {
   line-height: 1.5;
 }
 
-/* line 367, ../scss/abstracts/_typography.scss */
+/* line 368, ../scss/abstracts/_typography.scss */
 .lh2 {
   line-height: 1.33333;
 }
 
-/* line 373, ../scss/abstracts/_typography.scss */
+/* line 374, ../scss/abstracts/_typography.scss */
 .lh3 {
   line-height: 1.2;
 }
 
-/* line 377, ../scss/abstracts/_typography.scss */
+/* line 378, ../scss/abstracts/_typography.scss */
 .lh4 {
   line-height: 1;
 }
@@ -6282,541 +6286,538 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Padding + Margin Levels  
-\*------------------------------------*/
-/*------------------------------------*\
     #Paddings 
 \*------------------------------------*/
-/* line 303, ../scss/abstracts/_utility.scss */
+/* line 287, ../scss/abstracts/_utility.scss */
 .ptrbl0 {
   padding: 0 !important;
 }
 
-/* line 307, ../scss/abstracts/_utility.scss */
+/* line 291, ../scss/abstracts/_utility.scss */
 .ptrbl1 {
   padding: 0.375rem !important;
 }
 
-/* line 311, ../scss/abstracts/_utility.scss */
+/* line 295, ../scss/abstracts/_utility.scss */
 .ptrbl2, textarea {
   padding: 0.75rem !important;
 }
 
-/* line 315, ../scss/abstracts/_utility.scss */
+/* line 299, ../scss/abstracts/_utility.scss */
 .ptrbl3 {
   padding: 1.125rem !important;
 }
 
-/* line 319, ../scss/abstracts/_utility.scss */
+/* line 303, ../scss/abstracts/_utility.scss */
 .ptrbl4 {
   padding: 1.5rem !important;
 }
 
-/* line 323, ../scss/abstracts/_utility.scss */
+/* line 307, ../scss/abstracts/_utility.scss */
 .ptrbl5 {
   padding: 1.875rem !important;
 }
 
-/* line 327, ../scss/abstracts/_utility.scss */
+/* line 311, ../scss/abstracts/_utility.scss */
 .ptrbl6 {
   padding: 2.25rem !important;
 }
 
-/* line 331, ../scss/abstracts/_utility.scss */
+/* line 315, ../scss/abstracts/_utility.scss */
 .ptrbl7 {
   padding: 3rem !important;
 }
 
-/* line 340, ../scss/abstracts/_utility.scss */
+/* line 324, ../scss/abstracts/_utility.scss */
 .pt0 {
   padding-top: 0 !important;
 }
 
-/* line 344, ../scss/abstracts/_utility.scss */
+/* line 328, ../scss/abstracts/_utility.scss */
 .pt1 {
   padding-top: 0.375rem !important;
 }
 
-/* line 348, ../scss/abstracts/_utility.scss */
+/* line 332, ../scss/abstracts/_utility.scss */
 .pt2 {
   padding-top: 0.75rem !important;
 }
 
-/* line 352, ../scss/abstracts/_utility.scss */
+/* line 336, ../scss/abstracts/_utility.scss */
 .pt3 {
   padding-top: 1.125rem !important;
 }
 
-/* line 356, ../scss/abstracts/_utility.scss */
+/* line 340, ../scss/abstracts/_utility.scss */
 .pt4 {
   padding-top: 1.5rem !important;
 }
 
-/* line 360, ../scss/abstracts/_utility.scss */
+/* line 344, ../scss/abstracts/_utility.scss */
 .pt5 {
   padding-top: 1.875rem !important;
 }
 
-/* line 364, ../scss/abstracts/_utility.scss */
+/* line 348, ../scss/abstracts/_utility.scss */
 .pt6 {
   padding-top: 2.25rem !important;
 }
 
-/* line 368, ../scss/abstracts/_utility.scss */
+/* line 352, ../scss/abstracts/_utility.scss */
 .pt7, .fancymodal--large, .fancymodal--medium, .fancymodal--small {
   padding-top: 3rem !important;
 }
 
-/* line 377, ../scss/abstracts/_utility.scss */
+/* line 361, ../scss/abstracts/_utility.scss */
 .pb0 {
   padding-bottom: 0 !important;
 }
 
-/* line 381, ../scss/abstracts/_utility.scss */
+/* line 365, ../scss/abstracts/_utility.scss */
 .pb1 {
   padding-bottom: 0.375rem !important;
 }
 
-/* line 385, ../scss/abstracts/_utility.scss */
+/* line 369, ../scss/abstracts/_utility.scss */
 .pb2 {
   padding-bottom: 0.75rem !important;
 }
 
-/* line 389, ../scss/abstracts/_utility.scss */
+/* line 373, ../scss/abstracts/_utility.scss */
 .pb3 {
   padding-bottom: 1.125rem !important;
 }
 
-/* line 393, ../scss/abstracts/_utility.scss */
+/* line 377, ../scss/abstracts/_utility.scss */
 .pb4 {
   padding-bottom: 1.5rem !important;
 }
 
-/* line 397, ../scss/abstracts/_utility.scss */
+/* line 381, ../scss/abstracts/_utility.scss */
 .pb5 {
   padding-bottom: 1.875rem !important;
 }
 
-/* line 401, ../scss/abstracts/_utility.scss */
+/* line 385, ../scss/abstracts/_utility.scss */
 .pb6 {
   padding-bottom: 2.25rem !important;
 }
 
-/* line 405, ../scss/abstracts/_utility.scss */
+/* line 389, ../scss/abstracts/_utility.scss */
 .pb7 {
   padding-bottom: 3rem !important;
 }
 
-/* line 417, ../scss/abstracts/_utility.scss */
+/* line 401, ../scss/abstracts/_utility.scss */
 .ptb0 {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-/* line 422, ../scss/abstracts/_utility.scss */
+/* line 406, ../scss/abstracts/_utility.scss */
 .ptb1 {
   padding-top: 0.375rem !important;
   padding-bottom: 0.375rem !important;
 }
 
-/* line 427, ../scss/abstracts/_utility.scss */
+/* line 411, ../scss/abstracts/_utility.scss */
 .ptb2 {
   padding-top: 0.75rem !important;
   padding-bottom: 0.75rem !important;
 }
 
-/* line 432, ../scss/abstracts/_utility.scss */
+/* line 416, ../scss/abstracts/_utility.scss */
 .ptb3 {
   padding-top: 1.125rem !important;
   padding-bottom: 1.125rem !important;
 }
 
-/* line 437, ../scss/abstracts/_utility.scss */
+/* line 421, ../scss/abstracts/_utility.scss */
 .ptb4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
 
-/* line 442, ../scss/abstracts/_utility.scss */
+/* line 426, ../scss/abstracts/_utility.scss */
 .ptb5 {
   padding-top: 1.875rem !important;
   padding-bottom: 1.875rem !important;
 }
 
-/* line 465, ../scss/abstracts/_utility.scss */
+/* line 449, ../scss/abstracts/_utility.scss */
 .prl0 {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
 
-/* line 470, ../scss/abstracts/_utility.scss */
+/* line 454, ../scss/abstracts/_utility.scss */
 .prl1 {
   padding-right: 0.375rem !important;
   padding-bottom: 0.375rem !important;
 }
 
-/* line 475, ../scss/abstracts/_utility.scss */
+/* line 459, ../scss/abstracts/_utility.scss */
 .prl2 {
   padding-right: 0.75rem !important;
   padding-left: 0.75rem !important;
 }
 
-/* line 480, ../scss/abstracts/_utility.scss */
+/* line 464, ../scss/abstracts/_utility.scss */
 .prl3 {
   padding-right: 1.125rem !important;
   padding-left: 1.125rem !important;
 }
 
-/* line 485, ../scss/abstracts/_utility.scss */
+/* line 469, ../scss/abstracts/_utility.scss */
 .prl4 {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
 }
 
-/* line 490, ../scss/abstracts/_utility.scss */
+/* line 474, ../scss/abstracts/_utility.scss */
 .prl5 {
   padding-right: 1.875rem !important;
   padding-left: 1.875rem !important;
 }
 
-/* line 495, ../scss/abstracts/_utility.scss */
+/* line 479, ../scss/abstracts/_utility.scss */
 .prl6 {
   padding-right: 2.25rem !important;
   padding-left: 2.25rem !important;
 }
 
-/* line 510, ../scss/abstracts/_utility.scss */
+/* line 494, ../scss/abstracts/_utility.scss */
 .pr0 {
   padding-right: 0 !important;
 }
 
-/* line 514, ../scss/abstracts/_utility.scss */
+/* line 498, ../scss/abstracts/_utility.scss */
 .pr1 {
   padding-right: 0.375rem !important;
 }
 
-/* line 518, ../scss/abstracts/_utility.scss */
+/* line 502, ../scss/abstracts/_utility.scss */
 .pr2 {
   padding-right: 0.75rem !important;
 }
 
-/* line 522, ../scss/abstracts/_utility.scss */
+/* line 506, ../scss/abstracts/_utility.scss */
 .pr3 {
   padding-right: 1.125rem !important;
 }
 
-/* line 526, ../scss/abstracts/_utility.scss */
+/* line 510, ../scss/abstracts/_utility.scss */
 .pr4 {
   padding-right: 1.5rem !important;
 }
 
-/* line 530, ../scss/abstracts/_utility.scss */
+/* line 514, ../scss/abstracts/_utility.scss */
 .pr5 {
   padding-right: 1.875rem !important;
 }
 
-/* line 534, ../scss/abstracts/_utility.scss */
+/* line 518, ../scss/abstracts/_utility.scss */
 .pr6 {
   padding-right: 2.25rem !important;
 }
 
-/* line 538, ../scss/abstracts/_utility.scss */
+/* line 522, ../scss/abstracts/_utility.scss */
 .pr7 {
   padding-right: 3rem !important;
 }
 
-/* line 547, ../scss/abstracts/_utility.scss */
+/* line 531, ../scss/abstracts/_utility.scss */
 .pl0 {
   padding-left: 0 !important;
 }
 
-/* line 551, ../scss/abstracts/_utility.scss */
+/* line 535, ../scss/abstracts/_utility.scss */
 .pl1 {
   padding-left: 0.375rem !important;
 }
 
-/* line 555, ../scss/abstracts/_utility.scss */
+/* line 539, ../scss/abstracts/_utility.scss */
 .pl2 {
   padding-left: 0.75rem !important;
 }
 
-/* line 559, ../scss/abstracts/_utility.scss */
+/* line 543, ../scss/abstracts/_utility.scss */
 .pl3 {
   padding-left: 1.125rem !important;
 }
 
-/* line 563, ../scss/abstracts/_utility.scss */
+/* line 547, ../scss/abstracts/_utility.scss */
 .pl4 {
   padding-left: 1.5rem !important;
 }
 
-/* line 567, ../scss/abstracts/_utility.scss */
+/* line 551, ../scss/abstracts/_utility.scss */
 .pl5 {
   padding-left: 1.875rem !important;
 }
 
-/* line 591, ../scss/abstracts/_utility.scss */
+/* line 575, ../scss/abstracts/_utility.scss */
 .mtrbl0 {
   margin: 0 !important;
 }
 
-/* line 595, ../scss/abstracts/_utility.scss */
+/* line 579, ../scss/abstracts/_utility.scss */
 .mtrbl1 {
   margin: 0.375rem !important;
 }
 
-/* line 599, ../scss/abstracts/_utility.scss */
+/* line 583, ../scss/abstracts/_utility.scss */
 .mtrbl2 {
   margin: 0.75rem !important;
 }
 
-/* line 603, ../scss/abstracts/_utility.scss */
+/* line 587, ../scss/abstracts/_utility.scss */
 .mtrbl3 {
   margin: 1.125rem !important;
 }
 
-/* line 607, ../scss/abstracts/_utility.scss */
+/* line 591, ../scss/abstracts/_utility.scss */
 .mtrbl4 {
   margin: 1.5rem !important;
 }
 
-/* line 611, ../scss/abstracts/_utility.scss */
+/* line 595, ../scss/abstracts/_utility.scss */
 .mtrbl5 {
   margin: 1.875rem !important;
 }
 
-/* line 628, ../scss/abstracts/_utility.scss */
+/* line 612, ../scss/abstracts/_utility.scss */
 .mt0 {
   margin-top: 0 !important;
 }
 
-/* line 632, ../scss/abstracts/_utility.scss */
+/* line 616, ../scss/abstracts/_utility.scss */
 .mt1 {
   margin-top: 0.375rem !important;
 }
 
-/* line 636, ../scss/abstracts/_utility.scss */
+/* line 620, ../scss/abstracts/_utility.scss */
 .mt2 {
   margin-top: 0.75rem !important;
 }
 
-/* line 640, ../scss/abstracts/_utility.scss */
+/* line 624, ../scss/abstracts/_utility.scss */
 .mt3 {
   margin-top: 1.125rem !important;
 }
 
-/* line 644, ../scss/abstracts/_utility.scss */
+/* line 628, ../scss/abstracts/_utility.scss */
 .mt4 {
   margin-top: 1.5rem !important;
 }
 
-/* line 648, ../scss/abstracts/_utility.scss */
+/* line 632, ../scss/abstracts/_utility.scss */
 .mt5 {
   margin-top: 1.875rem !important;
 }
 
-/* line 652, ../scss/abstracts/_utility.scss */
+/* line 636, ../scss/abstracts/_utility.scss */
 .mt6 {
   margin-top: 2.25rem !important;
 }
 
-/* line 656, ../scss/abstracts/_utility.scss */
+/* line 640, ../scss/abstracts/_utility.scss */
 .mt7 {
   margin-top: 3rem !important;
 }
 
-/* line 665, ../scss/abstracts/_utility.scss */
+/* line 649, ../scss/abstracts/_utility.scss */
 .mb0 {
   margin-bottom: 0 !important;
 }
 
-/* line 669, ../scss/abstracts/_utility.scss */
+/* line 653, ../scss/abstracts/_utility.scss */
 .mb1 {
   margin-bottom: 0.375rem !important;
 }
 
-/* line 673, ../scss/abstracts/_utility.scss */
+/* line 657, ../scss/abstracts/_utility.scss */
 .mb2 {
   margin-bottom: 0.75rem !important;
 }
 
-/* line 677, ../scss/abstracts/_utility.scss */
+/* line 661, ../scss/abstracts/_utility.scss */
 .mb3 {
   margin-bottom: 1.125rem !important;
 }
 
-/* line 681, ../scss/abstracts/_utility.scss */
+/* line 665, ../scss/abstracts/_utility.scss */
 .mb4 {
   margin-bottom: 1.5rem !important;
 }
 
-/* line 685, ../scss/abstracts/_utility.scss */
+/* line 669, ../scss/abstracts/_utility.scss */
 .mb5 {
   margin-bottom: 1.875rem !important;
 }
 
-/* line 689, ../scss/abstracts/_utility.scss */
+/* line 673, ../scss/abstracts/_utility.scss */
 .mb6 {
   margin-bottom: 2.25rem !important;
 }
 
-/* line 693, ../scss/abstracts/_utility.scss */
+/* line 677, ../scss/abstracts/_utility.scss */
 .mb7 {
   margin-bottom: 3rem !important;
 }
 
-/* line 703, ../scss/abstracts/_utility.scss */
+/* line 687, ../scss/abstracts/_utility.scss */
 .mtb0 {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* line 708, ../scss/abstracts/_utility.scss */
+/* line 692, ../scss/abstracts/_utility.scss */
 .mtb1 {
   margin-top: 0.375rem !important;
   margin-bottom: 0.375rem !important;
 }
 
-/* line 713, ../scss/abstracts/_utility.scss */
+/* line 697, ../scss/abstracts/_utility.scss */
 .mtb2 {
   margin-top: 0.75rem !important;
   margin-bottom: 0.75rem !important;
 }
 
-/* line 718, ../scss/abstracts/_utility.scss */
+/* line 702, ../scss/abstracts/_utility.scss */
 .mtb3 {
   margin-top: 1.125rem !important;
   margin-bottom: 1.125rem !important;
 }
 
-/* line 723, ../scss/abstracts/_utility.scss */
+/* line 707, ../scss/abstracts/_utility.scss */
 .mtb4 {
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
 }
 
-/* line 728, ../scss/abstracts/_utility.scss */
+/* line 712, ../scss/abstracts/_utility.scss */
 .mtb5 {
   margin-top: 1.875rem !important;
   margin-bottom: 1.875rem !important;
 }
 
-/* line 733, ../scss/abstracts/_utility.scss */
+/* line 717, ../scss/abstracts/_utility.scss */
 .mtb6 {
   margin-top: 2.25rem !important;
   margin-bottom: 2.25rem !important;
 }
 
-/* line 738, ../scss/abstracts/_utility.scss */
+/* line 722, ../scss/abstracts/_utility.scss */
 .mtb7 {
   margin-top: 3rem !important;
   margin-bottom: 3rem !important;
 }
 
-/* line 749, ../scss/abstracts/_utility.scss */
+/* line 733, ../scss/abstracts/_utility.scss */
 .mrl0 {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
 
-/* line 754, ../scss/abstracts/_utility.scss */
+/* line 738, ../scss/abstracts/_utility.scss */
 .mrl1 {
   margin-right: 0.375rem !important;
   margin-left: 0.375rem !important;
 }
 
-/* line 759, ../scss/abstracts/_utility.scss */
+/* line 743, ../scss/abstracts/_utility.scss */
 .mrl2 {
   margin-right: 0.75rem !important;
   margin-left: 0.75rem !important;
 }
 
-/* line 764, ../scss/abstracts/_utility.scss */
+/* line 748, ../scss/abstracts/_utility.scss */
 .mrl3 {
   margin-right: 1.125rem !important;
   margin-left: 1.125rem !important;
 }
 
-/* line 769, ../scss/abstracts/_utility.scss */
+/* line 753, ../scss/abstracts/_utility.scss */
 .mrl4 {
   margin-right: 1.5rem !important;
   margin-left: 1.5rem !important;
 }
 
-/* line 774, ../scss/abstracts/_utility.scss */
+/* line 758, ../scss/abstracts/_utility.scss */
 .mrl5 {
   margin-right: 1.875rem !important;
   margin-left: 1.875rem !important;
 }
 
-/* line 779, ../scss/abstracts/_utility.scss */
+/* line 763, ../scss/abstracts/_utility.scss */
 .mrl6 {
   margin-right: 2.25rem !important;
   margin-left: 2.25rem !important;
 }
 
-/* line 784, ../scss/abstracts/_utility.scss */
+/* line 768, ../scss/abstracts/_utility.scss */
 .mrl7 {
   margin-right: 3rem !important;
   margin-left: 3rem !important;
 }
 
-/* line 795, ../scss/abstracts/_utility.scss */
+/* line 779, ../scss/abstracts/_utility.scss */
 .mr0 {
   margin-right: 0 !important;
 }
 
-/* line 799, ../scss/abstracts/_utility.scss */
+/* line 783, ../scss/abstracts/_utility.scss */
 .mr1 {
   margin-right: 0.375rem !important;
 }
 
-/* line 803, ../scss/abstracts/_utility.scss */
+/* line 787, ../scss/abstracts/_utility.scss */
 .mr2 {
   margin-right: 0.75rem !important;
 }
 
-/* line 807, ../scss/abstracts/_utility.scss */
+/* line 791, ../scss/abstracts/_utility.scss */
 .mr3 {
   margin-right: 1.125rem !important;
 }
 
-/* line 811, ../scss/abstracts/_utility.scss */
+/* line 795, ../scss/abstracts/_utility.scss */
 .mr4 {
   margin-right: 1.5rem !important;
 }
 
-/* line 815, ../scss/abstracts/_utility.scss */
+/* line 799, ../scss/abstracts/_utility.scss */
 .mr5 {
   margin-right: 1.875rem !important;
 }
 
-/* line 832, ../scss/abstracts/_utility.scss */
+/* line 816, ../scss/abstracts/_utility.scss */
 .ml0 {
   margin-left: 0 !important;
 }
 
-/* line 836, ../scss/abstracts/_utility.scss */
+/* line 820, ../scss/abstracts/_utility.scss */
 .ml1 {
   margin-left: 0.375rem !important;
 }
 
-/* line 840, ../scss/abstracts/_utility.scss */
+/* line 824, ../scss/abstracts/_utility.scss */
 .ml2 {
   margin-left: 0.75rem !important;
 }
 
-/* line 844, ../scss/abstracts/_utility.scss */
+/* line 828, ../scss/abstracts/_utility.scss */
 .ml3 {
   margin-left: 1.125rem !important;
 }
 
-/* line 848, ../scss/abstracts/_utility.scss */
+/* line 832, ../scss/abstracts/_utility.scss */
 .ml4 {
   margin-left: 1.5rem !important;
 }
 
-/* line 852, ../scss/abstracts/_utility.scss */
+/* line 836, ../scss/abstracts/_utility.scss */
 .ml5 {
   margin-left: 1.875rem !important;
 }
@@ -13621,7 +13622,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 388, ../scss/base/_typography.scss */
 hr {
   border-style: none;
-  height: 0.0625rem;
+  height: 0.125rem;
   margin-top: 0;
 }
 
@@ -13675,7 +13676,7 @@ hr {
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
-  height: 0.0625rem;
+  height: 0.125rem;
 }
 
 /* line 453, ../scss/base/_typography.scss */
@@ -16630,6 +16631,11 @@ input[type="radio"].radio--large + label {
 /* line 117, ../scss/layout/_sections.scss */
 .section--highlighted {
   background-color: #e8f1f1;
+}
+
+/* line 122, ../scss/layout/_sections.scss */
+.section--altHighlighted {
+  background-color: #f0f1f1;
 }
 
 /*------------------------------------*\
