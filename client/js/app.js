@@ -21,7 +21,7 @@ twopence.config(
          '$urlRouterProvider',
          '$locationProvider',
          '$compileProvider',
-         'ENV'
+         'ENV',
          function(
             $stateProvider,
             $urlRouterProvider,
