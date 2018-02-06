@@ -5981,73 +5981,75 @@ h3,
 
 /* line 292, ../scss/abstracts/_typography.scss */
 h2,
-.h2, .button--kilo {
+.h2 {
   font-size: 1.25rem;
   line-height: 1.2;
+  margin-bottom: 1.125rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 292, ../scss/abstracts/_typography.scss */
   h2,
-  .h2, .button--kilo {
+  .h2 {
     font-size: 1.5rem;
     line-height: 1;
+    margin-bottom: 1.125rem;
   }
 }
 
-/* line 303, ../scss/abstracts/_typography.scss */
+/* line 305, ../scss/abstracts/_typography.scss */
 h1,
 .h1, .button--mega, .button--giga {
   font-size: 2rem;
   line-height: 1.33333;
 }
 
-/* line 310, ../scss/abstracts/_typography.scss */
+/* line 312, ../scss/abstracts/_typography.scss */
 .text-kilo {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 310, ../scss/abstracts/_typography.scss */
+  /* line 312, ../scss/abstracts/_typography.scss */
   .text-kilo {
     font-size: 2.75rem;
     line-height: 1.2;
   }
 }
 
-/* line 321, ../scss/abstracts/_typography.scss */
+/* line 323, ../scss/abstracts/_typography.scss */
 .text-mega {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 321, ../scss/abstracts/_typography.scss */
+  /* line 323, ../scss/abstracts/_typography.scss */
   .text-mega {
     font-size: 2.75rem;
     line-height: 1.2;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 321, ../scss/abstracts/_typography.scss */
+  /* line 323, ../scss/abstracts/_typography.scss */
   .text-mega {
     font-size: 3rem;
     line-height: 1.33333;
   }
 }
 
-/* line 337, ../scss/abstracts/_typography.scss */
+/* line 339, ../scss/abstracts/_typography.scss */
 .text-giga {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 337, ../scss/abstracts/_typography.scss */
+  /* line 339, ../scss/abstracts/_typography.scss */
   .text-giga {
     font-size: 3rem;
     line-height: 1.33333;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 337, ../scss/abstracts/_typography.scss */
+  /* line 339, ../scss/abstracts/_typography.scss */
   .text-giga {
     font-size: 6rem;
     line-height: 1.2;
@@ -6057,27 +6059,27 @@ h1,
 /*------------------------------------*\
     #Line Heights  
 \*------------------------------------*/
-/* line 359, ../scss/abstracts/_typography.scss */
+/* line 361, ../scss/abstracts/_typography.scss */
 .lh0 {
   line-height: 1.5;
 }
 
-/* line 363, ../scss/abstracts/_typography.scss */
+/* line 365, ../scss/abstracts/_typography.scss */
 .lh1 {
   line-height: 1.5;
 }
 
-/* line 368, ../scss/abstracts/_typography.scss */
+/* line 370, ../scss/abstracts/_typography.scss */
 .lh2 {
   line-height: 1.33333;
 }
 
-/* line 374, ../scss/abstracts/_typography.scss */
+/* line 376, ../scss/abstracts/_typography.scss */
 .lh3 {
   line-height: 1.2;
 }
 
-/* line 378, ../scss/abstracts/_typography.scss */
+/* line 380, ../scss/abstracts/_typography.scss */
 .lh4 {
   line-height: 1;
 }
@@ -16538,7 +16540,7 @@ input[type="radio"].radio--large + label {
 @media only screen and (min-width: 64.0625em) {
   /* line 6, ../scss/layout/_sections.scss */
   .section {
-    padding-bottom: 3rem;
+    padding-bottom: 3.375rem;
   }
 }
 
@@ -16555,7 +16557,7 @@ input[type="radio"].radio--large + label {
 @media only screen and (min-width: 64.0625em) {
   /* line 24, ../scss/layout/_sections.scss */
   .section--lead {
-    padding-top: 3rem;
+    padding-top: 3.375rem;
   }
 }
 
@@ -16609,12 +16611,12 @@ input[type="radio"].radio--large + label {
 .section--secondary {
   background-color: #231F20;
 }
-/* line 99, ../scss/layout/_sections.scss */
+/* line 98, ../scss/layout/_sections.scss */
 .section--secondary .section-text {
   color: #fff;
 }
 
-/* line 108, ../scss/layout/_sections.scss */
+/* line 106, ../scss/layout/_sections.scss */
 .section--alt {
   overflow: hidden;
   width: 100%;
@@ -16628,12 +16630,12 @@ input[type="radio"].radio--large + label {
   /* IE6-9 */
 }
 
-/* line 117, ../scss/layout/_sections.scss */
+/* line 115, ../scss/layout/_sections.scss */
 .section--highlighted {
   background-color: #e8f1f1;
 }
 
-/* line 122, ../scss/layout/_sections.scss */
+/* line 120, ../scss/layout/_sections.scss */
 .section--altHighlighted {
   background-color: #f0f1f1;
 }
@@ -17623,7 +17625,7 @@ button.is-inactive,
   padding: 0.9375rem;
   padding-right: 1.125rem;
   padding-left: 1.125rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 
@@ -17632,6 +17634,8 @@ button.is-inactive,
   padding: 1rem;
   padding-right: 2.25rem;
   padding-left: 2.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* line 427, ../scss/components/_buttons.scss */

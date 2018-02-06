@@ -291,10 +291,12 @@ $type-settings: (
 
 %h2 {
     @include type-setting(2); 
+     margin-bottom: rem-calc($level3);
 
     @media #{$medium-up} {
     
      @include type-setting(3); 
+     margin-bottom: rem-calc($level3)
 
     }
 

@@ -15,7 +15,7 @@
 
   @media #{$large-up} {
 
-    padding-bottom: rem-calc($level7);
+    padding-bottom: rem-calc($level7 + $level1);
     
   }
     
@@ -33,7 +33,7 @@
 
   @media #{$large-up} {
 
-    padding-top: rem-calc($level7);
+    padding-top: rem-calc($level7 + $level1);
     
   }
 
@@ -93,11 +93,9 @@
 
 
 .section--secondary {
-  
   background-color: $secondaryColor; 
 
   .section-text {
-
     color: #fff; 
 
   }
@@ -121,5 +119,4 @@
 
 .section--altHighlighted {
   background-color: $grey--superLight; 
-
 }
