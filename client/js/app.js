@@ -21,22 +21,28 @@ twopence.config(
          '$urlRouterProvider',
          '$locationProvider',
          '$compileProvider',
+         'ENV'
          function(
             $stateProvider,
             $urlRouterProvider,
             $locationProvider,
             $compileProvider,
-            plaidLinkProvider
+            ENV
             ) {
     //
     //If anything is unmatched just go to home
     //
     $urlRouterProvider.otherwise("/");
 
-    // Pretty URLs
     //
-    // $locationProvider.html5Mode(true);
-    // $locationProvider.hashPrefix('');
+    // Pretty URLs activate if we're running  the production ENV
+    //
+    if(ENV.BASE_URL !== 'https://api.onepence.co') {
+
+      $locationProvider.html5Mode(true);
+      $locationProvider.hashPrefix('');
+
+    }
 
 
 
