@@ -18,7 +18,7 @@
           </h1>  
 
           <p>
-            Match your sponsee's payments towards their student loans.<br> <br> Your bank account will be charged $4.99/month while this plan is active.
+            Match your Graduates's payments towards their student loans.<br> <br> Your bank account will be charged $4.99/month while this plan is active.
           </p>
 
         </div>
@@ -57,9 +57,9 @@
                              name="limit"
                              value="100"
                              id="oneHundredLimit"
-                             checked="checked"
                               ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
-                             class="radio--large">
+                             class="radio--large"
+                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit">
                             <label for="oneHundredLimit"> <span></span>$100</label>
                           
                           </div>
@@ -71,8 +71,9 @@
                              name="limit"
                              value="300"
                              id="threeHundredLimit"
-                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
-                             class="radio--large">
+                             ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
+                             class="radio--large"
+                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit">
                             <label for="threeHundredLimit"><span></span>$300</label>
                           
                           </div>
@@ -85,7 +86,8 @@
                                value="500"
                                id="fivehundredLimit"
                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
-                               class="radio--large">
+                               class="radio--large"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit">
                             <label for="fivehundredLimit"><span></span>$500</label>
                           
                           </div>
@@ -112,7 +114,8 @@
                                      name="custom"
                                      class="input--small   mb0"
                                      ng-model="sponseeSponsorship.customLimit.limit"
-                                    placeholder="other"
+                                     ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit"
+                                     placeholder="other"
                                      >
                                   </div>
                           
@@ -136,7 +139,6 @@
               
             </div>
 
-            <hr class="hr--faded">
 
             <div class="card-content"
                  ng-if="!sponseeSponsorship.userInfo.linked_bank">

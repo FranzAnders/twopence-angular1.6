@@ -41,6 +41,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     vm.userInfo = null; 
 
+
     vm.customLimit = {
       'active': false,
       'limit': ''
@@ -126,11 +127,12 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     });
 
+
+
     //
     // Sponsorship info object, holds all the plan information
     // as it is being built
     //
-
     vm.sponsorshipInfo = {
       "plan": {
         "type": null,
@@ -139,6 +141,9 @@ twopence.controller('sponseeSponsorshipCtrl', [
     };
 
 
+    //
+    // Plaid info object holds status of Plaid Auth
+    //
     vm.plaidInfo = {
       public_token: "",
       institution: {

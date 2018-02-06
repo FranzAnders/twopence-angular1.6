@@ -21,10 +21,10 @@
           Password and username combination is incorrect. If you've made an account linked with this email address, be sure to verify your email before proceeding.
         </p>
   
-        <p ng-switch-when="tooManyAttempts"> 
+        <p class="validationAlert-body" ng-switch-when="tooManyAttempts"> 
             You've made too many successive attempts to login. Please wait a few minutes before trying again.
         </p>
-        <p ng-switch-when="generalError"> 
+        <p class="validationAlert-body"  ng-switch-when="generalError"> 
             Whoops! Something went wrong while trying to log you in. Please try again in a few minutes.
         </p>
   

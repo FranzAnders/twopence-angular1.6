@@ -16,7 +16,7 @@
           </h1>  
 
           <p>
-            A one-time payment of any amount toward their student loans.
+            A one-time payment of any amount toward your Graduate's student loans.
               Your bank account will be charged a one-time service fee of $4.99.
 
           </p>
@@ -61,6 +61,7 @@
                              value="50"
                              id="fifty"
                              checked="checked"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                               ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                              class="radio--large">
                             <label for="fifty"> <span></span>$50</label>
@@ -74,6 +75,7 @@
                              name="amount"
                              value="100"
                              id="oneHundred"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                               ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                              class="radio--large">
                             <label for="oneHundred"><span></span>$100</label>
@@ -87,6 +89,7 @@
                                name="amount"
                                value="250"
                                id="twoHundredAndFiftty"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                                class="radio--large">
                             <label for="twoHundredAndFiftty"><span></span>$250</label>
@@ -114,6 +117,7 @@
                                      id="customValue"
                                      name="custom"
                                      class="input--small   mb0"
+                                     ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                                      ng-model="sponseeSponsorship.customAmount.amount"
                                      placeholder="other"
                                      >
@@ -139,9 +143,8 @@
 
             </div>
 
-            <hr class="hr--faded">
-
-            <div class="card-content">
+            <div class="card-content"
+                 ng-if="!sponseeSponsorship.userInfo.linked_bank">
 
               <fieldset>
               
@@ -188,7 +191,7 @@
             <div class="small-12 large-6 large-push-6">
 
               <button type="submit"
-                      class="button--expanded  button--secondary  button--small"
+                      class="button--expanded  button--secondary  button--medium"
                       ng-class="{'is-inactive' : !sponseeSponsorship.linkedBank || sponseeSponsorship.sponsorshipDetailsForm.$invalid}">
               
                 Complete Sponsorship
