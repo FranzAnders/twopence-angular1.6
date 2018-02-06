@@ -398,3 +398,36 @@
   }
 
 }
+
+
+
+
+/*------------------------------------*\
+    #Hand Holding App
+\*------------------------------------*/
+
+
+.hand-holding-app {
+
+  .appSplash {
+    transform-origin: 195px 140px; 
+
+  }
+
+  .appIcon {
+    transform-origin: 195px 140px; 
+    position: relative; 
+    
+    .appIconPocket {
+      z-index: 2; 
+    }
+
+    .appIconDollar {
+      transform-origin: 195px 140px; 
+      z-index: 0; 
+
+    }
+  }
+
+}
+

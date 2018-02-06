@@ -20014,3 +20014,24 @@ body.fancymodal-open {
     transform: translateX(-12px);
   }
 }
+/*------------------------------------*\
+    #Hand Holding App
+\*------------------------------------*/
+/* line 412, ../scss/pages/_sponseeSplash.scss */
+.hand-holding-app .appSplash {
+  transform-origin: 195px 140px;
+}
+/* line 417, ../scss/pages/_sponseeSplash.scss */
+.hand-holding-app .appIcon {
+  transform-origin: 195px 140px;
+  position: relative;
+}
+/* line 421, ../scss/pages/_sponseeSplash.scss */
+.hand-holding-app .appIcon .appIconPocket {
+  z-index: 2;
+}
+/* line 425, ../scss/pages/_sponseeSplash.scss */
+.hand-holding-app .appIcon .appIconDollar {
+  transform-origin: 195px 140px;
+  z-index: 0;
+}

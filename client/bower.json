@@ -13,16 +13,14 @@
     "normalize-scss": "normalize.scss#^7.0.0",
     "angular-moment": "^1.2.0",
     "angular-animate": "~1.6.6",
-    "raven-js": "^3.22.1"
+    "raven-js": "^3.22.1",
+    "animejs": "^2.2.0"
   },
-  "overrides" :{
-
+  "overrides": {
     "raven-js": {
-
-      "main" :[ 
+      "main": [
         "dist/raven.js",
         "dist/plugins/angular.js"
-
       ]
     }
   },
