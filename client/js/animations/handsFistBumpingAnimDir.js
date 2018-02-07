@@ -6,7 +6,7 @@
     Hands Fist Bumping Directive
 \*------------------------------------*/
 
-twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
+twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
 
     return {
 
@@ -16,42 +16,45 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
           $timeout(function() {
 
             var easing = 'easeOutQuart';
+            var fistsEasing = 'easeInBack';
 
-            var handHoldPhoneAnimTimeline = anime.timeline({
+
+            var handsFistBumping = anime.timeline({
               loop: true,
-              direction: 'forwards'
+              direction: 'alternate'
             }); 
 
-            handHoldPhoneAnimTimeline
+            handsFistBumping
             .add({
 
-                targets: '.appSplash',
-                scaleY: [{value: 0},{value: .6, duration: 50}, {value: 1}],
-                scaleX: [{value: 0},{value: .2, duration: 50}, {value: 1}],
-                easing: easing,
-                duration: 1300
+                targets: '.left-fist',
+                translateX: [{value: 0}, {value: -5}, {value: 12}],
+                easing: fistsEasing,
+                duration: 800,
+                offset: 0
 
             })
             .add({
 
-                targets: '.appIcon',
-                scale: [0, 1],
-                easing: easing,
-                duration: 400
+                targets: '.right-fist',
+                translateX: [{value: 0}, {value: 5}, {value: -12}],
+                easing: fistsEasing,
+                duration: 800,
+                offset: 0
 
 
             })
             .add({
 
-                targets: '.appIconDollar',
-                translateY: [20, 0],
-                easing: easing,
-                duration: 400,
-                offset: '-=100'
+              targets: '.strokes', 
+              strokeDashoffset: [anime.setDashoffset, 60],
+              easing: easing, 
+              duration: 300
 
             })
+ 
 
-          }, 100);
+          }, 200);
 
 
         }

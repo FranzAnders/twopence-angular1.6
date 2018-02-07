@@ -19896,139 +19896,23 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Hands Fist Bumping
 \*------------------------------------*/
-/* line 337, ../scss/pages/_sponseeSplash.scss */
-.hands-fist-bumping .left-fist {
-  -moz-animation: left-fist-bumping 0.6s ease-in-out infinite alternate;
-  -webkit-animation: left-fist-bumping 0.6s ease-in-out infinite alternate;
-  animation: left-fist-bumping 0.6s ease-in-out infinite alternate;
-}
-/* line 343, ../scss/pages/_sponseeSplash.scss */
-.hands-fist-bumping .right-fist {
-  -moz-animation: right-fist-bumping 0.6s ease-in-out infinite alternate;
-  -webkit-animation: right-fist-bumping 0.6s ease-in-out infinite alternate;
-  animation: right-fist-bumping 0.6s ease-in-out infinite alternate;
-}
-/* line 349, ../scss/pages/_sponseeSplash.scss */
-.hands-fist-bumping .strokes {
-  stroke-dasharray: 30;
-  -moz-animation: show-accents 1.2s ease-in-out infinite forwards 0.6s;
-  -webkit-animation: show-accents 1.2s ease-in-out infinite forwards 0.6s;
-  animation: show-accents 1.2s ease-in-out infinite forwards 0.6s;
-}
-
-@-moz-keyframes left-fist-bumping {
-  0% {
-    -moz-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  60% {
-    -moz-transform: translateX(12px);
-    transform: translateX(12px);
-  }
-  100% {
-    -moz-transform: translateX(12px);
-    transform: translateX(12px);
-  }
-}
-@-webkit-keyframes left-fist-bumping {
-  0% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  60% {
-    -webkit-transform: translateX(12px);
-    transform: translateX(12px);
-  }
-  100% {
-    -webkit-transform: translateX(12px);
-    transform: translateX(12px);
-  }
-}
-@keyframes left-fist-bumping {
-  0% {
-    -moz-transform: translateX(-2px);
-    -ms-transform: translateX(-2px);
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px);
-  }
-  60% {
-    -moz-transform: translateX(12px);
-    -ms-transform: translateX(12px);
-    -webkit-transform: translateX(12px);
-    transform: translateX(12px);
-  }
-  100% {
-    -moz-transform: translateX(12px);
-    -ms-transform: translateX(12px);
-    -webkit-transform: translateX(12px);
-    transform: translateX(12px);
-  }
-}
-@-moz-keyframes right-fist-bumping {
-  0% {
-    -moz-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  60% {
-    -moz-transform: translateX(-12px);
-    transform: translateX(-12px);
-  }
-  100% {
-    -moz-transform: translateX(-12px);
-    transform: translateX(-12px);
-  }
-}
-@-webkit-keyframes right-fist-bumping {
-  0% {
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  60% {
-    -webkit-transform: translateX(-12px);
-    transform: translateX(-12px);
-  }
-  100% {
-    -webkit-transform: translateX(-12px);
-    transform: translateX(-12px);
-  }
-}
-@keyframes right-fist-bumping {
-  0% {
-    -moz-transform: translateX(2px);
-    -ms-transform: translateX(2px);
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  60% {
-    -moz-transform: translateX(-12px);
-    -ms-transform: translateX(-12px);
-    -webkit-transform: translateX(-12px);
-    transform: translateX(-12px);
-  }
-  100% {
-    -moz-transform: translateX(-12px);
-    -ms-transform: translateX(-12px);
-    -webkit-transform: translateX(-12px);
-    transform: translateX(-12px);
-  }
-}
 /*------------------------------------*\
     #Hand Holding App
 \*------------------------------------*/
-/* line 412, ../scss/pages/_sponseeSplash.scss */
+/* line 355, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appSplash {
   transform-origin: 195px 140px;
 }
-/* line 417, ../scss/pages/_sponseeSplash.scss */
+/* line 360, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appIcon {
   transform-origin: 195px 140px;
   position: relative;
 }
-/* line 421, ../scss/pages/_sponseeSplash.scss */
+/* line 364, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appIcon .appIconPocket {
   z-index: 2;
 }
-/* line 425, ../scss/pages/_sponseeSplash.scss */
+/* line 368, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appIcon .appIconDollar {
   transform-origin: 195px 140px;
   z-index: 0;

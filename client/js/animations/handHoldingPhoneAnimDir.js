@@ -19,7 +19,6 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
             var easing = 'easeOutQuart';
 
             var handHoldPhoneAnimTimeline = anime.timeline({
-              loop: true,
               direction: 'forwards'
             }); 
 
