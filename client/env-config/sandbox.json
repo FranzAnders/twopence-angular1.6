@@ -1,6 +1,6 @@
 
 {
-  "BASE_URL": "https://onepence.co",
+  "BASE_URL": "https://api.onepence.co",
   "domain": "onepence.co",
   "mixpanelToken": "8e3ed97d55d5b6ae0e17f190c9f8e100",
   "plaidEnv": "sandbox",
