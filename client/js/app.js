@@ -12,7 +12,6 @@ twopence = angular.module('twopence', [
      'xeditable',
      'ngMessages',
      'angularMoment',
-     'ngRaven',
      'constants'
 ]);
 
@@ -430,6 +429,7 @@ twopence.config(
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:email",
+          abstract: true, 
           views: {
 
             'sponsor': {
@@ -440,38 +440,29 @@ twopence.config(
             }
 
           },
+          resolve: {
+
+            userInfo: ['User', function(User) {
+
+              //
+              // Gets User info and sets it on the controller
+              //
+              return User.getUserInfo().then(function(userInfo) {
+
+                return userInfo; 
+
+              }).catch(function(err) {
+
+                return err; 
+
+              });   
+
+            }]
+
+          },
           params: {
-            data: null,
+            identity: null,
             email: null
-
-          }
-
-        })
-        .state('sponsor.settings', {
-
-          url: "sponsor/settings",
-          views: {
-
-            'sponsor': {
-
-              templateUrl: "js/sponsor/settings.html",
-              controller: "settingsCtrl",
-              controllerAs: "settings"
-
-            }
-
-          }
-
-        }).state('sponsor.faq', {
-
-          url: "sponsor/faq.html",
-          views: {
-
-            'sponsor': {
-
-              templateUrl: "js/sponsor/faq.html"
-
-            }
 
           }
 
@@ -512,6 +503,35 @@ twopence.config(
             'main': {
 
               templateUrl: "js/sponsor/sponsee-sponsorship-oneTime.html"
+
+            }
+
+          }
+
+        })
+        .state('sponsor.settings', {
+
+          url: "sponsor/settings",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/settings.html",
+              controller: "settingsCtrl",
+              controllerAs: "settings"
+
+            }
+
+          }
+
+        }).state('sponsor.faq', {
+
+          url: "sponsor/faq.html",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/faq.html"
 
             }
 

@@ -32,16 +32,6 @@
       @include type-setting(1);
       
 
-      @media #{$large-up} {
-        bottom: 0; 
-        left: auto; 
-        top: 44%;
-        left: auto;
-        right: rem-calc(-10px);
-        @include type-setting(1);
-
-      }
-
     }
 
   }

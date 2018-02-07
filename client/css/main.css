@@ -19141,28 +19141,16 @@ body.fancymodal-open {
   font-size: 1.125rem;
   line-height: 1.33333;
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 22, ../scss/pages/_sponsorshipCreation.scss */
-  .plans .plan:first-child:after {
-    bottom: 0;
-    left: auto;
-    top: 44%;
-    left: auto;
-    right: -0.625rem;
-    font-size: 1.125rem;
-    line-height: 1.33333;
-  }
-}
 
 /*------------------------------------*\
     #Custom Amount Input  
 \*------------------------------------*/
-/* line 60, ../scss/pages/_sponsorshipCreation.scss */
+/* line 50, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount {
   display: inline-block;
   position: relative;
 }
-/* line 64, ../scss/pages/_sponsorshipCreation.scss */
+/* line 54, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount:before {
   content: "$";
   left: 0.375rem;
@@ -19173,7 +19161,7 @@ body.fancymodal-open {
   height: 1.5rem;
   margin: auto;
 }
-/* line 76, ../scss/pages/_sponsorshipCreation.scss */
+/* line 66, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input {
   border: 1px solid #dae0e0;
   padding: 0.375rem;
@@ -19183,14 +19171,14 @@ body.fancymodal-open {
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 85, ../scss/pages/_sponsorshipCreation.scss */
+/* line 75, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: textfield;
   margin: 0;
 }
-/* line 93, ../scss/pages/_sponsorshipCreation.scss */
+/* line 83, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input:active, .input--customAmount input:focus {
   border: 1px solid #231F20;
 }
