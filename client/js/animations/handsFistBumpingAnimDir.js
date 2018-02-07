@@ -49,7 +49,7 @@ twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
               targets: '.strokes', 
               strokeDashoffset: [anime.setDashoffset, 60],
               easing: easing, 
-              duration: 300
+              duration: 400
 
             })
  
