@@ -126,7 +126,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
               });
 
-          vm.formStates.linkedBank = true;
+          vm.formStates.linked_bank = true;
 
           mixpanel.track('Linked Bank Account');
 
