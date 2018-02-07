@@ -121,11 +121,6 @@
   .safe-key {
     @include transform(translate(170px, 158px));
 
-    .safe-key-inner {
-        @include animation(safe-key-rotating .6s ease-in-out infinite alternate); 
-
-    }
-
     .safe-key-original {
       @include transform(translate(-170px, -158px));
 
@@ -136,83 +131,11 @@
   .hand {
 
     .hand-inner {
-      @include transform-origin(center); 
-      @include animation(hand-opening .6s ease-in-out infinite alternate); 
+      transform-origin: 176px 150px; 
 
     }
   }
 
-  .coins {
-    @include animation(coin-jump .6s ease-in-out infinite alternate); 
-
-  }
-
-
-  .coins--delay {
-    @include animation(coin-jump-2 .6s ease-in-out infinite alternate .2s); 
-
-  }
-
-  .coins--superDelay {
-    @include animation-delay(.3s); 
-
-
-  }
-}
-
-
-@include keyframes(safe-key-rotating) {
-
-  0% {
-    @include rotate(0); 
-  }
-
-  100% {
-    @include rotate(30deg)
-  }
-
-}
-
-
-@include keyframes(hand-opening) {
-
-  0% {
-    @include transform(rotate(0) translate(0, 0));
-
-  }
-
-  100% {
-    @include transform(rotate(20deg) translate(-7px, 4px));
-  }
-
-}
-
-
-@include keyframes(coin-jump) {
-
-  0% {
-    @include transform(translateY(0));
-
-  }
-
-  100% {
-    @include transform(translateY(-15px));
-
-  }
-}
-
-
-@include keyframes(coin-jump-2) {
-
-  0% {
-    @include transform(translateY(0));
-
-  }
-
-  100% {
-    @include transform(translateY(-8px));
-
-  }
 }
 
 
