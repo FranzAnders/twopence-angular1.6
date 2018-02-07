@@ -73,7 +73,7 @@ twopence.directive('handOpeningSafeAnimDir', ['$timeout', function($timeout) {
 
             });
 
-          }, 100);
+          }, 200);
 
 
         }

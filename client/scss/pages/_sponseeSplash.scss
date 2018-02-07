@@ -11,99 +11,11 @@
 
 .hand-pulling-dollar {
 
-  .hand-right {
-    @include animation(hand-goes-right .6s ease-in-out infinite alternate);
-
-  }
-
-  .hand-left {
-
-    @include animation(hand-goes-left .6s ease-in-out infinite alternate);
-
-
-  }
-
 
   .dollar {
     @include transform-origin(center); 
-    @include animation(dollar-stretches .6s ease-in-out infinite alternate);
-  
 
   }
-
-  .strokes {
-    stroke-dasharray: 30;
-    @include animation(show-accents 1.2s ease-in-out infinite forwards .7s);
-
-
-  }
-
-}
-
-
-@include keyframes(hand-goes-right) {
-  
-  0% {
-
-    @include transform(translateX(0)); 
-
-  }
-
-  100% {
-    
-    @include transform(translateX(6px)); 
-
-  }
-}
-
-
-@include keyframes(hand-goes-left) {
-  
-  0% {
-
-    @include transform(translateX(0)); 
-
-  }
-
-  100% {
-    
-    @include transform(translateX(-6px)); 
-
-  }
-}
-
-
-
-@include keyframes(dollar-stretches) {
-  
-  0% {
-
-    @include transform(scaleX(1)); 
-
-  }
-
-  100% {
-    
-    @include transform(scaleX(1.18)); 
-
-  }
-}
-
-
-@include keyframes(show-accents) {
-  
-  0% {
-
-    stroke-dashoffset: 60; 
-
-  }
-
-  100% {
-    
-    stroke-dashoffset: 0; 
-
-  }
-
 
 }
 
@@ -170,25 +82,6 @@
   }
 
 }
-
-
-
-
-
-
-/*------------------------------------*\
-    #Hands Fist Bumping
-\*------------------------------------*/
-
-
-.hands-fist-bumping {
-    
-  .strokes {
-
-  }
-
-}
-
 
 
 

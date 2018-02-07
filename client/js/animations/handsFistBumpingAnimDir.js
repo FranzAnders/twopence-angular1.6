@@ -47,11 +47,12 @@ twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
             .add({
 
               targets: '.strokes', 
-              strokeDashoffset: [anime.setDashoffset, 60],
+              strokeDashoffset: [{value: [anime.setDashoffset, anime.setDashoffset]}, {value: [anime.setDashoffset, 50]}],
               easing: easing, 
-              duration: 400
+              duration: 500,
+              offset: '-=200'
 
-            })
+            });
  
 
           }, 200);

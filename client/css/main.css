@@ -19351,180 +19351,32 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Hand Pulling Dollar Animation
 \*------------------------------------*/
-/* line 14, ../scss/pages/_sponseeSplash.scss */
-.hand-pulling-dollar .hand-right {
-  -moz-animation: hand-goes-right 0.6s ease-in-out infinite alternate;
-  -webkit-animation: hand-goes-right 0.6s ease-in-out infinite alternate;
-  animation: hand-goes-right 0.6s ease-in-out infinite alternate;
-}
-/* line 19, ../scss/pages/_sponseeSplash.scss */
-.hand-pulling-dollar .hand-left {
-  -moz-animation: hand-goes-left 0.6s ease-in-out infinite alternate;
-  -webkit-animation: hand-goes-left 0.6s ease-in-out infinite alternate;
-  animation: hand-goes-left 0.6s ease-in-out infinite alternate;
-}
-/* line 27, ../scss/pages/_sponseeSplash.scss */
+/* line 15, ../scss/pages/_sponseeSplash.scss */
 .hand-pulling-dollar .dollar {
   -moz-transform-origin: center 50%;
   -ms-transform-origin: center 50%;
   -webkit-transform-origin: center 50%;
   transform-origin: center 50%;
-  -moz-animation: dollar-stretches 0.6s ease-in-out infinite alternate;
-  -webkit-animation: dollar-stretches 0.6s ease-in-out infinite alternate;
-  animation: dollar-stretches 0.6s ease-in-out infinite alternate;
-}
-/* line 34, ../scss/pages/_sponseeSplash.scss */
-.hand-pulling-dollar .strokes {
-  stroke-dasharray: 30;
-  -moz-animation: show-accents 1.2s ease-in-out infinite forwards 0.7s;
-  -webkit-animation: show-accents 1.2s ease-in-out infinite forwards 0.7s;
-  animation: show-accents 1.2s ease-in-out infinite forwards 0.7s;
 }
 
-@-moz-keyframes hand-goes-right {
-  0% {
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-}
-@-webkit-keyframes hand-goes-right {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-}
-@keyframes hand-goes-right {
-  0% {
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(6px);
-    -ms-transform: translateX(6px);
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px);
-  }
-}
-@-moz-keyframes hand-goes-left {
-  0% {
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-}
-@-webkit-keyframes hand-goes-left {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-}
-@keyframes hand-goes-left {
-  0% {
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(-6px);
-    -ms-transform: translateX(-6px);
-    -webkit-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-}
-@-moz-keyframes dollar-stretches {
-  0% {
-    -moz-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-  100% {
-    -moz-transform: scaleX(1.18);
-    transform: scaleX(1.18);
-  }
-}
-@-webkit-keyframes dollar-stretches {
-  0% {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-  100% {
-    -webkit-transform: scaleX(1.18);
-    transform: scaleX(1.18);
-  }
-}
-@keyframes dollar-stretches {
-  0% {
-    -moz-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-  100% {
-    -moz-transform: scaleX(1.18);
-    -ms-transform: scaleX(1.18);
-    -webkit-transform: scaleX(1.18);
-    transform: scaleX(1.18);
-  }
-}
-@-moz-keyframes show-accents {
-  0% {
-    stroke-dashoffset: 60;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@-webkit-keyframes show-accents {
-  0% {
-    stroke-dashoffset: 60;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes show-accents {
-  0% {
-    stroke-dashoffset: 60;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
 /*------------------------------------*\
     #Hang Opening Safe
 \*------------------------------------*/
-/* line 121, ../scss/pages/_sponseeSplash.scss */
+/* line 33, ../scss/pages/_sponseeSplash.scss */
 .hand-opening-safe .safe-key {
   -moz-transform: translate(170px, 158px);
   -ms-transform: translate(170px, 158px);
   -webkit-transform: translate(170px, 158px);
   transform: translate(170px, 158px);
 }
-/* line 124, ../scss/pages/_sponseeSplash.scss */
+/* line 36, ../scss/pages/_sponseeSplash.scss */
 .hand-opening-safe .safe-key .safe-key-original {
   -moz-transform: translate(-170px, -158px);
   -ms-transform: translate(-170px, -158px);
   -webkit-transform: translate(-170px, -158px);
   transform: translate(-170px, -158px);
 }
-/* line 133, ../scss/pages/_sponseeSplash.scss */
+/* line 45, ../scss/pages/_sponseeSplash.scss */
 .hand-opening-safe .hand .hand-inner {
   transform-origin: 176px 150px;
 }
@@ -19532,39 +19384,36 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Hand Holding Bills
 \*------------------------------------*/
-/* line 155, ../scss/pages/_sponseeSplash.scss */
+/* line 67, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-bills .dollarbills .dollarbill:nth-of-type(1) {
   transform-origin: 108px 196px;
 }
-/* line 160, ../scss/pages/_sponseeSplash.scss */
+/* line 72, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-bills .dollarbills .dollarbill:nth-of-type(2) {
   transform-origin: 100px 190px;
 }
-/* line 165, ../scss/pages/_sponseeSplash.scss */
+/* line 77, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-bills .dollarbills .dollarbill:nth-of-type(3) {
   transform-origin: 116px 192px;
 }
 
 /*------------------------------------*\
-    #Hands Fist Bumping
-\*------------------------------------*/
-/*------------------------------------*\
     #Hand Holding App
 \*------------------------------------*/
-/* line 204, ../scss/pages/_sponseeSplash.scss */
+/* line 97, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appSplash {
   transform-origin: 195px 140px;
 }
-/* line 209, ../scss/pages/_sponseeSplash.scss */
+/* line 102, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appIcon {
   transform-origin: 195px 140px;
   position: relative;
 }
-/* line 213, ../scss/pages/_sponseeSplash.scss */
+/* line 106, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appIcon .appIconPocket {
   z-index: 2;
 }
-/* line 217, ../scss/pages/_sponseeSplash.scss */
+/* line 110, ../scss/pages/_sponseeSplash.scss */
 .hand-holding-app .appIcon .appIconDollar {
   transform-origin: 195px 140px;
   z-index: 0;
