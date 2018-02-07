@@ -36,7 +36,7 @@ twopence.config(
     //
     // Pretty URLs activate if we're running  the production ENV
     //
-    if(ENV.BASE_URL !== 'https://api.onepence.co') {
+    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
 
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('');
