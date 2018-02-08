@@ -63,7 +63,7 @@
           
       <div class="row">
         <div class="small-12 columns medium-11 large-8 medium-centered">
-          <div class=" mtb7 text-center" ng-if="contributions.filteredContributions.length == 0">
+          <div class=" mtb7 text-center" ng-if="contributions.filteredContributions.length == 0 && contributions.totalContributions !== 0">
           
             <div class="card-content">
               
@@ -153,29 +153,21 @@
 
             <img src="assets/images/illustr--emptyWallet.svg" 
                  alt="Hand with empty wallet" 
-                 width="180" class="emptyState-illustr  emptyState-illustr--emptyWallet">
+                 width="160" class="emptyState-illustr  emptyState-illustr--emptyWallet">
 
           </div>
 
         </div>
         
         <div class="emptyState-copy">
+
+          <h1 class="ff2 txtc2 h2 text-center">
+            Not yet!
+          </h1>
+
           <p>
             You haven’t made any contributions to your Graduates yet. This is where your contribution history will be once you start making payments.
           </p>
-          
-          <div class="row">
-          
-            <div class="small-12 columns medium-10  medium-centered large-11 large-centered">
-          
-             <p>
-              <a ui-sref="sponsor.dashboard" rel="internal">
-              Why not start now?</a>
-             </p>
-          
-            </div>
-          
-          </div>
 
         </div>
 

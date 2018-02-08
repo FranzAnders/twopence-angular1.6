@@ -6,9 +6,10 @@
 
 
 .emptyState {
+  margin-top: rem-calc($level7); 
   
   @media #{$large-up} {
-    margin-top: rem-calc($level7); 
+    margin-top: rem-calc($level7 + $level3); 
 
   }
 
@@ -44,12 +45,18 @@
   }
   
   .emptyState-copy {
+
     @extend %text-center; 
 
-    @media #{$large-up} {
+    @media #{$medium-up} {
       margin-right: auto; 
       margin-left: auto; 
-      max-width: rem-calc(600px); 
+      max-width: rem-calc(540px); 
+
+    }
+
+    @media #{$large-up} {
+      max-width: rem-calc(460px); 
 
     }
 

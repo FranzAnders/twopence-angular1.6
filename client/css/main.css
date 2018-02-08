@@ -17953,48 +17953,58 @@ button.is-inactive,
 /*------------------------------------*\
     #Empty State
 \*------------------------------------*/
+/* line 8, ../scss/components/_emptyStates.scss */
+.emptyState {
+  margin-top: 3rem;
+}
 @media only screen and (min-width: 64.0625em) {
   /* line 8, ../scss/components/_emptyStates.scss */
   .emptyState {
-    margin-top: 3rem;
+    margin-top: 4.125rem;
   }
 }
-/* line 15, ../scss/components/_emptyStates.scss */
+/* line 16, ../scss/components/_emptyStates.scss */
 .emptyState .emptyState-illustr {
   margin-bottom: 1.5rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 15, ../scss/components/_emptyStates.scss */
+  /* line 16, ../scss/components/_emptyStates.scss */
   .emptyState .emptyState-illustr {
     margin-bottom: 1.875rem;
   }
 }
-/* line 24, ../scss/components/_emptyStates.scss */
+/* line 25, ../scss/components/_emptyStates.scss */
 .emptyState .emptyState-illustr.emptyState-illustr--emptyWallet {
   width: 10rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 24, ../scss/components/_emptyStates.scss */
+  /* line 25, ../scss/components/_emptyStates.scss */
   .emptyState .emptyState-illustr.emptyState-illustr--emptyWallet {
     width: 9.375rem;
   }
 }
-/* line 34, ../scss/components/_emptyStates.scss */
+/* line 35, ../scss/components/_emptyStates.scss */
 .emptyState .emptyState-illustr.emptyState-illustr--magnifyingGlass {
   width: 11.25rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 34, ../scss/components/_emptyStates.scss */
+  /* line 35, ../scss/components/_emptyStates.scss */
   .emptyState .emptyState-illustr.emptyState-illustr--magnifyingGlass {
     width: 11.875rem;
   }
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 46, ../scss/components/_emptyStates.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 47, ../scss/components/_emptyStates.scss */
   .emptyState .emptyState-copy {
     margin-right: auto;
     margin-left: auto;
-    max-width: 37.5rem;
+    max-width: 33.75rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 47, ../scss/components/_emptyStates.scss */
+  .emptyState .emptyState-copy {
+    max-width: 28.75rem;
   }
 }
 
@@ -19221,7 +19231,7 @@ body.fancymodal-open {
   overflow: hidden;
   width: 13rem;
   left: -5%;
-  max-height: 95vh;
+  height: 95vh;
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 40, ../scss/pages/_sponsorView.scss */
@@ -19248,7 +19258,6 @@ body.fancymodal-open {
 .sponsorSection-illustr {
   position: absolute;
   left: 0;
-  bottom: 0;
   width: 100%;
   height: 15rem;
   background-repeat: no-repeat;
@@ -19262,13 +19271,13 @@ body.fancymodal-open {
   }
 }
 
-/* line 87, ../scss/pages/_sponsorView.scss */
+/* line 86, ../scss/pages/_sponsorView.scss */
 .sponsorSection-illustr--right {
   right: 0;
   left: auto;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 87, ../scss/pages/_sponsorView.scss */
+  /* line 86, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--right {
     left: auto;
     right: 0;
@@ -19276,29 +19285,30 @@ body.fancymodal-open {
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 99, ../scss/pages/_sponsorView.scss */
+  /* line 98, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--dashboard {
     background-image: url("../assets/images/sponsorBg.svg");
     background-size: 90% 100%;
-    bottom: 18%;
+    top: 45%;
     left: 0;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 110, ../scss/pages/_sponsorView.scss */
+  /* line 109, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--settings {
     background-image: url("../assets/images/sponsorBg--settings.svg");
-    bottom: 15%;
+    top: 30%;
     width: 110%;
     left: -5%;
+    bottom: auto;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
   /* line 121, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--contributions {
-    bottom: 18%;
+    top: 47%;
     background-image: url("../assets/images/sponsorBg--contributions.svg");
   }
 }
@@ -19307,7 +19317,7 @@ body.fancymodal-open {
   /* line 130, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--managePlan {
     background-image: url("../assets/images/sponsorBg--managePlan.svg");
-    bottom: 0;
+    top: 44%;
     left: -24%;
     width: 120%;
   }
@@ -19317,30 +19327,34 @@ body.fancymodal-open {
   /* line 142, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--sponsorshipCreationLeft {
     background-image: url("../assets/images/sponsorBg--sponsorshipCreation1.svg");
+    top: auto;
     bottom: -4%;
   }
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 142, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--sponsorshipCreationLeft {
-    bottom: -4%;
+    top: auto;
+    bottom: 16%;
     left: -5%;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 159, ../scss/pages/_sponsorView.scss */
+  /* line 161, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--sponsorshipCreationRight {
     background-image: url("../assets/images/sponsorBg--sponsorshipCreation2.svg");
+    top: auto;
     bottom: -4%;
     left: auto;
     right: 0;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 159, ../scss/pages/_sponsorView.scss */
+  /* line 161, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--sponsorshipCreationRight {
-    bottom: -4%;
+    top: auto;
+    bottom: 16%;
     right: -5%;
   }
 }

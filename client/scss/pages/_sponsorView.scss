@@ -44,7 +44,7 @@
   overflow: hidden;
   width: 13rem;
   left: -5%; 
-  max-height: 95vh; 
+  height: 95vh; 
 
   @media #{$large-up} {
    left: -5%;
@@ -70,7 +70,6 @@
 .sponsorSection-illustr {
   position: absolute; 
   left: 0; 
-  bottom: 0; 
   width: 100%;
   height: 15rem;
   background-repeat: no-repeat;
@@ -100,7 +99,7 @@
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg.svg');
     background-size: 90% 100%;
-    bottom: 18%;
+    top: 45%;
     left: 0; 
 
   }
@@ -110,9 +109,10 @@
 .sponsorSection-illustr--settings {
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg--settings.svg');
-    bottom: 15%; 
+    top: 30%; 
     width: 110%; 
     left: -5%; 
+    bottom: auto; 
 
   }
 
@@ -120,7 +120,7 @@
 
 .sponsorSection-illustr--contributions {
   @media #{$medium-up} {
-    bottom: 18%; 
+    top: 47%; 
     background-image: url('../assets/images/sponsorBg--contributions.svg');
 
   }
@@ -130,7 +130,7 @@
 .sponsorSection-illustr--managePlan {
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg--managePlan.svg');
-    bottom:  0; 
+    top:  44%; 
     left: -24%; 
     width: 120%; 
 
@@ -143,12 +143,14 @@
   
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg--sponsorshipCreation1.svg');
+    top: auto; 
     bottom: -4%; 
 
   }
 
   @media #{$large-up} {
-    bottom: -4%; 
+    top: auto; 
+    bottom: 16%; 
     left: -5%;
 
   }
@@ -160,6 +162,7 @@
   
   @media #{$medium-up} {
     background-image: url('../assets/images/sponsorBg--sponsorshipCreation2.svg');
+    top: auto; 
     bottom: -4%; 
     left: auto; 
     right: 0; 
@@ -167,7 +170,8 @@
   }
 
   @media #{$large-up} {
-    bottom: -4%; 
+    top: auto; 
+    bottom: 16%; 
     right: -5%; 
 
   }

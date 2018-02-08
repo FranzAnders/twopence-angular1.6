@@ -67,8 +67,6 @@ twopence.controller('sponseeCreationCtrl', [
           "user": pGraduateData
         };
 
-        console.log(graduateInfo); 
-        
         if(pSponseeSearchForm.$valid) {
 
           mixpanel.track('Selected Graduate');
