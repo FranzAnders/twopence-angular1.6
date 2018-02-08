@@ -124,15 +124,6 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           PlaidAuth.login(vm.plaidInfo);
 
-          $fancyModal.open({
-                  templateUrl: 'js/modals/bank-link-success.html',
-                  themeClass: 'fancymodal--primary  fancymodal--small',
-                  openingClass: 'is-open',
-                  closingClass: 'is-closed',
-                  showCloseButton: false
-
-              });
-
           vm.formStates.linked_bank = true;
 
           mixpanel.track('Linked Bank Account');

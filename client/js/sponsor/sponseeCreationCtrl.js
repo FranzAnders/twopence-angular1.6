@@ -72,11 +72,7 @@ twopence.controller('sponseeCreationCtrl', [
           mixpanel.track('Selected Graduate');
           $state.go('sponsor.sponsorshipSetup.options', {identity: graduateInfo.user, email: graduateInfo.user.email});
 
-        } else {
-
-          alert("Form Is not Valid"); 
-
-        }
+        } 
 
       };
 
