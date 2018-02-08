@@ -158,7 +158,7 @@
                       <div class="small-12 large-11  columns">
                                     
                         <a class="button  button--medium button--bankLinking button--expanded mb1"
-                           ng-class="{'is-linked' :  !sponseeSponsorship.formStates.linked_bank   || sponseeSponsorship.sponsorshipDetailsForm.$invalid  &&  !sponseeSponsorship.formStates.linked_bank_already}" 
+                           ng-class="{'is-linked' :  sponseeSponsorship.formStates.linked_bank}" 
                            ng-click="sponseeSponsorship.linkBank()">
                                     
                           <span ng-if="!sponseeSponsorship.formStates.linked_bank">Link your Funding Account</span>
@@ -189,7 +189,7 @@
 
               <button type="submit"
                       class="button--expanded  button--secondary  button--medium"
-                      ng-class="{'is-inactive' : (!sponseeSponsorship.formStates.linked_bank | sponseeSponsorship.sponsorshipDetailsForm.$invalid  !sponseeSponsorship.formStates.linked_bank_already)   || }">
+                       ng-class="{'is-inactive' : !sponseeSponsorship.formStates.linked_bank || sponseeSponsorship.sponsorshipDetailsForm.$invalid}">
               
                 Complete Sponsorship
               

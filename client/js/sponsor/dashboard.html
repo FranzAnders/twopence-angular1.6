@@ -53,7 +53,7 @@
 
       </ul>
 
-      <div ng-if="dashboard.sponsorships.length === 0">
+      <div ng-if="dashboard.sponsorships.length === 0 || (dashboard.sponsorships.length === 1 && dashboard.sponsorships[0].plans.length === 0)">
 
         <div class="emptyState">
 
@@ -70,8 +70,13 @@
           </div>
           
           <div class="emptyState-copy">
+
+          <h1 class="ff2 txtc2 h2 text-center">
+            Nothing Here Yet!
+          </h1>
+
             <p>
-              You don’t have any sponsorships set up yet. <br> Visit our sponsorship creation page to get started!
+              You don’t have any sponsorships set up yet. <br>Click below to create a sponsorship and start contributing. 
             </p>
             
             <div class="row">
