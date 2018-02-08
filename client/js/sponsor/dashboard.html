@@ -41,7 +41,7 @@
       <ul class="grid grid--stretch grid--full  grid--flexWrap   grid--flexDirectionRow">
 
         <li class="grid-cell" 
-           ng-repeat="sponsorship in dashboard.sponsorships | orderBy: 'contributions_to_date':true track by $index"
+           ng-repeat="sponsorship in dashboard.sponsorships track by $index"
            ng-hide="sponsorship.plans.length === 0">
 
          <sponsorship-card-dir sponsorship-info="sponsorship"  
