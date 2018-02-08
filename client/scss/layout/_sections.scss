@@ -52,8 +52,8 @@
   }
 
   @media #{$large-up} {
-    padding-bottom: rem-calc($level7 + $level7 + $level2);
-    padding-top: rem-calc($level7 + $level7 + $level2);
+    padding-bottom: rem-calc($level7 + $level7);
+    padding-top: rem-calc($level7 + $level7);
     
   }
 

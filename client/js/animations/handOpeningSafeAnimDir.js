@@ -7,7 +7,11 @@
 \*------------------------------------*/
 
 
-twopence.directive('handOpeningSafeAnimDir', ['$timeout', function($timeout) {
+twopence.directive('handOpeningSafeAnimDir', 
+    ['$timeout', 
+     'ScrollMagicGlobal',
+      function($timeout,
+               ScrollMagicGlobal) {
 
     return {
 
@@ -20,6 +24,7 @@ twopence.directive('handOpeningSafeAnimDir', ['$timeout', function($timeout) {
             var coinEasing = 'easeInOutSine';
             var duration = 2000; 
             var animIsRunning = false; 
+
 
             var handOpeningSafeTimeline = anime.timeline({
               autoplay: false,
@@ -86,32 +91,38 @@ twopence.directive('handOpeningSafeAnimDir', ['$timeout', function($timeout) {
             });
 
 
-            //
-            // Setup scroll  trigger code via waypoints
-            //
-            var animTriggerPoint = new Waypoint({
-
-              element: element[0], 
-              handler: function(direction) {
-
+            var triggerAnimation = function(pAnimeAnimation) {
+               
                 if(animIsRunning) {
 
                   return false
 
                 } else {  
 
-                  if(direction === 'down') {
-
-                    handOpeningSafeTimeline.restart(); 
-
-                  }
+                  pAnimeAnimation.restart(); 
 
                 }
 
-              },
-              offset: '35%'
+            };
 
-            });
+
+            //
+            // Setup scroll  trigger code 
+            //
+            var scene = new ScrollMagic.Scene({
+                      triggerElement: element[0].querySelector('.trigger-point'),
+                      triggerHook: 'onCenter',
+                      duration: 260,
+                      reverse: true})
+                        .on('start', function() {
+                          triggerAnimation(handOpeningSafeTimeline); 
+
+                        })
+                        .on('end', function() {
+                          triggerAnimation(handOpeningSafeTimeline); 
+
+                        })
+                        .addTo(ScrollMagicGlobal.globalAnimCtrl);
 
           }, 200);
 

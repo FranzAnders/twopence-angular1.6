@@ -6,7 +6,9 @@
     Hands Fist Bumping Directive
 \*------------------------------------*/
 
-twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
+twopence.directive('handsFistBumpingAnimDir', 
+    ['$timeout',
+      'ScrollMagicGlobal', function($timeout, ScrollMagicGlobal) {
 
     return {
 
@@ -59,40 +61,46 @@ twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
             .add({
 
               targets: '.strokes', 
-              strokeDashoffset: [{value: [anime.setDashoffset, anime.setDashoffset]}, {value: [anime.setDashoffset, 50]}],
+              strokeDashoffset: [{value: [anime.setDashoffset, anime.setDashoffset]}, {value: [anime.setDashoffset, 60]}],
               easing: easing, 
               duration: 500,
               offset: '-=200'
 
             });
  
-            //
-            // Setup scroll  trigger code via waypoints
-            //
-            var animTriggerPoint = new Waypoint({
 
-              element: element[0], 
-              handler: function(direction) {
-
+            var triggerAnimation = function(pAnimeAnimation) {
+               
                 if(animIsRunning) {
 
                   return false
 
-                } else {
-                  
-                  if(direction == 'down') {
+                } else {  
 
-                  handsFistBumping.restart(); 
-
-                  }
+                  pAnimeAnimation.restart(); 
 
                 }
 
-              },
-              offset: '37%'
+            };
 
-            });
 
+            //
+            // Setup scroll  trigger code 
+            //
+            var scene = new ScrollMagic.Scene({
+                      triggerElement: element[0].querySelector('.trigger-point'),
+                      triggerHook: 'onCenter',
+                      duration: 260,
+                      reverse: true})
+                        .on('start', function() {
+                          triggerAnimation(handsFistBumping); 
+
+                        })
+                        .on('end', function() {
+                          triggerAnimation(handsFistBumping); 
+
+                        })
+                        .addTo(ScrollMagicGlobal.globalAnimCtrl);
 
           }, 200);
 

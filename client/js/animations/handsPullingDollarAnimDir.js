@@ -5,7 +5,9 @@
     Hands Pulling Dollar Anim Dir
 \*------------------------------------*/
 
-twopence.directive('handsPullingDollarAnimDir', ['$timeout', function($timeout) {
+twopence.directive('handsPullingDollarAnimDir', [
+    '$timeout',
+    'ScrollMagicGlobal', function($timeout, ScrollMagicGlobal) {
 
     return {
 
@@ -65,32 +67,38 @@ twopence.directive('handsPullingDollarAnimDir', ['$timeout', function($timeout) 
             });
 
 
-            //
-            // Setup scroll  trigger code via waypoints
-            //
-            var animTriggerPoint = new Waypoint({
-
-              element: element[0], 
-              handler: function(direction) {
-
+            var triggerAnimation = function(pAnimeAnimation) {
+               
                 if(animIsRunning) {
 
                   return false
 
-                } else {
+                } else {  
 
-                  if(direction === 'down') {
-                    
-                    handsPullingDollarTimeline.restart(); 
+                  pAnimeAnimation.restart(); 
 
-                  }
+                }
 
-                }    
+            };
 
-              },
-              offset: '35%'
 
-            });
+            //
+            // Setup scroll  trigger code 
+            //
+            var scene = new ScrollMagic.Scene({
+                      triggerElement: element[0].querySelector('.trigger-point'),
+                      triggerHook: 'onCenter',
+                      duration: 260,
+                      reverse: true})
+                        .on('start', function() {
+                          triggerAnimation(handsPullingDollarTimeline); 
+
+                        })
+                        .on('end', function() {
+                          triggerAnimation(handsPullingDollarTimeline); 
+
+                        })
+                        .addTo(ScrollMagicGlobal.globalAnimCtrl);
 
           }, 200);
 
