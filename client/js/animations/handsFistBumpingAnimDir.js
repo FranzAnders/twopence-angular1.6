@@ -89,7 +89,7 @@ twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
                 }
 
               },
-              offset: '35%'
+              offset: '37%'
 
             });
 

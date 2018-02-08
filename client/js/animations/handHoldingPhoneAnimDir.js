@@ -6,7 +6,6 @@
     Hand Holding Phone Anim Directive
 \*------------------------------------*/
 
-
 twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
 
     return {
@@ -70,7 +69,6 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
               handler: function(direction) {
 
                 if(animIsRunning) {
-
 
                   if(direction ==='up') {
 

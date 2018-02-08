@@ -144,7 +144,7 @@
             </div>
 
             <div class="card-content"
-                 ng-if="!sponseeSponsorship.formStates.linked_bank">
+                 ng-if="!sponseeSponsorship.formStates.linked_bank_already">
 
               <fieldset>
               
@@ -161,11 +161,11 @@
                       <div class="small-12 large-11  columns">
                                     
                         <a class="button  button--medium button--bankLinking button--expanded mb1"
-                           ng-class="{'is-linked' : sponseeSponsorship.formStates.linked_bank }" 
+                           ng-class="{'is-linked' : sponseeSponsorship.formStates.linked_bank  }" 
                            ng-click="sponseeSponsorship.link()">
                                     
-                          <span ng-if="!sponseeSponsorship.linkedBank">Link your Funding Account</span>
-                          <span ng-if="sponseeSponsorship.linkedBank">Funding Account Linked</span>
+                          <span ng-if="!sponseeSponsorship.linked_bank">Link your Funding Account</span>
+                          <span ng-if="sponseeSponsorship.linked_bank">Funding Account Linked</span>
                                     
                         </a>
 

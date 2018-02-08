@@ -38,10 +38,17 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       'notSubmitted' : true, 
       'submittedSuccesfully': false,
-      'linked_bank': userInfo.linked_bank 
+      'linked_bank': false,
+      'linked_bank_already': userInfo.linked_bank 
 
     }
 
+
+    if(vm.formStates.linked_bank_already) {
+
+      vm.formStates.linked_bank  = true; 
+
+    }
 
     //
     // Holds the graduate's information 
