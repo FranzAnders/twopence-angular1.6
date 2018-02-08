@@ -19,9 +19,21 @@ twopence.directive('handOpeningSafeAnimDir', ['$timeout', function($timeout) {
             var easing = 'easeInOutQuad';
             var coinEasing = 'easeInOutSine';
             var duration = 2000; 
+            var animIsRunning = false; 
 
             var handOpeningSafeTimeline = anime.timeline({
-              loop: true
+              autoplay: false,
+              loop: 1,
+              begin: function(anim) {
+
+                animIsRunning = true;
+
+              }, 
+              complete: function(anim) {
+
+                animIsRunning = false; 
+
+              }
             }); 
 
             handOpeningSafeTimeline
@@ -70,6 +82,34 @@ twopence.directive('handOpeningSafeAnimDir', ['$timeout', function($timeout) {
                 easing: coinEasing,
                 duration: duration,
                 offset: -300
+
+            });
+
+
+            //
+            // Setup scroll  trigger code via waypoints
+            //
+            var animTriggerPoint = new Waypoint({
+
+              element: element[0], 
+              handler: function(direction) {
+
+                if(animIsRunning) {
+
+                  return false
+
+                } else {  
+
+                  if(direction === 'down') {
+
+                    handOpeningSafeTimeline.restart(); 
+
+                  }
+
+                }
+
+              },
+              offset: '35%'
 
             });
 

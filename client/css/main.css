@@ -16576,8 +16576,8 @@ input[type="radio"].radio--large + label {
 @media only screen and (min-width: 64.0625em) {
   /* line 44, ../scss/layout/_sections.scss */
   .section--padded {
-    padding-bottom: 7.5rem;
-    padding-top: 7.5rem;
+    padding-bottom: 6.75rem;
+    padding-top: 6.75rem;
   }
 }
 

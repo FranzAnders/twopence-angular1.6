@@ -17,11 +17,23 @@ twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
 
             var easing = 'easeOutQuart';
             var fistsEasing = 'easeInBack';
-
+            var animIsRunning = false; 
 
             var handsFistBumping = anime.timeline({
-              loop: true,
-              direction: 'alternate'
+              loop: 1,
+              autoplay: false, 
+              direction: 'alternate',
+              begin: function(anim) {
+
+                animIsRunning = true;
+
+              }, 
+              complete: function(anim) {
+
+                animIsRunning = false; 
+
+              }
+
             }); 
 
             handsFistBumping
@@ -54,6 +66,33 @@ twopence.directive('handsFistBumpingAnimDir', ['$timeout', function($timeout) {
 
             });
  
+            //
+            // Setup scroll  trigger code via waypoints
+            //
+            var animTriggerPoint = new Waypoint({
+
+              element: element[0], 
+              handler: function(direction) {
+
+                if(animIsRunning) {
+
+                  return false
+
+                } else {
+                  
+                  if(direction == 'down') {
+
+                  handsFistBumping.restart(); 
+
+                  }
+
+                }
+
+              },
+              offset: '35%'
+
+            });
+
 
           }, 200);
 

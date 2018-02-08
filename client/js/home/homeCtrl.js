@@ -11,8 +11,4 @@ twopence.controller('homeCtrl',
 
     var vm = this;
 
-    console.log('hello');
-
-    
-
 });

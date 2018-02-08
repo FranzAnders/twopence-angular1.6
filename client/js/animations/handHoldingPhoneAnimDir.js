@@ -17,17 +17,29 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
           $timeout(function() {
 
             var easing = 'easeOutQuart';
+            var animIsRunning = false; 
 
             var handHoldPhoneAnimTimeline = anime.timeline({
-              direction: 'forwards'
+              direction: 'forwards',
+              autoplay: false, 
+              begin: function(anim) {
+
+                animIsRunning = true;
+
+              }, 
+              complete: function(anim) {
+
+                animIsRunning = false; 
+
+              }
+
             }); 
 
             handHoldPhoneAnimTimeline
             .add({
 
                 targets: '.appSplash',
-                scaleY: [{value: 0},{value: .6, duration: 50}, {value: 1}],
-                scaleX: [{value: 0},{value: .2, duration: 50}, {value: 1}],
+                scale: [0, 1],
                 easing: easing,
                 duration: 1300
 
@@ -49,7 +61,39 @@ twopence.directive('handHoldingPhoneAnimDir', ['$timeout', function($timeout) {
                 offset: '-=100'
             })
 
-          }, 100);
+            //
+            // Setup scroll  trigger code via waypoints
+            //
+            var animTriggerPoint = new Waypoint({
+
+              element: element[0], 
+              handler: function(direction) {
+
+                if(animIsRunning) {
+
+
+                  if(direction ==='up') {
+
+                    handHoldPhoneAnimTimeline.seek(0); 
+
+                  }
+
+                } else {
+                  
+                  if(direction == 'down') {
+
+                    handHoldPhoneAnimTimeline.restart(); 
+
+                  } 
+
+                }
+
+              },
+              offset: '35%'
+
+            });
+
+          }, 200);
 
 
         }
