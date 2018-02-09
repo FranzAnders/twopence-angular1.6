@@ -17,7 +17,7 @@
         </p>
 
          <p class="p3" ng-show="sponseeBoost.confirmingBoost">
-          Are you sure you wish to boost {{::sponseeBoost.sponseeInfo.first_name}} <span class="fwb">$<span>{{sponseeBoost.boostInfo.plan.amount}}</span></span> from your withdrawal account?
+          Are you sure you wish to boost {{::sponseeBoost.sponseeInfo.first_name}} <span class="fwb">{{sponseeBoost.boostInfo.plan.amount | currency:"$":0}}</span> from your withdrawal account?
          </p>
 
 

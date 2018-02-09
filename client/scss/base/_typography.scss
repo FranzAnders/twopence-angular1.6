@@ -149,61 +149,38 @@ p {
 
 
 
-p {
+a.styled-link {
+  color: $tertiaryColor;
+  position: relative; 
+  @include transition(all .2s ceaser($easeInOutQuint)); 
 
-  a.alt-link {
-    color: #fff; 
+  &:before {
+    content: " "; 
+    left: 0; 
+    bottom: -2px; 
+    width: 100%; 
+    height: 2px; 
+    background-color: $primaryColor; 
+    position: absolute; 
+    opacity: 0; 
+    @include transform(translateY(3px)); 
+    @include transition(all .2s ceaser($easeInOutQuint)); 
 
+  }
+
+  &:hover,
+  &:focus {
+    color: $primaryColor;
+    
     &:after {
-      content: " "; 
-      right: 0; 
-      left: 0; 
-      bottom: -2px; 
-      width: 100%; 
-      height: 2px; 
-      background-color: #fff; 
-      position: absolute; 
+      opacity: 0; 
+      @include transform(translateY(-4px)); 
+
+    }
+
+    &:before {
       opacity: 1; 
-      @include transition(all .2s ceaser($easeInOutQuint)); 
-
-    }
-
-    &:before {
-      content: " "; 
-      left: 0; 
-      bottom: -2px; 
-      width: 100%; 
-      height: 2px; 
-      background-color: $secondaryColor; 
-      position: absolute; 
-      opacity: 0; 
-      @include transform(translateY(3px)); 
-      @include transition(all .2s ceaser($easeInOutQuint)); 
-
-    }
-
-
-    &:hover, 
-    &:focus {
-      color: $secondaryColor; 
-
-      &:after {
-        opacity: 0; 
-        @include transform(translateY(-4px)); 
-
-      }
-
-      &:before {
-        opacity: 1; 
-        @include transform(translateY(0)); 
-
-      }
-
-    }
-
-    &:active {
-      background-color: $secondaryColor; 
-      color: #fff; 
+      @include transform(translateY(0)); 
 
     }
 
@@ -211,67 +188,125 @@ p {
 
 }
 
+a.alt-link {
+color: #fff; 
+position: relative; 
 
-p {
+&:after {
+  content: " "; 
+  right: 0; 
+  left: 0; 
+  bottom: -2px; 
+  width: 100%; 
+  height: 2px; 
+  background-color: #fff; 
+  position: absolute; 
+  opacity: 1; 
+  @include transition(all .2s ceaser($easeInOutQuint)); 
 
-  a.alt-link2 {
-    color: $primaryColor; 
+}
 
-    &:after {
-      content: " "; 
-      right: 0; 
-      left: 0; 
-      bottom: -2px; 
-      width: 100%; 
-      height: 2px; 
-      background-color: #fff; 
-      position: absolute; 
-      opacity: 0; 
-      @include transition(all .2s ceaser($easeInOutQuint)); 
+&:before {
+  content: " "; 
+  left: 0; 
+  bottom: -2px; 
+  width: 100%; 
+  height: 2px; 
+  background-color: $secondaryColor; 
+  position: absolute; 
+  opacity: 0; 
+  @include transform(translateY(3px)); 
+  @include transition(all .2s ceaser($easeInOutQuint)); 
 
-    }
-
-    &:before {
-      content: " "; 
-      left: 0; 
-      bottom: -2px; 
-      width: 100%; 
-      height: 2px; 
-      background-color: #fff; 
-      position: absolute; 
-      opacity: 0; 
-      @include transform(translateY(3px)); 
-      @include transition(all .2s ceaser($easeInOutQuint)); 
-
-    }
+}
 
 
-    &:hover, 
-    &:focus {
-      color: #fff; 
+&:hover, 
+&:focus {
+  color: $secondaryColor; 
 
-      &:after {
-        opacity: 0; 
-        @include transform(translateY(-4px)); 
+  &:after {
+    opacity: 0; 
+    @include transform(translateY(-4px)); 
 
-      }
+  }
 
-      &:before {
-        opacity: 1; 
-        @include transform(translateY(0)); 
-
-      }
-
-    }
-
-    &:active {
-      color: #fff; 
-
-    }
+  &:before {
+    opacity: 1; 
+    @include transform(translateY(0)); 
 
   }
 
 }
+
+&:active {
+  background-color: $secondaryColor; 
+  color: #fff; 
+
+}
+
+}
+
+
+
+a.alt-link2 {
+color: $primaryColor;
+position: relative; 
+
+&:after {
+  content: " "; 
+  right: 0; 
+  left: 0; 
+  bottom: -2px; 
+  width: 100%; 
+  height: 2px; 
+  background-color: #fff; 
+  position: absolute; 
+  opacity: 0; 
+  @include transition(all .2s ceaser($easeInOutQuint)); 
+
+}
+
+&:before {
+  content: " "; 
+  left: 0; 
+  bottom: -2px; 
+  width: 100%; 
+  height: 2px; 
+  background-color: #fff; 
+  position: absolute; 
+  opacity: 0; 
+  @include transform(translateY(3px)); 
+  @include transition(all .2s ceaser($easeInOutQuint)); 
+
+}
+
+
+&:hover, 
+&:focus {
+  color: #fff; 
+
+  &:after {
+    opacity: 0; 
+    @include transform(translateY(-4px)); 
+
+  }
+
+  &:before {
+    opacity: 1; 
+    @include transform(translateY(0)); 
+
+  }
+
+}
+
+&:active {
+  color: #fff; 
+
+}
+
+}
+
 
 
 
