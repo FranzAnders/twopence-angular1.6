@@ -29,7 +29,6 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     var vm = this;
 
-    console.log(userInfo); 
 
     //
     // The sponsorship creation form states to show user success screen and check for linked bank account
@@ -370,6 +369,10 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       }
 
+
+      //
+      // If there's no Graduate identity defined, we take the user back to the sponsee add view 
+      //
       if(!vm.graduateInfo.identity) {
 
         $state.go('sponsor.sponseeAdd')

@@ -6011,7 +6011,7 @@ h1,
 @media only screen and (min-width: 40.0625em) {
   /* line 312, ../scss/abstracts/_typography.scss */
   .text-kilo {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     line-height: 1.2;
   }
 }
@@ -6024,7 +6024,7 @@ h1,
 @media only screen and (min-width: 40.0625em) {
   /* line 323, ../scss/abstracts/_typography.scss */
   .text-mega {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     line-height: 1.2;
   }
 }
@@ -15573,7 +15573,7 @@ input.input--large {
   vertical-align: middle;
   position: relative;
   width: 100%;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 /* line 678, ../scss/layout/_forms.scss */
@@ -16288,7 +16288,7 @@ input[type="radio"].radio--large + label {
 /* line 229, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link {
   color: #fff;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 /* line 234, ../scss/layout/_navs.scss */
@@ -18767,22 +18767,23 @@ body.fancymodal-open {
 }
 /* line 339, ../scss/components/_modals.scss */
 .fancymodal--medium .fancymodal-content {
-  max-width: 30rem;
+  max-width: 28rem;
+  min-height: 7.5rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 346, ../scss/components/_modals.scss */
+  /* line 347, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 346, ../scss/components/_modals.scss */
+  /* line 347, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 10rem !important;
   }
 }
-/* line 358, ../scss/components/_modals.scss */
+/* line 359, ../scss/components/_modals.scss */
 .fancymodal--small .fancymodal-content {
   max-width: 23.5rem;
   min-height: 7.5rem;

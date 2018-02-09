@@ -4,11 +4,11 @@
   <div class="small-12 medium-9 large-4   medium-centered  large-uncentered columns">
     
     <h1 class="ff2 txtc2">
-     How would you like to sponsor  <span ng-bind="sponseeSponsorship.sponsee.first_name  + ' ' + sponseeSponsorship.sponsee.last_name"></span>?
+     How would you like to sponsor  <span ng-bind="sponseeSponsorship.graduateInfo.first_name  + ' ' + sponseeSponsorship.graduateInfo.last_name"></span>?
     </h1>  
 
     <p>
-      A one-time boost or a matching plan: let your sponsee know how you’d like to contribute.
+      A one-time boost or a matching plan: let your Graduate know how you’d like to contribute.
     </p>
 
   </div>
@@ -41,10 +41,8 @@
              
                <h2 class="txtc2  h4 mb2 text-center   medium-text-left large-text-center fwb">Monthly Matching Plan</h2>
            
-               <p class="text-micro">Match every dollar your Graduate pays toward their loans using Pickpocket, up to monthly limit set by you. Help your Graduate get out of debt faster while developing better financial habits.</p>
+               <p class="text-micro">Match every dollar your Graduate pays toward their loans using Pickpocket, up to monthly limit set by you. Help your Grad get out of debt faster while developing better financial habits.</p>
                
-            
-
                 <a class="button  button--secondary  button--medium  button--expanded mb2"
                    ng-click="sponseeSponsorship.setType('matching')"
                    ui-sref="sponsor.sponsorshipSetup.matching">
@@ -54,7 +52,7 @@
                 <ul class="text-micro text-center mb0">
                   
                   <li>
-                    <li>$4.99/mo Service Fee <br> $2.99/mo per additional Sponsorships</li>
+                    <li>$4.99/mo fee <br> $2.99/mo for additional graduates</li>
                   </li>
                 </ul>
 
@@ -92,11 +90,11 @@
                      
                <div>
                  <h2 class="txtc2  h4 mb2 text-center  medium-text-left  large-text-center  fwb">
-                  One-time Boost
+                  Give ‘em a boost!
                 </h2>
                             
                  <p class="text-micro">
-                   A one-time payment toward your Graduate's student loans. Give a gift that helps your grad down the path to financial freedom.
+                  Make a one-time payment toward your Graduate’s student loans. Give the gift that sets your Graduate on the path to financial freedom.
                  </p>
                   
                </div>
@@ -105,7 +103,7 @@
                   <a class="button  button--secondary  button--medium  button--expanded  mb2"
                     ng-click="sponseeSponsorship.setType('one-time')"
                     ui-sref="sponsor.sponsorshipSetup.oneTime">
-                   Make a One-time Boost
+                   Boost Graduate
                    </a>
                        
                    <p class="text-micro text-center mb3">

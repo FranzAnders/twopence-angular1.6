@@ -57,9 +57,7 @@ twopence.controller('signUpCtrl', [
 
 
     if($state.is('main.signUp.confirmation') ||  $state.is('main.signUp.verify')) {
-
       vm.accountCreated = true;
-
     }
 
 
@@ -116,7 +114,6 @@ twopence.controller('signUpCtrl', [
 
           }).catch(function(err) {
             vm.statusText = err.data.message;
-            console.log(err);
 
             if(vm.statusText === 'Email has already been taken.') {
 
@@ -127,7 +124,6 @@ twopence.controller('signUpCtrl', [
           })
 
       } else {
-
         console.log("ERROR: Form is not valid");
 
       }

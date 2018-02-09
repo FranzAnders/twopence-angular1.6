@@ -5,7 +5,7 @@
   <div class="small-12 columns" ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
     <form  ng-submit="sponseeSponsorship.createPlan(sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponsorshipInfo, sponseeSponsorship.graduateInfo)"
-          name="sponseeSponsorship.sponsorshipDetailsForm">
+          name="sponseeSponsorship.sponsorshipDetailsForm" novalidate>
 
       <div ng-if="sponseeSponsorship.formStates.notSubmitted">
 
@@ -106,11 +106,13 @@
                                        id="custom"
                                        class="styled-as-radio  radio--large"
                                        ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customAmount.active, 'one-time')"
-                                       value="sponseeSponsorship.customAmount.active">
+                                       value="sponseeSponsorship.customAmount.active"
+                                       check-me="{{sponseeSponsorship.customAmount.amount}}"
+                                       >
                           
                                 <label for="custom">
                                   <span></span>
-                                  <i class="hide-elem">other</i>
+                                  <i class="hide-elem">Other</i>
                                   
                                   <div class="input--customAmount">
                                     <input type="number"
@@ -119,7 +121,8 @@
                                      class="input--small   mb0"
                                      ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                                      ng-model="sponseeSponsorship.customAmount.amount"
-                                     placeholder="other"
+                                     placeholder="Other"
+                                     focus-me="{{sponseeSponsorship.customAmount.active}}"
                                      >
                                   </div>
                           

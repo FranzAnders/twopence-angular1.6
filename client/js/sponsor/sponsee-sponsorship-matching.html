@@ -6,7 +6,7 @@
        ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
     <form ng-submit="sponseeSponsorship.createPlan(sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponsorshipInfo, sponseeSponsorship.graduateInfo)"
-          name="sponseeSponsorship.sponsorshipDetailsForm">
+          name="sponseeSponsorship.sponsorshipDetailsForm" novalidate>
 
       <div ng-if="sponseeSponsorship.formStates.notSubmitted">
 
@@ -102,11 +102,12 @@
                                        id="custom"
                                        class="styled-as-radio  radio--large"
                                        ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
-                                       value="sponseeSponsorship.customLimit.active">
+                                       value="sponseeSponsorship.customLimit.active"
+                                       check-me="{{sponseeSponsorship.customLimit.limit}}">
                           
                                 <label for="custom">
                                   <span></span>
-                                  <i class="hide-elem">other</i>
+                                  <i class="hide-elem">Other</i>
                                   
                                   <div class="input--customAmount">
                                     <input type="number"
@@ -115,7 +116,8 @@
                                      class="input--small   mb0"
                                      ng-model="sponseeSponsorship.customLimit.limit"
                                      ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit"
-                                     placeholder="other"
+                                     placeholder="Other"
+                                     focus-me="{{sponseeSponsorship.customLimit.active}}"
                                      >
                                   </div>
                           
