@@ -37,7 +37,7 @@ twopence.controller('signUpCtrl', [
     // inject into the requests
     //
     vm.userInfo = {
-      'sms_preferred' : true
+      'sms_preferred' : false
     };
 
 
