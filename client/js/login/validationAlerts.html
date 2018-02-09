@@ -24,10 +24,15 @@
         <p class="validationAlert-body" ng-switch-when="tooManyAttempts"> 
             You've made too many successive attempts to login. Please wait a few minutes before trying again.
         </p>
+
+        <p class="validationAlert-body"  ng-switch-when="duplicateEmails"> 
+            There is already an account associated with {{validationAlerts.validatedData.email}}. Use another email or log in with this email.
+        </p>
+        
         <p class="validationAlert-body"  ng-switch-when="generalError"> 
             Whoops! Something went wrong while trying to log you in. Please try again in a few minutes.
         </p>
-  
+
       </div>
   
     </div>
