@@ -13549,11 +13549,75 @@ p a.alt-link:active {
   color: #fff;
 }
 
+/* line 217, ../scss/base/_typography.scss */
+p a.alt-link2 {
+  color: #6AC6C5;
+}
 /* line 220, ../scss/base/_typography.scss */
+p a.alt-link2:after {
+  content: " ";
+  right: 0;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  opacity: 0;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 234, ../scss/base/_typography.scss */
+p a.alt-link2:before {
+  content: " ";
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  opacity: 0;
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 249, ../scss/base/_typography.scss */
+p a.alt-link2:hover, p a.alt-link2:focus {
+  color: #fff;
+}
+/* line 253, ../scss/base/_typography.scss */
+p a.alt-link2:hover:after, p a.alt-link2:focus:after {
+  opacity: 0;
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+/* line 259, ../scss/base/_typography.scss */
+p a.alt-link2:hover:before, p a.alt-link2:focus:before {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* line 267, ../scss/base/_typography.scss */
+p a.alt-link2:active {
+  color: #fff;
+}
+
+/* line 283, ../scss/base/_typography.scss */
 .section--secondary p.section-text a {
   color: #fff;
 }
-/* line 224, ../scss/base/_typography.scss */
+/* line 287, ../scss/base/_typography.scss */
 .section--secondary p.section-text a:hover, .section--secondary p.section-text a:focus {
   color: #fff;
   background-color: #231F20;
@@ -13562,13 +13626,13 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Default Text Selection Color 
 \*------------------------------------*/
-/* line 249, ../scss/base/_typography.scss */
+/* line 312, ../scss/base/_typography.scss */
 ::selection {
   background-color: #6ac6c5b3;
   color: #fff;
 }
 
-/* line 254, ../scss/base/_typography.scss */
+/* line 317, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: #6ac6c5b3;
   color: #fff;
@@ -13577,32 +13641,32 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Font Color Classes 
 \*------------------------------------*/
-/* line 269, ../scss/base/_typography.scss */
+/* line 332, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 273, ../scss/base/_typography.scss */
+/* line 336, ../scss/base/_typography.scss */
 .txtc2 {
   color: #231F20;
 }
 
-/* line 277, ../scss/base/_typography.scss */
+/* line 340, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 281, ../scss/base/_typography.scss */
+/* line 344, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 286, ../scss/base/_typography.scss */
+/* line 349, ../scss/base/_typography.scss */
 .txtc5 {
   color: #adadad;
 }
 
-/* line 290, ../scss/base/_typography.scss */
+/* line 353, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
@@ -13613,7 +13677,7 @@ p a.alt-link:active {
 /*------------------------------------*\
     #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 334, ../scss/base/_typography.scss */
+/* line 397, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -13621,67 +13685,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 388, ../scss/base/_typography.scss */
+/* line 451, ../scss/base/_typography.scss */
 hr {
   border-style: none;
   height: 0.125rem;
   margin-top: 0;
 }
 
-/* line 394, ../scss/base/_typography.scss */
+/* line 457, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 400, ../scss/base/_typography.scss */
+/* line 463, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #231F20;
   margin-left: 0;
 }
 
-/* line 406, ../scss/base/_typography.scss */
+/* line 469, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 412, ../scss/base/_typography.scss */
+/* line 475, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 418, ../scss/base/_typography.scss */
+/* line 481, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 424, ../scss/base/_typography.scss */
+/* line 487, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 430, ../scss/base/_typography.scss */
+/* line 493, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 435, ../scss/base/_typography.scss */
+/* line 498, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 440, ../scss/base/_typography.scss */
+/* line 503, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 447, ../scss/base/_typography.scss */
+/* line 510, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
   height: 0.125rem;
 }
 
-/* line 453, ../scss/base/_typography.scss */
+/* line 516, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -13690,7 +13754,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 466, ../scss/base/_typography.scss */
+/* line 529, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -13703,7 +13767,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 480, ../scss/base/_typography.scss */
+/* line 543, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -13717,14 +13781,14 @@ hr {
 /*------------------------------------*\
     #Paragraph styles 
 \*------------------------------------*/
-/* line 546, ../scss/base/_typography.scss */
+/* line 609, ../scss/base/_typography.scss */
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
   line-height: 1.5;
 }
 
-/* line 553, ../scss/base/_typography.scss */
+/* line 616, ../scss/base/_typography.scss */
 .p3 {
   font-size: 1.25rem;
   line-height: 1.2;
@@ -13734,7 +13798,7 @@ hr {
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 569, ../scss/base/_typography.scss */
+/* line 632, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -13742,7 +13806,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 590, ../scss/base/_typography.scss */
+/* line 653, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -13751,63 +13815,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 608, ../scss/base/_typography.scss */
+  /* line 671, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 616, ../scss/base/_typography.scss */
+  /* line 679, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 624, ../scss/base/_typography.scss */
+  /* line 687, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 634, ../scss/base/_typography.scss */
+  /* line 697, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 643, ../scss/base/_typography.scss */
+  /* line 706, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 651, ../scss/base/_typography.scss */
+  /* line 714, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 660, ../scss/base/_typography.scss */
+  /* line 723, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 668, ../scss/base/_typography.scss */
+  /* line 731, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 677, ../scss/base/_typography.scss */
+  /* line 740, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }

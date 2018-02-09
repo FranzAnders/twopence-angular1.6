@@ -212,6 +212,69 @@ p {
 }
 
 
+p {
+
+  a.alt-link2 {
+    color: $primaryColor; 
+
+    &:after {
+      content: " "; 
+      right: 0; 
+      left: 0; 
+      bottom: -2px; 
+      width: 100%; 
+      height: 2px; 
+      background-color: #fff; 
+      position: absolute; 
+      opacity: 0; 
+      @include transition(all .2s ceaser($easeInOutQuint)); 
+
+    }
+
+    &:before {
+      content: " "; 
+      left: 0; 
+      bottom: -2px; 
+      width: 100%; 
+      height: 2px; 
+      background-color: #fff; 
+      position: absolute; 
+      opacity: 0; 
+      @include transform(translateY(3px)); 
+      @include transition(all .2s ceaser($easeInOutQuint)); 
+
+    }
+
+
+    &:hover, 
+    &:focus {
+      color: #fff; 
+
+      &:after {
+        opacity: 0; 
+        @include transform(translateY(-4px)); 
+
+      }
+
+      &:before {
+        opacity: 1; 
+        @include transform(translateY(0)); 
+
+      }
+
+    }
+
+    &:active {
+      color: #fff; 
+
+    }
+
+  }
+
+}
+
+
+
 
 .section--secondary {
 

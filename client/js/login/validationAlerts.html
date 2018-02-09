@@ -26,7 +26,7 @@
         </p>
 
         <p class="validationAlert-body"  ng-switch-when="duplicateEmails"> 
-            There is already an account associated with {{validationAlerts.validatedData.email}}. Use another email or log in with this email.
+          An account already exists using this email address ( {{validationAlerts.validatedData.email}}). If this is your account and you need to reset the password, click <a ui-sref="main.account.resetPasswordEmail'" rel="intenal" class="alt-link2">here</a>. 
         </p>
         
         <p class="validationAlert-body"  ng-switch-when="generalError"> 
