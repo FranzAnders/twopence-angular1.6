@@ -86,11 +86,10 @@ $level7: 48;
     'components/emptyStates',
     'components/headlines',
     'components/heroHeader',
-    'components/lazyImages',
+    'components/images',
     'components/loginHeader',
     'components/lists',
     'components/loaders',
-    'components/quickActionsBtn',
     'components/modals',
     'components/stats',
     'components/socialButtons',
@@ -104,6 +103,7 @@ $level7: 48;
 @import
     'pages/home',
     'pages/login',
+    'pages/planSuccessfullyMade',
     'pages/sponsorshipCreation',
     'pages/sponsorView',
     'pages/sponseeSplash';

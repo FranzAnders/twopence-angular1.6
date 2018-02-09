@@ -1,19 +1,19 @@
 
 
 /*------------------------------------*\
-    #Empty State
+    #Plan Setup Success Page 
 \*------------------------------------*/
 
 
-.emptyState {
-  margin-top: rem-calc($level2); 
+.planSuccessState {
+  margin-top: rem-calc($level7); 
+  
+  @media #{$large-up} {
+    margin-top: rem-calc($level7 + $level3); 
 
-  @media #{$medium-up} {
-    margin-top: 0; 
-    
   }
   
-  .emptyState-copy {
+  .planSuccessState-copy {
 
     @extend %text-center; 
 
@@ -25,7 +25,7 @@
     }
 
     @media #{$large-up} {
-      max-width: rem-calc(490px); 
+      max-width: rem-calc(440px); 
 
     }
 

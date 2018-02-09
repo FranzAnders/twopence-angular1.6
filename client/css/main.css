@@ -5903,7 +5903,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
     #Text Alignments 
 \*------------------------------------*/
 /* line 82, ../scss/abstracts/_typography.scss */
-.text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy {
+.text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy, .planSuccessState .planSuccessState-copy {
   text-align: center;
 }
 
@@ -6265,7 +6265,7 @@ button,
     #Text Alignment  
 \*------------------------------------*/
 /* line 272, ../scss/abstracts/_utility.scss */
-.text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy {
+.text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy, .planSuccessState .planSuccessState-copy {
   text-align: center;
 }
 
@@ -18071,56 +18071,26 @@ button.is-inactive,
 \*------------------------------------*/
 /* line 8, ../scss/components/_emptyStates.scss */
 .emptyState {
-  margin-top: 3rem;
+  margin-top: 0.75rem;
 }
-@media only screen and (min-width: 64.0625em) {
+@media only screen and (min-width: 40.0625em) {
   /* line 8, ../scss/components/_emptyStates.scss */
   .emptyState {
-    margin-top: 4.125rem;
-  }
-}
-/* line 16, ../scss/components/_emptyStates.scss */
-.emptyState .emptyState-illustr {
-  margin-bottom: 1.5rem;
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 16, ../scss/components/_emptyStates.scss */
-  .emptyState .emptyState-illustr {
-    margin-bottom: 1.875rem;
-  }
-}
-/* line 25, ../scss/components/_emptyStates.scss */
-.emptyState .emptyState-illustr.emptyState-illustr--emptyWallet {
-  width: 10rem;
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 25, ../scss/components/_emptyStates.scss */
-  .emptyState .emptyState-illustr.emptyState-illustr--emptyWallet {
-    width: 9.375rem;
-  }
-}
-/* line 35, ../scss/components/_emptyStates.scss */
-.emptyState .emptyState-illustr.emptyState-illustr--magnifyingGlass {
-  width: 11.25rem;
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 35, ../scss/components/_emptyStates.scss */
-  .emptyState .emptyState-illustr.emptyState-illustr--magnifyingGlass {
-    width: 11.875rem;
+    margin-top: 0;
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 47, ../scss/components/_emptyStates.scss */
+  /* line 16, ../scss/components/_emptyStates.scss */
   .emptyState .emptyState-copy {
     margin-right: auto;
     margin-left: auto;
-    max-width: 33.75rem;
+    max-width: 26.25rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 47, ../scss/components/_emptyStates.scss */
+  /* line 16, ../scss/components/_emptyStates.scss */
   .emptyState .emptyState-copy {
-    max-width: 28.75rem;
+    max-width: 30.625rem;
   }
 }
 
@@ -18196,15 +18166,49 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
-    #Hero Section Component
+    #CSS For Images 
 \*------------------------------------*/
-/* line 8, ../scss/components/_lazyImages.scss */
-.img-lazy {
-  opacity: 0;
-  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+/* line 8, ../scss/components/_images.scss */
+img {
+  width: 100%;
+}
+
+/*------------------------------------*\
+    #Illustration Styles 
+\*------------------------------------*/
+/* line 22, ../scss/components/_images.scss */
+.illustr {
+  margin-bottom: 1.5rem;
+}
+
+/*------------------------------------*\
+    #Illustration for State Badges 
+\*------------------------------------*/
+/* line 34, ../scss/components/_images.scss */
+.illustr--stateBadge {
+  max-width: 10.625rem;
+  margin-bottom: 1.5rem;
+}
+
+/*------------------------------------*\
+    #Illustrations for Empty States
+\*------------------------------------*/
+/* line 50, ../scss/components/_images.scss */
+.illustr--emptyState {
+  margin-bottom: 0;
+  max-width: 16.25rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 50, ../scss/components/_images.scss */
+  .illustr--emptyState {
+    max-width: 16.875rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 50, ../scss/components/_images.scss */
+  .illustr--emptyState {
+    max-width: 17.5rem;
+  }
 }
 
 /*------------------------------------*\
@@ -18570,27 +18574,6 @@ button.is-inactive,
     transform: translateX(100%);
   }
 }
-/*------------------------------------*\
-    #Quick Actions
-\*------------------------------------*/
-/* line 7, ../scss/components/_quickActionsBtn.scss */
-.quickActionsBtn {
-  background-color: #6AC6C5;
-  position: fixed;
-  height: 3.75rem;
-  width: 3.75rem;
-  bottom: 4.5rem;
-  right: 0.375rem;
-  z-index: 100;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-/* line 17, ../scss/components/_quickActionsBtn.scss */
-.quickActionsBtn .quickActionsBtn-inner {
-  text-align: center;
-}
-
 /*------------------------------------*\
     #Modals
 \*------------------------------------*/
@@ -19204,7 +19187,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Styles specific to login and account sign up page 
+    #Login and Account Sign Up Page 
 \*------------------------------------*/
 /* line 7, ../scss/pages/_login.scss */
 .loginView {
@@ -19216,11 +19199,16 @@ body.fancymodal-open {
     padding-top: 1.875rem;
   }
 }
+/* line 15, ../scss/pages/_login.scss */
+.loginView .loginView-logo {
+  max-width: 11.25rem;
+  margin-bottom: 1.125rem;
+}
 
 /*------------------------------------*\
     #Password Requirements Checkboxes
 \*------------------------------------*/
-/* line 24, ../scss/pages/_login.scss */
+/* line 30, ../scss/pages/_login.scss */
 .passRequirementCheck {
   height: 0.75rem;
   width: 0.75rem;
@@ -19234,10 +19222,38 @@ body.fancymodal-open {
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 32, ../scss/pages/_login.scss */
+/* line 38, ../scss/pages/_login.scss */
 .passRequirementCheck.is-checked {
   background-color: #33d28a;
   border-color: #33d28a;
+}
+
+/*------------------------------------*\
+    #Plan Setup Success Page 
+\*------------------------------------*/
+/* line 8, ../scss/pages/_planSuccessfullyMade.scss */
+.planSuccessState {
+  margin-top: 3rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 8, ../scss/pages/_planSuccessfullyMade.scss */
+  .planSuccessState {
+    margin-top: 4.125rem;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 16, ../scss/pages/_planSuccessfullyMade.scss */
+  .planSuccessState .planSuccessState-copy {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 26.25rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 16, ../scss/pages/_planSuccessfullyMade.scss */
+  .planSuccessState .planSuccessState-copy {
+    max-width: 27.5rem;
+  }
 }
 
 /*------------------------------------*\
