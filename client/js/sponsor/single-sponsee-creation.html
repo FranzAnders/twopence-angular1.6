@@ -6,13 +6,13 @@
           </h1>
 
           <p class="mb0 text-center">
-            First, we need some information about the <br class="show-for-large-up">person you’d like to sponsor.
+            We need some basic information about the <br class="show-for-large-up"> Graduate you’d like to sponsor.
           </p>
         </div>
 
         <div class="card-content">
 
-        <form ng-submit="sponseeCreation.searchSponsee(sponseeCreation.sponseeSearchForm)"
+        <form ng-submit="sponseeCreation.searchSponsee(sponseeCreation.sponseeSearchForm, sponseeCreation.searchData)"
               name="sponseeCreation.sponseeSearchForm"
               novalidate>
 
@@ -74,7 +74,7 @@
               Email
             </label>
 
-            <input type="text"
+            <input type="email"
                    id="email"
                    class="input--primary input--large  "
                    ng-model="sponseeCreation.searchData.email"
@@ -87,7 +87,7 @@
             <div class="small-12 columns ">
 
               <button type="submit" class="button--medium  button--primary   button--expanded  mb0">
-                Setup Sponsorship
+                Set Up Sponsorship
               </button>
 
             </div>

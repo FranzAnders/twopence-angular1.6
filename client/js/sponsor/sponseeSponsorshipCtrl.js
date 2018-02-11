@@ -13,8 +13,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
   'Sponsee',
   'Sponsorship',
   'PlaidAuth',
-  'User', 
   'ENV',
+  'userInfo',
     function(
     $fancyModal,
     $scope,
@@ -23,24 +23,46 @@ twopence.controller('sponseeSponsorshipCtrl', [
     $timeout,
     Sponsee,
     Sponsorship,
-    PlaidAuth, 
-    User,
-    ENV) {
+    PlaidAuth,
+    ENV,
+    userInfo) {
 
     var vm = this;
 
-    vm.formNotSubmited = true;
 
-    vm.formSubmittedSuccesfully = false;
+    //
+    // The sponsorship creation form states to show user success screen and check for linked bank account
+    //
+    vm.formStates = {
 
-    vm.sponsee = $stateParams.data;
+      'notSubmitted' : true,
+      'submittedSuccesfully': false,
+      'linked_bank': false,
+      'linked_bank_already': userInfo.linked_bank
 
-    vm.email = $stateParams.email;
+    }
 
-    vm.linkedBank = false;
 
-    vm.userInfo = null; 
+    if(vm.formStates.linked_bank_already) {
 
+      vm.formStates.linked_bank  = true;
+
+    }
+
+    //
+    // Holds the graduate's information
+    //
+    vm.graduateInfo = {
+
+      'identity': $stateParams.identity,
+      'email': $stateParams.email
+    }
+
+
+
+    //
+    // Holds the custom limit for a monthly patching plan if active
+    //
     vm.customLimit = {
       'active': false,
       'limit': ''
@@ -48,6 +70,9 @@ twopence.controller('sponseeSponsorshipCtrl', [
     };
 
 
+    //
+    // Holds the custom amount for a one time boost if active
+    //
     vm.customAmount = {
       'active': false,
       'amount': ''
@@ -55,21 +80,24 @@ twopence.controller('sponseeSponsorshipCtrl', [
     };
 
 
-    //
-    // Gets User info and sets it on the controller
-    //
-    User.getUserInfo().then(function(userInfo) {
 
-      vm.userInfo = userInfo; 
-      vm.linkedBank = vm.userInfo.linked_bank;
+    //
+    // Resets the custom/other fields in matching plan and one time forms
+    //
+    vm.resetCustomFields = function() {
 
-    });   
+        vm.customLimit.active = false;
+        vm.customLimit.limit = '';
+        vm.customAmount.active = false;
+        vm.customAmount.amount = '';
+    }
+
 
 
     //
     // Handles Plaid Sandbox for bank account linking
     //
-    var sandboxHandler = Plaid.create({
+    var plaidAuth = Plaid.create({
       apiVersion: 'v2',
       clientName: 'TwoPence',
       env: ENV.plaidEnv,
@@ -95,16 +123,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
           PlaidAuth.login(vm.plaidInfo);
 
-          $fancyModal.open({
-                  templateUrl: 'js/modals/bank-link-success.html',
-                  themeClass: 'fancymodal--primary  fancymodal--small',
-                  openingClass: 'is-open',
-                  closingClass: 'is-closed',
-                  showCloseButton: false
-
-              });
-
-          vm.linkedBank = true;
+          vm.formStates.linked_bank = true;
 
           mixpanel.track('Linked Bank Account');
 
@@ -126,11 +145,12 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     });
 
+
+
     //
     // Sponsorship info object, holds all the plan information
     // as it is being built
     //
-
     vm.sponsorshipInfo = {
       "plan": {
         "type": null,
@@ -139,6 +159,9 @@ twopence.controller('sponseeSponsorshipCtrl', [
     };
 
 
+    //
+    // Plaid info object holds status of Plaid Auth
+    //
     vm.plaidInfo = {
       public_token: "",
       institution: {
@@ -179,67 +202,79 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       } else {
 
-        vm.customLimit.active = false;
-        vm.customLimit.limit = '';
-        vm.customAmount.active = false;
-        vm.customAmount.amount = '';
+        vm.resetCustomFields();
 
       }
 
     };
 
+
     //
     // Creates a sponsorship and a plan right after. If vm.customLimit.active, we apply that as the
     // limit/amount of the sponsorship
     //
-    vm.createPlan = function(pSponsorshipDetailsForm, pSponsorshipInfo) {
+    vm.createPlan = function(pSponsorshipDetailsForm, pPlanBeingCreated, pGraduateInfo) {
 
       // Mixpanel properties.
       var custom = false;
       var type = 'Match';
-      var value = pSponsorshipInfo.plan.limit;
+      var value = pPlanBeingCreated.plan.limit;
+
+      // Plan being created object.
+      var planBeingCreated = pPlanBeingCreated;
 
       if(vm.customLimit.active) {
-        pSponsorshipInfo.plan.limit = vm.customLimit.limit;
+        planBeingCreated.plan.limit = vm.customLimit.limit;
         custom = true;
         value = vm.customLimit.limit;
       }
 
       if(vm.customAmount.active) {
-        pSponsorshipInfo.plan.amount = vm.customAmount.amount;
+        planBeingCreated.plan.amount = vm.customAmount.amount;
         custom = true;
         value = vm.customAmount.amount;
       }
 
-      if(vm.sponsorshipInfo.plan.type === 'Fixed') {
+      if(planBeingCreated.plan.type === 'Fixed') {
         type = 'Fixed';
-        value = pSponsorshipInfo.plan.amount;
+        value = planBeingCreated.plan.amount;
       }
 
-      if (pSponsorshipDetailsForm.$valid) {
+      if(pSponsorshipDetailsForm.$valid) {
 
-          var sponsee = {};
+         var userPayLoad = {};
 
-          sponsee.user = vm.sponsee;
+         userPayLoad.user = pGraduateInfo.identity;
 
-         Sponsorship.create(sponsee).then(function(res) {
+         Sponsorship.create(userPayLoad).then(function(res) {
 
-            var sponseeInfo = res;
+          var sponsorship = res;
 
-            Sponsorship.createNewPlan(sponseeInfo.id, vm.sponsorshipInfo).then(function(sponsorship) {
+          Sponsorship.createNewPlan(sponsorship.id, planBeingCreated).then(function(sponsorship) {
 
-              vm.formNotSubmited = false;
-              vm.formSubmittedSuccesfully = true;
+            vm.formStates.notSubmitted = false;
+            vm.formStates.submittedSuccesfully = true;
 
-              mixpanel.track('Completed Sponsorship Setup', {
-                'Type': type,
-                'Value': value,
-                'Is Custom': custom
+            mixpanel.track('Completed Sponsorship Setup', {
+              'Type': type,
+              'Value': value,
+              'Is Custom': custom
+            });
+
+          }).catch(function(err) {
+
+           if(err.data.message === "User already has match plan active between those dates.") {
+
+               $fancyModal.open({
+                  templateUrl: 'js/modals/matching-plan-already-exists-error.html',
+                  themeClass: 'fancymodal--primary  fancymodal--small',
+                  openingClass: 'is-open',
+                  closingClass: 'is-closed',
+                  showCloseButton: false
+
               });
 
-            }).catch(function(err) {
-
-              console.log(err); 
+             } else {
 
                $fancyModal.open({
                   templateUrl: 'js/modals/sponsorship-creation-error.html',
@@ -250,23 +285,25 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
               });
 
-            });
-
-          }).catch(function(err) {
-              console.log(err); 
-
-             $fancyModal.open({
-                templateUrl: 'js/modals/sponsorship-creation-error.html',
-                themeClass: 'fancymodal--primary  fancymodal--small',
-                openingClass: 'is-open',
-                closingClass: 'is-closed',
-                showCloseButton: false
-
-            });
+            }
 
           });
 
+        }).catch(function(err) {
+
+          $fancyModal.open({
+              templateUrl: 'js/modals/sponsorship-creation-error.html',
+              themeClass: 'fancymodal--primary  fancymodal--small',
+              openingClass: 'is-open',
+              closingClass: 'is-closed',
+              showCloseButton: false
+
+           });
+
+        });
+
       }
+
     }
 
 
@@ -297,8 +334,14 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       mixpanel.track('Selected Plan', {'Plan Type': type});
 
-      console.log(vm.sponsorshipInfo);
+    };
 
+
+    //
+    // Opens the Plaid Auth UX
+    //
+    vm.linkBank = function() {
+      plaidAuth.open();
     };
 
 
@@ -312,7 +355,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
         vm.sponsorshipInfo = {
           "user": {
-            "id": vm.sponseeId
+            "id": vm.graduateId
           },
           "plan": {
             "type": null,
@@ -320,105 +363,25 @@ twopence.controller('sponseeSponsorshipCtrl', [
           }
         };
 
-        vm.formNotSubmited = true;
+        vm.formStates.notSubmitted = true;
+        vm.formStates.submittedSuccesfully = false;
+        vm.resetCustomFields();
 
-        vm.formSubmittedSuccesfully = false;
-        console.log('clear form');
+      }
+
+
+      //
+      // If there's no Graduate identity defined, we take the user back to the sponsee add view
+      //
+      if(!vm.graduateInfo.identity) {
+
+        $state.go('sponsor.sponseeAdd')
 
       }
 
     });
 
-    vm.link = function() {
-      sandboxHandler.open();
-    };
-
-    //
-    // Proccesses the sponsorship form, if required fields are filled
-    // we take the user to the Terms of Agreement page
-    //
-    // vm.processForm = function() {
-
-    //   if(vm.form.limit) {
-
-    //     vm.formNotSubmited = false;
-
-    //   } else {
-
-    //     alert('FAILING FORM');
-
-    //   }
-
-    // };
-
-
-    //
-    // Finishes the form if user has agreed to the terms of agreement
-    // //
-    // vm.finishForm = function() {
-
-    //   console.log('finish form is running');
-
-    //   if(!vm.form.limit) {
-
-    //     return false;
-
-    //   } else {
-
-    //     if(vm.form.limit && vm.form.acceptedTerms) {
-
-    //       vm.submitSponsorshipForm(vm.form, vm.sponseeEmail);
-
-    //     } else {
-
-    //       alert('Please accept terms of agreement before continuing');
-
-    //     }
-
-    //   }
-
-    // };
-
-
-    // vm.submitSponsorshipForm = function(pForm, pSponseeEmail) {
-
-    //   var plan = {};
-
-    //   plan.limit = pForm.limit;
-    //   plan.type = pForm.type;
-
-    //   if(plan.type = 'matching') {
-
-    //     Sponsee.setPlan(plan, pSponseeEmail).then(function(pSponsee) {
-
-    //       console.log(pSponsee);
-
-    //       $timeout(function() {
-
-    //         $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail});
-
-    //       }, 1000);
-
-    //     }).catch(function(error){
-
-    //       console.log('this failed');
-
-    //     });
-
-    //     return
-
-    //   }
-
-    //   vm.formSubmittedSuccesfully = true;
-
-    //   $timeout(function() {
-
-    //       $state.go('sponsor.sponsee', {sponseeEmail: pSponseeEmail});
-
-    //   }, 1000);
-
-    // }
-
 
   }
+
 ]);

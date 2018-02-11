@@ -4,10 +4,10 @@
 
   <div class="small-12 columns" ng-if="!sponseeSponsorship.formSubmittedSuccesfully">
 
-    <form  ng-submit="sponseeSponsorship.createPlan(sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponsorshipInfo)"
-          name="sponseeSponsorship.sponsorshipDetailsForm">
+    <form  ng-submit="sponseeSponsorship.createPlan(sponseeSponsorship.sponsorshipDetailsForm, sponseeSponsorship.sponsorshipInfo, sponseeSponsorship.graduateInfo)"
+          name="sponseeSponsorship.sponsorshipDetailsForm" novalidate>
 
-      <div ng-if="sponseeSponsorship.formNotSubmited">
+      <div ng-if="sponseeSponsorship.formStates.notSubmitted">
 
         <div class="small-12 medium-4  large-4   medium-uncentered  large-uncentered columns">
         
@@ -16,13 +16,12 @@
           </h1>  
 
           <p>
-            A one-time payment of any amount toward their student loans.
-              Your bank account will be charged a one-time service fee of $4.99.
+            A one-time payment of any amount toward your Graduate's student loans.
+            Your bank account will be charged a one-time service fee of $4.99.
 
           </p>
           
         </div>
-
       
         <div class="small-12 columns medium-8 large-6 large-pull-2">
           
@@ -61,6 +60,7 @@
                              value="50"
                              id="fifty"
                              checked="checked"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                               ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                              class="radio--large">
                             <label for="fifty"> <span></span>$50</label>
@@ -74,6 +74,7 @@
                              name="amount"
                              value="100"
                              id="oneHundred"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                               ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                              class="radio--large">
                             <label for="oneHundred"><span></span>$100</label>
@@ -87,6 +88,7 @@
                                name="amount"
                                value="250"
                                id="twoHundredAndFiftty"
+                               ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                                 ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
                                class="radio--large">
                             <label for="twoHundredAndFiftty"><span></span>$250</label>
@@ -103,19 +105,23 @@
                                        id="custom"
                                        class="styled-as-radio  radio--large"
                                        ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customAmount.active, 'one-time')"
-                                       value="sponseeSponsorship.customAmount.active">
+                                       value="sponseeSponsorship.customAmount.active"
+                                       check-me="{{sponseeSponsorship.customAmount.amount}}"
+                                       >
                           
                                 <label for="custom">
                                   <span></span>
-                                  <i class="hide-elem">other</i>
+                                  <i class="hide-elem">Other</i>
                                   
                                   <div class="input--customAmount">
                                     <input type="number"
                                      id="customValue"
                                      name="custom"
                                      class="input--small   mb0"
+                                     ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
                                      ng-model="sponseeSponsorship.customAmount.amount"
-                                     placeholder="other"
+                                     placeholder="Other"
+                                     focus-me="{{sponseeSponsorship.customAmount.active}}"
                                      >
                                   </div>
                           
@@ -139,9 +145,8 @@
 
             </div>
 
-            <hr class="hr--faded">
-
-            <div class="card-content">
+            <div class="card-content"
+                 ng-if="!sponseeSponsorship.formStates.linked_bank_already">
 
               <fieldset>
               
@@ -158,11 +163,11 @@
                       <div class="small-12 large-11  columns">
                                     
                         <a class="button  button--medium button--bankLinking button--expanded mb1"
-                           ng-class="{'is-linked' : sponseeSponsorship.linkedBank }" 
+                           ng-class="{'is-linked' : sponseeSponsorship.formStates.linked_bank  }" 
                            ng-click="sponseeSponsorship.link()">
                                     
-                          <span ng-if="!sponseeSponsorship.linkedBank">Link your Funding Account</span>
-                          <span ng-if="sponseeSponsorship.linkedBank">Funding Account Linked</span>
+                          <span ng-if="!sponseeSponsorship.linked_bank">Link your Funding Account</span>
+                          <span ng-if="sponseeSponsorship.linked_bank">Funding Account Linked</span>
                                     
                         </a>
 
@@ -188,8 +193,8 @@
             <div class="small-12 large-6 large-push-6">
 
               <button type="submit"
-                      class="button--expanded  button--secondary  button--small"
-                      ng-class="{'is-inactive' : !sponseeSponsorship.linkedBank || sponseeSponsorship.sponsorshipDetailsForm.$invalid}">
+                      class="button--expanded  button--secondary  button--medium"
+                      ng-class="{'is-inactive' : !sponseeSponsorship.formStates.linked_bank || sponseeSponsorship.sponsorshipDetailsForm.$invalid}">
               
                 Complete Sponsorship
               
@@ -207,51 +212,46 @@
 
   </div>
 
-  <div class="small-12  columns "
-       ng-if="sponseeSponsorship.formSubmittedSuccesfully" >
+  <div class="small-12  medium-8  medium-centered  columns ">
 
-      <div class="row mt4">
-        
-        <div class="small-11 columns medium-9  large-5  small-centered  text-center">
+    <div class="planSuccessState">
 
-          <div class="row">
-
-            <div class="small-12    columns">
-               <h1 class="txtc2  ff2 text-center  text-mega">Success!</h1>
-            
-              <div class="row">
-              
-                <div class="small-11 medium-6 large-8  small-centered columns">
-                  <img src="assets/images/illustr--success.svg" alt="" class="mb5">
-                </div>
-
-              </div>
-          
-            </div>
-  
-            <div class="small-12 columns  text-center medium-text-left">
-
-              <p class="p2 text-left">
-                We’ve notified <span ng-bind="sponseeSponsorship.sponsee.first_name  + ' ' + sponseeSponsorship.sponsee.last_name"></span> (<span class="txtc2">{{sponseeSponsorship.sponsee.email}}</span>) about your offer to contribute to their student loans. 
-
-              </p>
-
-              <p class="text-left">
-                Feel free to send them a reminder on your <a ui-sref="sponsor.dashboard">home page</a> if you don’t hear back in a couple days.   
-              </p>
-
-              <p class="text-center">
-                <a ui-sref="sponsor.dashboard">Go Back Home</a>
-              </p>
-
-            </div>
-          
-          </div>
-
+      <div class="row">
+      
+        <div class="small-12   small-centered text-center">
+      
+          <img src="assets/images/illustr--success.svg" 
+               alt="Hands doing a high-five" 
+               class="illustr  illustr--stateBadge">
+      
         </div>
+      
+      
+        <div class="small-12 columns">
+          
+          <div class="planSuccessState-copy">
+            <h1 class="txtc2  ff2 text-center text-kilo">Success!</h1>
+                  
+            <p class="p2 text-center">
+              We’ve notified <span ng-bind="sponseeSponsorship.graduateInfo.identity.first_name  + ' ' + sponseeSponsorship.graduateInfo.identity.last_name"></span>  about your offer to contribute to their student loans. 
+            </p>
+                  
+            <p class="text-center">
+              Feel free to send them a reminder on your home page if you don’t hear back in a couple days.
+            </p>
+                  
+            <p class="text-center">
+              <a ui-sref="sponsor.dashboard">Go Back Home</a>
+            </p>
 
+          </div>
+      
+        </div>
+      
       </div>
 
+    </div>
+
   </div>
-  
+
 </div>

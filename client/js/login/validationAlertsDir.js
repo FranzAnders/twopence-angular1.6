@@ -21,13 +21,21 @@ twopence.directive('validationAlertsDir',['$timeout', function($timeout) {
 
         vm.error = null; 
 
+        vm.validatedData; 
+
         vm.$onInit = function() {
           
-          $rootScope.$on('login-validation-error', function(event, error) {
+          $rootScope.$on('login-validation-error', function(event, data) {
 
             vm.showErrors = true; 
 
-            vm.error = vm.getErrorType(error);
+            vm.error = vm.getErrorType(data.error);
+
+            if(data.validatedData) {
+              
+              vm.validatedData = data.validatedData; 
+
+            }
 
           });  
 
@@ -39,13 +47,17 @@ twopence.directive('validationAlertsDir',['$timeout', function($timeout) {
         //
         vm.getErrorType = function(pErrorObject) {
 
-          if(pErrorObject.error.data.message === "Sorry, that\'s an invalid email/password combination.") {
+          if(pErrorObject.data.message === "Sorry, that\'s an invalid email/password combination.") {
              
              return  'authIncorrect'
 
-          } else if(pErrorObject.error.data.code === "rate_limit_error") {
+          } else if(pErrorObject.data.code === "rate_limit_error") {
             
              return  'tooManyAttempts'
+
+          } else if(pErrorObject.data.message === "Email has already been taken.") {
+
+            return 'duplicateEmails'
 
           } else {
 

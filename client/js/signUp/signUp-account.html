@@ -34,7 +34,7 @@
             </div>
   
             <div ng-message="email">
-                Your email must be valid. The format is incorrect. (ex:pickpocketJoe@gmail.com)
+                Your email must be a valid format (ex:pickpocket@example.com).
             </div>
   
         </div>
@@ -111,8 +111,7 @@
   
       <button class="button--primary  button--medium button--expanded mb0"
               type="submit">
-        <span ng-if="!signUp.loadingScreen" >Next Step </span>
-        <span ng-if="signUp.loadingScreen">Nicely done, setting up...</span>
+        <span >Next Step </span>
       </button>
   
     </form>

@@ -39,7 +39,7 @@ twopence.controller('sponseeBoostCtrl', [
       "plan": {
         "type": 'fixed',
         "frequency": 'one-time',
-        "amount": null
+        "amount": 20
       }
     };
 
@@ -134,10 +134,20 @@ twopence.controller('sponseeBoostCtrl', [
     // Increases the Boost amount by 5
     //
     vm.increaseBoostAmount = function(pIncrease) {
-      vm.resetBoostingView()
-      vm.boostInfo.plan.amount = vm.boostInfo.plan.amount + pIncrease;
+      //vm.resetBoostingView()
+      console.log(pIncrease); 
 
-    };
+      if(!vm.boostInfo.plan.amount) {
+
+        vm.boostInfo.plan.amount = 0 
+
+      }
+      
+      vm.boostInfo.plan.amount += pIncrease;
+
+      console.log(vm.boostInfo.plan.amount); 
+
+    }; 
 
 
     //

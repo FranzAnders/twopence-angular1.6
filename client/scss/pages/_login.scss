@@ -1,7 +1,7 @@
 
 
 /*------------------------------------*\
-    #Styles specific to login and account sign up page 
+    #Login and Account Sign Up Page 
 \*------------------------------------*/
 
 .loginView {
@@ -9,6 +9,12 @@
 
   @media #{$medium-up} {
     padding-top: rem-calc($level5); 
+
+  }
+
+  .loginView-logo {
+    max-width: rem-calc(180px);
+    margin-bottom: rem-calc($level3);
 
   }
 

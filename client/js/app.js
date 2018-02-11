@@ -21,22 +21,28 @@ twopence.config(
          '$urlRouterProvider',
          '$locationProvider',
          '$compileProvider',
+         'ENV',
          function(
             $stateProvider,
             $urlRouterProvider,
             $locationProvider,
             $compileProvider,
-            plaidLinkProvider
+            ENV
             ) {
     //
     //If anything is unmatched just go to home
     //
     $urlRouterProvider.otherwise("/");
 
-    // Pretty URLs
     //
-    // $locationProvider.html5Mode(true);
-    // $locationProvider.hashPrefix('');
+    // Pretty URLs activate if we're running  the production ENV
+    //
+    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
+
+      $locationProvider.html5Mode(true);
+      $locationProvider.hashPrefix('');
+
+    }
 
 
 
@@ -424,6 +430,7 @@ twopence.config(
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:email",
+          abstract: true, 
           views: {
 
             'sponsor': {
@@ -434,38 +441,29 @@ twopence.config(
             }
 
           },
+          resolve: {
+
+            userInfo: ['User', function(User) {
+
+              //
+              // Gets User info and sets it on the controller
+              //
+              return User.getUserInfo().then(function(userInfo) {
+
+                return userInfo; 
+
+              }).catch(function(err) {
+
+                return err; 
+
+              });   
+
+            }]
+
+          },
           params: {
-            data: null,
+            identity: null,
             email: null
-
-          }
-
-        })
-        .state('sponsor.settings', {
-
-          url: "sponsor/settings",
-          views: {
-
-            'sponsor': {
-
-              templateUrl: "js/sponsor/settings.html",
-              controller: "settingsCtrl",
-              controllerAs: "settings"
-
-            }
-
-          }
-
-        }).state('sponsor.faq', {
-
-          url: "sponsor/faq.html",
-          views: {
-
-            'sponsor': {
-
-              templateUrl: "js/sponsor/faq.html"
-
-            }
 
           }
 
@@ -506,6 +504,35 @@ twopence.config(
             'main': {
 
               templateUrl: "js/sponsor/sponsee-sponsorship-oneTime.html"
+
+            }
+
+          }
+
+        })
+        .state('sponsor.settings', {
+
+          url: "sponsor/settings",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/settings.html",
+              controller: "settingsCtrl",
+              controllerAs: "settings"
+
+            }
+
+          }
+
+        }).state('sponsor.faq', {
+
+          url: "sponsor/faq.html",
+          views: {
+
+            'sponsor': {
+
+              templateUrl: "js/sponsor/faq.html"
 
             }
 

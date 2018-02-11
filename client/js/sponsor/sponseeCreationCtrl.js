@@ -46,13 +46,10 @@ twopence.controller('sponseeCreationCtrl', [
       // with missing plans, if so, we take the user to the 'sponsor.sponseeAdd.inviters' view
       //
       if(checkForMissingPlans) {
-
         vm.sponsorshipsMissingPlans = checkForMissingPlans.plans;
-
         $state.go('sponsor.sponseeAdd.inviters');
 
       } else {
-
         $state.go('sponsor.sponseeAdd.single');
 
       }
@@ -62,24 +59,20 @@ twopence.controller('sponseeCreationCtrl', [
       // Sets the name, last name, and email to use for the sponsorship that
       // is about to be setup
       //
-      vm.searchSponsee = function(pSponseeSearchForm) {
+      vm.searchSponsee = function(pSponseeSearchForm, pGraduateData) {
 
         vm.unsubmittedForm = false;
 
-        vm.sponseeInfo = {
-          "user": vm.searchData
+        var graduateInfo = {
+          "user": pGraduateData
         };
 
         if(pSponseeSearchForm.$valid) {
 
-            mixpanel.track('Selected Graduate');
-            $state.go('sponsor.sponsorshipSetup.options', {data: vm.sponseeInfo.user , email: vm.sponseeInfo.user.email});
+          mixpanel.track('Selected Graduate');
+          $state.go('sponsor.sponsorshipSetup.options', {identity: graduateInfo.user, email: graduateInfo.user.email});
 
-        } else {
-
-          alert("Form Is not Valid"); 
-
-        }
+        } 
 
       };
 

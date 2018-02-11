@@ -1,0 +1,34 @@
+
+
+/*------------------------------------*\
+    #Plan Setup Success Page 
+\*------------------------------------*/
+
+
+.planSuccessState {
+  margin-top: rem-calc($level7); 
+  
+  @media #{$large-up} {
+    margin-top: rem-calc($level7 + $level3); 
+
+  }
+  
+  .planSuccessState-copy {
+
+    @extend %text-center; 
+
+    @media #{$medium-up} {
+      margin-right: auto; 
+      margin-left: auto; 
+      max-width: rem-calc(420px); 
+
+    }
+
+    @media #{$large-up} {
+      max-width: rem-calc(440px); 
+
+    }
+
+  }
+
+}

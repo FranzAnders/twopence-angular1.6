@@ -75,19 +75,19 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/raven-js/dist/raven.js"></script>
     <script src="bower_components/raven-js/dist/plugins/angular.js"></script>
+    <script src="bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
 
 
     <!-- CDNJS Vendor Scripts -->
-
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 
 
     <!-- build:js js/app.min.js -->
-    <!-- Env Config -->
     
-
+    <!-- A - App Script--> 
     <script src="js/app.js"></script>
 
 
@@ -96,13 +96,44 @@
     <script src="js/auth/Auth.js"></script>
     <script src="js/auth/authconst.js"></script>
 
+    
+    <!--Animations--> 
+    <script src="js/animations/handHoldingPhoneAnimDir.js"></script>
+    <script src="js/animations/handHoldingCashAnimDir.js"></script>
+    <script src="js/animations/handsFistBumpingAnimDir.js"></script>
+    <script src="js/animations/handOpeningSafeAnimDir.js"></script>
+    <script src="js/animations/handsPullingDollarAnimDir.js"></script>
+    <script src="js/animations/ScrollMagicGlobalCtrl.js"></script>
 
-    <!-- Plaid Auth -->
-    <script src="js/plaid/plaid.js"></script>
+
+    <!--ENV--> 
+    <script src="js/constants/env.js"></script>
+
+
+    <!--General-->
+    <script src="js/general/compareTo.js"></script>
+    <script src="js/general/checkCheckbox.js"></script>
+    <script src="js/general/checkDate.js"></script>
+    <script src="js/general/floatingLabel.js"></script>
+    <script src="js/general/passwordRequirementsDir.js"></script>
+    <script src="js/general/focusMe.js"></script>
+    <script src="js/general/checkMe.js"></script>
+    <script src="js/general/EfficientWatch.js"></script>
+
+
 
     <!--Home-->
     <script src="js/home/homeCtrl.js"></script>
     <script src="js/home/footerDir.js"></script>
+
+
+    <!--Log in-->
+    <script src="js/login/loginCtrl.js"></script>
+    <script src="js/login/loginHeaderDir.js"></script>
+    <script src="js/login/logOutCtrl.js"></script>
+    <script src="js/login/resetPasswordCtrl.js"></script>
+    <script src="js/login/onboardingCtrl.js"></script>
+    <script src="js/login/validationAlertsDir.js"></script>
 
 
     <!--Main-->
@@ -121,6 +152,10 @@
     <script src="js/navigation/appNavDir.js"></script>
     <script src="js/navigation/appHeaderDir.js"></script>
     <script src="js/navigation/mainNavDir.js"></script>
+
+
+    <!--Plaid Auth-->
+    <script src="js/plaid/plaid.js"></script>
 
 
     <!--Sponsor-->
@@ -142,15 +177,6 @@
     <script src="js/signUp/verifyCtrl.js"></script>
 
 
-    <!--Log in-->
-    <script src="js/login/loginCtrl.js"></script>
-    <script src="js/login/loginHeaderDir.js"></script>
-    <script src="js/login/logOutCtrl.js"></script>
-    <script src="js/login/resetPasswordCtrl.js"></script>
-    <script src="js/login/onboardingCtrl.js"></script>
-    <script src="js/login/validationAlertsDir.js"></script>
-
-
     <!--Sponsoship-->
     <script src="js/sponsorship/Sponsorship.js"></script>
 
@@ -159,25 +185,9 @@
     <script src="js/user/User.js"></script>
 
 
-    <!--General-->
-    <script src="js/general/compareTo.js"></script>
-    <script src="js/general/checkCheckbox.js"></script>
-    <script src="js/general/checkDate.js"></script>
-    <script src="js/general/floatingLabel.js"></script>
-    <script src="js/general/EfficientWatch.js"></script>
-    <script src="js/general/passwordRequirementsDir.js"></script>
-
-    <!-- Verification -->
-
-
     <!--Vendor-->
     <script src="js/vendor/fastClick.js"></script>
     <script src="js/vendor/breakpoint.js"></script>
-    
-
-    <!--ENV--> 
-    <script src="js/constants/env.js"></script>
-
 
     <!-- endbuild -->
 

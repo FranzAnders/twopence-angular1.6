@@ -213,7 +213,7 @@ $type-settings: (
     2: (
 
     font-size: 1.25rem, //20px 
-    line-height:  $base-magic-number / 20   
+    line-height:  $base-magic-number / 20
 
     ),
     3: (
@@ -230,7 +230,7 @@ $type-settings: (
     ),
     5: (
     
-    font-size: 2.75rem, //40px 
+    font-size: 2.5rem, //40px 
     line-height: $base-magic-number / 20
 
     ),
@@ -285,15 +285,18 @@ $type-settings: (
 
 %h3 {
     @include type-setting(2); 
+    margin-bottom: rem-calc($level4)
 
 }
 
 %h2 {
     @include type-setting(2); 
+     margin-bottom: rem-calc($level3);
 
     @media #{$medium-up} {
     
      @include type-setting(3); 
+     margin-bottom: rem-calc($level3)
 
     }
 

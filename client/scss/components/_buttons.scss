@@ -414,14 +414,14 @@ button,
     padding: rem-calc(15px);
     padding-right: rem-calc($level3);
     padding-left: rem-calc($level3);
-    @include type-setting(0);
+    @include type-setting(-1);
 }
 
 .button--kilo {
     padding: rem-calc(16);
     padding-right: rem-calc($level6);
     padding-left: rem-calc($level6); 
-    @extend %h2; 
+    @include type-setting(0);
 }
 
 .button--mega {

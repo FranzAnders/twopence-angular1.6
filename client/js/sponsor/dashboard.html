@@ -41,7 +41,7 @@
       <ul class="grid grid--stretch grid--full  grid--flexWrap   grid--flexDirectionRow">
 
         <li class="grid-cell" 
-           ng-repeat="sponsorship in dashboard.sponsorships | orderBy: 'contributions_to_date':true track by $index"
+           ng-repeat="sponsorship in dashboard.sponsorships track by $index"
            ng-hide="sponsorship.plans.length === 0">
 
          <sponsorship-card-dir sponsorship-info="sponsorship"  
@@ -53,7 +53,7 @@
 
       </ul>
 
-      <div ng-if="dashboard.sponsorships.length === 0">
+      <div ng-if="dashboard.sponsorships.length === 0 || (dashboard.sponsorships.length === 1 && dashboard.sponsorships[0].plans.length === 0)">
 
         <div class="emptyState">
 
@@ -61,30 +61,31 @@
 
             <div class="small-12 columns  text-center">
 
-              <img src="assets/images/illustr--magnifyingGlass.svg" 
+              <img src="assets/images/illustr--noSponsorships.svg" 
                    alt="Hand with empty wallet" 
-                   width="180" class="emptyState-illustr  emptyState-illustr--magnifyingGlass">
+                   width="180" class="illustr  illustr--emptyState">
 
             </div>
 
-          </div>
-          
-          <div class="emptyState-copy">
-            <p>
-              You don’t have any sponsorships set up yet. <br> Visit our sponsorship creation page to get started!
-            </p>
-            
-            <div class="row">
-            
-              <div class="small-12 columns medium-10  medium-centered large-11 large-centered">
-            
-               <p>
-                <a ui-sref="sponsor.sponseeAdd" rel="internal">
-                Sponsor a Graduate</a>
-               </p>
-            
+            <div class="small-12 columns">
+
+                <div class="emptyState-copy">
+              
+                <h1 class="ff2 txtc2 h2 text-center">
+                  Nothing Here Yet!
+                </h1>
+              
+                <p>
+                  You don’t have any sponsorships set up yet. <br>Click below to create a sponsorship and start contributing. 
+                </p>
+                       
+                 <p>
+                  <a ui-sref="sponsor.sponseeAdd" rel="internal">
+                  Sponsor a Graduate</a>
+                 </p>
+                
               </div>
-            
+
             </div>
 
           </div>

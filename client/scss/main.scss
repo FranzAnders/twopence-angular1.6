@@ -16,6 +16,20 @@
 @import  "normalize.scss";
 
 
+/*------------------------------------*\
+    #Globals - Padding + Margin Levels  
+\*------------------------------------*/
+
+$level1: 6;
+$level2: 12; 
+$level3: 18;
+$level4: 24; 
+$level5: 30;  
+$level6: 36; 
+$level7: 48; 
+
+
+
 // Vendors
 @import
     "vendor/animate",
@@ -72,11 +86,10 @@
     'components/emptyStates',
     'components/headlines',
     'components/heroHeader',
-    'components/lazyImages',
+    'components/images',
     'components/loginHeader',
     'components/lists',
     'components/loaders',
-    'components/quickActionsBtn',
     'components/modals',
     'components/stats',
     'components/socialButtons',
@@ -90,6 +103,9 @@
 @import
     'pages/home',
     'pages/login',
+    'pages/planSuccessfullyMade',
     'pages/sponsorshipCreation',
-    'pages/sponsorView';
+    'pages/sponsorView',
+    'pages/sponseeSplash';
+
 

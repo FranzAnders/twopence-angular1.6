@@ -34,7 +34,6 @@
   
   .card-content {
     padding: rem-calc($base-magic-number);
-    padding-bottom: rem-calc($level5); 
 
     .card-subTitle {
       color: $body-color;
@@ -254,7 +253,6 @@
 
 .card--login {
   width: 100%; 
-  padding: rem-calc($level3); 
   
   .card-header {
     padding-bottom: 0; 

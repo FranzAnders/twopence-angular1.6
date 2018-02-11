@@ -113,7 +113,7 @@ twopence.factory('Auth', [
     //
     auth.setMixpanelDistinctId = function(sponsorId) {
       $cookies.put('sponsorId', sponsorId);
-      alias = 'Sponsor:' + sponsorId;
+      var alias = 'Sponsor:' + sponsorId;
       mixpanel.identify(alias);
     }
 

@@ -1,0 +1,63 @@
+
+
+/*------------------------------------*\
+    #CSS For Images 
+\*------------------------------------*/
+
+
+img {
+  width: 100%;
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Illustration Styles 
+\*------------------------------------*/
+
+
+.illustr {
+  margin-bottom: rem-calc($level4); 
+
+}
+
+
+
+/*------------------------------------*\
+    #Illustration for State Badges 
+\*------------------------------------*/
+
+
+.illustr--stateBadge {
+  max-width: rem-calc(170px); 
+  margin-bottom: rem-calc($level4); 
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Illustrations for Empty States
+\*------------------------------------*/
+
+
+.illustr--emptyState {
+  margin-bottom: 0; 
+  max-width: rem-calc(260px); 
+
+  @media #{$large-up} {
+    max-width: rem-calc(270px); 
+    
+  }
+  @media #{$large-up} {
+    max-width: rem-calc(280px); 
+    
+  }
+
+}

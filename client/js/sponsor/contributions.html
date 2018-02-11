@@ -2,22 +2,23 @@
 <div class="section">
 
   <div class="sponsorSection-illustrContainer">
+
     <div class="sponsorSection-illustr  sponsorSection-illustr--contributions  show-for-medium-up"
                 ng-if="contributions.totalContributions !== 0">
       
     </div>
+
   </div>
 
   <div class="row">
     
     <div class="small-12 medium-4  columns">
 
-        <h1 class="txtc2  ff2">Contribution <br>History</h1>  
+      <h1 class="txtc2  ff2">Contribution <br>History</h1>  
 
-        <p>
-         This is where you review all of the contributions you’ve made towards your sponsees’ student loans.
-        </p>
-
+      <p>
+       This is where you review all of the contributions you’ve made towards your sponsees’ student loans.
+      </p>
 
       <hr class="hr--faded">
 
@@ -26,16 +27,15 @@
       </h1>
       
       <h2 class=" text-center  fwb txtc1 text-mega  text-center">
-         ${{contributions.totalContributions}}
+         {{contributions.totalContributions | currency:"$":0}}
       </h2>
 
       <hr class="hr--faded mb0">
 
-
     </div>
 
-    <div class="small-12  medium-8  large-7    columns" ng-if="contributions.totalContributions !== 0">
 
+    <div class="small-12  medium-8  large-7    columns" ng-if="contributions.totalContributions !== 0">
       <label for="contributionsFilter" class="label text-micro">
         Filter:
       </label>
@@ -63,7 +63,7 @@
           
       <div class="row">
         <div class="small-12 columns medium-11 large-8 medium-centered">
-          <div class=" mtb7 text-center" ng-if="contributions.filteredContributions.length == 0">
+          <div class=" mtb7 text-center" ng-if="contributions.filteredContributions.length == 0 && contributions.totalContributions !== 0">
           
             <div class="card-content">
               
@@ -145,36 +145,31 @@
     <div class="small-12 medium-8  large-7  large-pull-1  columns text-center" 
          ng-if="contributions.totalContributions === 0 && contributions.sponsees.length !== 0">
       
+
       <div class="emptyState">
 
         <div class="row">
 
-          <div class="small-12 columns  text-center">
+          <div class="small-12 columns">
 
-            <img src="assets/images/illustr--emptyWallet.svg" 
+            <img src="assets/images/illustr--noContributions.svg" 
                  alt="Hand with empty wallet" 
-                 width="180" class="emptyState-illustr  emptyState-illustr--emptyWallet">
-
+                 width="180" class="illustr  illustr--emptyState">
           </div>
-
-        </div>
-        
-        <div class="emptyState-copy">
-          <p>
-            You haven’t made any contributions to your Graduates yet. This is where your contribution history will be once you start making payments.
-          </p>
           
-          <div class="row">
-          
-            <div class="small-12 columns medium-10  medium-centered large-11 large-centered">
-          
-             <p>
-              <a ui-sref="sponsor.dashboard" rel="internal">
-              Why not start now?</a>
-             </p>
-          
+          <div class="small-12 columns">
+            <div class="emptyState-copy">
+            
+              <h1 class="ff2 txtc2 h2 text-center">
+                Nothing Here Yet!
+              </h1>
+            
+              <p>
+                You haven’t made any contributions to your Graduates yet. This is where your contribution history will be once you start making payments.
+              </p>
+            
             </div>
-          
+
           </div>
 
         </div>
@@ -186,44 +181,44 @@
 
     <div class="small-12 medium-8  large-7  large-pull-1  columns text-center" 
          ng-if="contributions.totalContributions === 0 && contributions.sponsees.length === 0">
-      
+
       <div class="emptyState">
 
         <div class="row">
 
           <div class="small-12 columns  text-center">
 
-            <img src="assets/images/illustr--magnifyingGlass.svg" 
+            <img src="assets/images/illustr--noSponsorships.svg" 
                  alt="Hand holding magnifying glass" 
-                 width="180" class="emptyState-illustr  emptyState-illustr--magnifyingGlass">
+                 width="180" class="illustr  illustr--emptyState">
 
           </div>
+                  
+          <div class="small-12 columns">
 
-        </div>
-        
-        <div class="emptyState-copy">
-          <p>
-            Hm. Looks like you don’t have any Graduates yet. Add a Graduate to get started. Once you start making contributions, your history will be on this page.
-          </p>
-          
-          <div class="row">
-          
-            <div class="small-12 columns medium-10  medium-centered large-11 large-centered">
-          
-             <p>
-              <a ui-sref="sponsor.sponseeAdd" rel="internal">
-              Begin sponsoring a Graduate</a>
-             </p>
-          
+              <div class="emptyState-copy">
+              
+              <h1 class="ff2 txtc2 h2 text-center">
+                Nothing Here Yet!
+              </h1>
+              
+              <p>
+                Hm. Looks like you don’t have any Graduates yet. Add a Graduate to get started. Once you start making contributions, your history will be on this page.
+              </p>
+              
+               <p>
+                <a ui-sref="sponsor.sponseeAdd" rel="internal">
+                Begin sponsoring a Graduate</a>
+               </p>
             </div>
-          
+
           </div>
+          
         </div>
 
       </div>
 
     </div>
-
 
   </div>
 

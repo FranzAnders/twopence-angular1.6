@@ -337,7 +337,8 @@ body.fancymodal-open {
     }
 
     .fancymodal-content {
-      max-width: 30rem; 
+      max-width: 28rem; 
+      min-height: rem-calc(120px); 
 
     }
 }

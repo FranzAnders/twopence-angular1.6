@@ -7,6 +7,7 @@
 
 twopence.controller('signUpCtrl', [
   '$filter',
+  '$rootScope',
   '$scope',
   '$state',
   '$timeout',
@@ -16,6 +17,7 @@ twopence.controller('signUpCtrl', [
   'Auth',
   function(
     $filter,
+    $rootScope, 
     $scope,
     $state,
     $timeout,
@@ -37,7 +39,7 @@ twopence.controller('signUpCtrl', [
     // inject into the requests
     //
     vm.userInfo = {
-      'sms_preferred' : true
+      'sms_preferred' : false
     };
 
 
@@ -57,9 +59,7 @@ twopence.controller('signUpCtrl', [
 
 
     if($state.is('main.signUp.confirmation') ||  $state.is('main.signUp.verify')) {
-
       vm.accountCreated = true;
-
     }
 
 
@@ -69,7 +69,6 @@ twopence.controller('signUpCtrl', [
     //
     vm.submitAccountInfo = function(form) {
       if (form.$valid) {
-        delete vm.userInfo.confirmPassword;
         vm.loadingScreen = true;
         $timeout(function() {
           $state.go('main.signUp.identity');
@@ -89,6 +88,8 @@ twopence.controller('signUpCtrl', [
     vm.createUser = function(pSponsorForm, pUserInfo) {
 
       var userInfo = pUserInfo;
+
+      delete userInfo.confirmPassword; 
 
       if(pSponsorForm.$valid) {
 
@@ -115,19 +116,18 @@ twopence.controller('signUpCtrl', [
             $state.go('main.signUp.confirmation');
 
           }).catch(function(err) {
-            vm.statusText = err.data.message;
-            console.log(err);
+            
+            //
+            // Emits an event with the error data for validationAlertsDir to listen to
+            //
+            $timeout(function() {
+              $rootScope.$emit('login-validation-error', {error: err, validatedData: pUserInfo});
 
-            if(vm.statusText === 'Email has already been taken.') {
+            }, 100);
 
-              alert('No duplicates! It appears there is an account with this email.')
-
-            }
-
-          })
+          });
 
       } else {
-
         console.log("ERROR: Form is not valid");
 
       }
