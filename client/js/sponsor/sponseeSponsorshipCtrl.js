@@ -23,7 +23,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
     $timeout,
     Sponsee,
     Sponsorship,
-    PlaidAuth, 
+    PlaidAuth,
     ENV,
     userInfo) {
 
@@ -35,22 +35,22 @@ twopence.controller('sponseeSponsorshipCtrl', [
     //
     vm.formStates = {
 
-      'notSubmitted' : true, 
+      'notSubmitted' : true,
       'submittedSuccesfully': false,
       'linked_bank': false,
-      'linked_bank_already': userInfo.linked_bank 
+      'linked_bank_already': userInfo.linked_bank
 
     }
 
 
     if(vm.formStates.linked_bank_already) {
 
-      vm.formStates.linked_bank  = true; 
+      vm.formStates.linked_bank  = true;
 
     }
 
     //
-    // Holds the graduate's information 
+    // Holds the graduate's information
     //
     vm.graduateInfo = {
 
@@ -202,7 +202,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       } else {
 
-        vm.resetCustomFields(); 
+        vm.resetCustomFields();
 
       }
 
@@ -220,8 +220,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
       var type = 'Match';
       var value = pPlanBeingCreated.plan.limit;
 
-      // Plan being created object. 
-      var planBeingCreated = pPlanBeingCreated; 
+      // Plan being created object.
+      var planBeingCreated = pPlanBeingCreated;
 
       if(vm.customLimit.active) {
         planBeingCreated.plan.limit = vm.customLimit.limit;
@@ -264,7 +264,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
           }).catch(function(err) {
 
            if(err.data.message === "User already has match plan active between those dates.") {
-               
+
                $fancyModal.open({
                   templateUrl: 'js/modals/matching-plan-already-exists-error.html',
                   themeClass: 'fancymodal--primary  fancymodal--small',
@@ -298,7 +298,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
               closingClass: 'is-closed',
               showCloseButton: false
 
-           }); 
+           });
 
         });
 
@@ -338,7 +338,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
     //
-    // Opens the Plaid Auth UX 
+    // Opens the Plaid Auth UX
     //
     vm.linkBank = function() {
       plaidAuth.open();
@@ -365,13 +365,13 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
         vm.formStates.notSubmitted = true;
         vm.formStates.submittedSuccesfully = false;
-        vm.resetCustomFields(); 
+        vm.resetCustomFields();
 
       }
 
 
       //
-      // If there's no Graduate identity defined, we take the user back to the sponsee add view 
+      // If there's no Graduate identity defined, we take the user back to the sponsee add view
       //
       if(!vm.graduateInfo.identity) {
 
