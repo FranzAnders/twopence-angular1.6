@@ -79,14 +79,18 @@ ul,ol,dl,
 fieldset,
 p,
 table,
-pre,
-hr{
+pre {
     margin-bottom: rem-calc($base-magic-number);
 }
 
 h1,h2,h3,h4,h5,h6 {
   margin-bottom: rem-calc($level2);
 
+}
+
+hr {
+  margin-bottom: rem-calc($level3); 
+  
 }
 
 

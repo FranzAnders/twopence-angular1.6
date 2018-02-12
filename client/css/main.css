@@ -5991,7 +5991,7 @@ h2,
   h2,
   .h2 {
     font-size: 1.5rem;
-    line-height: 1;
+    line-height: 1.2;
     margin-bottom: 1.125rem;
   }
 }
@@ -13417,25 +13417,29 @@ ul, ol, dl,
 fieldset,
 p,
 table,
-pre,
-hr {
+pre {
   margin-bottom: 1.5rem;
 }
 
-/* line 87, ../scss/base/_typography.scss */
+/* line 86, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
+}
+
+/* line 91, ../scss/base/_typography.scss */
+hr {
+  margin-bottom: 1.125rem;
 }
 
 /*------------------------------------*\
     #Links
 \*------------------------------------*/
-/* line 101, ../scss/base/_typography.scss */
+/* line 105, ../scss/base/_typography.scss */
 a {
   text-decoration: none;
 }
 
-/* line 109, ../scss/base/_typography.scss */
+/* line 113, ../scss/base/_typography.scss */
 p a {
   color: #238EB2;
   position: relative;
@@ -13444,7 +13448,7 @@ p a {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 114, ../scss/base/_typography.scss */
+/* line 118, ../scss/base/_typography.scss */
 p a:before {
   content: " ";
   left: 0;
@@ -13463,11 +13467,11 @@ p a:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 128, ../scss/base/_typography.scss */
+/* line 132, ../scss/base/_typography.scss */
 p a:hover, p a:focus {
   color: #6AC6C5;
 }
-/* line 132, ../scss/base/_typography.scss */
+/* line 136, ../scss/base/_typography.scss */
 p a:hover:after, p a:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13475,7 +13479,7 @@ p a:hover:after, p a:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 138, ../scss/base/_typography.scss */
+/* line 142, ../scss/base/_typography.scss */
 p a:hover:before, p a:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13484,7 +13488,7 @@ p a:hover:before, p a:focus:before {
   transform: translateY(0);
 }
 
-/* line 152, ../scss/base/_typography.scss */
+/* line 156, ../scss/base/_typography.scss */
 a.styled-link {
   color: #238EB2;
   position: relative;
@@ -13493,7 +13497,7 @@ a.styled-link {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 157, ../scss/base/_typography.scss */
+/* line 161, ../scss/base/_typography.scss */
 a.styled-link:before {
   content: " ";
   left: 0;
@@ -13512,11 +13516,11 @@ a.styled-link:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 171, ../scss/base/_typography.scss */
+/* line 175, ../scss/base/_typography.scss */
 a.styled-link:hover, a.styled-link:focus {
   color: #6AC6C5;
 }
-/* line 175, ../scss/base/_typography.scss */
+/* line 179, ../scss/base/_typography.scss */
 a.styled-link:hover:after, a.styled-link:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13524,7 +13528,7 @@ a.styled-link:hover:after, a.styled-link:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 181, ../scss/base/_typography.scss */
+/* line 185, ../scss/base/_typography.scss */
 a.styled-link:hover:before, a.styled-link:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13533,12 +13537,12 @@ a.styled-link:hover:before, a.styled-link:focus:before {
   transform: translateY(0);
 }
 
-/* line 191, ../scss/base/_typography.scss */
+/* line 195, ../scss/base/_typography.scss */
 a.alt-link {
   color: #fff;
   position: relative;
 }
-/* line 195, ../scss/base/_typography.scss */
+/* line 199, ../scss/base/_typography.scss */
 a.alt-link:after {
   content: " ";
   right: 0;
@@ -13554,7 +13558,7 @@ a.alt-link:after {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 209, ../scss/base/_typography.scss */
+/* line 213, ../scss/base/_typography.scss */
 a.alt-link:before {
   content: " ";
   left: 0;
@@ -13573,11 +13577,11 @@ a.alt-link:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 224, ../scss/base/_typography.scss */
+/* line 228, ../scss/base/_typography.scss */
 a.alt-link:hover, a.alt-link:focus {
   color: #231F20;
 }
-/* line 228, ../scss/base/_typography.scss */
+/* line 232, ../scss/base/_typography.scss */
 a.alt-link:hover:after, a.alt-link:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13585,7 +13589,7 @@ a.alt-link:hover:after, a.alt-link:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 234, ../scss/base/_typography.scss */
+/* line 238, ../scss/base/_typography.scss */
 a.alt-link:hover:before, a.alt-link:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13593,18 +13597,18 @@ a.alt-link:hover:before, a.alt-link:focus:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 242, ../scss/base/_typography.scss */
+/* line 246, ../scss/base/_typography.scss */
 a.alt-link:active {
   background-color: #231F20;
   color: #fff;
 }
 
-/* line 252, ../scss/base/_typography.scss */
+/* line 256, ../scss/base/_typography.scss */
 a.alt-link2 {
   color: #6AC6C5;
   position: relative;
 }
-/* line 256, ../scss/base/_typography.scss */
+/* line 260, ../scss/base/_typography.scss */
 a.alt-link2:after {
   content: " ";
   right: 0;
@@ -13620,7 +13624,7 @@ a.alt-link2:after {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 270, ../scss/base/_typography.scss */
+/* line 274, ../scss/base/_typography.scss */
 a.alt-link2:before {
   content: " ";
   left: 0;
@@ -13639,11 +13643,11 @@ a.alt-link2:before {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 285, ../scss/base/_typography.scss */
+/* line 289, ../scss/base/_typography.scss */
 a.alt-link2:hover, a.alt-link2:focus {
   color: #fff;
 }
-/* line 289, ../scss/base/_typography.scss */
+/* line 293, ../scss/base/_typography.scss */
 a.alt-link2:hover:after, a.alt-link2:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -13651,7 +13655,7 @@ a.alt-link2:hover:after, a.alt-link2:focus:after {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 295, ../scss/base/_typography.scss */
+/* line 299, ../scss/base/_typography.scss */
 a.alt-link2:hover:before, a.alt-link2:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -13659,16 +13663,16 @@ a.alt-link2:hover:before, a.alt-link2:focus:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 303, ../scss/base/_typography.scss */
+/* line 307, ../scss/base/_typography.scss */
 a.alt-link2:active {
   color: #fff;
 }
 
-/* line 318, ../scss/base/_typography.scss */
+/* line 322, ../scss/base/_typography.scss */
 .section--secondary p.section-text a {
   color: #fff;
 }
-/* line 322, ../scss/base/_typography.scss */
+/* line 326, ../scss/base/_typography.scss */
 .section--secondary p.section-text a:hover, .section--secondary p.section-text a:focus {
   color: #fff;
   background-color: #231F20;
@@ -13677,13 +13681,13 @@ a.alt-link2:active {
 /*------------------------------------*\
     #Default Text Selection Color 
 \*------------------------------------*/
-/* line 347, ../scss/base/_typography.scss */
+/* line 351, ../scss/base/_typography.scss */
 ::selection {
   background-color: #6ac6c5b3;
   color: #fff;
 }
 
-/* line 352, ../scss/base/_typography.scss */
+/* line 356, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: #6ac6c5b3;
   color: #fff;
@@ -13692,32 +13696,32 @@ a.alt-link2:active {
 /*------------------------------------*\
     #Font Color Classes 
 \*------------------------------------*/
-/* line 367, ../scss/base/_typography.scss */
+/* line 371, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 371, ../scss/base/_typography.scss */
+/* line 375, ../scss/base/_typography.scss */
 .txtc2 {
   color: #231F20;
 }
 
-/* line 375, ../scss/base/_typography.scss */
+/* line 379, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 379, ../scss/base/_typography.scss */
+/* line 383, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 384, ../scss/base/_typography.scss */
+/* line 388, ../scss/base/_typography.scss */
 .txtc5 {
   color: #a2a2a2;
 }
 
-/* line 388, ../scss/base/_typography.scss */
+/* line 392, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
@@ -13728,7 +13732,7 @@ a.alt-link2:active {
 /*------------------------------------*\
     #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 432, ../scss/base/_typography.scss */
+/* line 436, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -13736,67 +13740,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 486, ../scss/base/_typography.scss */
+/* line 490, ../scss/base/_typography.scss */
 hr {
   border-style: none;
   height: 0.125rem;
   margin-top: 0;
 }
 
-/* line 492, ../scss/base/_typography.scss */
+/* line 496, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 498, ../scss/base/_typography.scss */
+/* line 502, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #231F20;
   margin-left: 0;
 }
 
-/* line 504, ../scss/base/_typography.scss */
+/* line 508, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 510, ../scss/base/_typography.scss */
+/* line 514, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 516, ../scss/base/_typography.scss */
+/* line 520, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 522, ../scss/base/_typography.scss */
+/* line 526, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 528, ../scss/base/_typography.scss */
+/* line 532, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 533, ../scss/base/_typography.scss */
+/* line 537, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 538, ../scss/base/_typography.scss */
+/* line 542, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 545, ../scss/base/_typography.scss */
+/* line 549, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
   height: 0.125rem;
 }
 
-/* line 551, ../scss/base/_typography.scss */
+/* line 555, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -13805,7 +13809,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 564, ../scss/base/_typography.scss */
+/* line 568, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -13818,7 +13822,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 578, ../scss/base/_typography.scss */
+/* line 582, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -13832,14 +13836,14 @@ hr {
 /*------------------------------------*\
     #Paragraph styles 
 \*------------------------------------*/
-/* line 644, ../scss/base/_typography.scss */
+/* line 648, ../scss/base/_typography.scss */
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
   line-height: 1.5;
 }
 
-/* line 651, ../scss/base/_typography.scss */
+/* line 655, ../scss/base/_typography.scss */
 .p3 {
   font-size: 1.25rem;
   line-height: 1.2;
@@ -13849,7 +13853,7 @@ hr {
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 667, ../scss/base/_typography.scss */
+/* line 671, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -13857,7 +13861,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 688, ../scss/base/_typography.scss */
+/* line 692, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -13866,63 +13870,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 706, ../scss/base/_typography.scss */
+  /* line 710, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 714, ../scss/base/_typography.scss */
+  /* line 718, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 722, ../scss/base/_typography.scss */
+  /* line 726, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 732, ../scss/base/_typography.scss */
+  /* line 736, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 741, ../scss/base/_typography.scss */
+  /* line 745, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 749, ../scss/base/_typography.scss */
+  /* line 753, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 758, ../scss/base/_typography.scss */
+  /* line 762, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 766, ../scss/base/_typography.scss */
+  /* line 770, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 775, ../scss/base/_typography.scss */
+  /* line 779, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
@@ -16798,7 +16802,7 @@ table th,
 .table--list th .table-contribution,
 .table--list .table-row .table-contribution {
   font-size: 1.5rem;
-  line-height: 1;
+  line-height: 1.2;
 }
 /* line 56, ../scss/layout/_tables.scss */
 .table--list tr,
@@ -17906,13 +17910,7 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-@media only screen and (min-width: 40.0625em) {
-  /* line 111, ../scss/components/_cards.scss */
-  .card--sponsorship {
-    height: e;
-  }
-}
-/* line 119, ../scss/components/_cards.scss */
+/* line 114, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -17922,7 +17920,7 @@ button.is-inactive,
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-/* line 128, ../scss/components/_cards.scss */
+/* line 123, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
   color: #231F20;
@@ -17930,35 +17928,35 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 128, ../scss/components/_cards.scss */
+  /* line 123, ../scss/components/_cards.scss */
   .card--sponsorship .card-header .sponsorship-name {
     margin-bottom: 0;
   }
 }
-/* line 140, ../scss/components/_cards.scss */
+/* line 135, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.5;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 148, ../scss/components/_cards.scss */
+  /* line 143, ../scss/components/_cards.scss */
   .card--sponsorship .card-content {
     padding: 1.875rem;
   }
 }
-/* line 155, ../scss/components/_cards.scss */
+/* line 150, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions {
   color: #6AC6C5;
   margin-bottom: 0;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 162, ../scss/components/_cards.scss */
+/* line 157, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions:hover, .card--sponsorship .card-content .sponsorship-contributions:focus {
   color: #238EB2;
 }
-/* line 172, ../scss/components/_cards.scss */
+/* line 167, ../scss/components/_cards.scss */
 .card--sponsorship .card-inactiveActions {
   position: absolute;
   top: 0;
@@ -17974,7 +17972,7 @@ button.is-inactive,
   margin-top: 4.875rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 172, ../scss/components/_cards.scss */
+  /* line 167, ../scss/components/_cards.scss */
   .card--sponsorship .card-inactiveActions {
     padding: 1.875rem;
   }
@@ -17983,15 +17981,15 @@ button.is-inactive,
 /*------------------------------------*\
     #Am inactive sponsorship Card
 \*------------------------------------*/
-/* line 207, ../scss/components/_cards.scss */
+/* line 202, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-inactiveActions {
   display: block;
 }
-/* line 212, ../scss/components/_cards.scss */
+/* line 207, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-content {
   opacity: 0;
 }
-/* line 217, ../scss/components/_cards.scss */
+/* line 212, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-actions {
   opacity: 0;
   pointer-events: none;
@@ -18000,7 +17998,7 @@ button.is-inactive,
 /*------------------------------------*\
     #A Plan card
 \*------------------------------------*/
-/* line 233, ../scss/components/_cards.scss */
+/* line 228, ../scss/components/_cards.scss */
 .card--plan {
   border-top: 6px solid #6AC6C5;
   -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -18008,7 +18006,7 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 237, ../scss/components/_cards.scss */
+/* line 232, ../scss/components/_cards.scss */
 .card--plan:hover, .card--plan:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -18022,17 +18020,17 @@ button.is-inactive,
 /*------------------------------------*\
     #A Card Containing Account Login UX
 \*------------------------------------*/
-/* line 254, ../scss/components/_cards.scss */
+/* line 249, ../scss/components/_cards.scss */
 .card--login {
   width: 100%;
 }
-/* line 257, ../scss/components/_cards.scss */
+/* line 252, ../scss/components/_cards.scss */
 .card--login .card-header {
   padding-bottom: 0;
   border-bottom: none;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 254, ../scss/components/_cards.scss */
+  /* line 249, ../scss/components/_cards.scss */
   .card--login {
     margin-right: auto;
     margin-left: auto;
@@ -18044,19 +18042,19 @@ button.is-inactive,
 /*------------------------------------*\
     #A Card Containing Signup UX
 \*------------------------------------*/
-/* line 281, ../scss/components/_cards.scss */
+/* line 276, ../scss/components/_cards.scss */
 .card--signUp {
   width: 100%;
   padding-bottom: 0.375rem;
   min-height: 18.75rem;
 }
-/* line 286, ../scss/components/_cards.scss */
+/* line 281, ../scss/components/_cards.scss */
 .card--signUp .card-header {
   padding-bottom: 0;
   border-bottom: none;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 281, ../scss/components/_cards.scss */
+  /* line 276, ../scss/components/_cards.scss */
   .card--signUp {
     margin-right: auto;
     margin-left: auto;
@@ -18166,7 +18164,7 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
-    #CSS For Images 
+    #Images & Illustrations
 \*------------------------------------*/
 /* line 8, ../scss/components/_images.scss */
 img {
@@ -18174,7 +18172,7 @@ img {
 }
 
 /*------------------------------------*\
-    #Illustration Styles 
+    #Global Illustration Styles 
 \*------------------------------------*/
 /* line 22, ../scss/components/_images.scss */
 .illustr {
@@ -19184,6 +19182,34 @@ body.fancymodal-open {
 /* line 12, ../scss/pages/_home.scss */
 .terms {
   white-space: pre-wrap;
+}
+
+/*------------------------------------*\
+    #Why pickpocket
+\*------------------------------------*/
+/* line 27, ../scss/pages/_home.scss */
+.whyPickpocket .whyPickpocket-point {
+  margin-bottom: 3rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 27, ../scss/pages/_home.scss */
+  .whyPickpocket .whyPickpocket-point {
+    margin-bottom: 0;
+  }
+}
+/* line 35, ../scss/pages/_home.scss */
+.whyPickpocket .whyPickpocket-point .whyPickpocket-point-image {
+  max-width: 12.5rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 35, ../scss/pages/_home.scss */
+  .whyPickpocket .whyPickpocket-point .whyPickpocket-point-image {
+    max-width: 16.25rem;
+  }
+}
+/* line 45, ../scss/pages/_home.scss */
+.whyPickpocket .whyPickpocket-point .whyPickpocket-point-headline {
+  margin-bottom: 1.125rem;
 }
 
 /*------------------------------------*\

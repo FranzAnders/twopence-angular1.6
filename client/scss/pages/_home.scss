@@ -12,3 +12,41 @@
 .terms {
   white-space: pre-wrap;
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Why pickpocket
+\*------------------------------------*/
+
+
+.whyPickpocket {
+
+  .whyPickpocket-point {
+    margin-bottom: rem-calc($level7);
+
+    @media #{$medium-up} {
+      margin-bottom: 0; 
+
+    } 
+
+    .whyPickpocket-point-image {
+      max-width: rem-calc(200px); 
+
+      @media #{$large-up} {
+        max-width: rem-calc(260px); 
+        
+      }
+
+    }
+
+    .whyPickpocket-point-headline {
+      margin-bottom: rem-calc($level3);
+
+    }
+
+  }
+
+}
