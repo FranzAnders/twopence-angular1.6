@@ -41,7 +41,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
       vm.latestPlan = '';
 
-      vm.getPlan(vm.sponsorshipId);
+      vm.getPlan(vm.sponsorshipId); 
 
       vm.planStatus = null;
 

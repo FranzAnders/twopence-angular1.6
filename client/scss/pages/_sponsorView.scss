@@ -42,12 +42,12 @@
   bottom: -17%;
   position: absolute;
   overflow: hidden;
-  width: 13rem;
-  left: -5%; 
-  height: 95vh; 
+  width: 34%;
+  left: 0; 
+  height: 92vh; 
 
   @media #{$large-up} {
-   left: -5%;
+    left: 0; 
     width: rem-calc(290px);
     max-height: 100vh; 
 
@@ -97,10 +97,19 @@
 
 .sponsorSection-illustr--dashboard {
   @media #{$medium-up} {
-    background-image: url('../assets/images/sponsorBg.svg');
-    background-size: 90% 100%;
-    top: 45%;
+    background-image: url('../assets/images/illustr--dashboardPage.svg');
     left: 0; 
+    width: 100%; 
+    bottom: 15%; 
+
+  }
+
+  @media #{$large-up} {
+    width: 90%; 
+    bottom: 8%; 
+    right: 0; 
+    left: 0; 
+    margin: auto; 
 
   }
 
@@ -108,11 +117,19 @@
 
 .sponsorSection-illustr--settings {
   @media #{$medium-up} {
-    background-image: url('../assets/images/sponsorBg--settings.svg');
-    top: 30%; 
-    width: 110%; 
-    left: -5%; 
-    bottom: auto; 
+    background-image: url('../assets/images/illustr--settingsPage.svg');
+    width: 100%; 
+    left: -5%;  
+    bottom: 35%; 
+
+  }
+
+  @media #{$large-up} {
+    width: 90%; 
+    right: 0; 
+    left: 0; 
+    margin: auto; 
+    bottom: 30%; 
 
   }
 
@@ -120,8 +137,18 @@
 
 .sponsorSection-illustr--contributions {
   @media #{$medium-up} {
-    top: 47%; 
-    background-image: url('../assets/images/sponsorBg--contributions.svg');
+    left: -5%; 
+    bottom: 17%; 
+    background-image: url('../assets/images/illustr--contributionsPage.svg');
+
+  }
+
+  @media #{$large-up} {
+    width: 90%; 
+    right: 0; 
+    left: -2%; 
+    margin: auto; 
+    bottom: 8%; 
 
   }
 
@@ -129,10 +156,19 @@
 
 .sponsorSection-illustr--managePlan {
   @media #{$medium-up} {
-    background-image: url('../assets/images/sponsorBg--managePlan.svg');
-    top:  44%; 
-    left: -24%; 
-    width: 120%; 
+    background-image: url('../assets/images/illustr--managingPlanPage.svg');
+    left: -5%; 
+    width: 100%; 
+    bottom: 40%;
+
+  }
+
+  @media #{$large-up} {
+    width: 90%; 
+    right: 0; 
+    left: 0; 
+    margin: auto; 
+    bottom: 30%; 
 
   }
 

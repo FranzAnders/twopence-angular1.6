@@ -14,6 +14,31 @@
   .plan {
     margin-bottom: rem-calc($level7); 
 
+    .plan-badgeContainer {
+
+      @media #{$medium-up} {
+        padding-right: 0; 
+
+      }
+
+      @media #{$large-up} {
+        padding-right: $column-gutter/2; 
+
+      }
+
+      .plan-badge {
+        margin-bottom: rem-calc($level3); 
+        max-width: rem-calc(216px);
+
+        @media #{$large-up} {
+          max-width: rem-calc(180px);
+
+        } 
+
+      }
+
+    }
+
   }
 
 }
