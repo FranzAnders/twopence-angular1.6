@@ -345,21 +345,12 @@ input {
 .inputWithButton {
 
   .inputWithButton-input {
-
-    width: 100%;
-
-  }
-
-  .inputWithButton-button {
-
-    width: 100%;
-
-    @media #{$large-up} {
-
-      width: 80%;
-      padding-left: rem-calc($level2);
-
+    
+    @media #{$medium-up} {
+      margin-right: rem-calc($level2); 
+      
     }
+
   }
 
 }
