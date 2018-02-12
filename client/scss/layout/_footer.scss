@@ -12,7 +12,6 @@ footer {
   @extend %position-relative; 
 
 
-
   @media #{$medium-up} {
     padding-top: rem-calc($level7 + $level3);
     padding-bottom: rem-calc($level7 + $level3);
