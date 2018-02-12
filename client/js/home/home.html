@@ -11,11 +11,11 @@
 
     <div class="row">
 
-      <div class="small-12 columns medium-10 large-9 medium-centered ">
+      <div class="small-12 columns medium-11 large-9 medium-centered ">
 
         <div class="row  grid  grid--center  grid--flexDirectionColumn  large-grid--flexDirectionRow">
       
-          <div class="small-12 columns">
+          <div class="small-12  large-7  columns">
       
             <div class="row">
             
@@ -26,11 +26,22 @@
                 <p>Pickpocket is now live! We’re actively adding people from the waiting list, so enter your email to reserve a spot.</p>
    
                   <!-- Begin MailChimp Signup Form -->
-                  <form action="https://wordpress.us13.list-manage.com/subscribe/post?u=fdcdf8761c23d6e5445378981&amp;id=2b92ad93b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="" target="_blank" novalidate>
+                  <form action="https://wordpress.us13.list-manage.com/subscribe/post?u=fdcdf8761c23d6e5445378981&amp;id=2b92ad93b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                       
-                      <div class="grid grid--center  grid--stretch">
-                          <label for="mce-EMAIL" class="hide-elem">Email Address </label>
-                          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                      <div class="grid  grid--flexDirectionColumn  med-grid--flexDirectionRow med-grid--center med-grid--stretch">
+
+                      <div class="input-group input--medium  inputGroup--alt">
+                        <label for="mce-EMAIL">
+                          Your email address
+                        </label>
+                        <input type="email" 
+                               value="" 
+                               name="EMAIL"  
+                               id="mce-EMAIL" 
+                               ng-model="user.email"
+                               floating-label>
+                      </div>
+
                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button--secondary button--medium">Join the Wait List</button>
 
                       </div>
@@ -49,22 +60,11 @@
 
               </div>
             
-             <!--  <div class="small-12    columns">
-                
-                <p class="text-micro  text-center">
-                  Don't have a sponsor account?
-                    <br>
-                  <a ui-sref="main.signUp.account">Sign Up</a>
-            
-                </p>
-            
-              </div> -->
-            
             </div>
         
           </div>
         
-          <div class="small-12 columns ">
+          <div class="small-12  large-5  columns ">
                     
             <div class="row">
               <div class="small-11 columns small-centered  medium-10  hide-for-medium-up">
@@ -94,7 +94,7 @@
 <!--Main Site Content--> 
 <main>
   
-  <section class="section section--lead  section--altHighlighted">
+  <section class="section section--lead  section--altHighlighted  section--bordered">
       
     <div class="row">
 

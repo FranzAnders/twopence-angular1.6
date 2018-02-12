@@ -14073,7 +14073,7 @@ hr {
     #Grid Alignments and Properties  
 \*------------------------------------*/
 /* line 24, ../scss/base/_flexbox.scss */
-.grid, .footer-menu, .playButton {
+.grid, .footer-menu {
   list-style: none;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -14138,7 +14138,7 @@ hr {
 }
 
 /* line 86, ../scss/base/_flexbox.scss */
-.grid--center, .playButton {
+.grid--center {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
@@ -15538,25 +15538,25 @@ input.input--large {
 /* line 488, ../scss/layout/_forms.scss */
 .inputGroup--alt {
   position: relative;
-  background-color: #FFF;
   margin-bottom: 1.5rem;
 }
-/* line 493, ../scss/layout/_forms.scss */
+/* line 492, ../scss/layout/_forms.scss */
 .inputGroup--alt:after {
   display: none;
 }
-/* line 498, ../scss/layout/_forms.scss */
+/* line 497, ../scss/layout/_forms.scss */
 .inputGroup--alt input {
-  background-color: transparent;
+  background-color: #FFF;
   padding: 0.75rem;
   border: 1px solid #dae0e0;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 506, ../scss/layout/_forms.scss */
+/* line 505, ../scss/layout/_forms.scss */
 .inputGroup--alt label {
   left: 0.75rem;
+  color: #a2a2a2;
 }
 /* line 514, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused label, .inputGroup--alt.is-filled label {
@@ -16713,32 +16713,31 @@ input[type="radio"].radio--large + label {
 
 /* line 70, ../scss/layout/_sections.scss */
 .section--bordered {
-  border-top: 1px solid #dae0e0;
-  border-bottom: 1px solid #dae0e0;
+  border-bottom: 1px solid #a2a2a2;
 }
 
 /*------------------------------------*\
     #Section Types 
 \*------------------------------------*/
-/* line 85, ../scss/layout/_sections.scss */
+/* line 84, ../scss/layout/_sections.scss */
 .section--primary {
   background-color: #fff;
 }
-/* line 88, ../scss/layout/_sections.scss */
+/* line 87, ../scss/layout/_sections.scss */
 .section--primary .section-text {
   color: #6d6c6c;
 }
 
-/* line 95, ../scss/layout/_sections.scss */
+/* line 94, ../scss/layout/_sections.scss */
 .section--secondary {
   background-color: #231F20;
 }
-/* line 98, ../scss/layout/_sections.scss */
+/* line 97, ../scss/layout/_sections.scss */
 .section--secondary .section-text {
   color: #fff;
 }
 
-/* line 106, ../scss/layout/_sections.scss */
+/* line 105, ../scss/layout/_sections.scss */
 .section--alt {
   overflow: hidden;
   width: 100%;
@@ -16752,12 +16751,12 @@ input[type="radio"].radio--large + label {
   /* IE6-9 */
 }
 
-/* line 115, ../scss/layout/_sections.scss */
+/* line 114, ../scss/layout/_sections.scss */
 .section--highlighted {
   background-color: #e8f1f1;
 }
 
-/* line 120, ../scss/layout/_sections.scss */
+/* line 119, ../scss/layout/_sections.scss */
 .section--altHighlighted {
   background-color: #f0f1f1;
 }
@@ -17489,24 +17488,24 @@ button.is-inactive,
   background-color: transparent;
 }
 
-/* line 126, ../scss/components/_buttons.scss */
+/* line 125, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 132, ../scss/components/_buttons.scss */
+/* line 131, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.5rem;
   margin-right: 0.375rem;
   vertical-align: middle;
 }
-/* line 139, ../scss/components/_buttons.scss */
+/* line 138, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
   vertical-align: middle;
 }
 
-/* line 147, ../scss/components/_buttons.scss */
+/* line 146, ../scss/components/_buttons.scss */
 .button--link {
   color: #238EB2;
   position: relative;
@@ -17516,7 +17515,7 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 154, ../scss/components/_buttons.scss */
+/* line 153, ../scss/components/_buttons.scss */
 .button--link:before {
   content: " ";
   left: 0;
@@ -17535,11 +17534,11 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 168, ../scss/components/_buttons.scss */
+/* line 167, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
   color: #6AC6C5;
 }
-/* line 172, ../scss/components/_buttons.scss */
+/* line 171, ../scss/components/_buttons.scss */
 .button--link:hover:after, .button--link:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -17547,7 +17546,7 @@ button.is-inactive,
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 178, ../scss/components/_buttons.scss */
+/* line 177, ../scss/components/_buttons.scss */
 .button--link:hover:before, .button--link:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -17556,7 +17555,7 @@ button.is-inactive,
   transform: translateY(0);
 }
 
-/* line 193, ../scss/components/_buttons.scss */
+/* line 192, ../scss/components/_buttons.scss */
 .button--boost.is-locked:hover, .button--boost.is-locked:focus, .button--boost.is-locked:active {
   background-color: #231F20 !important;
   color: #fff !important;
@@ -17565,7 +17564,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Bank Linking Button
 \*------------------------------------*/
-/* line 214, ../scss/components/_buttons.scss */
+/* line 213, ../scss/components/_buttons.scss */
 .button--bankLinking {
   background-color: #238EB2;
   position: relative;
@@ -17579,7 +17578,7 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 222, ../scss/components/_buttons.scss */
+/* line 221, ../scss/components/_buttons.scss */
 .button--bankLinking:hover, .button--bankLinking:focus {
   color: #238EB2;
   background-color: transparent;
@@ -17588,12 +17587,12 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 16px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 16px rgba(30, 30, 30, 0.2);
 }
-/* line 231, ../scss/components/_buttons.scss */
+/* line 230, ../scss/components/_buttons.scss */
 .button--bankLinking.is-linked {
   border-color: #33d28a;
   background-color: #33d28a;
 }
-/* line 235, ../scss/components/_buttons.scss */
+/* line 234, ../scss/components/_buttons.scss */
 .button--bankLinking.is-linked:hover, .button--bankLinking.is-linked:focus {
   border-color: #33d28a;
   background-color: #33d28a;
@@ -17602,129 +17601,16 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
-    #Play Button
+    #Button Sizes
 \*------------------------------------*/
-/* line 255, ../scss/components/_buttons.scss */
-.playButton {
-  background-color: #231F20;
-  height: 2.5rem;
-  width: 2.5rem;
-  position: relative;
-  -moz-transform: translateX(-50px);
-  -ms-transform: translateX(-50px);
-  -webkit-transform: translateX(-50px);
-  transform: translateX(-50px);
-  -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-/* line 268, ../scss/components/_buttons.scss */
-.playButton:after, .playButton:before {
-  -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 275, ../scss/components/_buttons.scss */
-.playButton:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 4px;
-  margin: auto;
-  height: 16px;
-  width: 10px;
-  bottom: 0;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  border-left: 17px solid #fff;
-  z-index: 2;
-}
-/* line 293, ../scss/components/_buttons.scss */
-.playButton:before {
-  content: " ";
-  height: 100%;
-  width: 100%;
-  background-color: #231F20;
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 1;
-  border: 2px solid transparent;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-/* line 310, ../scss/components/_buttons.scss */
-.playButton .playButton-inner {
-  position: absolute;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  -moz-transform: translateX(55px);
-  -ms-transform: translateX(55px);
-  -webkit-transform: translateX(55px);
-  transform: translateX(55px);
-  -moz-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.8s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 326, ../scss/components/_buttons.scss */
-.playButton:hover .playButton-inner, .playButton:focus .playButton-inner {
-  opacity: 1;
-  color: #fff;
-  -moz-transform: translateX(55px);
-  -ms-transform: translateX(55px);
-  -webkit-transform: translateX(55px);
-  transform: translateX(55px);
-}
-/* line 335, ../scss/components/_buttons.scss */
-.playButton:hover:before, .playButton:focus:before {
-  background-color: transparent;
-  border: 2px solid #231F20;
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-/* line 349, ../scss/components/_buttons.scss */
-.playButton--primary .playButton-inner {
-  color: #FBC510;
-}
-/* line 355, ../scss/components/_buttons.scss */
-.playButton--primary:hover, .playButton--primary:focus {
-  color: #FBC510;
-}
-
-/* line 366, ../scss/components/_buttons.scss */
-.playButton--secondary .playButton-inner {
-  color: #fff;
-}
-/* line 372, ../scss/components/_buttons.scss */
-.playButton--secondary:hover, .playButton--secondary:focus {
-  color: #fff;
-}
-
-/*------------------------------------*\
-    #Button Sizes (Extends _generics.scss Margins and padding values)
-\*------------------------------------*/
-/* line 389, ../scss/components/_buttons.scss */
+/* line 257, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.1875rem;
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-/* line 396, ../scss/components/_buttons.scss */
+/* line 264, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.375rem;
   padding-right: 0.75rem;
@@ -17733,7 +17619,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 405, ../scss/components/_buttons.scss */
+/* line 273, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -17742,7 +17628,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 413, ../scss/components/_buttons.scss */
+/* line 281, ../scss/components/_buttons.scss */
 .button--large {
   padding: 0.9375rem;
   padding-right: 1.125rem;
@@ -17751,7 +17637,7 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 420, ../scss/components/_buttons.scss */
+/* line 288, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
@@ -17760,14 +17646,14 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 427, ../scss/components/_buttons.scss */
+/* line 295, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 434, ../scss/components/_buttons.scss */
+/* line 302, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -17777,50 +17663,11 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 450, ../scss/components/_buttons.scss */
+/* line 318, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
 }
 
-/*------------------------------------*\
-    #Button Animations  
-\*------------------------------------*/
-@-moz-keyframes anim-naira-2 {
-  50% {
-    -webkit-transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-    transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-    transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-  }
-}
-@-webkit-keyframes anim-naira-2 {
-  50% {
-    -webkit-transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-    transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-    transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-  }
-}
-@keyframes anim-naira-2 {
-  50% {
-    -webkit-transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-    transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  100% {
-    -webkit-transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-    transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-  }
-}
 /*------------------------------------*\
     #Cards
 \*------------------------------------*/
@@ -18161,6 +18008,7 @@ button.is-inactive,
 /* line 37, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-content {
   color: #fff;
+  width: 100%;
 }
 
 /*------------------------------------*\

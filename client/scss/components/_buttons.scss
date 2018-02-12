@@ -120,7 +120,6 @@ button,
 }
 
 
-
 .button--withIcon {
 
   .button-icon, 
@@ -247,142 +246,11 @@ button,
 
 
 
-/*------------------------------------*\
-    #Play Button
-\*------------------------------------*/
-
-
-.playButton {
-  
-  background-color: $secondaryColor; 
-  height: rem-calc(40px); 
-  width: rem-calc(40px); 
-  position: relative; 
-  @include transform(translateX(-50px)); 
-  @extend .grid; 
-  @extend .grid--center; 
-  @include transition(all .8s ceaser($easeInOutQuint)); 
-  @include border-radius(100%); 
-  
-
-  &:after,
-  &:before {
-    
-    @include transition(all .8s ceaser($easeInOutQuint)); 
-
-  } 
-
-  &:after {
-
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 4px;
-    margin: auto;
-    height: 16px;
-    width: 10px;
-    bottom: 0;
-    border-top: 11px solid transparent;
-    border-bottom: 11px solid transparent;
-    border-left: 17px solid #fff;
-    z-index: 2; 
-
-  }
-
-  &:before {  
-    
-    content: " "; 
-    height: 100%; 
-    width: 100%; 
-    background-color: $secondaryColor; 
-    position: absolute; 
-    right: 0; 
-    left: 0; 
-    bottom: 0; 
-    top:0; 
-    z-index: 1; 
-    border: 2px solid transparent; 
-    @include border-radius(100%); 
-
-  }
-
-  .playButton-inner {
-
-    position: absolute; 
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff; 
-    @include transform(translateX(55px)); 
-    @include transition(all .8s ceaser($easeInOutQuint)); 
-
-  }
-
-
-  &:hover,
-  &:focus {
-    
-
-    .playButton-inner {
-      
-      opacity: 1; 
-      color: #fff; 
-      @include transform(translateX(55px)); 
-
-    }
-
-
-    &:before {  
-      
-      background-color: transparent; 
-      border: 2px solid $secondaryColor; 
-      @include transform(scale(1.2));
-
-    }
-  }
-
-}
-
-
-.playButton--primary {
-
-  .playButton-inner {
-
-    color: $accentColor; 
-
-  }
-
-  &:hover, 
-  &:focus {
-
-    color: $accentColor; 
-  }
-
-}
-
-
-.playButton--secondary {
-
-  .playButton-inner {
-
-    color: #fff; 
-
-  }
-
-  &:hover, 
-  &:focus {
-
-    color: #fff; 
-  }
-
-}
-
-
 
 
 
 /*------------------------------------*\
-    #Button Sizes (Extends _generics.scss Margins and padding values)
+    #Button Sizes
 \*------------------------------------*/
 
 
@@ -449,29 +317,4 @@ button,
 
 .button--expanded {
     width: 100%; 
-}
-
-
-
-
-
-
-/*------------------------------------*\
-    #Button Animations  
-\*------------------------------------*/
-
-
-@include keyframes(anim-naira-2) {
-
-   50% {
-        -webkit-transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-        transform: translate3d(0, 50%, 0) rotate3d(0, 0, 1, 10deg);
-        -webkit-animation-timing-function: ease-out;
-        animation-timing-function: ease-out;
-    }
-    100% {
-        -webkit-transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-        transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg);
-    }
-
 }

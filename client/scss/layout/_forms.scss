@@ -487,7 +487,6 @@ input {
 
 .inputGroup--alt {
   position: relative; 
-  background-color: #FFF;  
   margin-bottom: rem-calc($base-magic-number);
 
   &:after {
@@ -496,7 +495,7 @@ input {
   }
   
   input {
-    background-color: transparent; 
+    background-color: #FFF;  
     padding: rem-calc($level2);
     border: 1px solid $grey--light; 
     @include border-radius(6px); 
@@ -505,6 +504,7 @@ input {
   
   label {
     left: rem-calc($level2); 
+    color: $grey--med; 
 
   }
 
