@@ -18665,65 +18665,49 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Modal Illustrations
-\*------------------------------------*/
-/* line 291, ../scss/components/_modals.scss */
-.fancymodal-innerContent-illustr {
-  margin-top: 1.125rem;
-  margin-bottom: 1.125rem;
-  width: 10.625rem;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 291, ../scss/components/_modals.scss */
-  .fancymodal-innerContent-illustr {
-    width: 11.875rem;
-  }
-}
-
-/*------------------------------------*\
     #Modal Sizes
 \*------------------------------------*/
-/* line 314, ../scss/components/_modals.scss */
+/* line 294, ../scss/components/_modals.scss */
 .fancyModal--fullScreen .fancymodal-content {
   background-color: transparent;
 }
 
-/* line 322, ../scss/components/_modals.scss */
+/* line 302, ../scss/components/_modals.scss */
 .fancymodal--large .fancymodal-content {
   max-width: 68.75rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 328, ../scss/components/_modals.scss */
+  /* line 308, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 328, ../scss/components/_modals.scss */
+  /* line 308, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 10rem !important;
   }
 }
-/* line 339, ../scss/components/_modals.scss */
+/* line 319, ../scss/components/_modals.scss */
 .fancymodal--medium .fancymodal-content {
   max-width: 28rem;
   min-height: 7.5rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 347, ../scss/components/_modals.scss */
+  /* line 327, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 347, ../scss/components/_modals.scss */
+  /* line 327, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 10rem !important;
   }
 }
-/* line 359, ../scss/components/_modals.scss */
+/* line 339, ../scss/components/_modals.scss */
 .fancymodal--small .fancymodal-content {
   max-width: 23.5rem;
   min-height: 7.5rem;

@@ -283,26 +283,6 @@ body.fancymodal-open {
 
 
 
-/*------------------------------------*\
-    #Modal Illustrations
-\*------------------------------------*/
-
-
-.fancymodal-innerContent-illustr {
-  margin-top: rem-calc($level3);
-  margin-bottom: rem-calc($level3);
-  width: rem-calc(170px);
-
-  @media #{$medium-up} {
-    width: rem-calc(190px);
-
-  }
-
-}
-
-
-
-
 
 /*------------------------------------*\
     #Modal Sizes
