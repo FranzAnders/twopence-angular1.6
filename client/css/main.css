@@ -16674,6 +16674,11 @@ input[type="radio"].radio--large + label {
   }
 }
 
+/* line 39, ../scss/layout/_sections.scss */
+.section--main {
+  padding-top: 7.125rem;
+}
+
 /* line 44, ../scss/layout/_sections.scss */
 .section--padded {
   padding-bottom: 3rem;

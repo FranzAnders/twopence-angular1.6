@@ -22,24 +22,24 @@
 }
 
 .section--lead {
-
   padding-top: rem-calc($level7);
 
   @media #{$medium-up} {
-
     padding-top: rem-calc($level7 + $level2);
     
   }
 
   @media #{$large-up} {
-
     padding-top: rem-calc($level7 + $level1);
     
   }
 
 }
 
+.section--main {
+  padding-top: rem-calc($level7 + $level7 + $level3); 
 
+}
 
 .section--padded {
   padding-bottom: rem-calc($level7);
