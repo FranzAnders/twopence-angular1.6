@@ -13,7 +13,7 @@
 
 
   .dollar {
-    @include transform-origin(center); 
+    @include transform-origin(center);
 
   }
 
@@ -29,7 +29,7 @@
 
 
 .hand-opening-safe {
-  
+
   .safe-key {
     @include transform(translate(170px, 158px));
 
@@ -43,7 +43,7 @@
   .hand {
 
     .hand-inner {
-      transform-origin: 176px 150px; 
+      transform-origin: 176px 150px;
 
     }
   }
@@ -60,7 +60,7 @@
 
 
 .hand-holding-bills {
-  
+
   .dollarbills {
 
     .dollarbill:nth-of-type(1) {
@@ -94,25 +94,24 @@
 .hand-holding-app {
 
   .appSplash {
-    transform-origin: 195px 140px; 
-    @include transform(scale(0)); 
+    transform-origin: 195px 140px;
+    @include transform(scale(0));
 
   }
 
   .appIcon {
-    transform-origin: 195px 140px; 
-    position: relative; 
-    
+    transform-origin: 195px 140px;
+    position: relative;
+
     .appIconPocket {
-      z-index: 2; 
+      z-index: 2;
     }
 
     .appIconDollar {
-      transform-origin: 195px 140px; 
-      z-index: 0; 
+      transform-origin: 195px 140px;
+      z-index: 0;
 
     }
   }
 
 }
-
