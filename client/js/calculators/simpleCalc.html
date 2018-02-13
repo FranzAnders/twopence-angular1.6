@@ -1,6 +1,5 @@
 
 
-
 <div class="simpleCalc">
   
   <div class="simpleCalc-controls">
@@ -26,7 +25,7 @@
 
     <div class="simpleCalc-innerContent simpleCalc-header">
       <h1 class="simpleCalc-headline text-center">
-      See how the Pickpocket app can save you time and money.
+      {{::calculator.copy.headline}}
       </h1>
       
       <hr class="hr--faded mb0">
@@ -38,11 +37,11 @@
       <div>
 
         <h2 class="simpleCalc-subLine">
-          Do you have a sponsor?
+          {{::calculator.copy.subline}}
         </h2>
         
         <p class="simpleCalc-bodyCopy  simpleCalc-bodyCopy--small">
-          Flip this switch to see the magic of a matching sponsorship.
+          {{::calculator.copy.switch}}
         </p>
         
       </div>
@@ -65,7 +64,7 @@
     
     <div class="simpleCalc-innerContent">
       <p class="simpleCalc-bodyCopy text-center">
-        For a graduate $45,000 in debt and earning $75,000 a year, Pickpocket could save them $20,323 and get them out of debt 15 years faster.
+        {{::calculator.copy.results_explanation}}
       </p>
 
     </div>
@@ -80,7 +79,7 @@
         <tooltip-dir text="Without Pickpocket, you would end up paying $26,235 in interest over the life of your loans. With Pickpocket you would only pay $5,952.">
 
         </tooltip-dir>
-        
+
         </span>
         
         <span class="result-number">
