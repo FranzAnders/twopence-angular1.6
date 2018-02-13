@@ -5948,7 +5948,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 /* line 269, ../scss/abstracts/_typography.scss */
 .text-micro, .button--micro {
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /* line 274, ../scss/abstracts/_typography.scss */
@@ -13841,7 +13841,7 @@ hr {
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /* line 655, ../scss/base/_typography.scss */
@@ -15036,7 +15036,7 @@ footer .footer-title {
   margin-bottom: 0.75rem;
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 40, ../scss/layout/_footer.scss */
 footer .footer-logo {
@@ -15299,7 +15299,7 @@ input.input--small {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 140, ../scss/layout/_forms.scss */
 .input.input--medium,
@@ -15327,14 +15327,14 @@ input.input--large {
 /* line 179, ../scss/layout/_forms.scss */
 .input-group.input--small label {
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 185, ../scss/layout/_forms.scss */
 .input-group.input--small input {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 197, ../scss/layout/_forms.scss */
 .input-group.input--medium label {
@@ -15449,7 +15449,7 @@ input.input--large {
   bottom: -1.2rem;
   white-space: nowrap;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /*------------------------------------*\
@@ -15468,14 +15468,14 @@ input.input--large {
 /* line 371, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small label {
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 377, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small input {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 389, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium label {
@@ -16494,7 +16494,7 @@ input[type="radio"].radio--large + label {
   .mainNav .mainNav-menu .mainNav-menu-link {
     color: #231F20;
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 }
 /* line 254, ../scss/layout/_navs.scss */
@@ -16541,7 +16541,7 @@ input[type="radio"].radio--large + label {
     margin-top: 0;
     padding: 0.75rem;
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.2;
   }
   /* line 298, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
@@ -16846,7 +16846,7 @@ table th,
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /*------------------------------------*\
@@ -17006,7 +17006,7 @@ table th,
   position: relative;
   padding-left: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 117, ../scss/components/_appHeader.scss */
 .appHeader .appHeader-logout:hover, .appHeader .appHeader-logout:focus {
@@ -17162,7 +17162,7 @@ table th,
   margin-right: 0.375rem;
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -17171,7 +17171,7 @@ table th,
 .appHeader-userInfo .userActions-name {
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /*------------------------------------*\
@@ -17254,7 +17254,7 @@ table th,
     height: 100%;
     position: relative;
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.2;
   }
 }
 /* line 87, ../scss/components/_appNav.scss */
@@ -17450,7 +17450,7 @@ button .button-inner,
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 25, ../scss/components/_buttons.scss */
 button.is-inactive,
@@ -17686,7 +17686,7 @@ button.is-inactive,
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /* line 273, ../scss/components/_buttons.scss */
@@ -17695,7 +17695,7 @@ button.is-inactive,
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /* line 281, ../scss/components/_buttons.scss */
@@ -17704,7 +17704,7 @@ button.is-inactive,
   padding-right: 1.125rem;
   padding-left: 1.125rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /* line 288, ../scss/components/_buttons.scss */
@@ -17801,7 +17801,7 @@ button.is-inactive,
   -webkit-border-radius: 0;
   border-radius: 0;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 62, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
@@ -17854,7 +17854,7 @@ button.is-inactive,
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 143, ../scss/components/_cards.scss */
@@ -18002,68 +18002,80 @@ button.is-inactive,
   background-color: #fff;
   color: #7d7d7d;
   margin-bottom: 0.375rem;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
 }
-/* line 28, ../scss/components/_calculators.scss */
+/* line 27, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-headline {
   font-weight: bold;
   color: #231F20;
   margin-bottom: 1.125rem;
-  font-size: 1.125rem;
-  line-height: 1.33333;
+  font-size: 1rem;
+  line-height: 1.5;
 }
-/* line 35, ../scss/components/_calculators.scss */
+/* line 34, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-subLine {
   font-weight: bold;
   color: #231F20;
-  margin-bottom: 0;
+  margin-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
-/* line 43, ../scss/components/_calculators.scss */
+/* line 42, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-switch {
   padding-left: 0.75rem;
 }
-/* line 48, ../scss/components/_calculators.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 42, ../scss/components/_calculators.scss */
+  .simpleCalc .simpleCalc-switch {
+    padding-left: 1.125rem;
+  }
+}
+/* line 52, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy {
   margin-bottom: 0;
   font-size: 0.8rem;
+  line-height: 1.2;
+}
+/* line 57, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-bodyCopy--small {
+  margin-bottom: 0;
+  font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 54, ../scss/components/_calculators.scss */
+/* line 63, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-innerContent {
   padding: 0.75rem;
 }
-/* line 59, ../scss/components/_calculators.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 63, ../scss/components/_calculators.scss */
+  .simpleCalc .simpleCalc-innerContent {
+    padding: 1.125rem;
+  }
+}
+/* line 73, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer {
   background-color: #231F20;
   color: #fff;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
 }
-/* line 64, ../scss/components/_calculators.scss */
+/* line 77, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
   padding: 0.75rem;
 }
-/* line 69, ../scss/components/_calculators.scss */
+/* line 82, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
   border-right: 1px solid #a2a2a2;
 }
-/* line 74, ../scss/components/_calculators.scss */
+/* line 87, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
   border-top: 1px solid #a2a2a2;
 }
-/* line 79, ../scss/components/_calculators.scss */
+/* line 92, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
-/* line 86, ../scss/components/_calculators.scss */
+/* line 99, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-number {
   color: #6AC6C5;
   display: block;
@@ -18290,7 +18302,7 @@ img {
 .list--small .list-item {
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 /* line 37, ../scss/components/_lists.scss */
 .list--small .list-item.list-item--title {
@@ -18792,7 +18804,7 @@ body.fancymodal-open {
   -webkit-border-radius: 0;
   border-radius: 0 0 0 4px;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
   -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -19194,7 +19206,7 @@ body.fancymodal-open {
   margin-bottom: 0;
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 /*------------------------------------*\

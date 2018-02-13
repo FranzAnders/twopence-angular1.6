@@ -16,12 +16,11 @@
     width: rem-calc(300px); 
 
   }
-  
+
   .simpleCalc-controls {
     background-color: #fff;
     color: $body-color; 
     margin-bottom: rem-calc($level1);
-    @include border-radius(6px); 
 
   }
 
@@ -29,19 +28,24 @@
     font-weight: bold; 
     color: $secondaryColor; 
     margin-bottom: rem-calc($level3); 
-    @include type-setting(1); 
+    @include type-setting(0); 
   }
   
   .simpleCalc-subLine {
     font-weight: bold; 
     color: $secondaryColor; 
-    margin-bottom: 0; 
+    margin-bottom: rem-calc($level1); 
     @include type-setting(-1); 
 
   }
 
   .simpleCalc-switch {
     padding-left: rem-calc($level2);
+
+    @media #{$medium-up} {
+     padding-left: rem-calc($level3);
+
+    }
 
   }
 
@@ -50,16 +54,25 @@
     @include type-setting(-1); 
   }
   
+  .simpleCalc-bodyCopy--small {
+    margin-bottom: 0; 
+    @include type-setting(-2); 
+  }
+  
 
   .simpleCalc-innerContent {
     padding: rem-calc($level2); 
+
+    @media #{$medium-up} {
+      padding: rem-calc($level3); 
+
+    }
 
   }
 
   .simpleCalc-resultsContainer {
     background-color: $secondaryColor;
     color: #fff; 
-    @include border-radius(6px); 
     
     .simpleCalc-results-result {
       padding: rem-calc($level2); 
