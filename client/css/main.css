@@ -5877,7 +5877,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
 
 /* line 55, ../scss/abstracts/_typography.scss */
 .fwb, strong, footer .footer-title, button,
-.button, .card--sponsorship .card-content .sponsorship-contributions, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option, .statLabel, .tag {
+.button, .card--sponsorship .card-content .sponsorship-contributions, .simpleCalc .simpleCalc-resultsContainer .result-number, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -13744,7 +13744,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 490, ../scss/base/_typography.scss */
 hr {
   border-style: none;
-  height: 0.125rem;
+  height: 0.0625rem;
   margin-top: 0;
 }
 
@@ -13798,7 +13798,7 @@ hr {
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
-  height: 0.125rem;
+  height: 0.0625rem;
 }
 
 /* line 555, ../scss/base/_typography.scss */
@@ -16054,6 +16054,79 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
+    #Switches
+\*------------------------------------*/
+/* line 1173, ../scss/layout/_forms.scss */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+/* line 1180, ../scss/layout/_forms.scss */
+.switch .switch input {
+  display: none;
+}
+/* line 1183, ../scss/layout/_forms.scss */
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #dae0e0;
+  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 1195, ../scss/layout/_forms.scss */
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 1207, ../scss/layout/_forms.scss */
+.switch input:checked + .slider {
+  background-color: #6AC6C5;
+}
+/* line 1211, ../scss/layout/_forms.scss */
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+/* line 1215, ../scss/layout/_forms.scss */
+.switch input:checked + .slider:before {
+  -moz-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* line 1221, ../scss/layout/_forms.scss */
+.switch .slider.round {
+  -moz-border-radius: 34px;
+  -webkit-border-radius: 34px;
+  border-radius: 34px;
+}
+/* line 1226, ../scss/layout/_forms.scss */
+.switch .slider.round:before {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*------------------------------------*\
     #Form Steps
 \*------------------------------------*/
 /* line 7, ../scss/layout/_formTabs.scss */
@@ -17909,6 +17982,97 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
+    #Calculators
+\*------------------------------------*/
+/*------------------------------------*\
+    #Simple Calculator
+\*------------------------------------*/
+/* line 12, ../scss/components/_calculators.scss */
+.simpleCalc {
+  margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 12, ../scss/components/_calculators.scss */
+  .simpleCalc {
+    width: 18.75rem;
+  }
+}
+/* line 20, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-controls {
+  background-color: #fff;
+  color: #7d7d7d;
+  margin-bottom: 0.375rem;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+/* line 28, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-headline {
+  font-weight: bold;
+  color: #231F20;
+  margin-bottom: 1.125rem;
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+/* line 35, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-subLine {
+  font-weight: bold;
+  color: #231F20;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+/* line 43, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-switch {
+  padding-left: 0.75rem;
+}
+/* line 48, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-bodyCopy {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+/* line 54, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-innerContent {
+  padding: 0.75rem;
+}
+/* line 59, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-resultsContainer {
+  background-color: #231F20;
+  color: #fff;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+/* line 64, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
+  padding: 0.75rem;
+}
+/* line 69, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
+  border-right: 1px solid #a2a2a2;
+}
+/* line 74, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
+  border-top: 1px solid #a2a2a2;
+}
+/* line 79, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-resultsContainer .result-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+/* line 86, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-resultsContainer .result-number {
+  color: #6AC6C5;
+  display: block;
+  font-family: "itc_souvenirmedium", sans-serif;
+  font-size: 2rem;
+  line-height: 1.33333;
+}
+
+/*------------------------------------*\
     #Empty State
 \*------------------------------------*/
 /* line 8, ../scss/components/_emptyStates.scss */
@@ -19117,21 +19281,6 @@ body.fancymodal-open {
     margin-left: auto;
     margin-right: auto;
   }
-}
-/* line 114, ../scss/pages/_home.scss */
-.sponsorStep .sponsorStep-number {
-  height: 100%;
-  position: absolute;
-  top: -10px;
-  left: 20px;
-  bottom: 0;
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: bold;
-  z-index: -1;
-  opacity: .4;
-  color: #6ac6c5;
-  font-size: 240px;
 }
 
 /*------------------------------------*\
