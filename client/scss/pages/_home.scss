@@ -63,7 +63,7 @@
 .wayToSponsor {
   
   @media #{$large-up} {
-    margin-top: rem-calc($level4); 
+    margin-top: rem-calc($level2); 
 
   }
   
@@ -76,7 +76,7 @@
     max-width: rem-calc(200px); 
 
     @media #{$large-up} {
-      max-width: rem-calc(180px);
+      max-width: rem-calc(220px);
       margin-right: rem-calc($level2); 
 
     }

@@ -1,0 +1,16 @@
+
+
+<div class="tooltip">
+  
+  <svg class="tooltip-icon" ng-click="toggle()">
+  <use xlink:href="#icon-Help"/>
+
+  </svg>
+
+  <div class="tooltip-dialogue"
+       ng-if="isActive">
+    
+    {{text}}
+  </div>
+
+</div>

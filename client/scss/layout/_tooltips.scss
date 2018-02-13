@@ -1,0 +1,30 @@
+
+
+/*------------------------------------*\
+    #Tooltips 
+\*------------------------------------*/
+
+.tooltip {
+  position: relative;
+  display: inline-block; 
+
+  .tooltip-icon {
+    fill: $grey--med;
+    height: rem-calc(14px); 
+    width: rem-calc(14px); 
+
+  }
+
+  .tooltip-dialogue {
+    position: absolute;
+    background-color: $grey--med; 
+    width: rem-calc(180px);
+    padding: rem-calc($level1);
+    white-space: normal; 
+    bottom: rem-calc(30px); 
+    @include type-setting(-2); 
+    @include border-radius(4px); 
+
+  }
+
+}

@@ -11,6 +11,7 @@ twopence.directive('simpleCalcDir', function() {
 
     scope: {}, 
     restrict: "E", 
+    replace: true, 
     controller: function() {
 
       var vm  = this; 

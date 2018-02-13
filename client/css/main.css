@@ -5948,7 +5948,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 /* line 269, ../scss/abstracts/_typography.scss */
 .text-micro, .button--micro {
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /* line 274, ../scss/abstracts/_typography.scss */
@@ -13841,7 +13841,7 @@ hr {
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /* line 655, ../scss/base/_typography.scss */
@@ -15036,7 +15036,7 @@ footer .footer-title {
   margin-bottom: 0.75rem;
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 40, ../scss/layout/_footer.scss */
 footer .footer-logo {
@@ -15299,7 +15299,7 @@ input.input--small {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 140, ../scss/layout/_forms.scss */
 .input.input--medium,
@@ -15327,14 +15327,14 @@ input.input--large {
 /* line 179, ../scss/layout/_forms.scss */
 .input-group.input--small label {
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 185, ../scss/layout/_forms.scss */
 .input-group.input--small input {
   padding-top: 0.1875rem;
   padding-bottom: 0.1875rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 197, ../scss/layout/_forms.scss */
 .input-group.input--medium label {
@@ -15449,7 +15449,7 @@ input.input--large {
   bottom: -1.2rem;
   white-space: nowrap;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /*------------------------------------*\
@@ -15468,14 +15468,14 @@ input.input--large {
 /* line 371, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small label {
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 377, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--small input {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 389, ../scss/layout/_forms.scss */
 .inputGroup--alt.input--medium label {
@@ -16494,7 +16494,7 @@ input[type="radio"].radio--large + label {
   .mainNav .mainNav-menu .mainNav-menu-link {
     color: #231F20;
     font-size: 0.8rem;
-    line-height: 1.2;
+    line-height: 1.33333;
   }
 }
 /* line 254, ../scss/layout/_navs.scss */
@@ -16541,7 +16541,7 @@ input[type="radio"].radio--large + label {
     margin-top: 0;
     padding: 0.75rem;
     font-size: 0.8rem;
-    line-height: 1.2;
+    line-height: 1.33333;
   }
   /* line 298, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
@@ -16712,7 +16712,7 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
-    #Sections (Extends from _generics.scss, _colors.scss)
+    #Sections 
 \*------------------------------------*/
 /* line 6, ../scss/layout/_sections.scss */
 .section {
@@ -16832,6 +16832,35 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
+    #Tooltips 
+\*------------------------------------*/
+/* line 7, ../scss/layout/_tooltips.scss */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+/* line 11, ../scss/layout/_tooltips.scss */
+.tooltip .tooltip-icon {
+  fill: #a2a2a2;
+  height: 0.875rem;
+  width: 0.875rem;
+}
+/* line 18, ../scss/layout/_tooltips.scss */
+.tooltip .tooltip-dialogue {
+  position: absolute;
+  background-color: #a2a2a2;
+  width: 11.25rem;
+  padding: 0.375rem;
+  white-space: normal;
+  bottom: 1.875rem;
+  font-size: 0.6rem;
+  line-height: 1.5;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/*------------------------------------*\
     #Tables
 \*------------------------------------*/
 /* line 7, ../scss/layout/_tables.scss */
@@ -16846,7 +16875,7 @@ table th,
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /*------------------------------------*\
@@ -17006,7 +17035,7 @@ table th,
   position: relative;
   padding-left: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 117, ../scss/components/_appHeader.scss */
 .appHeader .appHeader-logout:hover, .appHeader .appHeader-logout:focus {
@@ -17162,7 +17191,7 @@ table th,
   margin-right: 0.375rem;
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -17171,7 +17200,7 @@ table th,
 .appHeader-userInfo .userActions-name {
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /*------------------------------------*\
@@ -17254,7 +17283,7 @@ table th,
     height: 100%;
     position: relative;
     font-size: 0.8rem;
-    line-height: 1.2;
+    line-height: 1.33333;
   }
 }
 /* line 87, ../scss/components/_appNav.scss */
@@ -17450,7 +17479,7 @@ button .button-inner,
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 25, ../scss/components/_buttons.scss */
 button.is-inactive,
@@ -17686,7 +17715,7 @@ button.is-inactive,
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /* line 273, ../scss/components/_buttons.scss */
@@ -17695,7 +17724,7 @@ button.is-inactive,
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /* line 281, ../scss/components/_buttons.scss */
@@ -17704,7 +17733,7 @@ button.is-inactive,
   padding-right: 1.125rem;
   padding-left: 1.125rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /* line 288, ../scss/components/_buttons.scss */
@@ -17801,7 +17830,7 @@ button.is-inactive,
   -webkit-border-radius: 0;
   border-radius: 0;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 62, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
@@ -17854,7 +17883,7 @@ button.is-inactive,
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 143, ../scss/components/_cards.scss */
@@ -17989,21 +18018,44 @@ button.is-inactive,
 \*------------------------------------*/
 /* line 12, ../scss/components/_calculators.scss */
 .simpleCalc {
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 4.125rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 12, ../scss/components/_calculators.scss */
   .simpleCalc {
-    width: 18.75rem;
+    width: 20.375rem;
   }
 }
-/* line 20, ../scss/components/_calculators.scss */
+/* line 22, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-badge {
+  position: absolute;
+  top: -1.5rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: #FFF;
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid #dae0e0;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 34, ../scss/components/_calculators.scss */
+.simpleCalc .simpleCalc-badge .simpleCalc-badge-icon {
+  fill: #231F20;
+  width: 65%;
+}
+/* line 41, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-controls {
   background-color: #fff;
   color: #7d7d7d;
+  position: relative;
   margin-bottom: 0.375rem;
+  padding-top: 1.125rem;
 }
-/* line 27, ../scss/components/_calculators.scss */
+/* line 50, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-headline {
   font-weight: bold;
   color: #231F20;
@@ -18011,71 +18063,73 @@ button.is-inactive,
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 34, ../scss/components/_calculators.scss */
+/* line 57, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-subLine {
   font-weight: bold;
   color: #231F20;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
-/* line 42, ../scss/components/_calculators.scss */
+/* line 65, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-switch {
-  padding-left: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 42, ../scss/components/_calculators.scss */
+  /* line 65, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-switch {
     padding-left: 1.125rem;
   }
 }
-/* line 52, ../scss/components/_calculators.scss */
+/* line 76, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy {
   margin-bottom: 0;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
-/* line 57, ../scss/components/_calculators.scss */
+/* line 81, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy--small {
   margin-bottom: 0;
   font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 63, ../scss/components/_calculators.scss */
+/* line 87, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-innerContent {
-  padding: 0.75rem;
+  padding: 1.125rem;
 }
-@media only screen and (min-width: 40.0625em) {
-  /* line 63, ../scss/components/_calculators.scss */
-  .simpleCalc .simpleCalc-innerContent {
-    padding: 1.125rem;
-  }
-}
-/* line 73, ../scss/components/_calculators.scss */
+/* line 92, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 77, ../scss/components/_calculators.scss */
+/* line 96, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
   padding: 0.75rem;
+  white-space: nowrap;
 }
-/* line 82, ../scss/components/_calculators.scss */
+@media only screen and (min-width: 40.0625em) {
+  /* line 96, ../scss/components/_calculators.scss */
+  .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
+    padding: 1.125rem;
+  }
+}
+/* line 107, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
   border-right: 1px solid #a2a2a2;
 }
-/* line 87, ../scss/components/_calculators.scss */
+/* line 112, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
   border-top: 1px solid #a2a2a2;
 }
-/* line 92, ../scss/components/_calculators.scss */
+/* line 117, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
-/* line 99, ../scss/components/_calculators.scss */
+/* line 124, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-number {
   color: #6AC6C5;
   display: block;
@@ -18302,7 +18356,7 @@ img {
 .list--small .list-item {
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 /* line 37, ../scss/components/_lists.scss */
 .list--small .list-item.list-item--title {
@@ -18346,7 +18400,7 @@ img {
 /* line 109, ../scss/components/_lists.scss */
 .list--bulletted .list-item {
   position: relative;
-  padding-left: 0.375rem;
+  padding-left: 0.75rem;
 }
 /* line 112, ../scss/components/_lists.scss */
 .list--bulletted .list-item:before {
@@ -18804,7 +18858,7 @@ body.fancymodal-open {
   -webkit-border-radius: 0;
   border-radius: 0 0 0 4px;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
   -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -19206,7 +19260,7 @@ body.fancymodal-open {
   margin-bottom: 0;
   color: #fff;
   font-size: 0.8rem;
-  line-height: 1.2;
+  line-height: 1.33333;
 }
 
 /*------------------------------------*\
@@ -19256,7 +19310,7 @@ body.fancymodal-open {
 @media only screen and (min-width: 64.0625em) {
   /* line 63, ../scss/pages/_home.scss */
   .wayToSponsor {
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
   }
 }
 /* line 70, ../scss/pages/_home.scss */
@@ -19270,7 +19324,7 @@ body.fancymodal-open {
 @media only screen and (min-width: 64.0625em) {
   /* line 75, ../scss/pages/_home.scss */
   .wayToSponsor .wayToSponsor-image {
-    max-width: 11.25rem;
+    max-width: 13.75rem;
     margin-right: 0.75rem;
   }
 }
