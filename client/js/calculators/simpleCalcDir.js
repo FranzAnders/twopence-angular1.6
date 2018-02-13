@@ -12,11 +12,13 @@ twopence.directive('simpleCalcDir', function() {
     scope: {}, 
     restrict: "E", 
     replace: true, 
-    controller: function() {
+    controller: ['EfficientWatch', function(EfficientWatch) {
 
       var vm  = this; 
 
-    }, 
+      vm.withSponsorship = false; 
+
+    }], 
     bindToController:{
       'copy': "=",
     },

@@ -50,8 +50,9 @@
 
         <label class="switch">
 
-          <input type="checkbox">
+          <input type="checkbox" ng-model="calculator.withSponsorship">
           <span class="slider round"></span>
+
         </label>
 
       </div>
@@ -64,7 +65,10 @@
     
     <div class="simpleCalc-innerContent">
       <p class="simpleCalc-bodyCopy text-center">
-        {{::calculator.copy.results_explanation}}
+        For a Graduate $45,000 in debt who earns $75,000 annually, 
+        Pickpocket could save <span ng-if="!calculator.withSponsorship">$16,902</span>
+          <span ng-if="calculator.withSponsorship">$20,323</span> and get them out of debt <span ng-if="!calculator.withSponsorship">12.3</span>
+          <span ng-if="calculator.withSponsorship">15</span> years faster.
       </p>
 
     </div>
@@ -83,7 +87,9 @@
         </span>
         
         <span class="result-number">
-          $16,000
+          <span ng-if="!calculator.withSponsorship">$16,902</span>
+          <span ng-if="calculator.withSponsorship">$20,323</span>
+
         </span>
       
       </div>
@@ -98,7 +104,8 @@
         </span>
         
         <span class="result-number">
-          12.2 yr
+          <span ng-if="!calculator.withSponsorship">12.3 yr</span>
+          <span ng-if="calculator.withSponsorship">15.0 yr</span>
         </span>
       
       </div>

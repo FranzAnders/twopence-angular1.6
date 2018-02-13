@@ -110,6 +110,11 @@
 
 }
 
+.section--sponsors {
+    @include primaryGradientFlipped(); 
+
+}
+
 
 .section--highlighted {
   background-color: $quaternaryColor; 
