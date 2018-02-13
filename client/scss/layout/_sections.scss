@@ -46,14 +46,14 @@
   padding-top: rem-calc($level7);
 
   @media #{$medium-up} {
-    padding-bottom: rem-calc($level7 + $level2);
-    padding-top: rem-calc($level7 + $level2);
+    padding-bottom: rem-calc($level7 + $level3);
+    padding-top: rem-calc($level7 + $level3);
     
   }
 
   @media #{$large-up} {
-    padding-bottom: rem-calc($level7);
-    padding-top: rem-calc($level7);
+    padding-bottom: rem-calc($level7 + $level4);
+    padding-top: rem-calc($level7 + $level4);
     
   }
 

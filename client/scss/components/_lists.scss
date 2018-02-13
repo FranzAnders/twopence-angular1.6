@@ -104,3 +104,21 @@
 }
 
 
+.list--bulletted {
+  
+  .list-item {
+      position: relative;
+
+      &:before {
+        content: "•";
+        position: absolute; 
+        left: 0; 
+        top: 0; 
+
+      }
+    
+    padding-left: rem-calc($level1); 
+
+  }
+
+}
