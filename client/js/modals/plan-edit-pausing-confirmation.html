@@ -15,18 +15,38 @@
 
     <div class="fancymodal-innerContent">
     
-      <p class="mb3">
+      <p class="mb0">
        Are you sure  you wish to pause <span ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s matching plan? Pausing takes up to 24 hours and plan can not be resumed until it has been succesfully paused.
       </p>
     
     </div>
     
-    <div class="fancymodal-options">
+    <div class="fancymodal-options  grid  grid--center">
       
-      <button ng-click="$modal.close()" role="button" class="fancymodal-options-option">Cancel</button>
-    
-      <button ng-click="planEditConfirmation.patchPlan()" role="button" class="fancymodal-options-option">Confirm</button>
+      <button ng-click="$modal.close()" role="button" class="fancymodal-options-option">
+
+        <svg class="option-icon">
+          <use xlink:href="#icon-Decline"/>
       
+        </svg>
+      
+       <span class="option-label">Cancel</span>
+      
+      </button>
+
+      <button ng-click="planEditConfirmation.patchPlan()" role="button" class="fancymodal-options-option fancymodal-options-option--primary">
+      
+        <svg class="option-icon">
+          <use xlink:href="#icon-Success"/>
+      
+        </svg>
+      
+       <span class="option-label">Confirm</span>
+      
+      </button>
+      
+    </div>
+
     </div>
 
   </div>

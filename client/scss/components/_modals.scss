@@ -209,52 +209,73 @@ body.fancymodal-open {
 
     }
 
-    
-    .fancymodal-options {
-      background-color: transparent; 
-      border-top: 1px solid $grey--light; 
 
-      .fancymodal-options-option {
-        background-color: transparent; 
-        padding-top: rem-calc($level2); 
-        padding-bottom: rem-calc($level2); 
-        width: 100%; 
-        font-weight: normal; 
-        margin-bottom: 0; 
-        color: $tertiaryColor;
-        position: relative; 
-        @include type-setting(0); 
+}
+
+
+.fancymodal--confirmation {
+  
+  .fancymodal-options {
+    background-color: transparent; 
+    border-top: 1px solid $grey--light; 
+
+    .fancymodal-options-option {
+      background-color: transparent; 
+      padding-top: rem-calc($level3); 
+      padding-bottom: rem-calc($level3); 
+      width: 100%; 
+      margin-bottom: 0; 
+      position: relative; 
+      display: inline-block; 
+      color: $body-color; 
+      @extend %fwb; 
+      @include border-radius(0 0 0 4px); 
+      @include type-setting(-1); 
+      @include transition(all .2s ceaser($easeInOutQuint)); 
+
+      .option-icon {
+        width: rem-calc(12px); 
+        height: rem-calc(12px); 
+        fill: $body-color; 
+        vertical-align: middle; 
         @include transition(all .2s ceaser($easeInOutQuint)); 
 
-        &:before {
-          content: " "; 
-          left: 0; 
-          bottom: -2px; 
-          width: 100%; 
-          height: 2px; 
-          background-color: $primaryColor; 
-          position: absolute; 
-          opacity: 0; 
-          @include transform(translateY(3px)); 
-          @include transition(all .2s ceaser($easeInOutQuint)); 
+      }
+
+      .option-label {
+        vertical-align: middle; 
+
+      }
+
+      &.fancymodal-options-option--primary {
+        color: $secondaryColor;
+
+        .option-icon {
+          fill: $secondaryColor; 
 
         }
 
-        &:hover,
-        &:focus {
-          color: $primaryColor;
-          
-          &:after {
-            opacity: 0; 
-            @include transform(translateY(-4px)); 
+      }
+  
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: $secondaryColor; 
 
-          }
+        .option-icon {
+          fill: #fff; 
 
-          &:before {
-            opacity: 1; 
-            @include transform(translateY(0)); 
+        }
+        
+        &:after {
+          opacity: 0; 
+          @include transform(translateY(-4px)); 
 
-          }
+        }
+
+        &:before {
+          opacity: 1; 
+          @include transform(translateY(0)); 
 
         }
 
@@ -262,8 +283,15 @@ body.fancymodal-open {
 
     }
 
-}
+    .fancymodal-options-option:nth-child(2) {
+      border-left: 1px solid $grey--light;
+      @include border-radius(0 0 4px 0); 
 
+    }
+
+  }
+
+}
 
 
 .fancymodal--boost {

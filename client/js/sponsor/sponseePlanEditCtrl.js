@@ -109,6 +109,7 @@ twopence.controller('sponseePlanEditCtrl', [
         $timeout(function() {
 
           vm.sponseeInfo = sponsorship;
+          console.log(vm.sponseeInfo); 
           vm.latestPlan = vm.getLatestPlan(sponsorship);
           vm.customAmount = parseInt(vm.latestPlan.limit);
 
@@ -210,7 +211,7 @@ twopence.controller('sponseePlanEditCtrl', [
           $fancyModal.open({
             controller: 'planEditConfirmationCtrl as planEditConfirmation',
             templateUrl: 'js/modals/plan-edit-pausing-confirmation.html',
-            themeClass: 'fancymodal--primary  fancymodal--small',
+            themeClass: 'fancymodal--primary  fancymodal--confirmation  fancymodal--small',
             openingClass: 'is-open',
             closingClass: 'is-closed',
             showCloseButton: false,
