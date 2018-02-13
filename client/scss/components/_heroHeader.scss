@@ -30,7 +30,13 @@
     right: 0; 
     bottom :0; 
     left: 0; 
+    @include transition(all .6s ease-in-out); 
     @include primaryGradient(); 
+    
+  }
+  
+  .heroHeader-background--sponsors {
+    @include primaryGradientFlipped(); 
 
   }
 

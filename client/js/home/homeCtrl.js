@@ -6,9 +6,16 @@
 \*------------------------------------*/
 
 
-twopence.controller('homeCtrl',
-    function() {
+twopence.controller('homeCtrl', [
+    '$scope', 
+    '$state',
+    function(
+      $scope, 
+      $state) {
 
     var vm = this;
+    
+    $scope.$state = $state; 
 
-});
+
+}]);

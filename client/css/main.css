@@ -16821,12 +16821,23 @@ input[type="radio"].radio--large + label {
   /* IE6-9 */
 }
 
-/* line 114, ../scss/layout/_sections.scss */
+/* line 113, ../scss/layout/_sections.scss */
+.section--sponsors {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
+  background: #1e5799;
+  /* Old browsers */
+  background: -webkit-linear-gradient(bottom, #63decb 0%, #238eb2 0%, #1e5799 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63decb', endColorstr='#1e5799',GradientType=0 );
+  /* IE6-9 */
+}
+
+/* line 119, ../scss/layout/_sections.scss */
 .section--highlighted {
   background-color: #e8f1f1;
 }
 
-/* line 119, ../scss/layout/_sections.scss */
+/* line 124, ../scss/layout/_sections.scss */
 .section--altHighlighted {
   background-color: #f0f1f1;
 }
@@ -18224,6 +18235,10 @@ button.is-inactive,
   right: 0;
   bottom: 0;
   left: 0;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
   background: #1e5799;
   /* Old browsers */
@@ -18232,7 +18247,17 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 37, ../scss/components/_heroHeader.scss */
+/* line 38, ../scss/components/_heroHeader.scss */
+.heroHeader .heroHeader-background--sponsors {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
+  background: #1e5799;
+  /* Old browsers */
+  background: -webkit-linear-gradient(bottom, #63decb 0%, #238eb2 0%, #1e5799 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63decb', endColorstr='#1e5799',GradientType=0 );
+  /* IE6-9 */
+}
+/* line 43, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-content {
   color: #fff;
   width: 100%;

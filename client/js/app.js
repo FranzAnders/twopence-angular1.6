@@ -61,7 +61,8 @@ twopence.config(
 
                 'main' : {
 
-                    templateUrl: "js/home/home.html"
+                    templateUrl: "js/home/home.html",
+                    controller: 'homeCtrl'
 
                 }
             },
@@ -72,7 +73,8 @@ twopence.config(
 
                 'main' : {
 
-                    templateUrl: "js/home/sponsor-home.html"
+                    templateUrl: "js/home/sponsor-home.html",
+                    controller: 'homeCtrl'
 
                 }
             },
