@@ -1,27 +1,28 @@
 
-/*------------------------------------*\
-    #Object that contains functions for checking devices
-\*------------------------------------*/
-
-
 'use strict'; 
 
+/*------------------------------------*\
+    #Media Check Service
+\*------------------------------------*/
 
-var mediaCheck = (function() {
+twopence.factory('MediaCheck', function() {
+  
 
+    //
     // Media Query Breakpoints;
-    var small = 680;
+    //
+    var small = 640;
     var medium = 1024; 
-    var large = 1441; 
+    var large = 1440; 
 
     var windowWidth = window.innerWidth; 
 
-
+    var mediaCheck = {}; 
 
     //
     //Function that can be used and inserted to check if we are on a mobile device
     //
-    var checkIfSmall = function() {
+    mediaCheck.checkIfSmall = function() {
 
       windowWidth = window.innerWidth; 
 
@@ -36,7 +37,11 @@ var mediaCheck = (function() {
 
     };
 
-    var checkIfMedium = function() {
+
+    //
+    // Checks if the device is medium device 
+    //
+    mediaCheck.checkIfMedium = function() {
 
       windowWidth = window.innerWidth; 
 
@@ -51,7 +56,11 @@ var mediaCheck = (function() {
 
     }
 
-    var checkIfLarge = function() {
+
+    //
+    // Checks if it is a large device 
+    //
+    mediaCheck.checkIfLarge = function() {
 
       windowWidth = window.innerWidth
 
@@ -67,17 +76,6 @@ var mediaCheck = (function() {
     };
 
 
-    var mediaCheck = {
+   return mediaCheck; 
 
-        checkIfSmall: checkIfSmall,
-        checkIfMedium: checkIfMedium,
-        checkIfLarge: checkIfLarge
-
-    }
-
-
-    return mediaCheck
-
-
-})(); 
-
+}); 

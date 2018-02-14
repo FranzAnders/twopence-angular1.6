@@ -13,7 +13,7 @@ twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel
 
           var vm = this; 
 
-          vm.isHidden = Funnel.getState(); 
+          vm.isHidden = true;
 
       }],
       controllerAs: 'funnel', 
@@ -25,7 +25,7 @@ twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel
 
             var page = document.body;
 
-            page.classList.add('is-hidden-by-funnel');
+            //page.classList.add('is-hidden-by-funnel');
 
             funnel.revealPage = function() {  
               Funnel.setState(true);

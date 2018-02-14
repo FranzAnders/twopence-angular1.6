@@ -43,9 +43,14 @@
     }
 
     .funnel--illustr {
-      width: rem-calc(200px);
+      width: 10rem;
       margin-top: rem-calc(-52px);
       margin-bottom: rem-calc(-16px);
+
+      @media #{$medium-up} {
+        width: rem-calc(200px);
+
+      }
 
       @media #{$large-up} {
         width: rem-calc(240px);
@@ -56,7 +61,8 @@
 
     .funnel-inner {
       margin-bottom: rem-calc(-16px);
-
+      padding-bottom: 0; 
+  
       @media #{$medium-up} {
         padding: rem-calc($level4)
 

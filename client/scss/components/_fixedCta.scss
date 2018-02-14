@@ -1,0 +1,53 @@
+
+
+/*------------------------------------*\
+    #Empty State
+\*------------------------------------*/
+
+.fixedCta {
+  background-color: $secondaryColor;
+  position: fixed;
+  bottom: rem-calc($level2);
+  right: rem-calc($level1); 
+  z-index: 30; 
+  fill: #fff; 
+  color: #fff; 
+  @include transition(all .2s ease-in-out); 
+  @include border-radius(36px); 
+  @include box-shadow(0px 0px 3px rgba(0,0,0, .8)); 
+
+    
+  @media #{$medium-up} {
+    right: rem-calc($level2); 
+
+  }
+
+  .fixedCta-cta {
+    margin-bottom: 0;
+    padding: .7rem;
+    padding-right: .8rem; 
+    padding-left: .8rem;     
+    @include type-setting(-2); 
+
+    @media #{$medium-up} {
+
+      @include type-setting(-1); 
+
+    }
+
+    .icon {
+      width: rem-calc(16px);
+      height: rem-calc(16px);
+      margin-right: rem-calc(2px);
+    
+    }
+
+  }
+
+  &:hover, 
+  &:focus {
+    @include box-shadow(0px 0px 14px rgba(0,0,0, .7)); 
+
+  }
+
+}
