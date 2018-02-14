@@ -88,36 +88,73 @@
         <span class="result-label">
           Interest Avoided
         
-          <div class="tooltip"  
-           ng-if="!calculator.withSponsorship"
-           tooltips 
-           tooltip-smart="true"
-           tooltip-size="small"
-           tooltip-show-trigger="click"
-          tooltip-template="With Pickpocket you would pay only $9,373 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
+          <span ng-if="calculator.type == 'graduate'">
+
+              <div class="tooltip"  
+             ng-if="!calculator.withSponsorship"
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+            tooltip-template="With Pickpocket you would pay only $9,373 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
             
-            <svg class="tooltip-icon" ng-click="toggle()">
-            <use xlink:href="#icon-Help"/>
-
-            </svg>
-
-          </div>
-
-
-          <div class="tooltip"  
-           ng-if="calculator.withSponsorship"
-           tooltips 
-           tooltip-smart="true"
-           tooltip-size="small"
-           tooltip-show-trigger="click"
-           tooltip-template="With Pickpocket you would pay only $5,952 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
+              </svg>
             
-            <svg class="tooltip-icon" ng-click="toggle()">
-            <use xlink:href="#icon-Help"/>
+            </div>
+            
+            <div class="tooltip"  
+             ng-if="calculator.withSponsorship"
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket you would pay only $5,952 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
 
-            </svg>
+          </span>
 
-          </div>
+          <span ng-if="calculator.type == 'sponsor'">
+
+              <div class="tooltip"  
+             ng-if="!calculator.withSponsorship"
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+            tooltip-template="With Pickpocket your grad would pay only $9,373 in interest over the life of their loans. Without Pickpocket, they would end up paying $26,275.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+            
+            <div class="tooltip"  
+             ng-if="calculator.withSponsorship"
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket your grad would pay only $5,952 in interest over the life of their loans. Without Pickpocket, they would end up paying $26,275. ">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+
+          </span>
 
         </span>
         
@@ -134,33 +171,69 @@
         <span class="result-label">
           Time Reclaimed
 
-          <div class="tooltip"  tooltips 
-           ng-if="!calculator.withSponsorship"
-           tooltip-smart="true"
-           tooltip-size="small"
-           tooltip-show-trigger="click"
-           tooltip-template="With Pickpocket, you’ll be out of debt in only 7.8 years. Without Pickpocket, your typical repayment period would be 20 years.">
+          <span ng-if="calculator.type == 'graduate'">
+
+              <div class="tooltip"  tooltips 
+             ng-if="!calculator.withSponsorship"
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket, you’ll be out of debt in only 7.8 years. Without Pickpocket, your typical repayment period would be 20 years.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
             
-            <svg class="tooltip-icon" ng-click="toggle()">
-            <use xlink:href="#icon-Help"/>
-
-            </svg>
-
-          </div>
-
-          <div class="tooltip"  tooltips 
-           ng-if="calculator.withSponsorship"
-           tooltip-smart="true"
-           tooltip-size="small"
-           tooltip-show-trigger="click"
-           tooltip-template="With Pickpocket, you’ll be out of debt in only 5 years. Without Pickpocket, your typical repayment period would be 20 years.">
+              </svg>
             
-            <svg class="tooltip-icon" ng-click="toggle()">
-            <use xlink:href="#icon-Help"/>
+            </div>
+            
+            <div class="tooltip"  tooltips 
+             ng-if="calculator.withSponsorship"
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket, you’ll be out of debt in only 5 years. Without Pickpocket, your typical repayment period would be 20 years.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
 
-            </svg>
+          </span>
 
-          </div>
+          <span ng-if="calculator.type == 'sponsor'">
+
+              <div class="tooltip"  tooltips 
+             ng-if="!calculator.withSponsorship"
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket, your grad will be out of debt in only 7.8 years. Without Pickpocket, their typical repayment period would be 20 years. ">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+            
+            <div class="tooltip"  tooltips 
+             ng-if="calculator.withSponsorship"
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket, your grad will be out of debt in only 5 years. Without Pickpocket, their typical repayment period would be 20 years. ">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+
+          </span>
 
         </span>
         
