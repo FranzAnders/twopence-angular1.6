@@ -1177,7 +1177,9 @@ input[type="radio"].radio--large + label {
   height: 34px;
 
   /* Hide default HTML checkbox */
-  .switch input {display:none;}
+  .switch input {-webkit-appearance: none; 
+    opacity: 0; 
+    display:none;}
 
   /* The slider */
   .slider {

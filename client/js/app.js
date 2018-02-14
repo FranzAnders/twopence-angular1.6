@@ -692,10 +692,9 @@ twopence.run(
             $document[0].documentElement.setAttribute('data-useragent', navigator.userAgent);
     };
 
-    // Attaches FastClick to document body to avoid delay on mobile clicks/presses
+    //Inits user agent on the document
     angular.element($document).ready(function() {
 
-        FastClick.attach($document[0].body);
         _userAgentInit();
 
     });

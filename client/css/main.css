@@ -16412,9 +16412,10 @@ input[type="radio"].radio--large + label {
 }
 /* line 1180, ../scss/layout/_forms.scss */
 .switch .switch input {
+  -webkit-appearance: none;
   display: none;
 }
-/* line 1183, ../scss/layout/_forms.scss */
+/* line 1184, ../scss/layout/_forms.scss */
 .switch .slider {
   position: absolute;
   cursor: pointer;
@@ -16428,7 +16429,7 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 1195, ../scss/layout/_forms.scss */
+/* line 1196, ../scss/layout/_forms.scss */
 .switch .slider:before {
   position: absolute;
   content: "";
@@ -16442,28 +16443,28 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 1207, ../scss/layout/_forms.scss */
+/* line 1208, ../scss/layout/_forms.scss */
 .switch input:checked + .slider {
   background-color: #6AC6C5;
 }
-/* line 1211, ../scss/layout/_forms.scss */
+/* line 1212, ../scss/layout/_forms.scss */
 .switch input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
-/* line 1215, ../scss/layout/_forms.scss */
+/* line 1216, ../scss/layout/_forms.scss */
 .switch input:checked + .slider:before {
   -moz-transform: translateX(26px);
   -ms-transform: translateX(26px);
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
 }
-/* line 1221, ../scss/layout/_forms.scss */
+/* line 1222, ../scss/layout/_forms.scss */
 .switch .slider.round {
   -moz-border-radius: 34px;
   -webkit-border-radius: 34px;
   border-radius: 34px;
 }
-/* line 1226, ../scss/layout/_forms.scss */
+/* line 1227, ../scss/layout/_forms.scss */
 .switch .slider.round:before {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -18510,6 +18511,7 @@ button.is-inactive,
 .simpleCalc .simpleCalc-switch {
   padding-left: 1.5rem;
   padding-right: 0.75rem;
+  z-index: 20;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 74, ../scss/components/_calculators.scss */
@@ -18517,54 +18519,54 @@ button.is-inactive,
     padding-left: 1.125rem;
   }
 }
-/* line 85, ../scss/components/_calculators.scss */
+/* line 86, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 90, ../scss/components/_calculators.scss */
+/* line 91, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy--small {
   margin-bottom: 0;
   font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 96, ../scss/components/_calculators.scss */
+/* line 97, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-innerContent {
   padding: 1.125rem;
 }
-/* line 101, ../scss/components/_calculators.scss */
+/* line 102, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 105, ../scss/components/_calculators.scss */
+/* line 106, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
   padding: 0.75rem;
   white-space: nowrap;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 105, ../scss/components/_calculators.scss */
+  /* line 106, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
     padding: 1.125rem;
   }
 }
-/* line 116, ../scss/components/_calculators.scss */
+/* line 117, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 121, ../scss/components/_calculators.scss */
+/* line 122, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
   border-top: 1px solid #afadad;
 }
-/* line 126, ../scss/components/_calculators.scss */
+/* line 127, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 133, ../scss/components/_calculators.scss */
+/* line 134, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-number {
   color: #6AC6C5;
   display: block;
