@@ -77,7 +77,8 @@
         
         <li class="mainNav-menu-item">
           <a class="mainNav-menu-link"
-             ui-sref="main.home">
+             ui-sref="main.home"
+             ng-class="{'is-active' : $state.is('main.home')}">
             
             For Graduates
           
@@ -86,7 +87,8 @@
         
         <li class="mainNav-menu-item">
           <a class="mainNav-menu-link"
-             ui-sref="main.sponsorHome">
+             ui-sref="main.sponsorHome"
+             ng-class="{'is-active' : $state.is('main.sponsorHome')}">
             
             For Sponsors
           

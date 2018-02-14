@@ -16,15 +16,19 @@ twopence.directive('mainNavDir',
     controller: 
       ['$rootScope', 
        '$scope',
+       '$state',
         function(
           $rootScope,
-          $scope) {
+          $scope,
+          $state) {
 
       var vm = this; 
 
       vm.mainNavIsOpen = false;
 
       vm.activeDropDown = false;  
+
+      $scope.$state = $state; 
       
       $rootScope.$on('$stateChangeSuccess', function() {
         

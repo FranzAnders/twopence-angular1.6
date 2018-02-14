@@ -234,25 +234,33 @@
       &:after {
         content:  " "; 
         width: 0; 
-        height: rem-calc(6px); 
+        height: rem-calc(4px); 
         background-color: $primaryColor; 
         right: 0; 
         left: 0; 
-        top: 50%;
+        bottom: 0; 
         @include transition(all .2s ceaser($easeInOutCubic)); 
         @extend %position-absolute; 
+
+        @media #{$medium-up} {
+          background-color: $secondaryColor; 
+          bottom: rem-calc(-6px);
+          height: rem-calc(2px); 
+
+        }
 
       }
         
       @media #{$medium-up} {
-        
         color: $secondaryColor; 
         @include type-setting(-1);  
 
       }
 
+
       &:hover, 
-      &:focus {
+      &:focus,
+      &.is-active {
         color: #fff; 
 
         @media #{$medium-up} {
@@ -262,11 +270,6 @@
 
         &:after{
           width: 100%; 
-
-          @media #{$medium-up} {
-            width: 0; 
-
-          }
 
         }
 
