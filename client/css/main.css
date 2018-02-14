@@ -7581,8 +7581,8 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .icon--badge {
   height: 3rem;
   width: 3rem;
-  border: 1px solid #a2a2a2;
-  fill: #a2a2a2;
+  border: 1px solid #afadad;
+  fill: #afadad;
   position: relative;
   padding: 0.4375rem;
   margin-bottom: 1.5rem;
@@ -13686,7 +13686,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 
 /* line 70, ../scss/base/_theme.scss */
 .brandColor--greyMed {
-  background-color: #a2a2a2;
+  background-color: #afadad;
 }
 
 /* line 78, ../scss/base/_theme.scss */
@@ -14063,7 +14063,7 @@ a.alt-link2:active {
 
 /* line 388, ../scss/base/_typography.scss */
 .txtc5 {
-  color: #a2a2a2;
+  color: #afadad;
 }
 
 /* line 392, ../scss/base/_typography.scss */
@@ -15610,7 +15610,7 @@ input,
 textarea {
   width: 100%;
   border: none;
-  color: #a2a2a2;
+  color: #afadad;
   -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -15892,11 +15892,11 @@ input.input--large {
 /* line 496, ../scss/layout/_forms.scss */
 .inputGroup--alt label {
   left: 0.75rem;
-  color: #a2a2a2;
+  color: #afadad;
 }
 /* line 505, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused label, .inputGroup--alt.is-filled label {
-  color: #a2a2a2;
+  color: #afadad;
   font-size: 0.6rem;
   line-height: 1.5;
   -moz-transform: translateY(-19px);
@@ -15931,7 +15931,7 @@ input.input--large {
 }
 /* line 547, ../scss/layout/_forms.scss */
 .inputGroup--withIcon .inputGroup-iconContainer .inputGroup-icon {
-  fill: #a2a2a2;
+  fill: #afadad;
   top: 0;
   bottom: 0;
   right: 0;
@@ -16033,7 +16033,7 @@ input.input--large {
 }
 /* line 669, ../scss/layout/_forms.scss */
 .inputGroup--boost .inputGroup--boost-controls .control:active span {
-  color: #a2a2a2;
+  color: #afadad;
   -moz-transform: scale(0.8);
   -ms-transform: scale(0.8);
   -webkit-transform: scale(0.8);
@@ -16145,7 +16145,7 @@ select {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 8px solid #a2a2a2;
+  border-top: 8px solid #afadad;
   right: 1rem;
   top: 1.125rem;
   bottom: 0;
@@ -16305,7 +16305,7 @@ input[type="checkbox"].styled-as-radio + label span {
 /* line 1048, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled-as-radio + label span {
   background-color: transparent;
-  border: 2px solid #a2a2a2;
+  border: 2px solid #afadad;
   position: relative;
 }
 /* line 1056, ../scss/layout/_forms.scss */
@@ -16361,7 +16361,7 @@ input[type="radio"] + label span {
 /* line 1120, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   background-color: transparent;
-  border: 2px solid #a2a2a2;
+  border: 2px solid #afadad;
 }
 
 /* line 1126, ../scss/layout/_forms.scss */
@@ -17129,7 +17129,7 @@ input[type="radio"].radio--large + label {
 
 /* line 70, ../scss/layout/_sections.scss */
 .section--bordered {
-  border-bottom: 1px solid #a2a2a2;
+  border-bottom: 1px solid #afadad;
 }
 
 /*------------------------------------*\
@@ -17198,14 +17198,14 @@ input[type="radio"].radio--large + label {
 }
 /* line 11, ../scss/layout/_tooltips.scss */
 .tooltip .tooltip-icon {
-  fill: #a2a2a2;
+  fill: #afadad;
   height: 0.875rem;
   width: 0.875rem;
 }
 /* line 18, ../scss/layout/_tooltips.scss */
 .tooltip .tooltip-dialogue {
   position: absolute;
-  background-color: #a2a2a2;
+  background-color: #afadad;
   width: 11.25rem;
   padding: 0.375rem;
   white-space: normal;
@@ -17630,7 +17630,7 @@ table th,
 }
 /* line 72, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
-  color: #a2a2a2;
+  color: #afadad;
   font-size: 0.6rem;
   line-height: 1.5;
 }
@@ -17684,7 +17684,7 @@ table th,
 }
 /* line 120, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-link {
-  color: #a2a2a2;
+  color: #afadad;
 }
 
 /*------------------------------------*\
@@ -17700,7 +17700,7 @@ table th,
 }
 /* line 147, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover, .appNav-menu-link:focus, .appNav-menu-link:active {
-  color: #a2a2a2;
+  color: #afadad;
   opacity: 1;
 }
 @media only screen and (min-width: 64.0625em) {
@@ -17710,7 +17710,7 @@ table th,
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #a2a2a2;
+    background-color: #afadad;
     height: 1px;
     right: 0;
     left: 0;
@@ -17718,7 +17718,7 @@ table th,
 }
 /* line 171, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover .menu-link-icon, .appNav-menu-link:focus .menu-link-icon, .appNav-menu-link:active .menu-link-icon {
-  fill: #a2a2a2;
+  fill: #afadad;
 }
 /* line 178, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active {
@@ -17747,7 +17747,7 @@ table th,
 }
 /* line 210, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon {
-  fill: #a2a2a2;
+  fill: #afadad;
   width: 1.875rem;
   margin-bottom: 0.125rem;
 }
@@ -17782,7 +17782,7 @@ table th,
 }
 /* line 248, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-label {
-  color: #a2a2a2;
+  color: #afadad;
 }
 /* line 254, ../scss/components/_appNav.scss */
 .appNav-menu-link .appNav-overlay {
@@ -18473,11 +18473,11 @@ button.is-inactive,
 }
 /* line 107, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
-  border-right: 1px solid #a2a2a2;
+  border-right: 1px solid #afadad;
 }
 /* line 112, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
-  border-top: 1px solid #a2a2a2;
+  border-top: 1px solid #afadad;
 }
 /* line 117, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
@@ -19550,7 +19550,7 @@ body.fancymodal-open {
 
 /* line 34, ../scss/components/_tags.scss */
 .tag--inactive {
-  background-color: #a2a2a2;
+  background-color: #afadad;
 }
 
 /* line 40, ../scss/components/_tags.scss */
@@ -19637,62 +19637,79 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Funnel Page
 \*------------------------------------*/
-/* line 8, ../scss/pages/_funnel.scss */
+/* line 9, ../scss/pages/_funnel.scss */
 .funnel {
+  height: 100vh;
+  width: 100vh;
+}
+/* line 13, ../scss/pages/_funnel.scss */
+.funnel .funnel-overlay {
+  height: 100;
+  width: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
+  background: #1e5799;
+  /* Old browsers */
+  background: -webkit-linear-gradient(bottom, #1e5799 0%, #238eb2 0%, #63decb 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
+  /* IE6-9 */
+}
+/* line 20, ../scss/pages/_funnel.scss */
+.funnel .funnel-card {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 8, ../scss/pages/_funnel.scss */
-  .funnel {
+  /* line 20, ../scss/pages/_funnel.scss */
+  .funnel .funnel-card {
     width: 34rem;
     margin-right: auto;
     margin-left: auto;
   }
 }
-/* line 19, ../scss/pages/_funnel.scss */
-.funnel .funnel--illustr {
+/* line 31, ../scss/pages/_funnel.scss */
+.funnel .funnel-card .funnel--illustr {
   width: 12.5rem;
   margin-top: -3.25rem;
   margin-bottom: -1rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 19, ../scss/pages/_funnel.scss */
-  .funnel .funnel--illustr {
+  /* line 31, ../scss/pages/_funnel.scss */
+  .funnel .funnel-card .funnel--illustr {
     width: 15rem;
   }
 }
-/* line 31, ../scss/pages/_funnel.scss */
-.funnel .funnel-inner {
+/* line 43, ../scss/pages/_funnel.scss */
+.funnel .funnel-card .funnel-inner {
   margin-bottom: -1rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 31, ../scss/pages/_funnel.scss */
-  .funnel .funnel-inner {
+  /* line 43, ../scss/pages/_funnel.scss */
+  .funnel .funnel-card .funnel-inner {
     padding: 1.5rem;
   }
 }
-/* line 41, ../scss/pages/_funnel.scss */
-.funnel .funnel-headline {
+/* line 53, ../scss/pages/_funnel.scss */
+.funnel .funnel-card .funnel-headline {
   font-size: 1.5rem;
   line-height: 1.2;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 41, ../scss/pages/_funnel.scss */
-  .funnel .funnel-headline {
+  /* line 53, ../scss/pages/_funnel.scss */
+  .funnel .funnel-card .funnel-headline {
     font-size: 2rem;
     line-height: 1.33333;
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 52, ../scss/pages/_funnel.scss */
-  .funnel .funnel-options .funnel-option:first-child {
+  /* line 64, ../scss/pages/_funnel.scss */
+  .funnel .funnel-card .funnel-options .funnel-option:first-child {
     margin-right: 0.75rem;
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 62, ../scss/pages/_funnel.scss */
-  .funnel .funnel-options .funnel-option:last-child {
+  /* line 74, ../scss/pages/_funnel.scss */
+  .funnel .funnel-card .funnel-options .funnel-option:last-child {
     margin-right: -0.375rem;
   }
 }

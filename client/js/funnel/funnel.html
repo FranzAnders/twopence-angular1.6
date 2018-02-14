@@ -1,12 +1,17 @@
 
 
-<div class="loginView  section--alt  grid--center  grid" >
+<div class="funnel section--alt  grid--center  grid  grid--justifyCenter" >
   
+  <div class="funnel-overlay">
+    
+
+  </div>
+
   <div class="row">
     
     <div class="small-12  columns">
 
-      <div class="card funnel">
+      <div class="card funnel-card">
 
         <div class="card-content  funnel-inner">
           
@@ -27,7 +32,7 @@
             <div class="small-12 columns medium-8  large-7 medium-centered">
               <div class="grid  grid--flexDirectionColumn  grid--full  med-grid--flexDirectionRow  med-grid--center med-grid--1of2 funnel-options">
                   <div class="funnel-option  grid-cell ">
-                    <a ui-sref="main.sponsorHome" class="button button--tertiary  button--large  button--expanded   ">
+                    <a ui-sref="main.sponsorHome" class="button button--tertiary  button--large  button--expanded" ng-click="funnel.revealPage()">
                       
                       Someone Else's 
                     </a>
@@ -35,7 +40,7 @@
                                           
                                           
                   <div class="funnel-option  grid-cell ">
-                    <a ui-sref="main.home" class="button button--secondary  button--large  button--expanded ">
+                    <a ui-sref="main.home" class="button button--secondary  button--large  button--expanded" ng-click="funnel.revealPage()">
                       
                       Mine
                     </a>

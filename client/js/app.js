@@ -56,17 +56,9 @@ twopence.config(
             controllerAs: "main"
 
         })
-        .state('main.funnel', {
-          url: "",
-          views: {
-            'main': {
-              templateUrl: 'js/funnel/funnel.html'
-            }
-          }
 
-        })
         .state('main.home', {
-            url: "home",
+            url: "",
             views: {
 
                 'main' : {
