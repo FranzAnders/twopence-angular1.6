@@ -32,7 +32,17 @@ module.exports = function(grunt) {
 				'<%= app %>/js/**/*.js'
 			]
 		},
-
+    cachebreaker: {
+        dev: {
+            options: {
+                match: ['app.*.js'],
+                position: 'overwrite'
+            },
+            files: {
+                src: ['<%= dist%>/index.html']
+            }
+        }
+    },
 		clean: {
 			dist: {
 				src: ['<%= dist %>/*']
@@ -193,6 +203,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-json-minify');
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-ng-constant');
+    grunt.loadNpmTasks('grunt-cache-breaker');
     grunt.registerTask('default', ['bower-install', 'svgstore', 'compass:dist', 'connect:app', 'watch']);
     
 
@@ -207,20 +218,20 @@ module.exports = function(grunt) {
     //
     // For Development
     //
-    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'ngconstant:development', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'ngconstant:development', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cachebreaker:dev']);
 
 
     //
     // For Sandbox
     //
-    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'ngconstant:sandbox', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'ngconstant:sandbox', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cachebreaker:dev']);
 
 
 
     //
     // For Production
     //
-    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'ngconstant:production', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments']);
+    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'ngconstant:production', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cachebreaker:dev']);
 
 };
 
