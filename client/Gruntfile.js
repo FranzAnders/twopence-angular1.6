@@ -33,15 +33,18 @@ module.exports = function(grunt) {
 			]
 		},
     cachebreaker: {
-        dev: {
-            options: {
-                match: ['app.*.js'],
-                position: 'overwrite'
-            },
-            files: {
-                src: ['<%= dist%>/index.html']
-            }
-        }
+      dev: {
+          options: {
+              match: ['app.*.js'],
+              replacement: 'md5',
+              src: {
+                  path: '<%= dist%>/js/app.min.js'
+              }
+          },
+          files: {
+              src: ['<%= dist%>/index.html']
+          }
+      }
     },
 		clean: {
 			dist: {
