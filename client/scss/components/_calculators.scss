@@ -16,7 +16,10 @@
   margin-right: auto; 
   margin-left: auto; 
 
-  
+  @media #{$medium-up} {
+    margin-bottom: 0;
+    
+  }
 
   .simpleCalc-badge {
       position: absolute; 

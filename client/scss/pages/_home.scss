@@ -114,3 +114,33 @@
 
 }
 
+
+
+
+
+/*------------------------------------*\
+    #Plaid Badge
+\*------------------------------------*/
+
+
+.plaidBadge {
+  color: $primaryColor;
+
+  .plaidBadge-label {
+    margin-right: rem-calc($level1);
+    @include type-setting(-1); 
+
+  }
+
+  .plaidBadge-badge {
+    width: rem-calc(90px);
+    height: rem-calc(40px); 
+    background-image: url('../assets/images/logo--plaid.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+
+}
+
+
