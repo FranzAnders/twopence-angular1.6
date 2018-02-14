@@ -5,7 +5,11 @@
     #Fixed CTA Directive
 \*------------------------------------*/
 
-twopence.directive('fixedCtaDir', ['$anchorScroll', 'MediaCheck', function($anchorScroll, MediaCheck) {
+twopence.directive('fixedCtaDir', [
+    '$anchorScroll', 
+     'MediaCheck', function(
+        $anchorScroll, 
+        MediaCheck) {
 
   return {
 
