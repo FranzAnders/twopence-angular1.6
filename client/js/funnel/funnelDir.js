@@ -2,16 +2,18 @@
 'use strict'; 
 
 
-twopence.directive('funnelDir', function() {
+twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel) {
 
     return {
 
       restrict: "E", 
       scope: {}, 
       replace: true, 
-      controller: ['Funnel', function() {
+      controller: ['Funnel', function(Funnel) {
 
           var vm = this; 
+
+          vm.isHidden = Funnel.getState(); 
 
       }],
       controllerAs: 'funnel', 
@@ -19,17 +21,23 @@ twopence.directive('funnelDir', function() {
       templateUrl: "js/funnel/funnel.html", 
       link: function(scope, element, attrs, funnel) {
 
-          var page = document.querySelector('[data-ui-component="funnel"]');
+          $timeout(function() {
 
-          page.classList.add('is-hidden-by-funnel');
+            var page = document.body;
 
-          funnel.revealPage() = function() {  
+            page.classList.add('is-hidden-by-funnel');
 
+            funnel.revealPage = function() {  
+              Funnel.setState(true);
+              funnel.isHidden = Funnel.getState();
+              page.classList.remove('is-hidden-by-funnel');
 
-          }; 
+            }; 
+
+          }, 0); 
 
       }
 
     }
 
-}); 
+}]); 

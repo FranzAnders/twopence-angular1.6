@@ -2,22 +2,32 @@
 
 
 
-<main-nav-dir  ng-hide="$state.includes('main.kitchenSink') || $state.includes('main.account') || $state.includes('main.signUp') || $state.includes('main.funnel')">
+<funnel-dir>
 
-</main-nav-dir>
+</funnel-dir>
 
-<login-header-dir ng-show="$state.includes('main.account') || $state.includes('main.signUp')">
 
-</login-header-dir>
+<div class='funnel-pageToHide'>
 
-<div class=" grid grid--flexDirectionColumn grid--stretch">
+  <main-nav-dir  ng-hide="$state.includes('main.kitchenSink') || $state.includes('main.account') || $state.includes('main.signUp') || $state.includes('main.funnel')">
   
-  <div ui-view="main" class="grid-cell">
+  </main-nav-dir>
+  
+  <login-header-dir ng-show="$state.includes('main.account') || $state.includes('main.signUp')">
+  
+  </login-header-dir>
+  
+  
+  <div class=" grid grid--flexDirectionColumn grid--stretch">
+    
+    <div ui-view="main" class="grid-cell">
+      
+    </div>
+    
+    <footer-dir ng-hide="$state.includes('main.404') || $state.includes('main.account')  || $state.includes('main.signUp') || $state.includes('main.funnel')" class="grid-cell">
+      
+    </footer-dir>
     
   </div>
-  
-  <footer-dir ng-hide="$state.includes('main.404') || $state.includes('main.account')  || $state.includes('main.signUp') || $state.includes('main.funnel')" class="grid-cell">
-    
-  </footer-dir>
-  
+
 </div>

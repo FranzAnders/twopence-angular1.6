@@ -8,11 +8,23 @@
 
 .funnel {
     height: 100vh; 
-    width: 100vh;   
+    width: 100vw;   
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 200; 
   
   .funnel-overlay {
-    height: 100; 
+    height: 100%; 
     width: 100%; 
+    opacity: .8;
+    position: absolute;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
     @include primaryGradient(); 
 
   }
@@ -20,6 +32,8 @@
   .funnel-card {
     margin-top: rem-calc($level7);
     margin-bottom: rem-calc($level7);
+    opacity: 1; 
+    @include transition(all .6s ceaser($easeOutCubic)); 
 
     @media #{$medium-up} {
       width: 34rem;
@@ -65,7 +79,7 @@
       
         
         @media #{$medium-up} {
-          margin-right: rem-calc($level2); 
+          padding-right: rem-calc($level2); 
 
         }
 
@@ -74,7 +88,8 @@
       .funnel-option:last-child {
       
         @media #{$medium-up} {
-          margin-right: rem-calc(-6px); 
+          padding-right: rem-calc($level2); 
+          
 
         }
 
@@ -82,4 +97,88 @@
     }
 
   }
+
+  &.is-hidden {
+
+     @include animation(funnel-disappear .1s ceaser($easeOutCubic) forwards .6s);
+
+    .funnel-card {
+      opacity: 0; 
+      @include transform(translateY(30px)); 
+
+    }
+    
+    .funnel-overlay {
+      @include animation(funnel-overlay-disappear .6s ceaser($easeOutCubic) forwards);
+
+    }
+
+  }
+  
 }
+
+
+.is-hidden-by-funnel {
+  overflow: hidden; 
+  @include transition(all .6s ceaser($easeOutCubic)); 
+
+  .funnel-pageToHide {
+    @include filter(blur(3px)); 
+
+  }
+
+}
+
+
+
+
+@include keyframes(funnel-disappear) {
+
+  0% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+
+  }
+
+  99% {
+
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+  }
+
+ 100% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+
+}
+
+
+@include keyframes(funnel-overlay-disappear) {
+
+  0% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+
+  }
+
+  99% {
+
+    opacity: 0; 
+    @include transform(translateX(0)); 
+
+  }
+
+ 100% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+
+}
+
+

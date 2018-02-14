@@ -11,9 +11,20 @@ twopence.service('Funnel', function() {
   Funnel.hide = function() {
 
     Funnel.isHidden = true; 
+
+  }
+
+  Funnel.getState = function() {
+
+    return Funnel.isHidden;  
     
   }
 
+  Funnel.setState = function(pState) {
+
+    Funnel.isHidden = pState; 
+    
+  }
   return Funnel;
 
 

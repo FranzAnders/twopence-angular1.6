@@ -56,7 +56,6 @@ twopence.config(
             controllerAs: "main"
 
         })
-
         .state('main.home', {
             url: "",
             views: {

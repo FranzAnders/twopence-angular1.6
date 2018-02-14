@@ -19640,12 +19640,24 @@ body.fancymodal-open {
 /* line 9, ../scss/pages/_funnel.scss */
 .funnel {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
 }
-/* line 13, ../scss/pages/_funnel.scss */
+/* line 19, ../scss/pages/_funnel.scss */
 .funnel .funnel-overlay {
-  height: 100;
+  height: 100%;
   width: 100%;
+  opacity: .8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
   background: #1e5799;
   /* Old browsers */
@@ -19654,66 +19666,219 @@ body.fancymodal-open {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 20, ../scss/pages/_funnel.scss */
+/* line 32, ../scss/pages/_funnel.scss */
 .funnel .funnel-card {
   margin-top: 3rem;
   margin-bottom: 3rem;
+  opacity: 1;
+  -moz-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -o-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -webkit-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 20, ../scss/pages/_funnel.scss */
+  /* line 32, ../scss/pages/_funnel.scss */
   .funnel .funnel-card {
     width: 34rem;
     margin-right: auto;
     margin-left: auto;
   }
 }
-/* line 31, ../scss/pages/_funnel.scss */
+/* line 45, ../scss/pages/_funnel.scss */
 .funnel .funnel-card .funnel--illustr {
   width: 12.5rem;
   margin-top: -3.25rem;
   margin-bottom: -1rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 31, ../scss/pages/_funnel.scss */
+  /* line 45, ../scss/pages/_funnel.scss */
   .funnel .funnel-card .funnel--illustr {
     width: 15rem;
   }
 }
-/* line 43, ../scss/pages/_funnel.scss */
+/* line 57, ../scss/pages/_funnel.scss */
 .funnel .funnel-card .funnel-inner {
   margin-bottom: -1rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 43, ../scss/pages/_funnel.scss */
+  /* line 57, ../scss/pages/_funnel.scss */
   .funnel .funnel-card .funnel-inner {
     padding: 1.5rem;
   }
 }
-/* line 53, ../scss/pages/_funnel.scss */
+/* line 67, ../scss/pages/_funnel.scss */
 .funnel .funnel-card .funnel-headline {
   font-size: 1.5rem;
   line-height: 1.2;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 53, ../scss/pages/_funnel.scss */
+  /* line 67, ../scss/pages/_funnel.scss */
   .funnel .funnel-card .funnel-headline {
     font-size: 2rem;
     line-height: 1.33333;
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 64, ../scss/pages/_funnel.scss */
+  /* line 78, ../scss/pages/_funnel.scss */
   .funnel .funnel-card .funnel-options .funnel-option:first-child {
-    margin-right: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 74, ../scss/pages/_funnel.scss */
+  /* line 88, ../scss/pages/_funnel.scss */
   .funnel .funnel-card .funnel-options .funnel-option:last-child {
-    margin-right: -0.375rem;
+    padding-right: 0.75rem;
   }
 }
+/* line 101, ../scss/pages/_funnel.scss */
+.funnel.is-hidden {
+  -moz-animation: funnel-disappear 0.1s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards 0.6s;
+  -webkit-animation: funnel-disappear 0.1s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards 0.6s;
+  animation: funnel-disappear 0.1s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards 0.6s;
+}
+/* line 105, ../scss/pages/_funnel.scss */
+.funnel.is-hidden .funnel-card {
+  opacity: 0;
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+}
+/* line 111, ../scss/pages/_funnel.scss */
+.funnel.is-hidden .funnel-overlay {
+  -moz-animation: funnel-overlay-disappear 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  -webkit-animation: funnel-overlay-disappear 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  animation: funnel-overlay-disappear 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
 
+/* line 121, ../scss/pages/_funnel.scss */
+.is-hidden-by-funnel {
+  overflow: hidden;
+  -moz-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -o-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  -webkit-transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  transition: all 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+/* line 125, ../scss/pages/_funnel.scss */
+.is-hidden-by-funnel .funnel-pageToHide {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
+@-moz-keyframes funnel-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-webkit-keyframes funnel-disappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@keyframes funnel-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-moz-keyframes funnel-overlay-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-webkit-keyframes funnel-overlay-disappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@keyframes funnel-overlay-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
 /*------------------------------------*\
     #Styles specific to homepage
 \*------------------------------------*/
