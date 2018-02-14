@@ -6,9 +6,9 @@
 \*------------------------------------*/
 
 twopence.factory('Auth', [
-  '$q', 'ENV', '$http', '$cookies', '$rootScope', 'Session',
+  '$q', 'ENV', '$http', '$cookies', '$rootScope', 'Session', 'Funnel',
   function(
-    $q, ENV, $http, $cookies, $rootScope, Session) {
+    $q, ENV, $http, $cookies, $rootScope, Session, Funnel) {
 
 
     var auth = {};
@@ -27,6 +27,7 @@ twopence.factory('Auth', [
             $cookies.put('loggedIn', true);
             $cookies.put('userToken', token);
             $cookies.put('sponsorId', res.data.sponsor_id);
+            Funnel.setState(false); 
             var alias = 'Sponsor:' + res.data.sponsor_id;
             mixpanel.identify(alias);
             console.log("You are logged in: " + $cookies.get('loggedIn'));

@@ -106,7 +106,7 @@
 
   @media #{$large-up} {
     width: 90%; 
-    bottom: 8%; 
+    top: rem-calc(280px); 
     right: 0; 
     left: 0; 
     margin: auto; 
@@ -148,7 +148,7 @@
     right: 0; 
     left: -2%; 
     margin: auto; 
-    bottom: 8%; 
+    top: rem-calc(280px); 
 
   }
 

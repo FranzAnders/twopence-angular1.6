@@ -20214,7 +20214,7 @@ body.fancymodal-open {
   /* line 98, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--dashboard {
     width: 90%;
-    bottom: 8%;
+    top: 17.5rem;
     right: 0;
     left: 0;
     margin: auto;
@@ -20256,7 +20256,7 @@ body.fancymodal-open {
     right: 0;
     left: -2%;
     margin: auto;
-    bottom: 8%;
+    top: 17.5rem;
   }
 }
 
