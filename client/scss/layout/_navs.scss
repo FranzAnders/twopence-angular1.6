@@ -80,6 +80,31 @@
 }
 
 
+@include keyframes(main-nav-container-disappear) {
+
+  0% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+
+  }
+
+  99% {
+
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+  }
+
+ 100% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+
+}
+
+
 
 .fixed-nav {
   width: 100%; 
@@ -362,49 +387,55 @@
     }
 
   }
+  
+  @media #{$small-only} {
 
-  &.is-closed {  // for when nav is closed
+    &.is-closed {  // for when nav is closed
 
-    .mainNav-menu {
-      
-      .mainNav-menu-item {
+      .mainNav-menu {
+      @include animation(main-nav-container-disappear .1s ceaser($easeInOutCubic) forwards .4s); 
+        
+        .mainNav-menu-item {
 
-         @media #{$small-only} {
-            opacity: 0;   
-            @include transform(translateY(26px));     
+           @media #{$small-only} {
+              opacity: 0;   
+              @include transform(translateY(26px));     
 
-         }
+           }
+
+        }
+
+      }
+
+      .mainNav-overlay {
+        @include animation(main-nav-disappear .4s ceaser($easeInOutCubic) forwards .2s); 
 
       }
 
     }
 
-    .mainNav-overlay {
-      @include animation(main-nav-disappear .4s ceaser($easeInOutCubic) forwards .2s); 
-
-    }
-
-  }
-
-  &.is-open { // for when nav is open
-    
-    .mainNav-menu {
+    &.is-open { // for when nav is open
       
-      .mainNav-menu-item {
-        opacity: 1;   
-        @include transform(translateY(0));     
+      .mainNav-menu {
+        
+        .mainNav-menu-item {
+          opacity: 1;   
+          @include transform(translateY(0));     
+
+        }
+
+      }
+
+
+      .mainNav-overlay {
+        @include animation(main-nav-appear .4s ceaser($easeInOutCubic) forwards); 
 
       }
 
     }
 
-
-    .mainNav-overlay {
-      @include animation(main-nav-appear .4s ceaser($easeInOutCubic) forwards); 
-
-    }
-
   }
+
 
 }
 

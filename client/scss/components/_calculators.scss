@@ -12,11 +12,10 @@
 .simpleCalc {
   margin-top: rem-calc($base-magic-number);
   margin-bottom: rem-calc($level7 + $level3);
+  max-width: rem-calc(326px); 
+  margin-right: auto; 
+  margin-left: auto; 
 
-  @media #{$medium-up} {
-    width: rem-calc(326px); 
-
-  }
   
 
   .simpleCalc-badge {

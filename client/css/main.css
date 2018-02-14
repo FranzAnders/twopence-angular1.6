@@ -16641,13 +16641,70 @@ input[type="radio"].radio--large + label {
     transform: translateX(-300%);
   }
 }
-/* line 84, ../scss/layout/_navs.scss */
+@-moz-keyframes main-nav-container-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-webkit-keyframes main-nav-container-disappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@keyframes main-nav-container-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+/* line 109, ../scss/layout/_navs.scss */
 .fixed-nav {
   width: 100%;
   z-index: 100;
 }
 
-/* line 91, ../scss/layout/_navs.scss */
+/* line 116, ../scss/layout/_navs.scss */
 .absolute-nav {
   width: 100%;
   z-index: 100;
@@ -16657,25 +16714,25 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Navigation Inner Components Styles  
 \*------------------------------------*/
-/* line 108, ../scss/layout/_navs.scss */
+/* line 133, ../scss/layout/_navs.scss */
 .mainNav {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 108, ../scss/layout/_navs.scss */
+  /* line 133, ../scss/layout/_navs.scss */
   .mainNav {
     padding-right: 0;
     padding-left: 0;
   }
 }
-/* line 119, ../scss/layout/_navs.scss */
+/* line 144, ../scss/layout/_navs.scss */
 .mainNav .mainNav-header {
   width: 100%;
   height: 100%;
   z-index: 200;
 }
-/* line 125, ../scss/layout/_navs.scss */
+/* line 150, ../scss/layout/_navs.scss */
 .mainNav .mainNav-header .mainNav-title {
   height: 100%;
   margin-left: 0.75rem;
@@ -16688,25 +16745,25 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
-/* line 133, ../scss/layout/_navs.scss */
+/* line 158, ../scss/layout/_navs.scss */
 .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
   height: 100%;
   width: 7.5rem;
   fill: #231F20;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 133, ../scss/layout/_navs.scss */
+  /* line 158, ../scss/layout/_navs.scss */
   .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
     width: 8.75rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 133, ../scss/layout/_navs.scss */
+  /* line 158, ../scss/layout/_navs.scss */
   .mainNav .mainNav-header .mainNav-title .mainNav-title-logo {
     width: 10rem;
   }
 }
-/* line 155, ../scss/layout/_navs.scss */
+/* line 180, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu {
   position: absolute;
   left: 0;
@@ -16718,7 +16775,7 @@ input[type="radio"].radio--large + label {
   padding-top: 6rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 155, ../scss/layout/_navs.scss */
+  /* line 180, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu {
     position: relative;
     padding-top: 0;
@@ -16727,7 +16784,7 @@ input[type="radio"].radio--large + label {
     margin-left: 3%;
   }
 }
-/* line 175, ../scss/layout/_navs.scss */
+/* line 200, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item {
   width: 100%;
   margin-bottom: 1.5rem;
@@ -16738,48 +16795,48 @@ input[type="radio"].radio--large + label {
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 175, ../scss/layout/_navs.scss */
+  /* line 200, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-item {
     margin-bottom: 0;
     margin-right: 0.75rem;
   }
 }
-/* line 191, ../scss/layout/_navs.scss */
+/* line 216, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(1) {
   -moz-transition-delay: 0.03s;
   -o-transition-delay: 0.03s;
   -webkit-transition-delay: 0.03s;
   transition-delay: 0.03s;
 }
-/* line 191, ../scss/layout/_navs.scss */
+/* line 216, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(2) {
   -moz-transition-delay: 0.06s;
   -o-transition-delay: 0.06s;
   -webkit-transition-delay: 0.06s;
   transition-delay: 0.06s;
 }
-/* line 191, ../scss/layout/_navs.scss */
+/* line 216, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(3) {
   -moz-transition-delay: 0.09s;
   -o-transition-delay: 0.09s;
   -webkit-transition-delay: 0.09s;
   transition-delay: 0.09s;
 }
-/* line 191, ../scss/layout/_navs.scss */
+/* line 216, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(4) {
   -moz-transition-delay: 0.12s;
   -o-transition-delay: 0.12s;
   -webkit-transition-delay: 0.12s;
   transition-delay: 0.12s;
 }
-/* line 191, ../scss/layout/_navs.scss */
+/* line 216, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(5) {
   -moz-transition-delay: 0.15s;
   -o-transition-delay: 0.15s;
   -webkit-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
-/* line 191, ../scss/layout/_navs.scss */
+/* line 216, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-item:nth-of-type(6) {
   -moz-transition-delay: 0.18s;
   -o-transition-delay: 0.18s;
@@ -16787,12 +16844,12 @@ input[type="radio"].radio--large + label {
   transition-delay: 0.18s;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 199, ../scss/layout/_navs.scss */
+  /* line 224, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-item:last-child {
     margin-right: 0;
   }
 }
-/* line 208, ../scss/layout/_navs.scss */
+/* line 233, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-logo {
   fill: #fff;
   width: 8.75rem;
@@ -16802,24 +16859,24 @@ input[type="radio"].radio--large + label {
   margin-right: auto;
   margin-left: auto;
 }
-/* line 219, ../scss/layout/_navs.scss */
+/* line 244, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-links {
   width: 100%;
   max-width: 25rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 219, ../scss/layout/_navs.scss */
+  /* line 244, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-links {
     max-width: 26.25rem;
   }
 }
-/* line 229, ../scss/layout/_navs.scss */
+/* line 254, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link {
   color: #fff;
   font-size: 2.5rem;
   line-height: 1.2;
 }
-/* line 234, ../scss/layout/_navs.scss */
+/* line 259, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link:after {
   content: " ";
   width: 0;
@@ -16834,7 +16891,7 @@ input[type="radio"].radio--large + label {
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 234, ../scss/layout/_navs.scss */
+  /* line 259, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-link:after {
     background-color: #231F20;
     bottom: -0.375rem;
@@ -16842,28 +16899,28 @@ input[type="radio"].radio--large + label {
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 229, ../scss/layout/_navs.scss */
+  /* line 254, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-link {
     color: #231F20;
     font-size: 0.8rem;
     line-height: 1.33333;
   }
 }
-/* line 261, ../scss/layout/_navs.scss */
+/* line 286, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link:hover, .mainNav .mainNav-menu .mainNav-menu-link:focus, .mainNav .mainNav-menu .mainNav-menu-link.is-active {
   color: #fff;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 261, ../scss/layout/_navs.scss */
+  /* line 286, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-link:hover, .mainNav .mainNav-menu .mainNav-menu-link:focus, .mainNav .mainNav-menu .mainNav-menu-link.is-active {
     color: #231F20;
   }
 }
-/* line 271, ../scss/layout/_navs.scss */
+/* line 296, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-link:hover:after, .mainNav .mainNav-menu .mainNav-menu-link:focus:after, .mainNav .mainNav-menu .mainNav-menu-link.is-active:after {
   width: 100%;
 }
-/* line 280, ../scss/layout/_navs.scss */
+/* line 305, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-button {
   border: 1px solid #fff;
   color: #fff;
@@ -16875,12 +16932,12 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 288, ../scss/layout/_navs.scss */
+/* line 313, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
   background-color: #fff;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 280, ../scss/layout/_navs.scss */
+  /* line 305, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button {
     border: 1px solid #231F20;
     color: #231F20;
@@ -16889,22 +16946,22 @@ input[type="radio"].radio--large + label {
     font-size: 0.8rem;
     line-height: 1.33333;
   }
-  /* line 301, ../scss/layout/_navs.scss */
+  /* line 326, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-menu-button:hover, .mainNav .mainNav-menu .mainNav-menu-button:focus {
     background-color: #231F20;
     border: 1px solid #231F20;
     color: #fff;
   }
 }
-/* line 315, ../scss/layout/_navs.scss */
+/* line 340, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link {
   fill: #fff;
 }
-/* line 318, ../scss/layout/_navs.scss */
+/* line 343, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-menu-social .social-link:hover, .mainNav .mainNav-menu .mainNav-menu-social .social-link:focus {
   color: #231F20;
 }
-/* line 329, ../scss/layout/_navs.scss */
+/* line 354, ../scss/layout/_navs.scss */
 .mainNav .mainNav-menu .mainNav-actions {
   width: 100%;
   max-width: 12.5rem;
@@ -16915,13 +16972,13 @@ input[type="radio"].radio--large + label {
   right: 0;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 329, ../scss/layout/_navs.scss */
+  /* line 354, ../scss/layout/_navs.scss */
   .mainNav .mainNav-menu .mainNav-actions {
     padding-left: 5%;
     margin-right: 0.75rem;
   }
 }
-/* line 349, ../scss/layout/_navs.scss */
+/* line 374, ../scss/layout/_navs.scss */
 .mainNav .mainNav-overlay {
   color: #fff;
   position: fixed;
@@ -16933,13 +16990,21 @@ input[type="radio"].radio--large + label {
   left: 0;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 349, ../scss/layout/_navs.scss */
+  /* line 374, ../scss/layout/_navs.scss */
   .mainNav .mainNav-overlay {
     display: none;
   }
 }
 @media only screen and (max-width: 40em) {
-  /* line 370, ../scss/layout/_navs.scss */
+  /* line 395, ../scss/layout/_navs.scss */
+  .mainNav.is-closed .mainNav-menu {
+    -moz-animation: main-nav-container-disappear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.4s;
+    -webkit-animation: main-nav-container-disappear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.4s;
+    animation: main-nav-container-disappear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.4s;
+  }
+}
+@media only screen and (max-width: 40em) and (max-width: 40em) {
+  /* line 398, ../scss/layout/_navs.scss */
   .mainNav.is-closed .mainNav-menu .mainNav-menu-item {
     opacity: 0;
     -moz-transform: translateY(26px);
@@ -16948,31 +17013,33 @@ input[type="radio"].radio--large + label {
     transform: translateY(26px);
   }
 }
-/* line 382, ../scss/layout/_navs.scss */
-.mainNav.is-closed .mainNav-overlay {
-  -moz-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
-  -webkit-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
-  animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
-}
-/* line 393, ../scss/layout/_navs.scss */
-.mainNav.is-open .mainNav-menu .mainNav-menu-item {
-  opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-/* line 402, ../scss/layout/_navs.scss */
-.mainNav.is-open .mainNav-overlay {
-  -moz-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
-  -webkit-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
-  animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+@media only screen and (max-width: 40em) {
+  /* line 410, ../scss/layout/_navs.scss */
+  .mainNav.is-closed .mainNav-overlay {
+    -moz-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
+    -webkit-animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
+    animation: main-nav-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.2s;
+  }
+  /* line 421, ../scss/layout/_navs.scss */
+  .mainNav.is-open .mainNav-menu .mainNav-menu-item {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  /* line 430, ../scss/layout/_navs.scss */
+  .mainNav.is-open .mainNav-overlay {
+    -moz-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+    -webkit-animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+    animation: main-nav-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
+  }
 }
 
 /*------------------------------------*\
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
-/* line 424, ../scss/layout/_navs.scss */
+/* line 455, ../scss/layout/_navs.scss */
 .mainNav-menuToggle {
   width: 3.75rem;
   height: 3.75rem;
@@ -16983,24 +17050,24 @@ input[type="radio"].radio--large + label {
   position: absolute;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 424, ../scss/layout/_navs.scss */
+  /* line 455, ../scss/layout/_navs.scss */
   .mainNav-menuToggle {
     display: none;
   }
 }
-/* line 445, ../scss/layout/_navs.scss */
+/* line 476, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
   color: #231F20;
   padding-top: 6px;
 }
 
-/* line 453, ../scss/layout/_navs.scss */
+/* line 484, ../scss/layout/_navs.scss */
 .menuToggle-icon {
   height: 1.3rem;
   width: 2.1rem;
   z-index: 202;
 }
-/* line 461, ../scss/layout/_navs.scss */
+/* line 492, ../scss/layout/_navs.scss */
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
   height: 4px;
@@ -17016,7 +17083,7 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 475, ../scss/layout/_navs.scss */
+/* line 506, ../scss/layout/_navs.scss */
 .menuToggle-icon:after {
   top: 50%;
 }
@@ -17024,15 +17091,15 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Nav Menu Toggle Open
 \*------------------------------------*/
-/* line 493, ../scss/layout/_navs.scss */
+/* line 524, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 498, ../scss/layout/_navs.scss */
+/* line 529, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 501, ../scss/layout/_navs.scss */
+/* line 532, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
   background-color: #fff;
@@ -17041,7 +17108,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 507, ../scss/layout/_navs.scss */
+/* line 538, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
   background-color: #fff;
   -moz-transform: translateY(0) rotate(-45deg);
@@ -17049,7 +17116,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 512, ../scss/layout/_navs.scss */
+/* line 543, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -18377,14 +18444,11 @@ button.is-inactive,
 .simpleCalc {
   margin-top: 1.5rem;
   margin-bottom: 4.125rem;
+  max-width: 20.375rem;
+  margin-right: auto;
+  margin-left: auto;
 }
-@media only screen and (min-width: 40.0625em) {
-  /* line 12, ../scss/components/_calculators.scss */
-  .simpleCalc {
-    width: 20.375rem;
-  }
-}
-/* line 22, ../scss/components/_calculators.scss */
+/* line 21, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-badge {
   position: absolute;
   top: -1.5rem;
@@ -18399,12 +18463,12 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 34, ../scss/components/_calculators.scss */
+/* line 33, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-badge .simpleCalc-badge-icon {
   fill: #231F20;
   width: 65%;
 }
-/* line 41, ../scss/components/_calculators.scss */
+/* line 40, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-controls {
   background-color: #fff;
   color: #7d7d7d;
@@ -18412,7 +18476,7 @@ button.is-inactive,
   margin-bottom: 0.375rem;
   padding-top: 1.125rem;
 }
-/* line 50, ../scss/components/_calculators.scss */
+/* line 49, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-headline {
   font-weight: bold;
   color: #231F20;
@@ -18420,7 +18484,7 @@ button.is-inactive,
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 57, ../scss/components/_calculators.scss */
+/* line 56, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-subLine {
   font-weight: bold;
   color: #231F20;
@@ -18428,65 +18492,65 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 65, ../scss/components/_calculators.scss */
+/* line 64, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-switch {
   padding-left: 1.5rem;
   padding-right: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 65, ../scss/components/_calculators.scss */
+  /* line 64, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-switch {
     padding-left: 1.125rem;
   }
 }
-/* line 76, ../scss/components/_calculators.scss */
+/* line 75, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 81, ../scss/components/_calculators.scss */
+/* line 80, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy--small {
   margin-bottom: 0;
   font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 87, ../scss/components/_calculators.scss */
+/* line 86, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-innerContent {
   padding: 1.125rem;
 }
-/* line 92, ../scss/components/_calculators.scss */
+/* line 91, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 96, ../scss/components/_calculators.scss */
+/* line 95, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
   padding: 0.75rem;
   white-space: nowrap;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 96, ../scss/components/_calculators.scss */
+  /* line 95, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
     padding: 1.125rem;
   }
 }
-/* line 107, ../scss/components/_calculators.scss */
+/* line 106, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 112, ../scss/components/_calculators.scss */
+/* line 111, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
   border-top: 1px solid #afadad;
 }
-/* line 117, ../scss/components/_calculators.scss */
+/* line 116, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 124, ../scss/components/_calculators.scss */
+/* line 123, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-number {
   color: #6AC6C5;
   display: block;
