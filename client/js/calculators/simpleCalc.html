@@ -86,7 +86,7 @@
       <div class="simpleCalc-results-result">
       
         <span class="result-label">
-          Interest Avoided
+          Interest <br class="hide-for-large-up">Avoided
         
           <span ng-if="calculator.type == 'graduate'">
 
@@ -169,7 +169,7 @@
       <div class="simpleCalc-results-result">
       
         <span class="result-label">
-          Time Reclaimed
+          Time <br class="hide-for-large-up"> Reclaimed
 
           <span ng-if="calculator.type == 'graduate'">
 
@@ -238,8 +238,8 @@
         </span>
         
         <span class="result-number">
-          <span ng-if="!calculator.withSponsorship">12.2 yrs</span>
-          <span ng-if="calculator.withSponsorship">15.0 yrs</span>
+          <span ng-if="!calculator.withSponsorship">12.2 <span class="h6">yrs</span></span>
+          <span ng-if="calculator.withSponsorship">15.0<span class="ml1 h6">yrs</span></span>
         </span>
       
       </div>
