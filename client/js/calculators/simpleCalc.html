@@ -28,11 +28,12 @@
       {{::calculator.copy.headline}}
       </h1>
       
-      <hr class="hr--faded mb0">
+      <hr class="hr--faded mb0" ng-if="calculator.type === 'graduate'">
 
     </div>
     
-    <div class="simpleCalc-innerContent  grid  grid--center pt0">
+    <div class="simpleCalc-innerContent  grid  grid--center pt0"
+         ng-if="calculator.type === 'graduate'">
 
       <div>
 
@@ -67,7 +68,7 @@
       <p class="simpleCalc-bodyCopy text-center"
          ng-if="calculator.type == 'sponsor'">
 
-        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus your sponsorship could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20, 323</span> and get them out of debt  <span ng-if="!calculator.withSponsorship">12.2</span>
+        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus your sponsorship could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get them out of debt  <span ng-if="!calculator.withSponsorship">12.2</span>
           <span ng-if="calculator.withSponsorship">15</span> years faster.
 
       </p>
@@ -75,7 +76,7 @@
       <p class="simpleCalc-bodyCopy text-center"
          ng-if="calculator.type == 'graduate'">
 
-        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20, 323</span> and get them out of debt  <br><span ng-if="!calculator.withSponsorship">12.2</span>
+        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get them out of debt  <br><span ng-if="!calculator.withSponsorship">12.2</span>
           <span ng-if="calculator.withSponsorship">15</span> years faster.
 
       </p>

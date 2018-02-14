@@ -18,6 +18,17 @@ twopence.directive('simpleCalcDir', function() {
 
       vm.withSponsorship = false; 
 
+
+      vm.$onInit = function() {
+
+        if(vm.type === 'sponsor') {
+
+          vm.withSponsorship = true; 
+
+        }
+
+      }
+
     }], 
     bindToController:{
       'copy': "=",
