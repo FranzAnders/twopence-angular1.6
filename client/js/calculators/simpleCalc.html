@@ -64,13 +64,21 @@
   <div class="simpleCalc-resultsContainer">
     
     <div class="simpleCalc-innerContent">
-      <p class="simpleCalc-bodyCopy text-center">
-        For a Graduate $45,000 in debt who earns $75,000 annually, 
-        Pickpocket could save <span ng-if="!calculator.withSponsorship">$16,902</span>
-          <span ng-if="calculator.withSponsorship">$26,275</span> and get them out of debt <span ng-if="!calculator.withSponsorship">12.3</span>
+      <p class="simpleCalc-bodyCopy text-center"
+         ng-if="calculator.type == 'sponsor'">
+
+        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus your sponsorship could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20, 323</span> and get them out of debt  <span ng-if="!calculator.withSponsorship">12.2</span>
           <span ng-if="calculator.withSponsorship">15</span> years faster.
+
       </p>
 
+      <p class="simpleCalc-bodyCopy text-center"
+         ng-if="calculator.type == 'graduate'">
+
+        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20, 323</span> and get them out of debt  <br><span ng-if="!calculator.withSponsorship">12.2</span>
+          <span ng-if="calculator.withSponsorship">15</span> years faster.
+
+      </p>
     </div>
     
     <div class="simpleCalc-results grid  grid--center">
@@ -86,7 +94,7 @@
            tooltip-smart="true"
            tooltip-size="small"
            tooltip-show-trigger="click"
-          tooltip-template="Without Pickpocket, you would end up paying $26,275 in interest over the life of your loans. With Pickpocket you would only pay $9,373.">
+          tooltip-template="With Pickpocket you would pay only $9,373 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
             
             <svg class="tooltip-icon" ng-click="toggle()">
             <use xlink:href="#icon-Help"/>
@@ -102,7 +110,7 @@
            tooltip-smart="true"
            tooltip-size="small"
            tooltip-show-trigger="click"
-           tooltip-template="With Pickpocket you would only pay $5,952 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275 in the same amount of time.">
+           tooltip-template="With Pickpocket you would pay only $5,952 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
             
             <svg class="tooltip-icon" ng-click="toggle()">
             <use xlink:href="#icon-Help"/>
@@ -115,7 +123,7 @@
         
         <span class="result-number">
           <span ng-if="!calculator.withSponsorship">$16,902</span>
-          <span ng-if="calculator.withSponsorship">$26,275</span>
+          <span ng-if="calculator.withSponsorship">$20,323</span>
 
         </span>
       
@@ -131,7 +139,7 @@
            tooltip-smart="true"
            tooltip-size="small"
            tooltip-show-trigger="click"
-           tooltip-template="Without Pickpocket, your typical repayment period would be 20 years. With Pickpocket, you’ll be out of debt in only 7.7 years.">
+           tooltip-template="With Pickpocket, you’ll be out of debt in only 7.8 years. Without Pickpocket, your typical repayment period would be 20 years.">
             
             <svg class="tooltip-icon" ng-click="toggle()">
             <use xlink:href="#icon-Help"/>
@@ -145,7 +153,7 @@
            tooltip-smart="true"
            tooltip-size="small"
            tooltip-show-trigger="click"
-           tooltip-template="Without Pickpocket, you would end up paying $26,275 in interest over the life of your loans. With Pickpocket you would only pay $9,373.">
+           tooltip-template="With Pickpocket, you’ll be out of debt in only 5 years. Without Pickpocket, your typical repayment period would be 20 years.">
             
             <svg class="tooltip-icon" ng-click="toggle()">
             <use xlink:href="#icon-Help"/>
@@ -157,8 +165,8 @@
         </span>
         
         <span class="result-number">
-          <span ng-if="!calculator.withSponsorship">12.3 yr</span>
-          <span ng-if="calculator.withSponsorship">15.0 yr</span>
+          <span ng-if="!calculator.withSponsorship">12.2 yrs</span>
+          <span ng-if="calculator.withSponsorship">15.0 yrs</span>
         </span>
       
       </div>

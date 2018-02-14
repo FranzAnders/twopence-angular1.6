@@ -21,6 +21,7 @@ twopence.directive('simpleCalcDir', function() {
     }], 
     bindToController:{
       'copy': "=",
+      'type': "@"
     },
     controllerAs: 'calculator',
     templateUrl: 'js/calculators/simpleCalc.html', 

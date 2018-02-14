@@ -1,0 +1,72 @@
+
+
+
+/*------------------------------------*\
+    #Funnel Page
+\*------------------------------------*/
+
+.funnel {
+  margin-top: rem-calc($level7);
+  margin-bottom: rem-calc($level7);
+
+  @media #{$medium-up} {
+    width: 34rem;
+    margin-right: auto; 
+    margin-left: auto;  
+
+  }
+
+  .funnel--illustr {
+    width: rem-calc(200px);
+    margin-top: rem-calc(-52px);
+    margin-bottom: rem-calc(-16px);
+
+    @media #{$large-up} {
+      width: rem-calc(240px);
+
+    }
+
+  }
+
+  .funnel-inner {
+    margin-bottom: rem-calc(-16px);
+
+    @media #{$medium-up} {
+      padding: rem-calc($level4)
+
+    }
+   
+  }
+
+  .funnel-headline {
+    @include type-setting(3); 
+
+    @media #{$medium-up} {
+      @include type-setting(4); 
+
+    }
+  }
+
+  .funnel-options {
+
+    .funnel-option:first-child {
+    
+      
+      @media #{$medium-up} {
+        margin-right: rem-calc($level2); 
+
+      }
+
+    }
+
+    .funnel-option:last-child {
+    
+      @media #{$medium-up} {
+        margin-right: rem-calc(-6px); 
+
+      }
+
+    }
+  }
+
+}

@@ -19635,6 +19635,69 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
+    #Funnel Page
+\*------------------------------------*/
+/* line 8, ../scss/pages/_funnel.scss */
+.funnel {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 8, ../scss/pages/_funnel.scss */
+  .funnel {
+    width: 34rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/* line 19, ../scss/pages/_funnel.scss */
+.funnel .funnel--illustr {
+  width: 12.5rem;
+  margin-top: -3.25rem;
+  margin-bottom: -1rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 19, ../scss/pages/_funnel.scss */
+  .funnel .funnel--illustr {
+    width: 15rem;
+  }
+}
+/* line 31, ../scss/pages/_funnel.scss */
+.funnel .funnel-inner {
+  margin-bottom: -1rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 31, ../scss/pages/_funnel.scss */
+  .funnel .funnel-inner {
+    padding: 1.5rem;
+  }
+}
+/* line 41, ../scss/pages/_funnel.scss */
+.funnel .funnel-headline {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 41, ../scss/pages/_funnel.scss */
+  .funnel .funnel-headline {
+    font-size: 2rem;
+    line-height: 1.33333;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 52, ../scss/pages/_funnel.scss */
+  .funnel .funnel-options .funnel-option:first-child {
+    margin-right: 0.75rem;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 62, ../scss/pages/_funnel.scss */
+  .funnel .funnel-options .funnel-option:last-child {
+    margin-right: -0.375rem;
+  }
+}
+
+/*------------------------------------*\
     #Styles specific to homepage
 \*------------------------------------*/
 /* line 7, ../scss/pages/_home.scss */
