@@ -18710,7 +18710,7 @@ button.is-inactive,
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
     min-height: auto;
-    height: 39rem;
+    height: 38.25rem;
   }
 }
 /* line 27, ../scss/components/_heroHeader.scss */
@@ -18750,7 +18750,7 @@ button.is-inactive,
 @media only screen and (min-width: 64.0625em) {
   /* line 49, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-content {
-    max-width: 60rem;
+    width: 60rem;
   }
 }
 /* line 57, ../scss/components/_heroHeader.scss */

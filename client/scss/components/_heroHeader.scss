@@ -49,9 +49,9 @@
   .heroHeader-content {
 
     @media #{$large-up} {
-      max-width: rem-calc(960px);
-
+      width: rem-calc(960px);
     }
+    
   }
 
   .heroHeader-headline {
