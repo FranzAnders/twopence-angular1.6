@@ -35,10 +35,10 @@ module.exports = function(grunt) {
     cachebreaker: {
       dev: {
           options: {
-              match: ['app.*.js'],
+              match: ['app.*.js', 'app.*.css'],
               replacement: 'md5',
               src: {
-                  path: '<%= dist%>/js/app.min.js'
+                  path: '<%= dist%>/js/app.min.js', path: '<%= dist%>/css/app.min.css'
               }
           },
           files: {
