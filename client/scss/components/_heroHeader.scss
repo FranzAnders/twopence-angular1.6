@@ -7,20 +7,20 @@
 .heroHeader {
   position: relative; 
   overflow: hidden; 
-  margin-top: rem-calc(60px); 
+  padding-top: rem-calc($level7 + $level7); 
   width: 100%; 
   min-height: 100vh;
-  padding-top: rem-calc($level5); 
 
   @media #{$medium-up} {
-    height: 85vh;
-    padding-top: 0; 
+    min-height: rem-calc(648px); 
     margin-top: rem-calc(30px); 
+    padding-top: 0; 
 
   }
 
   @media #{$large-up} {
-    min-height: 100vh; 
+    min-height: auto; 
+    height: rem-calc(612px); 
     
   }
 
@@ -40,9 +40,48 @@
 
   }
 
-  .heroHeader-content {
+  .heroHeader-contentContainer {
     color: #fff;  
     width: 100%; 
+
+  }
+  
+  .heroHeader-content {
+
+    @media #{$large-up} {
+      max-width: rem-calc(960px);
+
+    }
+  }
+
+  .heroHeader-headline {
+    @include type-setting(4); 
+  
+    @media #{$medium-up} {
+      margin-top: rem-calc($level6); 
+      max-width: rem-calc(330px); 
+
+    }
+
+    @media #{$large-up} {
+     min-width: rem-calc(550px); 
+     @include type-setting(5); 
+  
+    }
+
+  }
+
+  .heroHeader-description {
+    
+    @media #{$medium-up} {
+      max-width: rem-calc(330px); 
+
+    }
+    
+    @media #{$large-up} {
+      max-width: rem-calc(436px); 
+
+    }
 
   }
 

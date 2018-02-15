@@ -13,8 +13,6 @@
   margin-top: rem-calc($base-magic-number);
   margin-bottom: rem-calc($level7 + $level3);
   max-width: rem-calc(292px); 
-  margin-right: auto; 
-  margin-left: auto; 
 
   @media #{$medium-up} {
     margin-bottom: 0;

@@ -25,7 +25,11 @@ twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel
 
             var page = document.body;
 
-            page.classList.add('is-hidden-by-funnel');
+            if(!Funnel.getState()) {
+
+              page.classList.add('is-hidden-by-funnel');
+
+            }
 
             funnel.revealPage = function() {  
               Funnel.setState(true);

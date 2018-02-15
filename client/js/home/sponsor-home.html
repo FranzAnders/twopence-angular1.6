@@ -1,82 +1,90 @@
 
 
 <!--Hero header--> 
-<section class="heroHeader  grid  grid--center">
+<section class="heroHeader  [ grid  grid--center ]">
   
   <div class="heroHeader-background"
        ng-class="{ 'heroHeader-background--sponsors' : $state.is('main.sponsorHome') }">
     
   </div>
 
-  <div class="heroHeader-content  grid  grid--bottom  med-grid--center">
+  <div class="heroHeader-contentContainer  [ grid  grid--bottom  med-grid--center ]">
 
     <div class="row">
 
-      <div class="small-12 columns medium-12 large-9 medium-centered ">
+      <div class="small-12 columns medium-centered [ grid   grid--justifyCenter ]">
 
-        <div class="row  grid  grid--center  grid--flexDirectionColumn  med-grid--flexDirectionRow">
+        <div class="heroHeader-content  row  [ grid  grid--center   grid--flexDirectionColumn  med-grid--flexDirectionRow ]">
       
-          <div class="small-12 columns medium-6 large-7">
+          <div class="small-12  medium-6  large-7  columns">
       
-            <div class="row">
-            
-              <div class="small-12  columns">
-            
-                <h1 class="headline text-kilo">The best way to help <br class="show-for-large-up">your kids pay down their student loans.</h1>
-            
-                <p>Student loan debt is holding our graduates back. Pickpocket lets you help your loved ones get out of debt faster, and learn better financial responsibility along the way.</p>
-
-                <div class="row">
-                  <div class="small-12 columns large-10">
-                    <!-- Begin MailChimp Signup Form -->
-                    <form action="https://wordpress.us13.list-manage.com/subscribe/post?u=fdcdf8761c23d6e5445378981&amp;id=bef5e6e0d5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="" target="_blank" novalidate>
-                    
-                      <div class="grid  grid--flexDirectionColumn  large-grid--flexDirectionRow large-grid--center med-grid--stretch inputWithButton">
-                    
-                        <div class="input-group input--medium  inputGroup--alt  inputWithButton-input">
-                          
-                          <label for="mce-EMAIL">Your email address</label>
-                    
-                          <input type="email" value="" 
-                                 name="EMAIL" 
-                                 id="mce-EMAIL"
-                                 ng-model="user.email"
-                                 floating-label>
-                        </div>
-                    
-                        <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button--secondary button--medium">Join the Waitlist</button>
-                        
-                      </div>
-                    
-                      <div id="mce-responses" class="clear">
-                          <div class="response" id="mce-error-response" style="display:none"></div>
-                          <div class="response" id="mce-success-response" style="display:none"></div>
-                      </div>   
-                     
-                       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_fdcdf8761c23d6e5445378981_bef5e6e0d5" tabindex="-1" value=""></div>
-                    
-                    </form>
-                    <!--End mc_embed_signup--></div>
-                </div>
+            <h1 class="headline heroHeader-headline">
+              The best way to help <br class="show-for-large-up">your kids pay down their student loans.
+            </h1>
         
-              </div>
+            <p class="heroHeader-description">
+              Student loan debt is holding our graduates back. Pickpocket lets you help your loved ones get out of debt faster, and learn better financial responsibility along the way.
+             </p>
 
+            <div class="row">
+
+              <div class="small-12 columns">
+
+                <div class="mailSignupCta">
+
+                  <!-- Begin MailChimp Signup Form -->
+                  <form action="https://wordpress.us13.list-manage.com/subscribe/post?u=fdcdf8761c23d6e5445378981&amp;id=bef5e6e0d5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="" target="_blank" novalidate>
+                  
+                    <div class="grid  grid--flexDirectionColumn  large-grid--flexDirectionRow large-grid--center med-grid--stretch inputWithButton">
+                  
+                      <div class="input-group input--medium  inputGroup--alt  inputWithButton-input">
+                        
+                        <label for="mce-EMAIL">Your email address</label>
+                  
+                        <input type="email" value="" 
+                               name="EMAIL" 
+                               id="mce-EMAIL"
+                               ng-model="user.email"
+                               floating-label>
+                      </div>
+                  
+                      <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button--secondary button--medium">Join the Waitlist</button>
+                      
+                    </div>
+                  
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>   
+                   
+                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_fdcdf8761c23d6e5445378981_bef5e6e0d5" tabindex="-1" value=""></div>
+                  
+                  </form>
+                  <!--End mc_embed_signup-->
+
+                </div>
+
+              </div>
+            
             </div>
         
           </div>
         
           <div class="small-12  medium-6  large-5  columns ">
                     
-            <simple-calc-dir type="sponsor" copy="{
-              'headline': 'See how much your sponsorship with Pickpocket can do to help your grad get free of student debt.', 
-              'subline': 'Add sponsorship',
-              'switch': 'Flip this switch to see how much your sponsorship could help.'}">
-
-            </simple-calc-dir>
+            <div class="grid grid--justifyCenter">
+              
+              <simple-calc-dir  type="graduate" copy="{
+                'headline': ' See how the Pickpocket app can save you time and money.', 
+                'subline': 'Do you have a sponsor?',
+                'switch': 'Flip this switch to see the magic of a matching sponsorship.'}">
+                
+              </simple-calc-dir>
+              
+            </div>
                   
           </div>
-      
       
         </div>
 
@@ -88,7 +96,7 @@
 
 </section>
 <!--END Hero Header--> 
-
+  
 
 <!--Main Site Content--> 
 <main>

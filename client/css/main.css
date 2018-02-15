@@ -18450,8 +18450,6 @@ button.is-inactive,
   margin-top: 1.5rem;
   margin-bottom: 4.125rem;
   max-width: 18.25rem;
-  margin-right: auto;
-  margin-left: auto;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 12, ../scss/components/_calculators.scss */
@@ -18467,7 +18465,7 @@ button.is-inactive,
     width: 20.25rem;
   }
 }
-/* line 31, ../scss/components/_calculators.scss */
+/* line 29, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-badge {
   position: absolute;
   top: -1.5rem;
@@ -18482,12 +18480,12 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 43, ../scss/components/_calculators.scss */
+/* line 41, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-badge .simpleCalc-badge-icon {
   fill: #231F20;
   width: 65%;
 }
-/* line 50, ../scss/components/_calculators.scss */
+/* line 48, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-controls {
   background-color: #fff;
   color: #7d7d7d;
@@ -18495,7 +18493,7 @@ button.is-inactive,
   margin-bottom: 0.375rem;
   padding-top: 1.125rem;
 }
-/* line 59, ../scss/components/_calculators.scss */
+/* line 57, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-headline {
   font-weight: bold;
   color: #231F20;
@@ -18503,7 +18501,7 @@ button.is-inactive,
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 66, ../scss/components/_calculators.scss */
+/* line 64, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-subLine {
   font-weight: bold;
   color: #231F20;
@@ -18511,65 +18509,65 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 74, ../scss/components/_calculators.scss */
+/* line 72, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-switch {
   padding-left: 1.5rem;
   padding-right: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 74, ../scss/components/_calculators.scss */
+  /* line 72, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-switch {
     padding-left: 1.125rem;
   }
 }
-/* line 85, ../scss/components/_calculators.scss */
+/* line 83, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 90, ../scss/components/_calculators.scss */
+/* line 88, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy--small {
   margin-bottom: 0;
   font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 96, ../scss/components/_calculators.scss */
+/* line 94, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-innerContent {
   padding: 1.125rem;
 }
-/* line 101, ../scss/components/_calculators.scss */
+/* line 99, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 105, ../scss/components/_calculators.scss */
+/* line 103, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
   padding: 0.75rem;
   white-space: nowrap;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 105, ../scss/components/_calculators.scss */
+  /* line 103, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
     padding: 1.125rem;
   }
 }
-/* line 116, ../scss/components/_calculators.scss */
+/* line 114, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 121, ../scss/components/_calculators.scss */
+/* line 119, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
   border-top: 1px solid #afadad;
 }
-/* line 126, ../scss/components/_calculators.scss */
+/* line 124, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 133, ../scss/components/_calculators.scss */
+/* line 131, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-number {
   color: #6AC6C5;
   display: block;
@@ -18672,17 +18670,17 @@ button.is-inactive,
   margin-bottom: 1.5rem;
 }
 
-/* line 15, ../scss/components/_headlines.scss */
+/* line 14, ../scss/components/_headlines.scss */
 .headline {
   font-family: "itc_souvenirmedium", sans-serif;
 }
 
-/* line 20, ../scss/components/_headlines.scss */
+/* line 19, ../scss/components/_headlines.scss */
 .headline--alt {
   font-family: "Work Sans", sans-serif;
 }
 
-/* line 26, ../scss/components/_headlines.scss */
+/* line 25, ../scss/components/_headlines.scss */
 .subline {
   font-family: "Work Sans", sans-serif;
   letter-spacing: 1px;
@@ -18696,23 +18694,23 @@ button.is-inactive,
 .heroHeader {
   position: relative;
   overflow: hidden;
-  margin-top: 3.75rem;
+  padding-top: 6rem;
   width: 100%;
   min-height: 100vh;
-  padding-top: 1.875rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
-    height: 85vh;
-    padding-top: 0;
+    min-height: 40.5rem;
     margin-top: 1.875rem;
+    padding-top: 0;
   }
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
-    min-height: 100vh;
+    min-height: auto;
+    height: 39rem;
   }
 }
 /* line 27, ../scss/components/_heroHeader.scss */
@@ -18745,9 +18743,47 @@ button.is-inactive,
   /* IE6-9 */
 }
 /* line 43, ../scss/components/_heroHeader.scss */
-.heroHeader .heroHeader-content {
+.heroHeader .heroHeader-contentContainer {
   color: #fff;
   width: 100%;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 49, ../scss/components/_heroHeader.scss */
+  .heroHeader .heroHeader-content {
+    max-width: 60rem;
+  }
+}
+/* line 57, ../scss/components/_heroHeader.scss */
+.heroHeader .heroHeader-headline {
+  font-size: 2rem;
+  line-height: 1.33333;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 57, ../scss/components/_heroHeader.scss */
+  .heroHeader .heroHeader-headline {
+    margin-top: 2.25rem;
+    max-width: 20.625rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 57, ../scss/components/_heroHeader.scss */
+  .heroHeader .heroHeader-headline {
+    min-width: 34.375rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 74, ../scss/components/_heroHeader.scss */
+  .heroHeader .heroHeader-description {
+    max-width: 20.625rem;
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 74, ../scss/components/_heroHeader.scss */
+  .heroHeader .heroHeader-description {
+    max-width: 27.25rem;
+  }
 }
 
 /*------------------------------------*\
@@ -19172,6 +19208,16 @@ img {
     transform: translateX(100%);
   }
 }
+/*------------------------------------*\
+    #Mail Sign Up Cta
+\*------------------------------------*/
+@media only screen and (min-width: 64.0625em) {
+  /* line 7, ../scss/components/_mailSignupCta.scss */
+  .mailSignupCta {
+    max-width: 26.25rem;
+  }
+}
+
 /*------------------------------------*\
     #Modals
 \*------------------------------------*/
