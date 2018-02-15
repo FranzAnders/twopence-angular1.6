@@ -20095,27 +20095,41 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Why pickpocket
 \*------------------------------------*/
-/* line 27, ../scss/pages/_home.scss */
+/* line 25, ../scss/pages/_home.scss */
+.whyPickpocket {
+  border: 1px solid #afadad;
+  padding: 1.5rem;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 25, ../scss/pages/_home.scss */
+  .whyPickpocket {
+    border: 0;
+  }
+}
+/* line 35, ../scss/pages/_home.scss */
 .whyPickpocket .whyPickpocket-point {
   margin-bottom: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 27, ../scss/pages/_home.scss */
+  /* line 35, ../scss/pages/_home.scss */
   .whyPickpocket .whyPickpocket-point {
     margin-bottom: 0;
   }
 }
-/* line 35, ../scss/pages/_home.scss */
+/* line 43, ../scss/pages/_home.scss */
 .whyPickpocket .whyPickpocket-point .whyPickpocket-point-image {
   max-width: 12.5rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 35, ../scss/pages/_home.scss */
+  /* line 43, ../scss/pages/_home.scss */
   .whyPickpocket .whyPickpocket-point .whyPickpocket-point-image {
     max-width: 16.25rem;
   }
 }
-/* line 45, ../scss/pages/_home.scss */
+/* line 53, ../scss/pages/_home.scss */
 .whyPickpocket .whyPickpocket-point .whyPickpocket-point-headline {
   margin-bottom: 1.125rem;
 }
@@ -20124,21 +20138,21 @@ body.fancymodal-open {
     #Ways To Sponsor
 \*------------------------------------*/
 @media only screen and (min-width: 64.0625em) {
-  /* line 63, ../scss/pages/_home.scss */
+  /* line 71, ../scss/pages/_home.scss */
   .wayToSponsor {
     margin-top: 0.75rem;
   }
 }
-/* line 70, ../scss/pages/_home.scss */
+/* line 78, ../scss/pages/_home.scss */
 .wayToSponsor .wayToSponsor-title {
   margin-bottom: 0.75rem;
 }
-/* line 75, ../scss/pages/_home.scss */
+/* line 83, ../scss/pages/_home.scss */
 .wayToSponsor .wayToSponsor-image {
   max-width: 12.5rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 75, ../scss/pages/_home.scss */
+  /* line 83, ../scss/pages/_home.scss */
   .wayToSponsor .wayToSponsor-image {
     max-width: 13.75rem;
     margin-right: 0.75rem;
@@ -20148,7 +20162,7 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Sponsor Steps
 \*------------------------------------*/
-/* line 97, ../scss/pages/_home.scss */
+/* line 105, ../scss/pages/_home.scss */
 .sponsorStep {
   position: relative;
   height: 100%;
@@ -20157,7 +20171,7 @@ body.fancymodal-open {
   padding-bottom: 3rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 104, ../scss/pages/_home.scss */
+  /* line 112, ../scss/pages/_home.scss */
   .sponsorStep .sponsorStep-copy {
     width: 25rem;
     margin-left: auto;
@@ -20168,17 +20182,17 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Plaid Badge
 \*------------------------------------*/
-/* line 126, ../scss/pages/_home.scss */
+/* line 134, ../scss/pages/_home.scss */
 .plaidBadge {
   color: #6AC6C5;
 }
-/* line 129, ../scss/pages/_home.scss */
+/* line 137, ../scss/pages/_home.scss */
 .plaidBadge .plaidBadge-label {
   margin-right: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 135, ../scss/pages/_home.scss */
+/* line 143, ../scss/pages/_home.scss */
 .plaidBadge .plaidBadge-badge {
   width: 5.625rem;
   height: 2.5rem;

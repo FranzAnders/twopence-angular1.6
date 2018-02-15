@@ -23,6 +23,14 @@
 
 
 .whyPickpocket {
+  border: 1px solid $grey--med;
+  padding: rem-calc($level4); 
+  @include border-radius(6px);
+  
+  @media #{$medium-up} {
+    border: 0; 
+
+  }
 
   .whyPickpocket-point {
     margin-bottom: rem-calc($level7);
