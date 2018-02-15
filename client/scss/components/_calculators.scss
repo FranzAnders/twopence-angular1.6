@@ -12,7 +12,7 @@
 .simpleCalc {
   margin-top: rem-calc($base-magic-number);
   margin-bottom: rem-calc($level7 + $level3);
-  max-width: rem-calc(292px); 
+  max-width: rem-calc(300px); 
 
   @media #{$medium-up} {
     margin-bottom: 0;
