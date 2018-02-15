@@ -10,7 +10,15 @@ footer {
   background-color: #fff; 
   border-top: 1px solid $grey--light; 
   @extend %position-relative; 
+  
+  .footer-inner {
 
+    @media #{$large-up} {
+    min-width: rem-calc(950px); 
+
+    }
+
+  }
 
   @media #{$medium-up} {
     padding-top: rem-calc($level7 + $level3);
@@ -161,22 +169,3 @@ footer {
     }
 
 }
-
-
-
-// .footer-credit {
-
-//   background: $primaryColor--dark; 
-//   width: 100%;
-//   padding-top: rem-calc($level2);
-//   padding-bottom: rem-calc($level2);
-//   color: $primaryColor; 
-//   @include type-setting(-1); 
-
-//   @media #{$medium-up} {
-
-//     margin-top: rem-calc($level5);
-
-//   }
-
-// }
