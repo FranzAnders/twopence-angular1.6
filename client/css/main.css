@@ -20148,7 +20148,7 @@ button.is-inactive,
     width: 20.25rem;
   }
 }
-/* line 29, ../scss/components/_calculators.scss */
+/* line 31, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-badge {
   position: absolute;
   top: -1.5rem;
@@ -20163,12 +20163,12 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 41, ../scss/components/_calculators.scss */
+/* line 43, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-badge .simpleCalc-badge-icon {
   fill: #231F20;
   width: 65%;
 }
-/* line 48, ../scss/components/_calculators.scss */
+/* line 50, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-controls {
   background-color: #fff;
   color: #7d7d7d;
@@ -20176,7 +20176,7 @@ button.is-inactive,
   margin-bottom: 0.375rem;
   padding-top: 1.125rem;
 }
-/* line 57, ../scss/components/_calculators.scss */
+/* line 59, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-headline {
   font-weight: bold;
   color: #231F20;
@@ -20184,7 +20184,7 @@ button.is-inactive,
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 64, ../scss/components/_calculators.scss */
+/* line 66, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-subLine {
   font-weight: bold;
   color: #231F20;
@@ -20192,71 +20192,85 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 72, ../scss/components/_calculators.scss */
+/* line 74, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-switch {
   padding-left: 1.5rem;
   padding-right: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 72, ../scss/components/_calculators.scss */
+  /* line 74, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-switch {
     padding-left: 1.125rem;
   }
 }
-/* line 83, ../scss/components/_calculators.scss */
+/* line 85, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 88, ../scss/components/_calculators.scss */
+/* line 90, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-bodyCopy--small {
   margin-bottom: 0;
   font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 94, ../scss/components/_calculators.scss */
+/* line 96, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-innerContent {
   padding: 1.125rem;
 }
-/* line 99, ../scss/components/_calculators.scss */
+/* line 101, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 103, ../scss/components/_calculators.scss */
+/* line 105, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
   padding: 0.75rem;
   white-space: nowrap;
+  width: 50%;
+}
+@media screen and (min-width: 360px) {
+  /* line 105, ../scss/components/_calculators.scss */
+  .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
+    width: auto;
+  }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 103, ../scss/components/_calculators.scss */
+  /* line 105, ../scss/components/_calculators.scss */
   .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
     padding: 1.125rem;
   }
 }
-/* line 114, ../scss/components/_calculators.scss */
+/* line 122, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 119, ../scss/components/_calculators.scss */
+/* line 127, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
   border-top: 1px solid #afadad;
 }
-/* line 124, ../scss/components/_calculators.scss */
+/* line 132, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 131, ../scss/components/_calculators.scss */
+/* line 139, ../scss/components/_calculators.scss */
 .simpleCalc .simpleCalc-resultsContainer .result-number {
   color: #6AC6C5;
   display: block;
   font-family: "itc_souvenirmedium", sans-serif;
-  font-size: 2rem;
-  line-height: 1.33333;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+@media screen and (min-width: 360px) {
+  /* line 139, ../scss/components/_calculators.scss */
+  .simpleCalc .simpleCalc-resultsContainer .result-number {
+    font-size: 2rem;
+    line-height: 1.33333;
+  }
 }
 
 /*------------------------------------*\
