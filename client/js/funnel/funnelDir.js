@@ -9,11 +9,19 @@ twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel
       restrict: "E", 
       scope: {}, 
       replace: true, 
-      controller: ['Funnel', function(Funnel) {
+      controller: ['$state', 'Funnel', function($state, Funnel) {
 
           var vm = this; 
 
-          vm.isHidden = Funnel.getState();
+          if($state.is('main.home') || $state.is('main.sponsorHome')){
+
+            vm.isHidden = Funnel.getState();
+
+          } else {
+
+            vm.isHidden = true;
+            
+          }
 
       }],
       controllerAs: 'funnel', 
@@ -25,7 +33,7 @@ twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel
 
             var page = document.body;
 
-            if(!Funnel.getState()) {
+            if(!funnel.isHidden) {
 
               page.classList.add('is-hidden-by-funnel');
 
