@@ -13,15 +13,7 @@ twopence.directive('funnelDir', ['$timeout', 'Funnel', function($timeout, Funnel
 
           var vm = this; 
 
-          if($state.is('main.home') || $state.is('main.sponsorHome')){
-
-            vm.isHidden = Funnel.getState();
-
-          } else {
-
-            vm.isHidden = true;
-            
-          }
+          vm.isHidden = Funnel.getState();
 
       }],
       controllerAs: 'funnel', 

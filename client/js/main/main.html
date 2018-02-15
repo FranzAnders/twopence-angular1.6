@@ -2,7 +2,7 @@
 
 
 
-<funnel-dir ng-if="$state.is('main.home') || $state.is('main.sponsorHome')"> 
+<funnel-dir ng-if="($state.is('main.home') || $state.is('main.sponsorHome')) && !main.funnelIsHidden"> 
 
 </funnel-dir>
 

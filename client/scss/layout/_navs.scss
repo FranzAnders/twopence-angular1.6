@@ -185,7 +185,7 @@
     margin-right: auto;
     margin-left: auto; 
     z-index: 6; 
-    padding-top: rem-calc($level7 + $level7); 
+    padding-top: rem-calc($level7 + $level6); 
     @extend %text-left; 
 
     @media #{$medium-up} {
@@ -233,7 +233,7 @@
     .mainNav-menu-logo {
       fill: #fff; 
       width: rem-calc(140px); 
-      margin-bottom: rem-calc($level3); 
+      margin-bottom: rem-calc($level1); 
       left: 0; 
       right: 0; 
       margin-right: auto;  
@@ -256,26 +256,7 @@
       @extend %position-relative; 
       @include type-setting(5);  
 
-      &:after {
-        content:  " "; 
-        width: 0; 
-        height: rem-calc(4px); 
-        background-color: $primaryColor; 
-        right: 0; 
-        left: 0; 
-        bottom: 0; 
-        @include transition(all .2s ceaser($easeInOutCubic)); 
-        @extend %position-absolute; 
 
-        @media #{$medium-up} {
-          background-color: $secondaryColor; 
-          bottom: rem-calc(-6px);
-          height: rem-calc(2px); 
-
-        }
-
-      }
-        
       @media #{$medium-up} {
         color: $secondaryColor; 
         @include type-setting(-1);  
@@ -283,22 +264,6 @@
       }
 
 
-      &:hover, 
-      &:focus,
-      &.is-active {
-        color: #fff; 
-
-        @media #{$medium-up} {
-          color: $secondaryColor; 
-
-        }
-
-        &:after{
-          width: 100%; 
-
-        }
-
-      }
 
     }
 
@@ -308,11 +273,13 @@
       background-color: transparent; 
       margin-top: rem-calc($level4); 
       margin-bottom: 0; 
+      padding: rem-calc($level2); 
       @include transition(all .2s ease); 
 
       &:hover, 
       &:focus {
         background-color: #fff; 
+        color: $secondaryColor; 
 
       }
 
@@ -320,7 +287,6 @@
         border: 1px solid $secondaryColor; 
         color: $secondaryColor; 
         margin-top: 0; 
-        padding: rem-calc($level2); 
         @include type-setting(-1); 
 
         &:hover, 
@@ -436,6 +402,50 @@
 
   }
 
+
+}
+
+
+.no-touch {
+  
+  .mainNav-menu-link {
+      &:after {
+        content:  " "; 
+        width: 0; 
+        height: rem-calc(4px); 
+        background-color: $primaryColor; 
+        right: 0; 
+        left: 0; 
+        bottom: 0; 
+        @include transition(all .2s ceaser($easeInOutCubic)); 
+        @extend %position-absolute; 
+
+        @media #{$medium-up} {
+          background-color: $secondaryColor; 
+          bottom: rem-calc(-6px);
+          height: rem-calc(2px); 
+
+        }
+
+      }
+      
+      &:hover, 
+      &:focus,
+      &.is-active {
+        color: #fff; 
+
+        @media #{$medium-up} {
+          color: $secondaryColor; 
+
+        }
+
+        &:after{
+          width: 100%; 
+
+        }
+
+      }  
+  }
 
 }
 

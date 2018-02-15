@@ -138,6 +138,22 @@ footer {
       position: relative; 
       @include transition(all .2s ceaser($easeInOutCubic)); 
 
+
+      &:active {
+        color: $grey--dark;
+
+      }
+
+    }
+
+}
+
+.no-touch {
+
+  footer {
+    
+    .footer-menu-link {
+
       &:after {
         content: " "; 
         position: absolute; 
@@ -161,11 +177,8 @@ footer {
 
       }
 
-      &:active {
-        color: $grey--dark;
-
-      }
-
     }
+    
+  }
 
 }
