@@ -12,7 +12,7 @@
 .simpleCalc {
   margin-top: rem-calc($base-magic-number);
   margin-bottom: rem-calc($level7 + $level3);
-  max-width: rem-calc(300px); 
+  max-width: rem-calc(296px); 
   
 
 
@@ -105,12 +105,6 @@
     .simpleCalc-results-result {
       padding: rem-calc($level2); 
       white-space: nowrap; 
-      width: 50%; 
-
-      @media screen and (min-width: 360px) {
-        width: auto; 
-
-      }
 
       @media #{$medium-up} {
         padding: rem-calc($level3); 
@@ -141,7 +135,7 @@
       display: block; 
       font-family: $secondary-font-family; 
       @extend %fwb; 
-      @include type-setting(3); 
+      @include type-setting(4); 
 
       @media screen and (min-width: 360px) {
         @include type-setting(4); 
