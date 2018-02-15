@@ -19215,6 +19215,16 @@ img {
   }
 }
 /*------------------------------------*\
+    #Mail Sign Up Cta
+\*------------------------------------*/
+@media only screen and (min-width: 64.0625em) {
+  /* line 7, ../scss/components/_mailListSignupCta.scss */
+  .mailSignupCta {
+    max-width: 26.25rem;
+  }
+}
+
+/*------------------------------------*\
     #Modals
 \*------------------------------------*/
 /* line 7, ../scss/components/_modals.scss */
