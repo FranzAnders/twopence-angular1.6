@@ -12,6 +12,7 @@ twopence.directive('validationAlertsDir',['$timeout', function($timeout) {
 
       restrict: 'E',
       replace: true, 
+      scope: {}, 
       controller: ['$rootScope',
         function($rootScope) {
 

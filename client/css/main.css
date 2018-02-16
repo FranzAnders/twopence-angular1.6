@@ -7592,6 +7592,251 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
+    #Link Styles 
+\*------------------------------------*/
+/* line 8, ../scss/base/_links.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 16, ../scss/base/_links.scss */
+p a {
+  color: #238EB2;
+  position: relative;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+
+/* line 33, ../scss/base/_links.scss */
+.no-touch p a:before {
+  content: " ";
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #6AC6C5;
+  position: absolute;
+  opacity: 0;
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 47, ../scss/base/_links.scss */
+.no-touch p a:hover, .no-touch p a:focus {
+  color: #6AC6C5;
+}
+/* line 51, ../scss/base/_links.scss */
+.no-touch p a:hover:after, .no-touch p a:focus:after {
+  opacity: 0;
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+/* line 57, ../scss/base/_links.scss */
+.no-touch p a:hover:before, .no-touch p a:focus:before {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 71, ../scss/base/_links.scss */
+a.styled-link {
+  color: #238EB2;
+  position: relative;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+
+/* line 83, ../scss/base/_links.scss */
+.no-touch a.styled-link:before {
+  content: " ";
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #6AC6C5;
+  position: absolute;
+  opacity: 0;
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 97, ../scss/base/_links.scss */
+.no-touch a.styled-link:hover, .no-touch a.styled-link:focus {
+  color: #6AC6C5;
+}
+/* line 101, ../scss/base/_links.scss */
+.no-touch a.styled-link:hover:after, .no-touch a.styled-link:focus:after {
+  opacity: 0;
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+/* line 107, ../scss/base/_links.scss */
+.no-touch a.styled-link:hover:before, .no-touch a.styled-link:focus:before {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 120, ../scss/base/_links.scss */
+a.alt-link {
+  color: #fff;
+  position: relative;
+}
+/* line 124, ../scss/base/_links.scss */
+a.alt-link:active {
+  background-color: #231F20;
+  color: #fff;
+}
+
+/* line 137, ../scss/base/_links.scss */
+.no-touch a.alt-link:after {
+  content: " ";
+  right: 0;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  opacity: 1;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 151, ../scss/base/_links.scss */
+.no-touch a.alt-link:before {
+  content: " ";
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #231F20;
+  position: absolute;
+  opacity: 0;
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 166, ../scss/base/_links.scss */
+.no-touch a.alt-link:hover, .no-touch a.alt-link:focus {
+  color: #231F20;
+}
+/* line 170, ../scss/base/_links.scss */
+.no-touch a.alt-link:hover:after, .no-touch a.alt-link:focus:after {
+  opacity: 0;
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+/* line 176, ../scss/base/_links.scss */
+.no-touch a.alt-link:hover:before, .no-touch a.alt-link:focus:before {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 192, ../scss/base/_links.scss */
+a.alt-link2 {
+  color: #6AC6C5;
+  position: relative;
+}
+/* line 196, ../scss/base/_links.scss */
+a.alt-link2:active {
+  color: #fff;
+}
+
+/* line 208, ../scss/base/_links.scss */
+.no-touch a.alt-link2:after {
+  content: " ";
+  right: 0;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  opacity: 0;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 222, ../scss/base/_links.scss */
+.no-touch a.alt-link2:before {
+  content: " ";
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  opacity: 0;
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 237, ../scss/base/_links.scss */
+.no-touch a.alt-link2:hover, .no-touch a.alt-link2:focus {
+  color: #fff;
+}
+/* line 241, ../scss/base/_links.scss */
+.no-touch a.alt-link2:hover:after, .no-touch a.alt-link2:focus:after {
+  opacity: 0;
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+/* line 247, ../scss/base/_links.scss */
+.no-touch a.alt-link2:hover:before, .no-touch a.alt-link2:focus:before {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* line 255, ../scss/base/_links.scss */
+.no-touch a.alt-link2:active {
+  color: #fff;
+}
+
+/*------------------------------------*\
     #CSS behavior for when a device doesn't support svgs 
 \*------------------------------------*/
 /* line 12, ../scss/base/_noSvg.scss */
@@ -15457,256 +15702,15 @@ hr {
 }
 
 /*------------------------------------*\
-    #Link Styles 
-\*------------------------------------*/
-/* line 105, ../scss/base/_typography.scss */
-a {
-  text-decoration: none;
-}
-
-/* line 113, ../scss/base/_typography.scss */
-p a {
-  color: #238EB2;
-  position: relative;
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 118, ../scss/base/_typography.scss */
-p a:before {
-  content: " ";
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #6AC6C5;
-  position: absolute;
-  opacity: 0;
-  -moz-transform: translateY(3px);
-  -ms-transform: translateY(3px);
-  -webkit-transform: translateY(3px);
-  transform: translateY(3px);
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-
-/* line 142, ../scss/base/_typography.scss */
-.no-touch p a:hover, .no-touch p a:focus {
-  color: #6AC6C5;
-}
-/* line 146, ../scss/base/_typography.scss */
-.no-touch p a:hover:after, .no-touch p a:focus:after {
-  opacity: 0;
-  -moz-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-}
-/* line 152, ../scss/base/_typography.scss */
-.no-touch p a:hover:before, .no-touch p a:focus:before {
-  opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* line 166, ../scss/base/_typography.scss */
-a.styled-link {
-  color: #238EB2;
-  position: relative;
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-
-/* line 178, ../scss/base/_typography.scss */
-.no-touch a.styled-link:before {
-  content: " ";
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #6AC6C5;
-  position: absolute;
-  opacity: 0;
-  -moz-transform: translateY(3px);
-  -ms-transform: translateY(3px);
-  -webkit-transform: translateY(3px);
-  transform: translateY(3px);
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 192, ../scss/base/_typography.scss */
-.no-touch a.styled-link:hover, .no-touch a.styled-link:focus {
-  color: #6AC6C5;
-}
-/* line 196, ../scss/base/_typography.scss */
-.no-touch a.styled-link:hover:after, .no-touch a.styled-link:focus:after {
-  opacity: 0;
-  -moz-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-}
-/* line 202, ../scss/base/_typography.scss */
-.no-touch a.styled-link:hover:before, .no-touch a.styled-link:focus:before {
-  opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* line 214, ../scss/base/_typography.scss */
-a.alt-link {
-  color: #fff;
-  position: relative;
-}
-
-/* line 225, ../scss/base/_typography.scss */
-.no-touch a.alt-link:after {
-  content: " ";
-  right: 0;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  opacity: 1;
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 239, ../scss/base/_typography.scss */
-.no-touch a.alt-link:before {
-  content: " ";
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #231F20;
-  position: absolute;
-  opacity: 0;
-  -moz-transform: translateY(3px);
-  -ms-transform: translateY(3px);
-  -webkit-transform: translateY(3px);
-  transform: translateY(3px);
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 254, ../scss/base/_typography.scss */
-.no-touch a.alt-link:hover, .no-touch a.alt-link:focus {
-  color: #231F20;
-}
-/* line 258, ../scss/base/_typography.scss */
-.no-touch a.alt-link:hover:after, .no-touch a.alt-link:focus:after {
-  opacity: 0;
-  -moz-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-}
-/* line 264, ../scss/base/_typography.scss */
-.no-touch a.alt-link:hover:before, .no-touch a.alt-link:focus:before {
-  opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-/* line 272, ../scss/base/_typography.scss */
-.no-touch a.alt-link:active {
-  background-color: #231F20;
-  color: #fff;
-}
-
-/* line 283, ../scss/base/_typography.scss */
-a.alt-link2 {
-  color: #6AC6C5;
-  position: relative;
-}
-
-/* line 294, ../scss/base/_typography.scss */
-.no-touch a.alt-link2:after {
-  content: " ";
-  right: 0;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  opacity: 0;
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 308, ../scss/base/_typography.scss */
-.no-touch a.alt-link2:before {
-  content: " ";
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  opacity: 0;
-  -moz-transform: translateY(3px);
-  -ms-transform: translateY(3px);
-  -webkit-transform: translateY(3px);
-  transform: translateY(3px);
-  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-/* line 323, ../scss/base/_typography.scss */
-.no-touch a.alt-link2:hover, .no-touch a.alt-link2:focus {
-  color: #fff;
-}
-/* line 327, ../scss/base/_typography.scss */
-.no-touch a.alt-link2:hover:after, .no-touch a.alt-link2:focus:after {
-  opacity: 0;
-  -moz-transform: translateY(-4px);
-  -ms-transform: translateY(-4px);
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-}
-/* line 333, ../scss/base/_typography.scss */
-.no-touch a.alt-link2:hover:before, .no-touch a.alt-link2:focus:before {
-  opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-/* line 341, ../scss/base/_typography.scss */
-.no-touch a.alt-link2:active {
-  color: #fff;
-}
-
-/*------------------------------------*\
     #Default Text Selection Color 
 \*------------------------------------*/
-/* line 360, ../scss/base/_typography.scss */
+/* line 106, ../scss/base/_typography.scss */
 ::selection {
   background-color: #6ac6c5b3;
   color: #fff;
 }
 
-/* line 365, ../scss/base/_typography.scss */
+/* line 111, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: #6ac6c5b3;
   color: #fff;
@@ -15715,32 +15719,32 @@ a.alt-link2 {
 /*------------------------------------*\
     #Font Color Classes 
 \*------------------------------------*/
-/* line 380, ../scss/base/_typography.scss */
+/* line 126, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 384, ../scss/base/_typography.scss */
+/* line 130, ../scss/base/_typography.scss */
 .txtc2 {
   color: #231F20;
 }
 
-/* line 388, ../scss/base/_typography.scss */
+/* line 134, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 392, ../scss/base/_typography.scss */
+/* line 138, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 397, ../scss/base/_typography.scss */
+/* line 143, ../scss/base/_typography.scss */
 .txtc5 {
   color: #afadad;
 }
 
-/* line 401, ../scss/base/_typography.scss */
+/* line 147, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
@@ -15751,7 +15755,7 @@ a.alt-link2 {
 /*------------------------------------*\
     #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 445, ../scss/base/_typography.scss */
+/* line 191, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -15759,67 +15763,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 499, ../scss/base/_typography.scss */
+/* line 245, ../scss/base/_typography.scss */
 hr {
   border-style: none;
-  height: 0.0625rem;
+  height: 0.125rem;
   margin-top: 0;
 }
 
-/* line 505, ../scss/base/_typography.scss */
+/* line 251, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 511, ../scss/base/_typography.scss */
+/* line 257, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #231F20;
   margin-left: 0;
 }
 
-/* line 517, ../scss/base/_typography.scss */
+/* line 263, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 523, ../scss/base/_typography.scss */
+/* line 269, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 529, ../scss/base/_typography.scss */
+/* line 275, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 535, ../scss/base/_typography.scss */
+/* line 281, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 541, ../scss/base/_typography.scss */
+/* line 287, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 546, ../scss/base/_typography.scss */
+/* line 292, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 551, ../scss/base/_typography.scss */
+/* line 297, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 558, ../scss/base/_typography.scss */
+/* line 304, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
-  height: 0.0625rem;
+  height: 0.125rem;
 }
 
-/* line 564, ../scss/base/_typography.scss */
+/* line 310, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -15828,7 +15832,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 577, ../scss/base/_typography.scss */
+/* line 323, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -15841,7 +15845,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 591, ../scss/base/_typography.scss */
+/* line 337, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -15855,14 +15859,14 @@ hr {
 /*------------------------------------*\
     #Paragraph styles 
 \*------------------------------------*/
-/* line 657, ../scss/base/_typography.scss */
+/* line 403, ../scss/base/_typography.scss */
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
   line-height: 1.33333;
 }
 
-/* line 664, ../scss/base/_typography.scss */
+/* line 410, ../scss/base/_typography.scss */
 .p3 {
   font-size: 1.25rem;
   line-height: 1.2;
@@ -15872,7 +15876,7 @@ hr {
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 680, ../scss/base/_typography.scss */
+/* line 426, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -15880,7 +15884,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 701, ../scss/base/_typography.scss */
+/* line 447, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -15889,63 +15893,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 719, ../scss/base/_typography.scss */
+  /* line 465, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 727, ../scss/base/_typography.scss */
+  /* line 473, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 735, ../scss/base/_typography.scss */
+  /* line 481, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 745, ../scss/base/_typography.scss */
+  /* line 491, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 754, ../scss/base/_typography.scss */
+  /* line 500, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 762, ../scss/base/_typography.scss */
+  /* line 508, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 771, ../scss/base/_typography.scss */
+  /* line 517, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 779, ../scss/base/_typography.scss */
+  /* line 525, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 788, ../scss/base/_typography.scss */
+  /* line 534, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
