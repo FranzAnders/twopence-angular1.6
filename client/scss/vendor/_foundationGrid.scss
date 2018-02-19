@@ -62,7 +62,7 @@ $opposite-direction: right !default;
   $opposite-direction: left;
 }
 
-$row-width: 100%;
+$row-width: rem-calc(1310px);
 $total-columns: 12;
 $column-gutter: rem-calc(48px);
 
