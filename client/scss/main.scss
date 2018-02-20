@@ -32,6 +32,7 @@ $level7: 48;
 
 // Vendors
 @import
+    "vendor/angular",
     "vendor/animate",
     "vendor/angular-tooltips",
     "vendor/foundationGlobals",
@@ -114,5 +115,3 @@ $level7: 48;
     'pages/sponsorshipCreation',
     'pages/sponsorView',
     'pages/sponseeSplash';
-
-

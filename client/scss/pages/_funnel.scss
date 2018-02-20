@@ -62,6 +62,7 @@
     .funnel-inner {
       margin-bottom: rem-calc(-16px);
       padding-bottom: 0; 
+      min-height: rem-calc(390px);
   
       @media #{$medium-up} {
         padding: rem-calc($level4)

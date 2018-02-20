@@ -77,7 +77,8 @@
 
   </head>
 
-  <body mixpanel-dir>
+  <body class="preload"
+        mixpanel-dir>
 
     <ui-view>
 
@@ -88,8 +89,8 @@
 
     <!-- CDNJS Vendor Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script async src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 
     
     <!-- build:js js/vendor/libraries.min.js -->
@@ -238,7 +239,7 @@
     <!-- endbuild -->
 
     <!-- Sentry -->
-    <script>
+    <script async>
       Raven
         .config('https://b28d76b8fc1e4e56b2f7cc1bd1df9675@sentry.io/277099')
         .addPlugin(Raven.Plugins.Angular)
