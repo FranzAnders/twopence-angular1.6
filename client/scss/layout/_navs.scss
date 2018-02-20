@@ -32,80 +32,6 @@
 }
 
 
-@include keyframes(main-nav-appear) {
-
-  0% {
-    opacity: 0; 
-    @include transform(translateX(-300%)); 
-
-
-  }
-
-  1% {
-
-    opacity: 0; 
-    @include transform(translateX(0)); 
-  }
-
- 100% {
-    opacity: 1; 
-    @include transform(translateX(0)); 
-
-  }
-
-}
-
-@include keyframes(main-nav-disappear) {
-
-  0% {
-    opacity: 1; 
-    @include transform(translateX(0)); 
-
-
-  }
-
-  99% {
-
-    opacity: 0; 
-    @include transform(translateX(0)); 
-
-  }
-
- 100% {
-    opacity: 0; 
-    @include transform(translateX(-300%)); 
-
-  }
-
-}
-
-
-@include keyframes(main-nav-container-disappear) {
-
-  0% {
-    opacity: 1; 
-    @include transform(translateX(0)); 
-
-
-  }
-
-  99% {
-
-    opacity: 1; 
-    @include transform(translateX(0)); 
-
-  }
-
- 100% {
-    opacity: 0; 
-    @include transform(translateX(-300%)); 
-
-  }
-
-}
-
-
-
 .fixed-nav {
   width: 100%; 
   z-index: 100;
@@ -374,7 +300,7 @@
       }
 
       .mainNav-overlay {
-        @include animation(main-nav-disappear .4s ceaser($easeInOutCubic) forwards .2s); 
+        @include animation(main-nav-overlay-disappear .4s ceaser($easeInOutCubic) forwards .2s); 
 
       }
 
@@ -383,6 +309,7 @@
     &.is-open { // for when nav is open
       
       .mainNav-menu {
+        @include animation(main-nav-container-appear .1s ceaser($easeInOutCubic) forwards .4s); 
         
         .mainNav-menu-item {
           opacity: 1;   
@@ -394,7 +321,7 @@
 
 
       .mainNav-overlay {
-        @include animation(main-nav-appear .4s ceaser($easeInOutCubic) forwards); 
+        @include animation(main-nav-overlay-appear .4s ceaser($easeInOutCubic) forwards); 
 
       }
 
@@ -556,6 +483,109 @@ $toggleColor: $secondaryColor;
       @include transform(scale(1.2)); 
 
     }
+
+  }
+
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Main Nav Animations
+\*------------------------------------*/
+
+@include keyframes(main-nav-overlay-appear) {
+
+  0% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+
+  }
+
+  1% {
+
+    opacity: 0; 
+    @include transform(translateX(0)); 
+  }
+
+ 100% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+  }
+
+}
+
+@include keyframes(main-nav-overlay-disappear) {
+
+  0% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+
+  }
+
+  99% {
+
+    opacity: 0; 
+    @include transform(translateX(0)); 
+
+  }
+
+ 100% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+
+}
+
+
+@include keyframes(main-nav-container-disappear) {
+
+  0% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+
+  }
+
+  99% {
+
+    opacity: 1; 
+    @include transform(translateX(0)); 
+
+  }
+
+ 100% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+
+}
+
+
+@include keyframes(main-nav-container-appear) {
+
+  0% {
+    opacity: 0; 
+    @include transform(translateX(-300%)); 
+
+  }
+  1% {
+    opacity: 1; 
+    @include transform(translateX(0)); 
+  }
+
+  100% {
+
+    opacity: 1; 
+    @include transform(translateX(0)); 
 
   }
 
