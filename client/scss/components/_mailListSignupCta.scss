@@ -5,9 +5,24 @@
 \*------------------------------------*/
 
 .mailSignupCta {
-  
+  width: 100%;
+
   @media #{$large-up} {
     max-width: rem-calc(420px); 
+    min-width: rem-calc(400px);
+
+  }
+  
+  input {
+
+    @media #{$medium-up} {
+      min-width: rem-calc(216px);
+    }
+
+  }
+
+  button {
+    min-width: rem-calc(150px);
 
   }
 
