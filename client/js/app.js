@@ -624,6 +624,18 @@ twopence.run(
     });
 
 
+
+    //
+    // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
+    //
+    $timeout(function(){
+
+      document.body.classList.remove('preload');
+      console.log(document.body); 
+
+    }, 3000);
+
+
     //
     // Checking if the user is logged in, if not, we take them to the homepage
     //
@@ -674,16 +686,6 @@ twopence.run(
       //   $state.transitionTo("login");
       //   event.preventDefault();
       // }
-    });
-
-
-
-
-
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
-      console.log(toParams);
-
     });
 
 
