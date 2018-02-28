@@ -28,31 +28,90 @@
       <hr class="hr--faded mb0" ng-if="calculator.type === 'graduate'">
 
     </div>
-    
-    <div class="calculator-innerContent  grid  grid--center pt0"
-         ng-if="calculator.type === 'graduate'">
-
-      <div>
-
-        <h2 class="calculator-subLine">
-          {{::calculator.copy.subline}}
-        </h2>
-        
-        <p class="calculator-bodyCopy  calculator-bodyCopy--small">
-          {{::calculator.copy.switch}}
-        </p>
-        
-      </div>
-
-      <div class="calculator-switch">
-
-        <label class="switch">
-
-          <input type="checkbox" ng-model="calculator.withSponsorship">
-          <span class="slider round"></span>
-
+   
+         <div class="calculator-innerContent pt0">
+        <label class="calculator-bodyCopy">
+            Estimate Graduate’s Annual Income
+            {{calculator.graduateInfo.income |currency:"$":0}}
         </label>
 
+        <div class="rangeSlider">
+          <div class="rangeSlider-track">
+            
+          </div>
+
+          <div class="rangeSlider-fill"
+               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 300) + 12 + 'px'}">
+            
+          </div>
+
+
+          <div class="rangeSlider-thumb"
+             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 300 + 'px'}">
+            
+          </div>
+          <input type="range" min="15000" max="200000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" ng-model="calculator.graduateInfo.income">
+
+        </div>
+
+        <label class="calculator-bodyCopy">
+            Estimate Student Loan Outstanding
+            {{calculator.graduateInfo.loan |currency:"$":0}} 
+        </label>
+
+        <div class="rangeSlider">
+
+     
+          <div class="rangeSlider-track">
+            
+          </div>
+
+           <div class="rangeSlider-fill"
+               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 300) + 12 + 'px'}">
+            
+          </div>
+          <div class="rangeSlider-thumb"
+             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 300 + 'px'}">
+            
+          </div>
+
+
+
+                      <input type="range" min="15000" max="200000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.loan, calculator.graduateInfo.has_sponsor)"  ng-model="calculator.graduateInfo.loan">
+        </div>
+        
+        <hr class="hr--faded mb0" ng-if="calculator.type === 'graduate'">
+
+      </div> 
+
+    <div class="calculator-innerContent  grid  grid--flexDirectionColumn   pt0">
+      
+
+
+      <div class="grid grid--center" 
+         ng-if="calculator.type === 'graduate'">
+        <div>
+        
+          <h2 class="calculator-subLine">
+            {{::calculator.copy.subline}}
+          </h2>
+          
+          <p class="calculator-bodyCopy  calculator-bodyCopy--small">
+            {{::calculator.copy.switch}}
+          </p>
+          
+        </div>
+        
+        <div class="calculator-switch">
+        
+          <label class="switch">
+        
+            <input type="checkbox" ng-model="calculator.graduateInfo.has_sponsor">
+            <span class="slider round"></span>
+        
+          </label>
+        
+        </div>
       </div>
 
     </div>
@@ -64,10 +123,8 @@
     <div class="calculator-innerContent">
       <p class="calculator-bodyCopy text-center"
          ng-if="calculator.type == 'sponsor'">
-
         For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus your sponsorship could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get them out of debt  <span ng-if="!calculator.withSponsorship">12.2</span>
           <span ng-if="calculator.withSponsorship">15</span> years faster.
-
       </p>
 
       <p class="calculator-bodyCopy text-center"
@@ -156,9 +213,7 @@
         </span>
         
         <span class="result-number">
-          <span ng-if="!calculator.withSponsorship">$16,902</span>
-          <span ng-if="calculator.withSponsorship">$20,323</span>
-
+          <span>{{calculator.graduateInfo.interest_avoided | currency:"":0}}</span>
         </span>
       
       </div>
@@ -235,8 +290,7 @@
         </span>
         
         <span class="result-number">
-          <span ng-if="!calculator.withSponsorship">12.2</span>
-          <span ng-if="calculator.withSponsorship">15.0</span>
+          <span>{{calculator.graduateInfo.years_reclaimed | currency:""}}</span>
         </span>
       
       </div>
@@ -246,3 +300,4 @@
   </div>
 
 </div>
+
