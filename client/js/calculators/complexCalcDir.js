@@ -40,6 +40,7 @@ twopence.directive('complexCalcDir', function() {
 
       vm.calculate = function(studentLoanOutstanding, annualIncome, hasSponsorship){
 
+          console.log(hasSponsorship);
             var pc = annualIncome/(250000 - 30000); /* the percentage slider value */
             var loc = (pc * 330) + 12;
             vm.loc = loc;
@@ -144,7 +145,9 @@ twopence.directive('complexCalcDir', function() {
 
 
             if(hasSponsorship) {
-              console.log('there is a sponsorship in place')
+            vm.graduateInfo.interest_avoided = interestAvoidedPickpocketWithSponsor;
+            vm.graduateInfo.years_reclaimed = daysSavedPickpocketWithSponsor / 360;
+
             }
         };
 

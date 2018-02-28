@@ -1243,7 +1243,7 @@ input[type="radio"].radio--large + label {
   left: 0; 
   top: 0; 
   overflow: visible; 
-  height: rem-calc(26px);
+  height: rem-calc(24px);
 
   .rangeSlider-track {
     margin-bottom: 0; 
@@ -1314,6 +1314,7 @@ input[type="radio"].radio--large + label {
 
   .rangeSlider-slider {
     -webkit-appearance: none;
+    background-color: transparent;
 
   }
 

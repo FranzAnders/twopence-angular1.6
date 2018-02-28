@@ -17812,7 +17812,7 @@ input[type="radio"].radio--large + label {
   left: 0;
   top: 0;
   overflow: visible;
-  height: 1.625rem;
+  height: 1.5rem;
   /* Make the thumbs the same size as your custom sliderthumb. 
     they will not be visible but they will be draggable.  */
 }
@@ -17884,17 +17884,18 @@ input[type="radio"].radio--large + label {
 /* line 1315, ../scss/layout/_forms.scss */
 .rangeSlider .rangeSlider-slider {
   -webkit-appearance: none;
+  background-color: transparent;
 }
-/* line 1320, ../scss/layout/_forms.scss */
+/* line 1321, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]:focus::-webkit-slider-runnable-track {
   background: transparent;
   border: transparent;
 }
-/* line 1325, ../scss/layout/_forms.scss */
+/* line 1326, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]:focus {
   outline: none;
 }
-/* line 1331, ../scss/layout/_forms.scss */
+/* line 1332, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-ms-thumb {
   width: 3rem;
   height: 3rem;
@@ -17902,7 +17903,7 @@ input[type="radio"].radio--large + label {
   border: 0 none;
   background: transparent;
 }
-/* line 1339, ../scss/layout/_forms.scss */
+/* line 1340, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-moz-range-thumb {
   width: 3rem;
   height: 3rem;
@@ -17910,7 +17911,7 @@ input[type="radio"].radio--large + label {
   border: 0 none;
   background: transparent;
 }
-/* line 1347, ../scss/layout/_forms.scss */
+/* line 1348, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-webkit-slider-thumb {
   width: 3rem;
   height: 3rem;
@@ -20243,7 +20244,7 @@ button.is-inactive,
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
     min-height: auto;
-    height: 45rem;
+    height: 48.75rem;
   }
 }
 /* line 26, ../scss/components/_heroHeader.scss */
