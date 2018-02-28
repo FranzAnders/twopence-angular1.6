@@ -11,20 +11,18 @@
 
 .calculator {
   margin-top: rem-calc($base-magic-number);
-  margin-bottom: rem-calc($level7 + $level3);
+  margin-bottom: rem-calc($level7 + $level6);
   max-width: rem-calc(296px); 
-  
 
   @media #{$medium-up} {
-    margin-bottom: 0;
+    margin-bottom: 0; 
     width: rem-calc(300px); 
     max-width: none; 
-
   }
 
   @media #{$large-up} {
+    margin-bottom: rem-calc($level7 + $level3);
     width: rem-calc(324px); 
-    
   }
 
   .calculator-badge {
@@ -42,17 +40,15 @@
       .calculator-badge-icon {
         fill: $secondaryColor; 
         width: 65%; 
-
       }
-
   }
+  
   .calculator-controls {
     background-color: #fff;
     color: $body-color; 
     position: relative;
     margin-bottom: rem-calc($level1);
     padding-top: rem-calc(18px); 
-
   }
 
   .calculator-headline {
