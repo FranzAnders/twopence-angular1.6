@@ -342,7 +342,7 @@
   
 }
 
-.no-touch {
+
   
   .mainNav-menu-link {
       &:after {
@@ -383,7 +383,6 @@
       }  
   }
 
-}
 
 
 
@@ -510,7 +509,7 @@ $toggleColor: $secondaryColor;
 
   0% {
     opacity: 0; 
-    @include transform(translateX(-300%)); 
+    @include transform(translateX(100vh)); 
 
 
   }
@@ -547,7 +546,7 @@ $toggleColor: $secondaryColor;
 
  100% {
     opacity: 0; 
-    @include transform(translateX(-300%)); 
+    @include transform(translateX(100vh)); 
 
   }
 
@@ -572,7 +571,7 @@ $toggleColor: $secondaryColor;
 
  100% {
     opacity: 0; 
-    @include transform(translateX(-300%)); 
+    @include transform(translateX(100vh)); 
 
   }
 
@@ -583,7 +582,7 @@ $toggleColor: $secondaryColor;
 
   0% {
     opacity: 0; 
-    @include transform(translateX(-300%)); 
+    @include transform(translateX(100vh)); 
 
   }
   1% {

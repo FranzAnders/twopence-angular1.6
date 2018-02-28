@@ -6577,7 +6577,7 @@ button,
 }
 
 /* line 223, ../scss/abstracts/_utility.scss */
-.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, input.clearField:after, .absolute-nav, .no-touch .mainNav-menu-link:after, .menuToggle-icon:after, .menuToggle-icon:before, .fancymodal .fancymodal-close {
+.absoluteCentered, .superscript, .hide-elem, .absolute, .input-group:after, .input-group label, input.clearField:after, .absolute-nav, .mainNav-menu-link:after, .menuToggle-icon:after, .menuToggle-icon:before, .fancymodal .fancymodal-close {
   position: absolute;
 }
 
@@ -18319,7 +18319,7 @@ input[type="radio"].radio--large + label {
 }
 
 /* line 348, ../scss/layout/_navs.scss */
-.no-touch .mainNav-menu-link:after {
+.mainNav-menu-link:after {
   content: " ";
   width: 0;
   height: 0.25rem;
@@ -18334,31 +18334,31 @@ input[type="radio"].radio--large + label {
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 348, ../scss/layout/_navs.scss */
-  .no-touch .mainNav-menu-link:after {
+  .mainNav-menu-link:after {
     background-color: #231F20;
     bottom: -0.375rem;
     height: 0.125rem;
   }
 }
 /* line 368, ../scss/layout/_navs.scss */
-.no-touch .mainNav-menu-link:hover, .no-touch .mainNav-menu-link:focus, .no-touch .mainNav-menu-link.is-active {
+.mainNav-menu-link:hover, .mainNav-menu-link:focus, .mainNav-menu-link.is-active {
   color: #fff;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 368, ../scss/layout/_navs.scss */
-  .no-touch .mainNav-menu-link:hover, .no-touch .mainNav-menu-link:focus, .no-touch .mainNav-menu-link.is-active {
+  .mainNav-menu-link:hover, .mainNav-menu-link:focus, .mainNav-menu-link.is-active {
     color: #231F20;
   }
 }
 /* line 378, ../scss/layout/_navs.scss */
-.no-touch .mainNav-menu-link:hover:after, .no-touch .mainNav-menu-link:focus:after, .no-touch .mainNav-menu-link.is-active:after {
+.mainNav-menu-link:hover:after, .mainNav-menu-link:focus:after, .mainNav-menu-link.is-active:after {
   width: 100%;
 }
 
 /*------------------------------------*\
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
-/* line 401, ../scss/layout/_navs.scss */
+/* line 400, ../scss/layout/_navs.scss */
 .mainNav-menuToggle {
   width: 3.75rem;
   height: 3.75rem;
@@ -18369,24 +18369,24 @@ input[type="radio"].radio--large + label {
   position: absolute;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 401, ../scss/layout/_navs.scss */
+  /* line 400, ../scss/layout/_navs.scss */
   .mainNav-menuToggle {
     display: none;
   }
 }
-/* line 422, ../scss/layout/_navs.scss */
+/* line 421, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
   color: #231F20;
   padding-top: 6px;
 }
 
-/* line 430, ../scss/layout/_navs.scss */
+/* line 429, ../scss/layout/_navs.scss */
 .menuToggle-icon {
   height: 1.3rem;
   width: 2.1rem;
   z-index: 202;
 }
-/* line 438, ../scss/layout/_navs.scss */
+/* line 437, ../scss/layout/_navs.scss */
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
   height: 4px;
@@ -18402,7 +18402,7 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 452, ../scss/layout/_navs.scss */
+/* line 451, ../scss/layout/_navs.scss */
 .menuToggle-icon:after {
   top: 50%;
 }
@@ -18410,15 +18410,15 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Nav Menu Toggle Open
 \*------------------------------------*/
-/* line 470, ../scss/layout/_navs.scss */
+/* line 469, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 475, ../scss/layout/_navs.scss */
+/* line 474, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 478, ../scss/layout/_navs.scss */
+/* line 477, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
   background-color: #fff;
@@ -18427,7 +18427,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 484, ../scss/layout/_navs.scss */
+/* line 483, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
   background-color: #fff;
   -moz-transform: translateY(0) rotate(-45deg);
@@ -18435,7 +18435,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 489, ../scss/layout/_navs.scss */
+/* line 488, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -18449,8 +18449,8 @@ input[type="radio"].radio--large + label {
 @-moz-keyframes main-nav-overlay-appear {
   0% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
   1% {
     opacity: 0;
@@ -18466,8 +18466,8 @@ input[type="radio"].radio--large + label {
 @-webkit-keyframes main-nav-overlay-appear {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
   1% {
     opacity: 0;
@@ -18483,10 +18483,10 @@ input[type="radio"].radio--large + label {
 @keyframes main-nav-overlay-appear {
   0% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    -ms-transform: translateX(-300%);
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    -ms-transform: translateX(100vh);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
   1% {
     opacity: 0;
@@ -18516,8 +18516,8 @@ input[type="radio"].radio--large + label {
   }
   100% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
 }
 @-webkit-keyframes main-nav-overlay-disappear {
@@ -18533,8 +18533,8 @@ input[type="radio"].radio--large + label {
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
 }
 @keyframes main-nav-overlay-disappear {
@@ -18554,10 +18554,10 @@ input[type="radio"].radio--large + label {
   }
   100% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    -ms-transform: translateX(-300%);
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    -ms-transform: translateX(100vh);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
 }
 @-moz-keyframes main-nav-container-disappear {
@@ -18573,8 +18573,8 @@ input[type="radio"].radio--large + label {
   }
   100% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
 }
 @-webkit-keyframes main-nav-container-disappear {
@@ -18590,8 +18590,8 @@ input[type="radio"].radio--large + label {
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
 }
 @keyframes main-nav-container-disappear {
@@ -18611,17 +18611,17 @@ input[type="radio"].radio--large + label {
   }
   100% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    -ms-transform: translateX(-300%);
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    -ms-transform: translateX(100vh);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
 }
 @-moz-keyframes main-nav-container-appear {
   0% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
   1% {
     opacity: 1;
@@ -18637,8 +18637,8 @@ input[type="radio"].radio--large + label {
 @-webkit-keyframes main-nav-container-appear {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
   1% {
     opacity: 1;
@@ -18654,10 +18654,10 @@ input[type="radio"].radio--large + label {
 @keyframes main-nav-container-appear {
   0% {
     opacity: 0;
-    -moz-transform: translateX(-300%);
-    -ms-transform: translateX(-300%);
-    -webkit-transform: translateX(-300%);
-    transform: translateX(-300%);
+    -moz-transform: translateX(100vh);
+    -ms-transform: translateX(100vh);
+    -webkit-transform: translateX(100vh);
+    transform: translateX(100vh);
   }
   1% {
     opacity: 1;
