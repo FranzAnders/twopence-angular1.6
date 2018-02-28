@@ -1269,20 +1269,26 @@ input[type="radio"].radio--large + label {
 
   .rangeSlider-thumb {
       -webkit-appearance: none;
-      width: rem-calc(24px);
-      height: rem-calc(24px);
+      width: rem-calc(30px);
+      height: rem-calc(30px);
       background: $primaryColor;
       cursor: pointer;
       border: 1px solid #fff; 
       @include border-radius(100%);
       position: absolute;
       left: 0; 
-      top: rem-calc(-6px); 
+      top: rem-calc(-12px); 
       margin: 0; 
       border: none; 
       border: 1px solid white; 
       pointer-events: none;
       @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+      
+      @media #{$medium-up} {
+        top: rem-calc(-6px); 
+        width: rem-calc(24px);
+        height: rem-calc(24px);
+      }
 
       &:after {
         content: " ";
@@ -1346,32 +1352,44 @@ input[type="radio"].radio--large + label {
     they will not be visible but they will be draggable.  */
 
   input[type=range]::-ms-thumb {
-    width: rem-calc(48px);
-    height: rem-calc(48px);
+    width: rem-calc(50px);
+    height: rem-calc(50px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
+
+    @media #{$medium-up} {
+      width: rem-calc(48px);
+    }
   }
 
   input[type=range]::-moz-range-thumb {
-    width: rem-calc(48px);
-    height: rem-calc(48px);
+    width: rem-calc(50px);
+    height: rem-calc(50px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
     top: rem-calc(-3px);
     position: relative;
+
+    @media #{$medium-up} {
+      width: rem-calc(48px);
+    }
+
   }
 
   input[type=range]::-webkit-slider-thumb {
-    width: rem-calc(48px);
-    height: rem-calc(48px);
+    width: rem-calc(60px);
+    height: rem-calc(60px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
     -webkit-appearance: none;
     top: rem-calc(-3px);
     position: relative;
+    @media #{$medium-up} {
+      width: rem-calc(48px);
+    }
   }
 
 }
