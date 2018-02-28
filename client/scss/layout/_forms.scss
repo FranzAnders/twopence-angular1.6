@@ -1282,6 +1282,22 @@ input[type="radio"].radio--large + label {
       border: none; 
       border: 1px solid white; 
       pointer-events: none;
+      @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+
+      &:after {
+        content: " ";
+        background-color: #fff;
+        position: absolute; 
+        top: 0; 
+        right: 0; 
+        bottom: 0; 
+        left: 0; 
+        margin: auto; 
+        height: rem-calc(10px); 
+        width: rem-calc(10px); 
+        @include border-radius(100%);
+        @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
+      }
   }
 
   
@@ -1343,6 +1359,8 @@ input[type="radio"].radio--large + label {
     border-radius: 0px;
     border: 0 none;
     background: transparent;
+    top: rem-calc(-3px);
+    position: relative;
   }
 
   input[type=range]::-webkit-slider-thumb {
@@ -1352,6 +1370,8 @@ input[type="radio"].radio--large + label {
     border: 0 none;
     background: transparent;
     -webkit-appearance: none;
+    top: rem-calc(-3px);
+    position: relative;
   }
 
 }

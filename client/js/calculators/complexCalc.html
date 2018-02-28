@@ -40,15 +40,26 @@
             
           </div>
 
-          <div class="rangeSlider-fill"
-               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 240) + 12 + 'px'}">
+          <div class="rangeSlider-fill  hide-for-medium-up"
+               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 190) + 12 + 'px'}">
             
           </div>
 
-          <div class="rangeSlider-thumb"
-             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 230 + 'px'}">
+          <div class="rangeSlider-thumb  hide-for-medium-up"
+             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 190 + 'px'}">
             
           </div>
+
+          <div class="rangeSlider-fill  show-for-medium-up"
+               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 260) + 12 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-thumb  show-for-medium-up"
+             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 260 + 'px'}">
+            
+          </div>
+
           <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" ng-model="calculator.graduateInfo.income">
 
         </div>
@@ -62,15 +73,23 @@
           <div class="rangeSlider-track">
             
           </div>
-
-          <div class="rangeSlider-fill"
-               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 240) + 12 + 'px'}">
+         <div class="rangeSlider-fill  hide-for-medium-up"
+               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 190) + 12 + 'px'}">
             
           </div>
 
+          <div class="rangeSlider-thumb  hide-for-medium-up"
+             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 190 + 'px'}">
+            
+          </div>
 
-          <div class="rangeSlider-thumb"
-             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 240 + 'px'}">
+          <div class="rangeSlider-fill  show-for-medium-up"
+               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 260) + 12 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-thumb  show-for-medium-up"
+             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 260 + 'px'}">
             
           </div>
           <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.loan, calculator.graduateInfo.has_sponsor)" ng-model="calculator.graduateInfo.loan">
@@ -114,13 +133,13 @@
   <div class="calculator-resultsContainer">
     
     <div class="calculator-innerContent">
-      <p class="calculator-bodyCopy text-center"
+      <p class="calculator-bodyCopy calculator-bodyCopy--small text-center"
          ng-if="calculator.type == 'sponsor'">
         For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus your sponsorship could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get them out of debt  <span ng-if="!calculator.withSponsorship">12.2</span>
           <span ng-if="calculator.withSponsorship">15</span> years faster.
       </p>
 
-      <p class="calculator-bodyCopy text-center"
+      <p class="calculator-bodyCopy calculator-bodyCopy--small text-center"
          ng-if="calculator.type == 'graduate'">
 
         If you were a graduate with $45,000 in debt and earning $75,000 annually, Pickpocket could save you <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get you out of debt <span ng-if="!calculator.withSponsorship">12.2</span>
