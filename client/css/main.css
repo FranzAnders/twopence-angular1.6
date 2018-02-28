@@ -17758,7 +17758,7 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 1197, ../scss/layout/_forms.scss */
+/* line 1196, ../scss/layout/_forms.scss */
 .switch .slider:before {
   position: absolute;
   content: "";
@@ -17772,32 +17772,66 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 1209, ../scss/layout/_forms.scss */
+/* line 1207, ../scss/layout/_forms.scss */
 .switch input:checked + .slider {
   background-color: #6AC6C5;
 }
-/* line 1213, ../scss/layout/_forms.scss */
+/* line 1211, ../scss/layout/_forms.scss */
 .switch input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
-/* line 1217, ../scss/layout/_forms.scss */
+/* line 1215, ../scss/layout/_forms.scss */
 .switch input:checked + .slider:before {
   -moz-transform: translateX(26px);
   -ms-transform: translateX(26px);
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
 }
-/* line 1223, ../scss/layout/_forms.scss */
+/* line 1220, ../scss/layout/_forms.scss */
 .switch .slider.round {
   -moz-border-radius: 34px;
   -webkit-border-radius: 34px;
   border-radius: 34px;
 }
-/* line 1228, ../scss/layout/_forms.scss */
+/* line 1224, ../scss/layout/_forms.scss */
 .switch .slider.round:before {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+/*------------------------------------*\
+    #Range Sliders
+\*------------------------------------*/
+/* line 1240, ../scss/layout/_forms.scss */
+.rangeSlider .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+/* line 1251, ../scss/layout/_forms.scss */
+.rangeSlider .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+/* line 1261, ../scss/layout/_forms.scss */
+.rangeSlider .slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
 }
 
 /*------------------------------------*\
