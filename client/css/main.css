@@ -17896,24 +17896,24 @@ input[type="radio"].radio--large + label {
 }
 /* line 1331, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-ms-thumb {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0px;
   border: 0 none;
   background: transparent;
 }
 /* line 1339, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-moz-range-thumb {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0px;
   border: 0 none;
   background: transparent;
 }
 /* line 1347, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-webkit-slider-thumb {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0px;
   border: 0 none;
   background: transparent;
@@ -20234,7 +20234,7 @@ button.is-inactive,
 @media only screen and (min-width: 40.0625em) {
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
-    min-height: 40.5rem;
+    min-height: 44.5rem;
     margin-top: 1.875rem;
     padding-top: 0;
   }
@@ -20243,10 +20243,10 @@ button.is-inactive,
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
     min-height: auto;
-    height: 38.25rem;
+    height: 45rem;
   }
 }
-/* line 27, ../scss/components/_heroHeader.scss */
+/* line 26, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background {
   position: absolute;
   top: 0;
@@ -20265,7 +20265,7 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 38, ../scss/components/_heroHeader.scss */
+/* line 37, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background--sponsors {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
   background: #1e5799;
@@ -20275,31 +20275,31 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63decb', endColorstr='#1e5799',GradientType=0 );
   /* IE6-9 */
 }
-/* line 43, ../scss/components/_heroHeader.scss */
+/* line 42, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-contentContainer {
   color: #fff;
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 49, ../scss/components/_heroHeader.scss */
+  /* line 48, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-content {
     width: 60rem;
   }
 }
-/* line 57, ../scss/components/_heroHeader.scss */
+/* line 56, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-headline {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 57, ../scss/components/_heroHeader.scss */
+  /* line 56, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-headline {
     margin-top: 2.25rem;
     max-width: 20.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 57, ../scss/components/_heroHeader.scss */
+  /* line 56, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-headline {
     min-width: 34.375rem;
     font-size: 2.5rem;
@@ -20307,13 +20307,13 @@ button.is-inactive,
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 74, ../scss/components/_heroHeader.scss */
+  /* line 73, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-description {
     max-width: 20.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 74, ../scss/components/_heroHeader.scss */
+  /* line 73, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-description {
     max-width: 27.25rem;
   }

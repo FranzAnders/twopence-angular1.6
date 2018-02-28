@@ -12,15 +12,14 @@
   min-height: 100vh;
 
   @media #{$medium-up} {
-    min-height: rem-calc(648px); 
+    min-height: rem-calc(712px); 
     margin-top: rem-calc(30px); 
     padding-top: 0; 
-
   }
 
   @media #{$large-up} {
     min-height: auto; 
-    height: rem-calc(612px); 
+    height: rem-calc(720px); 
     
   }
 

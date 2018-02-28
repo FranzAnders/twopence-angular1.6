@@ -1329,24 +1329,24 @@ input[type="radio"].radio--large + label {
     they will not be visible but they will be draggable.  */
 
   input[type=range]::-ms-thumb {
-    width: rem-calc(24px);
-    height: rem-calc(24px);
+    width: rem-calc(48px);
+    height: rem-calc(48px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
   }
 
   input[type=range]::-moz-range-thumb {
-    width: rem-calc(24px);
-    height: rem-calc(24px);
+    width: rem-calc(48px);
+    height: rem-calc(48px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
   }
 
   input[type=range]::-webkit-slider-thumb {
-    width: rem-calc(24px);
-    height: rem-calc(24px);
+    width: rem-calc(48px);
+    height: rem-calc(48px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
