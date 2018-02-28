@@ -113,6 +113,8 @@
     z-index: 103; 
     padding-top: rem-calc($level7 + $level6); 
     @extend %text-left; 
+    @include animation(main-nav-container-disappear .1s ceaser($easeInOutCubic) forwards .4s); 
+
 
     @media #{$medium-up} {
       position: relative; 
@@ -285,7 +287,7 @@
     &.is-closed {  // for when nav is closed
 
       .mainNav-menu {
-      @include animation(main-nav-container-disappear .1s ceaser($easeInOutCubic) forwards .4s); 
+         @include animation(main-nav-container-disappear .1s ceaser($easeInOutCubic) forwards .4s); 
         
         .mainNav-menu-item {
 
