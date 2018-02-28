@@ -36,7 +36,16 @@ twopence.directive('complexCalcDir', function() {
 
       }
 
+
+
       vm.calculate = function(studentLoanOutstanding, annualIncome, hasSponsorship){
+
+            var pc = annualIncome/(250000 - 30000); /* the percentage slider value */
+            var loc = (pc * 330) + 12;
+            vm.loc = loc;
+            console.log(loc);
+
+
             var interestAvoided = 0;
             var daysSaved = 0;
 

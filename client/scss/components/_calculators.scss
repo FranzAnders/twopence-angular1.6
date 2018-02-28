@@ -9,12 +9,11 @@
 \*------------------------------------*/
 
 
-.simpleCalc {
+.calculator {
   margin-top: rem-calc($base-magic-number);
   margin-bottom: rem-calc($level7 + $level3);
   max-width: rem-calc(296px); 
   
-
 
   @media #{$medium-up} {
     margin-bottom: 0;
@@ -28,7 +27,7 @@
     
   }
 
-  .simpleCalc-badge {
+  .calculator-badge {
       position: absolute; 
       top: rem-calc(-24px); 
       right:0; 
@@ -40,14 +39,14 @@
       border: 1px solid $grey--light; 
       @include border-radius(100%); 
 
-      .simpleCalc-badge-icon {
+      .calculator-badge-icon {
         fill: $secondaryColor; 
         width: 65%; 
 
       }
 
   }
-  .simpleCalc-controls {
+  .calculator-controls {
     background-color: #fff;
     color: $body-color; 
     position: relative;
@@ -56,14 +55,14 @@
 
   }
 
-  .simpleCalc-headline {
+  .calculator-headline {
     font-weight: bold; 
     color: $secondaryColor; 
     margin-bottom: rem-calc($level3); 
     @include type-setting(0); 
   }
   
-  .simpleCalc-subLine {
+  .calculator-subLine {
     font-weight: bold; 
     color: $secondaryColor; 
     margin-bottom: rem-calc($level1); 
@@ -71,7 +70,7 @@
 
   }
 
-  .simpleCalc-switch {
+  .calculator-switch {
     padding-left: rem-calc($level4);
     padding-right: rem-calc($level2);
 
@@ -82,27 +81,27 @@
 
   }
 
-  .simpleCalc-bodyCopy {
-    margin-bottom: 0; 
+  .calculator-bodyCopy {
+    margin-bottom: rem-calc($level1);
     @include type-setting(-1); 
   }
   
-  .simpleCalc-bodyCopy--small {
+  .calculator-bodyCopy--small {
     margin-bottom: 0; 
     @include type-setting(-2); 
   }
   
 
-  .simpleCalc-innerContent {
+  .calculator-innerContent {
     padding: rem-calc($level3); 
 
   }
 
-  .simpleCalc-resultsContainer {
+  .calculator-resultsContainer {
     background-color: $secondaryColor;
     color: #fff; 
     
-    .simpleCalc-results-result {
+    .calculator-results-result {
       padding: rem-calc($level2); 
       white-space: nowrap; 
       width: 100%; 
@@ -114,12 +113,12 @@
 
     }
 
-    .simpleCalc-results-result:nth-child(1) {
+    .calculator-results-result:nth-child(1) {
       border-right: 1px solid $grey--med; 
 
     }
 
-    .simpleCalc-results {
+    .calculator-results {
       border-top: 1px solid $grey--med; 
 
     }

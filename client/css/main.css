@@ -6229,7 +6229,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
 
 /* line 55, ../scss/abstracts/_typography.scss */
 .fwb, strong, footer .footer-title, button,
-.button, .card--sponsorship .card-content .sponsorship-contributions, .simpleCalc .simpleCalc-resultsContainer .result-number, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option, .statLabel, .tag {
+.button, .card--sponsorship .card-content .sponsorship-contributions, .calculator .calculator-resultsContainer .result-number, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -17803,35 +17803,121 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Range Sliders
 \*------------------------------------*/
-/* line 1240, ../scss/layout/_forms.scss */
-.rangeSlider .slider {
-  -webkit-appearance: none;
+/* line 1238, ../scss/layout/_forms.scss */
+.rangeSlider {
   width: 100%;
-  height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
+  position: relative;
+  margin-bottom: 0.375rem;
+  border: 0 none;
+  left: 0;
+  top: 0;
+  overflow: visible;
+  height: 1.625rem;
+  /* Make the thumbs the same size as your custom sliderthumb. 
+    they will not be visible but they will be draggable.  */
+}
+/* line 1248, ../scss/layout/_forms.scss */
+.rangeSlider .rangeSlider-track {
+  margin-bottom: 0;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #dae0e0;
   outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0.75rem;
 }
-/* line 1251, ../scss/layout/_forms.scss */
-.rangeSlider .slider::-webkit-slider-thumb {
+/* line 1260, ../scss/layout/_forms.scss */
+.rangeSlider .rangeSlider-fill {
+  background-color: rgba(106, 198, 197, 0.9);
+  position: absolute;
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+  border: 1px solid #dae0e0;
+  height: 0.75rem;
+}
+/* line 1270, ../scss/layout/_forms.scss */
+.rangeSlider .rangeSlider-thumb {
   -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #4CAF50;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #6AC6C5;
   cursor: pointer;
+  border: 1px solid #fff;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: -0.375rem;
+  margin: 0;
+  border: none;
+  border: 1px solid white;
+  pointer-events: none;
 }
-/* line 1261, ../scss/layout/_forms.scss */
-.rangeSlider .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #4CAF50;
-  cursor: pointer;
+/* line 1290, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]::-ms-track {
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+/* line 1302, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  -moz-appearance: none;
+  margin: 0px;
+  padding: 0px;
+  border: 0 none;
+  background: transparent;
+  color: transparent;
+  overflow: visible;
+}
+/* line 1315, ../scss/layout/_forms.scss */
+.rangeSlider .rangeSlider-slider {
+  -webkit-appearance: none;
+}
+/* line 1320, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+  border: transparent;
+}
+/* line 1325, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]:focus {
+  outline: none;
+}
+/* line 1331, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]::-ms-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+}
+/* line 1339, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]::-moz-range-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+}
+/* line 1347, ../scss/layout/_forms.scss */
+.rangeSlider input[type=range]::-webkit-slider-thumb {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0px;
+  border: 0 none;
+  background: transparent;
+  -webkit-appearance: none;
 }
 
 /*------------------------------------*\
@@ -19883,14 +19969,14 @@ button.is-inactive,
     #Simple Calculator
 \*------------------------------------*/
 /* line 12, ../scss/components/_calculators.scss */
-.simpleCalc {
+.calculator {
   margin-top: 1.5rem;
   margin-bottom: 4.125rem;
   max-width: 18.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 12, ../scss/components/_calculators.scss */
-  .simpleCalc {
+  .calculator {
     margin-bottom: 0;
     width: 18.75rem;
     max-width: none;
@@ -19898,12 +19984,12 @@ button.is-inactive,
 }
 @media only screen and (min-width: 64.0625em) {
   /* line 12, ../scss/components/_calculators.scss */
-  .simpleCalc {
+  .calculator {
     width: 20.25rem;
   }
 }
-/* line 31, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-badge {
+/* line 30, ../scss/components/_calculators.scss */
+.calculator .calculator-badge {
   position: absolute;
   top: -1.5rem;
   right: 0;
@@ -19917,96 +20003,96 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 43, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-badge .simpleCalc-badge-icon {
+/* line 42, ../scss/components/_calculators.scss */
+.calculator .calculator-badge .calculator-badge-icon {
   fill: #231F20;
   width: 65%;
 }
-/* line 50, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-controls {
+/* line 49, ../scss/components/_calculators.scss */
+.calculator .calculator-controls {
   background-color: #fff;
   color: #7d7d7d;
   position: relative;
   margin-bottom: 0.375rem;
   padding-top: 1.125rem;
 }
-/* line 59, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-headline {
+/* line 58, ../scss/components/_calculators.scss */
+.calculator .calculator-headline {
   font-weight: bold;
   color: #231F20;
   margin-bottom: 1.125rem;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 66, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-subLine {
+/* line 65, ../scss/components/_calculators.scss */
+.calculator .calculator-subLine {
   font-weight: bold;
   color: #231F20;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 74, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-switch {
+/* line 73, ../scss/components/_calculators.scss */
+.calculator .calculator-switch {
   padding-left: 1.5rem;
   padding-right: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 74, ../scss/components/_calculators.scss */
-  .simpleCalc .simpleCalc-switch {
+  /* line 73, ../scss/components/_calculators.scss */
+  .calculator .calculator-switch {
     padding-left: 1.125rem;
   }
 }
-/* line 85, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-bodyCopy {
-  margin-bottom: 0;
+/* line 84, ../scss/components/_calculators.scss */
+.calculator .calculator-bodyCopy {
+  margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 90, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-bodyCopy--small {
+/* line 89, ../scss/components/_calculators.scss */
+.calculator .calculator-bodyCopy--small {
   margin-bottom: 0;
   font-size: 0.6rem;
   line-height: 1.5;
 }
-/* line 96, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-innerContent {
+/* line 95, ../scss/components/_calculators.scss */
+.calculator .calculator-innerContent {
   padding: 1.125rem;
 }
-/* line 101, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-resultsContainer {
+/* line 100, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 105, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
+/* line 104, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .calculator-results-result {
   padding: 0.75rem;
   white-space: nowrap;
   width: 100%;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 105, ../scss/components/_calculators.scss */
-  .simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result {
+  /* line 104, ../scss/components/_calculators.scss */
+  .calculator .calculator-resultsContainer .calculator-results-result {
     padding: 1.125rem;
   }
 }
-/* line 117, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-resultsContainer .simpleCalc-results-result:nth-child(1) {
+/* line 116, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .calculator-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 122, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-resultsContainer .simpleCalc-results {
+/* line 121, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .calculator-results {
   border-top: 1px solid #afadad;
 }
-/* line 127, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-resultsContainer .result-label {
+/* line 126, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 134, ../scss/components/_calculators.scss */
-.simpleCalc .simpleCalc-resultsContainer .result-number {
+/* line 133, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .result-number {
   color: #6AC6C5;
   font-family: "itc_souvenirmedium", sans-serif;
   text-align: center;
@@ -20016,8 +20102,8 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media screen and (min-width: 360px) {
-  /* line 134, ../scss/components/_calculators.scss */
-  .simpleCalc .simpleCalc-resultsContainer .result-number {
+  /* line 133, ../scss/components/_calculators.scss */
+  .calculator .calculator-resultsContainer .result-number {
     font-size: 2rem;
     line-height: 1.33333;
   }
