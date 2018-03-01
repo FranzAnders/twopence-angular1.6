@@ -2952,8 +2952,8 @@ tooltip tip {
   color: #231F20;
   display: none;
   line-height: normal;
-  max-width: 400px;
-  min-width: 240px;
+  max-width: 240px;
+  min-width: 200px;
   opacity: 0;
   padding: 8px 16px;
   position: absolute;
@@ -17914,11 +17914,15 @@ input[type="radio"].radio--large + label {
 }
 /* line 1354, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-ms-thumb {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 0px;
   border: 0 none;
   background: transparent;
+  -webkit-appearance: none;
+  top: -0.1875rem;
+  left: 0.125rem;
+  position: relative;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 1354, ../scss/layout/_forms.scss */
@@ -17926,23 +17930,25 @@ input[type="radio"].radio--large + label {
     width: 3.75rem;
   }
 }
-/* line 1366, ../scss/layout/_forms.scss */
+/* line 1369, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-moz-range-thumb {
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 0px;
   border: 0 none;
   background: transparent;
+  -webkit-appearance: none;
   top: -0.1875rem;
+  left: 0.125rem;
   position: relative;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 1366, ../scss/layout/_forms.scss */
+  /* line 1369, ../scss/layout/_forms.scss */
   .rangeSlider input[type=range]::-moz-range-thumb {
     width: 3.75rem;
   }
 }
-/* line 1381, ../scss/layout/_forms.scss */
+/* line 1385, ../scss/layout/_forms.scss */
 .rangeSlider input[type=range]::-webkit-slider-thumb {
   width: 3.75rem;
   height: 3.75rem;
@@ -17955,17 +17961,17 @@ input[type="radio"].radio--large + label {
   position: relative;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 1381, ../scss/layout/_forms.scss */
+  /* line 1385, ../scss/layout/_forms.scss */
   .rangeSlider input[type=range]::-webkit-slider-thumb {
     width: 3.75rem;
   }
 }
 
-/* line 1401, ../scss/layout/_forms.scss */
+/* line 1405, ../scss/layout/_forms.scss */
 .rangeSlider--secondary .rangeSlider-fill {
   background-color: rgba(35, 142, 178, 0.5);
 }
-/* line 1405, ../scss/layout/_forms.scss */
+/* line 1409, ../scss/layout/_forms.scss */
 .rangeSlider--secondary .rangeSlider-thumb {
   background-color: #238EB2;
 }

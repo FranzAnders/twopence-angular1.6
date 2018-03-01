@@ -49,7 +49,7 @@
           </div>
 
           <div class="rangeSlider-thumb  hide-for-large-up"
-             ng-style="{left: ( (calculator.graduateInfo.income/(250000 - 30000)) * 200 ) + 'px'}">
+             ng-style="{left: ( (calculator.graduateInfo.income/(250000 - 30000)) * 200 ) - 15 + 'px'}">
             
           </div>
 
@@ -82,7 +82,7 @@
           </div>
 
           <div class="rangeSlider-thumb  hide-for-large-up"
-             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 200 + 'px'}">
+             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 200 - 15 + 'px'}">
             
           </div>
 
@@ -149,6 +149,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
              tooltip-template="With Pickpocket you would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of your loans. Without Pickpocket, you would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
@@ -168,6 +169,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
             tooltip-template="With Pickpocket your grad would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of their loans. Without Pickpocket, they would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
@@ -213,6 +215,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
              tooltip-template="With Pickpocket, you’ll be out of debt in only {{calculator.graduateInfo.payment_period_with_pickpocket | currency:'':0 }} years. Without Pickpocket, your typical repayment period would be {{calculator.graduateInfo.payment_period_without_pickpocket | currency:'':0}} years.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
@@ -230,6 +233,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
              tooltip-template="With Pickpocket, your grad will be out of debt in only {{calculator.graduateInfo.payment_period_with_pickpocket | currency:'':0}} years. Without Pickpocket, their typical repayment period would be {{calculator.graduateInfo.payment_period_without_pickpocket | currency:'':0}} years. ">
               
               <svg class="tooltip-icon" ng-click="toggle()">
