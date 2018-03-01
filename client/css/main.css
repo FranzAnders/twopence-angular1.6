@@ -17964,6 +17964,7 @@ input[type="radio"].radio--large + label {
   background: transparent;
   -webkit-appearance: none;
   top: -0.1875rem;
+  left: 0.125rem;
   position: relative;
 }
 @media only screen and (min-width: 40.0625em) {
