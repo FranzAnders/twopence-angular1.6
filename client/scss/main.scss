@@ -57,7 +57,6 @@ $level7: 48;
 
 // Base
 @import
-  'base/animations',
   'base/icons',
   'base/links',
   'base/noSvg',
@@ -115,3 +114,7 @@ $level7: 48;
     'pages/sponsorshipCreation',
     'pages/sponsorView',
     'pages/sponseeSplash';
+
+@import 
+  'base/animations';
+

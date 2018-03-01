@@ -7178,20 +7178,6 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Animations
-\*------------------------------------*/
-/*------------------------------------*\
-    #Preload Animation Timing
-\*------------------------------------*/
-/* line 14, ../scss/base/_animations.scss */
-.preload * {
-  transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
-  -moz-animation-duration: 0s !important;
-  -webkit-animation-duration: 0s !important;
-  animation-duration: 0s !important;
-}
-
-/*------------------------------------*\
     #Icons 
 \*------------------------------------*/
 /* line 7, ../scss/base/_icons.scss */
@@ -18298,25 +18284,24 @@ input[type="radio"].radio--large + label {
   left: 0;
   z-index: 102;
   opacity: 0;
-  -moz-transform: translateY(100vh);
-  -ms-transform: translateY(100vh);
-  -webkit-transform: translateY(100vh);
-  transform: translateY(100vh);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 @media only screen and (min-width: 40.0625em) {
   /* line 237, ../scss/layout/_navs.scss */
   .mainNav .mainNav-overlay {
     display: none;
+    opacity: 1;
   }
 }
 @media only screen and (max-width: 40em) {
-  /* line 260, ../scss/layout/_navs.scss */
+  /* line 262, ../scss/layout/_navs.scss */
   .mainNav.is-closed .mainNav-menu {
     -moz-animation: main-nav-container-disappear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.4s;
     -webkit-animation: main-nav-container-disappear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.4s;
     animation: main-nav-container-disappear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.4s;
   }
-  /* line 263, ../scss/layout/_navs.scss */
+  /* line 265, ../scss/layout/_navs.scss */
   .mainNav.is-closed .mainNav-menu .mainNav-menu-item {
     opacity: 0;
     -moz-transform: translateY(26px);
@@ -18324,19 +18309,19 @@ input[type="radio"].radio--large + label {
     -webkit-transform: translateY(26px);
     transform: translateY(26px);
   }
-  /* line 269, ../scss/layout/_navs.scss */
+  /* line 271, ../scss/layout/_navs.scss */
   .mainNav.is-closed .mainNav-overlay {
     -moz-animation: main-nav-overlay-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
     -webkit-animation: main-nav-overlay-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
     animation: main-nav-overlay-disappear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
   }
-  /* line 276, ../scss/layout/_navs.scss */
+  /* line 278, ../scss/layout/_navs.scss */
   .mainNav.is-open .mainNav-menu {
     -moz-animation: main-nav-container-appear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.1s;
     -webkit-animation: main-nav-container-appear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.1s;
     animation: main-nav-container-appear 0.1s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards 0.1s;
   }
-  /* line 279, ../scss/layout/_navs.scss */
+  /* line 281, ../scss/layout/_navs.scss */
   .mainNav.is-open .mainNav-menu .mainNav-menu-item {
     opacity: 1;
     -moz-transform: translateY(0);
@@ -18344,7 +18329,7 @@ input[type="radio"].radio--large + label {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  /* line 286, ../scss/layout/_navs.scss */
+  /* line 288, ../scss/layout/_navs.scss */
   .mainNav.is-open .mainNav-overlay {
     -moz-animation: main-nav-overlay-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
     -webkit-animation: main-nav-overlay-appear 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) forwards;
@@ -18352,12 +18337,7 @@ input[type="radio"].radio--large + label {
   }
 }
 
-/* line 299, ../scss/layout/_navs.scss */
-.preload .mainNav-overlay {
-  visibility: hidden;
-}
-
-/* line 308, ../scss/layout/_navs.scss */
+/* line 302, ../scss/layout/_navs.scss */
 .no-touch .mainNav-menu-link:after {
   content: " ";
   width: 0;
@@ -18372,24 +18352,24 @@ input[type="radio"].radio--large + label {
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 308, ../scss/layout/_navs.scss */
+  /* line 302, ../scss/layout/_navs.scss */
   .no-touch .mainNav-menu-link:after {
     background-color: #231F20;
     bottom: -0.375rem;
     height: 0.125rem;
   }
 }
-/* line 326, ../scss/layout/_navs.scss */
+/* line 320, ../scss/layout/_navs.scss */
 .no-touch .mainNav-menu-link:hover, .no-touch .mainNav-menu-link:focus, .no-touch .mainNav-menu-link.is-active {
   color: #fff;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 326, ../scss/layout/_navs.scss */
+  /* line 320, ../scss/layout/_navs.scss */
   .no-touch .mainNav-menu-link:hover, .no-touch .mainNav-menu-link:focus, .no-touch .mainNav-menu-link.is-active {
     color: #231F20;
   }
 }
-/* line 335, ../scss/layout/_navs.scss */
+/* line 329, ../scss/layout/_navs.scss */
 .no-touch .mainNav-menu-link:hover:after, .no-touch .mainNav-menu-link:focus:after, .no-touch .mainNav-menu-link.is-active:after {
   width: 100%;
 }
@@ -18397,7 +18377,7 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
-/* line 355, ../scss/layout/_navs.scss */
+/* line 349, ../scss/layout/_navs.scss */
 .mainNav-menuToggle {
   width: 3.75rem;
   height: 3.75rem;
@@ -18408,24 +18388,24 @@ input[type="radio"].radio--large + label {
   position: absolute;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 355, ../scss/layout/_navs.scss */
+  /* line 349, ../scss/layout/_navs.scss */
   .mainNav-menuToggle {
     display: none;
   }
 }
-/* line 375, ../scss/layout/_navs.scss */
+/* line 369, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
   color: #231F20;
   padding-top: 6px;
 }
 
-/* line 383, ../scss/layout/_navs.scss */
+/* line 377, ../scss/layout/_navs.scss */
 .menuToggle-icon {
   height: 1.3rem;
   width: 2.1rem;
   z-index: 202;
 }
-/* line 390, ../scss/layout/_navs.scss */
+/* line 384, ../scss/layout/_navs.scss */
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
   height: 4px;
@@ -18441,7 +18421,7 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 403, ../scss/layout/_navs.scss */
+/* line 397, ../scss/layout/_navs.scss */
 .menuToggle-icon:after {
   top: 50%;
 }
@@ -18449,15 +18429,15 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Nav Menu Toggle Open
 \*------------------------------------*/
-/* line 419, ../scss/layout/_navs.scss */
+/* line 413, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 423, ../scss/layout/_navs.scss */
+/* line 417, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 426, ../scss/layout/_navs.scss */
+/* line 420, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
   background-color: #fff;
@@ -18466,7 +18446,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 432, ../scss/layout/_navs.scss */
+/* line 426, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
   background-color: #fff;
   -moz-transform: translateY(0) rotate(-45deg);
@@ -18474,7 +18454,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 437, ../scss/layout/_navs.scss */
+/* line 431, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -20105,61 +20085,67 @@ button.is-inactive,
 @media only screen and (min-width: 40.0625em) {
   /* line 83, ../scss/components/_calculators.scss */
   .calculator .calculator-switch {
-    padding-left: 1.125rem;
+    padding-left: 0.75rem;
   }
 }
-/* line 93, ../scss/components/_calculators.scss */
+/* line 92, ../scss/components/_calculators.scss */
 .calculator .calculator-bodyCopy {
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 99, ../scss/components/_calculators.scss */
+/* line 98, ../scss/components/_calculators.scss */
 .calculator .calculator-innerContent {
   padding: 1.125rem;
 }
-/* line 105, ../scss/components/_calculators.scss */
+/* line 104, ../scss/components/_calculators.scss */
 .calculator .calculator-sliderLabel {
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.75rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 109, ../scss/components/_calculators.scss */
+@media only screen and (min-width: 64.0625em) {
+  /* line 104, ../scss/components/_calculators.scss */
+  .calculator .calculator-sliderLabel {
+    margin-bottom: 0.375rem;
+  }
+}
+/* line 112, ../scss/components/_calculators.scss */
 .calculator .calculator-sliderLabel .sliderLabel-value {
   color: #6AC6C5;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 116, ../scss/components/_calculators.scss */
+/* line 119, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 123, ../scss/components/_calculators.scss */
+/* line 126, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .calculator-results .calculator-results-result {
   padding: 0.375rem;
   white-space: nowrap;
   width: 100%;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 123, ../scss/components/_calculators.scss */
+  /* line 126, ../scss/components/_calculators.scss */
   .calculator .calculator-resultsContainer .calculator-results .calculator-results-result {
     padding: 1.125rem;
     padding-right: 0.375rem;
   }
 }
-/* line 135, ../scss/components/_calculators.scss */
+/* line 138, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .calculator-results .calculator-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 142, ../scss/components/_calculators.scss */
+/* line 145, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 149, ../scss/components/_calculators.scss */
+/* line 152, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .result-number {
   color: #6AC6C5;
   font-family: "itc_souvenirmedium", sans-serif;
@@ -20170,7 +20156,7 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media screen and (min-width: 360px) {
-  /* line 149, ../scss/components/_calculators.scss */
+  /* line 152, ../scss/components/_calculators.scss */
   .calculator .calculator-resultsContainer .result-number {
     font-size: 2rem;
     line-height: 1.33333;
@@ -20180,11 +20166,11 @@ button.is-inactive,
 /*------------------------------------*\
     #Sponsor Calculator
 \*------------------------------------*/
-/* line 179, ../scss/components/_calculators.scss */
+/* line 182, ../scss/components/_calculators.scss */
 .calculator--sponsor .calculator-sliderLabel .sliderLabel-value {
   color: #238EB2;
 }
-/* line 184, ../scss/components/_calculators.scss */
+/* line 187, ../scss/components/_calculators.scss */
 .calculator--sponsor .calculator-results .result-number {
   color: #238EB2;
 }
@@ -22252,4 +22238,18 @@ body.fancymodal-open {
 .hand-holding-app .appIcon .appIconDollar {
   transform-origin: 195px 140px;
   z-index: 0;
+}
+
+/*------------------------------------*\
+    #Animations
+\*------------------------------------*/
+/*------------------------------------*\
+    #Preload Animation Timing
+\*------------------------------------*/
+/* line 14, ../scss/base/_animations.scss */
+.preload * {
+  transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+  -moz-animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  animation-duration: 0s !important;
 }

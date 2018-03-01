@@ -43,7 +43,7 @@ twopence.directive('complexCalcDir', function() {
             vm.graduateInfo.years_reclaimed = result["daysSaved"] / 360;
             vm.graduateInfo.interest_without_pickpocket = result["interestPaidWithoutPickpocket"];
             vm.graduateInfo.interest_with_pickpocket = result["interestPaidWithPickpocket"];
-            vm.graduateInfo.payment_period_without_pickpocket = result["repaymentTermInYears"];
+            vm.graduateInfo.payment_period_without_pickpocket = result["termWithoutPickpocket"];
             vm.graduateInfo.payment_period_with_pickpocket = result["termWithPickpocket"];
       }
 

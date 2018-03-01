@@ -85,9 +85,8 @@
     padding-right: rem-calc($level2);
 
     @media #{$medium-up} {
-     padding-left: rem-calc($level3);
+     padding-left: rem-calc($level2);
     }
-
   }
 
   .calculator-bodyCopy {
@@ -103,8 +102,12 @@
 
 
   .calculator-sliderLabel {
-    margin-bottom: rem-calc($level1);
+    margin-bottom: rem-calc($level2);
     @include type-setting(-1); 
+
+    @media #{$large-up} {
+      margin-bottom: rem-calc($level1);
+    }
 
     .sliderLabel-value {
       color: $primaryColor;

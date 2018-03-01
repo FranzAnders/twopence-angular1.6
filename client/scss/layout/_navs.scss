@@ -245,10 +245,12 @@
     left: 0; 
     z-index: 102; 
     opacity: 0; 
-    @include transform(translateY(100vh)); 
+   -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     @media #{$medium-up} {
       display: none; 
+      opacity: 1;
     }
 
   }
@@ -293,14 +295,6 @@
 
 }
 
-
-.preload {
-  
-  .mainNav-overlay {
-    visibility: hidden; 
-  }
-
-}
 
 .no-touch {
   

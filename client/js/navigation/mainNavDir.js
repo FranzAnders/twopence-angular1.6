@@ -72,7 +72,7 @@ twopence.directive('mainNavDir', ['$timeout',
 
           document.body.classList.remove('preload');
 
-        }, 2000);
+        }, 1500);
 
 
         scope.$on('nav-is-open', function(event, data) {
