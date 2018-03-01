@@ -119,7 +119,7 @@
         
           <label class="switch">
         
-            <input type="checkbox" ng-model="calculator.graduateInfo.has_sponsor">
+            <input type="checkbox" ng-model="calculator.graduateInfo.has_sponsor" ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.loan, calculator.graduateInfo.has_sponsor)">
             <span class="slider round"></span>
         
           </label>
