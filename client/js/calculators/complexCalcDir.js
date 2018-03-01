@@ -142,6 +142,14 @@ twopence.directive('complexCalcDir', function() {
               termWithPickpocket = pickpocketUserMonths.length/12;
             }
 
+
+          console.log({"daysSaved":daysSaved, 
+                "interestAvoided": interestAvoided,
+                "interestPaidWithoutPickpocket": dumbYouInterestPaid, 
+                "interestPaidWithPickpocket": interestPaidWithPickpocket,
+                "termWithoutPickpocket": repaymentTermInYears,
+                "termWithPickpocket": termWithPickpocket});
+
             vm.graduateInfo.interest_avoided = interestAvoided;
             vm.graduateInfo.years_reclaimed = daysSaved / 360;
             vm.graduateInfo.interest_without_pickpocket = dumbYouInterestPaid;

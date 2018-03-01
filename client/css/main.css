@@ -20112,20 +20112,6 @@ button.is-inactive,
 .calculator .calculator-options-headline {
   position: relative;
 }
-/* line 68, ../scss/components/_calculators.scss */
-.calculator .calculator-options-headline:after {
-  content: "Advanced";
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: -3px;
-  padding-right: 0.75rem;
-  color: #afadad;
-  padding: 0.375rem;
-  padding-left: 0;
-  font-size: 0.8rem;
-  line-height: 1.33333;
-}
 /* line 83, ../scss/components/_calculators.scss */
 .calculator .calculator-switch {
   padding-left: 1.5rem;
