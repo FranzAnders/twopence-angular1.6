@@ -38,13 +38,6 @@ twopence.directive('complexCalcDir', function() {
 
 
       vm.calculate = function(studentLoanOutstanding, annualIncome, hasSponsor){
-
-            console.log(hasSponsor);
-            var pc = annualIncome/(250000 - 30000); /* the percentage slider value */
-            var loc = (pc * 330) + 12;
-            vm.loc = loc;
-            console.log(loc);
-
             var interestAvoided = 0;
             var daysSaved = 0;
 
@@ -135,24 +128,27 @@ twopence.directive('complexCalcDir', function() {
 
             var daysSaved = 0;
             var interestAvoided = 0;
+            var interestPaidWithPickpocket = 0;
+            var termWithPickpocket = 0;
             if (hasSponsor == true) {
               daysSaved = daysSavedPickpocketWithSponsor;
               interestAvoided = interestAvoidedPickpocketWithSponsor;
+              interestPaidWithPickpocket = pickpocketUserWithSponsorInterestPaid;
+              termWithPickpocket = sponsoredPickpocketUserMonths.length/12;
             } else {
               daysSaved = daysSavedPickpocket;
               interestAvoided = interestAvoidedPickpocket;
+              interestPaidWithPickpocket = pickpocketUserInterestPaid
+              termWithPickpocket = pickpocketUserMonths.length/12;
             }
-            
 
             vm.graduateInfo.interest_avoided = interestAvoided;
             vm.graduateInfo.years_reclaimed = daysSaved / 360;
             vm.graduateInfo.interest_without_pickpocket = dumbYouInterestPaid;
-            vm.graduateInfo.interest_with_pickpocket = pickpocketUserInterestPaid;
+            vm.graduateInfo.interest_with_pickpocket = interestPaidWithPickpocket;
             vm.graduateInfo.payment_period_without_pickpocket = repaymentTermInYears;
-            vm.graduateInfo.payment_period_with_pickpocket = pickpocketUserMonths.length/12;
-
+            vm.graduateInfo.payment_period_with_pickpocket = termWithPickpocket;
         }
-
 
     
 

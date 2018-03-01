@@ -212,7 +212,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
-             tooltip-template="With Pickpocket, you’ll be out of debt in only 7.8 years. Without Pickpocket, your typical repayment period would be 20 years.">
+             tooltip-template="With Pickpocket, you’ll be out of debt in only {{calculator.graduateInfo.payment_period_with_pickpocket | currency:'':0 }} years. Without Pickpocket, your typical repayment period would be {{calculator.graduateInfo.payment_period_without_pickpocket | currency:'':0}} years.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
               <use xlink:href="#icon-Help"/>
@@ -229,7 +229,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
-             tooltip-template="With Pickpocket, your grad will be out of debt in only 5 years. Without Pickpocket, their typical repayment period would be 20 years. ">
+             tooltip-template="With Pickpocket, your grad will be out of debt in only {{calculator.graduateInfo.payment_period_with_pickpocket | currency:'':0}} years. Without Pickpocket, their typical repayment period would be {{calculator.graduateInfo.payment_period_without_pickpocket | currency:'':0}} years. ">
               
               <svg class="tooltip-icon" ng-click="toggle()">
               <use xlink:href="#icon-Help"/>
