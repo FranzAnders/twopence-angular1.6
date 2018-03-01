@@ -30,9 +30,9 @@
     </div>
    
     <div class="calculator-innerContent pt0   grid  grid--flexDirectionColumn  ">
-        <label class="calculator-bodyCopy">
+        <label class="calculator-bodyCopy" >
             Estimate Graduate’s Annual Income
-            {{calculator.graduateInfo.income |currency:"$":0}}
+            <span class="txtc1  fwb text-micro">{{calculator.graduateInfo.income |currency:"$":0}}</span>
         </label>
 
         <div class="rangeSlider">
@@ -46,7 +46,7 @@
           </div>
 
           <div class="rangeSlider-thumb  hide-for-large-up"
-             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 200 + 'px'}">
+             ng-style="{left: ( (calculator.graduateInfo.income/(250000 - 30000)) * 200 ) + 'px'}">
             
           </div>
 
@@ -66,10 +66,10 @@
 
         <label class="calculator-bodyCopy">
             Estimate Student Loan Outstanding
-            {{calculator.graduateInfo.loan |currency:"$":0}}
+            <span class="txtc1  fwb text-micro">{{calculator.graduateInfo.loan |currency:"$":0}}</span>
         </label>
 
-        <div class="rangeSlider">
+        <div class="rangeSlider mb0">
           <div class="rangeSlider-track">
             
           </div>
@@ -97,9 +97,10 @@
         </div>
 
         
-<div class="pt2">
-  <hr class="hr--faded" >
-</div>
+      <div class="pt2 calculator-options-headline">
+        <hr class="hr--faded" >
+      </div>
+
       <div class="grid grid--center" 
          ng-if="calculator.type === 'graduate'">
         <div>
@@ -135,15 +136,13 @@
     <div class="calculator-innerContent">
       <p class="calculator-bodyCopy calculator-bodyCopy--small text-center"
          ng-if="calculator.type == 'sponsor'">
-        For a graduate $45,000 in debt who earns $75,000 annually, Pickpocket plus your sponsorship could save them <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get them out of debt  <span ng-if="!calculator.withSponsorship">12.2</span>
-          <span ng-if="calculator.withSponsorship">15</span> years faster.
+        For a graduate {{calculator.graduateInfo.loan | currency:"$":0}} in debt who earns {{calculator.graduateInfo.income | currency:"$":0}} annually, Pickpocket plus your sponsorship could save them {{calculator.graduateInfo.interest_avoided | currency:"$":0}} and get them out of debt  {{calculator.graduateInfo.years_reclaimed | currency:""}} years faster.
       </p>
 
       <p class="calculator-bodyCopy calculator-bodyCopy--small text-center"
          ng-if="calculator.type == 'graduate'">
 
-        If you were a graduate with $45,000 in debt and earning $75,000 annually, Pickpocket could save you <span ng-if="!calculator.withSponsorship">$16,902</span> <span ng-if="calculator.withSponsorship">$20,323</span> and get you out of debt <span ng-if="!calculator.withSponsorship">12.2</span>
-          <span ng-if="calculator.withSponsorship">15</span> years faster.
+        If you were a graduate with {{calculator.graduateInfo.loan | currency:"$":0}} in debt and earning {{calculator.graduateInfo.income | currency:"$":0}} annually, Pickpocket could save you  {{calculator.graduateInfo.interest_avoided | currency:"$":0}} and get you out of debt {{calculator.graduateInfo.years_reclaimed | currency:""}} years faster.
       </p>
     </div>
     

@@ -66,6 +66,25 @@
 
   }
 
+
+  .calculator-options-headline {
+    position: relative;
+
+    &:after {
+      content: "Advanced"; 
+      background-color: white;
+      position: absolute;
+      top: 0; 
+      left: -3px;
+      padding-right: rem-calc($level2);
+      color: $grey--med;
+      padding: rem-calc($level1);
+      padding-left: 0; 
+      @include type-setting(-1);
+    }
+  }
+
+
   .calculator-switch {
     padding-left: rem-calc($level4);
     padding-right: rem-calc($level2);
@@ -97,13 +116,13 @@
     color: #fff; 
     
     .calculator-results-result {
-      padding: rem-calc($level2); 
+      padding: rem-calc($level1); 
       white-space: nowrap; 
       width: 100%; 
 
       @media #{$medium-up} {
         padding: rem-calc($level3); 
-
+        padding-right: rem-calc($level1);
       }
 
     }
