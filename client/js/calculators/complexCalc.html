@@ -60,7 +60,7 @@
             
           </div>
 
-          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" ng-model="calculator.graduateInfo.income">
+          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.income">
 
         </div>
 
@@ -92,7 +92,7 @@
              ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 260 + 'px'}">
             
           </div>
-          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.loan, calculator.graduateInfo.has_sponsor)" ng-model="calculator.graduateInfo.loan">
+          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.loan, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.loan">
 
         </div>
 
