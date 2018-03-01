@@ -135,26 +135,16 @@ twopence.directive('complexCalcDir', function() {
             var interestAvoidedBySponsorAlone = pickpocketUserInterestPaid - pickpocketUserWithSponsorInterestPaid;
             var interestAvoidedPickpocketWithSponsor = interestAvoidedPickpocket + interestAvoidedBySponsorAlone;
 
-            console.log({"daysSavedPickpocket":daysSavedPickpocket, 
-                "daysSavedPickpocketWithSponsor": daysSavedPickpocketWithSponsor, 
-                "interestAvoidedPickpocket": interestAvoidedPickpocket, 
-                "interestAvoidedPickpocketWithSponsor": interestAvoidedPickpocketWithSponsor});
-
-            vm.graduateInfo.interest_avoided = interestAvoidedPickpocket;
-            vm.graduateInfo.years_reclaimed = daysSavedPickpocket / 360;
-
-
             if(hasSponsorship) {
             vm.graduateInfo.interest_avoided = interestAvoidedPickpocketWithSponsor;
             vm.graduateInfo.years_reclaimed = daysSavedPickpocketWithSponsor / 360;
 
+            } else {
+            vm.graduateInfo.interest_avoided = interestAvoidedPickpocket;
+            vm.graduateInfo.years_reclaimed = daysSavedPickpocket / 360;
             }
+
         };
-
-
-        // var result = vm.calculate(30000,75000,true);
-
-        // console.log(result); 
 
     }], 
     bindToController:{
@@ -165,15 +155,6 @@ twopence.directive('complexCalcDir', function() {
     templateUrl: 'js/calculators/complexCalc.html', 
     link: function() {
 
-  /*  
-
-        
-        var div = document.getElementById('result');
-        div.innerHTML += "daysSavedPickpocket:" + result["daysSavedPickpocket"] + ", should be: 5146.5 <br><br>";
-        div.innerHTML += "daysSavedPickpocketWithSponsor:" + result["daysSavedPickpocketWithSponsor"] + ", should be: 5986 <br><br>";
-        div.innerHTML += "interestAvoidedPickpocket: $" + result["interestAvoidedPickpocket"] + ", should be: $12,799 <br><br>";
-        div.innerHTML += "interestAvoidedPickpocketWithSponsor: $" + result["interestAvoidedPickpocketWithSponsor"] + ", should be: $14,687 <br><br>";
-*/
     }
 
   }
