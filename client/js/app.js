@@ -38,7 +38,7 @@ twopence.config(
     //
     // Pretty URLs activate if we're running  the production ENV
     //
-    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
+    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod' || ENV.environment_name === 'dev') {
 
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('');
@@ -433,7 +433,7 @@ twopence.config(
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:email",
-          abstract: true, 
+          abstract: true,
           views: {
 
             'sponsor': {
@@ -453,13 +453,13 @@ twopence.config(
               //
               return User.getUserInfo().then(function(userInfo) {
 
-                return userInfo; 
+                return userInfo;
 
               }).catch(function(err) {
 
-                return err; 
+                return err;
 
-              });   
+              });
 
             }]
 
