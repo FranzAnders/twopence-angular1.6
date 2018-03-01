@@ -619,11 +619,6 @@ twopence.run(
 
     });
 
-    $rootScope.$on('stateChangeStart', function(event) {
-
-    });
-
-
 
     //
     // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
@@ -631,11 +626,30 @@ twopence.run(
     $timeout(function(){
 
       document.body.classList.remove('preload');
-      console.log(document.body); 
 
-    }, 3000);
+    }, 1500);
 
 
+
+   // //
+   //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
+   //  //
+   //  $window.addEventListener('click', function() {
+
+   //    document.body.classList.remove('preload');
+   //    console.log('hello')
+
+   //  });
+
+   //  //
+   //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
+   //  //
+   //  $window.addEventListener('touchstart', function() {
+
+   //    document.body.classList.remove('preload');
+   //    console.log('hello')
+
+   //  });
     //
     // Checking if the user is logged in, if not, we take them to the homepage
     //
