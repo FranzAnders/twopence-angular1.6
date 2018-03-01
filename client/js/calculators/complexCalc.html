@@ -31,7 +31,7 @@
    
     <div class="calculator-innerContent pt0   grid  grid--flexDirectionColumn  ">
         <label class="calculator-bodyCopy  grid grid--center  grid--justifySpaceBetween" >
-            Estimate Annual Income
+            Estimate <span ng-if="calculator.type === 'sponsor'">Graduate's </span>Annual Income
             <span class="txtc1  fwb text-micro">{{calculator.graduateInfo.income |currency:"$":0}}</span>
         </label>
 
@@ -132,19 +132,6 @@
   </div>
 
   <div class="calculator-resultsContainer">
-    
-    <div class="calculator-innerContent">
-      <p class="calculator-bodyCopy calculator-bodyCopy--small text-center"
-         ng-if="calculator.type == 'sponsor'">
-        For a graduate {{calculator.graduateInfo.loan | currency:"$":0}} in debt who earns {{calculator.graduateInfo.income | currency:"$":0}} annually, Pickpocket plus your sponsorship could save them {{calculator.graduateInfo.interest_avoided | currency:"$":0}} and get them out of debt  {{calculator.graduateInfo.years_reclaimed | currency:""}} years faster.
-      </p>
-
-      <p class="calculator-bodyCopy calculator-bodyCopy--small text-center"
-         ng-if="calculator.type == 'graduate'">
-
-        If you were a graduate with {{calculator.graduateInfo.loan | currency:"$":0}} in debt and earning {{calculator.graduateInfo.income | currency:"$":0}} annually, Pickpocket could save you  {{calculator.graduateInfo.interest_avoided | currency:"$":0}} and get you out of debt {{calculator.graduateInfo.years_reclaimed | currency:""}} years faster.
-      </p>
-    </div>
     
     <div class="calculator-results grid  grid--center">
 

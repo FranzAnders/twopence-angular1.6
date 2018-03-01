@@ -20169,10 +20169,6 @@ button.is-inactive,
 .calculator .calculator-resultsContainer .calculator-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 135, ../scss/components/_calculators.scss */
-.calculator .calculator-resultsContainer .calculator-results {
-  border-top: 1px solid #afadad;
-}
 /* line 140, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .result-label {
   display: block;
