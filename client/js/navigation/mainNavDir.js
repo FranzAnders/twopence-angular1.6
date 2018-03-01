@@ -65,14 +65,6 @@ twopence.directive('mainNavDir', ['$timeout',
     link: function(scope, element) {
 
 
-        //
-        // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
-        //
-        $timeout(function(){
-
-          document.body.classList.remove('preload');
-
-        }, 1500);
 
 
         scope.$on('nav-is-open', function(event, data) {

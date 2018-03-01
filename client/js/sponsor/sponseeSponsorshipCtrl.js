@@ -375,7 +375,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
       //
       if(!vm.graduateInfo.identity) {
 
-        $state.go('sponsor.sponseeAdd')
+        //$state.go('sponsor.sponseeAdd')
 
       }
 
