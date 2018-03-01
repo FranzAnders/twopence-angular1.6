@@ -16,8 +16,6 @@ twopence.directive('complexCalcDir', function() {
 
       var vm  = this; 
 
-      vm.withSponsorship = false; 
-
       vm.$onInit = function() {
 
         vm.graduateInfo = {
@@ -30,22 +28,22 @@ twopence.directive('complexCalcDir', function() {
 
         if(vm.type === 'sponsor') {
           
-          vm.withSponsorship = true; 
+          vm.graduateInfo.has_sponsor = true; 
 
         }
+
+        vm.calculate(vm.graduateInfo.loan, vm.graduateInfo.income, vm.graduateInfo.has_sponsor)
 
       }
 
 
+      vm.calculate = function(studentLoanOutstanding, annualIncome, hasSponsor){
 
-      vm.calculate = function(studentLoanOutstanding, annualIncome, hasSponsorship){
-
-          console.log(hasSponsorship);
+            console.log(hasSponsor);
             var pc = annualIncome/(250000 - 30000); /* the percentage slider value */
             var loc = (pc * 330) + 12;
             vm.loc = loc;
             console.log(loc);
-
 
             var interestAvoided = 0;
             var daysSaved = 0;
@@ -65,7 +63,7 @@ twopence.directive('complexCalcDir', function() {
             var savingsRate = 0.10;
             var grossIncome = initGrossIncome;
 
-            if(hasSponsorship == true) {
+            if(hasSponsor == true) {
               numberOfSponsors = 1;
             }
 
@@ -135,16 +133,28 @@ twopence.directive('complexCalcDir', function() {
             var interestAvoidedBySponsorAlone = pickpocketUserInterestPaid - pickpocketUserWithSponsorInterestPaid;
             var interestAvoidedPickpocketWithSponsor = interestAvoidedPickpocket + interestAvoidedBySponsorAlone;
 
-            if(hasSponsorship) {
-            vm.graduateInfo.interest_avoided = interestAvoidedPickpocketWithSponsor;
-            vm.graduateInfo.years_reclaimed = daysSavedPickpocketWithSponsor / 360;
-
+            var daysSaved = 0;
+            var interestAvoided = 0;
+            if (hasSponsor == true) {
+              daysSaved = daysSavedPickpocketWithSponsor;
+              interestAvoided = interestAvoidedPickpocketWithSponsor;
             } else {
-            vm.graduateInfo.interest_avoided = interestAvoidedPickpocket;
-            vm.graduateInfo.years_reclaimed = daysSavedPickpocket / 360;
+              daysSaved = daysSavedPickpocket;
+              interestAvoided = interestAvoidedPickpocket;
             }
+            
 
-        };
+            vm.graduateInfo.interest_avoided = interestAvoided;
+            vm.graduateInfo.years_reclaimed = daysSaved / 360;
+            vm.graduateInfo.interest_without_pickpocket = dumbYouInterestPaid;
+            vm.graduateInfo.interest_with_pickpocket = pickpocketUserInterestPaid;
+            vm.graduateInfo.payment_period_without_pickpocket = repaymentTermInYears;
+            vm.graduateInfo.payment_period_with_pickpocket = pickpocketUserMonths.length/12;
+
+        }
+
+
+    
 
     }], 
     bindToController:{

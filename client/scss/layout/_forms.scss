@@ -1395,3 +1395,16 @@ input[type="radio"].radio--large + label {
 
 }
 
+
+.rangeSlider--secondary {
+  
+  .rangeSlider-fill {
+    background-color: $tertiaryColor--translucent; 
+  }
+
+  .rangeSlider-thumb {
+    background-color: $tertiaryColor; 
+  }
+
+}
+

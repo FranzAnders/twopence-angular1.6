@@ -6229,7 +6229,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
 
 /* line 55, ../scss/abstracts/_typography.scss */
 .fwb, strong, footer .footer-title, button,
-.button, .card--sponsorship .card-content .sponsorship-contributions, .calculator .calculator-resultsContainer .result-number, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option, .statLabel, .tag {
+.button, .card--sponsorship .card-content .sponsorship-contributions, .calculator .calculator-sliderLabel .sliderLabel-value, .calculator .calculator-resultsContainer .result-number, .subline, .list--small .list-item.list-item--title, .list--medium .list-item.list-item--title, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option, .statLabel, .tag {
   font-weight: 700;
 }
 
@@ -17075,7 +17075,7 @@ input.input--large {
 }
 /* line 273, ../scss/layout/_forms.scss */
 .input-group input:-webkit-autofill {
-  background-color: rgba(35, 142, 178, 0.9);
+  background-color: rgba(35, 142, 178, 0.5);
 }
 /* line 279, ../scss/layout/_forms.scss */
 .input-group input:active, .input-group input:focus {
@@ -17972,6 +17972,15 @@ input[type="radio"].radio--large + label {
   .rangeSlider input[type=range]::-webkit-slider-thumb {
     width: 3.75rem;
   }
+}
+
+/* line 1401, ../scss/layout/_forms.scss */
+.rangeSlider--secondary .rangeSlider-fill {
+  background-color: rgba(35, 142, 178, 0.5);
+}
+/* line 1405, ../scss/layout/_forms.scss */
+.rangeSlider--secondary .rangeSlider-thumb {
+  background-color: #238EB2;
 }
 
 /*------------------------------------*\
@@ -20034,17 +20043,14 @@ button.is-inactive,
 /*------------------------------------*\
     #Calculators
 \*------------------------------------*/
-/*------------------------------------*\
-    #Simple Calculator
-\*------------------------------------*/
-/* line 12, ../scss/components/_calculators.scss */
+/* line 7, ../scss/components/_calculators.scss */
 .calculator {
   margin-top: 1.5rem;
   margin-bottom: 5.25rem;
   max-width: 18.5rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 12, ../scss/components/_calculators.scss */
+  /* line 7, ../scss/components/_calculators.scss */
   .calculator {
     margin-bottom: 0;
     width: 18.75rem;
@@ -20052,13 +20058,13 @@ button.is-inactive,
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 12, ../scss/components/_calculators.scss */
+  /* line 7, ../scss/components/_calculators.scss */
   .calculator {
-    margin-bottom: 4.125rem;
+    margin-bottom: 3rem;
     width: 20.25rem;
   }
 }
-/* line 28, ../scss/components/_calculators.scss */
+/* line 23, ../scss/components/_calculators.scss */
 .calculator .calculator-badge {
   position: absolute;
   top: -1.5rem;
@@ -20073,12 +20079,12 @@ button.is-inactive,
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 40, ../scss/components/_calculators.scss */
+/* line 35, ../scss/components/_calculators.scss */
 .calculator .calculator-badge .calculator-badge-icon {
   fill: #231F20;
   width: 65%;
 }
-/* line 46, ../scss/components/_calculators.scss */
+/* line 41, ../scss/components/_calculators.scss */
 .calculator .calculator-controls {
   background-color: #fff;
   color: #7d7d7d;
@@ -20086,7 +20092,7 @@ button.is-inactive,
   margin-bottom: 0.375rem;
   padding-top: 1.125rem;
 }
-/* line 54, ../scss/components/_calculators.scss */
+/* line 49, ../scss/components/_calculators.scss */
 .calculator .calculator-headline {
   font-weight: bold;
   color: #231F20;
@@ -20094,7 +20100,7 @@ button.is-inactive,
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 61, ../scss/components/_calculators.scss */
+/* line 56, ../scss/components/_calculators.scss */
 .calculator .calculator-subLine {
   font-weight: bold;
   color: #231F20;
@@ -20102,11 +20108,11 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 70, ../scss/components/_calculators.scss */
+/* line 65, ../scss/components/_calculators.scss */
 .calculator .calculator-options-headline {
   position: relative;
 }
-/* line 73, ../scss/components/_calculators.scss */
+/* line 68, ../scss/components/_calculators.scss */
 .calculator .calculator-options-headline:after {
   content: "Advanced";
   background-color: white;
@@ -20120,63 +20126,69 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 88, ../scss/components/_calculators.scss */
+/* line 83, ../scss/components/_calculators.scss */
 .calculator .calculator-switch {
   padding-left: 1.5rem;
   padding-right: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 88, ../scss/components/_calculators.scss */
+  /* line 83, ../scss/components/_calculators.scss */
   .calculator .calculator-switch {
     padding-left: 1.125rem;
   }
 }
-/* line 98, ../scss/components/_calculators.scss */
+/* line 93, ../scss/components/_calculators.scss */
 .calculator .calculator-bodyCopy {
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 103, ../scss/components/_calculators.scss */
-.calculator .calculator-bodyCopy--small {
-  margin-bottom: 0;
-  font-size: 0.6rem;
-  line-height: 1.5;
-}
-/* line 109, ../scss/components/_calculators.scss */
+/* line 99, ../scss/components/_calculators.scss */
 .calculator .calculator-innerContent {
   padding: 1.125rem;
 }
-/* line 114, ../scss/components/_calculators.scss */
+/* line 105, ../scss/components/_calculators.scss */
+.calculator .calculator-sliderLabel {
+  margin-bottom: 0.375rem;
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 109, ../scss/components/_calculators.scss */
+.calculator .calculator-sliderLabel .sliderLabel-value {
+  color: #6AC6C5;
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 116, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer {
   background-color: #231F20;
   color: #fff;
 }
-/* line 118, ../scss/components/_calculators.scss */
-.calculator .calculator-resultsContainer .calculator-results-result {
+/* line 123, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .calculator-results .calculator-results-result {
   padding: 0.375rem;
   white-space: nowrap;
   width: 100%;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 118, ../scss/components/_calculators.scss */
-  .calculator .calculator-resultsContainer .calculator-results-result {
+  /* line 123, ../scss/components/_calculators.scss */
+  .calculator .calculator-resultsContainer .calculator-results .calculator-results-result {
     padding: 1.125rem;
     padding-right: 0.375rem;
   }
 }
-/* line 130, ../scss/components/_calculators.scss */
-.calculator .calculator-resultsContainer .calculator-results-result:nth-child(1) {
+/* line 135, ../scss/components/_calculators.scss */
+.calculator .calculator-resultsContainer .calculator-results .calculator-results-result:nth-child(1) {
   border-right: 1px solid #afadad;
 }
-/* line 140, ../scss/components/_calculators.scss */
+/* line 142, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .result-label {
   display: block;
   margin-bottom: 0.375rem;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 147, ../scss/components/_calculators.scss */
+/* line 149, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .result-number {
   color: #6AC6C5;
   font-family: "itc_souvenirmedium", sans-serif;
@@ -20187,11 +20199,23 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media screen and (min-width: 360px) {
-  /* line 147, ../scss/components/_calculators.scss */
+  /* line 149, ../scss/components/_calculators.scss */
   .calculator .calculator-resultsContainer .result-number {
     font-size: 2rem;
     line-height: 1.33333;
   }
+}
+
+/*------------------------------------*\
+    #Sponsor Calculator
+\*------------------------------------*/
+/* line 179, ../scss/components/_calculators.scss */
+.calculator--sponsor .calculator-sliderLabel .sliderLabel-value {
+  color: #238EB2;
+}
+/* line 184, ../scss/components/_calculators.scss */
+.calculator--sponsor .calculator-results .result-number {
+  color: #238EB2;
 }
 
 /*------------------------------------*\
@@ -20319,7 +20343,7 @@ button.is-inactive,
 @media only screen and (min-width: 40.0625em) {
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
-    min-height: 44.5rem;
+    min-height: 42rem;
     margin-top: 1.875rem;
     padding-top: 0;
   }
@@ -20328,10 +20352,10 @@ button.is-inactive,
   /* line 7, ../scss/components/_heroHeader.scss */
   .heroHeader {
     min-height: auto;
-    height: 48.75rem;
+    height: 41.25rem;
   }
 }
-/* line 26, ../scss/components/_heroHeader.scss */
+/* line 25, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background {
   position: absolute;
   top: 0;
@@ -20350,7 +20374,7 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 37, ../scss/components/_heroHeader.scss */
+/* line 36, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background--sponsors {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
   background: #1e5799;
@@ -20360,31 +20384,31 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63decb', endColorstr='#1e5799',GradientType=0 );
   /* IE6-9 */
 }
-/* line 42, ../scss/components/_heroHeader.scss */
+/* line 41, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-contentContainer {
   color: #fff;
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 48, ../scss/components/_heroHeader.scss */
+  /* line 47, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-content {
     width: 60rem;
   }
 }
-/* line 56, ../scss/components/_heroHeader.scss */
+/* line 55, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-headline {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 56, ../scss/components/_heroHeader.scss */
+  /* line 55, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-headline {
     margin-top: 2.25rem;
     max-width: 20.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 56, ../scss/components/_heroHeader.scss */
+  /* line 55, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-headline {
     min-width: 34.375rem;
     font-size: 2.5rem;
@@ -20392,13 +20416,13 @@ button.is-inactive,
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 73, ../scss/components/_heroHeader.scss */
+  /* line 72, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-description {
     max-width: 20.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 73, ../scss/components/_heroHeader.scss */
+  /* line 72, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-description {
     max-width: 27.25rem;
   }

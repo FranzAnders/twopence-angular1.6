@@ -14,7 +14,7 @@ $secondaryColor--translucent: rgba($secondaryColor, .9);
 
 $tertiaryColor: #238EB2; 
 $tertiaryColor--dark: darken($tertiaryColor, 25%); 
-$tertiaryColor--translucent: rgba($tertiaryColor, .9); 
+$tertiaryColor--translucent: rgba($tertiaryColor, .5); 
 
 $quaternaryColor: #e8f1f1; 
 $quaternaryColor--dark: darken($quaternaryColor, 25%); 

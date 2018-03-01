@@ -1,6 +1,7 @@
 
 
-<div class="calculator">
+<div class="calculator"
+     ng-class="{ 'calculator--sponsor' : calculator.type === 'sponsor'}">
   
   <div class="calculator-controls">
 
@@ -30,12 +31,12 @@
     </div>
    
     <div class="calculator-innerContent pt0   grid  grid--flexDirectionColumn  ">
-        <label class="calculator-bodyCopy  grid grid--center  grid--justifySpaceBetween" >
+        <label class="calculator-sliderLabel grid grid--center  grid--justifySpaceBetween" >
             Estimate <span ng-if="calculator.type === 'sponsor'">Graduate's </span>Annual Income
-            <span class="txtc1  fwb text-micro">{{calculator.graduateInfo.income |currency:"$":0}}</span>
+            <span class="sliderLabel-value">{{calculator.graduateInfo.income |currency:"$":0}}</span>
         </label>
 
-        <div class="rangeSlider">
+        <div class="rangeSlider"  ng-class="{ 'rangeSlider--secondary' : calculator.type === 'sponsor'}">
           <div class="rangeSlider-track">
             
           </div>
@@ -64,12 +65,12 @@
 
         </div>
 
-        <label class="calculator-bodyCopy   grid grid--center  grid--justifySpaceBetween">
+        <label class="calculator-sliderLabel  grid grid--center  grid--justifySpaceBetween">
             Estimate Student Loan Outstanding
-            <span class="txtc1  fwb text-micro">{{calculator.graduateInfo.loan |currency:"$":0}}</span>
+            <span class="sliderLabel-value">{{calculator.graduateInfo.loan |currency:"$":0}}</span>
         </label>
 
-        <div class="rangeSlider mb0">
+        <div class="rangeSlider mb0"  ng-class="{ 'rangeSlider--secondary' : calculator.type === 'sponsor'}">
           <div class="rangeSlider-track">
             
           </div>
@@ -142,28 +143,12 @@
         
           <span ng-if="calculator.type == 'graduate'">
 
-              <div class="tooltip"  
-             ng-if="!calculator.withSponsorship"
-             tooltips 
-             tooltip-smart="true"
-             tooltip-size="small"
-             tooltip-show-trigger="click"
-            tooltip-template="With Pickpocket you would pay only $9,373 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
-              
-              <svg class="tooltip-icon" ng-click="toggle()">
-              <use xlink:href="#icon-Help"/>
-            
-              </svg>
-            
-            </div>
-            
             <div class="tooltip"  
-             ng-if="calculator.withSponsorship"
              tooltips 
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
-             tooltip-template="With Pickpocket you would pay only $5,952 in interest over the life of your loans. Without Pickpocket, you would end up paying $26,275.">
+             tooltip-template="With Pickpocket you would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of your loans. Without Pickpocket, you would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
               <use xlink:href="#icon-Help"/>
@@ -182,7 +167,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
-            tooltip-template="With Pickpocket your grad would pay only $9,373 in interest over the life of their loans. Without Pickpocket, they would end up paying $26,275.">
+            tooltip-template="With Pickpocket your grad would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of their loans. Without Pickpocket, they would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
               <use xlink:href="#icon-Help"/>
@@ -197,7 +182,7 @@
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
-             tooltip-template="With Pickpocket your grad would pay only $5,952 in interest over the life of their loans. Without Pickpocket, they would end up paying $26,275. ">
+             tooltip-template="With Pickpocket your grad would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of their loans. Without Pickpocket, they would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}. ">
               
               <svg class="tooltip-icon" ng-click="toggle()">
               <use xlink:href="#icon-Help"/>
@@ -224,25 +209,10 @@
           <span ng-if="calculator.type == 'graduate'">
 
               <div class="tooltip"  tooltips 
-             ng-if="!calculator.withSponsorship"
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"
              tooltip-template="With Pickpocket, you’ll be out of debt in only 7.8 years. Without Pickpocket, your typical repayment period would be 20 years.">
-              
-              <svg class="tooltip-icon" ng-click="toggle()">
-              <use xlink:href="#icon-Help"/>
-            
-              </svg>
-            
-            </div>
-            
-            <div class="tooltip"  tooltips 
-             ng-if="calculator.withSponsorship"
-             tooltip-smart="true"
-             tooltip-size="small"
-             tooltip-show-trigger="click"
-             tooltip-template="With Pickpocket, you’ll be out of debt in only 5 years. Without Pickpocket, your typical repayment period would be 20 years.">
               
               <svg class="tooltip-icon" ng-click="toggle()">
               <use xlink:href="#icon-Help"/>
@@ -255,22 +225,7 @@
 
           <span ng-if="calculator.type == 'sponsor'">
 
-              <div class="tooltip"  tooltips 
-             ng-if="!calculator.withSponsorship"
-             tooltip-smart="true"
-             tooltip-size="small"
-             tooltip-show-trigger="click"
-             tooltip-template="With Pickpocket, your grad will be out of debt in only 7.8 years. Without Pickpocket, their typical repayment period would be 20 years. ">
-              
-              <svg class="tooltip-icon" ng-click="toggle()">
-              <use xlink:href="#icon-Help"/>
-            
-              </svg>
-            
-            </div>
-            
             <div class="tooltip"  tooltips 
-             ng-if="calculator.withSponsorship"
              tooltip-smart="true"
              tooltip-size="small"
              tooltip-show-trigger="click"

@@ -4,11 +4,6 @@
 \*------------------------------------*/
 
 
-/*------------------------------------*\
-    #Simple Calculator
-\*------------------------------------*/
-
-
 .calculator {
   margin-top: rem-calc($base-magic-number);
   margin-bottom: rem-calc($level7 + $level6);
@@ -21,7 +16,7 @@
   }
 
   @media #{$large-up} {
-    margin-bottom: rem-calc($level7 + $level3);
+    margin-bottom: rem-calc($level7);
     width: rem-calc(324px); 
   }
 
@@ -99,41 +94,48 @@
     margin-bottom: rem-calc($level1);
     @include type-setting(-1); 
   }
-  
-  .calculator-bodyCopy--small {
-    margin-bottom: 0; 
-    @include type-setting(-2); 
-  }
-  
+
 
   .calculator-innerContent {
     padding: rem-calc($level3); 
 
   }
 
+
+  .calculator-sliderLabel {
+    margin-bottom: rem-calc($level1);
+    @include type-setting(-1); 
+
+    .sliderLabel-value {
+      color: $primaryColor;
+      @extend %fwb; 
+      @include type-setting(-1);  
+    }
+  }
+
   .calculator-resultsContainer {
     background-color: $secondaryColor;
     color: #fff; 
-    
-    .calculator-results-result {
-      padding: rem-calc($level1); 
-      white-space: nowrap; 
-      width: 100%; 
-
-      @media #{$medium-up} {
-        padding: rem-calc($level3); 
-        padding-right: rem-calc($level1);
-      }
-
-    }
-
-    .calculator-results-result:nth-child(1) {
-      border-right: 1px solid $grey--med; 
-
-    }
 
     .calculator-results {
       //border-top: 1px solid $grey--med; 
+
+      .calculator-results-result {
+        padding: rem-calc($level1); 
+        white-space: nowrap; 
+        width: 100%; 
+
+        @media #{$medium-up} {
+          padding: rem-calc($level3); 
+          padding-right: rem-calc($level1);
+        }
+
+      }
+
+      .calculator-results-result:nth-child(1) {
+        border-right: 1px solid $grey--med; 
+
+      }
 
     }
 
@@ -160,5 +162,27 @@
 
     }
 
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Sponsor Calculator
+\*------------------------------------*/
+
+.calculator--sponsor {
+  
+  .calculator-sliderLabel {
+    .sliderLabel-value {
+      color: $tertiaryColor; 
+    }
+  }
+  .calculator-results {
+    .result-number{
+      color: $tertiaryColor
+    }
   }
 }
