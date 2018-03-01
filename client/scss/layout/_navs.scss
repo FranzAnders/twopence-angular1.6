@@ -105,6 +105,8 @@
     margin-left: auto; 
     z-index: 103; 
     padding-top: rem-calc($level7 + $level6); 
+    opacity: 0; 
+    @include transform(translateY(100vh)); 
     @extend %text-left; 
 
     @media #{$medium-up} {
@@ -113,6 +115,8 @@
       right: auto; 
       left: auto; 
       margin-left: 3%;
+      opacity: 1; 
+      @include transform(translateY(0)); 
     }
 
     .mainNav-menu-item {
@@ -233,8 +237,7 @@
     }
   }
 
-
-  .mainNav-overlay {
+  .mainNav-menu--offCanvas {
     color: #fff; 
     position: fixed; 
     transform-origin: center; 
@@ -244,23 +247,19 @@
     right: 0; 
     left: 0; 
     z-index: 102; 
-    opacity: 0; 
    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-
-    @media #{$medium-up} {
-      display: none; 
-      opacity: 1;
-    }
-
+    opacity: 0; 
+    @include transform(translateY(100vh));
   }
+
   
   @media #{$small-only} {
 
     &.is-closed {  // for when nav is closed
 
       .mainNav-menu {
-        @include animation(main-nav-container-disappear .1s ceaser($easeInOutCubic) forwards .4s); 
+        @include animation(main-nav-overlay-disappear .4s ceaser($easeInOutCubic) forwards); 
         
         .mainNav-menu-item {
           opacity: 0;   
@@ -268,31 +267,20 @@
         }
       }
 
-      .mainNav-overlay {
-        @include animation(main-nav-overlay-disappear .4s ceaser($easeInOutCubic) forwards); 
-      }
     }
 
     &.is-open { // for when nav is open
       
       .mainNav-menu {
-        @include animation(main-nav-container-appear .1s ceaser($easeInOutCubic) forwards .1s); 
-        
+        @include animation(main-nav-overlay-appear .4s ceaser($easeInOutCubic) forwards); 
+
         .mainNav-menu-item {
           opacity: 1;   
           @include transform(translateY(0));     
         }
       }
-
-
-      .mainNav-overlay {
-        @include animation(main-nav-overlay-appear .4s ceaser($easeInOutCubic) forwards); 
-      }
-
     }
-
   }
-
 }
 
 
