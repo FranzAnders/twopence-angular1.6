@@ -566,12 +566,14 @@ $toggleColor: $secondaryColor;
   99% {
 
     opacity: 1; 
+    z-index: 100; 
     @include transform(translateX(0)); 
 
   }
 
  100% {
     opacity: 0; 
+    z-index: -1; 
     @include transform(translateX(-300%)); 
 
   }
@@ -584,16 +586,20 @@ $toggleColor: $secondaryColor;
   0% {
     opacity: 0; 
     @include transform(translateX(-300%)); 
+    z-index: -1; 
+
 
   }
   1% {
     opacity: 1; 
+    z-index: 100; 
     @include transform(translateX(0)); 
   }
 
   100% {
 
     opacity: 1; 
+    z-index: 100; 
     @include transform(translateX(0)); 
 
   }
