@@ -31,9 +31,11 @@
     </div>
    
     <div class="calculator-innerContent pt0   grid  grid--flexDirectionColumn  ">
-        <label class="calculator-sliderLabel grid grid--center  grid--justifySpaceBetween" >
-            Estimate <span ng-if="calculator.type === 'sponsor'">Graduate's </span>Annual Income
-            <span class="sliderLabel-value">{{calculator.graduateInfo.income |currency:"$":0}}</span>
+        <label class="calculator-sliderLabel grid grid--center grid--justifySpaceBetween" >
+            
+            <span><span ng-if="calculator.type === 'sponsor'">Graduate's </span>Annual Income</span>
+
+            <span class="sliderLabel-value">{{calculator.graduateInfo.income | thousandsToKFilter}}</span>
         </label>
 
         <div class="rangeSlider"  ng-class="{ 'rangeSlider--secondary' : calculator.type === 'sponsor'}">
@@ -65,9 +67,9 @@
 
         </div>
 
-        <label class="calculator-sliderLabel  grid grid--center  grid--justifySpaceBetween">
-            Estimate Student Loan Outstanding
-            <span class="sliderLabel-value">{{calculator.graduateInfo.loan |currency:"$":0}}</span>
+        <label class="calculator-sliderLabel  grid grid--center grid--justifySpaceBetween">
+             Student Loan Outstanding
+            <span class="sliderLabel-value">{{calculator.graduateInfo.loan | thousandsToKFilter}}</span>
         </label>
 
         <div class="rangeSlider mb0"  ng-class="{ 'rangeSlider--secondary' : calculator.type === 'sponsor'}">

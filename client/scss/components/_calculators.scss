@@ -112,7 +112,7 @@
     .sliderLabel-value {
       color: $primaryColor;
       @extend %fwb; 
-      @include type-setting(-1);  
+      @include type-setting(1);  
     }
   }
 
