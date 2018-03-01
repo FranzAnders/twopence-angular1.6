@@ -26,7 +26,6 @@
 
   @media #{$medium-up} {
     height: rem-calc(72px)
-
   }
 
 }
@@ -36,7 +35,6 @@
   width: 100%; 
   z-index: 100;
   @extend %position-fixed; 
-
 }
 
 .absolute-nav {
@@ -44,7 +42,6 @@
   z-index: 100; 
   top: 0; 
   @extend %position-absolute; 
-
 }
 
 
@@ -63,7 +60,6 @@
   @media #{$large-up} {
     padding-right: rem-calc(0);
     padding-left: rem-calc(0);
-    
   }
 
 
@@ -80,7 +76,6 @@
         @include transition(all .2s ceaser($easeOutCubic));
         @extend %position-relative; 
 
-
         .mainNav-title-logo {
           height: 100%; 
           width: rem-calc(120px);
@@ -88,13 +83,11 @@
 
           @media #{$medium-up} {
             width: rem-calc(140px); 
-
           }
 
 
           @media #{$large-up} {
             width: rem-calc(160px); 
-
           }
 
         }
@@ -131,7 +124,6 @@
       @media #{$medium-up} {
         margin-bottom: 0; 
         margin-right: rem-calc($level2); 
-
       }
 
     }
@@ -139,9 +131,7 @@
     @for $i from 1 through 6 {
 
       .mainNav-menu-item:nth-of-type(#{$i}) {
-
         @include transition-delay(.03s * $i); 
-
       }
 
     }
@@ -150,7 +140,6 @@
       
       @media #{$medium-up} {
         margin-right: 0;  
-
       }
 
     }
@@ -163,7 +152,6 @@
       right: 0; 
       margin-right: auto;  
       margin-left: auto;  
-
     }
 
     .mainNav-menu-links {
@@ -172,7 +160,6 @@
 
       @media #{$large-up} {
         max-width: rem-calc(420px); 
-
       }
     }
 
@@ -181,14 +168,10 @@
       @extend %position-relative; 
       @include type-setting(5);  
 
-
       @media #{$medium-up} {
         color: $secondaryColor; 
         @include type-setting(-1);  
-
       }
-
-
 
     }
 
@@ -311,6 +294,13 @@
 }
 
 
+.preload {
+  
+  .mainNav-overlay {
+    visibility: hidden; 
+  }
+
+}
 
 .no-touch {
   
