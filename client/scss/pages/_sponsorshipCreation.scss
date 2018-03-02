@@ -47,6 +47,34 @@
 
 
 
+
+/*------------------------------------*\
+    #A Plan card
+\*------------------------------------*/
+
+.card--plan {
+  border-top: 6px solid $primaryColor; 
+  @include transform(translateY(0)); 
+  @include transition(all .2s ceaser($easeInOutCubic)); 
+  
+  .card-content {
+    padding-top: rem-calc($level2);
+  }
+
+  &:hover, 
+  &:focus {
+   @include box-shadow(0 1px 20px rgba(30,30,30, .1));
+   @include transform(translateY(-2px)); 
+
+  }
+
+}
+
+
+
+
+
+
 /*------------------------------------*\
     #Custom Amount Input  
 \*------------------------------------*/

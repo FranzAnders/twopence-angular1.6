@@ -5,30 +5,42 @@
     Sponsor Mail Sign Up Directive
 \*------------------------------------*/
 
-twopence.directive('sponsorMailSignUpDir', function() {
+twopence.directive('sponsorMailSignUpDir', ['Referrals', function(Referrals) {
 
   return {
 
     restrict: "E",
-    scope: {}, 
+    scope: {},
     replace: true,
     templateUrl: "js/home/sponsorMailSignUp.html",
     controller: function() {
 
-      var vm = this; 
+      var vm = this;
 
-    }, 
-    controllerAs: "mailSignUp", 
+    },
+    controllerAs: "mailSignUp",
     bindToController: {
 
       inputLabel: "@"
 
     },
     link: function(scope, element, attrs) {
+        var form = $(element.children()[0]),
+        button = form.find('button'),
+        emailInput = form.find('input');
 
-
+        button.click(function(){
+          var emailAddress = emailInput.val();
+          mixpanel.alias(emailAddress);
+          mixpanel.identify(emailAddress);
+          mixpanel.people.set({
+            '$created': new Date(),
+            '$email': emailAddress,
+            'Referred By': Referrals.getReferral() || 'none'
+          })
+        })
     }
 
   }
 
-}); 
+}]);

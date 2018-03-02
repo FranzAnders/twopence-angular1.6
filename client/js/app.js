@@ -38,7 +38,7 @@ twopence.config(
     //
     // Pretty URLs activate if we're running  the production ENV
     //
-    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
+    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod' || ENV.environment_name === 'dev') {
 
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('');
@@ -433,7 +433,7 @@ twopence.config(
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:email",
-          abstract: true, 
+          abstract: true,
           views: {
 
             'sponsor': {
@@ -453,13 +453,13 @@ twopence.config(
               //
               return User.getUserInfo().then(function(userInfo) {
 
-                return userInfo; 
+                return userInfo;
 
               }).catch(function(err) {
 
-                return err; 
+                return err;
 
-              });   
+              });
 
             }]
 
@@ -619,23 +619,37 @@ twopence.run(
 
     });
 
-    $rootScope.$on('stateChangeStart', function(event) {
-
-    });
 
 
+  //
+  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
+  //
+  $timeout(function(){
 
-    //
-    // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
-    //
-    $timeout(function(){
+    document.body.classList.remove('preload');
 
-      document.body.classList.remove('preload');
-      console.log(document.body); 
-
-    }, 3000);
+  }, 1500);
 
 
+   // //
+   //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
+   //  //
+   //  $window.addEventListener('click', function() {
+
+   //    document.body.classList.remove('preload');
+   //    console.log('hello')
+
+   //  });
+
+   //  //
+   //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
+   //  //
+   //  $window.addEventListener('touchstart', function() {
+
+   //    document.body.classList.remove('preload');
+   //    console.log('hello')
+
+   //  });
     //
     // Checking if the user is logged in, if not, we take them to the homepage
     //
