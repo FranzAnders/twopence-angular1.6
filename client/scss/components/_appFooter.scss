@@ -1,0 +1,40 @@
+
+
+/*------------------------------------*\
+    #App Footer
+\*------------------------------------*/
+
+
+.appFooter {
+  width: 100%; 
+  background-color: $primaryColor;
+  height: auto; 
+  padding: 0; 
+  padding-top: rem-calc($level1);
+  padding-bottom: rem-calc($level1);
+  @include type-setting(-1);
+
+  .appFooter-credit {
+    color: #fff; 
+  }  
+  
+  .appFooter-menu {
+    margin-bottom: 0; 
+
+    .menu-item {
+      margin-right: rem-calc($level2);
+
+      .menu-link {
+        color: #fff; 
+        &:hover, 
+        &:focus {
+          color: #fff; 
+          text-decoration: underline; 
+        }
+      }
+    }
+
+  }
+
+
+}

@@ -46,7 +46,7 @@
           
             </li>
             
-              
+                
             <!--View more toggle for small devices-->
             <li class="appNav-menu-item   grid  grid--justifyCenter  hide-for-large-up">
           
@@ -169,7 +169,7 @@
           
           <div class="row">
             <div class="small-10 small-centered columns">
-              <a  class="button button--medium   button--quaternary    button--withIcon   mb0  button--expanded"  ui-sref="sponsor.sponseeAdd" ng-click="nav.toggleSecondaryMenu()">
+              <a  class="button button--medium   button--tertiary    button--withIcon   mb0  button--expanded"  ui-sref="sponsor.sponseeAdd" ng-click="nav.toggleSecondaryMenu()">
                
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.7 20.7"  class="button-icon  icon--center" >
                  
@@ -191,19 +191,31 @@
 
   
         <li class="appNav-menu-item">
-           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="sponsor.settings">Settings</a>
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="sponsor.settings" rel="internal">Settings</a>
         </li>
 
 
         <li class="appNav-menu-item">
-           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank">FAQ</a>
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="https://pickpocket.zendesk.com/hc/en-us" target="_blank" rel="internal">FAQ</a>
+        </li>
+
+        <li class="appNav-menu-item  hide-for-large-up">
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" href="hhttps://pickpocket.zendesk.com/hc/en-us/requests/new" target="_blank" rel="external">Contact Us</a>
+        </li>
+
+
+        <li class="appNav-menu-item  hide-for-large-up">
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="sponsor.privacy" rel="internal">Privacy Policy</a>
+        </li>
+
+        <li class="appNav-menu-item  hide-for-large-up">
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()"  ui-sref="sponsor.privacy" rel="internal">Terms of Agreement </a>
         </li>
 
         <li class="appNav-menu-item">
-           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="main.logout" target="_blank">Log Out</a>
+           <a class="appNav-menu-link"  ng-click="nav.toggleSecondaryMenu()" ui-sref="main.logout">Log Out</a>
         </li>
-
-
+        
       </ul>
     
     </div>

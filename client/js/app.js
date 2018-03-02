@@ -584,6 +584,22 @@ twopence.config(
                   templateUrl: "js/content/privacy.html"
                }
             }
+        })
+        .state('sponsor.terms', {
+            url: "sponsor-terms/",
+            views: {
+               'sponsor' : {
+                  templateUrl: "js/content/terms.html"
+               }
+            }
+        })
+        .state('sponsor.privacy', {
+            url: "sponsor-privacy/",
+            views: {
+               'sponsor' : {
+                  templateUrl: "js/content/privacy.html"
+               }
+            }
         });
 
 }]);
