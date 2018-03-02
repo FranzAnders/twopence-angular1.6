@@ -6266,8 +6266,6 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table--list tr .table-data,
 .table--list td td,
 .table--list td .table-data,
-.table--list th td,
-.table--list th .table-data,
 .table--list .table-row td,
 .table--list .table-row .table-data {
   text-align: left;
@@ -6628,8 +6626,6 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table--list tr .table-data,
 .table--list td td,
 .table--list td .table-data,
-.table--list th td,
-.table--list th .table-data,
 .table--list .table-row td,
 .table--list .table-row .table-data {
   text-align: left;
@@ -19112,32 +19108,51 @@ table th,
 .table--list {
   width: 100%;
 }
-/* line 35, ../scss/layout/_tables.scss */
-.table--list tr,
-.table--list td,
-.table--list th,
-.table--list .table-row {
-  padding: 1.125rem;
-  padding-left: 1.875rem;
+/* line 36, ../scss/layout/_tables.scss */
+.table--list th {
+  padding: 0.75rem;
   color: #231F20;
 }
-/* line 49, ../scss/layout/_tables.scss */
-.table--list tr .table-contribution,
-.table--list td .table-contribution,
-.table--list th .table-contribution,
-.table--list .table-row .table-contribution {
-  font-size: 1.5rem;
-  line-height: 1.2;
+@media only screen and (min-width: 40.0625em) {
+  /* line 36, ../scss/layout/_tables.scss */
+  .table--list th {
+    padding: 1.125rem;
+  }
 }
-/* line 56, ../scss/layout/_tables.scss */
+/* line 46, ../scss/layout/_tables.scss */
 .table--list tr,
+.table--list td,
 .table--list .table-row {
-  background-color: #FFF;
+  padding: 0.75rem;
+  color: #231F20;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 46, ../scss/layout/_tables.scss */
+  .table--list tr,
+  .table--list td,
+  .table--list .table-row {
+    padding: 1.125rem;
+  }
 }
 /* line 62, ../scss/layout/_tables.scss */
+.table--list tr .table-contribution,
+.table--list td .table-contribution,
+.table--list .table-row .table-contribution {
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 62, ../scss/layout/_tables.scss */
+  .table--list tr .table-contribution,
+  .table--list td .table-contribution,
+  .table--list .table-row .table-contribution {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+/* line 78, ../scss/layout/_tables.scss */
 .table--list tr,
 .table--list .table-row {
-  background-color: #fff;
   border-bottom: 1px solid #dae0e0;
 }
 
