@@ -26,8 +26,8 @@ twopence.directive('sponsorMailSignUpDir', ['Referrals', function(Referrals) {
     },
     link: function(scope, element, attrs) {
         var form = $(element.children()[0]),
-            button = form.find('button'),
-            emailInput = form.find('input');
+        button = form.find('button'),
+        emailInput = form.find('input');
 
         button.click(function(){
           var emailAddress = emailInput.val();

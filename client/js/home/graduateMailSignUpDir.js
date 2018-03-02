@@ -5,11 +5,7 @@
     Graduate Mail Sign Up Directive
 \*------------------------------------*/
 
-<<<<<<< HEAD
 twopence.directive('graduateMailSignUpDir', ['Referrals', function(Referrals) {
-=======
-twopence.directive('graduateMailSignUpDir', ['$location', function(location) {
->>>>>>> master
 
   return {
 
@@ -30,13 +26,8 @@ twopence.directive('graduateMailSignUpDir', ['$location', function(location) {
     },
     link: function(scope, element, attrs) {
         var form = $(element.children()[0]),
-<<<<<<< HEAD
-            button = form.find('button'),
-            emailInput = form.find('input');
-=======
         button = form.find('button'),
         emailInput = form.find('input');
->>>>>>> master
 
         button.click(function(){
           var emailAddress = emailInput.val();
@@ -45,15 +36,9 @@ twopence.directive('graduateMailSignUpDir', ['$location', function(location) {
           mixpanel.people.set({
             '$created': new Date(),
             '$email': emailAddress,
-<<<<<<< HEAD
             'Referred By': Referrals.getReferral() || 'none'
           })
         })
-=======
-            'Referred By': location.search().referredby,
-          })
-      })
->>>>>>> master
 
     }
 
