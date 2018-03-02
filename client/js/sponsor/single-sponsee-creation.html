@@ -32,16 +32,16 @@
                 floating-label>
 
                 <div ng-messages="sponseeCreation.sponseeSearchForm.first_name.$error"
-                ng-show="sponseeCreation.sponseeSearchForm.$submitted && sponseeCreation.sponseeSearchForm.$error"
+                ng-show="sponseeCreation.sponseeSearchForm.$submitted && sponseeCreation.sponseeSearchForm.first_name.$error"
                 role="alert"
                 class="alerts  alert--warning">
 
                   <div ng-message="required">
-                  A first name is needed to identity our sponsee.
+                  A first name is needed to identify our Graduate.
                   </div>
 
                   <div ng-message="minlength">
-                  Name must be at least 2 characters in length.
+                  Their name must be at least 2 characters in length.
                   </div>
 
                 </div>
@@ -52,15 +52,33 @@
             <div class="small-12  columns">
               <div class="input-group input--medium  inputGroup--alt">
 
-                <label for="full name">
+                <label for="last name">
                   Last Name
                 </label>
 
-                <input type="text" id="full name"
-                       class="input--primary "
+                <input type="text" 
+                       name="last_name"
+                       id="last name"
+                       class="input--primary"
                        ng-model="sponseeCreation.searchData.last_name"
                        required
                        floating-label>
+
+                <div ng-messages="sponseeCreation.sponseeSearchForm.last_name.$error"
+                ng-show="sponseeCreation.sponseeSearchForm.$submitted && sponseeCreation.sponseeSearchForm.last_name.$error"
+                role="alert"
+                class="alerts  alert--warning">
+
+                  <div ng-message="required">
+                  A last name is needed to identify our Graduate.
+                  </div>
+
+                  <div ng-message="minlength">
+                  Their name must be at least 2 characters in length.
+                  </div>
+
+                </div>
+
 
               </div>
 
@@ -76,10 +94,26 @@
 
             <input type="email"
                    id="email"
+                   name="email"
                    class="input--primary input--large  "
                    ng-model="sponseeCreation.searchData.email"
                    floating-label
                    required>
+  
+            <div ng-messages="sponseeCreation.sponseeSearchForm.email.$error"
+                 ng-show="sponseeCreation.sponseeSearchForm.$submitted && sponseeCreation.sponseeSearchForm.email.$error"
+                 role="alert"
+                 class="alerts  alert--warning">
+      
+                <div ng-message="required">
+                    An email is needed to identify our Graduate.
+                </div>
+      
+                <div ng-message="email">
+                    Email must be valid (ex:pickpocket@example.com).
+                </div>
+      
+            </div>
 
           </div>
 
