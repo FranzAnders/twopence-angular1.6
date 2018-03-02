@@ -104,12 +104,9 @@ twopence.controller('sponseePlanEditCtrl', [
     vm.getPlan = function(pSponsorshipId) {
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
 
-        console.log(sponsorship);
-
         $timeout(function() {
 
           vm.sponseeInfo = sponsorship;
-          console.log(vm.sponseeInfo); 
           vm.latestPlan = vm.getLatestPlan(sponsorship);
           vm.customAmount = parseInt(vm.latestPlan.limit);
 
@@ -263,8 +260,6 @@ twopence.controller('sponseePlanEditCtrl', [
 
           }).catch(function(error) {
 
-            console.log(error);
-
             $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-error.html',
               themeClass: 'fancymodal--primary  fancymodal--small',
@@ -364,8 +359,6 @@ twopence.controller('sponseePlanEditCtrl', [
 
           })
           .catch(function(err){
-
-            console.log(err);
 
             $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-error.html',

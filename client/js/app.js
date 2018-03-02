@@ -36,9 +36,9 @@ twopence.config(
     $urlRouterProvider.otherwise("/");
 
     //
-    // Pretty URLs activate if we're running  the production ENV
+    // Pretty URLs activate if we're running  the production ENV (disabled for dev so we can refresh while deving)
     //
-    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod' || ENV.environment_name === 'dev') {
+    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
 
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('');
