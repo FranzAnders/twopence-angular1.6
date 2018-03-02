@@ -11,7 +11,7 @@ twopence.directive('sponsorMailSignUpDir', ['Referrals', function(Referrals) {
 
     restrict: "E",
     scope: {},
-    replace: true, 
+    replace: true,
     templateUrl: "js/home/sponsorMailSignUp.html",
     controller: function() {
 

@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /*------------------------------------*\
-    #Globals - Padding + Margin Levels  
+    #Globals - Padding + Margin Levels
 \*------------------------------------*/
 /*------------------------------------*\
-   #Angular-specific styles  
+   #Angular-specific styles
 \*------------------------------------*/
 /* line 8, ../scss/vendor/_angular.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -2835,10 +2835,10 @@
 /*
  * angular-tooltips
  * 1.2.2
- * 
+ *
  * Angular.js tooltips module.
  * http://720kb.github.io/angular-tooltips
- * 
+ *
  * MIT license
  * Tue Jun 20 2017
  */
@@ -6139,7 +6139,7 @@ th.hide-for-touch {
     #Blockquotes
 \*------------------------------------*/
 /*------------------------------------*\
-    #Theme Styles 
+    #Theme Styles
 \*------------------------------------*/
 /*------------------------------------*\
     #Border Radius
@@ -6190,28 +6190,28 @@ button,
 }
 
 /*------------------------------------*\
-    #Colors 
+    #Colors
 \*------------------------------------*/
 /*------------------------------------*\
     #Greys
 \*------------------------------------*/
 /*------------------------------------*\
-    #Typography Colors 
+    #Typography Colors
 \*------------------------------------*/
 /*------------------------------------*\
     #Social Media Colors
 \*------------------------------------*/
 /*------------------------------------*\
-    #UI Colors 
+    #UI Colors
 \*------------------------------------*/
 /*------------------------------------*\
-    #Icons  
+    #Icons
 \*------------------------------------*/
 /*------------------------------------*\
     #Typography
 \*------------------------------------*/
 /*------------------------------------*\
-    #Type Related Variables 
+    #Type Related Variables
 \*------------------------------------*/
 /* Base Typefaces */
 /* line 39, ../scss/abstracts/_typography.scss */
@@ -6220,7 +6220,7 @@ button,
 }
 
 /*------------------------------------*\
-    #Font Weights & Styles 
+    #Font Weights & Styles
 \*------------------------------------*/
 /* line 54, ../scss/abstracts/_typography.scss */
 h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo, .appHeader-userInfo .userActions-name, .appNav-menu-link, .button--link {
@@ -6253,7 +6253,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
 }
 
 /*------------------------------------*\
-    #Text Alignments 
+    #Text Alignments
 \*------------------------------------*/
 /* line 82, ../scss/abstracts/_typography.scss */
 .text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy, .planSuccessState .planSuccessState-copy {
@@ -6279,16 +6279,16 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Text Color Classes 
+    #Text Color Classes
 \*------------------------------------*/
 /*------------------------------------*\
-    #Font Color Classes 
+    #Font Color Classes
 \*------------------------------------*/
 /*------------------------------------*\
     #Base Typographic Rhythm Mixins
 \*------------------------------------*/
 /*------------------------------------*\
-    #Text Sizes and Hn sizes 
+    #Text Sizes and Hn sizes
 \*------------------------------------*/
 /* Sizes for text too small or too large for a header tag */
 /* line 265, ../scss/abstracts/_typography.scss */
@@ -6410,7 +6410,7 @@ h1,
 }
 
 /*------------------------------------*\
-    #Line Heights  
+    #Line Heights
 \*------------------------------------*/
 /* line 361, ../scss/abstracts/_typography.scss */
 .lh0 {
@@ -6438,7 +6438,7 @@ h1,
 }
 
 /*------------------------------------*\
-    #Generics 
+    #Generics
 \*------------------------------------*/
 /*------------------------------------*\
     #Centering without flexbox
@@ -6461,7 +6461,7 @@ h1,
 }
 
 /*------------------------------------*\
-    #Display Types 
+    #Display Types
 \*------------------------------------*/
 /* line 41, ../scss/abstracts/_utility.scss */
 button,
@@ -6480,7 +6480,7 @@ button,
 }
 
 /*------------------------------------*\
-    #Dropshadows 
+    #Dropshadows
 \*------------------------------------*/
 /* line 60, ../scss/abstracts/_utility.scss */
 .dropshadow1 {
@@ -6546,10 +6546,10 @@ button,
 }
 
 /*------------------------------------*\
-    #Flexbox 
+    #Flexbox
 \*------------------------------------*/
 /*------------------------------------*\
-    #Floats & Clearfix  
+    #Floats & Clearfix
 \*------------------------------------*/
 /* line 156, ../scss/abstracts/_utility.scss */
 .cf {
@@ -6566,10 +6566,10 @@ button,
 }
 
 /*------------------------------------*\
-    #Media Object  
+    #Media Object
 \*------------------------------------*/
 /*------------------------------------*\
-    #Position Types 
+    #Position Types
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
 .relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--primary .fancymodal-content {
@@ -6615,7 +6615,7 @@ button,
 }
 
 /*------------------------------------*\
-    #Text Alignment  
+    #Text Alignment
 \*------------------------------------*/
 /* line 272, ../scss/abstracts/_utility.scss */
 .text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy, .planSuccessState .planSuccessState-copy {
@@ -6641,7 +6641,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Paddings 
+    #Paddings
 \*------------------------------------*/
 /* line 287, ../scss/abstracts/_utility.scss */
 .ptrbl0 {
@@ -7178,7 +7178,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Icons 
+    #Icons
 \*------------------------------------*/
 /* line 7, ../scss/base/_icons.scss */
 .icon--center {
@@ -7205,7 +7205,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Icon badge  
+    #Icon badge
 \*------------------------------------*/
 /* line 34, ../scss/base/_icons.scss */
 .icon--badge {
@@ -7222,7 +7222,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Link Styles 
+    #Link Styles
 \*------------------------------------*/
 /* line 8, ../scss/base/_links.scss */
 a {
@@ -7467,7 +7467,7 @@ a.alt-link2:active {
 }
 
 /*------------------------------------*\
-    #CSS behavior for when a device doesn't support svgs 
+    #CSS behavior for when a device doesn't support svgs
 \*------------------------------------*/
 /* line 12, ../scss/base/_noSvg.scss */
 .no-svg .hide-no-svg {
@@ -7485,7 +7485,7 @@ a.alt-link2:active {
 }
 
 /*------------------------------------*\
-    #Responsive Type with Media Queries 
+    #Responsive Type with Media Queries
 \*------------------------------------*/
 @media screen and (min-width: 320px) {
   /* line 41, ../scss/base/_responsiveType.scss */
@@ -15181,7 +15181,7 @@ a.alt-link2:active {
 }
 
 /*------------------------------------*\
-    #Theme Styles 
+    #Theme Styles
 \*------------------------------------*/
 /*------------------------------------*\
     #Brand Colors
@@ -15332,7 +15332,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Default Text Selection Color 
+    #Default Text Selection Color
 \*------------------------------------*/
 /* line 106, ../scss/base/_typography.scss */
 ::selection {
@@ -15347,7 +15347,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Font Color Classes 
+    #Font Color Classes
 \*------------------------------------*/
 /* line 126, ../scss/base/_typography.scss */
 .txtc1 {
@@ -15380,10 +15380,10 @@ hr {
 }
 
 /*------------------------------------*\
-    #Font Family Classes 
+    #Font Family Classes
 \*------------------------------------*/
 /*------------------------------------*\
-    #Header Styles and Sizes 
+    #Header Styles and Sizes
 \*------------------------------------*/
 /* line 191, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
@@ -15487,7 +15487,7 @@ hr {
     #Line Heights (Variables and placeholders defined in _typography.scss module)
 \*------------------------------------*/
 /*------------------------------------*\
-    #Paragraph styles 
+    #Paragraph styles
 \*------------------------------------*/
 /* line 403, ../scss/base/_typography.scss */
 .p2 {
@@ -15520,7 +15520,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Text Alignments  
+    #Text Alignments
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
   /* line 465, ../scss/base/_typography.scss */
@@ -15586,16 +15586,16 @@ hr {
 }
 
 /*------------------------------------*\
-    #Generics 
+    #Generics
 \*------------------------------------*/
 /*------------------------------------*\
     #Centering without flexbox
 \*------------------------------------*/
 /*------------------------------------*\
-    #Display Types 
+    #Display Types
 \*------------------------------------*/
 /*------------------------------------*\
-    #Dropshadows 
+    #Dropshadows
 \*------------------------------------*/
 /* line 63, ../scss/base/_utility.scss */
 .innerShadow1 {
@@ -15613,7 +15613,7 @@ hr {
     #Flag Object  (like Media Object but with centered body vertically)
 \*------------------------------------*/
 /*------------------------------------*\
-    #Height Classes 
+    #Height Classes
 \*------------------------------------*/
 /* line 112, ../scss/base/_utility.scss */
 .vh50 {
@@ -15692,7 +15692,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Position Types 
+    #Position Types
 \*------------------------------------*/
 /*------------------------------------*\
     #Shapes
@@ -15723,7 +15723,7 @@ hr {
     #Flex-Box
 \*------------------------------------*/
 /*------------------------------------*\
-    #Grid Alignments and Properties  
+    #Grid Alignments and Properties
 \*------------------------------------*/
 /* line 24, ../scss/base/_flexbox.scss */
 .grid, .footer-menu {
@@ -16304,7 +16304,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Grid Child Sef Alignment 
+    #Grid Child Sef Alignment
 \*------------------------------------*/
 /* line 566, ../scss/base/_flexbox.scss */
 .grid-cell--top {
@@ -16474,7 +16474,7 @@ hr {
   }
 }
 /*------------------------------------*\
-    #Sizing properties for Child Elements 
+    #Sizing properties for Child Elements
 \*------------------------------------*/
 /* line 713, ../scss/base/_flexbox.scss */
 .grid--fit > .grid-cell {
@@ -16636,7 +16636,7 @@ hr {
     #Flex Debug
 \*------------------------------------*/
 /*------------------------------------*\
-    #Webfont (ITC SOUVENIR) 
+    #Webfont (ITC SOUVENIR)
 \*------------------------------------*/
 /*! Generated by Font Squirrel (https://www.fontsquirrel.com) on December 5, 2017 */
 @font-face {
@@ -16658,7 +16658,7 @@ hr {
   font-style: normal;
 }
 /*------------------------------------*\
-    #Footer 
+    #Footer
 \*------------------------------------*/
 /* line 7, ../scss/layout/_footer.scss */
 footer {
@@ -17800,7 +17800,7 @@ input[type="radio"].radio--large + label {
   top: 0;
   overflow: visible;
   height: 1.5rem;
-  /* Make the thumbs the same size as your custom sliderthumb. 
+  /* Make the thumbs the same size as your custom sliderthumb.
     they will not be visible but they will be draggable.  */
 }
 /* line 1248, ../scss/layout/_forms.scss */
@@ -18005,7 +18005,7 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
-    #Navigation Styles  
+    #Navigation Styles
 \*------------------------------------*/
 /* line 6, ../scss/layout/_navs.scss */
 .nav-is-open {
@@ -18047,7 +18047,7 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
-    #Main Navigation Inner Components Styles  
+    #Main Navigation Inner Components Styles
 \*------------------------------------*/
 /* line 56, ../scss/layout/_navs.scss */
 .mainNav {
@@ -18692,7 +18692,238 @@ input[type="radio"].radio--large + label {
   }
 }
 /*------------------------------------*\
-    #Sections 
+    #Main Nav Animations
+\*------------------------------------*/
+@-moz-keyframes main-nav-overlay-appear {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+  1% {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes main-nav-overlay-appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+  1% {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes main-nav-overlay-appear {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+  1% {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-moz-keyframes main-nav-overlay-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-webkit-keyframes main-nav-overlay-disappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@keyframes main-nav-overlay-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-moz-keyframes main-nav-container-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-webkit-keyframes main-nav-container-disappear {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@keyframes main-nav-container-disappear {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  99% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+}
+@-moz-keyframes main-nav-container-appear {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+  1% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes main-nav-container-appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+  1% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes main-nav-container-appear {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-300%);
+    -ms-transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+  }
+  1% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+/*------------------------------------*\
+    #Sections
 \*------------------------------------*/
 /* line 6, ../scss/layout/_sections.scss */
 .section {
@@ -18767,7 +18998,7 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
-    #Section Types 
+    #Section Types
 \*------------------------------------*/
 /* line 84, ../scss/layout/_sections.scss */
 .section--primary {
@@ -18823,7 +19054,7 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
-    #Tooltips 
+    #Tooltips
 \*------------------------------------*/
 /* line 7, ../scss/layout/_tooltips.scss */
 .tooltip {
@@ -19847,7 +20078,7 @@ button.is-inactive,
 }
 
 /*------------------------------------*\
-    #A sponsorship card 
+    #A sponsorship card
 \*------------------------------------*/
 /* line 114, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
@@ -20370,7 +20601,7 @@ img {
 }
 
 /*------------------------------------*\
-    #Global Illustration Styles 
+    #Global Illustration Styles
 \*------------------------------------*/
 /* line 22, ../scss/components/_images.scss */
 .illustr {
@@ -20378,7 +20609,7 @@ img {
 }
 
 /*------------------------------------*\
-    #Illustration for State Badges 
+    #Illustration for State Badges
 \*------------------------------------*/
 /* line 36, ../scss/components/_images.scss */
 .illustr--stateBadge {
@@ -21788,7 +22019,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Login and Account Sign Up Page 
+    #Login and Account Sign Up Page
 \*------------------------------------*/
 /* line 7, ../scss/pages/_login.scss */
 .loginView {
@@ -21830,7 +22061,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Plan Setup Success Page 
+    #Plan Setup Success Page
 \*------------------------------------*/
 /* line 8, ../scss/pages/_planSuccessfullyMade.scss */
 .planSuccessState {
@@ -21858,10 +22089,10 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Styles specific to sponsorship creation page 
+    #Styles specific to sponsorship creation page
 \*------------------------------------*/
 /*------------------------------------*\
-    #Plans  
+    #Plans
 \*------------------------------------*/
 /* line 14, ../scss/pages/_sponsorshipCreation.scss */
 .plans .plan {
@@ -21922,7 +22153,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Custom Amount Input  
+    #Custom Amount Input
 \*------------------------------------*/
 /* line 83, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount {
@@ -21963,7 +22194,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Styles Specific to Sponsor View 
+    #Styles Specific to Sponsor View
 \*------------------------------------*/
 /* line 8, ../scss/pages/_sponsorView.scss */
 .sponsorViewContainer {

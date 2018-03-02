@@ -17,16 +17,16 @@
 
 
 /*------------------------------------*\
-    #Globals - Padding + Margin Levels  
+    #Globals - Padding + Margin Levels
 \*------------------------------------*/
 
 $level1: 6;
-$level2: 12; 
+$level2: 12;
 $level3: 18;
-$level4: 24; 
-$level5: 30;  
-$level6: 36; 
-$level7: 48; 
+$level4: 24;
+$level5: 30;
+$level6: 36;
+$level7: 48;
 
 
 
@@ -67,7 +67,7 @@ $level7: 48;
   'base/flexbox',
   'base/webfont';
 
-  
+
 // Layout
 @import
  'layout/footer',
@@ -115,6 +115,5 @@ $level7: 48;
     'pages/sponsorView',
     'pages/sponseeSplash';
 
-@import 
+@import
   'base/animations';
-

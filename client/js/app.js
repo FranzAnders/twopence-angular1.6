@@ -629,7 +629,7 @@ twopence.run(
     document.body.classList.remove('preload');
 
   }, 1500);
-        
+
 
    // //
    //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
