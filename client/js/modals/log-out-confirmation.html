@@ -1,0 +1,55 @@
+
+
+<div>
+  
+  <div class="fancymodal-badge  grid  grid--center  grid--justifyCenter">  
+
+    <svg class="fancymodal-badge-icon">
+      <use xlink:href="#icon-Warning"/>
+
+    </svg>
+
+  </div>
+
+  <div>
+
+    <div class="fancymodal-innerContent">
+    
+      <p class="mb0 text-center">
+       Are you sure you want to log out?
+      </p>
+    
+    </div>
+    
+    <div class="fancymodal-options  grid  grid--center">
+      
+      <button ng-click="$modal.close()" role="button" class="fancymodal-options-option">
+
+        <svg class="option-icon">
+          <use xlink:href="#icon-Decline"/>
+      
+        </svg>
+      
+       <span class="option-label">Cancel</span>
+      
+      </button>
+
+      <button ng-click="logOutConfirmation.logOut()" role="button" class="fancymodal-options-option fancymodal-options-option--primary">
+      
+        <svg class="option-icon">
+          <use xlink:href="#icon-Success"/>
+      
+        </svg>
+      
+       <span class="option-label">Confirm</span>
+      
+      </button>
+      
+    </div>
+
+    </div>
+
+  </div>
+
+</div>
+

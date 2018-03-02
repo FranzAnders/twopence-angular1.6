@@ -34,15 +34,10 @@ twopence.controller('sponseePlanEditCtrl', [
     vm.$onInit = function() {
 
       vm.sponsorshipId = $stateParams.plan;
-
       vm.sponseeInfo = null;
-
       vm.customAmount = null
-
       vm.latestPlan = '';
-
       vm.getPlan(vm.sponsorshipId); 
-
       vm.planStatus = null;
 
     }
@@ -55,9 +50,7 @@ twopence.controller('sponseePlanEditCtrl', [
     var numRound = function(number, precision) {
 
       var factor = Math.pow(10, precision);
-
       var tempNumber = number * factor;
-
       var roundedTempNumber = Math.round(tempNumber);
 
       return roundedTempNumber / factor;
