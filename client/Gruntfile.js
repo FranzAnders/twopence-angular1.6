@@ -36,6 +36,7 @@ module.exports = function(grunt) {
       dev: {
           options: {
               match: ['app.*.js', 'app.*.css'],
+              position: 'overwrite',
               replacement: 'md5',
               src: {
                   path: '<%= dist%>/js/app.min.js', path: '<%= dist%>/css/app.min.css'
