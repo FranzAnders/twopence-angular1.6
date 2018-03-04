@@ -38,6 +38,9 @@ twopence.directive('sponsorMailSignUpDir', ['Referrals', function(Referrals) {
             '$email': emailAddress,
             'Referred By': Referrals.getReferral() || 'none'
           })
+          
+          fbq('track', 'Lead', {content_category: 'sponsor'});
+          
         })
     }
 
