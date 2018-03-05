@@ -20587,6 +20587,26 @@ button.is-inactive,
   }
 }
 /* line 25, ../scss/components/_heroHeader.scss */
+.heroHeader .heroHeader-hand {
+  position: absolute;
+  width: 12.5rem;
+  height: 8.75rem;
+  top: 0rem;
+  left: -22px;
+  z-index: 1;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 25, ../scss/components/_heroHeader.scss */
+  .heroHeader .heroHeader-hand {
+    top: .5rem;
+    left: 2.375rem;
+  }
+}
+/* line 38, ../scss/components/_heroHeader.scss */
+.heroHeader .heroHeader-hand svg {
+  width: 100%;
+}
+/* line 43, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background {
   position: absolute;
   top: 0;
@@ -20605,7 +20625,7 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#63decb',GradientType=0 );
   /* IE6-9 */
 }
-/* line 36, ../scss/components/_heroHeader.scss */
+/* line 54, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-background--sponsors {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,238eb2+0,63decb+100 */
   background: #1e5799;
@@ -20615,31 +20635,31 @@ button.is-inactive,
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63decb', endColorstr='#1e5799',GradientType=0 );
   /* IE6-9 */
 }
-/* line 41, ../scss/components/_heroHeader.scss */
+/* line 59, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-contentContainer {
   color: #fff;
   width: 100%;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 47, ../scss/components/_heroHeader.scss */
+  /* line 65, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-content {
     width: 60rem;
   }
 }
-/* line 55, ../scss/components/_heroHeader.scss */
+/* line 73, ../scss/components/_heroHeader.scss */
 .heroHeader .heroHeader-headline {
   font-size: 2rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 55, ../scss/components/_heroHeader.scss */
+  /* line 73, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-headline {
     margin-top: 2.25rem;
     max-width: 20.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 55, ../scss/components/_heroHeader.scss */
+  /* line 73, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-headline {
     min-width: 34.375rem;
     font-size: 2.5rem;
@@ -20647,13 +20667,13 @@ button.is-inactive,
   }
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 72, ../scss/components/_heroHeader.scss */
+  /* line 90, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-description {
     max-width: 20.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 72, ../scss/components/_heroHeader.scss */
+  /* line 90, ../scss/components/_heroHeader.scss */
   .heroHeader .heroHeader-description {
     max-width: 27.25rem;
   }
