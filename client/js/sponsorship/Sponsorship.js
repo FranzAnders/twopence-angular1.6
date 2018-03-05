@@ -297,8 +297,6 @@ twopence.factory('Sponsorship', [
         planStartsToday = sponsorship.checkIfStartsToday(pPlan);
         planStartsTomorrow = sponsorship.checkIfStartsTomorrow(pPlan);
 
-
-
       } else {
 
         planEndsToday = false;

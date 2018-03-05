@@ -33,7 +33,7 @@
 
     <div class="small-12 columns medium-8 large-7 large-pull-1">
 
-      <form ng-submit="sponseePlanEdit.createPlan(sponseePlanEdit.planEditForm, sponseePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo, sponseePlanEdit.latestPlan)" name="sponseePlanEdit.planEditForm" novalidate>
+      <form ng-submit="sponseePlanEdit.changePlanLimit(sponseePlanEdit.planEditForm, sponseePlanEdit.sponseeInfo, sponseePlanEdit.customAmount)" name="sponseePlanEdit.planEditForm" novalidate>
 
         <div class="card">
 
@@ -120,7 +120,6 @@
                     </span>
                   <span class="button-inner"> Pause Plan</span>
                 </a>
-
 
                 <a class="text-micro button--withIcon"
                    ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo)"

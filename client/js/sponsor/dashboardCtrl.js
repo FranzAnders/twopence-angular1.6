@@ -35,36 +35,30 @@ twopence.controller('dashboardCtrl', [
     //
     vm.getUserInfo = function() {
 
-        User.getUserInfo().then(function(dashboard) {
-          $timeout(function() {
-            vm.sponsorInfo = dashboard;
-            vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
-          },100);
-        }).catch(function(err){
+      User.getUserInfo().then(function(dashboard) {
+        $timeout(function() {
+          vm.sponsorInfo = dashboard;
+          vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
+        },100);
+      }).catch(function(err){
+        console.log(err);
+      });
 
-          console.log(err);
-
-        });
-
-        //
-        // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
-        //
-        Sponsorship.getAll().then(function(sponsorships) {
-            
-          $timeout(function() {
-            vm.sponsorships = sponsorships.data;
-            vm.totalContributions = vm.getTotalContributions(sponsorships.data);
-          }, 100); 
+      //
+      // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+      //
+      Sponsorship.getAll().then(function(sponsorships) {
           
-        }).catch(function(err){
-
-          console.log(err);
-
-        });
+        $timeout(function() {
+          vm.sponsorships = sponsorships.data;
+          vm.totalContributions = vm.getTotalContributions(sponsorships.data);
+        }, 100); 
+        
+      }).catch(function(err){
+        console.log(err);
+      });
 
     }
-
-
 
 
     //
