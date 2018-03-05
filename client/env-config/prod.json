@@ -2,6 +2,7 @@
   "BASE_URL": "https://pickpocket.me",
   "domain": "pickpocket.me",
   "mixpanelToken": "00c382f0a86f301e8c15510810bc363d",
+  "googleAnalyticsToken": "UA-115056606-1",
   "plaidEnv": "production",
   "plaidPublicKey": "ee1d216ec4313d5efb386b0a97a06d",
   "enableDebug": false,

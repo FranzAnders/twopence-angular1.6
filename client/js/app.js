@@ -607,6 +607,8 @@ twopence.config(
 twopence.run(
     ['$rootScope',
      '$document',
+     '$window',
+     'ENV',
      '$state',
      '$timeout',
      '$log',
@@ -618,6 +620,8 @@ twopence.run(
      function(
         $rootScope,
         $document,
+        $window,
+        ENV,
         $state,
         $timeout,
         $log,
@@ -732,9 +736,16 @@ twopence.run(
     });
 
 
-    // Code to make the page load at the top when a state changes
+    // Runs when a state changes
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
+      
+       // Code to make the page load at the top when a state changes
        document.body.scrollTop = document.documentElement.scrollTop = 0;
+       
+       // Register a page view when the route changes. Required for SPA.
+       if ($window.gtag) {
+         $window.gtag('config', ENV.googleAnalyticsToken, {'page_path': $location.path()});
+      }
 
     });
 
