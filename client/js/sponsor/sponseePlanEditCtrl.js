@@ -163,7 +163,7 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Pauses the plan
+    // Pauses the plan by sending a pause payload set to true 
     //
     vm.pausePlan = function(pSponsorship, pSponsee) {
 
@@ -197,6 +197,10 @@ twopence.controller('sponseePlanEditCtrl', [
     };
 
 
+
+    //
+    // Resumes a plan by sending a pause pauload set to false
+    //
     vm.resumePlan = function(pSponsorship, pSponsee) {
 
       //
@@ -233,6 +237,42 @@ twopence.controller('sponseePlanEditCtrl', [
 
     };
 
+
+    vm.cancelActivation = function(pSponsorship, pSponsee) {
+
+      //
+      // The current plan being worked with, we check it later for its status
+      //
+      var latestPlan = pSponsorship.plans[0];
+      var sponsorshipId = pSponsorship.id; 
+
+        
+      //
+      // Payload to pause the existing plan
+      //
+      var payLoad = {
+        "cancel": true
+      };
+
+
+      //
+      // We patch the active plan and make a new one to take its' place 
+      //
+      Sponsorship.patch(sponsorshipId, latestPlan.id, payLoad)
+      .then(function(success) {
+        $rootScope.$emit('plan-updated');
+      })
+      .catch(function(err) {
+        $fancyModal.open({
+          templateUrl: 'js/modals/plan-edit-error.html',
+          themeClass: 'fancymodal--primary  fancymodal--small',
+          openingClass: 'is-open',
+          closingClass: 'is-closed',
+          showCloseButton: false
+        });
+      });
+
+    }
 
     //
     // Change's the plan's limit 
