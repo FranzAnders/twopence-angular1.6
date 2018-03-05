@@ -34,7 +34,7 @@
             </div>
   
             <div ng-message="email">
-                Your email must be a valid format (ex:pickpocket@example.com).
+                Email must be valid (ex:pickpocket@example.com).
             </div>
   
         </div>
@@ -86,10 +86,11 @@
                ng-model="signUp.userInfo.confirmPassword"
                compare-to="signUp.userInfo.password"
                ng-pattern="'(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$'"
+               ng-required="signUp.userInfo.password"
                floating-label>
   
         <div ng-messages="signUp.userAccountForm.confirmPassword.$error"
-             ng-show="signUp.userAccountForm.$submitted && signUp.userAccountForm.confirmPassword.$error"
+             ng-show="signUp.userAccountForm.confirmPassword.$error"
              role="alert"
              class="alerts  alert--warning">
   

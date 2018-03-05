@@ -19,7 +19,7 @@
     <title>Pickpocket - Steal from yourself. Give to your student loans</title>
 
     <!-- Meta information-->
-    <meta name="description" content="Get Pickpocket: The best student loan-ending app ever. Learn, sign up, and help your grad get out of debt fast!">
+    <meta name="description" content="Pickpocket gets rid of student loans 2-4x faster. Enroll in the program or Sponsor a Graduate today.">
     <meta name="keywords" content="Student loans, college graduates, university graduates, loans, student debt, debt, student loan repayment, interest avoided, student debt relief, student debt solution,  loan investing, savings, wealth generation, sponsorship, investment, debt-free, fintech">
 
 
@@ -28,17 +28,17 @@
 
     <meta property="og:title"  content="Pickpocket - Steal from yourself. Give to your student loans" />
 
-    <meta property="og:description" content="Get the Pickpocket app: The best student loan-ending app ever. Learn, sign up, and help your grad get out of debt fast!" />
+    <meta property="og:description" content="Pickpocket gets rid of student loans 2-4x faster. Enroll in the program or Sponsor a Graduate today." />
 
     <meta property="og:url" content="https://www.pickpcoket.me" />
 
     <meta property="og:type" content="website" />
 
-    <meta property="og:image" content="{{MetaInformation.bannerImage()}}" />
+    <meta property="og:image" content="assets/images/social-banner.png"/>
 
-    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:width" content="2121" />
 
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:height" content="1251" />
 
 
     <!--Twitter OG info-->
@@ -49,9 +49,9 @@
 
     <meta content="@Pickpocket" name="twitter:creator"/>
 
-    <meta content="Get Pickpocket: The best student loan-ending app ever. Learn, sign up, and help your grad get out of debt fast!" name="twitter:description"/>
+    <meta content="Pickpocket gets rid of student loans 2-4x faster. Enroll in the program or Sponsor a Graduate today." name="twitter:description"/>
 
-    <meta content="{{MetaInformation.bannerImage()}}" name="twitter:image">
+    <meta content="assets/images/social-banner.png" name="twitter:image">
 
     <meta content="https://www.pickpocket.me" name="twitter:site"/>
 
@@ -69,6 +69,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Facebook Pixel Code -->
+      <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '123886235037513');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=123886235037513&ev=PageView&noscript=1"
+      /></noscript>
+    <!-- End Facebook Pixel Code -->
 
     <!--Google Analytics Code-->
 
@@ -82,7 +99,9 @@
   </head>
 
   <body class="preload"
-        mixpanel-dir>
+        mixpanel-dir
+        google-analytics-dir
+        >
 
     <ui-view>
 
@@ -173,6 +192,8 @@
     <script src="js/general/EfficientWatch.js"></script>
     <script src="js/general/tooltipDir.js"></script>
     <script src="js/general/MediaCheck.js"></script>
+    <script src="js/general/robustAmountInputDir.js"></script>
+
 
 
 
@@ -197,13 +218,15 @@
     <script src="js/main/mainCtrl.js"></script>
 
 
-    <!--Mixpanel-->
-    <script src="js/mixpanel/mixpanelDir.js"></script>
-    <script src="js/mixpanel/Referrals.js"></script>
+    <!--Analytics Tracking -->
+    <script src="js/analytics-tracking/mixpanelDir.js"></script>
+    <script src="js/analytics-tracking/googleAnalyticsDir.js"></script>
+    <script src="js/analytics-tracking/UrlParams.js"></script>
 
 
     <!--Modals-->
     <script src="js/modals/planEditConfirmationCtrl.js"></script>
+    <script src="js/modals/logOutConfirmationCtrl.js"></script>
 
 
     <!--Navigation-->
@@ -254,13 +277,13 @@
     <!-- endbuild -->
 
     <!-- Sentry -->
-    <script async>
+  <!--   <script async>
       Raven
         .config('https://b28d76b8fc1e4e56b2f7cc1bd1df9675@sentry.io/277099')
         .addPlugin(Raven.Plugins.Angular)
         .install();
     </script>
-
+ -->
   </body>
 
 </html>

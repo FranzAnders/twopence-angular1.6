@@ -39,9 +39,12 @@
     .card-subTitle {
       color: $body-color;
       @include type-setting(0); 
-
     }
 
+  }
+
+  .card-content--bordered {
+    border-bottom: 1px solid $grey--light; 
   }
 
   .card-actions {
@@ -80,23 +83,9 @@
   
     li:nth-child(odd) {
       padding-right: rem-calc($level3); 
-
     }
 
   }
-
-  // @media #{$large-up} {
-    
-  //   li {
-  //     padding-right: rem-calc($level3);
-
-  //   }
-
-  //   li:nth-child(3n+3) {
-  //     padding-right: 0; 
-
-  //   }
-  // }
 
 }
 

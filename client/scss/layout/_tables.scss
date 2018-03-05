@@ -31,14 +31,27 @@ table,
 
 .table--list {
   width: 100%; 
+  
+
+  th {
+    padding: rem-calc($level2);
+    color: $secondaryColor;
+
+    @media #{$medium-up} {
+      padding: rem-calc($level3);
+    }
+    
+  }
 
   tr,
   td, 
-  th, 
   .table-row {
-    padding: rem-calc($level3);
-    padding-left: rem-calc($level5); 
+    padding: rem-calc($level2);
     color: $secondaryColor;
+
+    @media #{$medium-up} {
+      padding: rem-calc($level3);
+    }
 
     td, 
     .table-data {
@@ -47,7 +60,11 @@ table,
     }
 
     .table-contribution {
-      @include type-setting(3);
+      @include type-setting(1);
+
+      @media #{$medium-up} {
+        @include type-setting(3);
+      }
 
     }
 
@@ -56,12 +73,10 @@ table,
   tr, 
   .table-row {
 
-    background-color: #FFF; 
   }
 
   tr, 
   .table-row {
-   background-color: #fff; 
    border-bottom: 1px solid $grey--light; 
 
   }

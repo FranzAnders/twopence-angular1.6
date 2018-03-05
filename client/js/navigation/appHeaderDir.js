@@ -13,7 +13,7 @@ twopence.directive('appHeaderDir', function() {
     restrict: "E", 
     scope: {}, 
     replace: true, 
-    controller: ['$scope', '$state', function($scope, $state) {
+    controller: ['$fancyModal', '$scope', '$state', function($fancyModal, $scope, $state) {
 
         var vm = this; 
 
@@ -57,17 +57,15 @@ twopence.directive('appHeaderDir', function() {
 
           vm.toggleSecondaryMenu(); 
 
-           var logoutConfirmation = confirm('Are you sure you wanna logout?');
+          $fancyModal.open({
+            controller: 'logOutConfirmationCtrl as logOutConfirmation',
+            templateUrl: 'js/modals/log-out-confirmation.html',
+            themeClass: 'fancymodal--primary  fancymodal--confirmation  fancymodal--small',
+            openingClass: 'is-open',
+            closingClass: 'is-closed',
+            showCloseButton: false
 
-           if(logoutConfirmation) {
-
-            $state.go('main.home')
-
-           } else {
-
-            return false; 
-            
-           }
+          })
 
         }; 
 
@@ -76,7 +74,6 @@ twopence.directive('appHeaderDir', function() {
         vm.$onInit =  function() {
 
           vm.sponsorName = vm.sponsor.first_name + " " + vm.sponsor.last_name;
-
           vm.sponsorInitials = vm.sponsor.first_name.charAt(0) + vm.sponsor.last_name.charAt(0); 
 
         }

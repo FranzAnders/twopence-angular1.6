@@ -68,17 +68,19 @@ twopence.controller('settingsCtrl', [
     //
     vm.saveChanges = function(pUserSettingsForm, pUserSettings) {
 
-      if(!pUserSettings.password) {
+      var userSettings = pUserSettings;
+      
+      vm.resetForm(); 
 
-        delete pUserSettings.password
-
+      if(!userSettings.password) {
+        delete userSettings.password
       }
 
-      delete pUserSettings.confirmPassword
+      delete userSettings.confirmPassword
 
       if(pUserSettingsForm.$valid) {
 
-        User.updateSettings(pUserSettings).then(function() {
+        User.updateSettings(userSettings).then(function() {
 
            $fancyModal.open({
               templateUrl: 'js/modals/settings-change-success.html', 
@@ -89,7 +91,6 @@ twopence.controller('settingsCtrl', [
 
           });
 
-          vm.resetForm(); 
 
         }).catch(function() {
 

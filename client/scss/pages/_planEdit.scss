@@ -1,0 +1,50 @@
+
+/*------------------------------------*\
+    #Plan Edit Page
+\*------------------------------------*/
+
+
+
+/*------------------------------------*\
+    #Plan Status
+\*------------------------------------*/
+
+
+.planStatus {
+  
+  .planStatus-status {
+    margin-bottom: rem-calc($level2);
+    margin-right: 0; 
+  }
+
+  .planStatus-action {
+    color: $grey--med; 
+    font-weight: normal; 
+    margin-bottom: rem-calc($level1);
+    @include transition(all .2s ceaser($easeInOutCubic));
+    @include type-setting(-1); 
+
+    &:hover, 
+    &:focus {
+      color: $secondaryColor; 
+
+      .icon {
+        fill: $secondaryColor
+      }
+    }
+
+    .icon {
+      width: rem-calc(14px);
+      height: rem-calc(14px);
+      fill: $grey--med;
+      vertical-align: middle; 
+      @include transition(all .2s ceaser($easeInOutCubic));
+    }
+
+    .label {
+      vertical-align: middle; 
+    }
+
+  }
+
+}

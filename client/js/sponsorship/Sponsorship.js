@@ -287,49 +287,8 @@ twopence.factory('Sponsorship', [
   sponsorship.getPlanStatus = function(pPlan, pSponseeInfo) {
 
       var status = '';
-      var planEndsToday = false;
-      var planStartsToday = false;
-      var planStartsTomorrow = false;
-
-      if(pPlan) {
-
-        planEndsToday = sponsorship.checkIfTerminatesToday(pPlan);
-        planStartsToday = sponsorship.checkIfStartsToday(pPlan);
-        planStartsTomorrow = sponsorship.checkIfStartsTomorrow(pPlan);
-
-
-
-      } else {
-
-        planEndsToday = false;
-        planStartsToday = false;
-
-      }
-
-      if(pPlan) {
-
-        if(planEndsToday || !pPlan.active) {
-
-          status = 'paused';
-
-        }
-
-
-        if((pPlan.active || planStartsToday) &&  !planEndsToday) {
-
-          status = 'active';
-
-        }
-
-        if(planStartsTomorrow) {
-
-          status = 'activating';
-
-        }
-
-      }
-
-
+      status = pPlan.status; 
+      
       if(pSponseeInfo.sponsee.status !== 'active') {
 
         status = 'invite pending'

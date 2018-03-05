@@ -12,6 +12,7 @@ twopence.controller('sponseeBoostCtrl', [
     'SponseeInformation',
     'Sponsorship',
     '$fancyModal',
+    '$rootScope',
     '$scope',
     function(
         Sponsee,
@@ -19,6 +20,7 @@ twopence.controller('sponseeBoostCtrl', [
         SponseeInformation,
         Sponsorship,
         $fancyModal,
+        $rootScope,
         $scope) {
 
     var vm = this;
@@ -59,6 +61,8 @@ twopence.controller('sponseeBoostCtrl', [
           vm.boostSuccessfull = true;
 
           mixpanel.track('Confirmed Boost', {'Graduate': 'User:' + vm.sponsorshipInfo.sponsee.id});
+
+          $rootScope.$emit('sponsor-boosted-sponsee'); 
 
         }).catch(function(err) {
 

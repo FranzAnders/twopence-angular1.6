@@ -5,7 +5,7 @@
     Graduate Mail Sign Up Directive
 \*------------------------------------*/
 
-twopence.directive('graduateMailSignUpDir', ['Referrals', function(Referrals) {
+twopence.directive('graduateMailSignUpDir', ['UrlParams', function(UrlParams) {
 
   return {
 
@@ -26,18 +26,30 @@ twopence.directive('graduateMailSignUpDir', ['Referrals', function(Referrals) {
     },
     link: function(scope, element, attrs) {
         var form = $(element.children()[0]),
-        button = form.find('button'),
-        emailInput = form.find('input');
+            button = form.find('button'),
+            emailInput = form.find('input');
+            
+        form.click(function(){
+          mixpanel.track('Waitlist Form Focused', {'User Type': 'Graduate'});
+        })
 
         button.click(function(){
           var emailAddress = emailInput.val();
+
           mixpanel.alias(emailAddress);
           mixpanel.identify(emailAddress);
-          mixpanel.people.set({
+          
+          var peopleProperties = {
             '$created': new Date(),
-            '$email': emailAddress,
-            'Referred By': Referrals.getReferral() || 'none'
-          })
+            '$email': emailAddress,             
+          };         
+          
+          var enrichedPeopleProperties = Object.assign(UrlParams.getParams() || {}, peopleProperties);   
+          mixpanel.people.set(enrichedPeopleProperties);
+          mixpanel.track('Waitlist Signup', {'User Type': 'Graduate'});
+        
+          fbq('track', 'Lead', {content_category: 'graduate'});
+
         })
 
     }

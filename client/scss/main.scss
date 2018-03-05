@@ -83,6 +83,7 @@ $level7: 48;
 // Components
 @import
     'components/appHeader',
+    'components/appFooter',
     'components/appNav',
     'components/buttons',
     'components/cards',
@@ -113,7 +114,8 @@ $level7: 48;
     'pages/planSuccessfullyMade',
     'pages/sponsorshipCreation',
     'pages/sponsorView',
-    'pages/sponseeSplash';
+    'pages/sponseeSplash',
+    'pages/planEdit';
 
 @import
   'base/animations';

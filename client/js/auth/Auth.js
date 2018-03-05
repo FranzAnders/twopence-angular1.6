@@ -45,11 +45,27 @@ twopence.factory('Auth', [
     //
     //
     auth.logout = function() {
-      console.log("Logging you out fam");
-      token = null;
-      $cookies.remove('loggedIn');
-      $cookies.remove('userToken');
-      $cookies.remove('sponsorId');
+
+      var token = auth.getToken(); 
+
+       return $q(function(resolve, reject) {
+        $http.post(ENV.BASE_URL +  '/v1/logout', {
+          headers: {
+
+          "Authorization": 'Bearer ' + token
+
+          }})
+          .then(function(res) {
+            console.log("Logging you out fam");
+          token = null;
+          $cookies.remove('loggedIn');
+          $cookies.remove('userToken');
+          $cookies.remove('sponsorId');  
+            resolve(res.data);
+          }).catch(function(err) {
+            reject(err);
+          });
+      });
     };
 
     auth.setVisited = function() {
@@ -75,6 +91,8 @@ twopence.factory('Auth', [
         token = null
 
       }
+
+      console.log(token);
 
       return token;
 

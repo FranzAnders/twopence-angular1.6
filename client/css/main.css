@@ -3,7 +3,7 @@
     #Globals - Padding + Margin Levels
 \*------------------------------------*/
 /*------------------------------------*\
-   #Angular-specific styles
+   #Angular-specific styles  
 \*------------------------------------*/
 /* line 8, ../scss/vendor/_angular.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -2835,10 +2835,10 @@
 /*
  * angular-tooltips
  * 1.2.2
- *
+ * 
  * Angular.js tooltips module.
  * http://720kb.github.io/angular-tooltips
- *
+ * 
  * MIT license
  * Tue Jun 20 2017
  */
@@ -6139,7 +6139,7 @@ th.hide-for-touch {
     #Blockquotes
 \*------------------------------------*/
 /*------------------------------------*\
-    #Theme Styles
+    #Theme Styles 
 \*------------------------------------*/
 /*------------------------------------*\
     #Border Radius
@@ -6190,28 +6190,28 @@ button,
 }
 
 /*------------------------------------*\
-    #Colors
+    #Colors 
 \*------------------------------------*/
 /*------------------------------------*\
     #Greys
 \*------------------------------------*/
 /*------------------------------------*\
-    #Typography Colors
+    #Typography Colors 
 \*------------------------------------*/
 /*------------------------------------*\
     #Social Media Colors
 \*------------------------------------*/
 /*------------------------------------*\
-    #UI Colors
+    #UI Colors 
 \*------------------------------------*/
 /*------------------------------------*\
-    #Icons
+    #Icons  
 \*------------------------------------*/
 /*------------------------------------*\
     #Typography
 \*------------------------------------*/
 /*------------------------------------*\
-    #Type Related Variables
+    #Type Related Variables 
 \*------------------------------------*/
 /* Base Typefaces */
 /* line 39, ../scss/abstracts/_typography.scss */
@@ -6220,7 +6220,7 @@ button,
 }
 
 /*------------------------------------*\
-    #Font Weights & Styles
+    #Font Weights & Styles 
 \*------------------------------------*/
 /* line 54, ../scss/abstracts/_typography.scss */
 h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo, .appHeader-userInfo .userActions-name, .appNav-menu-link, .button--link {
@@ -6253,7 +6253,7 @@ h1, h2, h3, h4, h5, h6, .fwn, .appHeader .appHeader-logout, .appHeader-userInfo,
 }
 
 /*------------------------------------*\
-    #Text Alignments
+    #Text Alignments 
 \*------------------------------------*/
 /* line 82, ../scss/abstracts/_typography.scss */
 .text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy, .planSuccessState .planSuccessState-copy {
@@ -6266,8 +6266,6 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table--list tr .table-data,
 .table--list td td,
 .table--list td .table-data,
-.table--list th td,
-.table--list th .table-data,
 .table--list .table-row td,
 .table--list .table-row .table-data {
   text-align: left;
@@ -6279,16 +6277,16 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Text Color Classes
+    #Text Color Classes 
 \*------------------------------------*/
 /*------------------------------------*\
-    #Font Color Classes
+    #Font Color Classes 
 \*------------------------------------*/
 /*------------------------------------*\
     #Base Typographic Rhythm Mixins
 \*------------------------------------*/
 /*------------------------------------*\
-    #Text Sizes and Hn sizes
+    #Text Sizes and Hn sizes 
 \*------------------------------------*/
 /* Sizes for text too small or too large for a header tag */
 /* line 265, ../scss/abstracts/_typography.scss */
@@ -6410,7 +6408,7 @@ h1,
 }
 
 /*------------------------------------*\
-    #Line Heights
+    #Line Heights  
 \*------------------------------------*/
 /* line 361, ../scss/abstracts/_typography.scss */
 .lh0 {
@@ -6438,7 +6436,7 @@ h1,
 }
 
 /*------------------------------------*\
-    #Generics
+    #Generics 
 \*------------------------------------*/
 /*------------------------------------*\
     #Centering without flexbox
@@ -6461,7 +6459,7 @@ h1,
 }
 
 /*------------------------------------*\
-    #Display Types
+    #Display Types 
 \*------------------------------------*/
 /* line 41, ../scss/abstracts/_utility.scss */
 button,
@@ -6480,7 +6478,7 @@ button,
 }
 
 /*------------------------------------*\
-    #Dropshadows
+    #Dropshadows 
 \*------------------------------------*/
 /* line 60, ../scss/abstracts/_utility.scss */
 .dropshadow1 {
@@ -6546,10 +6544,10 @@ button,
 }
 
 /*------------------------------------*\
-    #Flexbox
+    #Flexbox 
 \*------------------------------------*/
 /*------------------------------------*\
-    #Floats & Clearfix
+    #Floats & Clearfix  
 \*------------------------------------*/
 /* line 156, ../scss/abstracts/_utility.scss */
 .cf {
@@ -6566,10 +6564,10 @@ button,
 }
 
 /*------------------------------------*\
-    #Media Object
+    #Media Object  
 \*------------------------------------*/
 /*------------------------------------*\
-    #Position Types
+    #Position Types 
 \*------------------------------------*/
 /* line 219, ../scss/abstracts/_utility.scss */
 .relative, footer, .input-group, .mainNav .mainNav-header, .mainNav .mainNav-header .mainNav-title, .mainNav .mainNav-menu .mainNav-menu-link, .menuToggle-icon, .section, .fancymodal .fancymodal-content, .fancymodal--primary .fancymodal-content {
@@ -6615,7 +6613,7 @@ button,
 }
 
 /*------------------------------------*\
-    #Text Alignment
+    #Text Alignment  
 \*------------------------------------*/
 /* line 272, ../scss/abstracts/_utility.scss */
 .text-center, .card--sponsorship .card-inactiveActions, .emptyState .emptyState-copy, .planSuccessState .planSuccessState-copy {
@@ -6628,8 +6626,6 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 .table--list tr .table-data,
 .table--list td td,
 .table--list td .table-data,
-.table--list th td,
-.table--list th .table-data,
 .table--list .table-row td,
 .table--list .table-row .table-data {
   text-align: left;
@@ -6641,7 +6637,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Paddings
+    #Paddings 
 \*------------------------------------*/
 /* line 287, ../scss/abstracts/_utility.scss */
 .ptrbl0 {
@@ -7178,7 +7174,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Icons
+    #Icons 
 \*------------------------------------*/
 /* line 7, ../scss/base/_icons.scss */
 .icon--center {
@@ -7205,14 +7201,14 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Icon badge
+    #Icon badge  
 \*------------------------------------*/
 /* line 34, ../scss/base/_icons.scss */
 .icon--badge {
   height: 3rem;
   width: 3rem;
-  border: 1px solid #afadad;
-  fill: #afadad;
+  border: 1px solid #9a9a9a;
+  fill: #9a9a9a;
   position: relative;
   padding: 0.4375rem;
   margin-bottom: 1.5rem;
@@ -7222,7 +7218,7 @@ caption, th, .text-left, .mainNav .mainNav-menu, table th,
 }
 
 /*------------------------------------*\
-    #Link Styles
+    #Link Styles 
 \*------------------------------------*/
 /* line 8, ../scss/base/_links.scss */
 a {
@@ -7467,7 +7463,7 @@ a.alt-link2:active {
 }
 
 /*------------------------------------*\
-    #CSS behavior for when a device doesn't support svgs
+    #CSS behavior for when a device doesn't support svgs 
 \*------------------------------------*/
 /* line 12, ../scss/base/_noSvg.scss */
 .no-svg .hide-no-svg {
@@ -7485,7 +7481,7 @@ a.alt-link2:active {
 }
 
 /*------------------------------------*\
-    #Responsive Type with Media Queries
+    #Responsive Type with Media Queries 
 \*------------------------------------*/
 @media screen and (min-width: 320px) {
   /* line 41, ../scss/base/_responsiveType.scss */
@@ -15181,7 +15177,7 @@ a.alt-link2:active {
 }
 
 /*------------------------------------*\
-    #Theme Styles
+    #Theme Styles 
 \*------------------------------------*/
 /*------------------------------------*\
     #Brand Colors
@@ -15241,7 +15237,7 @@ a.alt-link2:active {
 
 /* line 70, ../scss/base/_theme.scss */
 .brandColor--greyMed {
-  background-color: #afadad;
+  background-color: #9a9a9a;
 }
 
 /* line 78, ../scss/base/_theme.scss */
@@ -15309,10 +15305,11 @@ body, html {
   font-family: "Work Sans", sans-serif;
   line-height: 1.6;
   color: #7d7d7d;
+  overflow-x: hidden;
 }
 
 /* Common margin-bottom for vertical rhythm. */
-/* line 78, ../scss/base/_typography.scss */
+/* line 79, ../scss/base/_typography.scss */
 ul, ol, dl,
 fieldset,
 p,
@@ -15321,71 +15318,71 @@ pre {
   margin-bottom: 1.5rem;
 }
 
-/* line 86, ../scss/base/_typography.scss */
+/* line 87, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
-/* line 91, ../scss/base/_typography.scss */
+/* line 92, ../scss/base/_typography.scss */
 hr {
   margin-bottom: 1.125rem;
 }
 
 /*------------------------------------*\
-    #Default Text Selection Color
+    #Default Text Selection Color 
 \*------------------------------------*/
-/* line 106, ../scss/base/_typography.scss */
+/* line 107, ../scss/base/_typography.scss */
 ::selection {
   background-color: #6ac6c5b3;
   color: #fff;
 }
 
-/* line 111, ../scss/base/_typography.scss */
+/* line 112, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: #6ac6c5b3;
   color: #fff;
 }
 
 /*------------------------------------*\
-    #Font Color Classes
+    #Font Color Classes 
 \*------------------------------------*/
-/* line 126, ../scss/base/_typography.scss */
+/* line 127, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 130, ../scss/base/_typography.scss */
+/* line 131, ../scss/base/_typography.scss */
 .txtc2 {
   color: #231F20;
 }
 
-/* line 134, ../scss/base/_typography.scss */
+/* line 135, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 138, ../scss/base/_typography.scss */
+/* line 139, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 143, ../scss/base/_typography.scss */
+/* line 144, ../scss/base/_typography.scss */
 .txtc5 {
-  color: #afadad;
+  color: #9a9a9a;
 }
 
-/* line 147, ../scss/base/_typography.scss */
+/* line 148, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
 
 /*------------------------------------*\
-    #Font Family Classes
+    #Font Family Classes 
 \*------------------------------------*/
 /*------------------------------------*\
-    #Header Styles and Sizes
+    #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 191, ../scss/base/_typography.scss */
+/* line 192, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -15393,67 +15390,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 245, ../scss/base/_typography.scss */
+/* line 246, ../scss/base/_typography.scss */
 hr {
   border-style: none;
   height: 0.125rem;
   margin-top: 0;
 }
 
-/* line 251, ../scss/base/_typography.scss */
+/* line 252, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 257, ../scss/base/_typography.scss */
+/* line 258, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #231F20;
   margin-left: 0;
 }
 
-/* line 263, ../scss/base/_typography.scss */
+/* line 264, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 269, ../scss/base/_typography.scss */
+/* line 270, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 275, ../scss/base/_typography.scss */
+/* line 276, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 281, ../scss/base/_typography.scss */
+/* line 282, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 287, ../scss/base/_typography.scss */
+/* line 288, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 292, ../scss/base/_typography.scss */
+/* line 293, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 297, ../scss/base/_typography.scss */
+/* line 298, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 304, ../scss/base/_typography.scss */
+/* line 305, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
   height: 0.125rem;
 }
 
-/* line 310, ../scss/base/_typography.scss */
+/* line 311, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -15462,7 +15459,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 323, ../scss/base/_typography.scss */
+/* line 324, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -15475,7 +15472,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 337, ../scss/base/_typography.scss */
+/* line 338, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -15487,16 +15484,16 @@ hr {
     #Line Heights (Variables and placeholders defined in _typography.scss module)
 \*------------------------------------*/
 /*------------------------------------*\
-    #Paragraph styles
+    #Paragraph styles 
 \*------------------------------------*/
-/* line 403, ../scss/base/_typography.scss */
+/* line 404, ../scss/base/_typography.scss */
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
   line-height: 1.33333;
 }
 
-/* line 410, ../scss/base/_typography.scss */
+/* line 411, ../scss/base/_typography.scss */
 .p3 {
   font-size: 1.25rem;
   line-height: 1.2;
@@ -15506,7 +15503,7 @@ hr {
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 426, ../scss/base/_typography.scss */
+/* line 427, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -15514,88 +15511,88 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 447, ../scss/base/_typography.scss */
+/* line 448, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
 
 /*------------------------------------*\
-    #Text Alignments
+    #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 465, ../scss/base/_typography.scss */
+  /* line 466, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 473, ../scss/base/_typography.scss */
+  /* line 474, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 481, ../scss/base/_typography.scss */
+  /* line 482, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 491, ../scss/base/_typography.scss */
+  /* line 492, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 500, ../scss/base/_typography.scss */
+  /* line 501, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 508, ../scss/base/_typography.scss */
+  /* line 509, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 517, ../scss/base/_typography.scss */
+  /* line 518, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 525, ../scss/base/_typography.scss */
+  /* line 526, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 534, ../scss/base/_typography.scss */
+  /* line 535, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
 }
 
 /*------------------------------------*\
-    #Generics
+    #Generics 
 \*------------------------------------*/
 /*------------------------------------*\
     #Centering without flexbox
 \*------------------------------------*/
 /*------------------------------------*\
-    #Display Types
+    #Display Types 
 \*------------------------------------*/
 /*------------------------------------*\
-    #Dropshadows
+    #Dropshadows 
 \*------------------------------------*/
 /* line 63, ../scss/base/_utility.scss */
 .innerShadow1 {
@@ -15613,7 +15610,7 @@ hr {
     #Flag Object  (like Media Object but with centered body vertically)
 \*------------------------------------*/
 /*------------------------------------*\
-    #Height Classes
+    #Height Classes 
 \*------------------------------------*/
 /* line 112, ../scss/base/_utility.scss */
 .vh50 {
@@ -15692,7 +15689,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Position Types
+    #Position Types 
 \*------------------------------------*/
 /*------------------------------------*\
     #Shapes
@@ -15723,7 +15720,7 @@ hr {
     #Flex-Box
 \*------------------------------------*/
 /*------------------------------------*\
-    #Grid Alignments and Properties
+    #Grid Alignments and Properties  
 \*------------------------------------*/
 /* line 24, ../scss/base/_flexbox.scss */
 .grid, .footer-menu {
@@ -16304,7 +16301,7 @@ hr {
 }
 
 /*------------------------------------*\
-    #Grid Child Sef Alignment
+    #Grid Child Sef Alignment 
 \*------------------------------------*/
 /* line 566, ../scss/base/_flexbox.scss */
 .grid-cell--top {
@@ -16474,7 +16471,7 @@ hr {
   }
 }
 /*------------------------------------*\
-    #Sizing properties for Child Elements
+    #Sizing properties for Child Elements 
 \*------------------------------------*/
 /* line 713, ../scss/base/_flexbox.scss */
 .grid--fit > .grid-cell {
@@ -16636,7 +16633,7 @@ hr {
     #Flex Debug
 \*------------------------------------*/
 /*------------------------------------*\
-    #Webfont (ITC SOUVENIR)
+    #Webfont (ITC SOUVENIR) 
 \*------------------------------------*/
 /*! Generated by Font Squirrel (https://www.fontsquirrel.com) on December 5, 2017 */
 @font-face {
@@ -16658,7 +16655,7 @@ hr {
   font-style: normal;
 }
 /*------------------------------------*\
-    #Footer
+    #Footer 
 \*------------------------------------*/
 /* line 7, ../scss/layout/_footer.scss */
 footer {
@@ -16925,7 +16922,7 @@ input,
 textarea {
   width: 100%;
   border: none;
-  color: #afadad;
+  color: #9a9a9a;
   -moz-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   -webkit-transition: all 0.4s cubic-bezier(0.860, 0.000, 0.070, 1.000);
@@ -17207,11 +17204,11 @@ input.input--large {
 /* line 496, ../scss/layout/_forms.scss */
 .inputGroup--alt label {
   left: 0.75rem;
-  color: #afadad;
+  color: #9a9a9a;
 }
 /* line 505, ../scss/layout/_forms.scss */
 .inputGroup--alt.is-focused label, .inputGroup--alt.is-filled label {
-  color: #afadad;
+  color: #9a9a9a;
   font-size: 0.6rem;
   line-height: 1.5;
   -moz-transform: translateY(-19px);
@@ -17246,7 +17243,7 @@ input.input--large {
 }
 /* line 547, ../scss/layout/_forms.scss */
 .inputGroup--withIcon .inputGroup-iconContainer .inputGroup-icon {
-  fill: #afadad;
+  fill: #9a9a9a;
   top: 0;
   bottom: 0;
   right: 0;
@@ -17348,7 +17345,7 @@ input.input--large {
 }
 /* line 669, ../scss/layout/_forms.scss */
 .inputGroup--boost .inputGroup--boost-controls .control:active span {
-  color: #afadad;
+  color: #9a9a9a;
   -moz-transform: scale(0.8);
   -ms-transform: scale(0.8);
   -webkit-transform: scale(0.8);
@@ -17460,7 +17457,7 @@ select {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 8px solid #afadad;
+  border-top: 8px solid #9a9a9a;
   right: 1rem;
   top: 1.125rem;
   bottom: 0;
@@ -17620,7 +17617,7 @@ input[type="checkbox"].styled-as-radio + label span {
 /* line 1048, ../scss/layout/_forms.scss */
 input[type="checkbox"].styled-as-radio + label span {
   background-color: transparent;
-  border: 2px solid #afadad;
+  border: 2px solid #9a9a9a;
   position: relative;
 }
 /* line 1056, ../scss/layout/_forms.scss */
@@ -17676,7 +17673,7 @@ input[type="radio"] + label span {
 /* line 1120, ../scss/layout/_forms.scss */
 input[type="radio"] + label span {
   background-color: transparent;
-  border: 2px solid #afadad;
+  border: 2px solid #9a9a9a;
 }
 
 /* line 1126, ../scss/layout/_forms.scss */
@@ -17800,7 +17797,7 @@ input[type="radio"].radio--large + label {
   top: 0;
   overflow: visible;
   height: 1.5rem;
-  /* Make the thumbs the same size as your custom sliderthumb.
+  /* Make the thumbs the same size as your custom sliderthumb. 
     they will not be visible but they will be draggable.  */
 }
 /* line 1248, ../scss/layout/_forms.scss */
@@ -18338,7 +18335,12 @@ input[type="radio"].radio--large + label {
   }
 }
 
-/* line 290, ../scss/layout/_navs.scss */
+/* line 289, ../scss/layout/_navs.scss */
+.preload .mainNav-overlay {
+  visibility: hidden;
+}
+
+/* line 299, ../scss/layout/_navs.scss */
 .no-touch .mainNav-menu-link:after {
   content: " ";
   width: 0;
@@ -18353,24 +18355,24 @@ input[type="radio"].radio--large + label {
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 290, ../scss/layout/_navs.scss */
+  /* line 299, ../scss/layout/_navs.scss */
   .no-touch .mainNav-menu-link:after {
     background-color: #231F20;
     bottom: -0.375rem;
     height: 0.125rem;
   }
 }
-/* line 308, ../scss/layout/_navs.scss */
+/* line 317, ../scss/layout/_navs.scss */
 .no-touch .mainNav-menu-link:hover, .no-touch .mainNav-menu-link:focus, .no-touch .mainNav-menu-link.is-active {
   color: #fff;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 308, ../scss/layout/_navs.scss */
+  /* line 317, ../scss/layout/_navs.scss */
   .no-touch .mainNav-menu-link:hover, .no-touch .mainNav-menu-link:focus, .no-touch .mainNav-menu-link.is-active {
     color: #231F20;
   }
 }
-/* line 317, ../scss/layout/_navs.scss */
+/* line 326, ../scss/layout/_navs.scss */
 .no-touch .mainNav-menu-link:hover:after, .no-touch .mainNav-menu-link:focus:after, .no-touch .mainNav-menu-link.is-active:after {
   width: 100%;
 }
@@ -18378,7 +18380,7 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Nav Small Menu Toggle
 \*------------------------------------*/
-/* line 337, ../scss/layout/_navs.scss */
+/* line 346, ../scss/layout/_navs.scss */
 .mainNav-menuToggle {
   width: 3.75rem;
   height: 3.75rem;
@@ -18389,24 +18391,24 @@ input[type="radio"].radio--large + label {
   position: absolute;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 337, ../scss/layout/_navs.scss */
+  /* line 346, ../scss/layout/_navs.scss */
   .mainNav-menuToggle {
     display: none;
   }
 }
-/* line 357, ../scss/layout/_navs.scss */
+/* line 366, ../scss/layout/_navs.scss */
 .mainNav-menuToggle a {
   color: #231F20;
   padding-top: 6px;
 }
 
-/* line 365, ../scss/layout/_navs.scss */
+/* line 374, ../scss/layout/_navs.scss */
 .menuToggle-icon {
   height: 1.3rem;
   width: 2.1rem;
   z-index: 202;
 }
-/* line 372, ../scss/layout/_navs.scss */
+/* line 381, ../scss/layout/_navs.scss */
 .menuToggle-icon:after, .menuToggle-icon:before {
   content: "";
   height: 4px;
@@ -18422,7 +18424,7 @@ input[type="radio"].radio--large + label {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 385, ../scss/layout/_navs.scss */
+/* line 394, ../scss/layout/_navs.scss */
 .menuToggle-icon:after {
   top: 50%;
 }
@@ -18430,15 +18432,15 @@ input[type="radio"].radio--large + label {
 /*------------------------------------*\
     #Main Nav Menu Toggle Open
 \*------------------------------------*/
-/* line 401, ../scss/layout/_navs.scss */
+/* line 410, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-label {
   opacity: 0;
 }
-/* line 405, ../scss/layout/_navs.scss */
+/* line 414, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon {
   border-bottom: solid 2px transparent;
 }
-/* line 408, ../scss/layout/_navs.scss */
+/* line 417, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:before {
   top: 50%;
   background-color: #fff;
@@ -18447,7 +18449,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 414, ../scss/layout/_navs.scss */
+/* line 423, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:after {
   background-color: #fff;
   -moz-transform: translateY(0) rotate(-45deg);
@@ -18455,7 +18457,7 @@ input[type="radio"].radio--large + label {
   -webkit-transform: translateY(0) rotate(-45deg);
   transform: translateY(0) rotate(-45deg);
 }
-/* line 419, ../scss/layout/_navs.scss */
+/* line 428, ../scss/layout/_navs.scss */
 .mainNav-menuToggle.is-menu-open .menuToggle-icon:hover, .mainNav-menuToggle.is-menu-open .menuToggle-icon:focus {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -18923,7 +18925,7 @@ input[type="radio"].radio--large + label {
   }
 }
 /*------------------------------------*\
-    #Sections
+    #Sections 
 \*------------------------------------*/
 /* line 6, ../scss/layout/_sections.scss */
 .section {
@@ -18994,11 +18996,11 @@ input[type="radio"].radio--large + label {
 
 /* line 70, ../scss/layout/_sections.scss */
 .section--bordered {
-  border-bottom: 1px solid #afadad;
+  border-bottom: 1px solid #9a9a9a;
 }
 
 /*------------------------------------*\
-    #Section Types
+    #Section Types 
 \*------------------------------------*/
 /* line 84, ../scss/layout/_sections.scss */
 .section--primary {
@@ -19054,7 +19056,7 @@ input[type="radio"].radio--large + label {
 }
 
 /*------------------------------------*\
-    #Tooltips
+    #Tooltips 
 \*------------------------------------*/
 /* line 7, ../scss/layout/_tooltips.scss */
 .tooltip {
@@ -19063,14 +19065,14 @@ input[type="radio"].radio--large + label {
 }
 /* line 11, ../scss/layout/_tooltips.scss */
 .tooltip .tooltip-icon {
-  fill: #afadad;
+  fill: #9a9a9a;
   height: 0.875rem;
   width: 0.875rem;
 }
 /* line 18, ../scss/layout/_tooltips.scss */
 .tooltip .tooltip-dialogue {
   position: absolute;
-  background-color: #afadad;
+  background-color: #9a9a9a;
   width: 11.25rem;
   padding: 0.375rem;
   white-space: normal;
@@ -19107,32 +19109,51 @@ table th,
 .table--list {
   width: 100%;
 }
-/* line 35, ../scss/layout/_tables.scss */
-.table--list tr,
-.table--list td,
-.table--list th,
-.table--list .table-row {
-  padding: 1.125rem;
-  padding-left: 1.875rem;
+/* line 36, ../scss/layout/_tables.scss */
+.table--list th {
+  padding: 0.75rem;
   color: #231F20;
 }
-/* line 49, ../scss/layout/_tables.scss */
-.table--list tr .table-contribution,
-.table--list td .table-contribution,
-.table--list th .table-contribution,
-.table--list .table-row .table-contribution {
-  font-size: 1.5rem;
-  line-height: 1.2;
+@media only screen and (min-width: 40.0625em) {
+  /* line 36, ../scss/layout/_tables.scss */
+  .table--list th {
+    padding: 1.125rem;
+  }
 }
-/* line 56, ../scss/layout/_tables.scss */
+/* line 46, ../scss/layout/_tables.scss */
 .table--list tr,
+.table--list td,
 .table--list .table-row {
-  background-color: #FFF;
+  padding: 0.75rem;
+  color: #231F20;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 46, ../scss/layout/_tables.scss */
+  .table--list tr,
+  .table--list td,
+  .table--list .table-row {
+    padding: 1.125rem;
+  }
 }
 /* line 62, ../scss/layout/_tables.scss */
+.table--list tr .table-contribution,
+.table--list td .table-contribution,
+.table--list .table-row .table-contribution {
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 62, ../scss/layout/_tables.scss */
+  .table--list tr .table-contribution,
+  .table--list td .table-contribution,
+  .table--list .table-row .table-contribution {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+/* line 78, ../scss/layout/_tables.scss */
 .table--list tr,
 .table--list .table-row {
-  background-color: #fff;
   border-bottom: 1px solid #dae0e0;
 }
 
@@ -19426,6 +19447,42 @@ table th,
 }
 
 /*------------------------------------*\
+    #App Footer
+\*------------------------------------*/
+/* line 8, ../scss/components/_appFooter.scss */
+.appFooter {
+  width: 100%;
+  background-color: #6AC6C5;
+  height: auto;
+  padding: 0;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 17, ../scss/components/_appFooter.scss */
+.appFooter .appFooter-credit {
+  color: #fff;
+}
+/* line 21, ../scss/components/_appFooter.scss */
+.appFooter .appFooter-menu {
+  margin-bottom: 0;
+}
+/* line 24, ../scss/components/_appFooter.scss */
+.appFooter .appFooter-menu .menu-item {
+  margin-right: 0.75rem;
+}
+/* line 27, ../scss/components/_appFooter.scss */
+.appFooter .appFooter-menu .menu-item .menu-link {
+  color: #fff;
+}
+/* line 29, ../scss/components/_appFooter.scss */
+.appFooter .appFooter-menu .menu-item .menu-link:hover, .appFooter .appFooter-menu .menu-item .menu-link:focus {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*------------------------------------*\
     #App Nav
 \*------------------------------------*/
 /* line 9, ../scss/components/_appNav.scss */
@@ -19495,7 +19552,7 @@ table th,
 }
 /* line 72, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
-  color: #afadad;
+  color: #9a9a9a;
   font-size: 0.6rem;
   line-height: 1.5;
 }
@@ -19511,12 +19568,11 @@ table th,
 /* line 87, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu {
   position: absolute;
-  height: 40vh;
   background-color: #FFF;
   width: 100%;
   right: 0;
   left: 0;
-  bottom: 27px;
+  bottom: 2.125rem;
   z-index: 40;
   background-color: white;
   border-top: 1px solid #dae0e0;
@@ -19529,27 +19585,34 @@ table th,
   -webkit-transform: translateY(100vh);
   transform: translateY(100vh);
 }
-/* line 101, ../scss/components/_appNav.scss */
+/* line 100, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu.is-active {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 106, ../scss/components/_appNav.scss */
+/* line 104, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-item {
   width: 100%;
   padding: 1.125rem;
   text-align: left;
   border-bottom: 1px solid #dae0e0;
 }
-/* line 115, ../scss/components/_appNav.scss */
+/* line 112, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-item:last-child {
   border-bottom: 0;
 }
-/* line 120, ../scss/components/_appNav.scss */
+/* line 116, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-link {
-  color: #afadad;
+  color: #9a9a9a;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 122, ../scss/components/_appNav.scss */
+.appNav .appNav-secondaryMenu .appNav-menu-link:hover, .appNav .appNav-secondaryMenu .appNav-menu-link:focus {
+  color: #238EB2;
 }
 
 /*------------------------------------*\
@@ -19565,7 +19628,7 @@ table th,
 }
 /* line 147, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover, .appNav-menu-link:focus, .appNav-menu-link:active {
-  color: #afadad;
+  color: #9a9a9a;
   opacity: 1;
 }
 @media only screen and (min-width: 64.0625em) {
@@ -19575,7 +19638,7 @@ table th,
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #afadad;
+    background-color: #9a9a9a;
     height: 1px;
     right: 0;
     left: 0;
@@ -19583,7 +19646,7 @@ table th,
 }
 /* line 171, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover .menu-link-icon, .appNav-menu-link:focus .menu-link-icon, .appNav-menu-link:active .menu-link-icon {
-  fill: #afadad;
+  fill: #9a9a9a;
 }
 /* line 178, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active {
@@ -19612,7 +19675,7 @@ table th,
 }
 /* line 210, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon {
-  fill: #afadad;
+  fill: #9a9a9a;
   width: 1.875rem;
   margin-bottom: 0.125rem;
 }
@@ -19647,7 +19710,7 @@ table th,
 }
 /* line 248, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-label {
-  color: #afadad;
+  color: #9a9a9a;
 }
 /* line 254, ../scss/components/_appNav.scss */
 .appNav-menu-link .appNav-overlay {
@@ -20042,12 +20105,16 @@ button.is-inactive,
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 47, ../scss/components/_cards.scss */
+/* line 46, ../scss/components/_cards.scss */
+.card .card-content--bordered {
+  border-bottom: 1px solid #dae0e0;
+}
+/* line 50, ../scss/components/_cards.scss */
 .card .card-actions {
   border-top: #dae0e0 1px solid;
   width: 100%;
 }
-/* line 51, ../scss/components/_cards.scss */
+/* line 54, ../scss/components/_cards.scss */
 .card .card-actions .card-action {
   color: #231F20;
   fill: #231F20;
@@ -20063,7 +20130,7 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 63, ../scss/components/_cards.scss */
+/* line 66, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
   color: #fff;
   fill: #fff;
@@ -20071,16 +20138,16 @@ button.is-inactive,
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 81, ../scss/components/_cards.scss */
+  /* line 84, ../scss/components/_cards.scss */
   .cardList li:nth-child(odd) {
     padding-right: 1.125rem;
   }
 }
 
 /*------------------------------------*\
-    #A sponsorship card
+    #A sponsorship card 
 \*------------------------------------*/
-/* line 114, ../scss/components/_cards.scss */
+/* line 103, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -20090,7 +20157,7 @@ button.is-inactive,
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-/* line 123, ../scss/components/_cards.scss */
+/* line 112, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
   color: #231F20;
@@ -20098,35 +20165,35 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 123, ../scss/components/_cards.scss */
+  /* line 112, ../scss/components/_cards.scss */
   .card--sponsorship .card-header .sponsorship-name {
     margin-bottom: 0;
   }
 }
-/* line 135, ../scss/components/_cards.scss */
+/* line 124, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 143, ../scss/components/_cards.scss */
+  /* line 132, ../scss/components/_cards.scss */
   .card--sponsorship .card-content {
     padding: 1.875rem;
   }
 }
-/* line 150, ../scss/components/_cards.scss */
+/* line 139, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions {
   color: #6AC6C5;
   margin-bottom: 0;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 157, ../scss/components/_cards.scss */
+/* line 146, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions:hover, .card--sponsorship .card-content .sponsorship-contributions:focus {
   color: #238EB2;
 }
-/* line 167, ../scss/components/_cards.scss */
+/* line 156, ../scss/components/_cards.scss */
 .card--sponsorship .card-inactiveActions {
   position: absolute;
   top: 0;
@@ -20142,7 +20209,7 @@ button.is-inactive,
   margin-top: 4.875rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 167, ../scss/components/_cards.scss */
+  /* line 156, ../scss/components/_cards.scss */
   .card--sponsorship .card-inactiveActions {
     padding: 1.875rem;
   }
@@ -20151,15 +20218,15 @@ button.is-inactive,
 /*------------------------------------*\
     #Am inactive sponsorship Card
 \*------------------------------------*/
-/* line 202, ../scss/components/_cards.scss */
+/* line 191, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-inactiveActions {
   display: block;
 }
-/* line 207, ../scss/components/_cards.scss */
+/* line 196, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-content {
   opacity: 0;
 }
-/* line 212, ../scss/components/_cards.scss */
+/* line 201, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-actions {
   opacity: 0;
   pointer-events: none;
@@ -20168,17 +20235,17 @@ button.is-inactive,
 /*------------------------------------*\
     #A Card Containing Account Login UX
 \*------------------------------------*/
-/* line 231, ../scss/components/_cards.scss */
+/* line 220, ../scss/components/_cards.scss */
 .card--login {
   width: 100%;
 }
-/* line 234, ../scss/components/_cards.scss */
+/* line 223, ../scss/components/_cards.scss */
 .card--login .card-header {
   padding-bottom: 0;
   border-bottom: none;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 231, ../scss/components/_cards.scss */
+  /* line 220, ../scss/components/_cards.scss */
   .card--login {
     margin-right: auto;
     margin-left: auto;
@@ -20190,19 +20257,19 @@ button.is-inactive,
 /*------------------------------------*\
     #A Card Containing Signup UX
 \*------------------------------------*/
-/* line 258, ../scss/components/_cards.scss */
+/* line 247, ../scss/components/_cards.scss */
 .card--signUp {
   width: 100%;
   padding-bottom: 0.375rem;
   min-height: 18.75rem;
 }
-/* line 263, ../scss/components/_cards.scss */
+/* line 252, ../scss/components/_cards.scss */
 .card--signUp .card-header {
   padding-bottom: 0;
   border-bottom: none;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 258, ../scss/components/_cards.scss */
+  /* line 247, ../scss/components/_cards.scss */
   .card--signUp {
     margin-right: auto;
     margin-left: auto;
@@ -20343,7 +20410,7 @@ button.is-inactive,
 }
 /* line 138, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .calculator-results .calculator-results-result:nth-child(1) {
-  border-right: 1px solid #afadad;
+  border-right: 1px solid #9a9a9a;
 }
 /* line 145, ../scss/components/_calculators.scss */
 .calculator .calculator-resultsContainer .result-label {
@@ -20601,7 +20668,7 @@ img {
 }
 
 /*------------------------------------*\
-    #Global Illustration Styles
+    #Global Illustration Styles 
 \*------------------------------------*/
 /* line 22, ../scss/components/_images.scss */
 .illustr {
@@ -20609,7 +20676,7 @@ img {
 }
 
 /*------------------------------------*\
-    #Illustration for State Badges
+    #Illustration for State Badges 
 \*------------------------------------*/
 /* line 36, ../scss/components/_images.scss */
 .illustr--stateBadge {
@@ -21559,7 +21626,7 @@ body.fancymodal-open {
 
 /* line 34, ../scss/components/_tags.scss */
 .tag--inactive {
-  background-color: #afadad;
+  background-color: #9a9a9a;
 }
 
 /* line 40, ../scss/components/_tags.scss */
@@ -21914,7 +21981,7 @@ body.fancymodal-open {
 \*------------------------------------*/
 /* line 25, ../scss/pages/_home.scss */
 .whyPickpocket {
-  border: 1px solid #afadad;
+  border: 1px solid #9a9a9a;
   padding: 1.5rem;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -22019,7 +22086,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Login and Account Sign Up Page
+    #Login and Account Sign Up Page 
 \*------------------------------------*/
 /* line 7, ../scss/pages/_login.scss */
 .loginView {
@@ -22061,7 +22128,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Plan Setup Success Page
+    #Plan Setup Success Page 
 \*------------------------------------*/
 /* line 8, ../scss/pages/_planSuccessfullyMade.scss */
 .planSuccessState {
@@ -22089,34 +22156,107 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Styles specific to sponsorship creation page
+    #Styles specific to sponsorship creation page 
 \*------------------------------------*/
 /*------------------------------------*\
-    #Plans
+    #Illustrations Sponsee Selection Screen
 \*------------------------------------*/
-/* line 14, ../scss/pages/_sponsorshipCreation.scss */
+/* line 12, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustrContainer {
+  position: absolute;
+  top: -27%;
+  width: 12.5rem;
+  z-index: 1;
+  height: 100vh;
+  left: -5%;
+  min-height: 41.25rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 12, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustrContainer {
+    width: 16rem;
+    top: -5%;
+  }
+}
+
+/* line 28, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustrContainer--right {
+  right: -2%;
+  left: auto;
+}
+
+/* line 33, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustr {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 15rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 33, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr {
+    background-image: url("../assets/images/sponsorBg--sponsorshipCreation1.svg");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 33, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr {
+    top: auto;
+    bottom: 16%;
+    left: -5%;
+  }
+}
+
+/* line 56, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustr--right {
+  right: 0;
+  left: auto;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 56, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr--right {
+    background-image: url("../assets/images/sponsorBg--sponsorshipCreation2.svg");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 56, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr--right {
+    top: auto;
+    bottom: 16%;
+    right: -5%;
+  }
+}
+
+/*------------------------------------*\
+    #Plans  
+\*------------------------------------*/
+/* line 83, ../scss/pages/_sponsorshipCreation.scss */
 .plans .plan {
   margin-bottom: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 17, ../scss/pages/_sponsorshipCreation.scss */
+  /* line 86, ../scss/pages/_sponsorshipCreation.scss */
   .plans .plan .plan-badgeContainer {
     padding-right: 0;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 17, ../scss/pages/_sponsorshipCreation.scss */
+  /* line 86, ../scss/pages/_sponsorshipCreation.scss */
   .plans .plan .plan-badgeContainer {
     padding-right: 1.5rem;
   }
 }
-/* line 29, ../scss/pages/_sponsorshipCreation.scss */
+/* line 98, ../scss/pages/_sponsorshipCreation.scss */
 .plans .plan .plan-badgeContainer .plan-badge {
   margin-bottom: 1.125rem;
   max-width: 13.5rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 29, ../scss/pages/_sponsorshipCreation.scss */
+  /* line 98, ../scss/pages/_sponsorshipCreation.scss */
   .plans .plan .plan-badgeContainer .plan-badge {
     max-width: 11.25rem;
   }
@@ -22125,7 +22265,7 @@ body.fancymodal-open {
 /*------------------------------------*\
     #A Plan card
 \*------------------------------------*/
-/* line 55, ../scss/pages/_sponsorshipCreation.scss */
+/* line 124, ../scss/pages/_sponsorshipCreation.scss */
 .card--plan {
   border-top: 6px solid #6AC6C5;
   -moz-transform: translateY(0);
@@ -22137,11 +22277,11 @@ body.fancymodal-open {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 60, ../scss/pages/_sponsorshipCreation.scss */
+/* line 129, ../scss/pages/_sponsorshipCreation.scss */
 .card--plan .card-content {
   padding-top: 0.75rem;
 }
-/* line 64, ../scss/pages/_sponsorshipCreation.scss */
+/* line 133, ../scss/pages/_sponsorshipCreation.scss */
 .card--plan:hover, .card--plan:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -22153,14 +22293,14 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Custom Amount Input
+    #Custom Amount Input  
 \*------------------------------------*/
-/* line 83, ../scss/pages/_sponsorshipCreation.scss */
+/* line 152, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount {
   display: inline-block;
   position: relative;
 }
-/* line 87, ../scss/pages/_sponsorshipCreation.scss */
+/* line 156, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount:before {
   content: "$";
   left: 0.375rem;
@@ -22171,7 +22311,7 @@ body.fancymodal-open {
   height: 1.5rem;
   margin: auto;
 }
-/* line 99, ../scss/pages/_sponsorshipCreation.scss */
+/* line 168, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input {
   border: 1px solid #dae0e0;
   padding: 0.375rem;
@@ -22181,20 +22321,20 @@ body.fancymodal-open {
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 108, ../scss/pages/_sponsorshipCreation.scss */
+/* line 177, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: textfield;
   margin: 0;
 }
-/* line 116, ../scss/pages/_sponsorshipCreation.scss */
+/* line 185, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input:active, .input--customAmount input:focus {
   border: 1px solid #231F20;
 }
 
 /*------------------------------------*\
-    #Styles Specific to Sponsor View
+    #Styles Specific to Sponsor View 
 \*------------------------------------*/
 /* line 8, ../scss/pages/_sponsorView.scss */
 .sponsorViewContainer {
@@ -22223,128 +22363,75 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Sponsor Section Illustrations
 \*------------------------------------*/
-/* line 40, ../scss/pages/_sponsorView.scss */
+/* line 39, ../scss/pages/_sponsorView.scss */
 .sponsorSection-illustrContainer {
-  top: 0;
-  bottom: -17%;
-  position: absolute;
-  overflow: hidden;
-  width: 34%;
-  left: 0;
-  height: 92vh;
+  position: relative;
+  width: 15.625rem;
+  height: 15.625rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 40, ../scss/pages/_sponsorView.scss */
+  /* line 39, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustrContainer {
-    left: 0;
-    width: 18.125rem;
-    max-height: 100vh;
+    width: 100%;
   }
 }
 
-/* line 58, ../scss/pages/_sponsorView.scss */
-.sponsorSection--illustrContainer--right {
-  right: 0;
-  left: auto;
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 58, ../scss/pages/_sponsorView.scss */
-  .sponsorSection--illustrContainer--right {
-    right: -5%;
-  }
-}
-
-/* line 70, ../scss/pages/_sponsorView.scss */
+/* line 51, ../scss/pages/_sponsorView.scss */
 .sponsorSection-illustr {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 15rem;
+  height: 100%;
+  top: 0;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: left bottom;
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 70, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr {
-    height: 18.75rem;
-  }
-}
-
-/* line 86, ../scss/pages/_sponsorView.scss */
-.sponsorSection-illustr--right {
-  right: 0;
-  left: auto;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 86, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--right {
-    left: auto;
-    right: 0;
-  }
-}
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 98, ../scss/pages/_sponsorView.scss */
+  /* line 63, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--dashboard {
     background-image: url("../assets/images/illustr--dashboardPage.svg");
-    left: 0;
-    width: 100%;
-    bottom: 15%;
+    left: -8%;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 98, ../scss/pages/_sponsorView.scss */
+  /* line 63, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--dashboard {
-    width: 90%;
-    top: 17.5rem;
-    right: 0;
-    left: 0;
-    margin: auto;
+    left: -2%;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 118, ../scss/pages/_sponsorView.scss */
+  /* line 74, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--settings {
     background-image: url("../assets/images/illustr--settingsPage.svg");
-    width: 100%;
-    left: -5%;
-    bottom: 35%;
+    left: -7%;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 118, ../scss/pages/_sponsorView.scss */
+  /* line 74, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--settings {
-    width: 90%;
-    right: 0;
-    left: 0;
-    margin: auto;
-    bottom: 30%;
+    left: -3%;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 138, ../scss/pages/_sponsorView.scss */
+  /* line 86, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--contributions {
-    left: -5%;
-    bottom: 17%;
+    left: -7%;
     background-image: url("../assets/images/illustr--contributionsPage.svg");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 138, ../scss/pages/_sponsorView.scss */
+  /* line 86, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--contributions {
-    width: 90%;
-    right: 0;
     left: -2%;
-    margin: auto;
-    top: 17.5rem;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 157, ../scss/pages/_sponsorView.scss */
+  /* line 98, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--managePlan {
     background-image: url("../assets/images/illustr--managingPlanPage.svg");
     left: -5%;
@@ -22353,49 +22440,13 @@ body.fancymodal-open {
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 157, ../scss/pages/_sponsorView.scss */
+  /* line 98, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--managePlan {
     width: 90%;
     right: 0;
     left: 0;
     margin: auto;
     bottom: 30%;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 178, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationLeft {
-    background-image: url("../assets/images/sponsorBg--sponsorshipCreation1.svg");
-    top: auto;
-    bottom: -4%;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 178, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationLeft {
-    top: auto;
-    bottom: 16%;
-    left: -5%;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 197, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationRight {
-    background-image: url("../assets/images/sponsorBg--sponsorshipCreation2.svg");
-    top: auto;
-    bottom: -4%;
-    left: auto;
-    right: 0;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 197, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationRight {
-    top: auto;
-    bottom: 16%;
-    right: -5%;
   }
 }
 
@@ -22475,6 +22526,53 @@ body.fancymodal-open {
 .hand-holding-app .appIcon .appIconDollar {
   transform-origin: 195px 140px;
   z-index: 0;
+}
+
+/*------------------------------------*\
+    #Plan Edit Page
+\*------------------------------------*/
+/*------------------------------------*\
+    #Plan Status
+\*------------------------------------*/
+/* line 15, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-status {
+  margin-bottom: 0.75rem;
+  margin-right: 0;
+}
+/* line 20, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action {
+  color: #9a9a9a;
+  font-weight: normal;
+  margin-bottom: 0.375rem;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 27, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action:hover, .planStatus .planStatus-action:focus {
+  color: #231F20;
+}
+/* line 31, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action:hover .icon, .planStatus .planStatus-action:focus .icon {
+  fill: #231F20;
+}
+/* line 36, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action .icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: #9a9a9a;
+  vertical-align: middle;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 44, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action .label {
+  vertical-align: middle;
 }
 
 /*------------------------------------*\

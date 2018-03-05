@@ -12,7 +12,9 @@ twopence.controller('dashboardCtrl', [
     'User',
     'Auth',
     '$fancyModal',
+    '$rootScope',
     '$state',
+    '$timeout',
     function(
         Sponsee,
         Sponsor,
@@ -20,7 +22,9 @@ twopence.controller('dashboardCtrl', [
         User,
         Auth,
         $fancyModal,
-        $state) {
+        $rootScope,
+        $state,
+        $timeout) {
 
     var vm = this;
 
@@ -29,33 +33,32 @@ twopence.controller('dashboardCtrl', [
     //
     // Gets user's info and name vm.sponsorInfo, vm.sponsorInfo.name
     //
-    User.getUserInfo().then(function(dashboard) {
-      vm.sponsorInfo = dashboard;
+    vm.getUserInfo = function() {
 
-      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
+      User.getUserInfo().then(function(dashboard) {
+        $timeout(function() {
+          vm.sponsorInfo = dashboard;
+          vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
+        },100);
+      }).catch(function(err){
+        console.log(err);
+      });
 
-    }).catch(function(err){
+      //
+      // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+      //
+      Sponsorship.getAll().then(function(sponsorships) {
+          
+        $timeout(function() {
+          vm.sponsorships = sponsorships.data;
+          vm.totalContributions = vm.getTotalContributions(sponsorships.data);
+        }, 100); 
+        
+      }).catch(function(err){
+        console.log(err);
+      });
 
-      console.log(err);
-
-    });
-
-
-    //
-    // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
-    //
-    Sponsorship.getAll().then(function(sponsorships) {
-      vm.sponsorships = sponsorships.data;
-
-      vm.totalContributions = vm.getTotalContributions(sponsorships.data);
-
-      console.log(vm.sponsorships); 
-      
-    }).catch(function(err){
-
-      console.log(err);
-
-    });
+    }
 
 
     //
@@ -118,5 +121,16 @@ twopence.controller('dashboardCtrl', [
       });
 
     };
+
+
+    //
+    // Listens for a boost being made event to update the total given
+    //
+    $rootScope.$on('sponsor-boosted-sponsee', function() {
+      vm.getUserInfo(); 
+    }); 
+
+
+    vm.getUserInfo(); 
 
 }]);

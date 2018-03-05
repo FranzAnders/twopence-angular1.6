@@ -34,15 +34,10 @@ twopence.controller('sponseePlanEditCtrl', [
     vm.$onInit = function() {
 
       vm.sponsorshipId = $stateParams.plan;
-
       vm.sponseeInfo = null;
-
       vm.customAmount = null
-
       vm.latestPlan = '';
-
       vm.getPlan(vm.sponsorshipId); 
-
       vm.planStatus = null;
 
     }
@@ -55,9 +50,7 @@ twopence.controller('sponseePlanEditCtrl', [
     var numRound = function(number, precision) {
 
       var factor = Math.pow(10, precision);
-
       var tempNumber = number * factor;
-
       var roundedTempNumber = Math.round(tempNumber);
 
       return roundedTempNumber / factor;
@@ -104,12 +97,9 @@ twopence.controller('sponseePlanEditCtrl', [
     vm.getPlan = function(pSponsorshipId) {
       Sponsorship.get(pSponsorshipId).then(function(sponsorship) {
 
-        console.log(sponsorship);
-
         $timeout(function() {
 
           vm.sponseeInfo = sponsorship;
-          console.log(vm.sponseeInfo); 
           vm.latestPlan = vm.getLatestPlan(sponsorship);
           vm.customAmount = parseInt(vm.latestPlan.limit);
 
@@ -172,159 +162,134 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Pauses the plan
+    // Pauses the plan by sending a pause payload set to true 
     //
-    vm.pausePlan = function(pPlan, pSponsorshipId, pSponsee) {
+    vm.pausePlan = function(pSponsorship, pSponsee) {
 
-      var planId = pPlan.id;
+      //
+      // The current plan being worked with, we check it later for its status
+      //
+      var latestPlan = pSponsorship.plans[0];
+      var sponsorshipId = pSponsorship.id; 
+      var planId = latestPlan.id;
 
       var payLoad = {
         "pause": true
       };
 
-
       //
-      // We create an object with the required info to patch the plan for $fancyModal ctrl
+      // We patch the active plan and make a new one to take its' place 
       //
-      var sponseePlanPatchInfo = {};
-
-      sponseePlanPatchInfo.planId  = planId;
-      sponseePlanPatchInfo.payLoad = payLoad;
-      sponseePlanPatchInfo.sponsorshipId = pSponsorshipId;
-
-
-      if (pPlan.schedules[0].date_termination === getTodaysDate()) {
-
+      Sponsorship.patch(sponsorshipId, planId, payLoad)
+      .then(function(success) {
+        $rootScope.$emit('plan-updated');
+      })
+      .catch(function(err) {
         $fancyModal.open({
-          templateUrl: 'js/modals/plan-edit-already-paused.html',
+          templateUrl: 'js/modals/plan-edit-error.html',
           themeClass: 'fancymodal--primary  fancymodal--small',
           openingClass: 'is-open',
           closingClass: 'is-closed',
           showCloseButton: false
-
-        })
-
-      } else {
-
-        if (pPlan.active === true) {
-
-          $fancyModal.open({
-            controller: 'planEditConfirmationCtrl as planEditConfirmation',
-            templateUrl: 'js/modals/plan-edit-pausing-confirmation.html',
-            themeClass: 'fancymodal--primary  fancymodal--confirmation  fancymodal--small',
-            openingClass: 'is-open',
-            closingClass: 'is-closed',
-            showCloseButton: false,
-            resolve: {
-
-              sponseePlanPatchInfo: function() {
-
-                return sponseePlanPatchInfo
-
-              },
-              Sponsorship: function() {
-
-                return Sponsorship
-
-              },
-              sponsorshipInfo: function() {
-
-                return pSponsee
-
-              }
-
-            }
-
-          })
+        });
+      });
+    };
 
 
 
-        } else {
+    //
+    // Resumes a plan by sending a pause pauload set to false
+    //
+    vm.resumePlan = function(pSponsorship, pSponsee) {
 
-          //
-          // Sets pause prop to false to resume plan
-          //
-          payLoad.pause = false;
+      //
+      // The current plan being worked with, we check it later for its status
+      //
+      var latestPlan = pSponsorship.plans[0];
+      var sponsorshipId = pSponsorship.id; 
 
-          Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
-
-            $fancyModal.open({
-              templateUrl: 'js/modals/plan-edit-success.html',
-              themeClass: 'fancymodal--primary  fancymodal--small',
-              openingClass: 'is-open',
-              closingClass: 'is-closed',
-              showCloseButton: false
-
-            });
-
-            mixpanel.track('Resumed Plan', {'Graduate': 'User:' + pSponsee.sponsee.id})
-            $rootScope.$emit('plan-updated');
+        
+      //
+      // Payload to pause the existing plan
+      //
+      var payLoad = {
+        "pause": false
+      };
 
 
-          }).catch(function(error) {
-
-            console.log(error);
-
-            $fancyModal.open({
-              templateUrl: 'js/modals/plan-edit-error.html',
-              themeClass: 'fancymodal--primary  fancymodal--small',
-              openingClass: 'is-open',
-              closingClass: 'is-closed',
-              showCloseButton: false
-
-            });
-
-          });
-
-        }
-
-      }
+      //
+      // We patch the active plan and make a new one to take its' place 
+      //
+      Sponsorship.patch(sponsorshipId, latestPlan.id, payLoad)
+      .then(function(success) {
+        $rootScope.$emit('plan-updated');
+      })
+      .catch(function(err) {
+        $fancyModal.open({
+          templateUrl: 'js/modals/plan-edit-error.html',
+          themeClass: 'fancymodal--primary  fancymodal--small',
+          openingClass: 'is-open',
+          closingClass: 'is-closed',
+          showCloseButton: false
+        });
+      });
 
     };
 
 
+    vm.cancelActivation = function(pSponsorship, pSponsee) {
+
+      //
+      // The current plan being worked with, we check it later for its status
+      //
+      var latestPlan = pSponsorship.plans[0];
+      var sponsorshipId = pSponsorship.id; 
+
+        
+      //
+      // Payload to pause the existing plan
+      //
+      var payLoad = {
+        "cancel": true
+      };
+
+
+      //
+      // We patch the active plan and make a new one to take its' place 
+      //
+      Sponsorship.patch(sponsorshipId, latestPlan.id, payLoad)
+      .then(function(success) {
+        $rootScope.$emit('plan-updated');
+      })
+      .catch(function(err) {
+        $fancyModal.open({
+          templateUrl: 'js/modals/plan-edit-error.html',
+          themeClass: 'fancymodal--primary  fancymodal--small',
+          openingClass: 'is-open',
+          closingClass: 'is-closed',
+          showCloseButton: false
+        });
+      });
+
+    }
+
     //
-    // Creates a plan, checks if it's paused already first if not,
-    // pauses existing one and makes
+    // Change's the plan's limit 
     //
-    vm.createPlan = function(pPlanEditForm, pSponsorshipId, pSponseeInfo, pLatestPlan) {
-
-      if(pPlanEditForm.$valid) {
+    vm.changePlanLimit = function(pPlanEditForm, pSponsorship, pNewLimit) {
 
         //
-        // Payload to pause the existing plan
+        // The current plan being worked with, we check it later for its status
         //
-        var payLoad = {
-          "pause": true
-        };
-
-        //
-        // We create an object with the required info to patch the plan
-        //
-        var sponseePlanPatchInfo = {};
-
-        sponseePlanPatchInfo.planId  = pLatestPlan.id;
-        sponseePlanPatchInfo.payLoad = payLoad;
-        sponseePlanPatchInfo.sponsorshipId = pSponsorshipId;
+        var latestPlan = pSponsorship.plans[0];
+        var sponsorshipId = pSponsorship.id; 
 
 
         //
-        // Holds the new plan info with data_effective set to tomorrow
-        //
-        var newPlanInfo = {
-          "plan":{
-              "type":"match",
-              "frequency":"monthly",
-              "limit": vm.customAmount
-          },
-          "schedule": {
-              "date_effective" : getTomorrowsDate()
-          }
-        }
-
         // Mixpanel event properties.
-        var oldLimit = pLatestPlan.limit;
-        var newLimit = vm.customAmount;
+        //
+        var oldLimit = latestPlan.limit;
+        var newLimit = pNewLimit;
         var diff = newLimit - oldLimit;
         var change = 'Default';
         if (diff > 0) {
@@ -334,114 +299,183 @@ twopence.controller('sponseePlanEditCtrl', [
           change = 'Decrease'
         };
         var properties = {
-          'Graduate' : 'User:' + pSponseeInfo.sponsee.id,
+          'Graduate' : 'User:' + pSponsorship.sponsee.id,
           'New Limit': newLimit,
           'Change': change,
           'Change Amount': diff
         };
 
-        //
-        // We check if plan ends today, if so, it's paused or in the process of being paused
-        // so we just make a new one. If not, we pause it and make a new one.
-        //
-        if(vm.checkIfPaused(pLatestPlan, pSponseeInfo)) {
 
-          Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
-          .then(function(success){
+      if(pPlanEditForm.$valid) {
 
-          mixpanel.track('Changed Plan Limit', properties);
+        if(latestPlan.status === 'deactivating' || latestPlan.status === 'inactive') {
+          //
+          // Holds the new plan info with data_effective set to tomorrow
+          //
+          var newPlanInfo = {
+            "plan":{
+                "type":"match",
+                "frequency":"monthly",
+                "limit": pNewLimit
+            },
+            "schedule": {}
+          }
 
-           $fancyModal.open({
-              templateUrl: 'js/modals/plan-edit-success.html',
-              themeClass: 'fancymodal--primary  fancymodal--small',
-              openingClass: 'is-open',
-              closingClass: 'is-closed',
-              showCloseButton: false
+          if(latestPlan.status === 'deactivating') {
+            newPlanInfo.schedule.date_effective = getTomorrowsDate(); 
+          } else {
+            newPlanInfo.schedule.date_effective = getTodaysDate(); 
+          }
+          vm.createNewPlan(sponsorshipId, newPlanInfo, properties);
 
-            });
+        }
 
-            $rootScope.$emit('plan-updated');
+        if(latestPlan.status === 'active') {
 
+          //
+          // Holds the new plan info with data_effective set to tomorrow
+          //
+          var newPlanInfo = {
+            "plan":{
+                "type":"match",
+                "frequency":"monthly",
+                "limit": pNewLimit
+            },
+            "schedule" : {
+              'date_effective' : getTomorrowsDate() 
+            }
+          }
+
+          //
+          // Payload to pause the existing plan
+          //
+          var payLoad = {
+            "pause": true
+          };
+
+          //
+          // We create an object with the required info to patch the plan
+          //
+          var sponseePlanPatchInfo = {};
+          sponseePlanPatchInfo.planId  = latestPlan.id;
+          sponseePlanPatchInfo.payLoad = payLoad;
+          sponseePlanPatchInfo.sponsorshipId = sponsorshipId;
+
+
+          //
+          // We patch the active plan and make a new one to take its' place 
+          //
+          Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
+          .then(function(success) {
+            vm.createNewPlan(sponsorshipId, newPlanInfo, properties); 
           })
-          .catch(function(err){
-
-            console.log(err);
-
+          .catch(function(err) {
             $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-error.html',
               themeClass: 'fancymodal--primary  fancymodal--small',
               openingClass: 'is-open',
               closingClass: 'is-closed',
               showCloseButton: false
-
             });
 
           });
 
-        } else {
+        }
 
-         Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
+        if(latestPlan.status === 'activating') {
+
+          //
+          // Holds the new plan info with data_effective set to tomorrow
+          //
+          var newPlanInfo = {
+            "plan":{
+                "type":"match",
+                "frequency":"monthly",
+                "limit": pNewLimit
+            },
+            "schedule" : {
+              'date_effective' : getTomorrowsDate() 
+            }
+          }
+
+
+          //
+          // Payload to pause the existing plan
+          //
+          var payLoad = {
+            "cancel": true
+          };
+
+          //
+          // We create an object with the required info to patch the plan
+          //
+          var sponseePlanPatchInfo = {};
+          sponseePlanPatchInfo.planId  = latestPlan.id;
+          sponseePlanPatchInfo.payLoad = payLoad;
+          sponseePlanPatchInfo.sponsorshipId = sponsorshipId;
+
+
+          //
+          // We patch the active plan and make a new one to take its' place 
+          //
+          Sponsorship.patch(sponseePlanPatchInfo.sponsorshipId, sponseePlanPatchInfo.planId, sponseePlanPatchInfo.payLoad)
           .then(function(success) {
-
-            Sponsorship.createNewPlan(pSponsorshipId, newPlanInfo)
-            .then(function(success){
-
-            mixpanel.track('Changed Plan Limit', properties);
-
-             $fancyModal.open({
-                templateUrl: 'js/modals/plan-edit-success.html',
-                themeClass: 'fancymodal--primary  fancymodal--small',
-                openingClass: 'is-open',
-                closingClass: 'is-closed',
-                showCloseButton: false
-
-              });
-
-              $rootScope.$emit('plan-updated');
-
-            })
-            .catch(function(err){
-
-              console.log(err);
-
-              $fancyModal.open({
-                templateUrl: 'js/modals/plan-edit-error.html',
-                themeClass: 'fancymodal--primary  fancymodal--small',
-                openingClass: 'is-open',
-                closingClass: 'is-closed',
-                showCloseButton: false
-
-              });
-
-            });
-
+            vm.createNewPlan(sponsorshipId, newPlanInfo, properties); 
           })
           .catch(function(err) {
-
-            console.log(err)
-           $fancyModal.open({
+            $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-error.html',
               themeClass: 'fancymodal--primary  fancymodal--small',
               openingClass: 'is-open',
               closingClass: 'is-closed',
               showCloseButton: false
-
             });
 
-          })
+          });
 
-        };
-
+        }
 
       } else {
-
-        console.log('ERROR: form is not valid');
-
+        alert('not valid');
       }
-
 
     }
 
+
+
+    vm.createNewPlan = function(pSponsorshipId, pNewPlanInfo, pMixPanelProp) {
+
+      Sponsorship.createNewPlan(pSponsorshipId, pNewPlanInfo)
+        .then(function(success){
+
+        mixpanel.track('Changed Plan Limit', pMixPanelProp);
+
+         $fancyModal.open({
+            templateUrl: 'js/modals/plan-edit-success.html',
+            themeClass: 'fancymodal--primary  fancymodal--small',
+            openingClass: 'is-open',
+            closingClass: 'is-closed',
+            showCloseButton: false
+
+          });
+
+          $rootScope.$emit('plan-updated');
+
+        })
+        .catch(function(err){
+
+          $fancyModal.open({
+            templateUrl: 'js/modals/plan-edit-error.html',
+            themeClass: 'fancymodal--primary  fancymodal--small',
+            openingClass: 'is-open',
+            closingClass: 'is-closed',
+            showCloseButton: false
+
+          });
+
+        });
+
+    }
 
 
     //

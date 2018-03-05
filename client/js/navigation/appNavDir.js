@@ -13,7 +13,7 @@ twopence.directive('appNavDir', function() {
     restrict: "E", 
     scope: {}, 
     replace: true, 
-    controller: ['$scope', '$state', function($scope, $state) {
+    controller: ['$fancyModal', '$scope', '$state', function($fancyModal, $scope, $state) {
 
         var vm = this; 
 
@@ -54,7 +54,15 @@ twopence.directive('appNavDir', function() {
 
           vm.toggleSecondaryMenu(); 
 
-           confirm('Are you sure you wanna logout?');
+          $fancyModal.open({
+            controller: 'logOutConfirmationCtrl as logOutConfirmation',
+            templateUrl: 'js/modals/log-out-confirmation.html',
+            themeClass: 'fancymodal--primary  fancymodal--confirmation  fancymodal--small',
+            openingClass: 'is-open',
+            closingClass: 'is-closed',
+            showCloseButton: false
+
+          })
 
         }; 
 

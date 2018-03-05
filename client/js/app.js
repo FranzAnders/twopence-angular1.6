@@ -13,7 +13,7 @@ twopence = angular.module('twopence', [
      'ngMessages',
      'angularMoment',
      '720kb.tooltips',
-     'ngRaven',
+     // 'ngRaven',
      'constants'
 ]);
 
@@ -36,9 +36,9 @@ twopence.config(
     $urlRouterProvider.otherwise("/");
 
     //
-    // Pretty URLs activate if we're running  the production ENV
+    // Pretty URLs activate if we're running  the production ENV (disabled for dev so we can refresh while deving)
     //
-    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod' || ENV.environment_name === 'dev') {
+    if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
 
       $locationProvider.html5Mode(true);
       $locationProvider.hashPrefix('');
@@ -584,6 +584,22 @@ twopence.config(
                   templateUrl: "js/content/privacy.html"
                }
             }
+        })
+        .state('sponsor.terms', {
+            url: "sponsor-terms/",
+            views: {
+               'sponsor' : {
+                  templateUrl: "js/content/terms.html"
+               }
+            }
+        })
+        .state('sponsor.privacy', {
+            url: "sponsor-privacy/",
+            views: {
+               'sponsor' : {
+                  templateUrl: "js/content/privacy.html"
+               }
+            }
         });
 
 }]);
@@ -591,6 +607,8 @@ twopence.config(
 twopence.run(
     ['$rootScope',
      '$document',
+     '$window',
+     'ENV',
      '$state',
      '$timeout',
      '$log',
@@ -602,6 +620,8 @@ twopence.run(
      function(
         $rootScope,
         $document,
+        $window,
+        ENV,
         $state,
         $timeout,
         $log,
@@ -716,9 +736,16 @@ twopence.run(
     });
 
 
-    // Code to make the page load at the top when a state changes
+    // Runs when a state changes
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
+      
+       // Code to make the page load at the top when a state changes
        document.body.scrollTop = document.documentElement.scrollTop = 0;
+       
+       // Register a page view when the route changes. Required for SPA.
+       if ($window.gtag) {
+         $window.gtag('config', ENV.googleAnalyticsToken, {'page_path': $location.path()});
+      }
 
     });
 
