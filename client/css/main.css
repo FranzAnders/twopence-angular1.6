@@ -22529,6 +22529,53 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
+    #Plan Edit Page
+\*------------------------------------*/
+/*------------------------------------*\
+    #Plan Status
+\*------------------------------------*/
+/* line 15, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-status {
+  margin-bottom: 0.75rem;
+  margin-right: 0;
+}
+/* line 20, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action {
+  color: #9a9a9a;
+  font-weight: normal;
+  margin-bottom: 0.375rem;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 27, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action:hover, .planStatus .planStatus-action:focus {
+  color: #231F20;
+}
+/* line 31, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action:hover .icon, .planStatus .planStatus-action:focus .icon {
+  fill: #231F20;
+}
+/* line 36, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action .icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: #9a9a9a;
+  vertical-align: middle;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 44, ../scss/pages/_planEdit.scss */
+.planStatus .planStatus-action .label {
+  vertical-align: middle;
+}
+
+/*------------------------------------*\
     #Animations
 \*------------------------------------*/
 /*------------------------------------*\
