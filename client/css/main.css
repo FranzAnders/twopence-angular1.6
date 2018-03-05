@@ -15305,10 +15305,11 @@ body, html {
   font-family: "Work Sans", sans-serif;
   line-height: 1.6;
   color: #7d7d7d;
+  overflow-x: hidden;
 }
 
 /* Common margin-bottom for vertical rhythm. */
-/* line 78, ../scss/base/_typography.scss */
+/* line 79, ../scss/base/_typography.scss */
 ul, ol, dl,
 fieldset,
 p,
@@ -15317,12 +15318,12 @@ pre {
   margin-bottom: 1.5rem;
 }
 
-/* line 86, ../scss/base/_typography.scss */
+/* line 87, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
-/* line 91, ../scss/base/_typography.scss */
+/* line 92, ../scss/base/_typography.scss */
 hr {
   margin-bottom: 1.125rem;
 }
@@ -15330,13 +15331,13 @@ hr {
 /*------------------------------------*\
     #Default Text Selection Color 
 \*------------------------------------*/
-/* line 106, ../scss/base/_typography.scss */
+/* line 107, ../scss/base/_typography.scss */
 ::selection {
   background-color: #6ac6c5b3;
   color: #fff;
 }
 
-/* line 111, ../scss/base/_typography.scss */
+/* line 112, ../scss/base/_typography.scss */
 ::-moz-selection {
   background-color: #6ac6c5b3;
   color: #fff;
@@ -15345,32 +15346,32 @@ hr {
 /*------------------------------------*\
     #Font Color Classes 
 \*------------------------------------*/
-/* line 126, ../scss/base/_typography.scss */
+/* line 127, ../scss/base/_typography.scss */
 .txtc1 {
   color: #6AC6C5;
 }
 
-/* line 130, ../scss/base/_typography.scss */
+/* line 131, ../scss/base/_typography.scss */
 .txtc2 {
   color: #231F20;
 }
 
-/* line 134, ../scss/base/_typography.scss */
+/* line 135, ../scss/base/_typography.scss */
 .txtc3 {
   color: #238EB2;
 }
 
-/* line 138, ../scss/base/_typography.scss */
+/* line 139, ../scss/base/_typography.scss */
 .txtc4 {
   color: #FBC510;
 }
 
-/* line 143, ../scss/base/_typography.scss */
+/* line 144, ../scss/base/_typography.scss */
 .txtc5 {
   color: #9a9a9a;
 }
 
-/* line 147, ../scss/base/_typography.scss */
+/* line 148, ../scss/base/_typography.scss */
 .txtc--warning {
   color: #FD7272;
 }
@@ -15381,7 +15382,7 @@ hr {
 /*------------------------------------*\
     #Header Styles and Sizes 
 \*------------------------------------*/
-/* line 191, ../scss/base/_typography.scss */
+/* line 192, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
 }
@@ -15389,67 +15390,67 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------*\
     #HR Classes
 \*------------------------------------*/
-/* line 245, ../scss/base/_typography.scss */
+/* line 246, ../scss/base/_typography.scss */
 hr {
   border-style: none;
   height: 0.125rem;
   margin-top: 0;
 }
 
-/* line 251, ../scss/base/_typography.scss */
+/* line 252, ../scss/base/_typography.scss */
 .hr--primary {
   background-color: #6AC6C5;
 }
 
-/* line 257, ../scss/base/_typography.scss */
+/* line 258, ../scss/base/_typography.scss */
 .hr--secondary {
   background-color: #231F20;
   margin-left: 0;
 }
 
-/* line 263, ../scss/base/_typography.scss */
+/* line 264, ../scss/base/_typography.scss */
 .hr--tertiary {
   background-color: #238EB2;
 }
 
-/* line 269, ../scss/base/_typography.scss */
+/* line 270, ../scss/base/_typography.scss */
 .hr--quaternary {
   background-color: #e8f1f1;
 }
 
-/* line 275, ../scss/base/_typography.scss */
+/* line 276, ../scss/base/_typography.scss */
 .hr--quintenary {
   background-color: #3D817F;
 }
 
-/* line 281, ../scss/base/_typography.scss */
+/* line 282, ../scss/base/_typography.scss */
 .hr--faded {
   background-color: #dae0e0;
 }
 
-/* line 287, ../scss/base/_typography.scss */
+/* line 288, ../scss/base/_typography.scss */
 .hr--accent {
   background-color: #FBC510;
 }
 
-/* line 292, ../scss/base/_typography.scss */
+/* line 293, ../scss/base/_typography.scss */
 .hr--white {
   background-color: white;
 }
 
-/* line 297, ../scss/base/_typography.scss */
+/* line 298, ../scss/base/_typography.scss */
 .hr--thick {
   height: 0.1875rem;
 }
 
-/* line 304, ../scss/base/_typography.scss */
+/* line 305, ../scss/base/_typography.scss */
 .hr--cut {
   width: 1.875rem;
   margin-left: 0;
   height: 0.125rem;
 }
 
-/* line 310, ../scss/base/_typography.scss */
+/* line 311, ../scss/base/_typography.scss */
 .hr--center {
   margin-right: auto;
   margin-left: auto;
@@ -15458,7 +15459,7 @@ hr {
 /*------------------------------------*\
     #Guideline
 \*------------------------------------*/
-/* line 323, ../scss/base/_typography.scss */
+/* line 324, ../scss/base/_typography.scss */
 .guideLine,
 .guideline {
   height: 6rem;
@@ -15471,7 +15472,7 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-/* line 337, ../scss/base/_typography.scss */
+/* line 338, ../scss/base/_typography.scss */
 .guideline--secondary {
   background-color: #6AC6C5;
 }
@@ -15485,14 +15486,14 @@ hr {
 /*------------------------------------*\
     #Paragraph styles 
 \*------------------------------------*/
-/* line 403, ../scss/base/_typography.scss */
+/* line 404, ../scss/base/_typography.scss */
 .p2 {
   font-size: 1.125rem;
   line-height: 1.33333;
   line-height: 1.33333;
 }
 
-/* line 410, ../scss/base/_typography.scss */
+/* line 411, ../scss/base/_typography.scss */
 .p3 {
   font-size: 1.25rem;
   line-height: 1.2;
@@ -15502,7 +15503,7 @@ hr {
 /*------------------------------------*\
     #Superscripts (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 426, ../scss/base/_typography.scss */
+/* line 427, ../scss/base/_typography.scss */
 .superscript {
   margin-top: -1.125rem;
 }
@@ -15510,7 +15511,7 @@ hr {
 /*------------------------------------*\
     #Text Weights + Syles (Extends _typography.scss module)
 \*------------------------------------*/
-/* line 447, ../scss/base/_typography.scss */
+/* line 448, ../scss/base/_typography.scss */
 .fsi {
   font-style: italic;
 }
@@ -15519,63 +15520,63 @@ hr {
     #Text Alignments  
 \*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 465, ../scss/base/_typography.scss */
+  /* line 466, ../scss/base/_typography.scss */
   .small-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 473, ../scss/base/_typography.scss */
+  /* line 474, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 481, ../scss/base/_typography.scss */
+  /* line 482, ../scss/base/_typography.scss */
   .small-text-right {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 491, ../scss/base/_typography.scss */
+  /* line 492, ../scss/base/_typography.scss */
   .medium-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 500, ../scss/base/_typography.scss */
+  /* line 501, ../scss/base/_typography.scss */
   .medium-text-left {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 508, ../scss/base/_typography.scss */
+  /* line 509, ../scss/base/_typography.scss */
   .medium-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 517, ../scss/base/_typography.scss */
+  /* line 518, ../scss/base/_typography.scss */
   .large-text-right {
     text-align: right;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 525, ../scss/base/_typography.scss */
+  /* line 526, ../scss/base/_typography.scss */
   .large-text-center {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 534, ../scss/base/_typography.scss */
+  /* line 535, ../scss/base/_typography.scss */
   .large-text-left {
     text-align: left;
   }
@@ -22158,31 +22159,104 @@ body.fancymodal-open {
     #Styles specific to sponsorship creation page 
 \*------------------------------------*/
 /*------------------------------------*\
+    #Illustrations Sponsee Selection Screen
+\*------------------------------------*/
+/* line 12, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustrContainer {
+  position: absolute;
+  top: -27%;
+  width: 12.5rem;
+  z-index: 1;
+  height: 100vh;
+  left: -5%;
+  min-height: 41.25rem;
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 12, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustrContainer {
+    width: 16rem;
+    top: -5%;
+  }
+}
+
+/* line 28, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustrContainer--right {
+  right: -2%;
+  left: auto;
+}
+
+/* line 33, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustr {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 15rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 33, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr {
+    background-image: url("../assets/images/sponsorBg--sponsorshipCreation1.svg");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 33, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr {
+    top: auto;
+    bottom: 16%;
+    left: -5%;
+  }
+}
+
+/* line 56, ../scss/pages/_sponsorshipCreation.scss */
+.sponsorshipCreation-illustr--right {
+  right: 0;
+  left: auto;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 56, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr--right {
+    background-image: url("../assets/images/sponsorBg--sponsorshipCreation2.svg");
+  }
+}
+@media only screen and (min-width: 64.0625em) {
+  /* line 56, ../scss/pages/_sponsorshipCreation.scss */
+  .sponsorshipCreation-illustr--right {
+    top: auto;
+    bottom: 16%;
+    right: -5%;
+  }
+}
+
+/*------------------------------------*\
     #Plans  
 \*------------------------------------*/
-/* line 14, ../scss/pages/_sponsorshipCreation.scss */
+/* line 83, ../scss/pages/_sponsorshipCreation.scss */
 .plans .plan {
   margin-bottom: 3rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 17, ../scss/pages/_sponsorshipCreation.scss */
+  /* line 86, ../scss/pages/_sponsorshipCreation.scss */
   .plans .plan .plan-badgeContainer {
     padding-right: 0;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 17, ../scss/pages/_sponsorshipCreation.scss */
+  /* line 86, ../scss/pages/_sponsorshipCreation.scss */
   .plans .plan .plan-badgeContainer {
     padding-right: 1.5rem;
   }
 }
-/* line 29, ../scss/pages/_sponsorshipCreation.scss */
+/* line 98, ../scss/pages/_sponsorshipCreation.scss */
 .plans .plan .plan-badgeContainer .plan-badge {
   margin-bottom: 1.125rem;
   max-width: 13.5rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 29, ../scss/pages/_sponsorshipCreation.scss */
+  /* line 98, ../scss/pages/_sponsorshipCreation.scss */
   .plans .plan .plan-badgeContainer .plan-badge {
     max-width: 11.25rem;
   }
@@ -22191,7 +22265,7 @@ body.fancymodal-open {
 /*------------------------------------*\
     #A Plan card
 \*------------------------------------*/
-/* line 55, ../scss/pages/_sponsorshipCreation.scss */
+/* line 124, ../scss/pages/_sponsorshipCreation.scss */
 .card--plan {
   border-top: 6px solid #6AC6C5;
   -moz-transform: translateY(0);
@@ -22203,11 +22277,11 @@ body.fancymodal-open {
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 60, ../scss/pages/_sponsorshipCreation.scss */
+/* line 129, ../scss/pages/_sponsorshipCreation.scss */
 .card--plan .card-content {
   padding-top: 0.75rem;
 }
-/* line 64, ../scss/pages/_sponsorshipCreation.scss */
+/* line 133, ../scss/pages/_sponsorshipCreation.scss */
 .card--plan:hover, .card--plan:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -22221,12 +22295,12 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Custom Amount Input  
 \*------------------------------------*/
-/* line 83, ../scss/pages/_sponsorshipCreation.scss */
+/* line 152, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount {
   display: inline-block;
   position: relative;
 }
-/* line 87, ../scss/pages/_sponsorshipCreation.scss */
+/* line 156, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount:before {
   content: "$";
   left: 0.375rem;
@@ -22237,7 +22311,7 @@ body.fancymodal-open {
   height: 1.5rem;
   margin: auto;
 }
-/* line 99, ../scss/pages/_sponsorshipCreation.scss */
+/* line 168, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input {
   border: 1px solid #dae0e0;
   padding: 0.375rem;
@@ -22247,14 +22321,14 @@ body.fancymodal-open {
   -webkit-border-radius: 6px;
   border-radius: 6px;
 }
-/* line 108, ../scss/pages/_sponsorshipCreation.scss */
+/* line 177, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: textfield;
   margin: 0;
 }
-/* line 116, ../scss/pages/_sponsorshipCreation.scss */
+/* line 185, ../scss/pages/_sponsorshipCreation.scss */
 .input--customAmount input:active, .input--customAmount input:focus {
   border: 1px solid #231F20;
 }
@@ -22289,128 +22363,75 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Sponsor Section Illustrations
 \*------------------------------------*/
-/* line 40, ../scss/pages/_sponsorView.scss */
+/* line 39, ../scss/pages/_sponsorView.scss */
 .sponsorSection-illustrContainer {
-  top: 0;
-  bottom: -17%;
-  position: absolute;
-  overflow: hidden;
-  width: 34%;
-  left: 0;
-  height: 92vh;
+  position: relative;
+  width: 15.625rem;
+  height: 15.625rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 40, ../scss/pages/_sponsorView.scss */
+  /* line 39, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustrContainer {
-    left: 0;
-    width: 18.125rem;
-    max-height: 100vh;
+    width: 100%;
   }
 }
 
-/* line 58, ../scss/pages/_sponsorView.scss */
-.sponsorSection--illustrContainer--right {
-  right: 0;
-  left: auto;
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 58, ../scss/pages/_sponsorView.scss */
-  .sponsorSection--illustrContainer--right {
-    right: -5%;
-  }
-}
-
-/* line 70, ../scss/pages/_sponsorView.scss */
+/* line 51, ../scss/pages/_sponsorView.scss */
 .sponsorSection-illustr {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 15rem;
+  height: 100%;
+  top: 0;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: left bottom;
 }
-@media only screen and (min-width: 64.0625em) {
-  /* line 70, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr {
-    height: 18.75rem;
-  }
-}
-
-/* line 86, ../scss/pages/_sponsorView.scss */
-.sponsorSection-illustr--right {
-  right: 0;
-  left: auto;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 86, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--right {
-    left: auto;
-    right: 0;
-  }
-}
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 98, ../scss/pages/_sponsorView.scss */
+  /* line 63, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--dashboard {
     background-image: url("../assets/images/illustr--dashboardPage.svg");
-    left: 0;
-    width: 100%;
-    bottom: 15%;
+    left: -8%;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 98, ../scss/pages/_sponsorView.scss */
+  /* line 63, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--dashboard {
-    width: 90%;
-    top: 17.5rem;
-    right: 0;
-    left: 0;
-    margin: auto;
+    left: -2%;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 118, ../scss/pages/_sponsorView.scss */
+  /* line 74, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--settings {
     background-image: url("../assets/images/illustr--settingsPage.svg");
-    width: 100%;
-    left: -5%;
-    bottom: 35%;
+    left: -7%;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 118, ../scss/pages/_sponsorView.scss */
+  /* line 74, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--settings {
-    width: 90%;
-    right: 0;
-    left: 0;
-    margin: auto;
-    bottom: 30%;
+    left: -3%;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 138, ../scss/pages/_sponsorView.scss */
+  /* line 86, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--contributions {
-    left: -5%;
-    bottom: 17%;
+    left: -7%;
     background-image: url("../assets/images/illustr--contributionsPage.svg");
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 138, ../scss/pages/_sponsorView.scss */
+  /* line 86, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--contributions {
-    width: 90%;
-    right: 0;
     left: -2%;
-    margin: auto;
-    top: 17.5rem;
   }
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 157, ../scss/pages/_sponsorView.scss */
+  /* line 98, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--managePlan {
     background-image: url("../assets/images/illustr--managingPlanPage.svg");
     left: -5%;
@@ -22419,49 +22440,13 @@ body.fancymodal-open {
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 157, ../scss/pages/_sponsorView.scss */
+  /* line 98, ../scss/pages/_sponsorView.scss */
   .sponsorSection-illustr--managePlan {
     width: 90%;
     right: 0;
     left: 0;
     margin: auto;
     bottom: 30%;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 178, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationLeft {
-    background-image: url("../assets/images/sponsorBg--sponsorshipCreation1.svg");
-    top: auto;
-    bottom: -4%;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 178, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationLeft {
-    top: auto;
-    bottom: 16%;
-    left: -5%;
-  }
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 197, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationRight {
-    background-image: url("../assets/images/sponsorBg--sponsorshipCreation2.svg");
-    top: auto;
-    bottom: -4%;
-    left: auto;
-    right: 0;
-  }
-}
-@media only screen and (min-width: 64.0625em) {
-  /* line 197, ../scss/pages/_sponsorView.scss */
-  .sponsorSection-illustr--sponsorshipCreationRight {
-    top: auto;
-    bottom: 16%;
-    right: -5%;
   }
 }
 
