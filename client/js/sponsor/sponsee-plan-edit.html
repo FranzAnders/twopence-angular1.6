@@ -32,8 +32,6 @@
 
     <div class="small-12 columns medium-8 large-7 large-pull-1">
 
-      <form ng-submit="sponseePlanEdit.changePlanLimit(sponseePlanEdit.planEditForm, sponseePlanEdit.sponseeInfo, sponseePlanEdit.customAmount)" name="sponseePlanEdit.planEditForm" novalidate>
-
         <div class="card">
 
           <div class="card-header">
@@ -53,7 +51,9 @@
               </div>
 
               <div class="grid-cell text-center prl3">
-                
+
+                <form ng-submit="sponseePlanEdit.changePlanLimit(sponseePlanEdit.planEditForm, sponseePlanEdit.sponseeInfo, sponseePlanEdit.customAmount)" name="sponseePlanEdit.planEditForm" novalidate>
+
                 <robust-amount-input-dir ng-model="sponseePlanEdit.customAmount" amount="sponseePlanEdit.customAmount">
 
                 </robust-amount-input-dir>
@@ -64,6 +64,8 @@
                         ng-class="{'is-inactive' : (!sponseePlanEdit.planEditForm.$dirty || !sponseePlanEdit.planEditForm.$valid)}">
                     Update Matching Limit
                 </button>
+                </form>
+
               </div>
 
             </div>
@@ -89,9 +91,15 @@
                     Active
                   </div>
 
-                  <div ng-switch-when="paused" class="tag  tag--large  tag--inactive  planStatus-status">
+                  <div ng-switch-when="inactive" class="tag  tag--large  tag--inactive  planStatus-status">
                       Paused
                   </div>
+
+
+                  <div ng-switch-when="deactivating" class="tag  tag--large  tag--inactive  planStatus-status">
+                      Paused
+                  </div>
+
 
                   <div ng-switch-when="activating" class="tag tag--large tag--pending  planStatus-status">
                   Activating
@@ -116,7 +124,7 @@
 
                 <button role="button"  class="text-micro  planStatus-action"
                    ng-click="sponseePlanEdit.resumePlan(sponseePlanEdit.sponseeInfo, sponseePlanEdit.sponseeInfo)"
-                   ng-if="sponseePlanEdit.planStatus === 'paused'">
+                   ng-if="sponseePlanEdit.planStatus === 'inactive' || sponseePlanEdit.planStatus === 'deactivating'">
 
                   <svg class="icon">
                     <use xlink:href="#icon-resume"/>
@@ -151,8 +159,6 @@
 
           </div>
         
-        </form>
-
       </div>
 
     </div>

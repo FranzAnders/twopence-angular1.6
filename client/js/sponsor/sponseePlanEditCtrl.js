@@ -100,7 +100,6 @@ twopence.controller('sponseePlanEditCtrl', [
         $timeout(function() {
 
           vm.sponseeInfo = sponsorship;
-          console.log(vm.sponseeInfo);
           vm.latestPlan = vm.getLatestPlan(sponsorship);
           vm.customAmount = parseInt(vm.latestPlan.limit);
 

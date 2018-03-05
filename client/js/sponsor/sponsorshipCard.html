@@ -16,8 +16,12 @@
         <span ng-switch-when="active" class="tag tag--active">
           Active
         </span>
-    
-        <span ng-switch-when="paused" class="tag  tag--inactive">
+
+        <span ng-switch-when="deactivating" class="tag  tag--inactive">
+            Paused
+        </span>
+
+        <span ng-switch-when="inactive" class="tag  tag--inactive">
             Paused
         </span>
 
