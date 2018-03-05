@@ -5,8 +5,8 @@
     Main Controller
 \*------------------------------------*/
 
-twopence.controller('mainCtrl', ['$rootScope', '$scope', '$state', '$location', 'Funnel', 'Referrals',
-    function($rootScope, $scope, $state, $location, Funnel, Referrals) {
+twopence.controller('mainCtrl', ['$rootScope', '$scope', '$state', '$location', 'Funnel', 'UrlParams',
+    function($rootScope, $scope, $state, $location, Funnel, UrlParams) {
 
     var vm = this;
 
@@ -14,8 +14,8 @@ twopence.controller('mainCtrl', ['$rootScope', '$scope', '$state', '$location', 
 
     vm.funnelIsHidden = Funnel.getState();
 
-    if($location.search().referredby) {
-      Referrals.setReferral($location.search().referredby)
+    if($location.search()) {
+      UrlParams.setParams($location.search())
     }
 
     $rootScope.$on('$stateChangeSuccess', function() {
