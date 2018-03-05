@@ -5,6 +5,75 @@
 
 
 /*------------------------------------*\
+    #Illustrations Sponsee Selection Screen
+\*------------------------------------*/
+
+
+.sponsorshipCreation-illustrContainer {
+  position: absolute; 
+  top: -27%; 
+  width: rem-calc(200px);
+  z-index: 1; 
+  height: 100vh; 
+  left: -5%; 
+  min-height: rem-calc(660px);
+
+  @media #{$large-up} {
+    width: 16rem;
+    top: -5%; 
+  }
+} 
+
+
+.sponsorshipCreation-illustrContainer--right {
+  right: -2%; 
+  left: auto; 
+} 
+
+.sponsorshipCreation-illustr {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left bottom;
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  height: rem-calc(240px); 
+
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--sponsorshipCreation1.svg');
+  }
+
+  @media #{$large-up} {
+    top: auto; 
+    bottom: 16%; 
+    left: -5%;
+  }
+
+}
+
+
+.sponsorshipCreation-illustr--right {
+  right: 0; 
+  left: auto; 
+
+  @media #{$medium-up} {
+    background-image: url('../assets/images/sponsorBg--sponsorshipCreation2.svg');
+  }
+
+  @media #{$large-up} {
+    top: auto; 
+    bottom: 16%; 
+    right: -5%; 
+  }
+}
+
+
+
+
+
+
+/*------------------------------------*\
     #Plans  
 \*------------------------------------*/
 
@@ -121,4 +190,7 @@
   }
 
 }
+
+
+
 
