@@ -101,7 +101,7 @@
                 </span>
 
                 <a class="text-micro button--withIcon"
-                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo)"
+                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.sponseeInfo, sponseePlanEdit.sponseeInfo)"
                   ng-if="sponseePlanEdit.planStatus === 'active'">
 
 
@@ -122,7 +122,7 @@
                 </a>
 
                 <a class="text-micro button--withIcon"
-                   ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.latestPlan, sponsePlanEdit.sponsorshipId, sponseePlanEdit.sponseeInfo)"
+                   ng-click="sponseePlanEdit.resumePlan(sponseePlanEdit.sponseeInfo, sponseePlanEdit.sponseeInfo)"
                    ng-if="sponseePlanEdit.planStatus === 'paused'">
 
                     <!--

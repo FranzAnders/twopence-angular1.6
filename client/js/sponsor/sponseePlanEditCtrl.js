@@ -165,112 +165,73 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     // Pauses the plan
     //
-    vm.pausePlan = function(pPlan, pSponsorshipId, pSponsee) {
+    vm.pausePlan = function(pSponsorship, pSponsee) {
 
-      var planId = pPlan.id;
+      //
+      // The current plan being worked with, we check it later for its status
+      //
+      var latestPlan = pSponsorship.plans[0];
+      var sponsorshipId = pSponsorship.id; 
+      var planId = latestPlan.id;
 
       var payLoad = {
         "pause": true
       };
 
-
       //
-      // We create an object with the required info to patch the plan for $fancyModal ctrl
+      // We patch the active plan and make a new one to take its' place 
       //
-      var sponseePlanPatchInfo = {};
-
-      sponseePlanPatchInfo.planId  = planId;
-      sponseePlanPatchInfo.payLoad = payLoad;
-      sponseePlanPatchInfo.sponsorshipId = pSponsorshipId;
-
-
-      if (pPlan.schedules[0].date_termination === getTodaysDate()) {
-
+      Sponsorship.patch(sponsorshipId, planId, payLoad)
+      .then(function(success) {
+        $rootScope.$emit('plan-updated');
+      })
+      .catch(function(err) {
         $fancyModal.open({
-          templateUrl: 'js/modals/plan-edit-already-paused.html',
+          templateUrl: 'js/modals/plan-edit-error.html',
           themeClass: 'fancymodal--primary  fancymodal--small',
           openingClass: 'is-open',
           closingClass: 'is-closed',
           showCloseButton: false
-
-        })
-
-      } else {
-
-        if (pPlan.active === true) {
-
-          $fancyModal.open({
-            controller: 'planEditConfirmationCtrl as planEditConfirmation',
-            templateUrl: 'js/modals/plan-edit-pausing-confirmation.html',
-            themeClass: 'fancymodal--primary  fancymodal--confirmation  fancymodal--small',
-            openingClass: 'is-open',
-            closingClass: 'is-closed',
-            showCloseButton: false,
-            resolve: {
-
-              sponseePlanPatchInfo: function() {
-
-                return sponseePlanPatchInfo
-
-              },
-              Sponsorship: function() {
-
-                return Sponsorship
-
-              },
-              sponsorshipInfo: function() {
-
-                return pSponsee
-
-              }
-
-            }
-
-          })
-
-
-
-        } else {
-
-          //
-          // Sets pause prop to false to resume plan
-          //
-          payLoad.pause = false;
-
-          Sponsorship.patch(pSponsorshipId, planId, payLoad).then(function(success) {
-
-            $fancyModal.open({
-              templateUrl: 'js/modals/plan-edit-success.html',
-              themeClass: 'fancymodal--primary  fancymodal--small',
-              openingClass: 'is-open',
-              closingClass: 'is-closed',
-              showCloseButton: false
-
-            });
-
-            mixpanel.track('Resumed Plan', {'Graduate': 'User:' + pSponsee.sponsee.id})
-            $rootScope.$emit('plan-updated');
-
-
-          }).catch(function(error) {
-
-            $fancyModal.open({
-              templateUrl: 'js/modals/plan-edit-error.html',
-              themeClass: 'fancymodal--primary  fancymodal--small',
-              openingClass: 'is-open',
-              closingClass: 'is-closed',
-              showCloseButton: false
-
-            });
-
-          });
-
-        }
-
-      }
-
+        });
+      });
     };
 
+
+    vm.resumePlan = function(pSponsorship, pSponsee) {
+
+      //
+      // The current plan being worked with, we check it later for its status
+      //
+      var latestPlan = pSponsorship.plans[0];
+      var sponsorshipId = pSponsorship.id; 
+
+        
+      //
+      // Payload to pause the existing plan
+      //
+      var payLoad = {
+        "pause": false
+      };
+
+
+      //
+      // We patch the active plan and make a new one to take its' place 
+      //
+      Sponsorship.patch(sponsorshipId, latestPlan.id, payLoad)
+      .then(function(success) {
+        $rootScope.$emit('plan-updated');
+      })
+      .catch(function(err) {
+        $fancyModal.open({
+          templateUrl: 'js/modals/plan-edit-error.html',
+          themeClass: 'fancymodal--primary  fancymodal--small',
+          openingClass: 'is-open',
+          closingClass: 'is-closed',
+          showCloseButton: false
+        });
+      });
+
+    };
 
 
     //
@@ -327,6 +288,7 @@ twopence.controller('sponseePlanEditCtrl', [
             newPlanInfo.schedule.date_effective = getTodaysDate(); 
           }
           vm.createNewPlan(sponsorshipId, newPlanInfo, properties);
+
         }
 
         if(latestPlan.status === 'active') {
@@ -369,8 +331,6 @@ twopence.controller('sponseePlanEditCtrl', [
             vm.createNewPlan(sponsorshipId, newPlanInfo, properties); 
           })
           .catch(function(err) {
-
-            console.log(err);
             $fancyModal.open({
               templateUrl: 'js/modals/plan-edit-error.html',
               themeClass: 'fancymodal--primary  fancymodal--small',
