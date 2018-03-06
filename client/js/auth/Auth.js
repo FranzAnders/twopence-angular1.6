@@ -49,7 +49,7 @@ twopence.factory('Auth', [
       var token = auth.getToken(); 
 
        return $q(function(resolve, reject) {
-        $http.post(ENV.BASE_URL +  '/v1/logout', {
+        $http.post(ENV.BASE_URL +  '/v1/logout', {},  {
           headers: {
 
           "Authorization": 'Bearer ' + token

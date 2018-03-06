@@ -8,17 +8,21 @@
 twopence.controller('logOutConfirmationCtrl',
         [
          'Auth', 
+         '$fancyModal',
          '$rootScope',
          '$scope',
          '$state', function(
                           Auth,
+                          $fancyModal,
                           $rootScope,
-                          $state,
-                          $scope) {
+                          $scope,
+                          $state) {
 
     var vm = this;
     
-    vm.logOut = function() {
+    vm.logOut = function() {  
+      
+      $fancyModal.close()
 
       Auth.logout().then(function() {
         $state.go('main.home');
