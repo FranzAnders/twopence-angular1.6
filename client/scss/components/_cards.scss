@@ -35,6 +35,7 @@
   
   .card-content {
     padding: rem-calc($base-magic-number);
+    width: 100%;
 
     .card-subTitle {
       color: $body-color;
@@ -125,6 +126,18 @@
       margin-bottom: 0;  
       @include type-setting(-1);
 
+      .sponsorship-plan-edit {
+        width: rem-calc(14px);
+        height: rem-calc(14px);
+        fill: $tertiaryColor; 
+        @include transition(all .2s ceaser($easeInOutCubic));
+
+        &:hover, 
+        &:focus {
+          fill: $primaryColor; 
+        }
+      }
+
     }
 
   }
@@ -201,36 +214,6 @@
   .card-actions {
     opacity: 0; 
     pointer-events: none; 
-
-  }
-
-}
-
-
-
-
-
-
-
-
-/*------------------------------------*\
-    #A Card Containing Account Login UX
-\*------------------------------------*/
-
-.card--login {
-  width: 100%; 
-  
-  .card-header {
-    padding-bottom: 0; 
-    border-bottom: none; 
-
-  }
-
-  @media #{$medium-up} {
-    margin-right: auto; 
-    margin-left: auto; 
-    width: rem-calc(372px); 
-    padding: rem-calc($level2); 
 
   }
 

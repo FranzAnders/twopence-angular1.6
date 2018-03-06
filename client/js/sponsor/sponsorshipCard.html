@@ -8,10 +8,10 @@
         ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name">
     </h1>
     
-    <div class="sponsorship-plan">
+    <div class="sponsorship-plan  grid grid--center">
       Plan Status:
           
-      <span ng-switch="sponsorship.planStatus">
+      <span ng-switch="sponsorship.planStatus" class="grid  grid--center">
     
         <span ng-switch-when="active" class="tag tag--active">
           Active
@@ -32,6 +32,13 @@
         <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
 
       </span>
+
+      <a  ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})" rel="internal" title="Edit Matching Plan" >
+        <svg class="sponsorship-plan-edit">
+          <use xlink:href="#icon-edit"/>
+          
+        </svg>
+      </a>
 
     </div>
 

@@ -1,104 +1,120 @@
 
 <div>
 
-  <div class="card-header">
+  <div class="card--login-form"  
+        ng-hide="login.loggingIn" >
+
+    <div class="card-header">
+      
+      <h1 class="card-title  text-center">Sponsor Login</h1>
     
-    <h1 class="card-title  text-center">Sponsor Login</h1>
+    </div>
+    
+    <div class="card-content">
+    
+      <form name="login.loginForm" 
+            novalidate
+            ng-model-options="{ getterSetter: true }"
+            ng-submit="login.logInUser(login.loginForm)">
+    
+    
+        <div class="input-group input--medium inputGroup--alt inputGroup--withIcon">
+      
+          <label for="username">Email</label>
+          
+          <div class="inputGroup-iconContainer">
+    
+    
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.7 19"
+                 class="inputGroup-icon"><path d="M9.4 10.8c.1 0 .3 0 .4-.1l.3-.3 8.3-6.9H.3.2L9 10.7c.1.1.2.1.4.1zM.2 4.4v10.2l6.2-5L.2 4.4zm12.1 5.2l6.2 5V4.5l-6.2 5.1zm-2 1.6c-.2.2-.6.3-.9.3-.3 0-.7-.1-.9-.3L7.1 10 .3 15.5c0 .1 0 .1.1.1h18.1c.1 0 .1 0 .1-.1L11.8 10l-1.5 1.2z"/></svg>
+    
+          </div>
+    
+          <input id="username" 
+                 name="username"
+                 ng-model="login.form.email" 
+                 type="text" 
+                 required
+                 floating-label>
+    
+          <div ng-messages="login.loginForm.username.$error"
+               ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
+               role="alert"
+               class="alerts  alert--warning">
+    
+            <div ng-message="required">
+              A valid email is required to continue.
+            </div>
+    
+          </div>
+    
+        </div>
+      
+      
+        <div class="input-group input--medium inputGroup--alt inputGroup--withIcon">
+    
+          <label for="password">Password</label>
+    
+          <div class="inputGroup-iconContainer">
+    
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.7 19"
+                class="inputGroup-icon">
+                <path d="M16 7.2h-1.2V5.6c0-3-2.5-5.5-5.5-5.5S3.9 2.6 3.9 5.6v1.6H2.7c-.2 0-.4.2-.4.4v9.8c0 .9.7 1.6 1.6 1.6h11c.9 0 1.6-.7 1.6-1.6V7.5c-.1-.2-.3-.3-.5-.3zm-5.5 8.1c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1H8.6c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3l.2-2.2c-.4-.3-.6-.8-.6-1.3 0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6 0 .5-.2 1-.6 1.3l.1 2.2zm2-8.1H6.2V5.6c0-1.7 1.4-3.1 3.1-3.1s3.1 1.4 3.1 3.1v1.6z"/></svg>
+    
+          </div>
+    
+          <input id="password" 
+                 ng-model="login.form.password" 
+                 type="password" 
+                 name="password"
+                 required
+                 floating-label>
+    
+          <div ng-messages="login.loginForm.password.$error"
+               ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
+               role="alert"
+               class="alerts  alert--warning">
+    
+            <div ng-message="required">
+               A password is required for access.
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="row">
+    
+          <div class="small-12 columns">
+    
+            <button class="button  button--secondary  button--large  button--expanded mb2 "
+                    type="submit">
+              Log In
+            </button>
+    
+          </div>
+    
+        </div>
+      
+      </form>
+    
+       <p class="text-center mb0">
+         <a ui-sref="main.account.resetPasswordEmail" class="text-micro"> Reset Your Password </a>
+       </p>
+    
+    </div>
 
   </div>
 
-  <div class="card-content ">
-
-    <form name="login.loginForm" 
-          novalidate
-          ng-model-options="{ getterSetter: true }"
-          ng-submit="login.logInUser(login.loginForm)">
-
-
-      <div class="input-group input--medium inputGroup--alt inputGroup--withIcon">
-    
-        <label for="username">Email</label>
+  <div  class="cardLoaderContainer  grid  grid--justifyCenter grid--center" ng-if="login.loggingIn">
+    <div class="grid  grid--flexDirectionColumn grid--justifyCenter pb4 grid--center">
+      <div class="loader loader--secondary mb2">
         
-        <div class="inputGroup-iconContainer">
-
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.7 19"
-               class="inputGroup-icon"><path d="M9.4 10.8c.1 0 .3 0 .4-.1l.3-.3 8.3-6.9H.3.2L9 10.7c.1.1.2.1.4.1zM.2 4.4v10.2l6.2-5L.2 4.4zm12.1 5.2l6.2 5V4.5l-6.2 5.1zm-2 1.6c-.2.2-.6.3-.9.3-.3 0-.7-.1-.9-.3L7.1 10 .3 15.5c0 .1 0 .1.1.1h18.1c.1 0 .1 0 .1-.1L11.8 10l-1.5 1.2z"/></svg>
-
-        </div>
-
-        <input id="username" 
-               name="username"
-               ng-model="login.form.email" 
-               type="text" 
-               required
-               floating-label>
-
-        <div ng-messages="login.loginForm.username.$error"
-             ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
-             role="alert"
-             class="alerts  alert--warning">
-
-          <div ng-message="required">
-            A valid email is required to continue.
-          </div>
-
-        </div>
-
       </div>
-    
-    
-      <div class="input-group input--medium inputGroup--alt inputGroup--withIcon">
-
-        <label for="password">Password</label>
-
-        <div class="inputGroup-iconContainer">
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.7 19"
-              class="inputGroup-icon">
-              <path d="M16 7.2h-1.2V5.6c0-3-2.5-5.5-5.5-5.5S3.9 2.6 3.9 5.6v1.6H2.7c-.2 0-.4.2-.4.4v9.8c0 .9.7 1.6 1.6 1.6h11c.9 0 1.6-.7 1.6-1.6V7.5c-.1-.2-.3-.3-.5-.3zm-5.5 8.1c0 .1 0 .2-.1.3-.1.1-.2.1-.3.1H8.6c-.1 0-.2 0-.3-.1-.1-.1-.1-.2-.1-.3l.2-2.2c-.4-.3-.6-.8-.6-1.3 0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6 0 .5-.2 1-.6 1.3l.1 2.2zm2-8.1H6.2V5.6c0-1.7 1.4-3.1 3.1-3.1s3.1 1.4 3.1 3.1v1.6z"/></svg>
-
-        </div>
-
-        <input id="password" 
-               ng-model="login.form.password" 
-               type="password" 
-               name="password"
-               required
-               floating-label>
-
-        <div ng-messages="login.loginForm.password.$error"
-             ng-show="login.loginForm.$submitted && login.loginForm.username.$error"
-             role="alert"
-             class="alerts  alert--warning">
-
-          <div ng-message="required">
-             A password is required for access.
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="row">
-
-        <div class="small-12 columns">
-
-          <button class="button  button--secondary  button--large  button--expanded mb2 "
-                  type="submit">
-            Log In
-          </button>
-
-        </div>
-
-      </div>
-    
-    </form>
-
-     <p class="text-center mb0">
-       <a ui-sref="main.account.resetPasswordEmail" class="text-micro"> Reset Your Password </a>
-     </p>
-
+      <span class="headline  txtc2  h4">
+        Logging in
+      </span>
+    </div>
   </div>
 
 </div>

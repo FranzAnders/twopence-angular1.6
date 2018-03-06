@@ -1,0 +1,36 @@
+
+
+/*------------------------------------*\
+    #Sponsorship View
+\*------------------------------------*/
+
+
+.sponsorship-planStatus {
+
+  .sponsorship-planStatus-edit {
+
+    .icon {
+        width: rem-calc(14px);
+        height: rem-calc(14px);
+        fill: $tertiaryColor; 
+        @include transition(all .2s ceaser($easeInOutCubic));
+
+        &:hover, 
+        &:focus {
+          fill: $primaryColor; 
+        }
+    }
+
+    &:hover, 
+    &:focus {
+
+      .icon {
+      fill: $primaryColor; 
+
+      }
+
+    }
+
+  }
+
+}

@@ -111,6 +111,10 @@ body.fancymodal-open {
 
 }
 
+.fancymodal-loaderContainer {
+  position: relative;
+}
+
 
 .fancymodal .fancymodal-close {
 
@@ -213,6 +217,15 @@ body.fancymodal-open {
 }
 
 
+
+
+
+
+/*------------------------------------*\
+    #Confirmation Modal
+\*------------------------------------*/
+
+
 .fancymodal--confirmation {
   
   .fancymodal-options {
@@ -294,18 +307,28 @@ body.fancymodal-open {
 }
 
 
+
+
+
+/*------------------------------------*\
+    #Boost Modal
+\*------------------------------------*/
+
+
 .fancymodal--boost {
   
   .fancymodal-innerContent {
-    
+
     @media #{$medium-up} {
       padding-right: rem-calc($level6); 
       padding-left: rem-calc($level6); 
-
     }
-
   }
 
+  .fancymodal-loaderContainer {
+    min-height: rem-calc(340px);
+    padding-bottom: rem-calc(50px); 
+  }
 }
 
 
