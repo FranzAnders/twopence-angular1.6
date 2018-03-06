@@ -112,7 +112,7 @@ twopence.controller('loginCtrl', [
           //
           $timeout(function() {
             $rootScope.$emit('login-validation-error', {error: err});
-
+            vm.loggingIn = false; 
           }, 100);
 
         });

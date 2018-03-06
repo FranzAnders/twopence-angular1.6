@@ -67,6 +67,7 @@ twopence.controller('sponseeBoostCtrl', [
         }).catch(function(err) {
 
           alert("Repeat payments of the same amount can not be made on the same day. Wait ")
+          vm.makingBoost = false; 
 
         });
 
