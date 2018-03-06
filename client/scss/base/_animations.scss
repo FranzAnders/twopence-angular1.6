@@ -16,3 +16,17 @@ body.preload * {
   animation-duration: 0s !important;
   -webkit-animation-duration: 0s !important;
 }
+
+
+
+[ui-view="form"].ng-enter  {
+  @include transition(all .4s ceaser($easeInOutCubic));
+}
+
+[ui-view="form"].ng-enter{ 
+  opacity: 0; 
+}
+
+[ui-view="form"].ng-enter-active {
+  opacity: 1; 
+}
