@@ -405,49 +405,35 @@ twopence.config(
 
         })
         .state('sponsor.sponseeAdd.single', {
-
          url: "/single",
           views: {
-
             'form': {
-
               templateUrl: "js/sponsor/single-sponsee-creation.html"
 
             }
           }
-
         })
         .state('sponsor.sponseeAdd.inviters', {
-
          url: "/inviters",
           views: {
-
             'form': {
-
               templateUrl: "js/sponsor/inviter-sponsee-creation.html"
-
             }
           }
-
         })
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:email",
           abstract: true,
           views: {
-
             'sponsor': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship.html",
               controller: "sponseeSponsorshipCtrl",
               controllerAs: "sponseeSponsorship"
             }
-
           },
           resolve: {
-
             userInfo: ['User', function(User) {
-
               //
               // Gets User info and sets it on the controller
               //
@@ -458,116 +444,71 @@ twopence.config(
               }).catch(function(err) {
 
                 return err;
-
               });
-
             }]
-
           },
           params: {
             identity: null,
             email: null
-
           }
-
         })
         .state('sponsor.sponsorshipSetup.options', {
-
           url: "/options",
           views: {
-
             'main': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship-options.html"
-
             }
-
           }
-
         })
         .state('sponsor.sponsorshipSetup.matching', {
-
           url: "/options/matching",
           views: {
-
             'main': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship-matching.html"
-
             }
-
           }
-
         })
         .state('sponsor.sponsorshipSetup.oneTime', {
-
           url: "/options/one-time",
           views: {
-
             'main': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship-oneTime.html"
-
             }
-
           }
-
         })
         .state('sponsor.settings', {
-
           url: "sponsor/settings",
           views: {
-
             'sponsor': {
-
               templateUrl: "js/sponsor/settings.html",
               controller: "settingsCtrl",
               controllerAs: "settings"
-
             }
-
           }
-
         }).state('sponsor.faq', {
-
           url: "sponsor/faq.html",
           views: {
-
             'sponsor': {
-
               templateUrl: "js/sponsor/faq.html"
-
             }
-
           }
-
         })
         .state('main.kitchenSink', {
           url: "kitchen-sink/",
           views: {
-
             'main': {
-
               templateUrl: "js/kitchenSink/kitchenSink.html"
 
             }
-
           }
-
         })
         .state('main.404', {
-
             url: "no-longer-here/",
             views: {
-
                'main' : {
-
                   templateUrl: "js/404/404.html"
-
                }
-
             }
-
         })
         .state('main.terms', {
             url: "terms/",
@@ -635,92 +576,21 @@ twopence.run(
 
     $rootScope.$on('$stateChangeError', function(event) {
 
-        console.log('state change error my boy!')
+        console.log('state change error my person!')
 
     });
 
-
-
-  //
-  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
-  //
-  $timeout(function(){
-
-    document.body.classList.remove('preload');
-
-  }, 1500);
-
-
-   // //
-   //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
-   //  //
-   //  $window.addEventListener('click', function() {
-
-   //    document.body.classList.remove('preload');
-   //    console.log('hello')
-
-   //  });
-
-   //  //
-   //  // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
-   //  //
-   //  $window.addEventListener('touchstart', function() {
-
-   //    document.body.classList.remove('preload');
-   //    console.log('hello')
-
-   //  });
     //
-    // Checking if the user is logged in, if not, we take them to the homepage
+    // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
     //
-    // $timeout(function () {
-    //   var authChecker = Auth.checkIfVisited();
-    //   var tokenCheck = Auth.getToken();
+    $timeout(function(){
 
-    //       if(authChecker == "true") {
-    //         console.log("You've already logged in. Let's redirect you");
-    //       //  $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck;
-    //         $state.go("sponsor.dashboard");
-    //       }
-    //       else {
-    //         console.log("Login again, my dude");
-    //       }
+      document.body.classList.remove('preload');
 
-    // }, 0);
-
-    // tokenCheck = $cookies.get('authToken');
-    // console.log(tokenCheck.length);
-
-    // Old script to save users and check auth in RootScope.
-    // May use for reference before deleting.
-
-    // $rootScope.currentUser = null;
-    // $rootScope.userRoles = USER_ROLES;
-    // $rootScope.isAuthorized = Auth.isAuthorized;
-
-    /* $rootScope.setCurrentUser = function (user) {
-      $rootScope.currentUser = user;
-    }; */
+    }, 1400);
 
 
-
-    //
-    // if (tokenCheck.length > 0) {
-    //     $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck; // jshint ignore:line
-    //     $state.go('main.home');
-    // }
-
-    // if (!tokenCheck) {
-    //     $state.go('main.login');
-    // }
-
-    $rootScope.$on('$stateChangeStart', function (event, next, current) {
-      // if (toState.authRequired && !Auth.isAuthenticated()){ //Assuming the AuthService holds authentication logic
-      //   // User isn’t authenticated
-      //   $state.transitionTo("login");
-      //   event.preventDefault();
-      // }
-    });
+    $rootScope.$on('$stateChangeStart', function (event, next, current) { });
 
 
     // Function to set data-useragent attribute to document

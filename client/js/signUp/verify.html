@@ -16,13 +16,19 @@
             class="illustr  illustr--stateBadge">
           </div>
           <h1 class="h2  ff2 txtc2 text-center">High Five!</h1>
-          <p class="text-center">Thanks for verifying your email! You will now be redirected to the Pickpocket Login screen. If that doesn’t work, click below. </p>
+
+          <p class="text-center"  ng-if="!verify.userIsLoggedIn">Thanks for verifying your email! You will now be redirected to the Pickpocket Login screen. If that doesn’t work, click below. </p>
+
+          <p class="text-center"  ng-if="verify.userIsLoggedIn">Thanks for verifying your email! You will now be redirected to the Pickpocket app home screen. If that doesn’t work, click below.</p>
 
           <div class="row">
             <div class="small-12 columns">
               <p class="text-center mb0">      
-                <a ui-sref="main.account.login" rel="internal">
-                  <span class="button-inner">Back to login screen</span>
+                <a ui-sref="main.account.login" rel="internal" ng-if="!verify.userIsLoggedIn">
+                  Back to login screen
+                </a>
+                <a ui-sref="sponsor.dashboard" rel="internal" ng-if="verify.userIsLoggedIn">
+                  Start using Pickpocket
                 </a>
               </p>
             </div>
@@ -56,8 +62,11 @@
           <div class="row">
             <div class="small-12 columns">
               <p class="text-center mb0">      
-                <a ui-sref="main.account.login" rel="internal">
-                  <span class="button-inner">Back to login screen</span>
+                <a ui-sref="main.account.login" rel="internal" ng-if="!verify.userIsLoggedIn">
+                  Back to login screen
+                </a>
+                <a ui-sref="sponsor.dashboard" rel="internal" ng-if="verify.userIsLoggedIn">
+                  Sponsor a Graduate
                 </a>
               </p>
             </div>

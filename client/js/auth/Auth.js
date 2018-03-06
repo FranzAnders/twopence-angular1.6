@@ -92,8 +92,6 @@ twopence.factory('Auth', [
 
       }
 
-      console.log(token);
-
       return token;
 
     };
@@ -105,7 +103,6 @@ twopence.factory('Auth', [
     auth.setToken = function(pToken, username) {
       token = pToken;
       username = username
-      // var authData = Base64.encode(username + ':' + password);
       $cookies.put('userToken', token);
       $rootScope.globals = {
         currentUser: {
@@ -141,20 +138,8 @@ twopence.factory('Auth', [
     // Check if the user is Authenticated
     //
     auth.isAuthenticated = function() {
-      return !!Session.userToken;
+      return !!Session.userToken || !!$cookies.get('userToken');
     }
-
-
-    //
-    // Check to see if user is authorized to see page
-    //
-    auth.isAuthorized = function (authorizedRoles) {
-      if (!angular.isArray(authorizedRoles)) {
-        authorizedRoles = [authorizedRoles];
-      }
-      return (authService.isAuthenticated() &&
-        authorizedRoles.indexOf(Session.userRole) !== -1);
-    };
 
 
     return auth

@@ -26,6 +26,13 @@ twopence.controller('verifyCtrl', [
     vm.$onInit = function() {
       vm.emailVerificationSent = false;
       vm.tokenStatus = vm.checkTokenStatus(verify);
+      vm.userIsLoggedIn = false; 
+
+      console.log(Auth.isAuthenticated());
+      if(Auth.isAuthenticated()) {
+        vm.userIsLoggedIn = true; 
+      }
+
     }
 
 
@@ -58,7 +65,12 @@ twopence.controller('verifyCtrl', [
         mixpanel.track('Verified Identity');
 
         $timeout(function() {
-          $state.go('main.account.login');
+
+          if(vm.userIsLoggedIn) {
+            $state.go('sponsor.dashboard');
+          } else {
+            $state.go('main.account.login');
+          }
         }, 5000);
 
         return 'valid'
@@ -76,8 +88,6 @@ twopence.controller('verifyCtrl', [
       vm.emailVerificationSent = false;
 
       if(Auth.getToken()) {
-
-        console.log(Auth.getToken())
 
         User.verify().then(function(success) {
 
