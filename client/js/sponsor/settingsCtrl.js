@@ -47,9 +47,6 @@ twopence.controller('settingsCtrl', [
         vm.userSettings.phone = vm.sponsorInfo.phone; 
         vm.userSettings.sms_preferred = vm.sponsorInfo.sponsor.sms_preferred; 
 
-        console.log(vm.userSettingsForm); 
-
-
       }, 100); 
 
 

@@ -5,9 +5,10 @@
 
 twopence.controller('contributionsCtrl', [
     'Sponsor', 
-    'Sponsorship',
+    'sponsorships',
+    'contributions',
     '$timeout', 
-      function(Sponsor, Sponsorship, $timeout) {
+      function(Sponsor, sponsorships, contributions, $timeout) {
 
   var vm = this; 
 
@@ -22,33 +23,11 @@ twopence.controller('contributionsCtrl', [
 
   vm.$onInit = function() {
 
-    //
-    // Gets all the sponsorships a sponsor is currently managing
-    //
-    Sponsorship.getAll().then(function(sponsees) {
+   vm.totalContributions = vm.getTotalContributions(sponsorships.data); 
 
-      vm.totalContributions = vm.getTotalContributions(sponsees.data); 
+    vm.sponsees =  vm.getSponsees(sponsorships.data); 
 
-      vm.sponsees =  vm.getSponsees(sponsees.data); 
-
-    }).catch(function(err){
-      alert("ERROR: Sponsorships not coming up."); 
-
-    }); 
-
-
-    //
-    // Gets all contributions a sponsor has made 
-    //
-    Sponsor.getAllContributions().then(function(contributions) {
-
-      vm.contributionsShowing = contributions.data;
-
-    }).catch(function(err) {
-      alert("ERROR: Contributions not coming up."); 
-
-    })
-
+    vm.contributionsShowing = contributions.data;
   }
 
 

@@ -26,6 +26,7 @@ twopence.controller('loginCtrl', [
     var vm = this;
 
     vm.form = {};
+    vm.loggingIn = false; 
 
     vm.credentials = {
       username: '',
@@ -64,6 +65,7 @@ twopence.controller('loginCtrl', [
       resetFormSubmissionErrors();
 
       if(pLoginForm.$valid) {
+         vm.loggingIn = true; 
 
         Auth.login(vm.form).then(function(res) {
 
@@ -95,6 +97,7 @@ twopence.controller('loginCtrl', [
               }
 
             }
+            
 
           }).catch(function(){
               alert('ERROR: Something went wrong');

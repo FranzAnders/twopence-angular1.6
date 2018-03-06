@@ -12,57 +12,34 @@ twopence.controller('sponsorshipCtrl', [
   '$state',
   '$rootScope',
   'Sponsorship',
+  'sponsorship',
+  'contributions',
   function(
     $fancyModal,
     $scope,
     $stateParams,
     $state,
     $rootScope,
-    Sponsorship) {
+    Sponsorship,
+    sponsorship,
+    contributions) {
 
     var vm = this;
 
     var sponseeId = $stateParams.sponseeId;
 
-    vm.sponsorshipId = sponseeId;
 
     $scope.$state = $state;
 
 
-    vm.currentPlan = null;
-
-
     vm.$onInit = function() {
-
-      //
-      // Gets information for a sponsorship
-      //
-      Sponsorship.get(sponseeId).then(function(sponsorship) {
-        vm.sponsorshipInfo = sponsorship;
-
-        //
-        // Finds out the status of the plan
-        //
-        vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo);
-
-        vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
-
-
-        // Gets contributions made for a sponsor's sponsorship
-        //
-        Sponsorship.getContributions(sponseeId).then(function(contributions) {
-          vm.sponsorshipInfo.contributions  = contributions.data;
-        }).catch(function() {
-            console.log("ERROR: Something went wrong, please try again.");
-
-        });
-
-      }).catch(function() {
-        console.log("ERROR: Something went wrong, please try again.");
-
-      });
-
-    }
+      vm.sponsorshipId = sponseeId;
+      vm.currentPlan = null;
+      vm.sponsorshipInfo = sponsorship; 
+      vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo);
+      vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
+      vm.sponsorshipInfo.contributions  = contributions.data;
+    };
 
 
     //
@@ -87,7 +64,7 @@ twopence.controller('sponsorshipCtrl', [
     };
 
 
-        //
+    //
     // Opens the boost modal using the $fancyModal service
     //
     vm.openBoostModal = function(sponsee) {

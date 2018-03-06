@@ -6133,9 +6133,6 @@ th.hide-for-touch {
   }
 }
 /*------------------------------------*\
-    #Animations
-\*------------------------------------*/
-/*------------------------------------*\
     #Blockquotes
 \*------------------------------------*/
 /*------------------------------------*\
@@ -6580,7 +6577,7 @@ button,
 }
 
 /* line 227, ../scss/abstracts/_utility.scss */
-.fancymodal, .fixed, .fixed-nav, .loadingbar, .loadingtext, .loadingScreen {
+.fancymodal, .fixed, .fixed-nav {
   position: fixed;
 }
 
@@ -20098,23 +20095,24 @@ button.is-inactive,
 /* line 36, ../scss/components/_cards.scss */
 .card .card-content {
   padding: 1.5rem;
+  width: 100%;
 }
-/* line 39, ../scss/components/_cards.scss */
+/* line 40, ../scss/components/_cards.scss */
 .card .card-content .card-subTitle {
   color: #7d7d7d;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 46, ../scss/components/_cards.scss */
+/* line 47, ../scss/components/_cards.scss */
 .card .card-content--bordered {
   border-bottom: 1px solid #dae0e0;
 }
-/* line 50, ../scss/components/_cards.scss */
+/* line 51, ../scss/components/_cards.scss */
 .card .card-actions {
   border-top: #dae0e0 1px solid;
   width: 100%;
 }
-/* line 54, ../scss/components/_cards.scss */
+/* line 55, ../scss/components/_cards.scss */
 .card .card-actions .card-action {
   color: #231F20;
   fill: #231F20;
@@ -20130,7 +20128,7 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 66, ../scss/components/_cards.scss */
+/* line 67, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
   color: #fff;
   fill: #fff;
@@ -20138,7 +20136,7 @@ button.is-inactive,
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 84, ../scss/components/_cards.scss */
+  /* line 85, ../scss/components/_cards.scss */
   .cardList li:nth-child(odd) {
     padding-right: 1.125rem;
   }
@@ -20147,7 +20145,7 @@ button.is-inactive,
 /*------------------------------------*\
     #A sponsorship card 
 \*------------------------------------*/
-/* line 103, ../scss/components/_cards.scss */
+/* line 104, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -20157,7 +20155,7 @@ button.is-inactive,
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-/* line 112, ../scss/components/_cards.scss */
+/* line 113, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
   color: #231F20;
@@ -20165,35 +20163,49 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 112, ../scss/components/_cards.scss */
+  /* line 113, ../scss/components/_cards.scss */
   .card--sponsorship .card-header .sponsorship-name {
     margin-bottom: 0;
   }
 }
-/* line 124, ../scss/components/_cards.scss */
+/* line 125, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
+/* line 129, ../scss/components/_cards.scss */
+.card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-edit {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: #238EB2;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 135, ../scss/components/_cards.scss */
+.card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-edit:hover, .card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-edit:focus {
+  fill: #6AC6C5;
+}
 @media only screen and (min-width: 64.0625em) {
-  /* line 132, ../scss/components/_cards.scss */
+  /* line 145, ../scss/components/_cards.scss */
   .card--sponsorship .card-content {
     padding: 1.875rem;
   }
 }
-/* line 139, ../scss/components/_cards.scss */
+/* line 152, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions {
   color: #6AC6C5;
   margin-bottom: 0;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 146, ../scss/components/_cards.scss */
+/* line 159, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions:hover, .card--sponsorship .card-content .sponsorship-contributions:focus {
   color: #238EB2;
 }
-/* line 156, ../scss/components/_cards.scss */
+/* line 169, ../scss/components/_cards.scss */
 .card--sponsorship .card-inactiveActions {
   position: absolute;
   top: 0;
@@ -20209,7 +20221,7 @@ button.is-inactive,
   margin-top: 4.875rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 156, ../scss/components/_cards.scss */
+  /* line 169, ../scss/components/_cards.scss */
   .card--sponsorship .card-inactiveActions {
     padding: 1.875rem;
   }
@@ -20218,58 +20230,36 @@ button.is-inactive,
 /*------------------------------------*\
     #Am inactive sponsorship Card
 \*------------------------------------*/
-/* line 191, ../scss/components/_cards.scss */
+/* line 204, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-inactiveActions {
   display: block;
 }
-/* line 196, ../scss/components/_cards.scss */
+/* line 209, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-content {
   opacity: 0;
 }
-/* line 201, ../scss/components/_cards.scss */
+/* line 214, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-actions {
   opacity: 0;
   pointer-events: none;
 }
 
 /*------------------------------------*\
-    #A Card Containing Account Login UX
-\*------------------------------------*/
-/* line 220, ../scss/components/_cards.scss */
-.card--login {
-  width: 100%;
-}
-/* line 223, ../scss/components/_cards.scss */
-.card--login .card-header {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 220, ../scss/components/_cards.scss */
-  .card--login {
-    margin-right: auto;
-    margin-left: auto;
-    width: 23.25rem;
-    padding: 0.75rem;
-  }
-}
-
-/*------------------------------------*\
     #A Card Containing Signup UX
 \*------------------------------------*/
-/* line 247, ../scss/components/_cards.scss */
+/* line 230, ../scss/components/_cards.scss */
 .card--signUp {
   width: 100%;
   padding-bottom: 0.375rem;
   min-height: 18.75rem;
 }
-/* line 252, ../scss/components/_cards.scss */
+/* line 235, ../scss/components/_cards.scss */
 .card--signUp .card-header {
   padding-bottom: 0;
   border-bottom: none;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 247, ../scss/components/_cards.scss */
+  /* line 230, ../scss/components/_cards.scss */
   .card--signUp {
     margin-right: auto;
     margin-left: auto;
@@ -20726,6 +20716,164 @@ img {
 }
 
 /*------------------------------------*\
+    #Loaders
+\*------------------------------------*/
+/* line 7, ../scss/components/_loaders.scss */
+.pageLoaderContainer {
+  height: 22.5rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+/* line 15, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 19, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-enter {
+  opacity: 0;
+}
+/* line 23, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-enter-active {
+  opacity: 1;
+}
+/* line 27, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-hide {
+  opacity: 0;
+}
+/* line 31, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-hide-add, .pageLoaderContainer.ng-hide-remove {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* line 39, ../scss/components/_loaders.scss */
+.cardLoaderContainer {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+/* line 47, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 51, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-enter {
+  opacity: 0;
+}
+/* line 55, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-enter-active {
+  opacity: 1;
+}
+/* line 59, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-hide {
+  opacity: 0;
+}
+/* line 63, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-hide-add, .cardLoaderContainer.ng-hide-remove {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* line 70, ../scss/components/_loaders.scss */
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+}
+
+/* line 76, ../scss/components/_loaders.scss */
+.loader {
+  color: #231F20;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  box-shadow: inset 0 0 0 1em;
+  -moz-transform: translateZ(0) scale(0.6);
+  -ms-transform: translateZ(0) scale(0.6);
+  -webkit-transform: translateZ(0) scale(0.6);
+  transform: translateZ(0) scale(0.6);
+}
+
+/* line 88, ../scss/components/_loaders.scss */
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: '';
+}
+
+/* line 94, ../scss/components/_loaders.scss */
+.loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #e8f1f1;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.2em 5.1em;
+  transform-origin: 5.2em 5.1em;
+  -webkit-animation: load2 1.4s infinite ease 1.5s;
+  animation: load2 1.4s infinite ease 1.5s;
+}
+
+/* line 107, ../scss/components/_loaders.scss */
+.loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #e8f1f1;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 5.1em;
+  -webkit-transform-origin: 0px 5.1em;
+  transform-origin: 0px 5.1em;
+  -webkit-animation: load2 1.4s infinite ease;
+  animation: load2 1.4s infinite ease;
+}
+
+@-webkit-keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* line 142, ../scss/components/_loaders.scss */
+.loader--secondary:before, .loader--secondary:after {
+  background-color: #fff;
+}
+
+/*------------------------------------*\
     #Login Header
 \*------------------------------------*/
 /* line 6, ../scss/components/_loginHeader.scss */
@@ -20855,150 +21003,136 @@ img {
     #Loaders
 \*------------------------------------*/
 /* line 7, ../scss/components/_loaders.scss */
-.loadingbar {
-  width: 0%;
-  bottom: 0;
-  left: 0;
-  height: 0.3125rem;
-  background-color: #FBC510;
-  -moz-box-shadow: -1px -1px 8px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: -1px -1px 8px rgba(0, 0, 0, 0.6);
-  box-shadow: -1px -1px 8px rgba(0, 0, 0, 0.6);
-}
-@media only screen and (min-width: 40.0625em) {
-  /* line 7, ../scss/components/_loaders.scss */
-  .loadingbar {
-    bottom: 0;
-  }
-}
-/* line 24, ../scss/components/_loaders.scss */
-.loadingbar.is-loading {
+.pageLoaderContainer {
+  height: 22.5rem;
   width: 100%;
-  -moz-animation: loading 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  -webkit-animation: loading 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  animation: loading 1s cubic-bezier(0.860, 0.000, 0.070, 1.000);
-}
-
-@-moz-keyframes loading {
-  0% {
-    width: 0%;
-  }
-  20% {
-    width: 30%;
-  }
-  30% {
-    width: 40%;
-  }
-  60% {
-    width: 65%;
-  }
-  80% {
-    width: 75%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@-webkit-keyframes loading {
-  0% {
-    width: 0%;
-  }
-  20% {
-    width: 30%;
-  }
-  30% {
-    width: 40%;
-  }
-  60% {
-    width: 65%;
-  }
-  80% {
-    width: 75%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes loading {
-  0% {
-    width: 0%;
-  }
-  20% {
-    width: 30%;
-  }
-  30% {
-    width: 40%;
-  }
-  60% {
-    width: 65%;
-  }
-  80% {
-    width: 75%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-/* line 69, ../scss/components/_loaders.scss */
-.loadingtext {
-  bottom: 0.75rem;
-  left: 0;
+  position: absolute;
+  top: 0;
   right: 0;
-  text-align: center;
+  left: 0;
+}
+/* line 15, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 19, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-enter {
   opacity: 0;
 }
-/* line 78, ../scss/components/_loaders.scss */
-.loadingtext.is-showing {
+/* line 23, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-enter-active {
   opacity: 1;
 }
+/* line 27, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-hide {
+  opacity: 0;
+}
+/* line 31, ../scss/components/_loaders.scss */
+.pageLoaderContainer.ng-hide-add, .pageLoaderContainer.ng-hide-remove {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
 
-/*------------------------------------*\
-    #Loading Screen
-\*------------------------------------*/
-/* line 92, ../scss/components/_loaders.scss */
-.loadingScreen {
-  background-color: #fff;
+/* line 39, ../scss/components/_loaders.scss */
+.cardLoaderContainer {
+  width: 100%;
+  position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
-  z-index: 300;
-  opacity: 1;
-  will-change: opacity;
+  height: 100%;
 }
-/* line 104, ../scss/components/_loaders.scss */
-.loadingScreen.is-hidden {
-  -moz-animation: loading-screen-out 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-  -webkit-animation: loading-screen-out 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
-  animation: loading-screen-out 0.6s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
+/* line 47, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 51, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-enter {
+  opacity: 0;
+}
+/* line 55, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-enter-active {
+  opacity: 1;
+}
+/* line 59, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-hide {
+  opacity: 0;
+}
+/* line 63, ../scss/components/_loaders.scss */
+.cardLoaderContainer.ng-hide-add, .cardLoaderContainer.ng-hide-remove {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-/* line 112, ../scss/components/_loaders.scss */
+/* line 70, ../scss/components/_loaders.scss */
 .loader,
+.loader:before,
 .loader:after {
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
 }
 
-/* line 120, ../scss/components/_loaders.scss */
+/* line 76, ../scss/components/_loaders.scss */
 .loader {
-  margin: 60px auto;
-  font-size: 10px;
+  color: #231F20;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
   position: relative;
-  text-indent: -9999em;
-  border-top: 0.8em solid #e8f1f1;
-  border-right: 0.8em solid #e8f1f1;
-  border-bottom: 0.8em solid #e8f1f1;
-  border-left: 0.8em solid #FBC510;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 .8s infinite linear;
-  animation: load8 .8s infinite linear;
+  width: 10em;
+  height: 10em;
+  box-shadow: inset 0 0 0 1em;
+  -moz-transform: translateZ(0) scale(0.6);
+  -ms-transform: translateZ(0) scale(0.6);
+  -webkit-transform: translateZ(0) scale(0.6);
+  transform: translateZ(0) scale(0.6);
 }
 
-@-webkit-keyframes load8 {
+/* line 88, ../scss/components/_loaders.scss */
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: '';
+}
+
+/* line 94, ../scss/components/_loaders.scss */
+.loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #e8f1f1;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.2em 5.1em;
+  transform-origin: 5.2em 5.1em;
+  -webkit-animation: load2 1.4s infinite ease 1.5s;
+  animation: load2 1.4s infinite ease 1.5s;
+}
+
+/* line 107, ../scss/components/_loaders.scss */
+.loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #e8f1f1;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 5.1em;
+  -webkit-transform-origin: 0px 5.1em;
+  transform-origin: 0px 5.1em;
+  -webkit-animation: load2 1.4s infinite ease;
+  animation: load2 1.4s infinite ease;
+}
+
+@-webkit-keyframes load2 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -21008,7 +21142,7 @@ img {
     transform: rotate(360deg);
   }
 }
-@keyframes load8 {
+@keyframes load2 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -21018,89 +21152,11 @@ img {
     transform: rotate(360deg);
   }
 }
-@-moz-keyframes loading-screen-in {
-  0% {
-    -moz-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  100% {
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-  }
+/* line 142, ../scss/components/_loaders.scss */
+.loader--secondary:before, .loader--secondary:after {
+  background-color: #fff;
 }
-@-webkit-keyframes loading-screen-in {
-  0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes loading-screen-in {
-  0% {
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  100% {
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@-moz-keyframes loading-screen-out {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    -moz-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-}
-@-webkit-keyframes loading-screen-out {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-}
-@keyframes loading-screen-out {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-}
+
 /*------------------------------------*\
     #Mail Sign Up Cta
 \*------------------------------------*/
@@ -21223,7 +21279,12 @@ body.fancymodal-open {
   height: 100%;
 }
 
-/* line 115, ../scss/components/_modals.scss */
+/* line 114, ../scss/components/_modals.scss */
+.fancymodal-loaderContainer {
+  position: relative;
+}
+
+/* line 119, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close {
   border-radius: 3px;
   top: 0;
@@ -21231,7 +21292,7 @@ body.fancymodal-open {
   cursor: pointer;
 }
 
-/* line 125, ../scss/components/_modals.scss */
+/* line 129, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close:before {
   border-radius: 3px;
   position: absolute;
@@ -21246,7 +21307,7 @@ body.fancymodal-open {
   color: #ccc;
 }
 
-/* line 142, ../scss/components/_modals.scss */
+/* line 146, ../scss/components/_modals.scss */
 .fancymodal .fancymodal-close:hover:before,
 .fancymodal .fancymodal-close:active:before {
   color: #777;
@@ -21256,11 +21317,11 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Modal Types
 \*------------------------------------*/
-/* line 162, ../scss/components/_modals.scss */
+/* line 166, ../scss/components/_modals.scss */
 .fancymodal--primary {
   padding: 0;
 }
-/* line 165, ../scss/components/_modals.scss */
+/* line 169, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-badge {
   position: absolute;
   top: -30px;
@@ -21275,12 +21336,12 @@ body.fancymodal-open {
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 177, ../scss/components/_modals.scss */
+/* line 181, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-badge .fancymodal-badge-icon {
   fill: #6AC6C5;
   width: 56%;
 }
-/* line 185, ../scss/components/_modals.scss */
+/* line 189, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-content {
   background: #fff;
   -webkit-backface-visibility: hidden;
@@ -21289,29 +21350,32 @@ body.fancymodal-open {
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 192, ../scss/components/_modals.scss */
+/* line 196, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-content.is-open {
   -moz-animation: fancymodal-in 0.6s forwards;
   -webkit-animation: fancymodal-in 0.6s forwards;
   animation: fancymodal-in 0.6s forwards;
 }
-/* line 198, ../scss/components/_modals.scss */
+/* line 202, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-content.is-closed {
   -moz-animation: fancymodal-out 0.6s forwards;
   -webkit-animation: fancymodal-out 0.6s forwards;
   animation: fancymodal-out 0.6s forwards;
 }
-/* line 207, ../scss/components/_modals.scss */
+/* line 211, ../scss/components/_modals.scss */
 .fancymodal--primary .fancymodal-innerContent {
   padding: 1.5rem;
 }
 
-/* line 218, ../scss/components/_modals.scss */
+/*------------------------------------*\
+    #Confirmation Modal
+\*------------------------------------*/
+/* line 231, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options {
   background-color: transparent;
   border-top: 1px solid #dae0e0;
 }
-/* line 222, ../scss/components/_modals.scss */
+/* line 235, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option {
   background-color: transparent;
   padding-top: 1.125rem;
@@ -21331,7 +21395,7 @@ body.fancymodal-open {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 236, ../scss/components/_modals.scss */
+/* line 249, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option .option-icon {
   width: 0.75rem;
   height: 0.75rem;
@@ -21342,28 +21406,28 @@ body.fancymodal-open {
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 245, ../scss/components/_modals.scss */
+/* line 258, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option .option-label {
   vertical-align: middle;
 }
-/* line 250, ../scss/components/_modals.scss */
+/* line 263, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option.fancymodal-options-option--primary {
   color: #231F20;
 }
-/* line 253, ../scss/components/_modals.scss */
+/* line 266, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option.fancymodal-options-option--primary .option-icon {
   fill: #231F20;
 }
-/* line 260, ../scss/components/_modals.scss */
+/* line 273, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:hover, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:focus {
   color: #fff;
   background-color: #231F20;
 }
-/* line 265, ../scss/components/_modals.scss */
+/* line 278, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:hover .option-icon, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:focus .option-icon {
   fill: #fff;
 }
-/* line 270, ../scss/components/_modals.scss */
+/* line 283, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:hover:after, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -21371,7 +21435,7 @@ body.fancymodal-open {
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 276, ../scss/components/_modals.scss */
+/* line 289, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:hover:before, .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -21379,7 +21443,7 @@ body.fancymodal-open {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 286, ../scss/components/_modals.scss */
+/* line 299, ../scss/components/_modals.scss */
 .fancymodal--confirmation .fancymodal-options .fancymodal-options-option:nth-child(2) {
   border-left: 1px solid #dae0e0;
   -moz-border-radius: 0 0 4px 0;
@@ -21387,58 +21451,66 @@ body.fancymodal-open {
   border-radius: 0 0 4px 0;
 }
 
+/*------------------------------------*\
+    #Boost Modal
+\*------------------------------------*/
 @media only screen and (min-width: 40.0625em) {
-  /* line 299, ../scss/components/_modals.scss */
+  /* line 320, ../scss/components/_modals.scss */
   .fancymodal--boost .fancymodal-innerContent {
     padding-right: 2.25rem;
     padding-left: 2.25rem;
   }
 }
+/* line 328, ../scss/components/_modals.scss */
+.fancymodal--boost .fancymodal-loaderContainer {
+  min-height: 21.25rem;
+  padding-bottom: 3.125rem;
+}
 
 /*------------------------------------*\
     #Modal Sizes
 \*------------------------------------*/
-/* line 322, ../scss/components/_modals.scss */
+/* line 345, ../scss/components/_modals.scss */
 .fancyModal--fullScreen .fancymodal-content {
   background-color: transparent;
 }
 
-/* line 330, ../scss/components/_modals.scss */
+/* line 353, ../scss/components/_modals.scss */
 .fancymodal--large .fancymodal-content {
   max-width: 68.75rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 336, ../scss/components/_modals.scss */
+  /* line 359, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 336, ../scss/components/_modals.scss */
+  /* line 359, ../scss/components/_modals.scss */
   .fancymodal--medium {
     padding-top: 10rem !important;
   }
 }
-/* line 347, ../scss/components/_modals.scss */
+/* line 370, ../scss/components/_modals.scss */
 .fancymodal--medium .fancymodal-content {
   max-width: 28rem;
   min-height: 7.5rem;
 }
 
 @media only screen and (min-width: 40.0625em) {
-  /* line 355, ../scss/components/_modals.scss */
+  /* line 378, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 6rem !important;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 355, ../scss/components/_modals.scss */
+  /* line 378, ../scss/components/_modals.scss */
   .fancymodal--small {
     padding-top: 10rem !important;
   }
 }
-/* line 367, ../scss/components/_modals.scss */
+/* line 390, ../scss/components/_modals.scss */
 .fancymodal--small .fancymodal-content {
   max-width: 23.5rem;
   min-height: 7.5rem;
@@ -21626,7 +21698,8 @@ body.fancymodal-open {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #fff;
-  margin-right: 0.75rem;
+  margin-left: 0.375rem;
+  margin-right: 0.375rem;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -21634,22 +21707,22 @@ body.fancymodal-open {
   line-height: 1.5;
 }
 
-/* line 24, ../scss/components/_tags.scss */
+/* line 25, ../scss/components/_tags.scss */
 .tag--warning {
   background-color: #FD7272;
 }
 
-/* line 29, ../scss/components/_tags.scss */
+/* line 30, ../scss/components/_tags.scss */
 .tag--active {
   background-color: #33d28a;
 }
 
-/* line 34, ../scss/components/_tags.scss */
+/* line 35, ../scss/components/_tags.scss */
 .tag--inactive {
   background-color: #9a9a9a;
 }
 
-/* line 40, ../scss/components/_tags.scss */
+/* line 41, ../scss/components/_tags.scss */
 .tag--pending {
   background-color: #FBC510;
 }
@@ -21657,7 +21730,7 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Tag Sizes
 \*------------------------------------*/
-/* line 52, ../scss/components/_tags.scss */
+/* line 53, ../scss/components/_tags.scss */
 .tag--large {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
@@ -22125,9 +22198,31 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
+    #A Card Containing Account Login UX
+\*------------------------------------*/
+/* line 31, ../scss/pages/_login.scss */
+.card--login {
+  width: 100%;
+}
+/* line 34, ../scss/pages/_login.scss */
+.card--login .card-header {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 31, ../scss/pages/_login.scss */
+  .card--login {
+    margin-right: auto;
+    margin-left: auto;
+    width: 23.25rem;
+    padding: 0.75rem;
+  }
+}
+
+/*------------------------------------*\
     #Password Requirements Checkboxes
 \*------------------------------------*/
-/* line 30, ../scss/pages/_login.scss */
+/* line 57, ../scss/pages/_login.scss */
 .passRequirementCheck {
   height: 0.75rem;
   width: 0.75rem;
@@ -22141,7 +22236,7 @@ body.fancymodal-open {
   -webkit-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 38, ../scss/pages/_login.scss */
+/* line 65, ../scss/pages/_login.scss */
 .passRequirementCheck.is-checked {
   background-color: #33d28a;
   border-color: #33d28a;
@@ -22176,7 +22271,7 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Styles specific to sponsorship creation page 
+    #Sponsorship Creation Views
 \*------------------------------------*/
 /*------------------------------------*\
     #Illustrations Sponsee Selection Screen
@@ -22354,7 +22449,29 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
-    #Styles Specific to Sponsor View 
+    #Sponsorship View
+\*------------------------------------*/
+/* line 12, ../scss/pages/_sponsorship.scss */
+.sponsorship-planStatus .sponsorship-planStatus-edit .icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  fill: #238EB2;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 18, ../scss/pages/_sponsorship.scss */
+.sponsorship-planStatus .sponsorship-planStatus-edit .icon:hover, .sponsorship-planStatus .sponsorship-planStatus-edit .icon:focus {
+  fill: #6AC6C5;
+}
+/* line 27, ../scss/pages/_sponsorship.scss */
+.sponsorship-planStatus .sponsorship-planStatus-edit:hover .icon, .sponsorship-planStatus .sponsorship-planStatus-edit:focus .icon {
+  fill: #6AC6C5;
+}
+
+/*------------------------------------*\
+    #Global Sponsor View 
 \*------------------------------------*/
 /* line 8, ../scss/pages/_sponsorView.scss */
 .sponsorViewContainer {
@@ -22608,7 +22725,7 @@ body.preload * {
   -webkit-animation-duration: 0s !important;
 }
 
-/* line 22, ../scss/base/_animations.scss */
+/* line 26, ../scss/base/_animations.scss */
 [ui-view="form"].ng-enter {
   -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
@@ -22616,12 +22733,92 @@ body.preload * {
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-/* line 26, ../scss/base/_animations.scss */
+/* line 30, ../scss/base/_animations.scss */
 [ui-view="form"].ng-enter {
   opacity: 0;
 }
 
-/* line 30, ../scss/base/_animations.scss */
+/* line 34, ../scss/base/_animations.scss */
 [ui-view="form"].ng-enter-active {
   opacity: 1;
+}
+
+/* line 44, ../scss/base/_animations.scss */
+[ui-view="sponsor"].ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) 0.1s;
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) 0.1s;
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition-delay: 0.1s;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) 0.1s;
+}
+
+/* line 48, ../scss/base/_animations.scss */
+[ui-view="sponsor"].ng-enter {
+  opacity: 0;
+}
+
+/* line 52, ../scss/base/_animations.scss */
+[ui-view="sponsor"].ng-enter-active {
+  opacity: 1;
+}
+
+/* line 57, ../scss/base/_animations.scss */
+[ui-view="sponsor"].ng-hide {
+  opacity: 0;
+}
+
+/* line 61, ../scss/base/_animations.scss */
+[ui-view="sponsor"].ng-hide-add,
+[ui-view="sponsor"].ng-hide-remove {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* line 72, ../scss/base/_animations.scss */
+.card--login-form.ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) 0.1s;
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) 0.1s;
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition-delay: 0.1s;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000) 0.1s;
+}
+
+/* line 76, ../scss/base/_animations.scss */
+.card--login-form.ng-enter {
+  opacity: 0;
+}
+
+/* line 80, ../scss/base/_animations.scss */
+.card--login-form.ng-enter-active {
+  opacity: 1;
+}
+
+/* line 85, ../scss/base/_animations.scss */
+.card--login-form.ng-hide {
+  opacity: 0;
+  display: block !important;
+  visibility: hidden;
+}
+
+/* line 91, ../scss/base/_animations.scss */
+.card--login-form.ng-hide-add,
+.card--login-form.ng-hide-remove {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* line 100, ../scss/base/_animations.scss */
+.improveAnimation {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
 }

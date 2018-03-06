@@ -283,6 +283,21 @@ twopence.config(
               controllerAs: "dashboard"
 
             }
+          },
+          resolve: {
+
+            sponsorships: ['Sponsorship', function(Sponsorship) {
+
+              //
+              // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+              //
+              return Sponsorship.getAll().then(function(sponsorships) {
+                return sponsorships;
+              }).catch(function(err){
+                reject(err);
+              });
+
+            }]
           }
 
         })
@@ -299,12 +314,46 @@ twopence.config(
 
             }
 
-          }
+          },
+          resolve : {
+
+            sponsorships:  ['Sponsorship', function(Sponsorship) {
+
+              //
+              // Gets all the sponsorships a sponsor is currently managing
+              //
+              return Sponsorship.getAll().then(function(sponsorships) {
+
+                return sponsorships;
+
+              }).catch(function(err){
+                alert("ERROR: Sponsorships not coming up.")
+                reject(err); 
+
+              }); 
+
+            }],
+            contributions:  ['Sponsor', function(Sponsor) {
+
+              //
+              // Gets all contributions a sponsor has made 
+              //
+              return Sponsor.getAllContributions().then(function(contributions) {
+                return contributions;
+              }).catch(function(err) {
+                alert("ERROR: Contributions not coming up."); 
+                reject(err);
+
+              })
+
+            }]
+
+           }
 
         })
         .state('sponsor.sponsee', {
 
-          url: "sponsee/:sponseeId",
+          url: "^/graduate/:sponseeId",
           views: {
 
             'sponsor': {
@@ -314,6 +363,36 @@ twopence.config(
               controllerAs: "sponsorship"
 
             }
+          },
+          resolve: {
+
+            sponsorship: ['Sponsorship', '$stateParams', function(Sponsorship, $stateParams) {
+
+              //
+              // Gets information for a sponsorship
+              //
+              return Sponsorship.get($stateParams.sponseeId).then(function(sponsorship) {
+                
+                return sponsorship
+
+              }).catch(function(err) {
+                  reject(err);
+              });
+
+            }],
+            contributions: ['Sponsorship', '$stateParams', function(Sponsorship, $stateParams) {
+
+              //
+              // Gets contributions made for a sponsor's sponsorship
+              //
+              return Sponsorship.getContributions($stateParams.sponseeId).then(function(contributions) {
+                return contributions;
+              }).catch(function(err) {
+                  reject(err);
+              });
+
+            }]
+
           },
           params: {
             sponseeId: null
@@ -618,6 +697,8 @@ twopence.run(
       }
 
     });
+
+
 
     //
     // Headers for HTTP calls
