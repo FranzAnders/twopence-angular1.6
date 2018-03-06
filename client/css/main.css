@@ -22607,3 +22607,21 @@ body.preload * {
   animation-duration: 0s !important;
   -webkit-animation-duration: 0s !important;
 }
+
+/* line 22, ../scss/base/_animations.scss */
+[ui-view="form"].ng-enter {
+  -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+/* line 26, ../scss/base/_animations.scss */
+[ui-view="form"].ng-enter {
+  opacity: 0;
+}
+
+/* line 30, ../scss/base/_animations.scss */
+[ui-view="form"].ng-enter-active {
+  opacity: 1;
+}
