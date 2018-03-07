@@ -1,65 +1,48 @@
 
 
 
+<app-header-dir sponsor="sponsor.info"
+                ng-if="sponsor.info">
+</app-header-dir>
 
-<div class="app-nav-wrapper">
-  
-  <app-header-dir sponsor="sponsor.info"
-                  ng-if="sponsor.info">
+<app-nav-dir >
+</app-nav-dir>
 
-  </app-header-dir>
-  
-  <app-nav-dir >
+<div class="sponsorViewContainer  grid  grid--flexDirectionColumn  grid--stretch grid--justifySpaceBetween ">
+  <div class="sponsorView-inner">
+    <div class="row ">
+      <div class="small-12 medium-12 large-10  medium-centered columns">
 
-  </app-nav-dir>
+        <div class="pageLoaderContainer  grid  grid--center" ng-if="sponsor.stateIsChanging">
+          <div class="loader">
 
-  
-  <div class="section  section--highlighted  sponsorViewContainer">
-  
-    <div class="sponsorView-inner">
-      
-      <div class="row ">
-      
-        <div class="small-12 medium-12 large-10  medium-centered columns">
 
-          <div class="pageLoaderContainer  grid  grid--center" ng-if="sponsor.stateIsChanging">
-                        
-            <div class="loader">
-              
-
-            </div>
           </div>
-
-            <div  ui-view="sponsor" ng-show="!sponsor.stateIsChanging">
-          
-            </div>
-            
         </div>
-      
+
+        <div  ui-view="sponsor" ng-show="!sponsor.stateIsChanging">
+
+        </div>
+
       </div>
-      
     </div>
-  
   </div>
 
   <footer class="appFooter show-for-large-up">
-      
-      <div class="row">
-        <div class="small-12 columns  grid  grid--flexDirectionRow grid--justifySpaceBetween  grid--center">
-          <div class="appFooter-credit text-center">
-             © 2018 Pickpocket
-          </div>
-          
-          <ul class="appFooter-menu  grid  grid--center">
-            <li class="menu-item  text-center  show-for-large-up"><a href="https://pickpocket.zendesk.com/hc/en-us/requests/new" rel="external"  target="_blank" class="menu-link">Contact Us</a></li>
-            <li class="menu-item  text-center"><a ui-sref="sponsor.privacy" rel="internal" class="menu-link">Privacy Policy</a></li>
-            <li class="menu-item  text-center"><a  ui-sref="sponsor.terms" rel="internal" class="menu-link">Terms of Service</a></li>
-          </ul>
+    <div class="row">
+      <div class="small-12 columns  grid  grid--flexDirectionRow grid--justifySpaceBetween  grid--center">
+        <div class="appFooter-credit text-center">
+        © 2018 Pickpocket
         </div>
+
+        <ul class="appFooter-menu  grid  grid--center">
+        <li class="menu-item  text-center  show-for-large-up"><a href="https://pickpocket.zendesk.com/hc/en-us/requests/new" rel="external"  target="_blank" class="menu-link">Contact Us</a></li>
+        <li class="menu-item  text-center"><a ui-sref="sponsor.privacy" rel="internal" class="menu-link">Privacy Policy</a></li>
+        <li class="menu-item  text-center"><a  ui-sref="sponsor.terms" rel="internal" class="menu-link">Terms of Service</a></li>
+        </ul>
       </div>
+    </div>
   </footer>
-
 </div>
-
 
 

@@ -27,10 +27,9 @@ twopence.controller('logOutConfirmationCtrl',
       $fancyModal.close()
 
       Auth.logout().then(function() {
-
         $timeout(function() {
-          $state.go('main.home');
-        }, 600); 
+          $state.go('main.account.login');
+        }, 500); 
       }).catch(function(err) {
           console.log(err);
       });
