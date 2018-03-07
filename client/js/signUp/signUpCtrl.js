@@ -87,7 +87,7 @@ twopence.controller('signUpCtrl', [
     //
     vm.createUser = function(pSponsorForm, pUserInfo) {
 
-      var userInfo = pUserInfo;
+      var userInfo = Object.assign({}, pUserInfo);
 
       delete userInfo.confirmPassword; 
 

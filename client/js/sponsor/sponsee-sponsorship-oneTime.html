@@ -116,7 +116,7 @@
                                    name="custom"
                                    class="input--small   mb0"
                                    ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
-                                   ng-model="sponseeSponsorship.customAmount.amount"
+                                   ng-model="sponseeSpwonsorship.customAmount.amount"
                                    placeholder="Other"
                                    focus-me="{{sponseeSponsorship.customAmount.active}}"
                                    >
@@ -142,7 +142,7 @@
 
             <div class="card-content"
                  ng-if="!sponseeSponsorship.formStates.linked_bank_already">
-
+              
                 <div class="grid--flexDirectionColumn med-grid--flexDirectionRow  grid--top grid">
                   
                   <h2 class="card-subTitle  grid-cell grid-cell--autoSize">
@@ -151,18 +151,17 @@
                   
                   <div class="grid-cell">
 
-                    <div class="row ">
-                                  
+                      <div class="row ">
+                                    
                       <div class="small-12 large-11  columns">
                                     
                         <a class="button  button--medium button--bankLinking button--expanded mb1"
-                           ng-class="{'is-linked' : sponseeSponsorship.formStates.linked_bank  }" 
-                           ng-click="sponseeSponsorship.link()"
-                           role="button" title="Link your Funding Account">
+                           ng-class="{'is-linked' :  sponseeSponsorship.formStates.linked_bank}" 
+                           ng-click="sponseeSponsorship.linkBank()">
                                     
-                          <span ng-if="!sponseeSponsorship.linked_bank">Link your Funding Account</span>
-                          <span ng-if="sponseeSponsorship.linked_bank">Funding Account Linked</span>
-                                    
+                          <span ng-if="!sponseeSponsorship.formStates.linked_bank">Link your Funding Account</span>
+                          <span ng-if="sponseeSponsorship.formStates.linked_bank">Funding Account Linked</span>
+                          
                         </a>
 
                         <p class="text-mini text-center">
@@ -174,11 +173,11 @@
                     </div>
 
                   </div>
-              
+                
                 </div>
-              
-              </div>
-      
+                  
+            </div>
+
             </div>
 
             <div class="row">
