@@ -15,21 +15,12 @@ twopence.directive('checkMe', ['$timeout', 'EfficientWatch', function($timeout, 
     link: function(scope, element, attrs, ctrl) {
 
       EfficientWatch.watch('trigger', ctrl, function(newValue){
-
-        if(newValue === 'true') { 
-
+        if(newValue) { 
           $timeout(function() {
-
             element[0].checked = true;  
-
           });
-
         } 
-
       }); 
-
     }
-
   }
-
 }]); 
