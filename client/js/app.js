@@ -637,6 +637,8 @@ twopence.run(
      '$location',
      'Auth',
      'editableOptions',
+     'User',
+     'Sponsorship',
      function(
         $rootScope,
         $document,
@@ -649,30 +651,64 @@ twopence.run(
         $cookies,
         $location,
         Auth,
-        editableOptions
-        ) {
-
-
-    $rootScope.$on('$stateChangeError', function(event) {
-
-        console.log('state change error my person!')
-
-    });
+        editableOptions,
+        User,
+        Sponsorship) {
 
     //
     // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
     //
     $timeout(function(){
-
       document.body.classList.remove('preload');
-
     }, 1400);
 
 
-    $rootScope.$on('$stateChangeStart', function (event, next, current) { });
+    var sponsorStartedSession = false; 
+
+    //
+    // We listen to the $stateChangeStart event:
+    // If its going to sponsor.dashboard, we check the status of the sponsor and his sponsorships before taking him there
+    //
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        
+        if(toState.name === 'sponsor.dashboard' && !sponsorStartedSession) {
+          event.preventDefault();
+          User.getUserInfo().then(function(userInfo) {
+
+          if(userInfo.sponsor.status === "onboarding") {
+              sponsorStartedSession = true; 
+            $state.go('main.account.onboarding');
+          } 
+
+          if(userInfo.sponsorships.length === 0) {
+              sponsorStartedSession = true; 
+            $state.go('sponsor.sponseeAdd');
+          } else {  
+
+            if(Sponsorship.getSponsorshipsMissingPlans(userInfo.sponsorships).length > 0) {
+              sponsorStartedSession = true; 
+              $state.go('sponsor.sponseeAdd.inviters');
+            } else {
+              sponsorStartedSession = true; 
+              $state.go('sponsor.dashboard');
+
+              console.log('going to dashboard from stateChangeStart');
+            }
+
+          }
+
+        }).catch(function(){
+            alert('ERROR: Something went wrong');
+        });
+      
+      }
+
+    }); 
 
 
+    //
     // Function to set data-useragent attribute to document
+    //
     var _userAgentInit = function() {
             $document[0].documentElement.setAttribute('data-useragent', navigator.userAgent);
     };
@@ -685,7 +721,9 @@ twopence.run(
     });
 
 
+    //
     // Runs when a state changes
+    //
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
       
        // Code to make the page load at the top when a state changes
@@ -698,6 +736,14 @@ twopence.run(
 
     });
 
+
+    //
+    // For degubbing state changees 
+    //
+    // $rootScope.$on('$stateChangeError', function(event) {
+    //     console.log('state change error my person!')
+
+    // });
 
 
     //
