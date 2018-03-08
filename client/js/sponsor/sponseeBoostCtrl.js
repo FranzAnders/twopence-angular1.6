@@ -27,12 +27,10 @@ twopence.controller('sponseeBoostCtrl', [
 
 
     vm.sponsorshipInfo = SponseeInformation;
-
     vm.sponseeInfo = vm.sponsorshipInfo.sponsee;
-
     vm.boostSuccessfull = false;
-
     vm.confirmingBoost = false;
+    vm.makingBoost = false; 
 
     vm.boostInfo = {
       "user": {
@@ -55,10 +53,12 @@ twopence.controller('sponseeBoostCtrl', [
       if (vm.confirmingBoost) {
 
         vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
+        vm.makingBoost = true; 
 
         Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
           vm.confirmingBoost = false;
           vm.boostSuccessfull = true;
+          vm.makingBoost = false; 
 
           mixpanel.track('Confirmed Boost', {'Graduate': 'User:' + vm.sponsorshipInfo.sponsee.id});
 
@@ -67,6 +67,7 @@ twopence.controller('sponseeBoostCtrl', [
         }).catch(function(err) {
 
           alert("Repeat payments of the same amount can not be made on the same day. Wait ")
+          vm.makingBoost = false; 
 
         });
 

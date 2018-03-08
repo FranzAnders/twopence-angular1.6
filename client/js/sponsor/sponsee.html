@@ -14,30 +14,42 @@
 
           </h1>
 
-          <p class="text-left">
+          <p class="sponsorship-planStatus  text-left  grid  med-grid--flexDirectionColumn  large-grid--flexDirectionRow grid--flexWrap">
+              
               Plan Status:   
 
-            <span ng-switch="sponsorship.planStatus">
-          
-              <span ng-switch-when="active" class="tag tag--active">
-                Active
-              </span>
-          
-              <span ng-switch-when="paused" class="tag  tag--inactive">
-                  Paused
-              </span>
-
-              <span ng-switch-when="activating" class="tag  tag--pending">
-                  Activating
-              </span>
+              <span class="grid  grid--center">
+                    
+                <span ng-switch="sponsorship.planStatus" class="grid  grid--center">
                             
-              <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
+                  <span ng-switch-when="active" class="tag tag--active">
+                    Active
+                  </span>
+                
+                  <span ng-switch-when="deactivating" class="tag  tag--inactive">
+                      Inactive
+                  </span>
+                
+                  <span ng-switch-when="inactive" class="tag  tag--inactive">
+                      Inactive
+                  </span>
+                
+                  <span ng-switch-when="activating" class="tag  tag--pending">
+                      Activating
+                  </span>
+                
+                  <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
+                
+                </span>
 
+                <a  ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})" rel="internal" title="Edit Matching Plan" class="sponsorship-planStatus-edit" >
+                  (<svg class="icon">
+                    <use xlink:href="#icon-edit"/>
+                    
+                  </svg>Change)
+                </a>
+            
             </span>
-
-            <a class="" ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})">
-              (Change)
-            </a>
 
           </p>
         

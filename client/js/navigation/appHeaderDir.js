@@ -20,11 +20,7 @@ twopence.directive('appHeaderDir', function() {
         vm.secondaryMenuActive = false; 
 
         vm.isActive = function(pState) {
-
-          console.log(pState); 
-          
           return $state.is(pState); 
-
         }; 
 
 
@@ -32,18 +28,12 @@ twopence.directive('appHeaderDir', function() {
         // Displays the secondary menu that is of canvas 
         //
         vm.toggleSecondaryMenu  = function() {
-
-        vm.secondaryMenuActive = !vm.secondaryMenuActive; 
-
-        console.log(vm.secondaryMenuActive); 
+          vm.secondaryMenuActive = !vm.secondaryMenuActive; 
 
           if(vm.secondaryMenuActive) {
-
             $scope.$emit('app-nav-is-open');
-
           } else {
             $scope.$emit('app-nav-is-closed');
-
           }
 
         }; 
@@ -72,10 +62,8 @@ twopence.directive('appHeaderDir', function() {
 
 
         vm.$onInit =  function() {
-
           vm.sponsorName = vm.sponsor.first_name + " " + vm.sponsor.last_name;
           vm.sponsorInitials = vm.sponsor.first_name.charAt(0) + vm.sponsor.last_name.charAt(0); 
-
         }
 
     }], 

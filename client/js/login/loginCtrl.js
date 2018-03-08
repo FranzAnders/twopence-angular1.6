@@ -26,6 +26,7 @@ twopence.controller('loginCtrl', [
     var vm = this;
 
     vm.form = {};
+    vm.loggingIn = false; 
 
     vm.credentials = {
       username: '',
@@ -64,43 +65,13 @@ twopence.controller('loginCtrl', [
       resetFormSubmissionErrors();
 
       if(pLoginForm.$valid) {
+         vm.loggingIn = true; 
 
         Auth.login(vm.form).then(function(res) {
 
           mixpanel.people.increment('Number of Sessions')
-
-          User.getUserInfo().then(function(userInfo) {
-
-            if(userInfo.sponsor.status === "onboarding") {
-
-              $state.go('main.account.onboarding');
-
-            } 
-
-            if(userInfo.sponsorships.length === 0) {
-
-              $state.go('sponsor.sponseeAdd');
-
-            } else {  
-
-              if(Sponsorship.getSponsorshipsMissingPlans(userInfo.sponsorships).length > 0) {
-                
-                $state.go('sponsor.sponseeAdd.inviters');
-
-
-              } else {
-                
-                $state.go('sponsor.dashboard');
-
-              }
-
-            }
-
-          }).catch(function(){
-              alert('ERROR: Something went wrong');
-
-          });
-
+          
+          $state.go('sponsor.dashboard');
 
         }).catch(function(err) {
 
@@ -109,7 +80,7 @@ twopence.controller('loginCtrl', [
           //
           $timeout(function() {
             $rootScope.$emit('login-validation-error', {error: err});
-
+            vm.loggingIn = false; 
           }, 100);
 
         });

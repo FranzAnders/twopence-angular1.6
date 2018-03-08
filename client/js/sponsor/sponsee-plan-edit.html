@@ -42,7 +42,7 @@
 
           </div>
 
-          <div class="card-content">
+          <div class="card-content  card-content--bordered">
 
             <div class="grid med-grid--flexDirectionRow grid--flexDirectionColumn grid--justifyCenter med-grid--justifySpaceAround">
 
@@ -72,7 +72,6 @@
 
           </div>
 
-          <hr class="hr--faded mb0">
 
           <div class="card-content">
 
@@ -92,17 +91,17 @@
                   </div>
 
                   <div ng-switch-when="inactive" class="tag  tag--large  tag--inactive  planStatus-status">
-                      Paused
+                      Inactive
                   </div>
 
 
                   <div ng-switch-when="deactivating" class="tag  tag--large  tag--inactive  planStatus-status">
-                      Paused
+                      Inactive
                   </div>
 
 
                   <div ng-switch-when="activating" class="tag tag--large tag--pending  planStatus-status">
-                  Activating
+                    Activating
                   </div>
 
                   <div  ng-switch-when="invite pending" class="tag  tag--large  tag--pending  planStatus-status">Invite Pending</div>
@@ -119,7 +118,7 @@
                 
                   </svg>
                   
-                  <span class="label"> Pause Plan</span>
+                  <span class="label"> Deactivate Plan</span>
                 </button>
 
                 <button role="button"  class="text-micro  planStatus-action"
@@ -130,8 +129,7 @@
                     <use xlink:href="#icon-resume"/>
                 
                   </svg>
-
-                  <span class="label"> Resume Plan</span>
+                  <span class="label"> Activate Plan</span>
                 </button>
 
                 <button  role="button" class="text-micro  planStatus-action"

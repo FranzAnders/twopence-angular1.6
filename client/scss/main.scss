@@ -44,7 +44,6 @@ $level7: 48;
 
 // Abstracts
 @import
-    'abstracts/animations',
     'abstracts/blockquotes',
     'abstracts/borderRadius',
     'abstracts/buttons',
@@ -93,6 +92,7 @@ $level7: 48;
     'components/headlines',
     'components/heroHeader',
     'components/images',
+    'components/loaders',
     'components/loginHeader',
     'components/lists',
     'components/loaders',
@@ -113,6 +113,7 @@ $level7: 48;
     'pages/login',
     'pages/planSuccessfullyMade',
     'pages/sponsorshipCreation',
+    'pages/sponsorship',
     'pages/sponsorView',
     'pages/sponseeSplash',
     'pages/planEdit';

@@ -1,24 +1,23 @@
 
 
 /*------------------------------------*\
-    #Styles Specific to Sponsor View 
+    #Global Sponsor View 
 \*------------------------------------*/
 
 
 .sponsorViewContainer {
   padding-top: rem-calc($level6);
+  background-color: $quaternaryColor;
+  min-height: 100vh; 
 
   @media #{$large-up} {
-    min-height: 90vh; 
     padding-top: rem-calc($level5);
-
   }
 
 }
 
 
 .sponsorView-inner {
-  min-height: 90vh; 
 
   @media #{$large-up} {
     padding-left: rem-calc($level1);
@@ -40,6 +39,11 @@
   position: relative;
   width: rem-calc(250px);
   height: rem-calc(250px);
+  display: none; 
+  
+  @media #{$medium-up} {
+    display: block; 
+  }
 
   @media #{$large-up} {
     width: 100%;

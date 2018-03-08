@@ -8,29 +8,34 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
-    'Sponsorship',
     'User',
     'Auth',
     '$fancyModal',
     '$rootScope',
     '$state',
     '$timeout',
+    'sponsorships',
     function(
         Sponsee,
         Sponsor,
-        Sponsorship,
         User,
         Auth,
         $fancyModal,
         $rootScope,
         $state,
-        $timeout) {
+        $timeout,
+        sponsorships) {
 
     var vm = this;
 
     vm.sponsorInfo = {};
+    vm.$onInit = function() {
+      vm.sponsorships = sponsorships.data;
+      vm.totalContributions = vm.getTotalContributions(sponsorships.data);
+    };
 
-    //
+
+    //  
     // Gets user's info and name vm.sponsorInfo, vm.sponsorInfo.name
     //
     vm.getUserInfo = function() {
@@ -38,22 +43,8 @@ twopence.controller('dashboardCtrl', [
       User.getUserInfo().then(function(dashboard) {
         $timeout(function() {
           vm.sponsorInfo = dashboard;
-          vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
+          console.log(vm.sponsorInfo); 
         },100);
-      }).catch(function(err){
-        console.log(err);
-      });
-
-      //
-      // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
-      //
-      Sponsorship.getAll().then(function(sponsorships) {
-          
-        $timeout(function() {
-          vm.sponsorships = sponsorships.data;
-          vm.totalContributions = vm.getTotalContributions(sponsorships.data);
-        }, 100); 
-        
       }).catch(function(err){
         console.log(err);
       });

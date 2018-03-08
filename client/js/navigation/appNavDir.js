@@ -22,9 +22,7 @@ twopence.directive('appNavDir', function() {
         $scope.$state = $state; 
 
         vm.isActive = function(pState) {
-
           return $state.is(pState); 
-
         }; 
 
 

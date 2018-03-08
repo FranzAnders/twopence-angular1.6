@@ -8,20 +8,28 @@
 twopence.controller('logOutConfirmationCtrl',
         [
          'Auth', 
+         '$fancyModal',
          '$rootScope',
          '$scope',
-         '$state', function(
+         '$state',
+         '$timeout', function(
                           Auth,
+                          $fancyModal,
                           $rootScope,
+                          $scope,
                           $state,
-                          $scope) {
+                          $timeout) {
 
     var vm = this;
     
-    vm.logOut = function() {
+    vm.logOut = function() {  
+      
+      $fancyModal.close()
 
       Auth.logout().then(function() {
-        $state.go('main.home');
+        $timeout(function() {
+          $state.go('main.account.login');
+        }, 500); 
       }).catch(function(err) {
           console.log(err);
       });
