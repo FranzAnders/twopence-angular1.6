@@ -19,10 +19,14 @@ twopence.controller('homeCtrl', [
     
     $scope.$state = $state; 
     
-    // mixpanelDir.js is an attr on <body>, which is why we listen there.
-    $document[0].body.addEventListener('mixpanel-loaded', function(){
+    if (mixpanel) {
       mixpanel.track('Viewed Landing Page')       
-    });
+    } else {
+      // mixpanelDir.js is an attr on <body>, which is why we listen there.
+      $document[0].body.addEventListener('mixpanel-loaded', function(){
+        mixpanel.track('Viewed Landing Page')       
+      });       
+    }
 
 
 }]);
