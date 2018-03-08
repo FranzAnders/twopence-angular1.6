@@ -28,7 +28,6 @@ twopence.controller('verifyCtrl', [
       vm.tokenStatus = vm.checkTokenStatus(verify);
       vm.userIsLoggedIn = false; 
 
-      console.log(Auth.isAuthenticated());
       if(Auth.isAuthenticated()) {
         vm.userIsLoggedIn = true; 
       }

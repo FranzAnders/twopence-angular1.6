@@ -70,40 +70,8 @@ twopence.controller('loginCtrl', [
         Auth.login(vm.form).then(function(res) {
 
           mixpanel.people.increment('Number of Sessions')
-
-          User.getUserInfo().then(function(userInfo) {
-
-            if(userInfo.sponsor.status === "onboarding") {
-
-              $state.go('main.account.onboarding');
-
-            } 
-
-            if(userInfo.sponsorships.length === 0) {
-
-              $state.go('sponsor.sponseeAdd');
-
-            } else {  
-
-              if(Sponsorship.getSponsorshipsMissingPlans(userInfo.sponsorships).length > 0) {
-                
-                $state.go('sponsor.sponseeAdd.inviters');
-
-
-              } else {
-                
-                $state.go('sponsor.dashboard');
-
-              }
-
-            }
-            
-
-          }).catch(function(){
-              alert('ERROR: Something went wrong');
-
-          });
-
+          
+          $state.go('sponsor.dashboard');
 
         }).catch(function(err) {
 
