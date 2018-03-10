@@ -68,8 +68,32 @@ twopence.config(
                 }
             },
         })
+        .state('main.forgraduates', {
+            url: "for-graduates",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/home.html",
+                    controller: 'homeCtrl'
+
+                }
+            },
+        })
         .state('main.sponsorHome', {
             url: "home-sponsor",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/sponsor-home.html",
+                    controller: 'homeCtrl'
+
+                }
+            },
+        })
+        .state('main.forsponsors', {
+            url: "for-sponsors",
             views: {
 
                 'main' : {

@@ -19,6 +19,12 @@ twopence.controller('homeCtrl', [
     
     $scope.$state = $state; 
     
+    // Ensure page blur isn't active when on dedicated ad routes
+    // #TheAdamEffect
+    if ($scope.$state.is('main.forgraduates') || $scope.$state.is('main.forsponsors')) {
+      document.body.classList.remove('is-hidden-by-funnel');
+    }
+    
     if (mixpanel) {
       mixpanel.track('Viewed Landing Page')       
     } else {
