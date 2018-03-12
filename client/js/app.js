@@ -74,7 +74,7 @@ twopence.config(
 
                 'main' : {
 
-                    templateUrl: "js/home/home.html",
+                    templateUrl: "js/home/for-graduates.html",
                     controller: 'homeCtrl'
 
                 }
