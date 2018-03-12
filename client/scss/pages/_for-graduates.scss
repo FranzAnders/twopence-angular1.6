@@ -1,0 +1,222 @@
+
+
+/*------------------------------------*\
+    #Styles specific to homepage
+\*------------------------------------*/
+
+.contributionMethod {
+  margin-bottom: rem-calc($level7); 
+
+}
+
+.terms {
+  white-space: pre-wrap;
+}
+
+
+
+
+/*------------------------------------*\
+    #Alt styles
+\*------------------------------------*/
+
+.alt-nav {
+  display:none;
+  @media #{$small-only} {
+    display:block;
+    padding:0.75em;
+    position: absolute;
+    z-index:1000;
+    width:100%;
+    background:none;
+    margin-bottom:-0.5em;
+    svg {
+      display:block;
+      width:2.25em;
+      height:2.25em;
+      margin:auto;
+    }
+  }
+}
+
+.center-text-on-mobile {
+  @media #{$small-only} {
+    text-align:center;
+  }
+}
+
+.heroHeader-background-alt {
+  transform: rotatex(180deg);
+}
+
+
+.mailSignupCta {
+  input::placeholder {
+    color: rgb(125, 125, 125)!important;
+  }
+}
+
+.alt-form {
+  input { border:none; }
+  
+  button {
+    background-image: linear-gradient(-180deg,#222 0,#000 100%);
+    border:none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+    min-width: auto!important;
+  }
+  
+  @media #{$small-only} {
+    button {
+      font-weight: normal;
+      padding-top:0.7em;
+      padding-bottom:0.7em;
+      font-size:1.25em;       
+    }
+    input {
+      text-align: center;
+      margin-bottom:-0.5em;
+      line-height:1.7!important;
+      font-size:1.22em!important;
+    }
+  }   
+}
+
+
+
+
+/*------------------------------------*\
+    #Why pickpocket
+\*------------------------------------*/
+
+
+.whyPickpocket {
+  border: 1px solid $grey--med;
+  padding: rem-calc($level4); 
+  @include border-radius(6px);
+  
+  @media #{$medium-up} {
+    border: 0; 
+
+  }
+
+  .whyPickpocket-point {
+    margin-bottom: rem-calc($level7);
+
+    @media #{$medium-up} {
+      margin-bottom: 0; 
+
+    } 
+
+    .whyPickpocket-point-image {
+      max-width: rem-calc(200px); 
+
+      @media #{$large-up} {
+        max-width: rem-calc(260px); 
+        
+      }
+
+    }
+
+    .whyPickpocket-point-headline {
+      margin-bottom: rem-calc($level3);
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Ways To Sponsor
+\*------------------------------------*/
+
+
+.wayToSponsor {
+  
+  @media #{$large-up} {
+    margin-top: rem-calc($level2); 
+
+  }
+  
+  .wayToSponsor-title {
+    margin-bottom: rem-calc($level2); 
+
+  }
+
+  .wayToSponsor-image {
+    max-width: rem-calc(200px); 
+
+    @media #{$large-up} {
+      max-width: rem-calc(220px);
+      margin-right: rem-calc($level2); 
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Sponsor Steps
+\*------------------------------------*/
+
+
+.sponsorStep {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: rem-calc($level7);
+  padding-bottom: rem-calc($level7);
+
+  .sponsorStep-copy {
+
+    @media #{$large-up} {
+      width: rem-calc(400px);
+      margin-left: auto; 
+      margin-right: auto; 
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Plaid Badge
+\*------------------------------------*/
+
+
+.plaidBadge {
+  color: $primaryColor;
+
+  .plaidBadge-label {
+    margin-right: rem-calc($level1);
+    @include type-setting(-1); 
+
+  }
+
+  .plaidBadge-badge {
+    width: rem-calc(90px);
+    height: rem-calc(40px); 
+    background-image: url('../assets/images/logo--plaid.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+
+}
+
+

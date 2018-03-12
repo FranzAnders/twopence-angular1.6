@@ -21,7 +21,9 @@ twopence.directive('graduateMailSignUpDir', ['UrlParams', function(UrlParams) {
     controllerAs: "mailSignUp",
     bindToController: {
 
-      inputLabel: "@"
+      inputLabel: "@",
+      buttonText: "@",
+      altClass:"@"
 
     },
     link: function(scope, element, attrs) {
