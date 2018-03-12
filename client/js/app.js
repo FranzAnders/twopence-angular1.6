@@ -13,7 +13,7 @@ twopence = angular.module('twopence', [
      'ngMessages',
      'angularMoment',
      '720kb.tooltips',
-     'ngRaven',
+     // 'ngRaven',
      'constants'
 ]);
 
@@ -36,7 +36,7 @@ twopence.config(
     $urlRouterProvider.otherwise("/");
 
     //
-    // Pretty URLs activate if we're running  the production ENV
+    // Pretty URLs activate if we're running  the production ENV (disabled for dev so we can refresh while deving)
     //
     if(ENV.environment_name === 'sandbox' || ENV.environment_name === 'prod') {
 
@@ -68,8 +68,32 @@ twopence.config(
                 }
             },
         })
+        .state('main.forgraduates', {
+            url: "for-graduates",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/for-graduates.html",
+                    controller: 'homeCtrl'
+
+                }
+            },
+        })
         .state('main.sponsorHome', {
             url: "home-sponsor",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/sponsor-home.html",
+                    controller: 'homeCtrl'
+
+                }
+            },
+        })
+        .state('main.forsponsors', {
+            url: "for-sponsors",
             views: {
 
                 'main' : {
@@ -283,6 +307,21 @@ twopence.config(
               controllerAs: "dashboard"
 
             }
+          },
+          resolve: {
+
+            sponsorships: ['Sponsorship', function(Sponsorship) {
+
+              //
+              // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+              //
+              return Sponsorship.getAll().then(function(sponsorships) {
+                return sponsorships;
+              }).catch(function(err){
+                reject(err);
+              });
+
+            }]
           }
 
         })
@@ -299,12 +338,46 @@ twopence.config(
 
             }
 
-          }
+          },
+          resolve : {
+
+            sponsorships:  ['Sponsorship', function(Sponsorship) {
+
+              //
+              // Gets all the sponsorships a sponsor is currently managing
+              //
+              return Sponsorship.getAll().then(function(sponsorships) {
+
+                return sponsorships;
+
+              }).catch(function(err){
+                alert("ERROR: Sponsorships not coming up.")
+                reject(err); 
+
+              }); 
+
+            }],
+            contributions:  ['Sponsor', function(Sponsor) {
+
+              //
+              // Gets all contributions a sponsor has made 
+              //
+              return Sponsor.getAllContributions().then(function(contributions) {
+                return contributions;
+              }).catch(function(err) {
+                alert("ERROR: Contributions not coming up."); 
+                reject(err);
+
+              })
+
+            }]
+
+           }
 
         })
         .state('sponsor.sponsee', {
 
-          url: "sponsee/:sponseeId",
+          url: "^/graduate/:sponseeId",
           views: {
 
             'sponsor': {
@@ -314,6 +387,36 @@ twopence.config(
               controllerAs: "sponsorship"
 
             }
+          },
+          resolve: {
+
+            sponsorship: ['Sponsorship', '$stateParams', function(Sponsorship, $stateParams) {
+
+              //
+              // Gets information for a sponsorship
+              //
+              return Sponsorship.get($stateParams.sponseeId).then(function(sponsorship) {
+                
+                return sponsorship
+
+              }).catch(function(err) {
+                  reject(err);
+              });
+
+            }],
+            contributions: ['Sponsorship', '$stateParams', function(Sponsorship, $stateParams) {
+
+              //
+              // Gets contributions made for a sponsor's sponsorship
+              //
+              return Sponsorship.getContributions($stateParams.sponseeId).then(function(contributions) {
+                return contributions;
+              }).catch(function(err) {
+                  reject(err);
+              });
+
+            }]
+
           },
           params: {
             sponseeId: null
@@ -405,169 +508,110 @@ twopence.config(
 
         })
         .state('sponsor.sponseeAdd.single', {
-
          url: "/single",
           views: {
-
             'form': {
-
               templateUrl: "js/sponsor/single-sponsee-creation.html"
 
             }
           }
-
         })
         .state('sponsor.sponseeAdd.inviters', {
-
          url: "/inviters",
           views: {
-
             'form': {
-
               templateUrl: "js/sponsor/inviter-sponsee-creation.html"
-
             }
           }
-
         })
         .state('sponsor.sponsorshipSetup', {
 
           url: "sponsorship/:email",
-          abstract: true, 
+          abstract: true,
           views: {
-
             'sponsor': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship.html",
               controller: "sponseeSponsorshipCtrl",
               controllerAs: "sponseeSponsorship"
             }
-
           },
           resolve: {
-
             userInfo: ['User', function(User) {
-
               //
               // Gets User info and sets it on the controller
               //
               return User.getUserInfo().then(function(userInfo) {
 
-                return userInfo; 
+                return userInfo;
 
               }).catch(function(err) {
 
-                return err; 
-
-              });   
-
+                return err;
+              });
             }]
-
           },
           params: {
             identity: null,
             email: null
-
           }
-
         })
         .state('sponsor.sponsorshipSetup.options', {
-
           url: "/options",
           views: {
-
             'main': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship-options.html"
-
             }
-
           }
-
         })
         .state('sponsor.sponsorshipSetup.matching', {
-
           url: "/options/matching",
           views: {
-
             'main': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship-matching.html"
-
             }
-
           }
-
         })
         .state('sponsor.sponsorshipSetup.oneTime', {
-
           url: "/options/one-time",
           views: {
-
             'main': {
-
               templateUrl: "js/sponsor/sponsee-sponsorship-oneTime.html"
-
             }
-
           }
-
         })
         .state('sponsor.settings', {
-
           url: "sponsor/settings",
           views: {
-
             'sponsor': {
-
               templateUrl: "js/sponsor/settings.html",
               controller: "settingsCtrl",
               controllerAs: "settings"
-
             }
-
           }
-
         }).state('sponsor.faq', {
-
           url: "sponsor/faq.html",
           views: {
-
             'sponsor': {
-
               templateUrl: "js/sponsor/faq.html"
-
             }
-
           }
-
         })
         .state('main.kitchenSink', {
           url: "kitchen-sink/",
           views: {
-
             'main': {
-
               templateUrl: "js/kitchenSink/kitchenSink.html"
 
             }
-
           }
-
         })
         .state('main.404', {
-
             url: "no-longer-here/",
             views: {
-
                'main' : {
-
                   templateUrl: "js/404/404.html"
-
                }
-
             }
-
         })
         .state('main.terms', {
             url: "terms/",
@@ -584,6 +628,22 @@ twopence.config(
                   templateUrl: "js/content/privacy.html"
                }
             }
+        })
+        .state('sponsor.terms', {
+            url: "sponsor-terms/",
+            views: {
+               'sponsor' : {
+                  templateUrl: "js/content/terms.html"
+               }
+            }
+        })
+        .state('sponsor.privacy', {
+            url: "sponsor-privacy/",
+            views: {
+               'sponsor' : {
+                  templateUrl: "js/content/privacy.html"
+               }
+            }
         });
 
 }]);
@@ -591,6 +651,8 @@ twopence.config(
 twopence.run(
     ['$rootScope',
      '$document',
+     '$window',
+     'ENV',
      '$state',
      '$timeout',
      '$log',
@@ -599,9 +661,13 @@ twopence.run(
      '$location',
      'Auth',
      'editableOptions',
+     'User',
+     'Sponsorship',
      function(
         $rootScope,
         $document,
+        $window,
+        ENV,
         $state,
         $timeout,
         $log,
@@ -609,87 +675,64 @@ twopence.run(
         $cookies,
         $location,
         Auth,
-        editableOptions
-        ) {
-
-
-    $rootScope.$on('$stateChangeError', function(event) {
-
-        console.log('state change error my boy!')
-
-    });
-
-    $rootScope.$on('stateChangeStart', function(event) {
-
-    });
-
-
+        editableOptions,
+        User,
+        Sponsorship) {
 
     //
     // When DOM Is loaded we remove the preload class that prevents animations from showing after 3 seconds
     //
     $timeout(function(){
-
       document.body.classList.remove('preload');
-      console.log(document.body); 
+    }, 1400);
 
-    }, 3000);
+
+    var sponsorStartedSession = false; 
+
+    //
+    // We listen to the $stateChangeStart event:
+    // If its going to sponsor.dashboard, we check the status of the sponsor and his sponsorships before taking him there
+    //
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        
+        if(toState.name === 'sponsor.dashboard' && !sponsorStartedSession) {
+          event.preventDefault();
+          User.getUserInfo().then(function(userInfo) {
+
+          if(userInfo.sponsor.status === "onboarding") {
+              sponsorStartedSession = true; 
+            $state.go('main.account.onboarding');
+          } 
+
+          if(userInfo.sponsorships.length === 0) {
+              sponsorStartedSession = true; 
+            $state.go('sponsor.sponseeAdd');
+          } else {  
+
+            if(Sponsorship.getSponsorshipsMissingPlans(userInfo.sponsorships).length > 0) {
+              sponsorStartedSession = true; 
+              $state.go('sponsor.sponseeAdd.inviters');
+            } else {
+              sponsorStartedSession = true; 
+              $state.go('sponsor.dashboard');
+
+              console.log('going to dashboard from stateChangeStart');
+            }
+
+          }
+
+        }).catch(function(){
+            alert('ERROR: Something went wrong');
+        });
+      
+      }
+
+    }); 
 
 
     //
-    // Checking if the user is logged in, if not, we take them to the homepage
-    //
-    // $timeout(function () {
-    //   var authChecker = Auth.checkIfVisited();
-    //   var tokenCheck = Auth.getToken();
-
-    //       if(authChecker == "true") {
-    //         console.log("You've already logged in. Let's redirect you");
-    //       //  $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck;
-    //         $state.go("sponsor.dashboard");
-    //       }
-    //       else {
-    //         console.log("Login again, my dude");
-    //       }
-
-    // }, 0);
-
-    // tokenCheck = $cookies.get('authToken');
-    // console.log(tokenCheck.length);
-
-    // Old script to save users and check auth in RootScope.
-    // May use for reference before deleting.
-
-    // $rootScope.currentUser = null;
-    // $rootScope.userRoles = USER_ROLES;
-    // $rootScope.isAuthorized = Auth.isAuthorized;
-
-    /* $rootScope.setCurrentUser = function (user) {
-      $rootScope.currentUser = user;
-    }; */
-
-
-
-    //
-    // if (tokenCheck.length > 0) {
-    //     $http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenCheck; // jshint ignore:line
-    //     $state.go('main.home');
-    // }
-
-    // if (!tokenCheck) {
-    //     $state.go('main.login');
-    // }
-
-    $rootScope.$on('$stateChangeStart', function (event, next, current) {
-      // if (toState.authRequired && !Auth.isAuthenticated()){ //Assuming the AuthService holds authentication logic
-      //   // User isn’t authenticated
-      //   $state.transitionTo("login");
-      //   event.preventDefault();
-      // }
-    });
-
-
     // Function to set data-useragent attribute to document
+    //
     var _userAgentInit = function() {
             $document[0].documentElement.setAttribute('data-useragent', navigator.userAgent);
     };
@@ -702,11 +745,30 @@ twopence.run(
     });
 
 
-    // Code to make the page load at the top when a state changes
+    //
+    // Runs when a state changes
+    //
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState) {
+      
+       // Code to make the page load at the top when a state changes
        document.body.scrollTop = document.documentElement.scrollTop = 0;
+       
+       // Register a page view when the route changes. Required for SPA.
+       if ($window.gtag) {
+         $window.gtag('config', ENV.googleAnalyticsToken, {'page_path': $location.path()});
+      }
 
     });
+
+
+    //
+    // For degubbing state changees 
+    //
+    // $rootScope.$on('$stateChangeError', function(event) {
+    //     console.log('state change error my person!')
+
+    // });
+
 
     //
     // Headers for HTTP calls

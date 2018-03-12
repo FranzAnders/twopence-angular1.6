@@ -5,7 +5,7 @@
 
 $primaryColor: #6AC6C5; 
 $primaryColor--dark: darken($primaryColor, 15%); 
-$primaryColor--translucent: rgba($primaryColor, .9); 
+$primaryColor--translucent: rgba($primaryColor, .5); 
 
 //$secondaryColor: #333031; 231F20
 $secondaryColor: #231F20; 
@@ -14,7 +14,7 @@ $secondaryColor--translucent: rgba($secondaryColor, .9);
 
 $tertiaryColor: #238EB2; 
 $tertiaryColor--dark: darken($tertiaryColor, 25%); 
-$tertiaryColor--translucent: rgba($tertiaryColor, .9); 
+$tertiaryColor--translucent: rgba($tertiaryColor, .5); 
 
 $quaternaryColor: #e8f1f1; 
 $quaternaryColor--dark: darken($quaternaryColor, 25%); 
@@ -56,7 +56,8 @@ $accentColor--translucent: rgba($accentColor, 0.9);
 
 $grey--superLight: #f0f1f1; 
 $grey--light: #dae0e0;
-$grey--med: #afadad;
+//$grey--med: #afadad;
+$grey--med: #9a9a9a;
 $grey--dark: #333031 ;
 
 

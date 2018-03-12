@@ -5,9 +5,9 @@
    Main Navigation Directive
 \*------------------------------------*/
 
-twopence.directive('mainNavDir', 
+twopence.directive('mainNavDir', ['$timeout',
       
-        function() {
+        function($timeout) {
 
   return {
 
@@ -59,11 +59,13 @@ twopence.directive('mainNavDir',
 
       };
 
-
     }],
     controllerAs: 'nav',
     templateUrl: 'js/navigation/mainNav.html',
     link: function(scope, element) {
+
+
+
 
         scope.$on('nav-is-open', function(event, data) {
 
@@ -77,85 +79,7 @@ twopence.directive('mainNavDir',
 
         });
 
-        // /*------------------------------------*\
-        //     #Sticky Main Nav Styles Toggle
-        // \*------------------------------------*/
-
-        // // Variable to detect if user is smooth scrolling to a section
-        // var smoothScrolling = false; 
-
-
-        // //
-        // // Function checks to see if the user is scrolling, 
-        // // if they are, 
-
-        // (function($){
-
-        //     var prevScroll = 0;
-        //     var currentScroll; 
-        //     var stickyNavContainer = $('[sticky-nav]');
-        //     var navBar = $('[data-ui-component="main-navigation"]');
-        //     var cart = $('[data-ui-component="cart-icon"]'); 
-        //     var navBarHeight = navBar.height(); 
-        //     var didScroll = false; 
-        //     var theWindow = $(window);
-
-
-        //     $(window).scroll(function() {
-        //         didScroll = true;
-        //     });
-             
-        //     setInterval(function() {
-
-        //       if ( didScroll) {
-
-        //           didScroll = false;
-
-        //           currentScroll = theWindow.scrollTop();
-
-        //         if(currentScroll < navBarHeight) {
-
-        //               navBar.removeClass('is-fixed-and-hidden');
-        //               navBar.removeClass('is-fixed');
-        //               navBar.addClass('mainNav--alt');
-
-        //         }
-
-        //         if(currentScroll > navBarHeight && currentScroll > prevScroll) {
-                      
-        //           if(!mediaCheck.checkIfSmall()) {
-
-        //             navBar.addClass('is-fixed-and-hidden');
-       
-
-        //           }
-
-        //             navBar.removeClass('is-fixed');
-        //             navBar.removeClass('mainNav--alt');
-        //             //navBar.addClass('mainNav--alt');
-                      
-        //         }
-
-        //         if(currentScroll < prevScroll && currentScroll > navBarHeight ) {
-                    
-        //             if(!mediaCheck.checkIfSmall()) {
-
-        //               navBar.addClass('is-fixed');
-        //               navBar.removeClass('mainNav--alt');
-                      
-        //             }
-
-        //         }
-
-        //         prevScroll = currentScroll;
-
-        //       }
-
-        //     }, 300);  
-
-        // })(jQuery);
-
       }
   }
 
-}); 
+}]); 

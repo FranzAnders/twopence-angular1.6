@@ -7,9 +7,16 @@
       </svg>
   
     </div>
-  
+
+    <div class="fancymodal-innerContent  fancymodal-loaderContainer  grid  grid--center  grid--justifyCenter"  ng-show="sponseeBoost.makingBoost">
+      <div class="loader  loader--secondary">
+        
+      
+      </div>
+    </div>
+
     <div class="fancymodal-innerContent"
-         ng-show="!sponseeBoost.boostSuccessfull">
+         ng-show="!sponseeBoost.boostSuccessfull && !sponseeBoost.makingBoost">
   
         <p class="p3" ng-show="!sponseeBoost.boostSuccessfull && !sponseeBoost.confirmingBoost">
             How much would you like to Boost towards <span class="fwb" ng-bind="::sponseeBoost.sponseeInfo.first_name + '’s'"></span> student loans today?
@@ -72,8 +79,7 @@
         </form>
   
     </div>
-  
-  
+    
     <div class="fancymodal-innerContent"
          ng-show="sponseeBoost.boostSuccessfull">
   
@@ -87,7 +93,7 @@
   
         <p class="text-center p2">
   
-          You just boosted {{sponseeBoost.sponseeInfo.first_name}} ${{sponseeBoost.boostInfo.plan.amount}}! <br> We’re sure your Graduate appreciates it.
+          You just boosted {{sponseeBoost.sponseeInfo.first_name}} <span class="fwb">{{sponseeBoost.boostInfo.plan.amount | currency:"$":0}}</span>! <br> We’re sure your Graduate appreciates it.
         </p>
   
         <p class="text-center mb0">

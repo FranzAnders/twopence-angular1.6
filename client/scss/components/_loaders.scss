@@ -1,198 +1,140 @@
 
-
 /*------------------------------------*\
     #Loaders
 \*------------------------------------*/
 
-.loadingbar {
 
-  width: 0%; 
-  bottom: 0;
+.pageLoaderContainer {
+  height: rem-calc(360px);
+  width: 100%;
+  position: absolute;
+  top: 0; 
+  right: 0; 
   left: 0; 
-  height: rem-calc(5px); 
-  background-color: $accentColor; 
-  @extend %position-fixed; 
-  @include box-shadow(-1px -1px 8px rgba(0, 0, 0, .6));
 
-  
-  @media #{$medium-up} {
-
-    bottom: rem-calc(0);
-
+  &.ng-enter {
+    @include transition(all .4s ceaser($easeInOutCubic));
   }
 
-  &.is-loading {
-
-      width: 100%; 
-      @include animation(loading 1s ceaser($easeInOutQuint)); 
-
+  &.ng-enter { 
+    opacity: 0; 
   }
 
-}
-
-@include keyframes(loading) {
-  
-
-  0% {
-
-    width: 0%; 
-  }
-
-  20% {
-    width: 30%;
-  }
-
-  30% {
-
-    width: 40%;
-  }
-
-  60% {
-
-    width: 65%;
-  }
-
-  80% {
-
-    width: 75%;
-  }
-
-
-  100% {
-
-    width: 100%; 
-  }
-
-}
-
-
-.loadingtext {
-  
-  bottom: rem-calc($level2); 
-  left: 0;
-  right: 0;
-  text-align: center; 
-  opacity: 0; 
-  @extend %position-fixed; 
-
-  &.is-showing {
+  &.ng-enter-active,{
     opacity: 1; 
   }
+
+  &.ng-hide {
+    opacity: 0;
+  }
+
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    @include transition(all .4s ceaser($easeInOutCubic));
+  }
+
+}
+
+
+.cardLoaderContainer {
+  width: 100%; 
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  left: 0; 
+  height: 100%; 
   
-}
+  &.ng-enter {
+    @include transition(all .4s ceaser($easeInOutCubic));
+  }
 
+  &.ng-enter { 
+    opacity: 0; 
+  }
 
+  &.ng-enter-active,{
+    opacity: 1; 
+  }
 
+  &.ng-hide {
+    opacity: 0;
+  }
 
-
-/*------------------------------------*\
-    #Loading Screen
-\*------------------------------------*/
-
-.loadingScreen {
-
-   background-color: #fff; 
-   top: 0; 
-   bottom: 0; 
-   right: 0;
-   left: 0; 
-   z-index: 300; 
-   opacity: 1; 
-   will-change: opacity; 
-   @extend %position-fixed; 
-
-   &.is-hidden {
-
-      @include animation(loading-screen-out .6s ceaser($easeInOutQuint) forwards); 
-
-   }
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    @include transition(all .4s ceaser($easeInOutCubic));
+  }
 
 }
 
-.loader,
-.loader:after {
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-}
 
 
 .loader {
-  margin: 60px auto;
   font-size: 10px;
-  position: relative;
+  margin: 50px auto;
   text-indent: -9999em;
-  border-top: .8em solid $quaternaryColor;
-  border-right: .8em solid $quaternaryColor;
-  border-bottom: .8em solid $quaternaryColor;
-  border-left: .8em solid $accentColor;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 .8s infinite linear;
-  animation: load8 .8s infinite linear;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: $secondaryColor;
+  background: -moz-linear-gradient(left, $secondaryColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, $secondaryColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, $secondaryColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, $secondaryColor 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, $secondaryColor 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.2s infinite linear;
+  animation: load3 1.2s infinite linear;
+  @include transform(translateZ(0) scale(.6));
 }
-@-webkit-keyframes load8 {
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: $secondaryColor;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: $quaternaryColor;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg) scale(.6);
+    transform: rotate(0deg) scale(.6);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg) scale(.6);
+    transform: rotate(360deg) scale(.6);
   }
 }
-@keyframes load8 {
+@keyframes load3 {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg) scale(.6);
+    transform: rotate(0deg) scale(.6);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg) scale(.6);
+    transform: rotate(360deg) scale(.6);
   }
 }
 
 
-
-
-@include keyframes(loading-screen-in) {
-
-    0% {
-
-        @include transform(translateX(-100%)); 
-
-    }
-
-    100% {
-        @include transform(translateX(0)); 
-    }
-
+.loader--secondary {
+  &:after {
+    color: #fff; 
+  }
 }
 
-
-@include keyframes(loading-screen-out) {
-    
-    0% {
-    
-
-     opacity: 1; 
-
-    }
-
-    99% {
-
-      opacity: 0; 
-      @include transform(translateX(0)); 
-
-
-    }
-    
-  
-    100% {
-      opacity: 0; 
-      @include transform(translateX(100%)); 
-
-    }
-
-}

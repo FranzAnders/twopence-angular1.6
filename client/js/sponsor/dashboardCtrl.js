@@ -8,54 +8,48 @@
 twopence.controller('dashboardCtrl', [
     'Sponsee',
     'Sponsor',
-    'Sponsorship',
     'User',
     'Auth',
     '$fancyModal',
+    '$rootScope',
     '$state',
+    '$timeout',
+    'sponsorships',
     function(
         Sponsee,
         Sponsor,
-        Sponsorship,
         User,
         Auth,
         $fancyModal,
-        $state) {
+        $rootScope,
+        $state,
+        $timeout,
+        sponsorships) {
 
     var vm = this;
 
     vm.sponsorInfo = {};
+    vm.$onInit = function() {
+      vm.sponsorships = sponsorships.data;
+      vm.totalContributions = vm.getTotalContributions(sponsorships.data);
+    };
 
-    //
+
+    //  
     // Gets user's info and name vm.sponsorInfo, vm.sponsorInfo.name
     //
-    User.getUserInfo().then(function(dashboard) {
-      vm.sponsorInfo = dashboard;
+    vm.getUserInfo = function() {
 
-      vm.sponsorInfo.name = vm.sponsorInfo.first_name + " " + vm.sponsorInfo.last_name;
+      User.getUserInfo().then(function(dashboard) {
+        $timeout(function() {
+          vm.sponsorInfo = dashboard;
+          console.log(vm.sponsorInfo); 
+        },100);
+      }).catch(function(err){
+        console.log(err);
+      });
 
-    }).catch(function(err){
-
-      console.log(err);
-
-    });
-
-
-    //
-    // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
-    //
-    Sponsorship.getAll().then(function(sponsorships) {
-      vm.sponsorships = sponsorships.data;
-
-      vm.totalContributions = vm.getTotalContributions(sponsorships.data);
-
-      console.log(vm.sponsorships); 
-      
-    }).catch(function(err){
-
-      console.log(err);
-
-    });
+    }
 
 
     //
@@ -118,5 +112,16 @@ twopence.controller('dashboardCtrl', [
       });
 
     };
+
+
+    //
+    // Listens for a boost being made event to update the total given
+    //
+    $rootScope.$on('sponsor-boosted-sponsee', function() {
+      vm.getUserInfo(); 
+    }); 
+
+
+    vm.getUserInfo(); 
 
 }]);

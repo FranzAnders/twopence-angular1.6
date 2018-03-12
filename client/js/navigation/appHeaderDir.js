@@ -13,18 +13,14 @@ twopence.directive('appHeaderDir', function() {
     restrict: "E", 
     scope: {}, 
     replace: true, 
-    controller: ['$scope', '$state', function($scope, $state) {
+    controller: ['$fancyModal', '$scope', '$state', function($fancyModal, $scope, $state) {
 
         var vm = this; 
 
         vm.secondaryMenuActive = false; 
 
         vm.isActive = function(pState) {
-
-          console.log(pState); 
-          
           return $state.is(pState); 
-
         }; 
 
 
@@ -32,18 +28,12 @@ twopence.directive('appHeaderDir', function() {
         // Displays the secondary menu that is of canvas 
         //
         vm.toggleSecondaryMenu  = function() {
-
-        vm.secondaryMenuActive = !vm.secondaryMenuActive; 
-
-        console.log(vm.secondaryMenuActive); 
+          vm.secondaryMenuActive = !vm.secondaryMenuActive; 
 
           if(vm.secondaryMenuActive) {
-
             $scope.$emit('app-nav-is-open');
-
           } else {
             $scope.$emit('app-nav-is-closed');
-
           }
 
         }; 
@@ -57,28 +47,23 @@ twopence.directive('appHeaderDir', function() {
 
           vm.toggleSecondaryMenu(); 
 
-           var logoutConfirmation = confirm('Are you sure you wanna logout?');
+          $fancyModal.open({
+            controller: 'logOutConfirmationCtrl as logOutConfirmation',
+            templateUrl: 'js/modals/log-out-confirmation.html',
+            themeClass: 'fancymodal--primary  fancymodal--confirmation  fancymodal--small',
+            openingClass: 'is-open',
+            closingClass: 'is-closed',
+            showCloseButton: false
 
-           if(logoutConfirmation) {
-
-            $state.go('main.home')
-
-           } else {
-
-            return false; 
-            
-           }
+          })
 
         }; 
 
 
 
         vm.$onInit =  function() {
-
           vm.sponsorName = vm.sponsor.first_name + " " + vm.sponsor.last_name;
-
           vm.sponsorInitials = vm.sponsor.first_name.charAt(0) + vm.sponsor.last_name.charAt(0); 
-
         }
 
     }], 

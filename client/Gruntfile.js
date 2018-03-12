@@ -32,18 +32,12 @@ module.exports = function(grunt) {
 				'<%= app %>/js/**/*.js'
 			]
 		},
-    cachebreaker: {
-      dev: {
+    cacheBust: {
+      run: {
           options: {
-              match: ['app.*.js', 'app.*.css'],
-              replacement: 'md5',
-              src: {
-                  path: '<%= dist%>/js/app.min.js', path: '<%= dist%>/css/app.min.css'
-              }
+              assets: ['<%= dist%>/js/app.min.js', '<%= dist%>/css/app.min.css']
           },
-          files: {
-              src: ['<%= dist%>/index.html']
-          }
+          src: ['<%= dist%>/index.html']
       }
     },
 		clean: {
@@ -206,7 +200,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-json-minify');
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-ng-constant');
-    grunt.loadNpmTasks('grunt-cache-breaker');
+    //grunt.loadNpmTasks('grunt-cache-breaker');
+    grunt.loadNpmTasks('grunt-cache-bust');
+
     grunt.registerTask('default', ['bower-install', 'svgstore', 'compass:dist', 'connect:app', 'watch']);
     
 
@@ -221,20 +217,20 @@ module.exports = function(grunt) {
     //
     // For Development
     //
-    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'ngconstant:development', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cachebreaker:dev']);
+    grunt.registerTask('publish-dev', ['bower-install', 'compass', 'clean:dist', 'ngconstant:development', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cacheBust:run']);
 
 
     //
     // For Sandbox
     //
-    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'ngconstant:sandbox', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cachebreaker:dev']);
+    grunt.registerTask('publish-sandbox', ['bower-install', 'compass', 'clean:dist', 'ngconstant:sandbox', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cacheBust:run']);
 
 
 
     //
     // For Production
     //
-    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'ngconstant:production', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cachebreaker:dev']);
+    grunt.registerTask('publish-prod', ['bower-install', 'compass', 'clean:dist', 'ngconstant:production', 'useminPrepare', 'copy:dist', 'concat', 'cssmin', 'uglify', 'usemin', 'toggleComments', 'cacheBust:run']);
 
 };
 

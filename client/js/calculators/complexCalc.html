@@ -1,0 +1,261 @@
+
+
+<div class="calculator"
+     ng-class="{ 'calculator--sponsor' : calculator.type === 'sponsor'}">
+  
+  <div class="calculator-controls">
+
+    <div class="calculator-badge  grid  grid--center  grid--justifyCenter">
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" class="calculator-badge-icon">
+        <path class="st0" d="M19.3 14.6l7.6-11.2c.2-.3.5-.3.8-.2L47 14.9c.5.3.3 1.1-.3 1.1l-26.9-.5c-.5 0-.8-.5-.5-.9"/>
+        <path class="st1" d="M46.7 15.6l-18.3-11c-.4-.2-.9-.1-1.2.2l-7.3 10.5c-.2.3-.2.6-.1.9.1.3.4.5.8.5l25.6.4c.4 0 .7-.2.8-.6.2-.3 0-.7-.3-.9z"/>
+        <path class="st0" d="M27.6 5.2c.1-.1.3-.2.4-.1L31.1 7c-.6 1.3-1.4 2.1-2.4 2.3-1.6.3-3.1-1-3.2-1.1l2.1-3z"/>
+        <path class="st0" d="M46.5 16.4s-.1.2-.3.2l-25.6-.4c-.2 0-.2-.1-.2-.2 0 0-.1-.2 0-.3l4.8-7c.3.3 1.6 1.2 3 1.2.2 0 .4 0 .7-.1 1.1-.1 2.1-1 2.8-2.5l14.7 8.8c.1.1.1.3.1.3z"/>
+        <g id="XMLID_1_">
+          <path class="st1" d="M60.4 14H39.8c-.3-.4-.7-.8-1.1-1.1-.9-.6-2.1-.8-3.3-.5-1.1.2-2.1.8-3 1.6H11.6C10.1 14 9 15.2 9 16.6v33.9c0 .9.5 1.8 1.3 2.3l24.4 14.6c.4.2.9.4 1.3.4.5 0 .9-.1 1.3-.4l24.4-14.6c.8-.5 1.3-1.3 1.3-2.3V16.6c.1-1.4-1.1-2.6-2.6-2.6zm-24.9-1c.3-.1.6-.1.9-.1.7 0 1.4.2 1.9.6.3.2.5.4.7.6h-5.8c.8-.6 1.5-1 2.3-1.1zm3.3 7.8c-1 1.6-2.5 2.7-4.1 3-1.1.2-2 .1-2.8-.4-2-1.3-2.3-4.7-.5-7.4.3-.5.7-1 1.2-1.4h6.8c1 1.6.8 4.1-.6 6.2zm23.7 29.8c0 .7-.4 1.4-1 1.8L37.1 66.9c-.7.4-1.5.4-2.1 0L10.5 52.3c-.6-.4-1-1-1-1.8V16.6c0-1.1.9-2.1 2.1-2.1h20.2c-.3.3-.6.7-.8 1.1-1.9 3-1.6 6.7.7 8.2.7.4 1.4.6 2.2.6.3 0 .7 0 1.1-.1 1.7-.4 3.3-1.6 4.4-3.3 1.4-2.2 1.6-4.7.8-6.5h20.4c1.1 0 2.1.9 2.1 2.1v34h-.2z"/>
+          <path class="st0" d="M62.5 16.6v33.9c0 .7-.4 1.4-1 1.8L37.1 66.9c-.7.4-1.5.4-2.1 0L10.5 52.3c-.6-.4-1-1-1-1.8V16.6c0-1.1.9-2.1 2.1-2.1h48.9c1.1.1 2 1 2 2.1z"/>
+        </g>
+        <path class="st1" d="M59.3 19.3c-.1 0-.2-.1-.2-.2v-.9c0-.1.1-.2.2-.2s.2.1.2.2v.9c0 .1 0 .2-.2.2zM35.8 63.8c-.2 0-.5 0-.7-.1-.1 0-.2-.2-.1-.3 0-.1.2-.2.3-.1.2.1.4.1.6.1.1 0 .3 0 .4-.1.1 0 .2 0 .3.2 0 .1 0 .2-.2.3h-.6zm1.5-.6c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-3.2-.1l-1.1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3s-.1.1-.2.1zm5.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-7.2 0H32l-1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3 0 0-.1.1-.2.1zm9.2-1.2c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-11.2 0H30l-1-.6c-.1-.1-.1-.2-.1-.3s.2-.1.3-.1l1 .6c.1.1.1.2.1.3 0 0-.1.1-.2.1zm13.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1-.1.1 0 0 0zm-15.2-.1H28l-1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3 0 0-.1.1-.2.1zm17.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-19.2-.1H26l-1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3s-.1.1-.2.1zm21.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-23.2-.1H24l-1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3s-.1.1-.2.1zm25.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zM22.1 56H22l-1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3 0 .1-.1.1-.2.1zm29.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-31.2-.1H20l-1-.6c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3s-.1.1-.2.1zm33.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-35.2 0H18l-1-.7c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1l1 .6c.1.1.1.2.1.3s-.1.2-.2.2zm37.2-1.2c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-39.2 0H16l-1-.6c-.1-.1-.1-.2-.1-.3s.2-.1.3-.1l1 .6c.1.1.1.2.1.3 0 0-.1.1-.2.1zm41.2-1.1c-.1 0-.1 0-.2-.1s0-.2.1-.3l1-.6c.1-.1.2 0 .3.1s0 .2-.1.3l-1.1.6c.1 0 .1 0 0 0zm-43.2-.1H14l-.9-.5-.1-.1c-.1-.1-.1-.2-.1-.3.1-.1.2-.1.3-.1 0 0 .1 0 .1.1l.9.5c.1.1.1.2.1.3 0 0-.1.1-.2.1zm45-1.4s-.1 0 0 0c-.2-.1-.2-.2-.2-.3.1-.3.2-.5.2-.8v-.2c0-.1.1-.2.2-.2s.2.1.2.2v.2c0 .4-.1.7-.3 1 .1.1 0 .1-.1.1zm-46.7-.1c-.1 0-.2 0-.2-.1-.1-.3-.2-.6-.2-.9v-.3c0-.1.1-.2.2-.2s.2.1.2.2v.3c0 .2.1.5.1.7.2.1.1.2-.1.3.1 0 0 0 0 0zm46.9-2.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.2c-.1 0-.2-.1-.2-.2V44c0-.1.1-.2.2-.2s.2.1.2.2v1.2s0 .1-.2.1zm-47.1-.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2V45c.1.1 0 .2-.2.2zM59.3 43c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.1c-.1 0-.2-.1-.2-.2V37c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2V38c.1.1 0 .2-.2.2zM59.3 36c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.2c-.1 0-.2-.1-.2-.2V30c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2V31c.1.1 0 .2-.2.2zm47.1-2.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zm47.1-2.2c-.1 0-.2-.1-.2-.2V23c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.1c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2V24c.1.2 0 .3-.2.3zm47.1-2.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c0 .1 0 .2-.2.2zm-47.1-.2c-.1 0-.2-.1-.2-.2v-1.2c0-.1.1-.2.2-.2s.2.1.2.2v1.2c.1.1 0 .2-.2.2zM12.2 19.3c-.1 0-.2-.1-.2-.2v-.9c0-.1.1-.2.2-.2s.2.1.2.2v.9c.1.1 0 .2-.2.2z"/>
+      </svg>
+      
+    </div>
+
+    <div class="calculator-innerContent calculator-header">
+      <h1 class="calculator-headline text-center">
+      {{::calculator.copy.headline}}
+      </h1>
+      
+      <hr class="hr--faded mb0">
+
+    </div>
+   
+    <div class="calculator-innerContent pt0   grid  grid--flexDirectionColumn  ">
+        <label class="calculator-sliderLabel grid grid--center grid--justifySpaceBetween" >
+            
+            <span><span ng-if="calculator.type === 'sponsor'">Graduate's </span>Annual Income</span>
+
+            <span class="sliderLabel-value">{{calculator.graduateInfo.income | thousandsToKFilter}}</span>
+        </label>
+
+        <div class="rangeSlider"  ng-class="{ 'rangeSlider--secondary' : calculator.type === 'sponsor'}">
+          <div class="rangeSlider-track">
+            
+          </div>
+
+          <div class="rangeSlider-fill  hide-for-large-up"
+               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 200) + 12 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-thumb  hide-for-large-up"
+             ng-style="{left: ( (calculator.graduateInfo.income/(250000 - 30000)) * 200 ) - 15 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-fill  show-for-large-up"
+               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 260) + 12 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-thumb  show-for-large-up"
+             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 260 + 'px'}">
+            
+          </div>
+
+          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.income">
+
+        </div>
+
+        <label class="calculator-sliderLabel  grid grid--center grid--justifySpaceBetween">
+             Student Loan Outstanding
+            <span class="sliderLabel-value">{{calculator.graduateInfo.loan | thousandsToKFilter}}</span>
+        </label>
+
+        <div class="rangeSlider mb0"  ng-class="{ 'rangeSlider--secondary' : calculator.type === 'sponsor'}">
+          <div class="rangeSlider-track">
+            
+          </div>
+         <div class="rangeSlider-fill  hide-for-large-up"
+               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 200) + 12 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-thumb  hide-for-large-up"
+             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 200 - 15 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-fill  show-for-large-up"
+               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 260) + 12 + 'px'}">
+            
+          </div>
+
+          <div class="rangeSlider-thumb  show-for-large-up"
+             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 260 + 'px'}">
+            
+          </div>
+          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.loan">
+
+        </div>
+
+        
+      <div class="pt2 calculator-options-headline" ng-if="calculator.type === 'graduate'">
+        <hr class="hr--faded" >
+      </div>
+
+      <div class="grid grid--center" ng-if="calculator.type === 'graduate'">
+        <div>
+        
+          <h2 class="calculator-subLine">
+            {{::calculator.copy.subline}}
+          </h2>
+          
+          <p class="calculator-bodyCopy  calculator-bodyCopy--small">
+            {{::calculator.copy.switch}}
+          </p>
+          
+        </div>
+        
+        <div class="calculator-switch">
+        
+          <label class="switch">
+        
+            <input type="checkbox" ng-model="calculator.graduateInfo.has_sponsor" ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)">
+            <span class="slider round"></span>
+        
+          </label>
+        
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="calculator-resultsContainer">
+    
+    <div class="calculator-results grid  grid--center">
+
+      <div class="calculator-results-result">
+      
+        <span class="result-label">
+          Interest <br class="hide-for-large-up">Avoided
+        
+          <span ng-if="calculator.type == 'graduate'">
+
+            <div class="tooltip"  
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
+             tooltip-template="With Pickpocket you would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of your loans. Without Pickpocket, you would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+
+          </span>
+
+          <span ng-if="calculator.type == 'sponsor'">
+
+              <div class="tooltip"  
+             ng-if="!calculator.withSponsorship"
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
+            tooltip-template="With Pickpocket your grad would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of their loans. Without Pickpocket, they would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+            
+            <div class="tooltip"  
+             ng-if="calculator.withSponsorship"
+             tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-template="With Pickpocket your grad would pay only {{calculator.graduateInfo.interest_with_pickpocket | currency:'$':0 }} in interest over the life of their loans. Without Pickpocket, they would end up paying {{calculator.graduateInfo.interest_without_pickpocket | currency:'$':0 }}. ">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+
+          </span>
+
+        </span>
+        
+        <span class="result-number">
+          <span>{{calculator.graduateInfo.interest_avoided | currency:"$":0}}</span>
+        </span>
+      
+      </div>
+      
+      <div class="calculator-results-result">
+      
+        <span class="result-label">
+          Years <br class="hide-for-large-up"> Reclaimed
+
+          <span ng-if="calculator.type == 'graduate'">
+
+              <div class="tooltip"  tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
+             tooltip-template="With Pickpocket, you’ll be out of debt in only {{calculator.graduateInfo.payment_period_with_pickpocket | currency:'':0 }} years. Without Pickpocket, your typical repayment period would be {{calculator.graduateInfo.payment_period_without_pickpocket | currency:'':0}} years.">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+
+          </span>
+
+          <span ng-if="calculator.type == 'sponsor'">
+
+            <div class="tooltip"  tooltips 
+             tooltip-smart="true"
+             tooltip-size="small"
+             tooltip-show-trigger="click"
+             tooltip-hide-trigger="click"
+             tooltip-template="With Pickpocket, your grad will be out of debt in only {{calculator.graduateInfo.payment_period_with_pickpocket | currency:'':0}} years. Without Pickpocket, their typical repayment period would be {{calculator.graduateInfo.payment_period_without_pickpocket | currency:'':0}} years. ">
+              
+              <svg class="tooltip-icon" ng-click="toggle()">
+              <use xlink:href="#icon-Help"/>
+            
+              </svg>
+            
+            </div>
+
+          </span>
+
+        </span>
+        
+        <span class="result-number">
+          <span>{{calculator.graduateInfo.years_reclaimed | currency:""}}</span>
+        </span>
+      
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

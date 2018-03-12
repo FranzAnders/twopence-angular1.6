@@ -29,6 +29,8 @@ twopence.controller('sponsorCtrl', [
     var vm = this;
 
     vm.info = false;
+    vm.stateIsChanging = false; 
+
 
     $scope.$state = $state; 
 
@@ -44,5 +46,14 @@ twopence.controller('sponsorCtrl', [
       console.log("ERROR: Unable to get sponsor information"); 
 
     });
+
+
+    $rootScope.$on('$stateChangeStart', function() {
+        vm.stateIsChanging = true; 
+    }); 
+
+    $rootScope.$on('$stateChangeSuccess', function() {
+        vm.stateIsChanging = false; 
+    }); 
 
   }]);

@@ -17,16 +17,16 @@
 
 
 /*------------------------------------*\
-    #Globals - Padding + Margin Levels  
+    #Globals - Padding + Margin Levels
 \*------------------------------------*/
 
 $level1: 6;
-$level2: 12; 
+$level2: 12;
 $level3: 18;
-$level4: 24; 
-$level5: 30;  
-$level6: 36; 
-$level7: 48; 
+$level4: 24;
+$level5: 30;
+$level6: 36;
+$level7: 48;
 
 
 
@@ -44,7 +44,6 @@ $level7: 48;
 
 // Abstracts
 @import
-    'abstracts/animations',
     'abstracts/blockquotes',
     'abstracts/borderRadius',
     'abstracts/buttons',
@@ -57,7 +56,6 @@ $level7: 48;
 
 // Base
 @import
-  'base/animations',
   'base/icons',
   'base/links',
   'base/noSvg',
@@ -68,7 +66,7 @@ $level7: 48;
   'base/flexbox',
   'base/webfont';
 
-  
+
 // Layout
 @import
  'layout/footer',
@@ -84,6 +82,7 @@ $level7: 48;
 // Components
 @import
     'components/appHeader',
+    'components/appFooter',
     'components/appNav',
     'components/buttons',
     'components/cards',
@@ -93,6 +92,7 @@ $level7: 48;
     'components/headlines',
     'components/heroHeader',
     'components/images',
+    'components/loaders',
     'components/loginHeader',
     'components/lists',
     'components/loaders',
@@ -110,8 +110,14 @@ $level7: 48;
 @import
     'pages/funnel',
     'pages/home',
+    'pages/for-graduates',
     'pages/login',
     'pages/planSuccessfullyMade',
     'pages/sponsorshipCreation',
+    'pages/sponsorship',
     'pages/sponsorView',
-    'pages/sponseeSplash';
+    'pages/sponseeSplash',
+    'pages/planEdit';
+
+@import
+  'base/animations';

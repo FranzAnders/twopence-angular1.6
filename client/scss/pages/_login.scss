@@ -17,8 +17,35 @@
     margin-bottom: rem-calc($level3);
 
   }
-
+  
 }
+
+
+
+
+
+/*------------------------------------*\
+    #A Card Containing Account Login UX
+\*------------------------------------*/
+
+.card--login {
+  width: 100%; 
+  
+  .card-header {
+    padding-bottom: 0; 
+    border-bottom: none; 
+  }
+
+  @media #{$medium-up} {
+    margin-right: auto; 
+    margin-left: auto; 
+    width: rem-calc(372px); 
+    padding: rem-calc($level2); 
+
+  }
+  
+}
+
 
 
 

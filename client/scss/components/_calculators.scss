@@ -4,31 +4,23 @@
 \*------------------------------------*/
 
 
-/*------------------------------------*\
-    #Simple Calculator
-\*------------------------------------*/
-
-
-.simpleCalc {
+.calculator {
   margin-top: rem-calc($base-magic-number);
-  margin-bottom: rem-calc($level7 + $level3);
+  margin-bottom: rem-calc($level7 + $level6);
   max-width: rem-calc(296px); 
-  
-
 
   @media #{$medium-up} {
-    margin-bottom: 0;
+    margin-bottom: 0; 
     width: rem-calc(300px); 
     max-width: none; 
-
   }
 
   @media #{$large-up} {
+    margin-bottom: rem-calc($level7);
     width: rem-calc(324px); 
-    
   }
 
-  .simpleCalc-badge {
+  .calculator-badge {
       position: absolute; 
       top: rem-calc(-24px); 
       right:0; 
@@ -40,30 +32,28 @@
       border: 1px solid $grey--light; 
       @include border-radius(100%); 
 
-      .simpleCalc-badge-icon {
+      .calculator-badge-icon {
         fill: $secondaryColor; 
         width: 65%; 
-
       }
-
   }
-  .simpleCalc-controls {
+  
+  .calculator-controls {
     background-color: #fff;
     color: $body-color; 
     position: relative;
     margin-bottom: rem-calc($level1);
     padding-top: rem-calc(18px); 
-
   }
 
-  .simpleCalc-headline {
+  .calculator-headline {
     font-weight: bold; 
     color: $secondaryColor; 
     margin-bottom: rem-calc($level3); 
     @include type-setting(0); 
   }
   
-  .simpleCalc-subLine {
+  .calculator-subLine {
     font-weight: bold; 
     color: $secondaryColor; 
     margin-bottom: rem-calc($level1); 
@@ -71,56 +61,84 @@
 
   }
 
-  .simpleCalc-switch {
+
+  .calculator-options-headline {
+    position: relative;
+
+    // &:after {
+    //   content: "Advanced"; 
+    //   background-color: white;
+    //   position: absolute;
+    //   top: 0; 
+    //   left: -3px;
+    //   padding-right: rem-calc($level2);
+    //   color: $grey--med;
+    //   padding: rem-calc($level1);
+    //   padding-left: 0; 
+    //   @include type-setting(-1);
+    // }
+  }
+
+
+  .calculator-switch {
     padding-left: rem-calc($level4);
     padding-right: rem-calc($level2);
 
     @media #{$medium-up} {
-     padding-left: rem-calc($level3);
-
+     padding-left: rem-calc($level2);
     }
-
   }
 
-  .simpleCalc-bodyCopy {
-    margin-bottom: 0; 
+  .calculator-bodyCopy {
+    margin-bottom: rem-calc($level1);
     @include type-setting(-1); 
   }
-  
-  .simpleCalc-bodyCopy--small {
-    margin-bottom: 0; 
-    @include type-setting(-2); 
-  }
-  
 
-  .simpleCalc-innerContent {
+
+  .calculator-innerContent {
     padding: rem-calc($level3); 
 
   }
 
-  .simpleCalc-resultsContainer {
+
+  .calculator-sliderLabel {
+    margin-bottom: rem-calc($level2);
+    @include type-setting(-1); 
+
+    @media #{$large-up} {
+      margin-bottom: rem-calc($level1);
+    }
+
+    .sliderLabel-value {
+      color: $primaryColor;
+      @extend %fwb; 
+      @include type-setting(1);  
+    }
+  }
+
+  .calculator-resultsContainer {
     background-color: $secondaryColor;
     color: #fff; 
-    
-    .simpleCalc-results-result {
-      padding: rem-calc($level2); 
-      white-space: nowrap; 
-      width: 100%; 
 
-      @media #{$medium-up} {
-        padding: rem-calc($level3); 
+    .calculator-results {
+      //border-top: 1px solid $grey--med; 
+
+      .calculator-results-result {
+        padding: rem-calc($level1); 
+        white-space: nowrap; 
+        width: 100%; 
+
+        @media #{$medium-up} {
+          padding: rem-calc($level3); 
+          padding-right: rem-calc($level1);
+        }
 
       }
 
-    }
+      .calculator-results-result:nth-child(1) {
+        border-right: 1px solid $grey--med; 
 
-    .simpleCalc-results-result:nth-child(1) {
-      border-right: 1px solid $grey--med; 
-
-    }
-
-    .simpleCalc-results {
-      border-top: 1px solid $grey--med; 
+      }
 
     }
 
@@ -147,5 +165,27 @@
 
     }
 
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Sponsor Calculator
+\*------------------------------------*/
+
+.calculator--sponsor {
+  
+  .calculator-sliderLabel {
+    .sliderLabel-value {
+      color: $tertiaryColor; 
+    }
+  }
+  .calculator-results {
+    .result-number{
+      color: $tertiaryColor
+    }
   }
 }

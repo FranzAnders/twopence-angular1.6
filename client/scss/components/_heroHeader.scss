@@ -12,16 +12,32 @@
   min-height: 100vh;
 
   @media #{$medium-up} {
-    min-height: rem-calc(648px); 
+    min-height: rem-calc(672); 
     margin-top: rem-calc(30px); 
     padding-top: 0; 
-
   }
 
   @media #{$large-up} {
     min-height: auto; 
-    height: rem-calc(612px); 
-    
+    height: rem-calc(660px); 
+  }
+  
+  .heroHeader-hand {
+    position: absolute;
+    width: 12.5rem;
+    height: 8.75rem;
+    top: 0rem;
+    left: -22px;
+    z-index: 1;
+
+    @media #{$large-up} {
+      top: .5rem; 
+      left: rem-calc(38px);
+    }
+
+    svg {
+      width: 100%; 
+    }
   }
 
   .heroHeader-background {
@@ -75,12 +91,10 @@
     
     @media #{$medium-up} {
       max-width: rem-calc(330px); 
-
     }
     
     @media #{$large-up} {
       max-width: rem-calc(436px); 
-
     }
 
   }

@@ -12,6 +12,7 @@ twopence.controller('sponseeBoostCtrl', [
     'SponseeInformation',
     'Sponsorship',
     '$fancyModal',
+    '$rootScope',
     '$scope',
     function(
         Sponsee,
@@ -19,18 +20,17 @@ twopence.controller('sponseeBoostCtrl', [
         SponseeInformation,
         Sponsorship,
         $fancyModal,
+        $rootScope,
         $scope) {
 
     var vm = this;
 
 
     vm.sponsorshipInfo = SponseeInformation;
-
     vm.sponseeInfo = vm.sponsorshipInfo.sponsee;
-
     vm.boostSuccessfull = false;
-
     vm.confirmingBoost = false;
+    vm.makingBoost = false; 
 
     vm.boostInfo = {
       "user": {
@@ -53,16 +53,21 @@ twopence.controller('sponseeBoostCtrl', [
       if (vm.confirmingBoost) {
 
         vm.boostInfo.plan.amount  = parseInt(vm.boostInfo.plan.amount);
+        vm.makingBoost = true; 
 
         Sponsorship.createNewPlan(vm.sponsorshipInfo.id, vm.boostInfo).then(function(success) {
           vm.confirmingBoost = false;
           vm.boostSuccessfull = true;
+          vm.makingBoost = false; 
 
           mixpanel.track('Confirmed Boost', {'Graduate': 'User:' + vm.sponsorshipInfo.sponsee.id});
+
+          $rootScope.$emit('sponsor-boosted-sponsee'); 
 
         }).catch(function(err) {
 
           alert("Repeat payments of the same amount can not be made on the same day. Wait ")
+          vm.makingBoost = false; 
 
         });
 

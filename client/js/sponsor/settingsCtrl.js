@@ -47,9 +47,6 @@ twopence.controller('settingsCtrl', [
         vm.userSettings.phone = vm.sponsorInfo.phone; 
         vm.userSettings.sms_preferred = vm.sponsorInfo.sponsor.sms_preferred; 
 
-        console.log(vm.userSettingsForm); 
-
-
       }, 100); 
 
 
@@ -68,18 +65,17 @@ twopence.controller('settingsCtrl', [
     //
     vm.saveChanges = function(pUserSettingsForm, pUserSettings) {
 
-      if(!pUserSettings.password) {
-
-        delete pUserSettings.password
-
+      var settings = Object.assign({}, pUserSettings);
+      delete settings.confirmPassword
+      
+      if(!settings.password) {
+        delete settings.password
       }
-
-      delete pUserSettings.confirmPassword
 
       if(pUserSettingsForm.$valid) {
 
-        User.updateSettings(pUserSettings).then(function() {
-
+        User.updateSettings(settings).then(function() {
+          vm.resetForm();
            $fancyModal.open({
               templateUrl: 'js/modals/settings-change-success.html', 
               themeClass: 'fancymodal--primary  fancymodal--small',
@@ -88,9 +84,6 @@ twopence.controller('settingsCtrl', [
               showCloseButton: false
 
           });
-
-          vm.resetForm(); 
-
         }).catch(function() {
 
           alert("ERROR, something went wrong, try again."); 

@@ -5,49 +5,53 @@
   <head>
 
     <meta charset="utf-8"/>
+    
+    <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+
+    <meta http-equiv="Pragma" content="no-cache">
 
     <base href="/">
 
     <meta name="fragment" content="!">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
     <title>Pickpocket - Steal from yourself. Give to your student loans</title>
 
     <!-- Meta information-->
-    <meta name="description" content="Get Pickpocket: The best student loan-ending app ever. Learn, sign up, and help your grad get out of debt fast!">
+    <meta name="description" content="Pickpocket gets rid of student loans 2-4x faster. Pay off your own loans or sponsor a college graduate today">
     <meta name="keywords" content="Student loans, college graduates, university graduates, loans, student debt, debt, student loan repayment, interest avoided, student debt relief, student debt solution,  loan investing, savings, wealth generation, sponsorship, investment, debt-free, fintech">
-    
+
 
     <!-- Facebook OG Info-->
     <meta property="og:site_name" content="pickpocket.me" />
 
     <meta property="og:title"  content="Pickpocket - Steal from yourself. Give to your student loans" />
 
-    <meta property="og:description" content="Get the Pickpocket app: The best student loan-ending app ever. Learn, sign up, and help your grad get out of debt fast!" />
+    <meta property="og:description" content="Pickpocket gets rid of student loans 2-4x faster. Pay off your own loans or sponsor a college graduate today" />
 
-    <meta property="og:url" content="https://www.pickpcoket.me" />
+    <meta property="og:url" content="https://www.pickpocket.me" />
 
     <meta property="og:type" content="website" />
 
-    <meta property="og:image" content="{{MetaInformation.bannerImage()}}" />
+    <meta property="og:image" content="assets/images/social-banner.png"/>
 
-    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:width" content="2121" />
 
-    <meta property="og:image:height" content="630" />
-    
+    <meta property="og:image:height" content="1251" />
 
-    <!--Twitter OG info--> 
+
+    <!--Twitter OG info-->
     <meta content="summary_large_image" name="twitter:card"/>
 
-    <meta content="Pickpocket - Steal from yourself. Give to your student loans" 
+    <meta content="Pickpocket - Steal from yourself. Give to your student loans"
           name="twitter:title"/>
 
     <meta content="@Pickpocket" name="twitter:creator"/>
 
-    <meta content="Get Pickpocket: The best student loan-ending app ever. Learn, sign up, and help your grad get out of debt fast!" name="twitter:description"/>
+    <meta content="Pickpocket gets rid of student loans 2-4x faster. Pay off your own loans or sponsor a college graduate today" name="twitter:description"/>
 
-    <meta content="{{MetaInformation.bannerImage()}}" name="twitter:image">
+    <meta content="assets/images/social-banner.png" name="twitter:image">
 
     <meta content="https://www.pickpocket.me" name="twitter:site"/>
 
@@ -65,6 +69,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Facebook Pixel Code -->
+      <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '123886235037513');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=123886235037513&ev=PageView&noscript=1"
+      /></noscript>
+    <!-- End Facebook Pixel Code -->
 
     <!--Google Analytics Code-->
 
@@ -78,7 +99,9 @@
   </head>
 
   <body class="preload"
-        mixpanel-dir>
+        mixpanel-dir
+        google-analytics-dir
+        >
 
     <ui-view>
 
@@ -92,7 +115,15 @@
     <script async src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
 
-    
+    <!--Calculator CDNJS scripts-->
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/jstat/latest/jstat.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/formulajs/1.0.8/formula.min.js"></script>
+    <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+
+
     <!-- build:js js/vendor/libraries.min.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -117,8 +148,8 @@
 
 
     <!-- build:js js/app.min.js -->
-    
-    <!-- A - App Script--> 
+
+    <!-- A - App Script-->
     <script src="js/app.js"></script>
 
 
@@ -127,24 +158,26 @@
     <script src="js/auth/Auth.js"></script>
     <script src="js/auth/authconst.js"></script>
 
-    
-    <!--Animations--> 
+
+    <!--Animations-->
     <script src="js/animations/handHoldingPhoneAnimDir.js"></script>
     <script src="js/animations/handHoldingCashAnimDir.js"></script>
     <script src="js/animations/handsFistBumpingAnimDir.js"></script>
     <script src="js/animations/handOpeningSafeAnimDir.js"></script>
     <script src="js/animations/handsPullingDollarAnimDir.js"></script>
     <script src="js/animations/ScrollMagicGlobalCtrl.js"></script>
-    
+
 
     <!--Calculators-->
     <script src="js/calculators/simpleCalcDir.js"></script>
+    <script src="js/calculators/complexCalcDir.js"></script>
+    <script src="js/calculators/thousandsToKFilter.js"></script>
 
 
-    <!--ENV--> 
+    <!--ENV-->
     <script src="js/constants/env.js"></script>
 
-    <!--Funnel--> 
+    <!--Funnel-->
     <script src="js/funnel/funnelDir.js"></script>
     <script src="js/funnel/Funnel.js"></script>
 
@@ -159,6 +192,8 @@
     <script src="js/general/EfficientWatch.js"></script>
     <script src="js/general/tooltipDir.js"></script>
     <script src="js/general/MediaCheck.js"></script>
+    <script src="js/general/robustAmountInputDir.js"></script>
+
 
 
 
@@ -181,14 +216,17 @@
 
     <!--Main-->
     <script src="js/main/mainCtrl.js"></script>
-    
 
-    <!--Mixpanel--> 
-    <script src="js/mixpanel/mixpanelDir.js"></script>
+
+    <!--Analytics Tracking -->
+    <script src="js/analytics-tracking/mixpanelDir.js"></script>
+    <script src="js/analytics-tracking/googleAnalyticsDir.js"></script>
+    <script src="js/analytics-tracking/UrlParams.js"></script>
 
 
     <!--Modals-->
     <script src="js/modals/planEditConfirmationCtrl.js"></script>
+    <script src="js/modals/logOutConfirmationCtrl.js"></script>
 
 
     <!--Navigation-->
@@ -206,7 +244,7 @@
     <script src="js/sponsor/Sponsee.js"></script>
     <script src="js/sponsor/Sponsor.js"></script>
     <script src="js/sponsor/sponsorCtrl.js"></script>
-    <script src="js/sponsor/sponseeCtrl.js"></script>
+    <script src="js/sponsor/sponsorshipCtrl.js"></script>
     <script src="js/sponsor/sponseeCreationCtrl.js"></script>
     <script src="js/sponsor/sponseeBoostCtrl.js"></script>
     <script src="js/sponsor/sponseeSponsorshipCtrl.js"></script>
@@ -239,13 +277,13 @@
     <!-- endbuild -->
 
     <!-- Sentry -->
-    <script async>
+  <!--   <script async>
       Raven
         .config('https://b28d76b8fc1e4e56b2f7cc1bd1df9675@sentry.io/277099')
         .addPlugin(Raven.Plugins.Angular)
         .install();
     </script>
-
+ -->
   </body>
 
 </html>

@@ -14,9 +14,13 @@
   <div ng-if="!planEditConfirmation.succesfullyEdited">
 
     <div class="fancymodal-innerContent">
-    
+      
+      <h1 class="ff2 txtc2 h2 text-center">
+       Please Confirm
+      </h1>
+
       <p class="mb0">
-       Are you sure  you wish to pause <span ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s matching plan? Pausing takes up to 24 hours and plan can not be resumed until it has been succesfully paused.
+       Are you sure you wish to pause <span ng-bind="planEditConfirmation.sponsee.first_name + ' ' + planEditConfirmation.sponsee.last_name"></span>'s matching plan? Your plan will be paused within 24 hours.
       </p>
     
     </div>

@@ -10,6 +10,7 @@
   color: $body-color; 
   width: 100%; 
   position: relative; 
+  @include transition(all .4s ceaser($easeInOutCubic));
   @include border-radius(4px); 
   @include box-shadow(0 1px 3px rgba(30,30,30, .2)); 
 
@@ -34,13 +35,17 @@
   
   .card-content {
     padding: rem-calc($base-magic-number);
+    width: 100%;
 
     .card-subTitle {
       color: $body-color;
       @include type-setting(0); 
-
     }
 
+  }
+
+  .card-content--bordered {
+    border-bottom: 1px solid $grey--light; 
   }
 
   .card-actions {
@@ -79,23 +84,9 @@
   
     li:nth-child(odd) {
       padding-right: rem-calc($level3); 
-
     }
 
   }
-
-  // @media #{$large-up} {
-    
-  //   li {
-  //     padding-right: rem-calc($level3);
-
-  //   }
-
-  //   li:nth-child(3n+3) {
-  //     padding-right: 0; 
-
-  //   }
-  // }
 
 }
 
@@ -109,7 +100,6 @@
 
 
 .card--sponsorship {
-  @include transition(all .2s ceaser($easeInOutCubic)); 
 
   &:hover, 
   &:focus {
@@ -135,6 +125,18 @@
     .sponsorship-plan {
       margin-bottom: 0;  
       @include type-setting(-1);
+
+      .sponsorship-plan-edit {
+        width: rem-calc(14px);
+        height: rem-calc(14px);
+        fill: $tertiaryColor; 
+        @include transition(all .2s ceaser($easeInOutCubic));
+
+        &:hover, 
+        &:focus {
+          fill: $primaryColor; 
+        }
+      }
 
     }
 
@@ -212,54 +214,6 @@
   .card-actions {
     opacity: 0; 
     pointer-events: none; 
-
-  }
-
-}
-
-
-
-
-
-/*------------------------------------*\
-    #A Plan card
-\*------------------------------------*/
-
-.card--plan {
-  border-top: 6px solid $primaryColor; 
-  @include transition(all .2s ceaser($easeInOutCubic)); 
-
-  &:hover, 
-  &:focus {
-   @include box-shadow(0 1px 20px rgba(30,30,30, .1));
-   @include transform(translateY(-2px)); 
-
-  }
-
-}
-
-
-
-
-
-/*------------------------------------*\
-    #A Card Containing Account Login UX
-\*------------------------------------*/
-
-.card--login {
-  width: 100%; 
-  
-  .card-header {
-    padding-bottom: 0; 
-    border-bottom: none; 
-
-  }
-
-  @media #{$medium-up} {
-    margin-right: auto; 
-    margin-left: auto; 
-    width: rem-calc(372px); 
-    padding: rem-calc($level2); 
 
   }
 
