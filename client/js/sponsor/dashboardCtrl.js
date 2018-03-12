@@ -29,7 +29,6 @@ twopence.controller('dashboardCtrl', [
     var vm = this;
 
     vm.sponsorInfo = {};
-
     vm.$onInit = function() {
       vm.sponsorships = sponsorships.data;
       vm.totalContributions = vm.getTotalContributions(sponsorships.data);

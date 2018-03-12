@@ -84,7 +84,6 @@ twopence.controller('settingsCtrl', [
               showCloseButton: false
 
           });
-
         }).catch(function() {
 
           alert("ERROR, something went wrong, try again."); 
