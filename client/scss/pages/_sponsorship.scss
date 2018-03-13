@@ -6,13 +6,20 @@
 
 
 .sponsorship-planStatus {
+  @include type-setting(-1); 
+  
+  .sponsorship-planStatus-title {
+    margin-right: rem-calc(3px); 
+  }
 
   .sponsorship-planStatus-edit {
+    @include type-setting(0); 
 
     .icon {
         width: rem-calc(14px);
         height: rem-calc(14px);
         fill: $tertiaryColor; 
+        margin-right: rem-calc(3px);
         @include transition(all .2s ceaser($easeInOutCubic));
 
         &:hover, 
@@ -26,11 +33,7 @@
 
       .icon {
       fill: $primaryColor; 
-
       }
-
     }
-
   }
-
 }

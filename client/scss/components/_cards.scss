@@ -26,7 +26,6 @@
 
       &.card-title--alt {
         color: $primaryColor; 
-        
       }
 
     }
@@ -117,14 +116,17 @@
 
       @media #{$medium-up} {
         margin-bottom: 0; 
-
       }
 
     }
 
     .sponsorship-plan {
-      margin-bottom: 0;  
+      margin-bottom: 0;
       @include type-setting(-1);
+
+      .sponsorship-plan-title {
+        @include type-setting(-1);
+      }  
 
       .sponsorship-plan-editIcon {
         width: rem-calc(14px);
@@ -132,23 +134,30 @@
         fill: $tertiaryColor; 
         vertical-align: middle; 
         @include transition(all .2s ceaser($easeInOutCubic));
-
-        &:hover, 
-        &:focus {
-          fill: $primaryColor; 
-        }
       }
 
+      .sponsorship-plan-editLabel {
+        color: $tertiaryColor;
+        @include transition(all .2s ceaser($easeInOutCubic));
+      }
+
+        &:hover,
+        &:focus {
+
+          .sponsorship-plan-editIcon,
+          .sponsorship-plan-editLabel {
+            fill: $primaryColor; 
+            color: $primaryColor;    
+          }
+
+        }
+      }
     }
-
-
-  }
 
   .card-content {
 
     @media #{$large-up} {
       padding: rem-calc($level5); 
-
     }
 
     .sponsorship-contributions {
@@ -157,44 +166,34 @@
       @extend %fwb; 
       @include type-setting(6); 
       
-
       &:hover, 
       &:focus {
         color: $tertiaryColor; 
+      }
+    }
+  }
 
+    .card-inactiveActions {
+      position: absolute; 
+      top: 0; 
+      right: 0; 
+      bottom: 0; 
+      left: 0; 
+      width: 90%; 
+      height: 60%; 
+      display: none; 
+      margin-right: auto; 
+      margin-left: auto; 
+      padding: rem-calc($level3); 
+      margin-top: rem-calc($level7 + $level5); 
+      @extend %text-center; 
+
+      @media #{$large-up} {
+        padding: rem-calc($level5); 
       }
 
     }
-
-  }
-
-  .card-inactiveActions {
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    bottom: 0; 
-    left: 0; 
-    width: 90%; 
-    height: 60%; 
-    display: none; 
-    margin-right: auto; 
-    margin-left: auto; 
-    padding: rem-calc($level3); 
-    margin-top: rem-calc($level7 + $level5); 
-    @extend %text-center; 
-
-    @media #{$large-up} {
-
-      padding: rem-calc($level5); 
-
-    }
-  
-  }
-
 }
-
-
-
 
 
 /*------------------------------------*\
@@ -205,12 +204,10 @@
   
   .card-inactiveActions {
     display: block; 
-
   }
 
   .card-content {
     opacity: 0; 
-    
   }
 
   .card-actions {
@@ -237,7 +234,6 @@
   .card-header {
     padding-bottom: 0; 
     border-bottom: none; 
-
   }
 
   @media #{$medium-up} {
@@ -246,7 +242,6 @@
     width: rem-calc(400px); 
     padding-right: rem-calc($level1); 
     padding-left: rem-calc($level1); 
-
   }
 
 }

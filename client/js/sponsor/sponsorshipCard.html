@@ -2,15 +2,14 @@
 <div class="card  card--sponsorship"
      ng-class="{'is-inactive' : sponsorship.sponsorshipInfo.sponsee.status !== 'active'}">
 
-  <div class="card-header  grid grid--flexDirectionColumn  med-grid--flexDirectionRow  med-grid--center med-grid--justifySpaceBetween">
+  <div class="card-header  [ grid grid--flexDirectionColumn  med-grid--flexDirectionRow  med-grid--center med-grid--justifySpaceBetween ]">
 
     <h1 class="sponsorship-name"
         ng-bind="sponsorship.sponsorshipInfo.sponsee.first_name + ' ' + sponsorship.sponsorshipInfo.sponsee.last_name">
     </h1>
     
-    <div class="sponsorship-plan  grid grid--center" ng-if="sponsorship.planStatus !== 'no-plan-created'">
-      Plan Status:
-          
+    <div class="sponsorship-plan  [ grid  grid--center ] " ng-if="sponsorship.planStatus !== 'no-plan-created'">
+      <span class="sponsorship-plan-title">Plan Status:</span>
       <span ng-switch="sponsorship.planStatus" class="grid  grid--center">
     
         <span ng-switch-when="active" class="tag tag--active">
@@ -43,13 +42,13 @@
     </div>
 
     <div class="sponsorship-plan  grid  grid--center" ng-if="sponsorship.planStatus === 'no-plan-created' && sponsorship.planStatus !== 'invite pending'">
-          
-        <a  ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})" rel="internal" title="Edit Matching Plan"  ng-if="sponsorship.planStatus !== 'invite pending'" class="button  button--micro  button--tertiary mb0   button--withIcon">
-        <svg class="button-icon">
+
+      <a  ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})" rel="internal" title="Edit Matching Plan" >
+        <svg class="sponsorship-plan-editIcon">
           <use xlink:href="#icon-edit"/>
           
         </svg>
-       <span class="button-label">Setup Matching Plan</span>
+       <span class="sponsorship-plan-editLabel"> Setup Matching Plan</span>
       </a>
     </div>
 
@@ -69,7 +68,7 @@
 
   </div>
 
-  <div class="card-actions  grid grid--1of2">
+  <div class="card-actions  [ grid grid--1of2 ]">
 
     <div class="grid-cell">
 
@@ -95,8 +94,6 @@
       <div class="button-label">Boost</div>
 
       </button>
-
-
 
     </div>
 
@@ -136,18 +133,15 @@
     <p>
       This Graduate has not accepted your invitation yet.
       <br><br>
-    <a href="">
-  
-      <span class="text-micro"
-            ng-click="sponsorship.remindSponsee(sponsorship.sponsee.id)">
-  
-           Send Email Reminder
-  
-      </span>
+      <a href="">
+    
+        <span class="text-micro"
+              ng-click="sponsorship.remindSponsee(sponsorship.sponsee.id)">
+             Send Email Reminder
+        </span>
 
-    </a>
+      </a>
     </p>
-
 
   </div>
 

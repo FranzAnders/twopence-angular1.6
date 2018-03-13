@@ -38,7 +38,7 @@ twopence.controller('sponsorshipCtrl', [
       vm.sponsorshipInfo = sponsorship; 
       vm.currentPlan = vm.getLatestMatchingPlan(vm.sponsorshipInfo);
      if(!vm.currentPlan) {
-        vm.planStatus = 'inactive';
+        vm.planStatus = 'no-plan-created';
       } else {
         vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
       }

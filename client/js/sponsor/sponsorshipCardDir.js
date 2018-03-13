@@ -65,7 +65,7 @@ twopence.directive('sponsorshipCardDir',
               if(!vm.currentPlan) {
                 vm.planStatus = 'no-plan-created';
               } else {
-                vm.planStatus = 'no-plan-created';
+                vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
               }
           };
 

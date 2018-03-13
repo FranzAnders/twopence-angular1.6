@@ -14,11 +14,11 @@
 
           </h1>
 
-          <p class="sponsorship-planStatus  text-left  grid  med-grid--flexDirectionColumn  large-grid--flexDirectionRow grid--flexWrap">
+          <p class="sponsorship-planStatus  text-left  grid  med-grid--flexDirectionColumn  large-grid--flexDirectionRow grid--flexWrap  grid--center">
               
-              Plan Status:   
+                <span class="sponsorship-planStatus-title">Plan Status:</span>
 
-              <span class="grid  grid--center">
+                <span class="grid  grid--center">
                     
                 <span ng-switch="sponsorship.planStatus" class="grid  grid--center">
                             
@@ -31,22 +31,22 @@
                   </span>
                 
                   <span ng-switch-when="inactive" class="tag  tag--inactive">
-                      Not Setup
+                      Inactive
                   </span>
                 
                   <span ng-switch-when="activating" class="tag  tag--pending">
                       Activating
                   </span>
-                
+
                   <span  ng-switch-when="invite pending" class="tag  tag--pending">Invite Pending</span>
                 
                 </span>
 
                 <a  ui-sref="sponsor.edit({plan: sponsorship.sponsorshipInfo.id, sponsee: sponsorship.sponsorshipInfo.sponsee})" rel="internal" title="Edit Matching Plan" class="sponsorship-planStatus-edit" >
-                  (<svg class="icon">
+                    (<svg class="icon">
                     <use xlink:href="#icon-edit"/>
                     
-                  </svg>Change)
+                  </svg><span ng-if="sponsorship.planStatus !== 'no-plan-created'">Change</span><span ng-if="sponsorship.planStatus === 'no-plan-created'">Setup Matching Plan</span>)
                 </a>
             
             </span>
@@ -175,7 +175,7 @@
 
             <div class="row">
               <div class="small-12 columns medium-6 medium-centered  large-5">
-                <button class="center  button--secondary  button--small  button--expanded"
+                <button class="center  button--secondary  button--medium  button--expanded"
                         ng-click="sponsorship.openBoostModal(sponsorship.sponsorshipInfo)">
                   
                   Boost  {{sponsorship.sponsorshipInfo.sponsee.first_name}}

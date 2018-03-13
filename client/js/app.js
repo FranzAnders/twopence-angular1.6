@@ -358,7 +358,7 @@ twopence.config(
 
             'sponsor': {
 
-              templateUrl: "js/sponsor/sponsee.html",
+              templateUrl: "js/sponsor/sponsorship.html",
               controller: "sponsorshipCtrl",
               controllerAs: "sponsorship"
 

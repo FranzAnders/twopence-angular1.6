@@ -19481,7 +19481,7 @@ table th,
 /*------------------------------------*\
     #App Nav
 \*------------------------------------*/
-/* line 9, ../scss/components/_appNav.scss */
+/* line 8, ../scss/components/_appNav.scss */
 .appNav {
   position: fixed;
   width: 100%;
@@ -19491,7 +19491,7 @@ table th,
   right: 0;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 9, ../scss/components/_appNav.scss */
+  /* line 8, ../scss/components/_appNav.scss */
   .appNav {
     height: 3.4375rem;
     width: 100%;
@@ -19499,13 +19499,13 @@ table th,
     border-bottom: 1px solid #dae0e0;
   }
 }
-/* line 25, ../scss/components/_appNav.scss */
+/* line 24, ../scss/components/_appNav.scss */
 .appNav .appNav-inner {
   height: 100%;
   position: relative;
   width: 100%;
 }
-/* line 32, ../scss/components/_appNav.scss */
+/* line 31, ../scss/components/_appNav.scss */
 .appNav .appNav-menu {
   width: 100%;
   margin-bottom: 0;
@@ -19521,7 +19521,7 @@ table th,
   border-top: 1px solid #dae0e0;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 32, ../scss/components/_appNav.scss */
+  /* line 31, ../scss/components/_appNav.scss */
   .appNav .appNav-menu {
     padding-top: 0;
     padding-bottom: 0;
@@ -19531,14 +19531,14 @@ table th,
     position: relative;
   }
 }
-/* line 57, ../scss/components/_appNav.scss */
+/* line 56, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-item {
   padding: 0.375rem;
   width: 100%;
   text-align: center;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 57, ../scss/components/_appNav.scss */
+  /* line 56, ../scss/components/_appNav.scss */
   .appNav .appNav-menu .appNav-menu-item {
     height: 100%;
     width: auto;
@@ -19546,14 +19546,14 @@ table th,
     margin-right: 1.5rem;
   }
 }
-/* line 72, ../scss/components/_appNav.scss */
+/* line 71, ../scss/components/_appNav.scss */
 .appNav .appNav-menu .appNav-menu-link {
   color: #9a9a9a;
   font-size: 0.6rem;
   line-height: 1.5;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 72, ../scss/components/_appNav.scss */
+  /* line 71, ../scss/components/_appNav.scss */
   .appNav .appNav-menu .appNav-menu-link {
     height: 100%;
     position: relative;
@@ -19561,7 +19561,7 @@ table th,
     line-height: 1.33333;
   }
 }
-/* line 87, ../scss/components/_appNav.scss */
+/* line 86, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu {
   position: absolute;
   background-color: #FFF;
@@ -19581,32 +19581,32 @@ table th,
   -webkit-transform: translateY(100vh);
   transform: translateY(100vh);
 }
-/* line 100, ../scss/components/_appNav.scss */
+/* line 99, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu.is-active {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-/* line 104, ../scss/components/_appNav.scss */
+/* line 103, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-item {
   width: 100%;
   padding: 1.125rem;
   text-align: left;
   border-bottom: 1px solid #dae0e0;
 }
-/* line 112, ../scss/components/_appNav.scss */
+/* line 111, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-item:last-child {
   border-bottom: 0;
 }
-/* line 116, ../scss/components/_appNav.scss */
+/* line 115, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-link {
   color: #9a9a9a;
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 122, ../scss/components/_appNav.scss */
+/* line 121, ../scss/components/_appNav.scss */
 .appNav .appNav-secondaryMenu .appNav-menu-link:hover, .appNav .appNav-secondaryMenu .appNav-menu-link:focus {
   color: #238EB2;
 }
@@ -19614,21 +19614,32 @@ table th,
 /*------------------------------------*\
     #App Nav Menu Links
 \*------------------------------------*/
-/* line 139, ../scss/components/_appNav.scss */
+/* line 138, ../scss/components/_appNav.scss */
 .appNav-menu-link {
   background-color: transparent;
   margin-bottom: 0;
   text-transform: none;
   opacity: .8;
   width: 100%;
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
 /* line 147, ../scss/components/_appNav.scss */
+.appNav-menu-link:after {
+  -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+/* line 151, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover, .appNav-menu-link:focus, .appNav-menu-link:active {
   color: #9a9a9a;
   opacity: 1;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 156, ../scss/components/_appNav.scss */
+  /* line 159, ../scss/components/_appNav.scss */
   .appNav-menu-link:hover:after, .appNav-menu-link:focus:after, .appNav-menu-link:active:after {
     content: " ";
     position: absolute;
@@ -19638,17 +19649,21 @@ table th,
     height: 1px;
     right: 0;
     left: 0;
+    -moz-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -o-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   }
 }
-/* line 171, ../scss/components/_appNav.scss */
+/* line 174, ../scss/components/_appNav.scss */
 .appNav-menu-link:hover .menu-link-icon, .appNav-menu-link:focus .menu-link-icon, .appNav-menu-link:active .menu-link-icon {
   fill: #9a9a9a;
 }
-/* line 178, ../scss/components/_appNav.scss */
+/* line 180, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active {
   opacity: 1;
 }
-/* line 182, ../scss/components/_appNav.scss */
+/* line 183, ../scss/components/_appNav.scss */
 .appNav-menu-link.is-active .menu-link-icon {
   fill: #238EB2;
 }
@@ -19669,46 +19684,46 @@ table th,
     left: 0;
   }
 }
-/* line 210, ../scss/components/_appNav.scss */
+/* line 207, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon {
   fill: #9a9a9a;
   width: 1.875rem;
   margin-bottom: 0.125rem;
 }
-/* line 215, ../scss/components/_appNav.scss */
+/* line 212, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-icon.home {
   width: 1.375rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 210, ../scss/components/_appNav.scss */
+  /* line 207, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon {
     width: 2.25rem;
   }
-  /* line 223, ../scss/components/_appNav.scss */
+  /* line 220, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon.home {
     width: 1.625rem;
   }
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 210, ../scss/components/_appNav.scss */
+  /* line 207, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon {
     width: 1.625rem;
     margin-right: 0.375rem;
   }
-  /* line 233, ../scss/components/_appNav.scss */
+  /* line 230, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon.home, .appNav-menu-link .menu-link-icon.faq {
     width: 1.375rem;
   }
-  /* line 238, ../scss/components/_appNav.scss */
+  /* line 235, ../scss/components/_appNav.scss */
   .appNav-menu-link .menu-link-icon.settings, .appNav-menu-link .menu-link-icon.faq {
     width: 1.25rem;
   }
 }
-/* line 248, ../scss/components/_appNav.scss */
+/* line 245, ../scss/components/_appNav.scss */
 .appNav-menu-link .menu-link-label {
   color: #9a9a9a;
 }
-/* line 254, ../scss/components/_appNav.scss */
+/* line 251, ../scss/components/_appNav.scss */
 .appNav-menu-link .appNav-overlay {
   background-color: rgba(23, 35, 39, 0.95);
   position: absolute;
@@ -19723,14 +19738,14 @@ table th,
 /*------------------------------------*\
     #Off Canvas App Nav Styles
 \*------------------------------------*/
-/* line 277, ../scss/components/_appNav.scss */
+/* line 273, ../scss/components/_appNav.scss */
 .app-nav-wrapper {
   -moz-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 281, ../scss/components/_appNav.scss */
+/* line 277, ../scss/components/_appNav.scss */
 .app-nav-wrapper.app-nav-is-open {
   -moz-transform: translateX(-30%);
   -ms-transform: translateX(-30%);
@@ -19830,7 +19845,7 @@ button.is-inactive,
   background-color: #231F20;
 }
 
-/* line 90, ../scss/components/_buttons.scss */
+/* line 89, ../scss/components/_buttons.scss */
 .button--quaternary {
   background-color: transparent;
   position: relative;
@@ -19843,7 +19858,7 @@ button.is-inactive,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 98, ../scss/components/_buttons.scss */
+/* line 97, ../scss/components/_buttons.scss */
 .button--quaternary:hover, .button--quaternary:focus {
   color: #fff;
   fill: #fff;
@@ -19851,7 +19866,7 @@ button.is-inactive,
   background-color: #6AC6C5;
 }
 
-/* line 108, ../scss/components/_buttons.scss */
+/* line 106, ../scss/components/_buttons.scss */
 .button--quintenary {
   background-color: #FBC510;
   position: relative;
@@ -19864,7 +19879,7 @@ button.is-inactive,
   -webkit-transition-delay: 0.1s;
   transition: all 0.1s ease 0.1s;
 }
-/* line 116, ../scss/components/_buttons.scss */
+/* line 114, ../scss/components/_buttons.scss */
 .button--quintenary:hover, .button--quintenary:focus {
   color: #fff;
   fill: #fff;
@@ -19875,41 +19890,41 @@ button.is-inactive,
 /*------------------------------------*\
     #Button With Icon Sizing 
 \*------------------------------------*/
-/* line 137, ../scss/components/_buttons.scss */
+/* line 134, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon,
 .button--withIcon .button-label {
   display: inline-block;
 }
-/* line 142, ../scss/components/_buttons.scss */
+/* line 139, ../scss/components/_buttons.scss */
 .button--withIcon .button-icon {
   width: 1.125rem;
   height: 1.125rem;
   margin-right: 0.375rem;
   vertical-align: middle;
 }
-/* line 149, ../scss/components/_buttons.scss */
+/* line 146, ../scss/components/_buttons.scss */
 .button--withIcon .button-label {
   position: relative;
   vertical-align: middle;
 }
-/* line 155, ../scss/components/_buttons.scss */
+/* line 152, ../scss/components/_buttons.scss */
 .button--withIcon.button--micro .button-icon {
   width: 0.875rem;
   height: 0.875rem;
   margin-right: 0.125rem;
 }
-/* line 163, ../scss/components/_buttons.scss */
+/* line 160, ../scss/components/_buttons.scss */
 .button--withIcon.button--small .button-icon {
   width: 1.125rem;
   height: 1.125rem;
 }
-/* line 170, ../scss/components/_buttons.scss */
+/* line 167, ../scss/components/_buttons.scss */
 .button--withIcon.button--medium .button-icon {
   width: 1.125rem;
   height: 1.125rem;
 }
 
-/* line 179, ../scss/components/_buttons.scss */
+/* line 176, ../scss/components/_buttons.scss */
 .button--link {
   color: #238EB2;
   position: relative;
@@ -19919,7 +19934,7 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 186, ../scss/components/_buttons.scss */
+/* line 183, ../scss/components/_buttons.scss */
 .button--link:before {
   content: " ";
   left: 0;
@@ -19938,11 +19953,11 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
   transition: all 0.2s cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
-/* line 200, ../scss/components/_buttons.scss */
+/* line 197, ../scss/components/_buttons.scss */
 .button--link:hover, .button--link:focus {
   color: #6AC6C5;
 }
-/* line 204, ../scss/components/_buttons.scss */
+/* line 201, ../scss/components/_buttons.scss */
 .button--link:hover:after, .button--link:focus:after {
   opacity: 0;
   -moz-transform: translateY(-4px);
@@ -19950,7 +19965,7 @@ button.is-inactive,
   -webkit-transform: translateY(-4px);
   transform: translateY(-4px);
 }
-/* line 210, ../scss/components/_buttons.scss */
+/* line 207, ../scss/components/_buttons.scss */
 .button--link:hover:before, .button--link:focus:before {
   opacity: 1;
   -moz-transform: translateY(0);
@@ -19959,7 +19974,7 @@ button.is-inactive,
   transform: translateY(0);
 }
 
-/* line 225, ../scss/components/_buttons.scss */
+/* line 222, ../scss/components/_buttons.scss */
 .button--boost.is-locked:hover, .button--boost.is-locked:focus, .button--boost.is-locked:active {
   background-color: #231F20 !important;
   color: #fff !important;
@@ -19968,7 +19983,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Bank Linking Button
 \*------------------------------------*/
-/* line 246, ../scss/components/_buttons.scss */
+/* line 243, ../scss/components/_buttons.scss */
 .button--bankLinking {
   background-color: #238EB2;
   position: relative;
@@ -19982,7 +19997,7 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 3px rgba(30, 30, 30, 0.2);
 }
-/* line 254, ../scss/components/_buttons.scss */
+/* line 251, ../scss/components/_buttons.scss */
 .button--bankLinking:hover, .button--bankLinking:focus {
   color: #238EB2;
   background-color: transparent;
@@ -19991,12 +20006,12 @@ button.is-inactive,
   -webkit-box-shadow: 0 1px 16px rgba(30, 30, 30, 0.2);
   box-shadow: 0 1px 16px rgba(30, 30, 30, 0.2);
 }
-/* line 263, ../scss/components/_buttons.scss */
+/* line 260, ../scss/components/_buttons.scss */
 .button--bankLinking.is-linked {
   border-color: #33d28a;
   background-color: #33d28a;
 }
-/* line 267, ../scss/components/_buttons.scss */
+/* line 264, ../scss/components/_buttons.scss */
 .button--bankLinking.is-linked:hover, .button--bankLinking.is-linked:focus {
   border-color: #33d28a;
   background-color: #33d28a;
@@ -20007,7 +20022,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Sizes
 \*------------------------------------*/
-/* line 290, ../scss/components/_buttons.scss */
+/* line 287, ../scss/components/_buttons.scss */
 .button--micro {
   padding: 0.1875rem;
   padding-right: 0.375rem;
@@ -20016,7 +20031,7 @@ button.is-inactive,
   line-height: 1.33333;
 }
 
-/* line 297, ../scss/components/_buttons.scss */
+/* line 294, ../scss/components/_buttons.scss */
 .button--small {
   padding: 0.375rem;
   padding-right: 0.75rem;
@@ -20025,7 +20040,7 @@ button.is-inactive,
   line-height: 1.33333;
 }
 
-/* line 306, ../scss/components/_buttons.scss */
+/* line 303, ../scss/components/_buttons.scss */
 .button--medium {
   padding: 0.75rem;
   padding-right: 0.75rem;
@@ -20034,7 +20049,7 @@ button.is-inactive,
   line-height: 1.33333;
 }
 
-/* line 314, ../scss/components/_buttons.scss */
+/* line 311, ../scss/components/_buttons.scss */
 .button--large {
   padding: 0.9375rem;
   padding-right: 1.125rem;
@@ -20043,7 +20058,7 @@ button.is-inactive,
   line-height: 1.33333;
 }
 
-/* line 321, ../scss/components/_buttons.scss */
+/* line 318, ../scss/components/_buttons.scss */
 .button--kilo {
   padding: 1rem;
   padding-right: 2.25rem;
@@ -20052,14 +20067,14 @@ button.is-inactive,
   line-height: 1.5;
 }
 
-/* line 328, ../scss/components/_buttons.scss */
+/* line 325, ../scss/components/_buttons.scss */
 .button--mega {
   padding: 1.125rem;
   padding-right: 3rem;
   padding-left: 3rem;
 }
 
-/* line 335, ../scss/components/_buttons.scss */
+/* line 332, ../scss/components/_buttons.scss */
 .button--giga {
   padding: 1.375rem;
   padding-right: 3rem;
@@ -20069,7 +20084,7 @@ button.is-inactive,
 /*------------------------------------*\
     #Button Properties
 \*------------------------------------*/
-/* line 351, ../scss/components/_buttons.scss */
+/* line 348, ../scss/components/_buttons.scss */
 .button--expanded {
   width: 100%;
   padding-right: 0;
@@ -20114,27 +20129,27 @@ button.is-inactive,
 .card .card-header .card-title.card-title--alt {
   color: #6AC6C5;
 }
-/* line 36, ../scss/components/_cards.scss */
+/* line 35, ../scss/components/_cards.scss */
 .card .card-content {
   padding: 1.5rem;
   width: 100%;
 }
-/* line 40, ../scss/components/_cards.scss */
+/* line 39, ../scss/components/_cards.scss */
 .card .card-content .card-subTitle {
   color: #7d7d7d;
   font-size: 1rem;
   line-height: 1.5;
 }
-/* line 47, ../scss/components/_cards.scss */
+/* line 46, ../scss/components/_cards.scss */
 .card .card-content--bordered {
   border-bottom: 1px solid #dae0e0;
 }
-/* line 51, ../scss/components/_cards.scss */
+/* line 50, ../scss/components/_cards.scss */
 .card .card-actions {
   border-top: #dae0e0 1px solid;
   width: 100%;
 }
-/* line 55, ../scss/components/_cards.scss */
+/* line 54, ../scss/components/_cards.scss */
 .card .card-actions .card-action {
   color: #231F20;
   fill: #231F20;
@@ -20150,7 +20165,7 @@ button.is-inactive,
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 67, ../scss/components/_cards.scss */
+/* line 66, ../scss/components/_cards.scss */
 .card .card-actions .card-action:hover, .card .card-actions .card-action:focus {
   color: #fff;
   fill: #fff;
@@ -20158,7 +20173,7 @@ button.is-inactive,
 }
 
 @media only screen and (min-width: 64.0625em) {
-  /* line 85, ../scss/components/_cards.scss */
+  /* line 84, ../scss/components/_cards.scss */
   .cardList li:nth-child(odd) {
     padding-right: 1.125rem;
   }
@@ -20167,7 +20182,7 @@ button.is-inactive,
 /*------------------------------------*\
     #A sponsorship card 
 \*------------------------------------*/
-/* line 104, ../scss/components/_cards.scss */
+/* line 103, ../scss/components/_cards.scss */
 .card--sponsorship:hover, .card--sponsorship:focus {
   -moz-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
   -webkit-box-shadow: 0 1px 20px rgba(30, 30, 30, 0.1);
@@ -20177,7 +20192,7 @@ button.is-inactive,
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-/* line 113, ../scss/components/_cards.scss */
+/* line 112, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-name {
   margin-bottom: 0.375rem;
   color: #231F20;
@@ -20185,18 +20200,23 @@ button.is-inactive,
   line-height: 1.33333;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 113, ../scss/components/_cards.scss */
+  /* line 112, ../scss/components/_cards.scss */
   .card--sponsorship .card-header .sponsorship-name {
     margin-bottom: 0;
   }
 }
-/* line 125, ../scss/components/_cards.scss */
+/* line 123, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan {
   margin-bottom: 0;
   font-size: 0.8rem;
   line-height: 1.33333;
 }
-/* line 129, ../scss/components/_cards.scss */
+/* line 127, ../scss/components/_cards.scss */
+.card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-title {
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 131, ../scss/components/_cards.scss */
 .card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-editIcon {
   width: 0.875rem;
   height: 0.875rem;
@@ -20207,28 +20227,39 @@ button.is-inactive,
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 136, ../scss/components/_cards.scss */
-.card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-editIcon:hover, .card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-editIcon:focus {
+/* line 139, ../scss/components/_cards.scss */
+.card--sponsorship .card-header .sponsorship-plan .sponsorship-plan-editLabel {
+  color: #238EB2;
+  -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+/* line 147, ../scss/components/_cards.scss */
+.card--sponsorship .card-header .sponsorship-plan:hover .sponsorship-plan-editIcon,
+.card--sponsorship .card-header .sponsorship-plan:hover .sponsorship-plan-editLabel, .card--sponsorship .card-header .sponsorship-plan:focus .sponsorship-plan-editIcon,
+.card--sponsorship .card-header .sponsorship-plan:focus .sponsorship-plan-editLabel {
   fill: #6AC6C5;
+  color: #6AC6C5;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 147, ../scss/components/_cards.scss */
+  /* line 157, ../scss/components/_cards.scss */
   .card--sponsorship .card-content {
     padding: 1.875rem;
   }
 }
-/* line 154, ../scss/components/_cards.scss */
+/* line 163, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions {
   color: #6AC6C5;
   margin-bottom: 0;
   font-size: 3rem;
   line-height: 1.33333;
 }
-/* line 161, ../scss/components/_cards.scss */
+/* line 169, ../scss/components/_cards.scss */
 .card--sponsorship .card-content .sponsorship-contributions:hover, .card--sponsorship .card-content .sponsorship-contributions:focus {
   color: #238EB2;
 }
-/* line 171, ../scss/components/_cards.scss */
+/* line 176, ../scss/components/_cards.scss */
 .card--sponsorship .card-inactiveActions {
   position: absolute;
   top: 0;
@@ -20244,7 +20275,7 @@ button.is-inactive,
   margin-top: 4.875rem;
 }
 @media only screen and (min-width: 64.0625em) {
-  /* line 171, ../scss/components/_cards.scss */
+  /* line 176, ../scss/components/_cards.scss */
   .card--sponsorship .card-inactiveActions {
     padding: 1.875rem;
   }
@@ -20253,15 +20284,15 @@ button.is-inactive,
 /*------------------------------------*\
     #Am inactive sponsorship Card
 \*------------------------------------*/
-/* line 206, ../scss/components/_cards.scss */
+/* line 205, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-inactiveActions {
   display: block;
 }
-/* line 211, ../scss/components/_cards.scss */
+/* line 209, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-content {
   opacity: 0;
 }
-/* line 216, ../scss/components/_cards.scss */
+/* line 213, ../scss/components/_cards.scss */
 .card--sponsorship.is-inactive .card-actions {
   opacity: 0;
   pointer-events: none;
@@ -20270,19 +20301,19 @@ button.is-inactive,
 /*------------------------------------*\
     #A Card Containing Signup UX
 \*------------------------------------*/
-/* line 232, ../scss/components/_cards.scss */
+/* line 229, ../scss/components/_cards.scss */
 .card--signUp {
   width: 100%;
   padding-bottom: 0.375rem;
   min-height: 18.75rem;
 }
-/* line 237, ../scss/components/_cards.scss */
+/* line 234, ../scss/components/_cards.scss */
 .card--signUp .card-header {
   padding-bottom: 0;
   border-bottom: none;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 232, ../scss/components/_cards.scss */
+  /* line 229, ../scss/components/_cards.scss */
   .card--signUp {
     margin-right: auto;
     margin-left: auto;
@@ -22462,21 +22493,36 @@ body.fancymodal-open {
 /*------------------------------------*\
     #Sponsorship View
 \*------------------------------------*/
-/* line 12, ../scss/pages/_sponsorship.scss */
+/* line 8, ../scss/pages/_sponsorship.scss */
+.sponsorship-planStatus {
+  font-size: 0.8rem;
+  line-height: 1.33333;
+}
+/* line 11, ../scss/pages/_sponsorship.scss */
+.sponsorship-planStatus .sponsorship-planStatus-title {
+  margin-right: 0.1875rem;
+}
+/* line 15, ../scss/pages/_sponsorship.scss */
+.sponsorship-planStatus .sponsorship-planStatus-edit {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* line 18, ../scss/pages/_sponsorship.scss */
 .sponsorship-planStatus .sponsorship-planStatus-edit .icon {
   width: 0.875rem;
   height: 0.875rem;
   fill: #238EB2;
+  margin-right: 0.1875rem;
   -moz-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -o-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
   transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-/* line 18, ../scss/pages/_sponsorship.scss */
+/* line 25, ../scss/pages/_sponsorship.scss */
 .sponsorship-planStatus .sponsorship-planStatus-edit .icon:hover, .sponsorship-planStatus .sponsorship-planStatus-edit .icon:focus {
   fill: #6AC6C5;
 }
-/* line 27, ../scss/pages/_sponsorship.scss */
+/* line 34, ../scss/pages/_sponsorship.scss */
 .sponsorship-planStatus .sponsorship-planStatus-edit:hover .icon, .sponsorship-planStatus .sponsorship-planStatus-edit:focus .icon {
   fill: #6AC6C5;
 }
