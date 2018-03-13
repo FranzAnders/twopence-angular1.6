@@ -13,7 +13,7 @@ twopence = angular.module('twopence', [
      'ngMessages',
      'angularMoment',
      '720kb.tooltips',
-     // 'ngRaven',
+     'ngRaven',
      'constants'
 ]);
 
@@ -68,8 +68,32 @@ twopence.config(
                 }
             },
         })
+        .state('main.forgraduates', {
+            url: "for-graduates",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/for-graduates.html",
+                    controller: 'homeCtrl'
+
+                }
+            },
+        })
         .state('main.sponsorHome', {
             url: "home-sponsor",
+            views: {
+
+                'main' : {
+
+                    templateUrl: "js/home/sponsor-home.html",
+                    controller: 'homeCtrl'
+
+                }
+            },
+        })
+        .state('main.forsponsors', {
+            url: "for-sponsors",
             views: {
 
                 'main' : {

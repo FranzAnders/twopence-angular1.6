@@ -1,0 +1,76 @@
+/*------------------------------------*\
+    #Alt styles
+\*------------------------------------*/
+
+.alt-nav {
+  display:none;
+  @media #{$small-only} {
+    display:block;
+    padding:0.75em;
+    position: absolute;
+    z-index:1000;
+    width:100%;
+    background:none;
+    margin-bottom:-0.5em;
+    svg {
+      display:block;
+      width:2.25em;
+      height:2.25em;
+      margin:auto;
+    }
+  }
+}
+
+.center-text-on-mobile {
+  @media #{$small-only} {
+    text-align:center;
+  }
+}
+
+.heroHeader-background-alt {
+  transform: rotatex(180deg);
+}
+
+
+.mailSignupCta {
+  input::placeholder {
+    color: rgb(125, 125, 125)!important;
+  }
+}
+
+.alt-form {
+  input { border:none; }
+  
+  button {
+    background: linear-gradient(-180deg,#222 0,#000 100%);
+    border:none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 2px 4px rgba(0,0,0,0.23);
+    min-width: auto!important;
+    
+    &:hover {
+      background: linear-gradient(-180deg,#333 0,#000 100%);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      color:white;
+      border:none;       
+    }     
+  }
+  
+  @media #{$small-only} {
+    button {
+      font-weight: normal;
+      padding-top:0.7em;
+      padding-bottom:0.7em;
+      font-size:1.25em;       
+    }
+    input {
+      text-align: center;
+      margin-bottom:-0.5em;
+      line-height:1.7!important;
+      font-size:1.22em!important;
+    }
+  }   
+}
+
+
+
+

@@ -22217,6 +22217,85 @@ body.fancymodal-open {
 }
 
 /*------------------------------------*\
+    #Alt styles
+\*------------------------------------*/
+/* line 5, ../scss/pages/_for-graduates.scss */
+.alt-nav {
+  display: none;
+}
+@media only screen and (max-width: 40em) {
+  /* line 5, ../scss/pages/_for-graduates.scss */
+  .alt-nav {
+    display: block;
+    padding: 0.75em;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background: none;
+    margin-bottom: -0.5em;
+  }
+  /* line 15, ../scss/pages/_for-graduates.scss */
+  .alt-nav svg {
+    display: block;
+    width: 2.25em;
+    height: 2.25em;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  /* line 24, ../scss/pages/_for-graduates.scss */
+  .center-text-on-mobile {
+    text-align: center;
+  }
+}
+
+/* line 30, ../scss/pages/_for-graduates.scss */
+.heroHeader-background-alt {
+  transform: rotatex(180deg);
+}
+
+/* line 36, ../scss/pages/_for-graduates.scss */
+.mailSignupCta input::placeholder {
+  color: #7d7d7d !important;
+}
+
+/* line 42, ../scss/pages/_for-graduates.scss */
+.alt-form input {
+  border: none;
+}
+/* line 44, ../scss/pages/_for-graduates.scss */
+.alt-form button {
+  background: linear-gradient(-180deg, #222222 0%, #000000 100%);
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  min-width: auto !important;
+}
+/* line 50, ../scss/pages/_for-graduates.scss */
+.alt-form button:hover {
+  background: linear-gradient(-180deg, #333333 0%, #000000 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: white;
+  border: none;
+}
+@media only screen and (max-width: 40em) {
+  /* line 59, ../scss/pages/_for-graduates.scss */
+  .alt-form button {
+    font-weight: normal;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    font-size: 1.25em;
+  }
+  /* line 65, ../scss/pages/_for-graduates.scss */
+  .alt-form input {
+    text-align: center;
+    margin-bottom: -0.5em;
+    line-height: 1.7 !important;
+    font-size: 1.22em !important;
+  }
+}
+
+/*------------------------------------*\
     #Login and Account Sign Up Page 
 \*------------------------------------*/
 /* line 7, ../scss/pages/_login.scss */

@@ -33,7 +33,8 @@ twopence.directive('sponsorMailSignUpDir', ['UrlParams', function(UrlParams) {
           mixpanel.track('Waitlist Form Focused' , {'User Type': 'Sponsor'});
         });
         
-        button.click(function(){
+        form.submit(function(e){
+          e.preventDefault();
           var emailAddress = emailInput.val();
           
           mixpanel.alias(emailAddress);
@@ -49,6 +50,8 @@ twopence.directive('sponsorMailSignUpDir', ['UrlParams', function(UrlParams) {
           mixpanel.track('Waitlist Signup', {'User Type': 'Sponsor'});
           
           fbq('track', 'Lead', {content_category: 'sponsor'});
+          
+          form.unbind('submit').submit();
           
         })
     }

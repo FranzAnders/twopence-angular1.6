@@ -92,6 +92,8 @@ twopence.factory('Auth', [
 
       }
 
+      console.log(token);
+
       return token;
 
     };

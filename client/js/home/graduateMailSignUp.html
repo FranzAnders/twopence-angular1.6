@@ -1,23 +1,21 @@
 
-<div class="mailSignupCta">
+<div class="mailSignupCta  {{mailSignUp.altClass}}">
 
   <!-- Begin MailChimp Signup Form -->
-  <form action="https://wordpress.us13.list-manage.com/subscribe/post?u=fdcdf8761c23d6e5445378981&amp;id=2b92ad93b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+  <form action="https://wordpress.us13.list-manage.com/subscribe/post?u=fdcdf8761c23d6e5445378981&amp;id=2b92ad93b9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate>
       
     <div class="grid  grid--flexDirectionColumn  large-grid--flexDirectionRow large-grid--stretch inputWithButton">
   
       <div class="input-group input--medium  inputGroup--alt  inputWithButton-input">
-        <label for="{{mailSignUp.inputLabel}}">
-          Enter Your email address
-        </label>
         <input type="email" 
                name="EMAIL"  
+               placeholder="Enter your email"
                id="{{mailSignUp.inputLabel}}" 
                ng-model="mailSignUp.userEmail"
-               floating-label>
+               >
       </div>
   
-       <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button--secondary button--medium inputWithButton-button">Join the Waitlist</button>
+       <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button--secondary button--medium inputWithButton-button">{{mailSignUp.buttonText || 'Join the waitlist'}}</button>
   
       </div>
   

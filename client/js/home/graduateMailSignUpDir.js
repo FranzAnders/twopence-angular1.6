@@ -21,7 +21,9 @@ twopence.directive('graduateMailSignUpDir', ['UrlParams', function(UrlParams) {
     controllerAs: "mailSignUp",
     bindToController: {
 
-      inputLabel: "@"
+      inputLabel: "@",
+      buttonText: "@",
+      altClass:"@"
 
     },
     link: function(scope, element, attrs) {
@@ -33,7 +35,8 @@ twopence.directive('graduateMailSignUpDir', ['UrlParams', function(UrlParams) {
           mixpanel.track('Waitlist Form Focused', {'User Type': 'Graduate'});
         })
 
-        button.click(function(){
+        form.submit(function(e){
+          e.preventDefault();
           var emailAddress = emailInput.val();
 
           mixpanel.alias(emailAddress);
@@ -49,6 +52,8 @@ twopence.directive('graduateMailSignUpDir', ['UrlParams', function(UrlParams) {
           mixpanel.track('Waitlist Signup', {'User Type': 'Graduate'});
         
           fbq('track', 'Lead', {content_category: 'graduate'});
+          
+          form.unbind('submit').submit();
 
         })
 
