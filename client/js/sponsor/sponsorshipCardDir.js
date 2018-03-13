@@ -30,7 +30,7 @@ twopence.directive('sponsorshipCardDir',
           //
           // Gets the latest plan for a sponsorship
           //
-          vm.getLatestPlan = function(pSponsorship) {
+          vm.getLatestMatchingPlan = function(pSponsorship) {
             var plan = null;
             var plansLength = pSponsorship.plans.length - 1;
 
@@ -44,7 +44,7 @@ twopence.directive('sponsorshipCardDir',
 
             }
 
-          return false;
+          return false; 
 
           };
 
@@ -61,11 +61,12 @@ twopence.directive('sponsorshipCardDir',
           //
           vm.$onInit = function() {
               vm.sponsee = vm.sponsorshipInfo.sponsee;
-
-              vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo);
-
-              vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
-
+              vm.currentPlan = vm.getLatestMatchingPlan(vm.sponsorshipInfo);
+              if(!vm.currentPlan) {
+                vm.planStatus = 'no-plan-created';
+              } else {
+                vm.planStatus = 'no-plan-created';
+              }
           };
 
 

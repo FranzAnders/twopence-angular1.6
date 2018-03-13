@@ -126,10 +126,11 @@
       margin-bottom: 0;  
       @include type-setting(-1);
 
-      .sponsorship-plan-edit {
+      .sponsorship-plan-editIcon {
         width: rem-calc(14px);
         height: rem-calc(14px);
         fill: $tertiaryColor; 
+        vertical-align: middle; 
         @include transition(all .2s ceaser($easeInOutCubic));
 
         &:hover, 
@@ -139,6 +140,7 @@
       }
 
     }
+
 
   }
 

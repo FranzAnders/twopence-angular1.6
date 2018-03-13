@@ -36,16 +36,20 @@ twopence.controller('sponsorshipCtrl', [
       vm.sponsorshipId = sponseeId;
       vm.currentPlan = null;
       vm.sponsorshipInfo = sponsorship; 
-      vm.currentPlan = vm.getLatestPlan(vm.sponsorshipInfo);
-      vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
+      vm.currentPlan = vm.getLatestMatchingPlan(vm.sponsorshipInfo);
+     if(!vm.currentPlan) {
+        vm.planStatus = 'inactive';
+      } else {
+        vm.planStatus = Sponsorship.getPlanStatus(vm.currentPlan, vm.sponsorshipInfo);
+      }
       vm.sponsorshipInfo.contributions  = contributions.data;
     };
 
 
     //
-    // Gets the latest plan for a sponsorship
+    // Gets the latest matching plan for a sponsorship
     //
-    vm.getLatestPlan = function(pSponsorship) {
+    vm.getLatestMatchingPlan = function(pSponsorship) {
       var plan = null;
       var plansLength = pSponsorship.plans.length - 1;
 

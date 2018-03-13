@@ -58,7 +58,7 @@
                            id="oneHundredLimit"
                             ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                            class="radio--large"
-                           ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit">
+                           ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit && !sponseeSponsorship.customLimit.active">
                           <label for="oneHundredLimit"> <span></span>$100</label>
                         
                         </div>
@@ -72,7 +72,7 @@
                            id="threeHundredLimit"
                            ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                            class="radio--large"
-                           ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit">
+                           ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit && !sponseeSponsorship.customLimit.active">
                           <label for="threeHundredLimit"><span></span>$300</label>
                         
                         </div>
@@ -84,9 +84,9 @@
                              name="limit"
                              value="500"
                              id="fivehundredLimit"
-                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
+                             ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.limit, 'matching')"
                              class="radio--large"
-                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit">
+                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit && !sponseeSponsorship.customLimit.active">
                           <label for="fivehundredLimit"><span></span>$500</label>
                         
                         </div>
@@ -102,6 +102,7 @@
                                      class="styled-as-radio  radio--large"
                                      ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
                                      value="sponseeSponsorship.customLimit.active"
+                                     ng-required="sponseeSponsorship.customLimit.limit"
                                      check-me="{{sponseeSponsorship.customLimit.limit}}">
                         
                               <label for="custom">
@@ -114,7 +115,8 @@
                                    name="custom"
                                    class="input--small   mb0"
                                    ng-model="sponseeSponsorship.customLimit.limit"
-                                   ng-required="!sponseeSponsorship.sponsorshipInfo.plan.limit"
+                                   ng-click="sponseeSponsorship.clearSelection(sponseeSponsorship.customLimit.active, 'matching')"
+                                   ng-required="sponseeSponsorship.customLimit.active"
                                    placeholder="Other"
                                    focus-me="{{sponseeSponsorship.customLimit.active}}"
                                    >

@@ -90,6 +90,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
         vm.customLimit.limit = '';
         vm.customAmount.active = false;
         vm.customAmount.amount = '';
+
+        console.log(vm.customLimit);
     }
 
 
@@ -154,7 +156,8 @@ twopence.controller('sponseeSponsorshipCtrl', [
     vm.sponsorshipInfo = {
       "plan": {
         "type": null,
-        "frequency": null
+        "frequency": null,
+        "limit": 0
       }
     };
 
@@ -181,12 +184,18 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
     //
     // Clears the custom limit/amount selection or the normal limit/amount
-    // selections depending on what is selected
+    // selections depending on what is selected. If its a checkbox witha truthy, clear all other ones. 
+    // if it a checkbox wiht a number, clear the custom one. 
     //
     vm.clearSelection = function(pLimitType, pPlanType) {
 
+      console.log(pLimitType); 
+      console.log(pPlanType); 
+      console.log('clears selection');  
+
       if(typeof(pLimitType) === "boolean")  {
 
+        console.log('clearing default selections');
         if(pPlanType === 'matching') {
 
           vm.sponsorshipInfo.plan.limit = 0;
@@ -199,7 +208,6 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
         }
 
-
       } else {
 
         vm.resetCustomFields();
@@ -210,12 +218,14 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
 
     //
-    // Creates a sponsorship and a plan right after. If vm.customLimit.active, we apply that as the
+    // Creates a sponsorship and a plan right after. If vm.customLimit.active or vm.customAmount.active, we apply that as the
     // limit/amount of the sponsorship
     //
     vm.createPlan = function(pSponsorshipDetailsForm, pPlanBeingCreated, pGraduateInfo) {
 
-      // Mixpanel properties.
+      console.log(vm.customLimit.limit);
+
+      // Mixpanel properties. 
       var custom = false;
       var type = 'Match';
       var value = pPlanBeingCreated.plan.limit;
@@ -225,6 +235,7 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
       if(vm.customLimit.active) {
         planBeingCreated.plan.limit = vm.customLimit.limit;
+        console.log(vm.customLimit.limit);
         custom = true;
         value = vm.customLimit.limit;
       }
@@ -246,61 +257,64 @@ twopence.controller('sponseeSponsorshipCtrl', [
 
          userPayLoad.user = pGraduateInfo.identity;
 
-         Sponsorship.create(userPayLoad).then(function(res) {
+         console.log(planBeingCreated);
+         console.log('valid');
 
-          var sponsorship = res;
+        //  Sponsorship.create(userPayLoad).then(function(res) {
 
-          Sponsorship.createNewPlan(sponsorship.id, planBeingCreated).then(function(sponsorship) {
+        //     var sponsorship = res;
 
-            vm.formStates.notSubmitted = false;
-            vm.formStates.submittedSuccesfully = true;
+        //     Sponsorship.createNewPlan(sponsorship.id, planBeingCreated).then(function(sponsorship) {
 
-            mixpanel.track('Completed Sponsorship Setup', {
-              'Type': type,
-              'Value': value,
-              'Is Custom': custom
-            });
+        //     vm.formStates.notSubmitted = false;
+        //     vm.formStates.submittedSuccesfully = true;
 
-          }).catch(function(err) {
+        //     mixpanel.track('Completed Sponsorship Setup', {
+        //       'Type': type,
+        //       'Value': value,
+        //       'Is Custom': custom
+        //     });
 
-           if(err.data.message === "User already has match plan active between those dates.") {
+        //   }).catch(function(err) {
 
-               $fancyModal.open({
-                  templateUrl: 'js/modals/matching-plan-already-exists-error.html',
-                  themeClass: 'fancymodal--primary  fancymodal--small',
-                  openingClass: 'is-open',
-                  closingClass: 'is-closed',
-                  showCloseButton: false
+        //    if(err.data.message === "User already has match plan active between those dates.") {
 
-              });
+        //        $fancyModal.open({
+        //           templateUrl: 'js/modals/matching-plan-already-exists-error.html',
+        //           themeClass: 'fancymodal--primary  fancymodal--small',
+        //           openingClass: 'is-open',
+        //           closingClass: 'is-closed',
+        //           showCloseButton: false
 
-             } else {
+        //       });
 
-               $fancyModal.open({
-                  templateUrl: 'js/modals/sponsorship-creation-error.html',
-                  themeClass: 'fancymodal--primary  fancymodal--small',
-                  openingClass: 'is-open',
-                  closingClass: 'is-closed',
-                  showCloseButton: false
+        //      } else {
 
-              });
+        //        $fancyModal.open({
+        //           templateUrl: 'js/modals/sponsorship-creation-error.html',
+        //           themeClass: 'fancymodal--primary  fancymodal--small',
+        //           openingClass: 'is-open',
+        //           closingClass: 'is-closed',
+        //           showCloseButton: false
 
-            }
+        //       });
 
-          });
+        //     }
 
-        }).catch(function(err) {
+        //   });
 
-          $fancyModal.open({
-              templateUrl: 'js/modals/sponsorship-creation-error.html',
-              themeClass: 'fancymodal--primary  fancymodal--small',
-              openingClass: 'is-open',
-              closingClass: 'is-closed',
-              showCloseButton: false
+        // }).catch(function(err) {
 
-           });
+        //   $fancyModal.open({
+        //       templateUrl: 'js/modals/sponsorship-creation-error.html',
+        //       themeClass: 'fancymodal--primary  fancymodal--small',
+        //       openingClass: 'is-open',
+        //       closingClass: 'is-closed',
+        //       showCloseButton: false
 
-        });
+        //    });
+
+        // });
 
       }
 

@@ -17,9 +17,15 @@ twopence.directive('checkMe', ['$timeout', 'EfficientWatch', function($timeout, 
       EfficientWatch.watch('trigger', ctrl, function(newValue){
         if(newValue) { 
           $timeout(function() {
+            console.log('check');
             element[0].checked = true;  
           });
-        } 
+        } else {
+          $timeout(function() {
+            console.log('uncheck');
+            element[0].checked = false;  
+          });    
+        }
       }); 
     }
   }

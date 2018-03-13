@@ -15,7 +15,7 @@
 
           <p>
             Edit
-            <span class="fwb" ng-bind="sponseePlanEdit.sponseeInfo.sponsee.first_name + ' ' + sponseePlanEdit.sponseeInfo.sponsee.last_name"></span>'s monthly matching limit or pause their existing active matching plan.
+            <span class="fwb" ng-bind="sponseePlanEdit.sponsorship.sponsee.first_name + ' ' + sponseePlanEdit.sponsorship.sponsee.last_name"></span>'s monthly matching limit or pause their existing active matching plan.
           </p>
           
           <div class="sponsorSection-illustrContainer">
@@ -32,7 +32,7 @@
 
     <div class="small-12 columns medium-8 large-7 large-pull-1">
 
-        <div class="card">
+        <div class="card" >
 
           <div class="card-header">
 
@@ -52,19 +52,26 @@
 
               <div class="grid-cell text-center prl3">
 
-                <form ng-submit="sponseePlanEdit.changePlanLimit(sponseePlanEdit.planEditForm, sponseePlanEdit.sponseeInfo, sponseePlanEdit.customAmount)" name="sponseePlanEdit.planEditForm" novalidate>
+                <form ng-submit="sponseePlanEdit.changePlanLimit(sponseePlanEdit.planEditForm, sponseePlanEdit.sponsorship, sponseePlanEdit.customAmount)" name="sponseePlanEdit.planEditForm" novalidate>
 
                 <robust-amount-input-dir ng-model="sponseePlanEdit.customAmount" amount="sponseePlanEdit.customAmount">
 
                 </robust-amount-input-dir>
                 <button type="submit" 
                         class="button--micro  button--secondary mb0"
-                        ng-if="sponseePlanEdit.planEditForm.$dirty && sponseePlanEdit.planEditForm.$valid"
+                        ng-if="sponseePlanEdit.planEditForm.$dirty && sponseePlanEdit.planEditForm.$valid && sponseePlanEdit.planStatus !== 'no-plan-created'"
                         ng-hide="sponseePlanEdit.planEditForm.$submitted"
                         ng-class="{'is-inactive' : (!sponseePlanEdit.planEditForm.$dirty || !sponseePlanEdit.planEditForm.$valid)}">
                     Update Matching Limit
                 </button>
                 </form>
+
+                <button role="button"  class="text-micro  button button--secondary button--medium  button--withIcon"
+                   ng-class="{'is-inactive' : (!sponseePlanEdit.planEditForm.$dirty || !sponseePlanEdit.planEditForm.$valid)}"
+                   ng-click="sponseePlanEdit.createNewPlan(sponseePlanEdit.sponsorship.id, sponseePlanEdit.newPlanInfo, false, sponseePlanEdit.customAmount)"
+                   ng-if="sponseePlanEdit.planStatus === 'no-plan-created'">
+                  <span class="button-label">Setup Matching Plan</span>
+                </button>
 
               </div>
 
@@ -73,7 +80,7 @@
           </div>
 
 
-          <div class="card-content">
+          <div class="card-content" ng-if="sponseePlanEdit.planStatus !== 'no-plan-created' && sponseePlanEdit.planStatus">
 
             <div class="grid med-grid--flexDirectionRow grid--flexDirectionColumn grid--justifyCenter med-grid--justifySpaceBetween med-grid--top">
 
@@ -94,11 +101,9 @@
                       Inactive
                   </div>
 
-
                   <div ng-switch-when="deactivating" class="tag  tag--large  tag--inactive  planStatus-status">
                       Inactive
                   </div>
-
 
                   <div ng-switch-when="activating" class="tag tag--large tag--pending  planStatus-status">
                     Activating
@@ -110,7 +115,7 @@
 
   
                 <button role="button" class="text-micro  planStatus-action"
-                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.sponseeInfo, sponseePlanEdit.sponseeInfo)"
+                  ng-click="sponseePlanEdit.pausePlan(sponseePlanEdit.sponsorship)"
                   ng-if="sponseePlanEdit.planStatus === 'active'">
 
                    <svg class="icon">
@@ -122,7 +127,7 @@
                 </button>
 
                 <button role="button"  class="text-micro  planStatus-action"
-                   ng-click="sponseePlanEdit.resumePlan(sponseePlanEdit.sponseeInfo, sponseePlanEdit.sponseeInfo)"
+                   ng-click="sponseePlanEdit.resumePlan(sponseePlanEdit.sponsorship)"
                    ng-if="sponseePlanEdit.planStatus === 'inactive' || sponseePlanEdit.planStatus === 'deactivating'">
 
                   <svg class="icon">
@@ -134,7 +139,7 @@
                 </button>
 
                 <button  role="button" class="text-micro  planStatus-action"
-                   ng-click="sponseePlanEdit.cancelActivation(sponseePlanEdit.sponseeInfo, sponseePlanEdit.sponseeInfo)"
+                   ng-click="sponseePlanEdit.cancelActivation(sponseePlanEdit.sponsorship)"
                    ng-if="sponseePlanEdit.planStatus === 'activating'">
 
                   <svg class="icon">
@@ -144,6 +149,7 @@
 
                   <span class="label"> Cancel Activation</span>
                 </button>
+
 
                 <span class="text-mini" ng-if="sponseePlanEdit.planStatus === 'activating'">
                  Plan will be effective starting tomorrow.

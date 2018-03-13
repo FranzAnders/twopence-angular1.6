@@ -13,7 +13,7 @@ twopence = angular.module('twopence', [
      'ngMessages',
      'angularMoment',
      '720kb.tooltips',
-     'ngRaven',
+     // 'ngRaven',
      'constants'
 ]);
 

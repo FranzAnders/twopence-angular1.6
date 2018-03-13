@@ -34,7 +34,7 @@ twopence.controller('sponseePlanEditCtrl', [
     vm.$onInit = function() {
 
       vm.sponsorshipId = $stateParams.plan;
-      vm.sponseeInfo = null;
+      vm.sponsorship = null;
       vm.customAmount = null
       vm.latestPlan = '';
       vm.getPlan(vm.sponsorshipId); 
@@ -99,22 +99,25 @@ twopence.controller('sponseePlanEditCtrl', [
 
         $timeout(function() {
 
-          vm.sponseeInfo = sponsorship;
-          vm.latestPlan = vm.getLatestPlan(sponsorship);
-          vm.customAmount = parseInt(vm.latestPlan.limit);
+          vm.sponsorship = sponsorship;
+          vm.latestPlan = vm.getLatestMatchingPlan(sponsorship);
 
           //
           // Finds out the status of the plan
           //
-          vm.planStatus = Sponsorship.getPlanStatus(vm.latestPlan, sponsorship);
-
+          if(!vm.latestPlan) {
+            vm.planStatus = 'no-plan-created';
+            vm.customAmount = 20;
+          } else{
+            vm.planStatus =  Sponsorship.getPlanStatus(vm.latestPlan, vm.sponsorship);
+            vm.customAmount = parseInt(vm.latestPlan.limit);
+          }
 
         }, 0);
 
       })
       .catch(function(err) {
         console.log('ERROR: We were unable to get the current sponsorship information.');
-
       });
 
     }
@@ -139,9 +142,9 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
     //
-    // Gets the latest plan for a sponsorship
+    // Gets the latest matching plan for a sponsorship
     //
-    vm.getLatestPlan = function(pSponsorship) {
+    vm.getLatestMatchingPlan = function(pSponsorship) {
       var plan = null;
       var plansLength = pSponsorship.plans.length - 1;
 
@@ -164,7 +167,7 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     // Pauses the plan by sending a pause payload set to true 
     //
-    vm.pausePlan = function(pSponsorship, pSponsee) {
+    vm.pausePlan = function(pSponsorship) {
 
       //
       // The current plan being worked with, we check it later for its status
@@ -200,7 +203,8 @@ twopence.controller('sponseePlanEditCtrl', [
     //
     // Resumes a plan by sending a pause pauload set to false
     //
-    vm.resumePlan = function(pSponsorship, pSponsee) {
+    vm.resumePlan = function(pSponsorship) {
+
 
       //
       // The current plan being worked with, we check it later for its status
@@ -237,7 +241,7 @@ twopence.controller('sponseePlanEditCtrl', [
     };
 
 
-    vm.cancelActivation = function(pSponsorship, pSponsee) {
+    vm.cancelActivation = function(pSponsorship) {
 
       //
       // The current plan being worked with, we check it later for its status
@@ -443,12 +447,35 @@ twopence.controller('sponseePlanEditCtrl', [
 
 
 
-    vm.createNewPlan = function(pSponsorshipId, pNewPlanInfo, pMixPanelProp) {
+    //
+    // Creates a new plan with the Plan Info provided along with an id. If there is no newPlanInfo being passed
+    // and there is a new limit being passed, we create the plan object with tomorrows date and the new limit
+    //
+    vm.createNewPlan = function(pSponsorshipId, pNewPlanInfo, pMixPanelProp, pNewLimit) {
 
-      Sponsorship.createNewPlan(pSponsorshipId, pNewPlanInfo)
+      var newPlan = pNewPlanInfo
+
+      if(!newPlan && pNewLimit) {
+
+         newPlan = {
+          "plan":{
+              "type":"match",
+              "frequency":"monthly",
+              "limit": pNewLimit
+          },
+          "schedule" : {
+            'date_effective' : getTomorrowsDate() 
+          }
+        }
+
+      }
+
+      Sponsorship.createNewPlan(pSponsorshipId, newPlan)
         .then(function(success){
 
-        mixpanel.track('Changed Plan Limit', pMixPanelProp);
+          if(pMixPanelProp) {
+            mixpanel.track('Changed Plan Limit', pMixPanelProp);
+          }
 
          $fancyModal.open({
             templateUrl: 'js/modals/plan-edit-success.html',
@@ -482,9 +509,7 @@ twopence.controller('sponseePlanEditCtrl', [
     // Listeners set up to listen for successes of plan being edited
     //
     $rootScope.$on('plan-updated', function(event, pChangeData) {
-
       vm.getPlan(vm.sponsorshipId);
-
     });
 
   }

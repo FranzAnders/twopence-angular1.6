@@ -63,6 +63,7 @@ button,
     color: $secondaryColor;
     background-color: transparent; 
     border: 1px solid $secondaryColor; 
+    fill: $secondaryColor;
   }
 }
 
@@ -123,26 +124,55 @@ button,
 }
 
 
+
+
+
+/*------------------------------------*\
+    #Button With Icon Sizing 
+\*------------------------------------*/
+
+
 .button--withIcon {
 
   .button-icon, 
   .button-label {
     display: inline-block; 
-
   }
 
   .button-icon {
-    width: rem-calc(24px); 
+    width: rem-calc(18px); 
+    height: rem-calc(18px); 
     margin-right: rem-calc($level1); 
     vertical-align: middle; 
-
   }
 
   .button-label {
     position: relative; 
     vertical-align: middle; 
-
   }
+
+  &.button--micro {
+    .button-icon {
+      width: rem-calc(14px);
+      height: rem-calc(14px);
+      margin-right: rem-calc(2px); 
+    }
+  }
+
+  &.button--small {
+    .button-icon {
+      width: rem-calc(18px);
+      height: rem-calc(18px);
+    }
+  }
+
+  &.button--medium {
+    .button-icon {
+      width: rem-calc(18px);
+      height: rem-calc(18px);
+    }
+  }
+
 }
 
 
@@ -261,7 +291,7 @@ button,
     padding: rem-calc(3px);
     padding-right: rem-calc($level1);
     padding-left: rem-calc($level1);
-    @extend %text-micro; 
+    @include type-setting(-1);
 }
 
 .button--small {
