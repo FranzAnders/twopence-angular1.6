@@ -51,7 +51,22 @@ twopence.directive('sponsorMailSignUpDir', ['UrlParams', function(UrlParams) {
           
           fbq('track', 'Lead', {content_category: 'sponsor'});
           
-          form.unbind('submit').submit();
+          /*
+          All code above needs to run successfully.
+          
+          Without the timeout below, some mixpanel calls were not being
+          successfully completed before the form.submit() below runs.
+          Adam was only able to reproduce this error on mobile safari.
+          
+          A timeout is a poor man's solution. A better way would be to
+          create promises for each call above, and then only run form.unbind('submit').submit()
+          when all Promises have been resolved. 
+          
+          #TheAdamEffect
+          */
+          setTimeout(function () {
+            form.unbind('submit').submit();             
+          }, 200);
           
         })
     }
