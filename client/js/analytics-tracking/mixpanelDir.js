@@ -9,7 +9,8 @@ twopence.directive('mixpanelDir',[
     'ENV',
     '$timeout',
     '$location',
-    function(ENV, $timeout, $location) {
+    'UrlParams',
+    function(ENV, $timeout, $location, UrlParams) {
 
   return {
     restrict: 'A',
@@ -27,20 +28,12 @@ twopence.directive('mixpanelDir',[
         mixpanel.init(ENV.mixpanelToken, {
           loaded: function(){
             element[0].dispatchEvent(loadedEvt);
+            var globalProps = Object.assign(UrlParams.getParams() || {}, {'Platform': 'Website'});
+            mixpanel.register(globalProps);
           }
         });
-        
-        /* Doesn't use the UrlParams service because its value is set
-           in mainCtrl.js, which hasn't been evaluated yet.
-           Be careful about transforming UrlParams in the service, as this 
-           won't be reflected here.
-           #TheAdamEffect
-        */
-        var globalProps = Object.assign($location.search() || {}, {'Platform': 'Website'});
 
-        mixpanel.register(globalProps);
-
-      }, 0);
+        }, 0);
 
     }
 
