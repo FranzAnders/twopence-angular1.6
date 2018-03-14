@@ -15,6 +15,7 @@ twopence.controller('dashboardCtrl', [
     '$state',
     '$timeout',
     'sponsorships',
+    'Sponsorship',
     function(
         Sponsee,
         Sponsor,
@@ -24,7 +25,8 @@ twopence.controller('dashboardCtrl', [
         $rootScope,
         $state,
         $timeout,
-        sponsorships) {
+        sponsorships,
+        Sponsorship) {
 
     var vm = this;
 
@@ -118,7 +120,17 @@ twopence.controller('dashboardCtrl', [
     // Listens for a boost being made event to update the total given
     //
     $rootScope.$on('sponsor-boosted-sponsee', function() {
-      vm.getUserInfo(); 
+
+      //
+      // Gets a sponsors' sponsorships and total contributions made are set on vm.totalContributions
+      //
+      Sponsorship.getAll().then(function(sponsorships) {
+         vm.sponsorships = sponsorships.data;
+         vm.totalContributions = vm.getTotalContributions(sponsorships.data);
+      }).catch(function(err){
+        reject(err);
+      });
+
     }); 
 
 
