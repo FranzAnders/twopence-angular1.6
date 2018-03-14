@@ -43,18 +43,14 @@ twopence.controller('settingsCtrl', [
       vm.sponsorInfo = sponsorInfo;
 
       $timeout(function() {
-
         vm.userSettings.phone = vm.sponsorInfo.phone; 
         vm.userSettings.sms_preferred = vm.sponsorInfo.sponsor.sms_preferred; 
-
       }, 100); 
 
 
     })  
     .catch(function(err) {
-
       console.log(err); 
-
     });
 
 
