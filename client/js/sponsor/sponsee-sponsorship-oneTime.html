@@ -56,9 +56,7 @@
                            name="amount"
                            value="50"
                            id="fifty"
-                           checked="checked"
-                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
-                            ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                           required
                            class="radio--large">
                           <label for="fifty"> <span></span>$50</label>
                         
@@ -71,8 +69,7 @@
                            name="amount"
                            value="100"
                            id="oneHundred"
-                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
-                            ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                           required
                            class="radio--large">
                           <label for="oneHundred"><span></span>$100</label>
                         
@@ -85,8 +82,7 @@
                              name="amount"
                              value="250"
                              id="twoHundredAndFiftty"
-                             ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
-                              ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.sponsorshipInfo.plan.amount, 'one-time')"
+                             required
                              class="radio--large">
                           <label for="twoHundredAndFiftty"><span></span>$250</label>
                         
@@ -96,29 +92,28 @@
                                 
                           <div class="grid grid--flexDirectionRow  grid--justifyLeft">
                         
-                              <input type="checkbox"
-                                     ng-model="sponseeSponsorship.customAmount.active"
+                              <input type="radio"
                                      name="customLimit"
                                      id="custom"
-                                     class="styled-as-radio  radio--large"
-                                     ng-change="sponseeSponsorship.clearSelection(sponseeSponsorship.customAmount.active, 'one-time')"
-                                     value="sponseeSponsorship.customAmount.active"
-                                     check-me="{{sponseeSponsorship.customAmount.amount}}"
-                                     >
+                                     class="radio--large"
+                                     value="other"
+                                     ng-model="sponseeSponsorship.sponsorshipInfo.plan.amount">
                         
                               <label for="custom">
                                 <span></span>
                                 <i class="hide-elem">Other</i>
                                 
                                 <div class="input--customAmount">
-                                  <input type="number"
+                                  <input 
+                                   type="number"
                                    id="customValue"
                                    name="custom"
                                    class="input--small   mb0"
-                                   ng-required="!sponseeSponsorship.sponsorshipInfo.plan.amount"
-                                   ng-model="sponseeSpwonsorship.customAmount.amount"
+                                   ng-model="sponseeSponsorship.sponsorshipInfo.plan.customValue"
+                                   ng-required="sponseeSponsorship.sponsorshipInfo.plan.amount == 'other'"
+                                   ng-disabled="sponseeSponsorship.sponsorshipInfo.plan.amount != 'other'"
                                    placeholder="Other"
-                                   focus-me="{{sponseeSponsorship.customAmount.active}}"
+                                   focus-me="{{sponseeSponsorship.sponsorshipInfo.plan.amount === 'other'}}"
                                    >
                                 </div>
                         
