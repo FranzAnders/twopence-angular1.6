@@ -20128,3 +20128,8 @@ body.preload * {
   -ms-perspective: 1000;
   perspective: 1000;
 }
+
+.page-wrapper .funnel-overlay {
+  background: white;
+  opacity: 1;
+}
