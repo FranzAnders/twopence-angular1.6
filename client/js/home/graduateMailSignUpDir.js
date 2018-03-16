@@ -18,7 +18,11 @@ twopence.component('graduateMailSignUpDir', {
 graduateMailSignUpCtrl.$inject = ['$element', 'UrlParams', '$q'];
 
 function graduateMailSignUpCtrl(element, UrlParams, $q) {
+<<<<<<< HEAD
   var form = $(element.find('form')),
+=======
+  var form = $(element.children()[0]),
+>>>>>>> Insert $q promise to make mixpanel more safe.
     button = form.find('button'),
     emailInput = form.find('input');
 
