@@ -39,7 +39,8 @@ twopence.controller('sponseeCreationCtrl', [
       vm.sponseeId = null;
 
       vm.cameFromEmail = $stateParams.cameFromEmail;
-
+      
+      mixpanel.track('Start Sponsorship Workflow');
 
       //
       // Checks if the resolve for the sponseeCreation state has any sponsorships

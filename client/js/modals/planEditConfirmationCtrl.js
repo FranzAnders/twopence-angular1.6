@@ -32,7 +32,7 @@ twopence.controller('planEditConfirmationCtrl',
       .then(function(success) {
         console.log(success);
         vm.succesfullyEdited = true;
-        mixpanel.track('Paused Plan', {'Graduate': 'User:' + sponsorshipInfo.sponsee.id})
+        mixpanel.track('Deactivated Plan', {'Graduate': 'User:' + sponsorshipInfo.sponsee.id});
         $rootScope.$emit('plan-updated');
 
       }).catch(function(error) {

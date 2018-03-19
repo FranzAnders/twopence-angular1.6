@@ -7,6 +7,7 @@
 twopence.controller('verifyCtrl', [
   '$stateParams',
   '$state',
+  '$rootScope',
   '$scope',
   '$timeout',
   'Auth',
@@ -14,6 +15,7 @@ twopence.controller('verifyCtrl', [
   'verify',
   function($stateParams,
     $state,
+    $rootScope,
     $scope,
     $timeout,
     Auth,
@@ -60,7 +62,7 @@ twopence.controller('verifyCtrl', [
 
       if(pVerifyStatus === true) {
 
-        mixpanel.identify(Auth.getMixpanelDistinctId());
+        mixpanel.identify($rootScope.userEmail);
         mixpanel.track('Verified Identity');
 
         $timeout(function() {

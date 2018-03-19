@@ -22,6 +22,8 @@ twopence.controller('contributionsCtrl', [
 
 
   vm.$onInit = function() {
+    
+   mixpanel.track('Viewed Contributions');
 
    vm.totalContributions = vm.getTotalContributions(sponsorships.data); 
 

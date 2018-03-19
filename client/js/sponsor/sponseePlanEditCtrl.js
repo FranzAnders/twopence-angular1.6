@@ -179,6 +179,8 @@ twopence.controller('sponseePlanEditCtrl', [
       var payLoad = {
         "pause": true
       };
+      
+      mixpanel.track('Deactivated Plan', {'Graduate': 'User:' + pSponsorship.sponsee.id});
 
       //
       // We patch the active plan and make a new one to take its' place 
@@ -220,6 +222,7 @@ twopence.controller('sponseePlanEditCtrl', [
         "pause": false
       };
 
+      mixpanel.track('Activated Plan', {'Graduate': 'User:' + pSponsorship.sponsee.id});
 
       //
       // We patch the active plan and make a new one to take its' place 
@@ -256,6 +259,8 @@ twopence.controller('sponseePlanEditCtrl', [
       var payLoad = {
         "cancel": true
       };
+      
+      mixpanel.track('Deactivated Plan', {'Graduate': 'User:' + pSponsorship.sponsee.id});
 
 
       //

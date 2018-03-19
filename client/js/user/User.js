@@ -29,7 +29,6 @@ twopence.factory('User', [
         $http.post(ENV.BASE_URL +  '/v1/users', pLoginInfo)
           .then(function(res) {
             Auth.setToken(res.data.token, res.data.username);
-            Auth.setMixpanelDistinctId(res.data.sponsor_id);
             resolve(res);
           }).catch(function(err) {
             reject(err);

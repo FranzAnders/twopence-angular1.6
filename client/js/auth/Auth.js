@@ -26,10 +26,9 @@ twopence.factory('Auth', [
             token = (res.data.token);
             $cookies.put('loggedIn', true);
             $cookies.put('userToken', token);
-            $cookies.put('sponsorId', res.data.sponsor_id);
             Funnel.setState(false); 
-            var alias = 'Sponsor:' + res.data.sponsor_id;
-            mixpanel.identify(alias);
+            $rootScope.userEmail = pLoginInfo.email;
+            mixpanel.identify(pLoginInfo.email);
             console.log("You are logged in: " + $cookies.get('loggedIn'));
             Session.create(res.data.token, pLoginInfo.email);
             resolve(res.data);
@@ -114,26 +113,6 @@ twopence.factory('Auth', [
       }
 
     };
-
-    //
-    // Gets the sponsor_id which serves as the Mixpanel alias for logged in user.
-    //
-    auth.getMixpanelDistinctId = function() {
-      var sponsorId = $cookies.get('sponsorId');
-      if (sponsorId === 'null') {
-        return mixpanel.get_distinct_id();
-      }
-      return 'Sponsor:' +  sponsorId;
-    };
-
-    //
-    // Sets the Mixpanel alias.
-    //
-    auth.setMixpanelDistinctId = function(sponsorId) {
-      $cookies.put('sponsorId', sponsorId);
-      var alias = 'Sponsor:' + sponsorId;
-      mixpanel.identify(alias);
-    }
 
 
     //

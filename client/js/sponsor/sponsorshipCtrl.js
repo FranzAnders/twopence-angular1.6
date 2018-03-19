@@ -33,6 +33,7 @@ twopence.controller('sponsorshipCtrl', [
 
 
     vm.$onInit = function() {
+      mixpanel.track('Viewed Progress');
       vm.sponsorshipId = sponseeId;
       vm.currentPlan = null;
       vm.sponsorshipInfo = sponsorship; 
