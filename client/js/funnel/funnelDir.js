@@ -23,6 +23,9 @@ function funnelCtrl($state, Funnel, $cookies, UrlParams) {
     if (modalHidden === 'false') vm.isHidden = true;
     if (modalHidden === 'true') vm.isHidden = false;
     
+    // always hide splitter if on /for-graduates route
+    if ($state.is('main.forgraduates')) vm.isHidden = true;
+    
     var page = document.body;
 
     if(!vm.isHidden) {
