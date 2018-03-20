@@ -32,6 +32,7 @@ function funnelCtrl($state, Funnel, $cookies, UrlParams) {
   this.revealPage = function() {  
     Funnel.setState(true);
     this.isHidden = Funnel.getState();
+    var page = document.body;
     page.classList.remove('is-hidden-by-funnel');
     $cookies.put('trafficSplitterDisplayed', 'true');
   };
