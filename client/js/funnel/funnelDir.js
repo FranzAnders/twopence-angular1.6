@@ -34,6 +34,7 @@ function funnelCtrl($state, Funnel, $cookies, UrlParams) {
   }
   this.revealPage = function() {  
     Funnel.setState(true);
+    var page = document.body;
     this.isHidden = Funnel.getState();
     var page = document.body;
     page.classList.remove('is-hidden-by-funnel');
