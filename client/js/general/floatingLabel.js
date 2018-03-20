@@ -14,7 +14,6 @@ function($timeout) {
 
             $(elem).change(function() {
 
-              console.log('hello'); 
               $(this).closest('.input-group').addClass('is-focused');
 
             });  

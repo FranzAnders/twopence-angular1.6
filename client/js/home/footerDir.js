@@ -5,16 +5,8 @@
     #Footer Directive
 \*------------------------------------*/
 
-twopence.directive('footerDir', function() {
-
-    return {
-
-      replace: true, 
-      scope: {}, 
-      templateUrl: 'js/home/footer.html',
-      link: function() {}
-
-    }
-
-}); 
-
+twopence.component('footerDir', {
+    bindings: {},
+    templateUrl: 'js/home/footer.html',
+    controller: function () {}
+});

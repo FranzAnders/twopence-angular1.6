@@ -1,76 +1,52 @@
-
 'use strict';
 
 /*------------------------------------*\
     Sponsor Mail Sign Up Directive
 \*------------------------------------*/
 
-twopence.directive('sponsorMailSignUpDir', ['UrlParams', function(UrlParams) {
+twopence.component('sponsorMailSignUpDir', {
+  bindings: {
+    inputLabel: '@'
+  },
+  templateUrl: "js/home/sponsorMailSignUp.html",
+  controller: sponsorMailSignUpCtrl
+});
 
-  return {
+sponsorMailSignUpCtrl.$inject = ['$element', 'UrlParams'];
 
-    restrict: "E",
-    scope: {},
-    replace: true,
-    templateUrl: "js/home/sponsorMailSignUp.html",
-    controller: function() {
+function sponsorMailSignUpCtrl(element, UrlParams) {
+  var form = $(element.children()[0]),
+    button = form.find('button'),
+    emailInput = form.find('input');
 
-      var vm = this;
+  form.click(function () {
+    mixpanel.track('Waitlist Form Focused', {
+      'User Type': 'Sponsor'
+    });
+  });
 
-    },
-    controllerAs: "mailSignUp",
-    bindToController: {
+  form.submit(function (e) {
+    e.preventDefault();
+    var emailAddress = emailInput.val();
 
-      inputLabel: "@"
+    var promise1 = mixpanel.alias(emailAddress);
+    var promise2 = mixpanel.identify(emailAddress);
+    $q.all([promise1, promise2])
+      .then(() => {
+        var peopleProperties = {
+          '$created': new Date(),
+          '$email': emailAddress,
+        };
 
-    },
-    link: function(scope, element, attrs) {
-        var form = $(element.children()[0]),
-            button = form.find('button'),
-            emailInput = form.find('input');
-
-        form.click(function(){
-          mixpanel.track('Waitlist Form Focused' , {'User Type': 'Sponsor'});
-        });
-        
-        form.submit(function(e){
-          e.preventDefault();
-          var emailAddress = emailInput.val();
-          
-          mixpanel.alias(emailAddress);
-          mixpanel.identify(emailAddress);
-          
-          var peopleProperties = {
-            '$created': new Date(),
-            '$email': emailAddress,             
-          };           
-          
-          var enrichedPeopleProperties = Object.assign(UrlParams.getParams() || {}, peopleProperties);           
-          mixpanel.people.set(enrichedPeopleProperties);
-          mixpanel.track('Waitlist Signup', {'User Type': 'Sponsor'});
-          
-          fbq('track', 'Lead', {content_category: 'sponsor'});
-          
-          /*
-          All code above needs to run successfully.
-          
-          Without the timeout below, some mixpanel calls were not being
-          successfully completed before the form.submit() below runs.
-          Adam was only able to reproduce this error on mobile safari.
-          
-          A timeout is a poor man's solution. A better way would be to
-          create promises for each call above, and then only run form.unbind('submit').submit()
-          when all Promises have been resolved. 
-          
-          #TheAdamEffect
-          */
-          setTimeout(function () {
-            form.unbind('submit').submit();             
-          }, 200);
-          
-        })
-    }
-
-  }
-
-}]);
+        var enrichedPeopleProperties = Object.assign(UrlParams.getParams() || {}, peopleProperties);
+        return mixpanel.people.set(enrichedPeopleProperties);
+      })
+      .then(() => mixpanel.track('Waitlist Signup', {
+          'User Type': 'Sponsor'
+        }))
+      .then(() => fbq('track', 'Lead', {
+        content_category: 'sponsor'
+      }))
+      .then(() => form.unbind('submit').submit());
+  })
+}

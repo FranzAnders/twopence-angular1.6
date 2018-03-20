@@ -5,39 +5,22 @@
     #Fixed CTA Directive
 \*------------------------------------*/
 
-twopence.directive('fixedCtaDir', [
-    '$anchorScroll', 
-     'MediaCheck', function(
-        $anchorScroll, 
-        MediaCheck) {
+twopence.component('fixedCtaDir', {
+  bindings: {
+    scrollToSection: '@'
+  },
+  templateUrl: "js/home/fixedCta.html",
+  controller: fixedCtaCtrl
+});
 
-  return {
-
-    restrict: "E",
-    replace: true, 
-    templateUrl: "js/home/fixedCta.html",
-    controller: function() {}, 
-    controllerAs: 'fixedCta',
-    bindToController: true, 
-    link: function(scopel, element, attrs, fixedCta) {  
-
-      fixedCta.scrollToSection = function(pSection) {
-
-        if(MediaCheck.checkIfSmall()) {
-
-          $anchorScroll.yOffset = -170; 
-
-        } else {
-          $anchorScroll.yOffset = 80; 
-
-        }
-        $anchorScroll(attrs.target);
-
-      }
-
+fixedCtaCtrl.$inject = ['$anchorScroll', 'MediaCheck']
+function fixedCtaCtrl($anchorScroll, MediaCheck) {
+  this.scrollToSection = function(pSection) {
+    if(MediaCheck.checkIfSmall()) {
+      $anchorScroll.yOffset = -170; 
+    } else {
+      $anchorScroll.yOffset = 80; 
     }
-
+    $anchorScroll(attrs.target);
   }
-
-}]); 
-  
+}

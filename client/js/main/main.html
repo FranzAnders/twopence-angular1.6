@@ -2,12 +2,13 @@
 
 
 
-<funnel-dir ng-if="($state.is('main.home') || $state.is('main.sponsorHome')) && !main.funnelIsHidden"> 
+<funnel-dir></funnel-dir>
 
-</funnel-dir>
+<div class="page-wrapper funnel" ng-if="!main.loadingCompleted" >
+  <div class="funnel-overlay"></div>
+</div>
 
-
-<div class='funnel-pageToHide'>
+<div class='funnel-pageToHide' ng-init="main.loadingComplete()" >
 
   <main-nav-dir  ng-hide="$state.includes('main.kitchenSink') || $state.includes('main.forgraduates') || $state.includes('main.account') || $state.includes('main.signUp') || $state.includes('main.funnel')" ng-cloak>
   
