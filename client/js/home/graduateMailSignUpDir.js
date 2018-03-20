@@ -50,6 +50,15 @@ function graduateMailSignUpCtrl(element, UrlParams, $q) {
       .then(() => fbq('track', 'Lead', {
         content_category: 'graduate'
       }))
+      .then(function(){
+        // fire LinkedIn conversion pixel
+        var linkConvPixel = document.createElement("IMG");
+        linkConvPixel.setAttribute("src", "https://dc.ads.linkedin.com/collect/?pid=297394&conversionId=338442&fmt=gif");
+        linkConvPixel.setAttribute("style", "display:none");
+        linkConvPixel.setAttribute("height", "1");
+        linkConvPixel.setAttribute("width", "1");
+        document.body.appendChild(linkConvPixel);
+      })
       .then(() => form.unbind('submit').submit());
   })
 }
