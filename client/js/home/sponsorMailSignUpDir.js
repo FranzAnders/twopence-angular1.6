@@ -15,7 +15,7 @@ twopence.component('sponsorMailSignUpDir', {
 sponsorMailSignUpCtrl.$inject = ['$element', 'UrlParams'];
 
 function sponsorMailSignUpCtrl(element, UrlParams) {
-  var form = $(element.children()[0]),
+  var form = $(element.find('form')),
     button = form.find('button'),
     emailInput = form.find('input');
 

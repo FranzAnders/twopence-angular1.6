@@ -6,16 +6,19 @@
 \*------------------------------------*/
 twopence.component('graduateMailSignUpDir', {
   bindings: {
-    inputLabel: '@'
+    inputLabel: '@',
+    buttonText: '@',
+    altClass: '@'
   },
   templateUrl: "js/home/graduateMailSignUp.html",
-  controller: graduateMailSignUpCtrl
+  controller: graduateMailSignUpCtrl,
+  controllerAs: 'mailSignUp'
 });
 
 graduateMailSignUpCtrl.$inject = ['$element', 'UrlParams', '$q'];
 
 function graduateMailSignUpCtrl(element, UrlParams, $q) {
-  var form = $(element.children()[0]),
+  var form = $(element.find('form')),
     button = form.find('button'),
     emailInput = form.find('input');
 
