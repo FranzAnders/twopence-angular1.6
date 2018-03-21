@@ -44,26 +44,26 @@
           </div>
 
           <div class="rangeSlider-fill  hide-for-large-up"
-               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 200) + 12 + 'px'}">
+               ng-style="{width: 'calc('+30000/250000 * 100 + '% + 12px + ' + (calculator.graduateInfo.income - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.income - 30000)/(250000-30000) + 'px)'}">
             
           </div>
 
           <div class="rangeSlider-thumb  hide-for-large-up"
-             ng-style="{left: ( (calculator.graduateInfo.income/(250000 - 30000)) * 200 ) - 15 + 'px'}">
+             ng-style="{left: 'calc('+30000/250000 * 100 + '% + ' + (calculator.graduateInfo.income - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.income - 30000)/(250000-30000) + 'px)'}">
             
           </div>
 
           <div class="rangeSlider-fill  show-for-large-up"
-               ng-style="{width: ((calculator.graduateInfo.income/(250000 - 30000)) * 260) + 12 + 'px'}">
+               ng-style="{width: 'calc('+30000/250000 * 100 + '% + 12px + ' + (calculator.graduateInfo.income - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.income - 30000)/(250000-30000) + 'px)'}">
             
           </div>
 
           <div class="rangeSlider-thumb  show-for-large-up"
-             ng-style="{left: (calculator.graduateInfo.income/(250000 - 30000)) * 260 + 'px'}">
+             ng-style="{left: 'calc('+30000/250000 * 100 + '% + ' + (calculator.graduateInfo.income - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.income - 30000)/(250000-30000) + 'px)'}">
             
           </div>
 
-          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.income">
+          <input type="range" ng-style="{left: (30000/250000) * 100 + '%', width:'calc(' + (220000/250000) * 100 + '%)'}" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.income">
 
         </div>
 
@@ -76,26 +76,25 @@
           <div class="rangeSlider-track">
             
           </div>
-         <div class="rangeSlider-fill  hide-for-large-up"
-               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 200) + 12 + 'px'}">
-            
+          <div class="rangeSlider-fill  hide-for-large-up"
+               ng-style="{width: 'calc('+30000/250000 * 100 + '% + 12px + ' + (calculator.graduateInfo.loan - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.loan - 30000)/(250000-30000) + 'px)'}" >
           </div>
 
           <div class="rangeSlider-thumb  hide-for-large-up"
-             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 200 - 15 + 'px'}">
+             ng-style="{left: 'calc('+30000/250000 * 100 + '% + ' + (calculator.graduateInfo.loan - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.loan - 30000)/(250000-30000) + 'px)'}">
             
           </div>
 
           <div class="rangeSlider-fill  show-for-large-up"
-               ng-style="{width: ((calculator.graduateInfo.loan/(250000 - 30000)) * 260) + 12 + 'px'}">
+               ng-style="{width: 'calc('+30000/250000 * 100 + '% + 12px + ' + (calculator.graduateInfo.loan - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.loan - 30000)/(250000-30000) + 'px)'}">
             
           </div>
 
           <div class="rangeSlider-thumb  show-for-large-up"
-             ng-style="{left: (calculator.graduateInfo.loan/(250000 - 30000)) * 260 + 'px'}">
+             ng-style="{left: 'calc('+30000/250000 * 100 + '% + ' + (calculator.graduateInfo.loan - 30000)/(250000-30000) * (220000/250000) * 100 + '% - ' + 22 * (calculator.graduateInfo.loan - 30000)/(250000-30000) + 'px)'}">
             
           </div>
-          <input type="range" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.loan">
+          <input type="range" ng-style="{left: (30000/250000) * 100 + '%', width:'calc(' + (220000/250000) * 100 + '%)'}" min="30000" max="250000" value="50" class="rangeSlider-slider" id="myRange"  ng-change="calculator.calculate(calculator.graduateInfo.loan, calculator.graduateInfo.income, calculator.graduateInfo.has_sponsor)" step="1000" ng-model="calculator.graduateInfo.loan">
 
         </div>
 

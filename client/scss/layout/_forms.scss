@@ -1289,7 +1289,9 @@ input[type="radio"].radio--large + label {
         width: rem-calc(24px);
         height: rem-calc(24px);
       }
-
+      @media (max-width: 560px) {
+        top: -0.6rem;
+      }
       &:after {
         content: " ";
         background-color: #fff;
@@ -1337,7 +1339,9 @@ input[type="radio"].radio--large + label {
   .rangeSlider-slider {
     -webkit-appearance: none;
     background-color: transparent;
-
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
   }
 
   input[type=range]:focus::-webkit-slider-runnable-track {
@@ -1352,8 +1356,8 @@ input[type="radio"].radio--large + label {
     they will not be visible but they will be draggable.  */
 
   input[type=range]::-ms-thumb {
-    width: rem-calc(60px);
-    height: rem-calc(60px);
+    width: rem-calc(24px);
+    height: rem-calc(24px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
@@ -1362,13 +1366,13 @@ input[type="radio"].radio--large + label {
     left: rem-calc(2px);
     position: relative;
     @media #{$medium-up} {
-      width: rem-calc(60px);
+      width: rem-calc(24px);
     }
   }
 
   input[type=range]::-moz-range-thumb {
-    width: rem-calc(60px);
-    height: rem-calc(60px);
+    width: rem-calc(24px);
+    height: rem-calc(24px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
@@ -1377,14 +1381,14 @@ input[type="radio"].radio--large + label {
     left: rem-calc(2px);
     position: relative;
     @media #{$medium-up} {
-      width: rem-calc(60px);
+      width: rem-calc(24px);
     }
 
   }
 
   input[type=range]::-webkit-slider-thumb {
-    width: rem-calc(60px);
-    height: rem-calc(60px);
+    width: rem-calc(24px);
+    height: rem-calc(24px);
     border-radius: 0px;
     border: 0 none;
     background: transparent;
@@ -1393,7 +1397,7 @@ input[type="radio"].radio--large + label {
     left: rem-calc(2px);
     position: relative;
     @media #{$medium-up} {
-      width: rem-calc(60px);
+      width: rem-calc(24px);
     }
   }
 
